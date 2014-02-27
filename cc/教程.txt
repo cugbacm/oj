@@ -1,8 +1,0 @@
-登录github帐号；
-新建项目；
-建立本机与github的ssh-key；
-git clone git@..... E:/xxx
-git add *
-git commit
-git push
-就能添加进去了
