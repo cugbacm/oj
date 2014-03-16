@@ -27,6 +27,3 @@ def register(request):
 			return HttpResponse("OK!")
 	else:
 		return render(request, 'cugbacm/register.html', {'form': form})
-
-def userInfo(request):
-	return HttpResponse(request.GET['name'])
