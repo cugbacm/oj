@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+STATIC_PATH='./media'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -59,11 +59,11 @@ WSGI_APPLICATION = 'oj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'DATABASE_NAME': 'oj',
-	'DATABASE_USER': 'root',
-	'DATABASE_PASSWORD': 'cugbacm',
-	'DATABASE_PORT': '3306',
-	'DATABASE_HOST': '127.0.0.1',
+        'NAME': 'oj',
+	   'USER': 'root',
+	   'PASSWORD': 'cugbacm',
+	   'PORT': '3306',
+	   'HOST': '127.0.0.1',
     }
 }
 

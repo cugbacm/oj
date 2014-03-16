@@ -20,6 +20,8 @@ class Submit(models.Model):
 	memory = models.CharField(max_length = 100)
 	time = models.CharField(max_length = 100)
 	codeLength = models.CharField(max_length = 100)
+	date = models.DateField()
 	timestamp = models.TimeField()
+	code = models.TextField()
 	def __unicode__(self):
 		return self.runID		
