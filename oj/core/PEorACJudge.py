@@ -1,33 +1,31 @@
 import filecmp
-
-oj_WA = 0
-oj_PE = 0
-oj_AC = 0
-
+import defi
 def  delnextline(f1):
-	f = open('/home/qianghe/Documents/test/isInFile.py','r')
+	f = open(f1,'r')
 	strr = f.read()
-	f.close()
 	return strr.split()
+	
 def compare(f_one, f_two):
 	if filecmp.cmp(f_one,f_two):
-		print ""
+		defi.oj_AC = 1
+		print "oj_AC"
 		return
 	elif delnextline(f_one) == delnextline(f_two):
-		oj_PE = 1
+		defi.oj_PE = 1
 		print "oj_PE"
 		return
 	else:
-		oj_WA = 1
+		defi.oj_WA = 1
+		print "oj_WA"
 		#return oj_WA
 
-path1 = "/home/qianghe/Documents/test/isInFile.py"
-path2 = "/home/qianghe/Documents/test/isinfile.py"
+path1 = "/home/qianghe/Documents/test/data.out"
+path2 = "/home/qianghe/Documents/test/out.txt"
 
 compare(path1, path2)
-if oj_WA == 1:
+if defi.oj_WA == 1:
 	print "oj_WA"
-if oj_PE == 1:
+if defi.oj_PE == 1:
 	print "oj_PE"
-if oj_AC == 1:
-	print "oj_WA"
+if defi.oj_AC == 1:
+	print "oj_AC"
