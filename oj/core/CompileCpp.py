@@ -1,14 +1,13 @@
 import subprocess
 import os
-os.system('g++ -c /home/hq/Documents/test/add.cpp')
-os.system('g++ -o /home/hq/Documents/test/add /home/hq/Documents/test/add.o')
-p = subprocess.Popen('/home/hq/Documents/test/add',stdin = subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-f = open('/home/hq/Documents/test/add.in')
-for strr in f:
-	print strr
-	p.stdin.write(strr)
-	ans = p.stdout.read()
-	fout = open('/home/hq/Documents/test/add.out', 'a+')
-	fout.write(ans)
-	fout.close
-	print open('/home/hq/Documents/test/add.out').read()
+#os.system('g++ /home/qianghe/Documents/test/dp.cpp -o /home/qianghe/Documents/test/dp')
+os.system('g++ -c /home/qianghe/Documents/test/dp.cpp')
+os.system('g++ -o /home/qianghe/Documents/test/dp /home/qianghe/Documents/test/dp.o')
+fin = open('/home/qianghe/Documents/test/data.in', 'r')
+fout = open('/home/qianghe/Documents/test/data.out', 'w')
+p = subprocess.Popen('/home/qianghe/Documents/test/dp', stdin = fin, stdout = fout, stderr = subprocess.PIPE)
+fout.close()
+f = open('/home/qianghe/Documents/test/data.out','r')
+print f.read()
+
+f.close()
