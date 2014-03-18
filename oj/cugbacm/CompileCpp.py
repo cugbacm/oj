@@ -42,7 +42,9 @@ def delnextline(f1): #delete spaces
 
 def compare(f_one, f_two):#
     contentOne = file(f_one).read().replace('\r','').rstrip()
+    print contentOne
     contentTwo = file(f_two).read().replace('\r','').rstrip()
+    print contentTwo
     if contentOne == contentTwo:
         defi.oj_AC = 1
     elif contentOne.split() == contentTwo.split():
@@ -62,9 +64,9 @@ def makeFilePath(language):#make os.system('compileFile')
         return 'program.java', 'g++ program.cpp -o program'
 
 def main(id, language, program):
-    '''fileProgram = open('/home/cugbacm/Documents/test/dp.cpp','w')
+    fileProgram = open('/home/cugbacm/Documents/test/dp.cpp','w')
     fileProgram.write(program)
-    fileProgram.close()'''
+    fileProgram.close()
     filePath,compileFile = makeFilePath(language)
     dirName = compileCppPath(id)
     baseName = glob.glob(dirName + '*')
@@ -75,16 +77,16 @@ def main(id, language, program):
             path2 = baseName[i][0:-3] + '.out'
             compare('/home/cugbacm/Documents/test/ans.out', path2)
             if defi.oj_WA == 1:
-                return "oj_WA"
                 defi.oj_AC = 0
+                return "oj_WA"
                 break
             if defi.oj_PE == 1:
-                return "oj_PE"
+                print "oj_PE"
                 defi.oj_AC = 0
                 break
     if defi.oj_AC == 1:
         return 'oj_AC'
 
-'''if __name__ == '__main__':
-    program = '#include <iostream>\n using namespace std; int main(){int a,b;cin >> a >> b;cout << a+b << endl;return 0;}'
-    main('1000', 'c++', program)'''
+if __name__ == '__main__':
+    program = '#include <iostream>\n using namespace std; int main(){int a,b;cin >> a >> b;cout << 2 << endl;return 0;}'
+    print main('1000', 'c++', program)

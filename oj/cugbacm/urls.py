@@ -3,5 +3,5 @@ from cugbacm import views
 
 urlpatterns = patterns('',
 	url(r'^register/$', views.register, name = 'register'),
-	url(r'^userInfo/$', views.userInfo, name = 'userInfo'),
+	url(r'^submit/$', views.submit, name = 'submit'),
 )
