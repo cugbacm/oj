@@ -13,10 +13,10 @@ class User(models.Model):
 		return self.name
 
 class Submit(models.Model):
-	runID = models.IntegerField()
+	runID = models.CharField(max_length = 200)
 	userID = models.CharField(max_length = 100)
-	problemID = models.IntegerField()
-	result = models.CharField(max_length = 100)
+	problemID = models.CharField(max_length = 100)
+	status = models.CharField(max_length = 100)
 	memory = models.CharField(max_length = 100)
 	time = models.CharField(max_length = 100)
 	codeLength = models.CharField(max_length = 100)

@@ -9,6 +9,7 @@ import filecmp
 import sys
 import glob
 import time
+from cugbacm.models import User, Submit
 
 def compileCppPath(id):#receive id
     pass
@@ -42,9 +43,9 @@ def delnextline(f1): #delete spaces
 
 def compare(f_one, f_two):#
     contentOne = file(f_one).read().replace('\r','').rstrip()
-    print contentOne
+    #print contentOne
     contentTwo = file(f_two).read().replace('\r','').rstrip()
-    print contentTwo
+    #print contentTwo
     if contentOne == contentTwo:
         defi.oj_AC = 1
     elif contentOne.split() == contentTwo.split():
@@ -81,12 +82,29 @@ def main(id, language, program):
                 return "oj_WA"
                 break
             if defi.oj_PE == 1:
-                print "oj_PE"
+                return "oj_PE"
                 defi.oj_AC = 0
                 break
     if defi.oj_AC == 1:
         return 'oj_AC'
 
-if __name__ == '__main__':
-    program = '#include <iostream>\n using namespace std; int main(){int a,b;cin >> a >> b;cout << 2 << endl;return 0;}'
-    print main('1000', 'c++', program)
+#if __name__ == '__main__':
+   # program = '#include <iostream>\n using namespace std; int main(){int a,b;cin >> a >> b;cout <<" "<< a+b <<"    "<< endl;return 0;}'
+   # print main('1000', 'c++', program)
+def callback(ch, method, properties, id):
+    ch.basic_ack(delivery_tag = method.delivery_tag)
+    sub = Submit.objects.get(runID = id)
+    code = sub.code
+    sub.status = main(id, 'c++', code)
+    sub.save()
+    
+
+def Judge():
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    channel = connection.channel()
+    channel.queue_declare(queue='task_queue', durable=True)
+    channel.basic_qos(prefetch_count=1)
+    channel.basic_consume(callback, queue='task_queue')
+    channel.start_consuming()
+
+Judge()

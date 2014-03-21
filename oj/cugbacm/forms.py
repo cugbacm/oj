@@ -1,6 +1,6 @@
 from django import forms
 
-class UserRegister(forms.Form):
+class UserRegisterForm(forms.Form):
 	name = forms.CharField(label = 'name')
 	password = forms.CharField(widget = forms.PasswordInput, label = 'password')
 	confirmPassword = forms.CharField(widget = forms.PasswordInput, label = 'confirmPassword')
@@ -10,15 +10,15 @@ class UserRegister(forms.Form):
 	email = forms.EmailField(label = 'email')
 	nickname = forms.CharField(label = 'nickname')
 
-class Submit(forms.Form):
-	runID = forms.IntegerField(label = 'runID', required = False)
-	userID = forms.CharField(label = 'userID', required = False)
-	problemID = forms.IntegerField(label = 'problemID', required = False)
-	result = forms.CharField(label = 'result', required = False)
-	memory = forms.CharField(label = 'memory', required = False)
-	time = forms.CharField(label = 'time', required = False)
-	codeLength = forms.CharField(label = 'codeLength', required = False)
-	date = forms.DateField(label = 'date', required = False)
-	timestamp = forms.TimeField(label = 'timestamp', required = False)
+class SubmitForm(forms.Form):
+	runID = forms.CharField(label = 'runID')
+	userID = forms.CharField(label = 'userID')
+	problemID = forms.CharField(label = 'problemID')
+	status = forms.CharField(label = 'status')
+	memory = forms.CharField(label = 'memory')
+	time = forms.CharField(label = 'time')
+	codeLength = forms.CharField(label = 'codeLength')
+	date = forms.DateField(label = 'date')
+	timestamp = forms.TimeField(label = 'timestamp')
 	code = forms.CharField(label = 'code', widget=forms.Textarea)
 		

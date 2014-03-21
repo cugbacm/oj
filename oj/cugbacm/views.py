@@ -4,42 +4,43 @@ from cugbacm.models import User, Submit
 from django.http import HttpResponse
 import pika
 import CompileCpp
-from cugbacm.forms import UserRegister, Submit
+import send
+from cugbacm.forms import UserRegisterForm, SubmitForm
 # Create your views here.
 
 def submit(request):
-	form = Submit(request.POST)
+	form = SubmitForm(request.POST)
 	if request.method == 'POST':
 		if form.is_valid():
 			runID = form.cleaned_data['runID']
 			userID = form.cleaned_data['userID']
 			problemID = form.cleaned_data['problemID']
-			result = form.cleaned_data['result']
+			status = form.cleaned_data['status']
 			memory = form.cleaned_data['memory']
 			time = form.cleaned_data['time']
 			codeLength = form.cleaned_data['codeLength']
 			date = form.cleaned_data['date']
 			timestamp = form.cleaned_data['timestamp']
 			code = form.cleaned_data['code']
-			'''Submit(
+			Submit(
 				runID = runID, 
 				userID = userID,
 				problemID = problemID,
-				result = result,
+				status = "queueing",
 				memory = memory,
 				time = time,
 				codeLength = codeLength,
 				date = date,
 				timestamp = timestamp,
-				code = code).save()'''
-
-			result = CompileCpp.main('1000', 'c++', code)
-			return HttpResponse(result)
+				code = code).save()
+			sendRunID(runID)
+			#status = CompileCpp.main('1000', 'c++', code)
+			return HttpResponse(runID)
 	else:
 		return render(request, 'cugbacm/submit.html', {'form': form})
 		
 def register(request):
-	form = UserRegister(request.POST)
+	form = UserRegisterForm(request.POST)
 	if request.method == 'POST':
 		if form.is_valid():
 			name = form.cleaned_data['name']
@@ -57,23 +58,6 @@ def register(request):
 				tel = tel,
 				email = email,
 				nickname = nickname).save()
-			#connection = pika.BlockingConnection(pika.ConnectionParameters(
-       		#host='localhost'))
-			#channel = connection.channel()
-
-			#channel.queue_declare(queue='task_queue', durable=True)
-
-			message = name
-			#channel.basic_publish(
-			#	exchange='',
-    		#	routing_key='task_queue',
-    		#	body=message,
-    		#	properties=pika.BasicProperties(
-    		#	delivery_mode = 2, # make message persistent
-			#))
-			#print " [x] Sent %r" % (message,)
-			#connection.close()
-			result = CompileCpp.main('1000', 'c++', message)
-			return HttpResponse(result)
+			return HttpResponse("register success!")
 	else:
 		return render(request, 'cugbacm/register.html', {'form': form})
