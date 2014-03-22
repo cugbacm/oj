@@ -3,8 +3,7 @@ from django.template import Context, loader
 from cugbacm.models import User, Submit
 from django.http import HttpResponse
 import pika
-import CompileCpp
-import send
+from send import sendRunID
 from cugbacm.forms import UserRegisterForm, SubmitForm
 # Create your views here.
 
@@ -33,7 +32,18 @@ def submit(request):
 				date = date,
 				timestamp = timestamp,
 				code = code).save()
-			sendRunID(runID)
+			connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+			channel = connection.channel()
+			channel.queue_declare(queue='task_queue', durable=True)
+			channel.basic_publish(
+				exchange='',
+			    routing_key='task_queue',
+			    body=runID,
+			    properties=pika.BasicProperties(
+			    delivery_mode = 2, # make message persistent
+			))
+			print "send %r" % (runID,)
+			connection.close()
 			#status = CompileCpp.main('1000', 'c++', code)
 			return HttpResponse(runID)
 	else:
