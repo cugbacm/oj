@@ -1,9 +1,9 @@
 <html>
 <head>
-	<title>Submit</title>
+	<title>addProblem</title>
 <head>
 <body>
-	<form action="/index/submit/" method="post">{% csrf_token %} 
+	<form action="/index/addProblem/" method="post">{% csrf_token %} 
 		<table>
 				{{ form.as_table}}
 		</table>

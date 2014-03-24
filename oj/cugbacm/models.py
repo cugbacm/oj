@@ -13,15 +13,33 @@ class User(models.Model):
 		return self.name
 
 class Submit(models.Model):
-	runID = models.CharField(max_length = 200)
-	userID = models.CharField(max_length = 100)
-	problemID = models.CharField(max_length = 100)
+	runID = models.IntegerField()
+	userName = models.CharField(max_length = 100)
+	problemID = models.IntegerField()
 	status = models.CharField(max_length = 100)
-	memory = models.CharField(max_length = 100)
-	time = models.CharField(max_length = 100)
-	codeLength = models.CharField(max_length = 100)
-	date = models.DateField()
-	timestamp = models.TimeField()
+	memory = models.IntegerField()
+	runTime = models.IntegerField()
+	codeLength = models.IntegerField()
+	date = models.DateField(auto_now = True)
+	timestamp = models.TimeField(auto_now = True)
 	code = models.TextField()
 	def __unicode__(self):
-		return self.runID		
+		return str(self.runID)
+
+class Problem(models.Model):
+	problemID = models.IntegerField()
+	title = models.CharField(max_length = 100)
+	timeLimit = models.IntegerField()
+	memoryLimit = models.IntegerField();
+	acceptedSubmission = models.IntegerField();
+	totalSubmission = models.IntegerField();
+	description = models.TextField();
+	input = models.TextField();
+	output = models.TextField();
+	sampleInput = models.TextField();
+	sampleOutput = models.TextField();
+	author = models.CharField(max_length = 100)
+	def __unicode__(self):
+		return self.title
+
+

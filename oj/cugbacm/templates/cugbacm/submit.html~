@@ -3,7 +3,7 @@
 	<title>Submit</title>
 <head>
 <body>
-	<form action="/index/submit/" method="post">{% csrf_token %}
+	<form action="/index/submit/" method="post">{% csrf_token %} 
 		<table>
 				{{ form.as_table}}
 		</table>

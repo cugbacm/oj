@@ -91,6 +91,7 @@ def main(id, language, program):
     program = '#include <iostream>\n using namespace std; int main(){int a,b;cin >> a >> b;cout << a+b << endl;return 0;}'
     main('1000', 'c++', program)'''
 def callback(ch, method, properties, body):
+    print body
     db = MySQLdb.connect(host = "127.0.0.1", port=3306, user = "root", passwd = "cugbacm", db="oj")
     cursor = db.cursor()
     #print "select * from cugbacm_submit where runID = %s" % body
