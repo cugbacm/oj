@@ -1,7 +1,7 @@
 from django import forms
 
 class UserRegisterForm(forms.Form):
-	name = forms.CharField(label = 'name')
+	userID = forms.CharField(label = 'userID')
 	password = forms.CharField(widget = forms.PasswordInput, label = 'password')
 	confirmPassword = forms.CharField(widget = forms.PasswordInput, label = 'confirmPassword')
 	session = forms.CharField(label = 'session')
@@ -12,7 +12,7 @@ class UserRegisterForm(forms.Form):
 
 class SubmitForm(forms.Form):
 	runID = forms.IntegerField(label = 'runID')
-	userName = forms.CharField(label = 'userName')
+	userID = forms.CharField(label = 'userID')
 	problemID = forms.CharField(label = 'problemID')
 	status = forms.CharField(label = 'status')
 	memory = forms.IntegerField(label = 'memory')

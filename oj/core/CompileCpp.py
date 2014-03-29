@@ -90,7 +90,7 @@ def main(id, language, program):
 '''if __name__ == '__main__':
     program = '#include <iostream>\n using namespace std; int main(){int a,b;cin >> a >> b;cout << a+b << endl;return 0;}'
     main('1000', 'c++', program)'''
-def callback(ch, method, properties, body):
+'''def callback(ch, method, properties, body):
     print body
     db = MySQLdb.connect(host = "127.0.0.1", port=3306, user = "root", passwd = "cugbacm", db="oj")
     cursor = db.cursor()
@@ -119,5 +119,5 @@ def Judge():
     channel.basic_consume(callback, queue='task_queue')
     channel.start_consuming()
 
-Judge()
+Judge()'''
 

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-	name = models.CharField(max_length = 200)
+	userID = models.CharField(max_length = 200)
 	password = models.CharField(max_length = 20)
 	session = models.CharField(max_length = 20)
 	specialty = models.CharField(max_length = 100)
@@ -10,11 +10,11 @@ class User(models.Model):
 	email = models.EmailField(max_length = 100)
 	nickname = models.CharField(max_length = 100)
 	def __unicode__(self):
-		return self.name
+		return self.userID
 
 class Submit(models.Model):
 	runID = models.IntegerField()
-	userName = models.CharField(max_length = 100)
+	userID = models.CharField(max_length = 100)
 	problemID = models.IntegerField()
 	status = models.CharField(max_length = 100)
 	memory = models.IntegerField()
