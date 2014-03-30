@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+
+    <title>Problem List</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="signin.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#">Problem List</a></li>
+  <li><a href="/index/submitList">Submit List</a></li>
+  <li><a href="#">Messages</a></li>
+</ul>
+    <div class="table-responsive">
+      <table class="table table-hover"> 
+        <thead>  
+          <tr>  
+            <th>ProblemID</th>
+            <th>Title</th>  
+            <th>Time Limit</th>
+            <th>Memory Limit</th>
+            <th>Accepted Submission</th>
+            <th>Total Submission</th>  
+          </tr>  
+        </thead>  
+        <tbody>
+          {% for problem in problems %}
+            <tr >
+              <td>
+                <a href="/index/problem/{{problem.problemID}}">
+                  {{problem.problemID}}
+                </a>
+              </td>
+              <td>{{problem.title}}</td>
+              <td>{{problem.timeLimit}}</td>
+              <td>{{problem.memoryLimit}}</td>
+              <td>{{problem.acceptedSubmission}}</td>
+              <td>{{problem.totalSubmission}}</td>
+            </tr>
+          {% endfor %}  
+        </tbody>  
+      </table>
+    </div>
+
+  </body>
+</html>

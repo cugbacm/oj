@@ -4,46 +4,51 @@ import sys
 from django.shortcuts import render
 from django.template import Context, loader
 from cugbacm.models import User, Submit, Problem
-from django.http import HttpResponse
-from cugbacm.forms import UserRegisterForm, SubmitForm, ProblemForm
+from django.http import HttpResponse, HttpResponseRedirect
+from cugbacm.forms import UserRegisterForm, SubmitForm, ProblemForm, LoginForm
 from celery.decorators import task
 from CompileCpp import main
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 @task
 def Judge(submit):
+	print submit.code
 	submit.status = main('1000', 'c++', submit.code)
 	submit.save()
 	return submit.status
 
-def submit(request):
-	form = SubmitForm(request.POST)
+def submit(request, problem_id):
 	if request.method == 'POST':
-		if form.is_valid():
-			runID = form.cleaned_data['runID']
-			userID = form.cleaned_data['userID']
-			problemID = form.cleaned_data['problemID']
-			status = form.cleaned_data['status']
-			memory = form.cleaned_data['memory']
-			runTime = form.cleaned_data['runTime']
-			codeLength = form.cleaned_data['codeLength']
-			date = form.cleaned_data['date']
-			timestamp = form.cleaned_data['timestamp']
-			code = form.cleaned_data['code']
-			submit = Submit(
-				runID = runID, 
-				userID = userID,
-				problemID = problemID,
-				status = "queueing",
-				memory = memory,
-				runTime = runTime,
-				codeLength = codeLength,
-				date = date,
-				timestamp = timestamp,
-				code = code)
-			Judge(submit)
-		return HttpResponse(str(date))
+		#runID = form.cleaned_data['runID']
+		#userID = form.cleaned_data['userID']
+		problemID = request.POST['problemID']
+		#status = form.cleaned_data['status']
+		#memory = form.cleaned_data['memory']
+		#runTime = form.cleaned_data['runTime']
+		#codeLength = form.cleaned_data['codeLength']
+		#date = form.cleaned_data['date']
+		#timestamp = form.cleaned_data['timestamp']
+		code = request.POST['code']
+		language = request.POST['language']
+		submit = Submit(
+			runID = 111, 
+			userID = "cugbacm",
+			problemID = 1000,
+			status = "queueing",
+			memory = 10000,
+			runTime = 1000,
+			codeLength = 100,
+			language = language,
+			code = code)
+		print submit.date
+		Judge(submit)
+		return HttpResponse("success!")
 	else:
-		return render(request, 'cugbacm/submit.html', {'form': form})
+		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
+
+def submitList(request):
+	submits = Submit.objects.all().order_by('-id')
+	return render(request, 'cugbacm/submitList.html', {'submits': submits})
 		
 def register(request):
 	if request.method == 'POST':
@@ -68,18 +73,24 @@ def register(request):
 		return HttpResponse("register success!")
 	else:
 		return render(request, 'cugbacm/register.html', {})
-
+@csrf_exempt
 def login(request):
+	print request.method
 	if request.method == 'POST':
+
+		'''userID = request.POST['userID']
+		password = request.POST['password']'''
 		userID = request.POST['userID']
 		password = request.POST['password']
+		print userID
+		print password
 		try:
 			user = User.objects.get(userID = userID)
 			if user.password != password:
 				return HttpResponse("password error!")
 			else:
-				return HttpResponse("login success!")
-		except Exception as err:
+				return HttpResponse("success")
+		except:
 			return HttpResponse(userID+" does not exsits")
 	else:
 		return render(request, 'cugbacm/login.html', {})
@@ -116,3 +127,9 @@ def addProblem(request):
 			return HttpResponse("addProblem success!")
 	else:
 		return render(request, 'cugbacm/addProblem.html', {'form': form})
+def problem(request, problem_id):
+	problem = Problem.objects.get(problemID=problem_id)
+	return render(request, 'cugbacm/problem.html', {'problem': problem})
+def problemList(request):
+	problems = Problem.objects.all()
+	return render(request, 'cugbacm/problemList.html', {'problems': problems})

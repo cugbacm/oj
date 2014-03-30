@@ -19,6 +19,7 @@ class Submit(models.Model):
 	status = models.CharField(max_length = 100)
 	memory = models.IntegerField()
 	runTime = models.IntegerField()
+	language = models.CharField(max_length = 100)
 	codeLength = models.IntegerField()
 	date = models.DateField(auto_now = True)
 	timestamp = models.TimeField(auto_now = True)
