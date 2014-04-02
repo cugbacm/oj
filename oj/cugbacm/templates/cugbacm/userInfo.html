@@ -10,6 +10,7 @@
     <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
 
     <title>Problem List</title>
+
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
 
@@ -28,9 +29,9 @@
   <body style="padding-top:50px">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <ul class="nav nav-tabs">
-      <li class="active"><a href="/index/problemList">Problem List</a></li>
+      <li><a href="/index/problemList">Problem List</a></li>
       <li><a href="/index/submitList">Submit List</a></li>
-      <li class="dropdown">
+      <li class="active" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
           {{userID}} <span class="caret"></span>
         </a>
@@ -43,37 +44,25 @@
         </ul>
       </li>
     </ul>
-     </nav> 
-    <div class="table-responsive">
-      <table class="table table-hover"> 
-        <thead>  
-          <tr>  
-            <th>ProblemID</th>
-            <th>Title</th>  
-            <th>Time Limit</th>
-            <th>Memory Limit</th>
-            <th>Accepted Submission</th>
-            <th>Total Submission</th>  
-          </tr>  
-        </thead>  
-        <tbody>
-          {% for problem in problems %}
-            <tr >
-              <td>
-                <a href="/index/problem/{{problem.problemID}}">
-                  {{problem.problemID}}
-                </a>
-              </td>
-              <td>{{problem.title}}</td>
-              <td>{{problem.timeLimit}}</td>
-              <td>{{problem.memoryLimit}}</td>
-              <td>{{problem.acceptedSubmission}}</td>
-              <td>{{problem.totalSubmission}}</td>
-            </tr>
-          {% endfor %}  
-        </tbody>  
-      </table>
-    </div>
+  </nav>
+    <div class="container" >
 
+      <form class="form-signin" role="form" action="/index/userInfo/" method="post">{% csrf_token %} 
+        <h2 class="form-signin-heading">Please modify your information</h2>
+        <input type="text" class="form-control"  readonly= "true " placeholder="UserID" value="{{user.userID}}" name="userID" required>
+        <input type="password" class="form-control" placeholder="Old Password" name="oldPassword"  required>
+        <input type="password" class="form-control" placeholder="Password" name="password">
+        <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword">
+        <input type="text" class="form-control" placeholder="Session" value="{{user.session}}" name="session" required>
+        <input type="text" class="form-control" placeholder="Specialty" value="{{user.specialty}}"name="specialty" required>
+        <input type="text" class="form-control" placeholder="Tel" value="{{user.tel}}"name="tel" required>
+        <input type="text" class="form-control" placeholder="Email" value="{{user.email}}"name="email" required>
+        <input type="text" class="form-control" placeholder="Nickname" value="{{user.nickname}}"name="nickname" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Modify</button>
+      </form>
+
+    </div> <!-- /container -->
+   </body>
   </body>
 </html>

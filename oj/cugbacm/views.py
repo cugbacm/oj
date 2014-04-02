@@ -32,8 +32,8 @@ def submit(request, problem_id):
 		language = request.POST['language']
 		submit = Submit(
 			runID = 111, 
-			userID = "cugbacm",
-			problemID = 1000,
+			userID = request.session["userID"],
+			problemID = request.POST['problemID'],
 			status = "queueing",
 			memory = 10000,
 			runTime = 1000,
@@ -42,13 +42,43 @@ def submit(request, problem_id):
 			code = code)
 		print submit.date
 		Judge(submit)
-		return HttpResponse("success!")
+		return HttpResponseRedirect("/index/submitList")
 	else:
 		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
 
 def submitList(request):
 	submits = Submit.objects.all().order_by('-id')
-	return render(request, 'cugbacm/submitList.html', {'submits': submits})
+	return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
+
+def userInfo(request):
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+		if request.method == 'POST':
+			userID = request.POST['userID']
+			oldPassword = request.POST['oldPassword']
+			password = request.POST['password']
+			confirmPassword = request.POST['confirmPassword']
+			session = request.POST['session']
+			specialty = request.POST['specialty']
+			tel = request.POST['tel']
+			email = request.POST['email']
+			nickname = request.POST['nickname']
+			if oldPassword != user.password:
+				HttpResponse("error")
+			else:
+				if password.strip() != '' and password == confirmPassword:
+					user.password = password
+				user.session = session
+				user.specialty = specialty
+				user.tel = tel
+				user.email = email
+				user.nickname = nickname
+				user.save()
+				return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
+		else:
+			return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
+	except:
+		return HttpResponseRedirect("/index/login")
 		
 def register(request):
 	if request.method == 'POST':
@@ -63,7 +93,7 @@ def register(request):
 		if password != confirmPassword:
 			return HttpResponse("Password and confirm password must be identical.")
 		User(
-			userID = userID, 
+			userID = request.session['userID'], 
 			password = password,
 			session = session,
 			specialty = specialty,
@@ -89,10 +119,15 @@ def login(request):
 			if user.password != password:
 				return HttpResponse("password error!")
 			else:
+				request.session["userID"] = userID
 				return HttpResponse("success")
 		except:
 			return HttpResponse(userID+" does not exsits")
 	else:
+		try: 
+			del request.session['userID'] 
+		except:
+			pass
 		return render(request, 'cugbacm/login.html', {})
 
 def addProblem(request):
@@ -132,4 +167,4 @@ def problem(request, problem_id):
 	return render(request, 'cugbacm/problem.html', {'problem': problem})
 def problemList(request):
 	problems = Problem.objects.all()
-	return render(request, 'cugbacm/problemList.html', {'problems': problems})
+	return render(request, 'cugbacm/problemList.html', {'problems': problems, 'userID':request.session["userID"]})

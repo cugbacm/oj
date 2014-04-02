@@ -8,5 +8,6 @@ urlpatterns = patterns('',
 	url(r'^login/$', views.login, name = 'login'),
 	url(r'^problemList/$', views.problemList, name = 'problemList'),
 	url(r'^submitList/$', views.submitList, name = 'submitList'),
+	url(r'^userInfo/$', views.userInfo, name = 'userInfo'),
 	url(r'^problem/(?P<problem_id>\d+)$', views.problem, name = 'problem'),
 )

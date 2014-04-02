@@ -75,7 +75,6 @@ def main(id, language, program):
             compileCpp(compileFile, filePath,path1)
             path2 = baseName[i][0:-3] + '.out'
             compare('/home/cugbacm/Documents/test/ans.out', path2)
-            print defi.oj_WA, defi.oj_AC, defi.oj_PE
             if defi.oj_WA == 1:
                 defi.oj_AC = 0
                 return "oj_WA"
