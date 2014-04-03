@@ -9,46 +9,55 @@ from cugbacm.forms import UserRegisterForm, SubmitForm, ProblemForm, LoginForm
 from celery.decorators import task
 from CompileCpp import main
 from django.views.decorators.csrf import csrf_exempt
+import json
 # Create your views here.
+
 @task
 def Judge(submit):
-	print submit.code
-	submit.status = main('1000', 'c++', submit.code)
+	submit.status = main(submit.problemID, 'c++', submit.code)
 	submit.save()
 	return submit.status
 
 def submit(request, problem_id):
-	if request.method == 'POST':
-		#runID = form.cleaned_data['runID']
-		#userID = form.cleaned_data['userID']
-		problemID = request.POST['problemID']
-		#status = form.cleaned_data['status']
-		#memory = form.cleaned_data['memory']
-		#runTime = form.cleaned_data['runTime']
-		#codeLength = form.cleaned_data['codeLength']
-		#date = form.cleaned_data['date']
-		#timestamp = form.cleaned_data['timestamp']
-		code = request.POST['code']
-		language = request.POST['language']
-		submit = Submit(
-			runID = 111, 
-			userID = request.session["userID"],
-			problemID = request.POST['problemID'],
-			status = "queueing",
-			memory = 10000,
-			runTime = 1000,
-			codeLength = 100,
-			language = language,
-			code = code)
-		print submit.date
-		Judge(submit)
-		return HttpResponseRedirect("/index/submitList")
-	else:
-		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+		if request.method == 'POST':
+			#runID = form.cleaned_data['runID']
+			#userID = form.cleaned_data['userID']
+			problemID = request.POST['problemID']
+			#status = form.cleaned_data['status']
+			#memory = form.cleaned_data['memory']
+			#runTime = form.cleaned_data['runTime']
+			#codeLength = form.cleaned_data['codeLength']
+			#date = form.cleaned_data['date']
+			#timestamp = form.cleaned_data['timestamp']
+			code = request.POST['code']
+			language = request.POST['language']
+			submit = Submit(
+				runID = 111, 
+				userID = request.session["userID"],
+				problemID = request.POST['problemID'],
+				status = "queueing",
+				memory = 10000,
+				runTime = 1000,
+				codeLength = 100,
+				language = language,
+				code = code)
+			print submit.date
+			Judge(submit)
+			return HttpResponseRedirect("/index/submitList")
+		else:
+			return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
+	except:
+		return HttpResponseRedirect("/index/login")
 
 def submitList(request):
-	submits = Submit.objects.all().order_by('-id')
-	return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+		submits = Submit.objects.all().order_by('-id')
+		return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
+	except:
+		return HttpResponseRedirect("/index/login")
 
 def userInfo(request):
 	try:
@@ -93,19 +102,19 @@ def register(request):
 		if password != confirmPassword:
 			return HttpResponse("Password and confirm password must be identical.")
 		User(
-			userID = request.session['userID'], 
+			userID = userID,
 			password = password,
 			session = session,
 			specialty = specialty,
 			tel = tel,
 			email = email,
 			nickname = nickname).save()
-		return HttpResponse("register success!")
+		request.session['userID'] = userID
+		return HttpResponseRedirect("/index/problemList")
 	else:
 		return render(request, 'cugbacm/register.html', {})
 @csrf_exempt
 def login(request):
-	print request.method
 	if request.method == 'POST':
 
 		'''userID = request.POST['userID']
@@ -130,41 +139,59 @@ def login(request):
 			pass
 		return render(request, 'cugbacm/login.html', {})
 
+@csrf_exempt
+def gettest(request):
+	a = {"aaData":[["1","2","3","4","5"],["6","7","8","9","10"]]}
+	return HttpResponse(json.dumps(a))
+def testdata(request):
+	return render(request, 'cugbacm/testdata.html', {})
 def addProblem(request):
-	form = ProblemForm(request.POST)
-	if request.method == 'POST':
-		if form.is_valid():
-			problemID = form.cleaned_data['problemID']
-			title = form.cleaned_data['title']
-			timeLimit = form.cleaned_data['timeLimit']
-			memoryLimit = form.cleaned_data['memoryLimit']
-			acceptedSubmission = form.cleaned_data['acceptedSubmission']
-			totalSubmission = form.cleaned_data['totalSubmission']
-			description = form.cleaned_data['description']
-			input = form.cleaned_data['input']
-			output = form.cleaned_data['output']
-			sampleInput = form.cleaned_data['sampleInput']
-			sampleOutput = form.cleaned_data['sampleOutput']
-			author = form.cleaned_data['author']
-			Problem(
-				problemID = problemID,
-				title = title,
-				timeLimit = timeLimit,
-				memoryLimit = memoryLimit,
-				acceptedSubmission = acceptedSubmission,
-				totalSubmission = totalSubmission,
-				description = description,
-				input = input,
-				output = output,
-				sampleInput = sampleInput,
-				sampleOutput = sampleOutput,
-				author = author).save()
-			return HttpResponse("addProblem success!")
-	else:
-		return render(request, 'cugbacm/addProblem.html', {'form': form})
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+		form = ProblemForm(request.POST)
+		if request.method == 'POST':
+			if form.is_valid():
+				problemID = form.cleaned_data['problemID']
+				title = form.cleaned_data['title']
+				timeLimit = form.cleaned_data['timeLimit']
+				memoryLimit = form.cleaned_data['memoryLimit']
+				acceptedSubmission = form.cleaned_data['acceptedSubmission']
+				totalSubmission = form.cleaned_data['totalSubmission']
+				description = form.cleaned_data['description']
+				input = form.cleaned_data['input']
+				output = form.cleaned_data['output']
+				sampleInput = form.cleaned_data['sampleInput']
+				sampleOutput = form.cleaned_data['sampleOutput']
+				author = form.cleaned_data['author']
+				Problem(
+					problemID = problemID,
+					title = title,
+					timeLimit = timeLimit,
+					memoryLimit = memoryLimit,
+					acceptedSubmission = acceptedSubmission,
+					totalSubmission = totalSubmission,
+					description = description,
+					input = input,
+					output = output,
+					sampleInput = sampleInput,
+					sampleOutput = sampleOutput,
+					author = author).save()
+				return HttpResponse("addProblem success!")
+		else:
+			return render(request, 'cugbacm/addProblem.html', {'form': form})
+	except:
+		return HttpResponseRedirect("/index/login")
 def problem(request, problem_id):
-	problem = Problem.objects.get(problemID=problem_id)
-	return render(request, 'cugbacm/problem.html', {'problem': problem})
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+		problem = Problem.objects.get(problemID=problem_id)
+		return render(request, 'cugbacm/problem.html', {'problem': problem})
+	except:
+		HttpResponseRedirect("/index/login")
 def problemList(request):
-	problems = Problem.objects.all()
-	return render(request, 'cugbacm/problemList.html', {'problems': problems, 'userID':request.session["userID"]})
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+		problems = Problem.objects.all()
+		return render(request, 'cugbacm/problemList.html', {'problems': problems, 'userID':request.session["userID"]})
+	except:
+		return HttpResponseRedirect("/index/login")
