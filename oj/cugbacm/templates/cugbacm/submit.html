@@ -42,7 +42,8 @@
 
       <form class="form-signin" role="form" action="/index/problem/{{problem_id}}/submit" method="post">{% csrf_token %} 
         <!--<h2 class="form-signin-heading">If you have no account please register</h2>-->
-        <input type="number" class="form-control" placeholder="ProblemID" name="problemID" required autofocus>
+	<!--<input type="number" class="form-control" placeholder="ProblemID" name="problemID" readonly="true" value="{{problem_id}}" required autofocus>-->
+	<a href="/index/problem/{{problem_id}}">{{problem_id}}</a>
         <select class="form-control" name="language">
   			<option>g++</option>
   			<option>gcc</option>

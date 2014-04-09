@@ -100,7 +100,7 @@ STATIC_URL = '/static/'
 import djcelery
 djcelery.setup_loader()
 
-BROKER_HOST = "121.194.86.213"
+BROKER_HOST = "127.0.0.1"
 BROKER_PORT = 5672
 BROKER_USER = "guest"
 BROKER_PASSWORD = "guest"

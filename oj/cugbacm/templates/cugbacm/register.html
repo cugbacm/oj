@@ -30,7 +30,7 @@
 
       <form class="form-signin" role="form" action="/index/register/" method="post">{% csrf_token %} 
         <h2 class="form-signin-heading">If you have no account please register</h2>
-        <input type="text" class="form-control" placeholder="UserID" name="userID" required autofocus>
+	<input type="text" class="form-control" placeholder="UserID" name="userID" required autofocus>
         <input type="password" class="form-control" placeholder="Password" name="password" required>
         <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
         <input type="text" class="form-control" placeholder="Session" name="session" required>
@@ -39,7 +39,7 @@
         <input type="text" class="form-control" placeholder="Email" name="email" required>
         <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
         
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-lg btn-primary" type="submit">Register</button>
       </form>
 
     </div> <!-- /container -->

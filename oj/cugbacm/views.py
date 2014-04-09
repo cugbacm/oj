@@ -21,35 +21,35 @@ def Judge(submit):
 def submit(request, problem_id):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
-		if request.method == 'POST':
-			#runID = form.cleaned_data['runID']
-			#userID = form.cleaned_data['userID']
-			problemID = request.POST['problemID']
-			#status = form.cleaned_data['status']
-			#memory = form.cleaned_data['memory']
-			#runTime = form.cleaned_data['runTime']
-			#codeLength = form.cleaned_data['codeLength']
-			#date = form.cleaned_data['date']
-			#timestamp = form.cleaned_data['timestamp']
-			code = request.POST['code']
-			language = request.POST['language']
-			submit = Submit(
-				runID = 111, 
-				userID = request.session["userID"],
-				problemID = request.POST['problemID'],
-				status = "queueing",
-				memory = 10000,
-				runTime = 1000,
-				codeLength = 100,
-				language = language,
-				code = code)
-			print submit.date
-			Judge(submit)
-			return HttpResponseRedirect("/index/submitList")
-		else:
-			return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
 	except:
-		return HttpResponseRedirect("/index/login")
+                return HttpResponseRedirect("/index/login")
+        if request.method == 'POST':
+		#runID = form.cleaned_data['runID']
+		#userID = form.cleaned_data['userID']
+		problemID = request.POST['problemID']
+		#status = form.cleaned_data['status']
+		#memory = form.cleaned_data['memory']
+    		#runTime = form.cleaned_data['runTime']
+                #codeLength = form.cleaned_data['codeLength']
+	    	#date = form.cleaned_data['date']
+    		#timestamp = form.cleaned_data['timestamp']
+    		code = request.POST['code']
+    		language = request.POST['language']
+    		submit = Submit(
+    			runID = 111, 
+    			userID = request.session["userID"],
+    			problemID = request.POST['problemID'],
+    			status = "queueing",
+    			memory = 10000,
+    			runTime = 1000,
+                        codeLength = 100,
+		    	language = language,
+	    		code = code)
+    		print submit.date
+    		Judge(submit)
+    		return HttpResponseRedirect("/index/submitList")
+    	else:
+    		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
 
 def submitList(request):
 	try:
