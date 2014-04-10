@@ -10,11 +10,15 @@ from celery.decorators import task
 from CompileCpp import main
 from django.views.decorators.csrf import csrf_exempt
 import json
+from core import main
+from core import UserSubmit
 # Create your views here.
 
 @task
 def Judge(submit):
-	submit.status = main(submit.problemID, 'c++', submit.code)
+        user_submit = UserSubmit(submit.id, submit.problemID, submit.language, submit.userID, submit.code)
+	submit.status = main(user_submit)
+        print submit.status
 	submit.save()
 	return submit.status
 
@@ -26,7 +30,6 @@ def submit(request, problem_id):
         if request.method == 'POST':
 		#runID = form.cleaned_data['runID']
 		#userID = form.cleaned_data['userID']
-		problemID = request.POST['problemID']
 		#status = form.cleaned_data['status']
 		#memory = form.cleaned_data['memory']
     		#runTime = form.cleaned_data['runTime']
@@ -38,7 +41,7 @@ def submit(request, problem_id):
     		submit = Submit(
     			runID = 111, 
     			userID = request.session["userID"],
-    			problemID = request.POST['problemID'],
+    			problemID = problem_id,
     			status = "queueing",
     			memory = 10000,
     			runTime = 1000,
@@ -58,6 +61,15 @@ def submitList(request):
 		return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
 	except:
 		return HttpResponseRedirect("/index/login")
+
+def userList(request):
+    try:
+        user = User.objects.get(userID = request.session['userID'])
+    except:
+        return HttpResponseRedirect("/index/login")
+    users = User.objects.all()
+    return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
+
 
 def userInfo(request):
 	try:

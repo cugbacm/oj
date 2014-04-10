@@ -30,8 +30,8 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <ul class="nav nav-tabs">
       <li><a href="/index/problemList">Problem List</a></li>
-      <li class="active"><a href="/index/submitList">Submit List</a></li>
-      <li><a href="/index/userList">User List</a></li>
+      <li><a href="/index/submitList">Submit List</a></li>
+      <li class="active"><a href="/index/userList">User List</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">
           {{userID}} <span class="caret"></span>
@@ -50,30 +50,21 @@
       <table class="table table-hover"> 
         <thead>  
           <tr>  
-            <th>RunID</th>
+            <th>Rank</th>
             <th>UserID</th>  
-            <th>ProblemID</th>
-            <th>Status</th> 
-            <th>Memory</th>
-            <th>RunTime</th>
-            <th>CodeLength</th>  
-            <th>Language</th>
-            <th>Time Submit</th> 
+            <th>Nickname</th>
+            <th>Accepted</th> 
+            <th>Submit</th>
+            <th>Ratio(AC/submit)</th>
             <!--<th>Code</th>--> 
           </tr>  
         </thead>  
         <tbody>
-          {% for submit in submits %}
+          {% for user in users %}
             <tr >
-              <td>{{submit.id}}</td>
-              <td><a href="#" target="_blank">{{submit.userID}}</a></td>
-              <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-              <td>{{submit.status}}</td> 
-              <td>{{submit.memory}}</td>
-              <td>{{submit.runTime}}</td>
-              <td>{{submit.codeLength}}</td>  
-              <td><a href="#">{{submit.language}}</a></td>
-              <td>{{submit.date}} {{submit.timestamp}}</td> 
+              <td>{{user.id}}</td>
+              <td><a href="#" target="_blank">{{user.userID}}</a></td>
+              <td>{{user.nickname}}</td> 
               <!--<td>{{submit.code}}</td> -->
               </tr>
           {% endfor %}  

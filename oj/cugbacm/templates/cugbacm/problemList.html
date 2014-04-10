@@ -26,14 +26,14 @@
     <![endif]-->
   </head>
   <body style="padding-top:50px">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="/index/problemList">Problem List</a></li>
-      <li><a href="/index/submitList">Submit List</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          {{userID}} <span class="caret"></span>
-        </a>
+	  <div class="container">      
+		  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  <ul class="nav nav-tabs">
+			  <li class="active"><a href="/index/problemList">Problem List</a></li>
+			  <li><a href="/index/submitList">Submit List</a></li>
+		    	  <li><a href="/index/userList">User List</a></li>
+		    	  <li class="dropdown">
+		  	  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/index/userInfo">User Info</a></li>
           <li><a href="#">Another action</a></li>
@@ -74,6 +74,6 @@
         </tbody>  
       </table>
     </div>
-
+    </div>
   </body>
 </html>
