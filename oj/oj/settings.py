@@ -98,6 +98,7 @@ USE_L10N = True
 STATIC_URL = '/static/'
 
 import djcelery
+import sys
 djcelery.setup_loader()
 
 BROKER_HOST = "127.0.0.1"
@@ -105,3 +106,5 @@ BROKER_PORT = 5672
 BROKER_USER = "guest"
 BROKER_PASSWORD = "guest"
 BROKER_VHOST = "/"
+if "celeryd" in sys.argv:
+    DEBUG = False

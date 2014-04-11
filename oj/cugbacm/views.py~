@@ -18,9 +18,8 @@ from core import UserSubmit
 def Judge(submit):
         user_submit = UserSubmit(submit.id, submit.problemID, submit.language, submit.userID, submit.code)
 	submit.status = main(user_submit)
-        print submit.status
 	submit.save()
-	return submit.status
+	#return submit.status
 
 def submit(request, problem_id):
 	try:
