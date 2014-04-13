@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="cugbacm" >
 
-    <title>Submit List</title>
+    <title>Show Code</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
@@ -46,39 +46,8 @@
       </li>
     </ul>
   </nav>
-    <div class="table-responsive">
-      <table class="table table-hover"> 
-        <thead>  
-          <tr>  
-            <th>RunID</th>
-            <th>UserID</th>  
-            <th>ProblemID</th>
-            <th>Status</th> 
-            <th>Memory</th>
-            <th>RunTime</th>
-            <th>CodeLength</th>  
-            <th>Language</th>
-            <th>Time Submit</th> 
-            <!--<th>Code</th>--> 
-          </tr>  
-        </thead>  
-        <tbody>
-          {% for submit in submits %}
-            <tr >
-              <td>{{submit.id}}</td>
-              <td><a href="#" target="_blank">{{submit.userID}}</a></td>
-              <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-              <td>{{submit.status}}</td> 
-              <td>{{submit.memory}}</td>
-              <td>{{submit.runTime}}</td>
-              <td>{{submit.codeLength}}</td>  
-              <td><a href="/index/showCode/{{submit.id}}">{{submit.language}}</a></td>
-              <td>{{submit.date}} {{submit.timestamp}}</td> 
-              <!--<td>{{submit.code}}</td> -->
-              </tr>
-          {% endfor %}  
-        </tbody>  
-      </table>
+    <div>
+    	<p>{{submit_code}}</p>
     </div>
 
   </body>

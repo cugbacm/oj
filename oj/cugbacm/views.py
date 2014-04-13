@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from core import main
 from core import UserSubmit
+import os
 # Create your views here.
 
 @task
@@ -157,39 +158,48 @@ def testdata(request):
 def addProblem(request):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
-		form = ProblemForm(request.POST)
-		if request.method == 'POST':
-			if form.is_valid():
-				problemID = form.cleaned_data['problemID']
-				title = form.cleaned_data['title']
-				timeLimit = form.cleaned_data['timeLimit']
-				memoryLimit = form.cleaned_data['memoryLimit']
-				acceptedSubmission = form.cleaned_data['acceptedSubmission']
-				totalSubmission = form.cleaned_data['totalSubmission']
-				description = form.cleaned_data['description']
-				input = form.cleaned_data['input']
-				output = form.cleaned_data['output']
-				sampleInput = form.cleaned_data['sampleInput']
-				sampleOutput = form.cleaned_data['sampleOutput']
-				author = form.cleaned_data['author']
-				Problem(
-					problemID = problemID,
-					title = title,
-					timeLimit = timeLimit,
-					memoryLimit = memoryLimit,
-					acceptedSubmission = acceptedSubmission,
-					totalSubmission = totalSubmission,
-					description = description,
-					input = input,
-					output = output,
-					sampleInput = sampleInput,
-					sampleOutput = sampleOutput,
-					author = author).save()
-				return HttpResponse("addProblem success!")
-		else:
-			return render(request, 'cugbacm/addProblem.html', {'form': form})
 	except:
 		return HttpResponseRedirect("/index/login")
+	if request.method == 'POST':
+		problemID = request.POST['problemID']
+		title = request.POST['title']
+		timeLimit = request.POST['timeLimit']
+		memoryLimit = request.POST['memoryLimit']
+		acceptedSubmission = request.POST['acceptedSubmission']
+		totalSubmission = request.POST['totalSubmission']
+		description = request.POST['description']
+		input = request.POST['input']
+		output = request.POST['output']
+		sampleInput = request.POST['sampleInput']
+		sampleOutput = request.POST['sampleOutput']
+		author = request.POST['author']
+		Problem(
+			problemID = problemID,
+			title = title,
+			timeLimit = timeLimit,
+			memoryLimit = memoryLimit,
+			acceptedSubmission = acceptedSubmission,
+			totalSubmission = totalSubmission,
+			description = description,
+			input = input,
+			output = output,
+			sampleInput = sampleInput,
+			sampleOutput = sampleOutput,
+			author = author).save()
+		handle_uploaded_file(request.FILES['dataIn'], request.FILES['dataOut'], problemID)
+		return HttpResponse("addProblem success!")
+	else:
+		return render(request, 'cugbacm/addProblem.html', {})
+
+def handle_uploaded_file(dataIn, dataOut, problemID):
+    os.makedirs('/home/cugbacm/Documents/data_dir/%s'% problemID)
+    with open('/home/cugbacm/Documents/data_dir/%s/data.in' % problemID, 'wb+') as info:
+        for chunk in dataIn.chunks():
+            info.write(chunk)
+    with open('/home/cugbacm/Documents/data_dir/%s/data.out' % problemID, 'wb+') as info:
+        for chunk in dataOut.chunks():
+            info.write(chunk)
+
 def problem(request, problem_id):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
@@ -204,3 +214,12 @@ def problemList(request):
 		return render(request, 'cugbacm/problemList.html', {'problems': problems, 'userID':request.session["userID"]})
 	except:
 		return HttpResponseRedirect("/index/login")
+
+def showCode(request, submit_id):
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+	except:
+		return HttpResponseRedirect("/index/login")
+	
+	return render(request, 'cugbacm/showCode.html', {'submit_code': Submit.objects.get(id = submit_id).code}) 
+		
