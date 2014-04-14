@@ -43,18 +43,19 @@ def submit(request, problem_id):
     		#timestamp = form.cleaned_data['timestamp']
     		code = request.POST['code']
     		language = request.POST['language']
-    		submit = Submit(
-    			runID = 111, 
-    			userID = request.session["userID"],
-    			problemID = problem_id,
-    			status = "queueing",
-    			memory = 10000,
-    			runTime = 1000,
-                        codeLength = 100,
-		    	language = language,
-	    		code = code)
-		submit.save()
-    		Judge(submit)
+		for i in range(4000):
+    			submit = Submit(
+    				runID = 111, 
+    				userID = request.session["userID"],
+    				problemID = problem_id,
+    				status = "queueing",
+    				memory = 10000,
+    				runTime = 1000,
+                       	 	codeLength = 100,
+		    		language = language,
+	    			code = code)
+			submit.save()
+    			#Judge(submit)
     		return HttpResponseRedirect("/index/submitList")
     	else:
     		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})

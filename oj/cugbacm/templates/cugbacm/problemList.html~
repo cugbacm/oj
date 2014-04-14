@@ -8,22 +8,17 @@
     <meta name="author" content="cugbacm" >
     <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
     <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
-
     <title>Problem List</title>
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css" title="currentStyle">
+        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
+	</style>
+	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
 
-    <!-- Custom styles for this template -->
-    <!--<link href="signin.css" rel="stylesheet">-->
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body style="padding-top:50px">
 	  <div class="container">      
@@ -45,8 +40,8 @@
     </ul>
      </nav> 
     <div class="table-responsive">
-      <table class="table table-hover"> 
-        <thead>  
+	 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	    <thead>  
           <tr>  
             <th>ProblemID</th>
             <th>Title</th>  
@@ -58,10 +53,10 @@
         </thead>  
         <tbody>
           {% for problem in problems %}
-            <tr >
+            <tr class="odd gradeX">
               <td>
                 <a href="/index/problem/{{problem.problemID}}">
-                  {{problem.id}}
+                {{problem.problemID}}
                 </a>
               </td>
               <td>{{problem.title}}</td>
@@ -74,6 +69,13 @@
         </tbody>  
       </table>
     </div>
-    </div>
+      <script>
+	      $(document).ready(function() {
+	      	$('#example').dataTable({
+	      	"bPaginate": true, 
+	      	"iDisplayLength":100});
+		} );
+	</script>
+	</div>
   </body>
 </html>
