@@ -20,6 +20,11 @@ def Judge(submit):
         user_submit = UserSubmit(submit.id, submit.problemID, submit.language, submit.userID, submit.code)
 	submit.status = main(user_submit)
 	submit.save()
+        problem = Problem.objects.get(problemID = submit.problemID)
+        if submit.status == "Accepted":
+            problem.acceptedSubmission = problem.acceptedSubmission + 1
+        problem.totalSubmission = problem.totalSubmission + 1
+        problem.save()
 	#return submit.status
 
 def submit(request, problem_id):
@@ -161,18 +166,19 @@ def addProblem(request):
 	except:
 		return HttpResponseRedirect("/index/login")
 	if request.method == 'POST':
-		problemID = request.POST['problemID']
+		#problemID = request.POST['problemID']
+                problemID = Problem.objects.count()+1000
 		title = request.POST['title']
 		timeLimit = request.POST['timeLimit']
 		memoryLimit = request.POST['memoryLimit']
-		acceptedSubmission = request.POST['acceptedSubmission']
-		totalSubmission = request.POST['totalSubmission']
+		acceptedSubmission = 0
+		totalSubmission = 0
 		description = request.POST['description']
 		input = request.POST['input']
 		output = request.POST['output']
 		sampleInput = request.POST['sampleInput']
 		sampleOutput = request.POST['sampleOutput']
-		author = request.POST['author']
+		author = user.userID
 		Problem(
 			problemID = problemID,
 			title = title,

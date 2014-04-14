@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-	userID = models.CharField(max_length = 200)
+	userID = models.CharField(max_length = 200, unique = True)
 	password = models.CharField(max_length = 20)
 	session = models.CharField(max_length = 20)
 	specialty = models.CharField(max_length = 100)
