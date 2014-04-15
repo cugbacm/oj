@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+    {% load pagination_tags %}  
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +54,8 @@
         </ul>
       </li>
     </ul>
-  </nav>
+    </nav>
+    {% autopaginate submits 50 %}
     <div class="table-responsive">
       <table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
         <thead>  
@@ -88,15 +90,15 @@
         </tbody>  
       </table>
     </div>
-<script>
-	      $(document).ready(function() {
-	      	$('#example').dataTable({
-	      	 "bPaginate": true, 
-	      	"iDisplayLength":50,
-	      	 "aaSorting": [[0, "desc"]],
-	      	});
-		} );
-	</script>
-	</div>
+    {% paginate %}
+    <script>
+	$(document).ready(function() {
+		$('#example').dataTable({
+			"bPaginate": false,
+			"aaSorting":[[0,'desc']]
+		});
+	} );
+    </script>
+    </div>
   </body>
 </html>

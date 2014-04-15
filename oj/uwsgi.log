@@ -5032,3 +5032,1987 @@ IOError: write error
 [pid: 29526|app: 0|req: 9/19] 127.0.0.1 () {38 vars in 704 bytes} [Mon Apr 14 21:36:56 2014] GET /index/submitList/ => generated 2773013 bytes in 3149 msecs (HTTP/1.1 200) 3 headers in 102 bytes (4 switches on core 0)
 [pid: 29523|app: 0|req: 5/20] 127.0.0.1 () {40 vars in 756 bytes} [Mon Apr 14 21:37:39 2014] GET /index/problemList/ => generated 3288 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 29524|app: 0|req: 4/21] 127.0.0.1 () {40 vars in 755 bytes} [Mon Apr 14 21:37:40 2014] GET /index/submitList/ => generated 2773013 bytes in 3124 msecs (HTTP/1.1 200) 3 headers in 102 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 09:41:49 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 09:41:52 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x11fce40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x11fce40 pid: 5647 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 5647, cores: 1)
+spawned uWSGI worker 2 (pid: 5648, cores: 1)
+spawned uWSGI worker 3 (pid: 5649, cores: 1)
+spawned uWSGI worker 4 (pid: 5650, cores: 1)
+[pid: 5647|app: 0|req: 1/1] 61.135.207.195 () {38 vars in 739 bytes} [Tue Apr 15 09:42:10 2014] GET /index/login => generated 0 bytes in 821 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 1/2] 61.135.207.195 () {38 vars in 741 bytes} [Tue Apr 15 09:42:11 2014] GET /index/login/ => generated 2724 bytes in 505 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 5650|app: 0|req: 1/3] 61.135.207.195 () {42 vars in 832 bytes} [Tue Apr 15 09:42:12 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 1113 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5649|app: 0|req: 1/4] 61.135.207.195 () {42 vars in 827 bytes} [Tue Apr 15 09:42:12 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1114 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5648|app: 0|req: 2/5] 61.135.207.195 () {38 vars in 722 bytes} [Tue Apr 15 09:42:14 2014] GET /site_media/docs-assets/ico/favicon.png => generated 1699 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5649|app: 0|req: 2/6] 61.135.207.195 () {48 vars in 940 bytes} [Tue Apr 15 09:42:18 2014] POST /index/login/ => generated 18 bytes in 132 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 3/7] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 09:42:20 2014] GET /index/register => generated 0 bytes in 7 msecs (HTTP/1.1 301) 3 headers in 152 bytes (1 switches on core 0)
+[pid: 5649|app: 0|req: 3/8] 61.135.207.195 () {40 vars in 797 bytes} [Tue Apr 15 09:42:20 2014] GET /index/register/ => generated 2412 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 4/9] 61.135.207.195 () {42 vars in 816 bytes} [Tue Apr 15 09:42:20 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5647|app: 0|req: 2/10] 61.135.207.195 () {48 vars in 984 bytes} [Tue Apr 15 09:42:36 2014] POST /index/register/ => generated 112568 bytes in 365 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 5/11] 61.135.207.195 () {38 vars in 668 bytes} [Tue Apr 15 09:42:38 2014] GET /favicon.ico => generated 2161 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5649|app: 0|req: 4/12] 61.135.207.195 () {40 vars in 797 bytes} [Tue Apr 15 09:42:41 2014] GET /index/register/ => generated 2412 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 09:43:29 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x22a9e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x22a9e40 pid: 5749 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 5749, cores: 1)
+spawned uWSGI worker 2 (pid: 5750, cores: 1)
+spawned uWSGI worker 3 (pid: 5751, cores: 1)
+spawned uWSGI worker 4 (pid: 5752, cores: 1)
+[pid: 5749|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 09:43:38 2014] GET /index/register/ => generated 2412 bytes in 507 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 1/2] 61.135.207.195 () {44 vars in 861 bytes} [Tue Apr 15 09:43:39 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 425 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 1/3] 61.135.207.195 () {48 vars in 984 bytes} [Tue Apr 15 09:43:53 2014] POST /index/register/ => generated 0 bytes in 563 msecs (HTTP/1.1 302) 5 headers in 287 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 2/4] 61.135.207.195 () {42 vars in 835 bytes} [Tue Apr 15 09:43:53 2014] GET /index/problemList => generated 0 bytes in 5 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 1/5] 61.135.207.195 () {42 vars in 837 bytes} [Tue Apr 15 09:43:53 2014] GET /index/problemList/ => generated 2636 bytes in 507 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 3/6] 61.135.207.195 () {42 vars in 850 bytes} [Tue Apr 15 09:43:54 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 5749|app: 0|req: 2/7] 61.135.207.195 () {42 vars in 825 bytes} [Tue Apr 15 09:43:54 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 5751|app: 0|req: 2/8] 61.135.207.195 () {42 vars in 852 bytes} [Tue Apr 15 09:43:54 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 129 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 5752|app: 0|req: 2/9] 61.135.207.195 () {42 vars in 860 bytes} [Tue Apr 15 09:43:54 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 139 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 5750|app: 0|req: 4/10] 61.135.207.195 () {42 vars in 847 bytes} [Tue Apr 15 09:43:54 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 684 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 5749|app: 0|req: 3/11] 61.135.207.195 () {42 vars in 856 bytes} [Tue Apr 15 09:43:58 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 1118 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 5751|app: 0|req: 3/12] 61.135.207.195 () {42 vars in 858 bytes} [Tue Apr 15 09:43:58 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 5752|app: 0|req: 3/13] 61.135.207.195 () {42 vars in 866 bytes} [Tue Apr 15 09:43:58 2014] GET /site_media/DataTables-1.9.4/media/images/back_disabled.png => generated 1361 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (9 switches on core 0)
+[pid: 5752|app: 0|req: 4/14] 61.135.207.195 () {42 vars in 872 bytes} [Tue Apr 15 09:43:58 2014] GET /site_media/DataTables-1.9.4/media/images/forward_disabled.png => generated 1363 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 5749|app: 0|req: 4/15] 61.135.207.195 () {40 vars in 805 bytes} [Tue Apr 15 09:44:00 2014] GET /index/submitList => generated 0 bytes in 5 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 5/16] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 09:44:00 2014] GET /index/submitList/ => generated 3452 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 4/17] 61.135.207.195 () {42 vars in 845 bytes} [Tue Apr 15 09:44:00 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 5/18] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 09:44:00 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
+[pid: 5749|app: 0|req: 5/19] 61.135.207.195 () {40 vars in 800 bytes} [Tue Apr 15 09:44:01 2014] GET /index/userList => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 152 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 6/20] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 09:44:01 2014] GET /index/userList/ => generated 3648 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 5/21] 61.135.207.195 () {40 vars in 800 bytes} [Tue Apr 15 09:44:04 2014] GET /index/userList/ => generated 3648 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 7/22] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 09:44:05 2014] GET /index/submitList/ => generated 3452 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 6/23] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 09:44:18 2014] GET /index/userList/ => generated 3648 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 8/24] 61.135.207.195 () {44 vars in 905 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 6/25] 61.135.207.195 () {44 vars in 915 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 6/26] 61.135.207.195 () {44 vars in 907 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 12 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 9/27] 61.135.207.195 () {44 vars in 880 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 7/28] 61.135.207.195 () {44 vars in 902 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 7/29] 61.135.207.195 () {42 vars in 881 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 7/30] 61.135.207.195 () {44 vars in 913 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 10/31] 61.135.207.195 () {44 vars in 921 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/images/back_disabled.png => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 8/32] 61.135.207.195 () {44 vars in 927 bytes} [Tue Apr 15 09:44:18 2014] GET /site_media/DataTables-1.9.4/media/images/forward_disabled.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 8/33] 61.135.207.195 () {40 vars in 806 bytes} [Tue Apr 15 09:44:19 2014] GET /index/problemList/ => generated 2636 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 11/34] 61.135.207.195 () {44 vars in 911 bytes} [Tue Apr 15 09:44:20 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 8/35] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 09:44:20 2014] GET /index/submitList/ => generated 3452 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 12/36] 14.17.18.146 () {36 vars in 477 bytes} [Tue Apr 15 09:44:39 2014] GET /index/submitList => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 9/37] 14.17.18.146 () {36 vars in 479 bytes} [Tue Apr 15 09:44:40 2014] GET /index/submitList/ => generated 0 bytes in 3 msecs (HTTP/1.1 302) 4 headers in 150 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 9/38] 14.17.18.146 () {36 vars in 467 bytes} [Tue Apr 15 09:44:40 2014] GET /index/login => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 9/39] 14.17.18.146 () {36 vars in 469 bytes} [Tue Apr 15 09:44:40 2014] GET /index/login/ => generated 2724 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 13/40] 61.135.207.195 () {38 vars in 658 bytes} [Tue Apr 15 09:44:48 2014] GET /index/submitList/ => generated 0 bytes in 3 msecs (HTTP/1.1 302) 4 headers in 150 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 10/41] 61.135.207.195 () {38 vars in 646 bytes} [Tue Apr 15 09:44:48 2014] GET /index/login => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 10/42] 61.135.207.195 () {38 vars in 648 bytes} [Tue Apr 15 09:44:48 2014] GET /index/login/ => generated 2724 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 10/43] 61.135.207.195 () {42 vars in 747 bytes} [Tue Apr 15 09:44:48 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 5750|app: 0|req: 14/44] 61.135.207.195 () {42 vars in 752 bytes} [Tue Apr 15 09:44:48 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 376 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
+[pid: 5751|app: 0|req: 11/45] 61.135.207.195 () {34 vars in 609 bytes} [Tue Apr 15 09:44:49 2014] GET /site_media/docs-assets/ico/favicon.png => generated 1699 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 15/46] 61.135.207.195 () {50 vars in 915 bytes} [Tue Apr 15 09:44:57 2014] POST /index/login/ => generated 7 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 12/47] 61.135.207.195 () {42 vars in 809 bytes} [Tue Apr 15 09:44:57 2014] GET /index/problemList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 11/48] 61.135.207.195 () {42 vars in 811 bytes} [Tue Apr 15 09:44:57 2014] GET /index/problemList/ => generated 2636 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 13/49] 61.135.207.195 () {42 vars in 838 bytes} [Tue Apr 15 09:44:57 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 5751|app: 0|req: 14/50] 61.135.207.195 () {42 vars in 813 bytes} [Tue Apr 15 09:44:57 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 5749|app: 0|req: 12/51] 61.135.207.195 () {42 vars in 848 bytes} [Tue Apr 15 09:44:57 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 119 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 5752|app: 0|req: 11/52] 61.135.207.195 () {42 vars in 840 bytes} [Tue Apr 15 09:44:57 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 137 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 5750|app: 0|req: 16/53] 61.135.207.195 () {42 vars in 783 bytes} [Tue Apr 15 09:44:57 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 277 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 5751|app: 0|req: 15/54] 61.135.207.195 () {42 vars in 835 bytes} [Tue Apr 15 09:44:57 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 729 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 5749|app: 0|req: 13/56] 61.135.207.195 () {42 vars in 860 bytes} [Tue Apr 15 09:45:01 2014] GET /site_media/DataTables-1.9.4/media/images/forward_disabled.png => generated 1363 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 5752|app: 0|req: 12/56] 61.135.207.195 () {42 vars in 846 bytes} [Tue Apr 15 09:45:01 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 5750|app: 0|req: 17/57] 61.135.207.195 () {42 vars in 844 bytes} [Tue Apr 15 09:45:01 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 1118 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 5749|app: 0|req: 14/58] 61.135.207.195 () {42 vars in 854 bytes} [Tue Apr 15 09:45:01 2014] GET /site_media/DataTables-1.9.4/media/images/back_disabled.png => generated 1361 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (9 switches on core 0)
+[pid: 5752|app: 0|req: 13/59] 61.135.207.195 () {34 vars in 555 bytes} [Tue Apr 15 09:45:02 2014] GET /favicon.ico => generated 2161 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 18/60] 61.135.207.195 () {42 vars in 813 bytes} [Tue Apr 15 09:45:06 2014] GET /index/submitList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 15/61] 61.135.207.195 () {42 vars in 815 bytes} [Tue Apr 15 09:45:06 2014] GET /index/submitList/ => generated 3452 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 19/62] 61.135.207.195 () {42 vars in 809 bytes} [Tue Apr 15 09:45:06 2014] GET /site_media/dist/css/bootstrap.min.css => generated 99548 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 141 bytes (7 switches on core 0)
+[pid: 5751|app: 0|req: 16/63] 61.135.207.195 () {42 vars in 845 bytes} [Tue Apr 15 09:45:07 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
+[pid: 5752|app: 0|req: 14/64] 61.135.207.195 () {34 vars in 555 bytes} [Tue Apr 15 09:45:07 2014] GET /favicon.ico => generated 2161 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 20/65] 61.135.207.195 () {42 vars in 808 bytes} [Tue Apr 15 09:45:08 2014] GET /index/userList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 152 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 17/66] 61.135.207.195 () {42 vars in 810 bytes} [Tue Apr 15 09:45:08 2014] GET /index/userList/ => generated 3648 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 21/67] 61.135.207.195 () {34 vars in 555 bytes} [Tue Apr 15 09:45:08 2014] GET /favicon.ico => generated 2161 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 15/68] 14.17.18.146 () {36 vars in 473 bytes} [Tue Apr 15 09:45:46 2014] GET /index/register => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 152 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 16/69] 14.17.18.146 () {38 vars in 597 bytes} [Tue Apr 15 09:45:46 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 5751|app: 0|req: 18/70] 14.17.18.146 () {38 vars in 618 bytes} [Tue Apr 15 09:45:46 2014] GET /docs-assets/js/ie8-responsive-file-warning.js => generated 2263 bytes in 14 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 22/71] 14.17.18.146 () {36 vars in 475 bytes} [Tue Apr 15 09:45:46 2014] GET /index/register/ => generated 2412 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 19/72] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 09:45:55 2014] GET /index/submitList/ => generated 3452 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 23/73] 61.135.207.195 () {44 vars in 905 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 6 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 16/74] 61.135.207.195 () {44 vars in 907 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 17/75] 61.135.207.195 () {44 vars in 915 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 24/76] 61.135.207.195 () {44 vars in 880 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 17/77] 61.135.207.195 () {44 vars in 902 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 18/78] 61.135.207.195 () {44 vars in 913 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 20/79] 61.135.207.195 () {44 vars in 912 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 25/80] 61.135.207.195 () {44 vars in 921 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/images/back_disabled.png => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 19/81] 61.135.207.195 () {44 vars in 927 bytes} [Tue Apr 15 09:45:55 2014] GET /site_media/DataTables-1.9.4/media/images/forward_disabled.png => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 21/82] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 09:45:56 2014] GET /index/userList/ => generated 3648 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 26/83] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 09:45:57 2014] GET /index/submitList/ => generated 3452 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 22/84] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 09:45:58 2014] GET /index/problemList/ => generated 2636 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 27/85] 61.135.207.195 () {44 vars in 911 bytes} [Tue Apr 15 09:45:58 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 20/86] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 09:45:59 2014] GET /index/submitList/ => generated 3452 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 28/87] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 09:45:59 2014] GET /index/userList/ => generated 3648 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 23/88] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 09:46:01 2014] GET /index/submitList/ => generated 3452 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 29/89] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 09:46:01 2014] GET /index/problemList/ => generated 2636 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 24/90] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 09:46:02 2014] GET /index/submitList/ => generated 3452 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 30/91] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 09:46:02 2014] GET /index/userList/ => generated 3648 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 25/92] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 09:46:04 2014] GET /index/submitList/ => generated 3452 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 31/93] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 09:46:16 2014] GET /index/problemList/ => generated 2636 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 26/94] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 09:46:23 2014] GET /index/submitList/ => generated 3452 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 32/95] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 09:46:24 2014] GET /index/userList/ => generated 3648 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 27/96] 61.135.207.195 () {38 vars in 749 bytes} [Tue Apr 15 09:46:27 2014] GET /index/addProblem => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 21/97] 61.135.207.195 () {38 vars in 751 bytes} [Tue Apr 15 09:46:27 2014] GET /index/addProblem/ => generated 2635 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 33/98] 14.17.18.146 () {38 vars in 618 bytes} [Tue Apr 15 09:46:57 2014] GET /docs-assets/js/ie8-responsive-file-warning.js => generated 2263 bytes in 22 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 28/99] 14.17.18.146 () {38 vars in 576 bytes} [Tue Apr 15 09:46:57 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 112 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 5750|app: 0|req: 34/100] 171.107.208.14 () {24 vars in 266 bytes} [Tue Apr 15 09:49:06 2014] GET / => generated 2123 bytes in 6 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 29/101] 61.135.207.195 () {38 vars in 751 bytes} [Tue Apr 15 09:50:07 2014] GET /index/problemList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 22/102] 61.135.207.195 () {38 vars in 753 bytes} [Tue Apr 15 09:50:07 2014] GET /index/problemList/ => generated 2636 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 30/103] 61.135.207.195 () {42 vars in 876 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 18/104] 61.135.207.195 () {42 vars in 884 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 35/105] 61.135.207.195 () {42 vars in 874 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 31/106] 61.135.207.195 () {42 vars in 849 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 19/107] 61.135.207.195 () {42 vars in 871 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 36/108] 61.135.207.195 () {42 vars in 882 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5751|app: 0|req: 32/109] 61.135.207.195 () {42 vars in 880 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5752|app: 0|req: 20/110] 61.135.207.195 () {42 vars in 896 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/images/forward_disabled.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 23/111] 61.135.207.195 () {42 vars in 890 bytes} [Tue Apr 15 09:50:07 2014] GET /site_media/DataTables-1.9.4/media/images/back_disabled.png => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5750|app: 0|req: 37/112] 61.135.207.195 () {40 vars in 805 bytes} [Tue Apr 15 09:50:09 2014] GET /index/submitList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 33/113] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 09:50:09 2014] GET /index/submitList/ => generated 3452 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 38/114] 61.135.207.195 () {42 vars in 881 bytes} [Tue Apr 15 09:50:09 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5749|app: 0|req: 24/115] 113.17.166.63 () {24 vars in 265 bytes} [Tue Apr 15 09:57:11 2014] GET / => generated 2123 bytes in 10 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 39/116] 182.142.15.240 () {24 vars in 266 bytes} [Tue Apr 15 10:10:22 2014] GET / => generated 2123 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 34/117] 180.140.88.93 () {24 vars in 265 bytes} [Tue Apr 15 10:10:28 2014] GET / => generated 2123 bytes in 10 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 40/118] 60.166.230.50 () {32 vars in 470 bytes} [Tue Apr 15 10:25:42 2014] GET /favicon.ico => generated 2161 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 35/119] 58.213.251.49 () {24 vars in 265 bytes} [Tue Apr 15 10:29:26 2014] GET / => generated 2123 bytes in 5 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 21/120] 180.137.119.109 () {24 vars in 267 bytes} [Tue Apr 15 10:42:54 2014] GET / => generated 2123 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 41/121] 123.125.71.96 () {32 vars in 447 bytes} [Tue Apr 15 10:45:43 2014] GET / => generated 2128 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 36/122] 220.181.108.168 () {32 vars in 449 bytes} [Tue Apr 15 10:46:53 2014] GET / => generated 2128 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 42/123] 180.103.236.247 () {24 vars in 267 bytes} [Tue Apr 15 11:05:06 2014] GET / => generated 2123 bytes in 16 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 37/124] 210.152.137.130 () {32 vars in 521 bytes} [Tue Apr 15 11:24:10 2014] GET / => generated 2128 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 43/125] 60.166.230.50 () {32 vars in 470 bytes} [Tue Apr 15 11:25:30 2014] GET /favicon.ico => generated 2161 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 38/126] 113.64.44.142 () {24 vars in 265 bytes} [Tue Apr 15 13:19:18 2014] GET / => generated 2123 bytes in 8 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 44/127] 123.125.71.77 () {32 vars in 446 bytes} [Tue Apr 15 13:32:36 2014] GET / => generated 2128 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 39/128] 220.181.108.160 () {32 vars in 449 bytes} [Tue Apr 15 13:34:29 2014] GET / => generated 2128 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 45/129] 113.15.234.182 () {24 vars in 266 bytes} [Tue Apr 15 13:42:56 2014] GET / => generated 2123 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 40/130] 58.51.134.34 () {24 vars in 264 bytes} [Tue Apr 15 13:51:10 2014] GET / => generated 2123 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 46/131] 110.86.32.75 () {30 vars in 455 bytes} [Tue Apr 15 14:33:23 2014] GET /favicon.ico => generated 2161 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 41/132] 111.112.157.216 () {24 vars in 267 bytes} [Tue Apr 15 14:39:26 2014] GET / => generated 2123 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 47/133] 124.73.7.114 () {24 vars in 264 bytes} [Tue Apr 15 14:42:01 2014] GET / => generated 2123 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 42/134] 123.125.71.108 () {32 vars in 448 bytes} [Tue Apr 15 14:45:20 2014] GET / => generated 2128 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 48/135] 220.181.108.162 () {32 vars in 449 bytes} [Tue Apr 15 14:48:51 2014] GET / => generated 2128 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 43/136] 116.1.184.70 () {24 vars in 264 bytes} [Tue Apr 15 15:09:07 2014] GET / => generated 2123 bytes in 8 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 49/137] 182.132.82.150 () {24 vars in 266 bytes} [Tue Apr 15 15:16:26 2014] GET / => generated 2123 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 44/138] 222.88.37.22 () {34 vars in 472 bytes} [Tue Apr 15 15:20:09 2014] GET /manager/html => generated 2164 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 50/139] 182.128.82.113 () {24 vars in 266 bytes} [Tue Apr 15 15:23:58 2014] GET / => generated 2123 bytes in 5 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 22/140] 120.43.30.98 () {24 vars in 264 bytes} [Tue Apr 15 15:28:56 2014] GET / => generated 2123 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+-- unavailable modifier requested: 128 --
+invalid request block size: 19525 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+Empty python request. skip.
+[pid: 5749|app: -1|req: -1/143]  () {0 vars in 0 bytes} [Tue Apr 15 15:49:11 2014]   => generated 0 bytes in 0 msecs ( 0) 0 headers in 0 bytes (0 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 25956 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 19790 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+invalid request block size: 25709 (max 4096)...skip
+-- unavailable modifier requested: 58 --
+-- unavailable modifier requested: 1 --
+uwsgi key cannot be null. skip this var.
+[pid: 5751|app: -1|req: -1/147]  () {0 vars in 3 bytes} [Tue Apr 15 15:49:24 2014]   => generated 0 bytes in 0 msecs ( 500) 0 headers in 0 bytes (0 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+[pid: 5750|app: 0|req: 51/148] 123.125.71.77 () {32 vars in 447 bytes} [Tue Apr 15 15:50:05 2014] GET / => generated 2128 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 45/149] 220.181.108.181 () {32 vars in 448 bytes} [Tue Apr 15 15:58:09 2014] GET / => generated 2128 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 52/150] 171.105.245.207 () {24 vars in 267 bytes} [Tue Apr 15 16:04:41 2014] GET / => generated 2123 bytes in 6 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 46/151] 157.55.34.173 () {40 vars in 563 bytes} [Tue Apr 15 16:13:53 2014] GET /robots.txt => generated 2158 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 53/152] 171.91.128.72 () {24 vars in 265 bytes} [Tue Apr 15 16:17:32 2014] GET / => generated 2123 bytes in 8 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 47/153] 60.166.230.50 () {32 vars in 470 bytes} [Tue Apr 15 16:21:01 2014] GET /favicon.ico => generated 2161 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 54/154] 157.55.34.173 () {40 vars in 556 bytes} [Tue Apr 15 16:21:24 2014] GET / => generated 2128 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 48/155] 211.149.201.117 () {32 vars in 562 bytes} [Tue Apr 15 16:31:30 2014] GET /favicon.ico => generated 2161 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 55/156] 211.149.201.117 () {32 vars in 562 bytes} [Tue Apr 15 16:31:31 2014] GET /favicon.ico => generated 2161 bytes in 25 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5752|app: 0|req: 23/157] 211.149.201.117 () {32 vars in 562 bytes} [Tue Apr 15 16:31:31 2014] GET /favicon.ico => generated 2161 bytes in 23 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5749|app: 0|req: 25/158] 211.149.201.117 () {32 vars in 562 bytes} [Tue Apr 15 16:31:31 2014] GET /favicon.ico => generated 2161 bytes in 17 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 49/159] 211.149.201.117 () {32 vars in 562 bytes} [Tue Apr 15 16:31:34 2014] GET /favicon.ico => generated 2161 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5750|app: 0|req: 56/160] 220.181.108.167 () {32 vars in 449 bytes} [Tue Apr 15 16:51:51 2014] GET / => generated 2128 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5751|app: 0|req: 50/161] 123.125.71.88 () {32 vars in 447 bytes} [Tue Apr 15 16:54:57 2014] GET / => generated 2128 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 16:55:20 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 16:55:21 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1bdae40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1bdae40 pid: 17927 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 17927, cores: 1)
+spawned uWSGI worker 2 (pid: 17928, cores: 1)
+spawned uWSGI worker 3 (pid: 17929, cores: 1)
+spawned uWSGI worker 4 (pid: 17930, cores: 1)
+[pid: 17927|app: 0|req: 1/1] 61.135.207.195 () {38 vars in 739 bytes} [Tue Apr 15 16:55:26 2014] GET /index/login => generated 0 bytes in 555 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 1/2] 61.135.207.195 () {38 vars in 741 bytes} [Tue Apr 15 16:55:27 2014] GET /index/login/ => generated 2724 bytes in 587 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 1/3] 61.135.207.195 () {38 vars in 722 bytes} [Tue Apr 15 16:55:28 2014] GET /site_media/docs-assets/ico/favicon.png => generated 1699 bytes in 477 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 2/4] 61.135.207.195 () {48 vars in 940 bytes} [Tue Apr 15 16:55:32 2014] POST /index/login/ => generated 7 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 2/5] 61.135.207.195 () {40 vars in 801 bytes} [Tue Apr 15 16:55:32 2014] GET /index/problemList => generated 0 bytes in 6 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 3/6] 61.135.207.195 () {40 vars in 803 bytes} [Tue Apr 15 16:55:32 2014] GET /index/problemList/ => generated 2636 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 3/7] 61.135.207.195 () {42 vars in 874 bytes} [Tue Apr 15 16:55:32 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 14 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17927|app: 0|req: 2/8] 61.135.207.195 () {42 vars in 876 bytes} [Tue Apr 15 16:55:32 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 16 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17929|app: 0|req: 4/9] 61.135.207.195 () {42 vars in 849 bytes} [Tue Apr 15 16:55:32 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 11 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17928|app: 0|req: 4/10] 61.135.207.195 () {42 vars in 884 bytes} [Tue Apr 15 16:55:32 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 19 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17930|app: 0|req: 1/11] 61.135.207.195 () {42 vars in 871 bytes} [Tue Apr 15 16:55:32 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 543 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17928|app: 0|req: 5/12] 61.135.207.195 () {42 vars in 882 bytes} [Tue Apr 15 16:55:33 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17929|app: 0|req: 5/13] 61.135.207.195 () {42 vars in 880 bytes} [Tue Apr 15 16:55:33 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17927|app: 0|req: 3/14] 61.135.207.195 () {42 vars in 890 bytes} [Tue Apr 15 16:55:33 2014] GET /site_media/DataTables-1.9.4/media/images/back_disabled.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17927|app: 0|req: 4/15] 61.135.207.195 () {42 vars in 896 bytes} [Tue Apr 15 16:55:33 2014] GET /site_media/DataTables-1.9.4/media/images/forward_disabled.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17928|app: 0|req: 6/16] 61.135.207.195 () {38 vars in 668 bytes} [Tue Apr 15 16:55:33 2014] GET /favicon.ico => generated 2161 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 6/17] 61.135.207.195 () {40 vars in 805 bytes} [Tue Apr 15 16:55:34 2014] GET /index/submitList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 17930|app: 0|req: 2/18] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 16:55:34 2014] GET /index/submitList/ => generated 3474 bytes in 125 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 7/19] 61.135.207.195 () {42 vars in 881 bytes} [Tue Apr 15 16:55:34 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 17927|app: 0|req: 5/20] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 16:55:43 2014] GET /index/problemList/ => generated 2636 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 8/21] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 16:55:44 2014] GET /index/submitList/ => generated 3474 bytes in 31 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 7/22] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 16:55:45 2014] GET /index/userList/ => generated 3648 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 9/23] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 16:55:47 2014] GET /index/submitList/ => generated 3474 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 8/24] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 16:55:47 2014] GET /index/problemList/ => generated 2636 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 10/25] 61.135.207.195 () {38 vars in 751 bytes} [Tue Apr 15 16:55:50 2014] GET /index/addProblem/ => generated 2635 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 9/26] 61.135.207.195 () {48 vars in 1062 bytes} [Tue Apr 15 16:56:25 2014] POST /index/addProblem/ => generated 19 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 11/27] 61.135.207.195 () {38 vars in 751 bytes} [Tue Apr 15 16:56:30 2014] GET /index/problemList => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 17930|app: 0|req: 3/28] 61.135.207.195 () {38 vars in 753 bytes} [Tue Apr 15 16:56:30 2014] GET /index/problemList/ => generated 2963 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 12/29] 61.135.207.195 () {40 vars in 809 bytes} [Tue Apr 15 16:56:32 2014] GET /index/problem/1000 => generated 1979 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 10/30] 61.135.207.195 () {40 vars in 761 bytes} [Tue Apr 15 16:56:32 2014] GET /index/problem/grid.css => generated 4353 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 13/31] 61.135.207.195 () {40 vars in 823 bytes} [Tue Apr 15 16:56:33 2014] GET /index/problem/1000/submit => generated 2411 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 14/32] 61.135.207.195 () {38 vars in 741 bytes} [Tue Apr 15 16:57:14 2014] GET /index/login/ => generated 2724 bytes in 27 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 15/33] 61.135.207.195 () {48 vars in 940 bytes} [Tue Apr 15 16:57:18 2014] POST /index/login/ => generated 7 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 17930|app: 0|req: 4/34] 61.135.207.195 () {40 vars in 801 bytes} [Tue Apr 15 16:57:18 2014] GET /index/problemList => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 17927|app: 0|req: 6/35] 61.135.207.195 () {40 vars in 803 bytes} [Tue Apr 15 16:57:18 2014] GET /index/problemList/ => generated 2963 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 16/36] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 16:57:19 2014] GET /index/submitList/ => generated 35179 bytes in 124 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 17/37] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:23 2014] GET /index/submitList/ => generated 35179 bytes in 156 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 18/38] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:25 2014] GET /index/submitList/ => generated 35179 bytes in 161 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 19/39] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:30 2014] GET /index/submitList/ => generated 35179 bytes in 150 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 20/40] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:38 2014] GET /index/submitList/ => generated 35179 bytes in 171 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 21/41] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:39 2014] GET /index/submitList/ => generated 35179 bytes in 206 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 22/42] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:41 2014] GET /index/submitList/ => generated 35179 bytes in 198 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 23/43] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:57:42 2014] GET /index/submitList/ => generated 35179 bytes in 151 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 24/44] 61.135.207.195 () {40 vars in 819 bytes} [Tue Apr 15 16:57:54 2014] GET /index/submitList/?page=2 => generated 35281 bytes in 151 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 11/45] 61.135.207.195 () {48 vars in 1014 bytes} [Tue Apr 15 16:57:05 2014] POST /index/problem/1000/submit => generated 0 bytes in 54452 msecs (HTTP/1.1 302) 4 headers in 155 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 25/46] 61.135.207.195 () {42 vars in 843 bytes} [Tue Apr 15 16:57:59 2014] GET /index/submitList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 17927|app: 0|req: 7/47] 61.135.207.195 () {42 vars in 845 bytes} [Tue Apr 15 16:57:59 2014] GET /index/submitList/ => generated 35179 bytes in 148 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 26/48] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:58:03 2014] GET /index/submitList/ => generated 35179 bytes in 110 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 12/49] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:58:04 2014] GET /index/submitList/ => generated 35179 bytes in 119 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 27/50] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:59:38 2014] GET /index/submitList/ => generated 35121 bytes in 136 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 13/51] 61.135.207.195 () {42 vars in 869 bytes} [Tue Apr 15 16:59:38 2014] GET /site_media/DataTables-1.9.4/media/images/forward_enabled.png => generated 1380 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 141 bytes (6 switches on core 0)
+[pid: 17928|app: 0|req: 28/52] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:59:42 2014] GET /index/submitList/ => generated 35121 bytes in 110 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 14/53] 61.135.207.195 () {40 vars in 850 bytes} [Tue Apr 15 16:59:43 2014] GET /site_media/DataTables-1.9.4/media/images/forward_enabled_hover.png => generated 1379 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 141 bytes (5 switches on core 0)
+[pid: 17930|app: 0|req: 5/54] 61.135.207.195 () {40 vars in 832 bytes} [Tue Apr 15 16:59:44 2014] GET /site_media/DataTables-1.9.4/media/images/back_enabled.png => generated 1379 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 17928|app: 0|req: 29/55] 61.135.207.195 () {40 vars in 844 bytes} [Tue Apr 15 16:59:47 2014] GET /site_media/DataTables-1.9.4/media/images/back_enabled_hover.png => generated 1375 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 141 bytes (6 switches on core 0)
+[pid: 17929|app: 0|req: 15/56] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 16:59:52 2014] GET /index/submitList/ => generated 35121 bytes in 132 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 30/57] 61.135.207.195 () {40 vars in 819 bytes} [Tue Apr 15 16:59:54 2014] GET /index/submitList/?page=2 => generated 35223 bytes in 137 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17929|app: 0|req: 16/58] 61.135.207.195 () {40 vars in 815 bytes} [Tue Apr 15 16:59:55 2014] GET /index/problemList/ => generated 2963 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 17928|app: 0|req: 31/59] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 16:59:57 2014] GET /index/submitList/ => generated 35121 bytes in 111 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:00:38 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:00:40 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d14e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1d14e40 pid: 18151 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18151, cores: 1)
+spawned uWSGI worker 2 (pid: 18152, cores: 1)
+spawned uWSGI worker 3 (pid: 18153, cores: 1)
+spawned uWSGI worker 4 (pid: 18154, cores: 1)
+[pid: 18151|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:00:42 2014] GET /index/submitList/ => generated 35121 bytes in 603 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18152|app: 0|req: 1/2] 61.135.207.195 () {40 vars in 821 bytes} [Tue Apr 15 17:00:54 2014] GET /index/submitList/?page=77 => generated 35438 bytes in 690 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18153|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 827 bytes} [Tue Apr 15 17:00:58 2014] GET /index/submitList/?page=1 => generated 35121 bytes in 643 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:03:27 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:03:28 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xee0e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xee0e40 pid: 18314 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18314, cores: 1)
+spawned uWSGI worker 2 (pid: 18315, cores: 1)
+spawned uWSGI worker 3 (pid: 18316, cores: 1)
+spawned uWSGI worker 4 (pid: 18317, cores: 1)
+[pid: 18314|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:03:30 2014] GET /index/submitList/ => generated 34993 bytes in 649 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18315|app: 0|req: 1/2] 61.135.207.195 () {40 vars in 819 bytes} [Tue Apr 15 17:03:42 2014] GET /index/submitList/?page=2 => generated 35095 bytes in 592 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18316|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:03:46 2014] GET /index/submitList/?page=1 => generated 34993 bytes in 590 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:06:38 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:06:39 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2577e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2577e40 pid: 18507 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18507, cores: 1)
+spawned uWSGI worker 2 (pid: 18508, cores: 1)
+spawned uWSGI worker 3 (pid: 18509, cores: 1)
+spawned uWSGI worker 4 (pid: 18510, cores: 1)
+[pid: 18507|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:06:41 2014] GET /index/submitList/?page=1 => generated 35070 bytes in 620 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18510|app: 0|req: 1/2] 61.135.207.195 () {44 vars in 931 bytes} [Tue Apr 15 17:06:42 2014] GET /site_media/DataTables-1.9.4/media/images/forward_enabled.png => generated 0 bytes in 557 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 18509|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:06:57 2014] GET /index/submitList/?page=4 => generated 35376 bytes in 669 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18510|app: 0|req: 2/4] 61.135.207.195 () {40 vars in 828 bytes} [Tue Apr 15 17:07:01 2014] GET /index/submitList/?page=80 => generated 34956 bytes in 163 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18509|app: 0|req: 2/5] 61.135.207.195 () {40 vars in 827 bytes} [Tue Apr 15 17:07:09 2014] GET /index/submitList/?page=1 => generated 35070 bytes in 124 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18510|app: 0|req: 3/6] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:07:14 2014] GET /index/submitList/?page=1 => generated 35070 bytes in 114 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18509|app: 0|req: 3/7] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:07:14 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:07:43 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:07:45 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xea1e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xea1e40 pid: 18601 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 18601, cores: 1)
+spawned uWSGI worker 2 (pid: 18602, cores: 1)
+spawned uWSGI worker 3 (pid: 18603, cores: 1)
+spawned uWSGI worker 4 (pid: 18604, cores: 1)
+[pid: 18601|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 815 bytes} [Tue Apr 15 17:07:46 2014] GET /index/problem/1000 => generated 1979 bytes in 492 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18603|app: 0|req: 1/2] 61.135.207.195 () {40 vars in 761 bytes} [Tue Apr 15 17:07:47 2014] GET /index/problem/grid.css => generated 4353 bytes in 569 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 823 bytes} [Tue Apr 15 17:07:49 2014] GET /index/problem/1000/submit => generated 2411 bytes in 591 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4001
+/home/cugbacm/Documents/work_dir/4002
+/home/cugbacm/Documents/work_dir/4003
+[pid: 18604|app: 0|req: 2/4] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:17 2014] GET /index/submitList/?page=1 => generated 35062 bytes in 256 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4004
+[pid: 18604|app: 0|req: 3/5] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:18 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4005
+/home/cugbacm/Documents/work_dir/4006
+/home/cugbacm/Documents/work_dir/4007
+[pid: 18604|app: 0|req: 4/6] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:20 2014] GET /index/submitList/?page=1 => generated 35066 bytes in 223 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 5/7] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:20 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4008
+/home/cugbacm/Documents/work_dir/4009
+/home/cugbacm/Documents/work_dir/4010
+[pid: 18604|app: 0|req: 6/8] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:22 2014] GET /index/submitList/?page=1 => generated 35069 bytes in 249 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 7/9] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:23 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4011
+/home/cugbacm/Documents/work_dir/4012
+[pid: 18604|app: 0|req: 8/10] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:24 2014] GET /index/submitList/?page=1 => generated 35071 bytes in 288 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 9/11] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:24 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4013
+/home/cugbacm/Documents/work_dir/4014
+[pid: 18604|app: 0|req: 10/12] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:25 2014] GET /index/submitList/?page=1 => generated 35072 bytes in 161 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 11/13] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:26 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4015
+[pid: 18604|app: 0|req: 12/14] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:27 2014] GET /index/submitList/?page=1 => generated 35074 bytes in 232 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4016
+[pid: 18604|app: 0|req: 13/15] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:27 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4017
+/home/cugbacm/Documents/work_dir/4018
+/home/cugbacm/Documents/work_dir/4019
+[pid: 18604|app: 0|req: 14/16] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:30 2014] GET /index/submitList/?page=1 => generated 35078 bytes in 223 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4020
+[pid: 18604|app: 0|req: 15/17] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:30 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4021
+/home/cugbacm/Documents/work_dir/4022
+/home/cugbacm/Documents/work_dir/4023
+[pid: 18604|app: 0|req: 16/18] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:08:33 2014] GET /index/submitList/?page=1 => generated 35082 bytes in 257 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 17/19] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:08:33 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4024
+/home/cugbacm/Documents/work_dir/4025
+/home/cugbacm/Documents/work_dir/4026
+[pid: 18604|app: 0|req: 18/20] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:08:35 2014] GET /index/submitList/?page=2 => generated 35172 bytes in 297 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4027
+/home/cugbacm/Documents/work_dir/4028
+[pid: 18604|app: 0|req: 19/21] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:08:36 2014] GET /index/submitList/?page=3 => generated 35274 bytes in 312 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4029
+/home/cugbacm/Documents/work_dir/4030
+/home/cugbacm/Documents/work_dir/4031
+/home/cugbacm/Documents/work_dir/4032
+/home/cugbacm/Documents/work_dir/4033
+/home/cugbacm/Documents/work_dir/4034
+/home/cugbacm/Documents/work_dir/4035
+/home/cugbacm/Documents/work_dir/4036
+/home/cugbacm/Documents/work_dir/4037
+/home/cugbacm/Documents/work_dir/4038
+[pid: 18604|app: 0|req: 20/22] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:08:44 2014] GET /index/submitList/?page=1 => generated 35097 bytes in 232 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4039
+/home/cugbacm/Documents/work_dir/4040
+[pid: 18604|app: 0|req: 21/23] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:08:46 2014] GET /index/submitList/?page=2 => generated 35172 bytes in 250 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4041
+/home/cugbacm/Documents/work_dir/4042
+/home/cugbacm/Documents/work_dir/4043
+/home/cugbacm/Documents/work_dir/4044
+/home/cugbacm/Documents/work_dir/4045
+/home/cugbacm/Documents/work_dir/4046
+/home/cugbacm/Documents/work_dir/4047
+/home/cugbacm/Documents/work_dir/4048
+/home/cugbacm/Documents/work_dir/4049
+/home/cugbacm/Documents/work_dir/4050
+/home/cugbacm/Documents/work_dir/4051
+/home/cugbacm/Documents/work_dir/4052
+/home/cugbacm/Documents/work_dir/4053
+/home/cugbacm/Documents/work_dir/4054
+/home/cugbacm/Documents/work_dir/4055
+/home/cugbacm/Documents/work_dir/4056
+/home/cugbacm/Documents/work_dir/4057
+/home/cugbacm/Documents/work_dir/4058
+/home/cugbacm/Documents/work_dir/4059
+/home/cugbacm/Documents/work_dir/4060
+/home/cugbacm/Documents/work_dir/4061
+/home/cugbacm/Documents/work_dir/4062
+/home/cugbacm/Documents/work_dir/4063
+/home/cugbacm/Documents/work_dir/4064
+/home/cugbacm/Documents/work_dir/4065
+/home/cugbacm/Documents/work_dir/4066
+/home/cugbacm/Documents/work_dir/4067
+/home/cugbacm/Documents/work_dir/4068
+/home/cugbacm/Documents/work_dir/4069
+/home/cugbacm/Documents/work_dir/4070
+/home/cugbacm/Documents/work_dir/4071
+/home/cugbacm/Documents/work_dir/4072
+/home/cugbacm/Documents/work_dir/4073
+/home/cugbacm/Documents/work_dir/4074
+/home/cugbacm/Documents/work_dir/4075
+/home/cugbacm/Documents/work_dir/4076
+/home/cugbacm/Documents/work_dir/4077
+/home/cugbacm/Documents/work_dir/4078
+/home/cugbacm/Documents/work_dir/4079
+/home/cugbacm/Documents/work_dir/4080
+/home/cugbacm/Documents/work_dir/4081
+/home/cugbacm/Documents/work_dir/4082
+/home/cugbacm/Documents/work_dir/4083
+/home/cugbacm/Documents/work_dir/4084
+[pid: 18604|app: 0|req: 22/24] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:19 2014] GET /index/submitList/?page=2 => generated 35206 bytes in 259 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 23/25] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:19 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4085
+/home/cugbacm/Documents/work_dir/4086
+/home/cugbacm/Documents/work_dir/4087
+[pid: 18604|app: 0|req: 24/26] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:21 2014] GET /index/submitList/?page=2 => generated 35208 bytes in 229 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 25/27] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:21 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4088
+[pid: 18604|app: 0|req: 26/28] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:22 2014] GET /index/submitList/?page=2 => generated 35210 bytes in 287 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 27/29] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:22 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4089
+[pid: 18604|app: 0|req: 28/30] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:23 2014] GET /index/submitList/?page=2 => generated 35211 bytes in 268 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4090
+[pid: 18604|app: 0|req: 29/31] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:24 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4091
+[pid: 18604|app: 0|req: 30/32] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:24 2014] GET /index/submitList/?page=2 => generated 35212 bytes in 194 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 31/33] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:25 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4092
+[pid: 18604|app: 0|req: 32/34] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:25 2014] GET /index/submitList/?page=2 => generated 35214 bytes in 251 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 33/35] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:26 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4093
+[pid: 18604|app: 0|req: 34/36] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:27 2014] GET /index/submitList/?page=2 => generated 35215 bytes in 236 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4094
+[pid: 18604|app: 0|req: 35/37] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:27 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4095
+/home/cugbacm/Documents/work_dir/4096
+/home/cugbacm/Documents/work_dir/4097
+/home/cugbacm/Documents/work_dir/4098
+/home/cugbacm/Documents/work_dir/4099
+[pid: 18604|app: 0|req: 36/38] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:31 2014] GET /index/submitList/?page=2 => generated 35221 bytes in 281 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 37/39] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:31 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4100
+/home/cugbacm/Documents/work_dir/4101
+[pid: 18604|app: 0|req: 38/40] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:33 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 271 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4102
+[pid: 18604|app: 0|req: 39/41] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:33 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4103
+[pid: 18604|app: 0|req: 40/42] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:34 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 273 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 41/43] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:34 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 9 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4104
+[pid: 18604|app: 0|req: 42/44] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:35 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 307 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 43/45] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:36 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4105
+[pid: 18604|app: 0|req: 44/46] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:36 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 217 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4106
+[pid: 18604|app: 0|req: 45/47] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:37 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4107
+[pid: 18604|app: 0|req: 46/48] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:37 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 263 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 47/49] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:38 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4108
+[pid: 18604|app: 0|req: 48/50] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:38 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 263 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 49/51] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:39 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4109
+[pid: 18604|app: 0|req: 50/52] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:39 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 231 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 51/53] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:39 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4110
+[pid: 18604|app: 0|req: 52/54] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:40 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 238 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4111
+[pid: 18604|app: 0|req: 53/55] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:41 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4112
+[pid: 18604|app: 0|req: 54/56] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:42 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 276 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 55/57] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:42 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4113
+[pid: 18604|app: 0|req: 56/58] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:09:43 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 278 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 57/59] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:09:43 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4114
+/home/cugbacm/Documents/work_dir/4115
+/home/cugbacm/Documents/work_dir/4116
+/home/cugbacm/Documents/work_dir/4117
+/home/cugbacm/Documents/work_dir/4118
+/home/cugbacm/Documents/work_dir/4119
+/home/cugbacm/Documents/work_dir/4120
+/home/cugbacm/Documents/work_dir/4121
+/home/cugbacm/Documents/work_dir/4122
+/home/cugbacm/Documents/work_dir/4123
+/home/cugbacm/Documents/work_dir/4124
+/home/cugbacm/Documents/work_dir/4125
+/home/cugbacm/Documents/work_dir/4126
+/home/cugbacm/Documents/work_dir/4127
+/home/cugbacm/Documents/work_dir/4128
+/home/cugbacm/Documents/work_dir/4129
+/home/cugbacm/Documents/work_dir/4130
+/home/cugbacm/Documents/work_dir/4131
+/home/cugbacm/Documents/work_dir/4132
+/home/cugbacm/Documents/work_dir/4133
+/home/cugbacm/Documents/work_dir/4134
+/home/cugbacm/Documents/work_dir/4135
+/home/cugbacm/Documents/work_dir/4136
+/home/cugbacm/Documents/work_dir/4137
+/home/cugbacm/Documents/work_dir/4138
+/home/cugbacm/Documents/work_dir/4139
+/home/cugbacm/Documents/work_dir/4140
+/home/cugbacm/Documents/work_dir/4141
+/home/cugbacm/Documents/work_dir/4142
+/home/cugbacm/Documents/work_dir/4143
+/home/cugbacm/Documents/work_dir/4144
+[pid: 18604|app: 0|req: 58/60] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:10:06 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 251 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4145
+/home/cugbacm/Documents/work_dir/4146
+/home/cugbacm/Documents/work_dir/4147
+/home/cugbacm/Documents/work_dir/4148
+/home/cugbacm/Documents/work_dir/4149
+/home/cugbacm/Documents/work_dir/4150
+/home/cugbacm/Documents/work_dir/4151
+/home/cugbacm/Documents/work_dir/4152
+/home/cugbacm/Documents/work_dir/4153
+/home/cugbacm/Documents/work_dir/4154
+/home/cugbacm/Documents/work_dir/4155
+/home/cugbacm/Documents/work_dir/4156
+/home/cugbacm/Documents/work_dir/4157
+/home/cugbacm/Documents/work_dir/4158
+/home/cugbacm/Documents/work_dir/4159
+/home/cugbacm/Documents/work_dir/4160
+/home/cugbacm/Documents/work_dir/4161
+/home/cugbacm/Documents/work_dir/4162
+/home/cugbacm/Documents/work_dir/4163
+/home/cugbacm/Documents/work_dir/4164
+/home/cugbacm/Documents/work_dir/4165
+/home/cugbacm/Documents/work_dir/4166
+/home/cugbacm/Documents/work_dir/4167
+/home/cugbacm/Documents/work_dir/4168
+/home/cugbacm/Documents/work_dir/4169
+/home/cugbacm/Documents/work_dir/4170
+/home/cugbacm/Documents/work_dir/4171
+/home/cugbacm/Documents/work_dir/4172
+/home/cugbacm/Documents/work_dir/4173
+/home/cugbacm/Documents/work_dir/4174
+/home/cugbacm/Documents/work_dir/4175
+/home/cugbacm/Documents/work_dir/4176
+[pid: 18604|app: 0|req: 59/61] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:30 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 269 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 60/62] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:30 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 10 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4177
+/home/cugbacm/Documents/work_dir/4178
+/home/cugbacm/Documents/work_dir/4179
+/home/cugbacm/Documents/work_dir/4180
+/home/cugbacm/Documents/work_dir/4181
+/home/cugbacm/Documents/work_dir/4182
+[pid: 18604|app: 0|req: 61/63] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:34 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 275 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 62/64] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4183
+/home/cugbacm/Documents/work_dir/4184
+[pid: 18604|app: 0|req: 63/65] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:36 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 244 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 64/66] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:36 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 11 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4185
+/home/cugbacm/Documents/work_dir/4186
+[pid: 18604|app: 0|req: 65/67] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:37 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 234 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 66/68] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:38 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4187
+/home/cugbacm/Documents/work_dir/4188
+[pid: 18604|app: 0|req: 67/69] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:39 2014] GET /index/submitList/?page=1 => generated 35120 bytes in 240 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 68/70] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:39 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4189
+[pid: 18604|app: 0|req: 69/71] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:40 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 236 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 70/72] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:40 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4190
+/home/cugbacm/Documents/work_dir/4191
+[pid: 18604|app: 0|req: 71/73] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:41 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 222 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 72/74] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:41 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4192
+[pid: 18604|app: 0|req: 73/75] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:42 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 269 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4193
+[pid: 18604|app: 0|req: 74/76] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:43 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 18604|app: 0|req: 75/77] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:43 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 172 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4194
+[pid: 18604|app: 0|req: 76/78] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:44 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4195
+[pid: 18604|app: 0|req: 77/79] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:44 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 229 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 78/80] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:45 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4196
+[pid: 18604|app: 0|req: 79/81] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:46 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 257 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 80/82] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:46 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4197
+/home/cugbacm/Documents/work_dir/4198
+[pid: 18604|app: 0|req: 81/83] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:47 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 220 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 82/84] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:47 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4199
+[pid: 18604|app: 0|req: 83/85] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:48 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 235 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 84/86] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:48 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4200
+[pid: 18604|app: 0|req: 85/87] 61.135.207.195 () {40 vars in 798 bytes} [Tue Apr 15 17:10:49 2014] GET /index/problem/1000/submit => generated 2411 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4201
+/home/cugbacm/Documents/work_dir/4202
+/home/cugbacm/Documents/work_dir/4203
+[pid: 18604|app: 0|req: 86/88] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:51 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 289 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 87/89] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:51 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4204
+[pid: 18604|app: 0|req: 88/90] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:52 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 272 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 89/91] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:52 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4205
+[pid: 18604|app: 0|req: 90/92] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:53 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 241 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 91/93] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:53 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4206
+/home/cugbacm/Documents/work_dir/4207
+[pid: 18604|app: 0|req: 92/94] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:54 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 263 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 93/95] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:55 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4208
+[pid: 18604|app: 0|req: 94/96] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:55 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 279 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 95/97] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:56 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4209
+[pid: 18604|app: 0|req: 96/98] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:56 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 282 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 97/99] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:57 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4210
+/home/cugbacm/Documents/work_dir/4211
+[pid: 18604|app: 0|req: 98/100] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:10:58 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 235 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 99/101] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:10:58 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4212
+/home/cugbacm/Documents/work_dir/4213
+/home/cugbacm/Documents/work_dir/4214
+/home/cugbacm/Documents/work_dir/4215
+/home/cugbacm/Documents/work_dir/4216
+/home/cugbacm/Documents/work_dir/4217
+/home/cugbacm/Documents/work_dir/4218
+/home/cugbacm/Documents/work_dir/4219
+/home/cugbacm/Documents/work_dir/4220
+/home/cugbacm/Documents/work_dir/4221
+/home/cugbacm/Documents/work_dir/4222
+/home/cugbacm/Documents/work_dir/4223
+/home/cugbacm/Documents/work_dir/4224
+/home/cugbacm/Documents/work_dir/4225
+/home/cugbacm/Documents/work_dir/4226
+/home/cugbacm/Documents/work_dir/4227
+/home/cugbacm/Documents/work_dir/4228
+/home/cugbacm/Documents/work_dir/4229
+/home/cugbacm/Documents/work_dir/4230
+/home/cugbacm/Documents/work_dir/4231
+/home/cugbacm/Documents/work_dir/4232
+/home/cugbacm/Documents/work_dir/4233
+/home/cugbacm/Documents/work_dir/4234
+/home/cugbacm/Documents/work_dir/4235
+/home/cugbacm/Documents/work_dir/4236
+/home/cugbacm/Documents/work_dir/4237
+/home/cugbacm/Documents/work_dir/4238
+/home/cugbacm/Documents/work_dir/4239
+/home/cugbacm/Documents/work_dir/4240
+/home/cugbacm/Documents/work_dir/4241
+/home/cugbacm/Documents/work_dir/4242
+/home/cugbacm/Documents/work_dir/4243
+/home/cugbacm/Documents/work_dir/4244
+/home/cugbacm/Documents/work_dir/4245
+/home/cugbacm/Documents/work_dir/4246
+/home/cugbacm/Documents/work_dir/4247
+/home/cugbacm/Documents/work_dir/4248
+/home/cugbacm/Documents/work_dir/4249
+/home/cugbacm/Documents/work_dir/4250
+/home/cugbacm/Documents/work_dir/4251
+/home/cugbacm/Documents/work_dir/4252
+/home/cugbacm/Documents/work_dir/4253
+/home/cugbacm/Documents/work_dir/4254
+/home/cugbacm/Documents/work_dir/4255
+/home/cugbacm/Documents/work_dir/4256
+/home/cugbacm/Documents/work_dir/4257
+/home/cugbacm/Documents/work_dir/4258
+/home/cugbacm/Documents/work_dir/4259
+/home/cugbacm/Documents/work_dir/4260
+/home/cugbacm/Documents/work_dir/4261
+/home/cugbacm/Documents/work_dir/4262
+/home/cugbacm/Documents/work_dir/4263
+/home/cugbacm/Documents/work_dir/4264
+/home/cugbacm/Documents/work_dir/4265
+/home/cugbacm/Documents/work_dir/4266
+/home/cugbacm/Documents/work_dir/4267
+/home/cugbacm/Documents/work_dir/4268
+/home/cugbacm/Documents/work_dir/4269
+/home/cugbacm/Documents/work_dir/4270
+/home/cugbacm/Documents/work_dir/4271
+/home/cugbacm/Documents/work_dir/4272
+/home/cugbacm/Documents/work_dir/4273
+/home/cugbacm/Documents/work_dir/4274
+/home/cugbacm/Documents/work_dir/4275
+/home/cugbacm/Documents/work_dir/4276
+/home/cugbacm/Documents/work_dir/4277
+/home/cugbacm/Documents/work_dir/4278
+/home/cugbacm/Documents/work_dir/4279
+/home/cugbacm/Documents/work_dir/4280
+/home/cugbacm/Documents/work_dir/4281
+/home/cugbacm/Documents/work_dir/4282
+/home/cugbacm/Documents/work_dir/4283
+/home/cugbacm/Documents/work_dir/4284
+/home/cugbacm/Documents/work_dir/4285
+/home/cugbacm/Documents/work_dir/4286
+/home/cugbacm/Documents/work_dir/4287
+/home/cugbacm/Documents/work_dir/4288
+/home/cugbacm/Documents/work_dir/4289
+/home/cugbacm/Documents/work_dir/4290
+/home/cugbacm/Documents/work_dir/4291
+/home/cugbacm/Documents/work_dir/4292
+/home/cugbacm/Documents/work_dir/4293
+/home/cugbacm/Documents/work_dir/4294
+/home/cugbacm/Documents/work_dir/4295
+/home/cugbacm/Documents/work_dir/4296
+/home/cugbacm/Documents/work_dir/4297
+/home/cugbacm/Documents/work_dir/4298
+/home/cugbacm/Documents/work_dir/4299
+/home/cugbacm/Documents/work_dir/4300
+/home/cugbacm/Documents/work_dir/4301
+/home/cugbacm/Documents/work_dir/4302
+/home/cugbacm/Documents/work_dir/4303
+/home/cugbacm/Documents/work_dir/4304
+/home/cugbacm/Documents/work_dir/4305
+/home/cugbacm/Documents/work_dir/4306
+/home/cugbacm/Documents/work_dir/4307
+/home/cugbacm/Documents/work_dir/4308
+/home/cugbacm/Documents/work_dir/4309
+/home/cugbacm/Documents/work_dir/4310
+/home/cugbacm/Documents/work_dir/4311
+/home/cugbacm/Documents/work_dir/4312
+/home/cugbacm/Documents/work_dir/4313
+/home/cugbacm/Documents/work_dir/4314
+/home/cugbacm/Documents/work_dir/4315
+/home/cugbacm/Documents/work_dir/4316
+/home/cugbacm/Documents/work_dir/4317
+/home/cugbacm/Documents/work_dir/4318
+/home/cugbacm/Documents/work_dir/4319
+/home/cugbacm/Documents/work_dir/4320
+/home/cugbacm/Documents/work_dir/4321
+/home/cugbacm/Documents/work_dir/4322
+/home/cugbacm/Documents/work_dir/4323
+/home/cugbacm/Documents/work_dir/4324
+/home/cugbacm/Documents/work_dir/4325
+/home/cugbacm/Documents/work_dir/4326
+/home/cugbacm/Documents/work_dir/4327
+/home/cugbacm/Documents/work_dir/4328
+/home/cugbacm/Documents/work_dir/4329
+/home/cugbacm/Documents/work_dir/4330
+[pid: 18604|app: 0|req: 100/102] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:26 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 265 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4331
+[pid: 18604|app: 0|req: 101/103] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:26 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4332
+/home/cugbacm/Documents/work_dir/4333
+[pid: 18604|app: 0|req: 102/104] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:28 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 280 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 103/105] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:28 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4334
+/home/cugbacm/Documents/work_dir/4335
+[pid: 18604|app: 0|req: 104/106] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:30 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 324 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 105/107] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:30 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 9 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4336
+/home/cugbacm/Documents/work_dir/4337
+[pid: 18604|app: 0|req: 106/108] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:31 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 269 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 107/109] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:31 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4338
+/home/cugbacm/Documents/work_dir/4339
+[pid: 18604|app: 0|req: 108/110] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:33 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 249 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 109/111] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:33 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4340
+/home/cugbacm/Documents/work_dir/4341
+[pid: 18604|app: 0|req: 110/112] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:35 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 237 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4342
+[pid: 18604|app: 0|req: 111/113] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4343
+[pid: 18604|app: 0|req: 112/114] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:36 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 309 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 113/115] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:37 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4344
+/home/cugbacm/Documents/work_dir/4345
+[pid: 18604|app: 0|req: 114/116] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:37 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 166 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 115/117] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:38 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4346
+[pid: 18604|app: 0|req: 116/118] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:38 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 215 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 117/119] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:39 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4347
+[pid: 18604|app: 0|req: 118/120] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:39 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 225 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4348
+[pid: 18604|app: 0|req: 119/121] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:40 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4349
+[pid: 18604|app: 0|req: 120/122] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:41 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 264 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 121/123] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:41 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 9 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4350
+/home/cugbacm/Documents/work_dir/4351
+/home/cugbacm/Documents/work_dir/4352
+/home/cugbacm/Documents/work_dir/4353
+/home/cugbacm/Documents/work_dir/4354
+/home/cugbacm/Documents/work_dir/4355
+/home/cugbacm/Documents/work_dir/4356
+/home/cugbacm/Documents/work_dir/4357
+/home/cugbacm/Documents/work_dir/4358
+/home/cugbacm/Documents/work_dir/4359
+/home/cugbacm/Documents/work_dir/4360
+/home/cugbacm/Documents/work_dir/4361
+/home/cugbacm/Documents/work_dir/4362
+/home/cugbacm/Documents/work_dir/4363
+/home/cugbacm/Documents/work_dir/4364
+/home/cugbacm/Documents/work_dir/4365
+/home/cugbacm/Documents/work_dir/4366
+/home/cugbacm/Documents/work_dir/4367
+/home/cugbacm/Documents/work_dir/4368
+/home/cugbacm/Documents/work_dir/4369
+[pid: 18604|app: 0|req: 122/124] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:56 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 277 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 123/125] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:56 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4370
+[pid: 18604|app: 0|req: 124/126] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:12:57 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 344 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 125/127] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:12:57 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4371
+/home/cugbacm/Documents/work_dir/4372
+/home/cugbacm/Documents/work_dir/4373
+/home/cugbacm/Documents/work_dir/4374
+/home/cugbacm/Documents/work_dir/4375
+/home/cugbacm/Documents/work_dir/4376
+/home/cugbacm/Documents/work_dir/4377
+[pid: 18604|app: 0|req: 126/128] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:13:02 2014] GET /index/submitList/?page=2 => generated 35222 bytes in 316 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4378
+/home/cugbacm/Documents/work_dir/4379
+/home/cugbacm/Documents/work_dir/4380
+/home/cugbacm/Documents/work_dir/4381
+[pid: 18604|app: 0|req: 127/129] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:13:05 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 270 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4382
+/home/cugbacm/Documents/work_dir/4383
+/home/cugbacm/Documents/work_dir/4384
+/home/cugbacm/Documents/work_dir/4385
+/home/cugbacm/Documents/work_dir/4386
+/home/cugbacm/Documents/work_dir/4387
+/home/cugbacm/Documents/work_dir/4388
+/home/cugbacm/Documents/work_dir/4389
+/home/cugbacm/Documents/work_dir/4390
+/home/cugbacm/Documents/work_dir/4391
+/home/cugbacm/Documents/work_dir/4392
+/home/cugbacm/Documents/work_dir/4393
+/home/cugbacm/Documents/work_dir/4394
+/home/cugbacm/Documents/work_dir/4395
+/home/cugbacm/Documents/work_dir/4396
+/home/cugbacm/Documents/work_dir/4397
+/home/cugbacm/Documents/work_dir/4398
+/home/cugbacm/Documents/work_dir/4399
+/home/cugbacm/Documents/work_dir/4400
+/home/cugbacm/Documents/work_dir/4401
+/home/cugbacm/Documents/work_dir/4402
+/home/cugbacm/Documents/work_dir/4403
+/home/cugbacm/Documents/work_dir/4404
+/home/cugbacm/Documents/work_dir/4405
+/home/cugbacm/Documents/work_dir/4406
+/home/cugbacm/Documents/work_dir/4407
+/home/cugbacm/Documents/work_dir/4408
+/home/cugbacm/Documents/work_dir/4409
+/home/cugbacm/Documents/work_dir/4410
+/home/cugbacm/Documents/work_dir/4411
+/home/cugbacm/Documents/work_dir/4412
+[pid: 18604|app: 0|req: 128/130] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:13:28 2014] GET /index/submitList/?page=1 => generated 35109 bytes in 244 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 129/131] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:13:28 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4413
+/home/cugbacm/Documents/work_dir/4414
+/home/cugbacm/Documents/work_dir/4415
+/home/cugbacm/Documents/work_dir/4416
+/home/cugbacm/Documents/work_dir/4417
+/home/cugbacm/Documents/work_dir/4418
+/home/cugbacm/Documents/work_dir/4419
+/home/cugbacm/Documents/work_dir/4420
+/home/cugbacm/Documents/work_dir/4421
+/home/cugbacm/Documents/work_dir/4422
+/home/cugbacm/Documents/work_dir/4423
+/home/cugbacm/Documents/work_dir/4424
+/home/cugbacm/Documents/work_dir/4425
+/home/cugbacm/Documents/work_dir/4426
+/home/cugbacm/Documents/work_dir/4427
+/home/cugbacm/Documents/work_dir/4428
+/home/cugbacm/Documents/work_dir/4429
+/home/cugbacm/Documents/work_dir/4430
+/home/cugbacm/Documents/work_dir/4431
+/home/cugbacm/Documents/work_dir/4432
+/home/cugbacm/Documents/work_dir/4433
+/home/cugbacm/Documents/work_dir/4434
+/home/cugbacm/Documents/work_dir/4435
+/home/cugbacm/Documents/work_dir/4436
+/home/cugbacm/Documents/work_dir/4437
+/home/cugbacm/Documents/work_dir/4438
+/home/cugbacm/Documents/work_dir/4439
+/home/cugbacm/Documents/work_dir/4440
+/home/cugbacm/Documents/work_dir/4441
+/home/cugbacm/Documents/work_dir/4442
+/home/cugbacm/Documents/work_dir/4443
+/home/cugbacm/Documents/work_dir/4444
+/home/cugbacm/Documents/work_dir/4445
+/home/cugbacm/Documents/work_dir/4446
+/home/cugbacm/Documents/work_dir/4447
+/home/cugbacm/Documents/work_dir/4448
+/home/cugbacm/Documents/work_dir/4449
+/home/cugbacm/Documents/work_dir/4450
+/home/cugbacm/Documents/work_dir/4451
+/home/cugbacm/Documents/work_dir/4452
+/home/cugbacm/Documents/work_dir/4453
+/home/cugbacm/Documents/work_dir/4454
+/home/cugbacm/Documents/work_dir/4455
+/home/cugbacm/Documents/work_dir/4456
+/home/cugbacm/Documents/work_dir/4457
+/home/cugbacm/Documents/work_dir/4458
+/home/cugbacm/Documents/work_dir/4459
+/home/cugbacm/Documents/work_dir/4460
+/home/cugbacm/Documents/work_dir/4461
+/home/cugbacm/Documents/work_dir/4462
+/home/cugbacm/Documents/work_dir/4463
+/home/cugbacm/Documents/work_dir/4464
+/home/cugbacm/Documents/work_dir/4465
+/home/cugbacm/Documents/work_dir/4466
+/home/cugbacm/Documents/work_dir/4467
+/home/cugbacm/Documents/work_dir/4468
+/home/cugbacm/Documents/work_dir/4469
+/home/cugbacm/Documents/work_dir/4470
+/home/cugbacm/Documents/work_dir/4471
+/home/cugbacm/Documents/work_dir/4472
+/home/cugbacm/Documents/work_dir/4473
+/home/cugbacm/Documents/work_dir/4474
+/home/cugbacm/Documents/work_dir/4475
+/home/cugbacm/Documents/work_dir/4476
+/home/cugbacm/Documents/work_dir/4477
+/home/cugbacm/Documents/work_dir/4478
+/home/cugbacm/Documents/work_dir/4479
+/home/cugbacm/Documents/work_dir/4480
+/home/cugbacm/Documents/work_dir/4481
+/home/cugbacm/Documents/work_dir/4482
+/home/cugbacm/Documents/work_dir/4483
+/home/cugbacm/Documents/work_dir/4484
+/home/cugbacm/Documents/work_dir/4485
+/home/cugbacm/Documents/work_dir/4486
+/home/cugbacm/Documents/work_dir/4487
+/home/cugbacm/Documents/work_dir/4488
+/home/cugbacm/Documents/work_dir/4489
+/home/cugbacm/Documents/work_dir/4490
+[pid: 18604|app: 0|req: 130/132] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:14:25 2014] GET /index/submitList/?page=1 => generated 35120 bytes in 251 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 131/133] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:14:26 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4491
+/home/cugbacm/Documents/work_dir/4492
+/home/cugbacm/Documents/work_dir/4493
+/home/cugbacm/Documents/work_dir/4494
+/home/cugbacm/Documents/work_dir/4495
+/home/cugbacm/Documents/work_dir/4496
+/home/cugbacm/Documents/work_dir/4497
+/home/cugbacm/Documents/work_dir/4498
+/home/cugbacm/Documents/work_dir/4499
+/home/cugbacm/Documents/work_dir/4500
+/home/cugbacm/Documents/work_dir/4501
+/home/cugbacm/Documents/work_dir/4502
+/home/cugbacm/Documents/work_dir/4503
+/home/cugbacm/Documents/work_dir/4504
+/home/cugbacm/Documents/work_dir/4505
+/home/cugbacm/Documents/work_dir/4506
+/home/cugbacm/Documents/work_dir/4507
+/home/cugbacm/Documents/work_dir/4508
+/home/cugbacm/Documents/work_dir/4509
+/home/cugbacm/Documents/work_dir/4510
+/home/cugbacm/Documents/work_dir/4511
+/home/cugbacm/Documents/work_dir/4512
+/home/cugbacm/Documents/work_dir/4513
+/home/cugbacm/Documents/work_dir/4514
+/home/cugbacm/Documents/work_dir/4515
+/home/cugbacm/Documents/work_dir/4516
+/home/cugbacm/Documents/work_dir/4517
+/home/cugbacm/Documents/work_dir/4518
+/home/cugbacm/Documents/work_dir/4519
+/home/cugbacm/Documents/work_dir/4520
+/home/cugbacm/Documents/work_dir/4521
+/home/cugbacm/Documents/work_dir/4522
+/home/cugbacm/Documents/work_dir/4523
+/home/cugbacm/Documents/work_dir/4524
+/home/cugbacm/Documents/work_dir/4525
+/home/cugbacm/Documents/work_dir/4526
+/home/cugbacm/Documents/work_dir/4527
+/home/cugbacm/Documents/work_dir/4528
+/home/cugbacm/Documents/work_dir/4529
+/home/cugbacm/Documents/work_dir/4530
+/home/cugbacm/Documents/work_dir/4531
+/home/cugbacm/Documents/work_dir/4532
+/home/cugbacm/Documents/work_dir/4533
+/home/cugbacm/Documents/work_dir/4534
+/home/cugbacm/Documents/work_dir/4535
+/home/cugbacm/Documents/work_dir/4536
+/home/cugbacm/Documents/work_dir/4537
+/home/cugbacm/Documents/work_dir/4538
+/home/cugbacm/Documents/work_dir/4539
+/home/cugbacm/Documents/work_dir/4540
+/home/cugbacm/Documents/work_dir/4541
+/home/cugbacm/Documents/work_dir/4542
+/home/cugbacm/Documents/work_dir/4543
+/home/cugbacm/Documents/work_dir/4544
+/home/cugbacm/Documents/work_dir/4545
+/home/cugbacm/Documents/work_dir/4546
+/home/cugbacm/Documents/work_dir/4547
+/home/cugbacm/Documents/work_dir/4548
+/home/cugbacm/Documents/work_dir/4549
+/home/cugbacm/Documents/work_dir/4550
+/home/cugbacm/Documents/work_dir/4551
+/home/cugbacm/Documents/work_dir/4552
+/home/cugbacm/Documents/work_dir/4553
+/home/cugbacm/Documents/work_dir/4554
+/home/cugbacm/Documents/work_dir/4555
+/home/cugbacm/Documents/work_dir/4556
+/home/cugbacm/Documents/work_dir/4557
+/home/cugbacm/Documents/work_dir/4558
+/home/cugbacm/Documents/work_dir/4559
+/home/cugbacm/Documents/work_dir/4560
+/home/cugbacm/Documents/work_dir/4561
+/home/cugbacm/Documents/work_dir/4562
+/home/cugbacm/Documents/work_dir/4563
+/home/cugbacm/Documents/work_dir/4564
+/home/cugbacm/Documents/work_dir/4565
+/home/cugbacm/Documents/work_dir/4566
+/home/cugbacm/Documents/work_dir/4567
+/home/cugbacm/Documents/work_dir/4568
+/home/cugbacm/Documents/work_dir/4569
+/home/cugbacm/Documents/work_dir/4570
+/home/cugbacm/Documents/work_dir/4571
+/home/cugbacm/Documents/work_dir/4572
+/home/cugbacm/Documents/work_dir/4573
+/home/cugbacm/Documents/work_dir/4574
+/home/cugbacm/Documents/work_dir/4575
+/home/cugbacm/Documents/work_dir/4576
+/home/cugbacm/Documents/work_dir/4577
+/home/cugbacm/Documents/work_dir/4578
+/home/cugbacm/Documents/work_dir/4579
+/home/cugbacm/Documents/work_dir/4580
+/home/cugbacm/Documents/work_dir/4581
+/home/cugbacm/Documents/work_dir/4582
+/home/cugbacm/Documents/work_dir/4583
+/home/cugbacm/Documents/work_dir/4584
+/home/cugbacm/Documents/work_dir/4585
+/home/cugbacm/Documents/work_dir/4586
+/home/cugbacm/Documents/work_dir/4587
+/home/cugbacm/Documents/work_dir/4588
+/home/cugbacm/Documents/work_dir/4589
+/home/cugbacm/Documents/work_dir/4590
+/home/cugbacm/Documents/work_dir/4591
+/home/cugbacm/Documents/work_dir/4592
+/home/cugbacm/Documents/work_dir/4593
+/home/cugbacm/Documents/work_dir/4594
+/home/cugbacm/Documents/work_dir/4595
+/home/cugbacm/Documents/work_dir/4596
+/home/cugbacm/Documents/work_dir/4597
+/home/cugbacm/Documents/work_dir/4598
+/home/cugbacm/Documents/work_dir/4599
+/home/cugbacm/Documents/work_dir/4600
+/home/cugbacm/Documents/work_dir/4601
+/home/cugbacm/Documents/work_dir/4602
+/home/cugbacm/Documents/work_dir/4603
+/home/cugbacm/Documents/work_dir/4604
+/home/cugbacm/Documents/work_dir/4605
+/home/cugbacm/Documents/work_dir/4606
+/home/cugbacm/Documents/work_dir/4607
+/home/cugbacm/Documents/work_dir/4608
+/home/cugbacm/Documents/work_dir/4609
+/home/cugbacm/Documents/work_dir/4610
+/home/cugbacm/Documents/work_dir/4611
+/home/cugbacm/Documents/work_dir/4612
+/home/cugbacm/Documents/work_dir/4613
+/home/cugbacm/Documents/work_dir/4614
+/home/cugbacm/Documents/work_dir/4615
+/home/cugbacm/Documents/work_dir/4616
+/home/cugbacm/Documents/work_dir/4617
+/home/cugbacm/Documents/work_dir/4618
+/home/cugbacm/Documents/work_dir/4619
+/home/cugbacm/Documents/work_dir/4620
+/home/cugbacm/Documents/work_dir/4621
+/home/cugbacm/Documents/work_dir/4622
+/home/cugbacm/Documents/work_dir/4623
+/home/cugbacm/Documents/work_dir/4624
+/home/cugbacm/Documents/work_dir/4625
+/home/cugbacm/Documents/work_dir/4626
+/home/cugbacm/Documents/work_dir/4627
+/home/cugbacm/Documents/work_dir/4628
+/home/cugbacm/Documents/work_dir/4629
+/home/cugbacm/Documents/work_dir/4630
+/home/cugbacm/Documents/work_dir/4631
+/home/cugbacm/Documents/work_dir/4632
+/home/cugbacm/Documents/work_dir/4633
+/home/cugbacm/Documents/work_dir/4634
+/home/cugbacm/Documents/work_dir/4635
+/home/cugbacm/Documents/work_dir/4636
+/home/cugbacm/Documents/work_dir/4637
+/home/cugbacm/Documents/work_dir/4638
+/home/cugbacm/Documents/work_dir/4639
+/home/cugbacm/Documents/work_dir/4640
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:16:21 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:16:21 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa88e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa88e40 pid: 29941 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 29941, cores: 1)
+spawned uWSGI worker 2 (pid: 29942, cores: 1)
+spawned uWSGI worker 3 (pid: 29943, cores: 1)
+spawned uWSGI worker 4 (pid: 29944, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:16:22 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1852e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1852e40 pid: 29955 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 29955, cores: 1)
+spawned uWSGI worker 2 (pid: 29956, cores: 1)
+spawned uWSGI worker 3 (pid: 29957, cores: 1)
+spawned uWSGI worker 4 (pid: 29958, cores: 1)
+[pid: 29955|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:16:26 2014] GET /index/submitList/?page=1 => generated 35136 bytes in 840 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 1/2] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:16:27 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 487 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29957|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:16:36 2014] GET /index/submitList/?page=2 => generated 35249 bytes in 596 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 2/4] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:16:40 2014] GET /index/submitList/?page=1 => generated 35136 bytes in 140 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29957|app: 0|req: 2/5] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:16:42 2014] GET /index/submitList/?page=1 => generated 35136 bytes in 135 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 3/6] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:16:43 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29955|app: 0|req: 2/7] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:16:44 2014] GET /index/submitList/?page=1 => generated 35136 bytes in 108 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 4/8] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:16:45 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29957|app: 0|req: 3/9] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:16:46 2014] GET /index/submitList/?page=1 => generated 35136 bytes in 121 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 5/10] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:16:46 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29958|app: 0|req: 1/11] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:17:26 2014] GET /index/submitList/?page=1 => generated 35136 bytes in 619 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 6/12] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:17:26 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29955|app: 0|req: 3/13] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:17:30 2014] GET /index/submitList/?page=2 => generated 35249 bytes in 103 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 7/14] 61.135.207.195 () {40 vars in 813 bytes} [Tue Apr 15 17:17:32 2014] GET /index/problemList => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 29957|app: 0|req: 4/15] 61.135.207.195 () {40 vars in 815 bytes} [Tue Apr 15 17:17:32 2014] GET /index/problemList/ => generated 2965 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 8/16] 61.135.207.195 () {40 vars in 805 bytes} [Tue Apr 15 17:17:35 2014] GET /index/submitList => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 154 bytes (1 switches on core 0)
+[pid: 29955|app: 0|req: 4/17] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 17:17:35 2014] GET /index/submitList/ => generated 35136 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 9/18] 61.135.207.195 () {40 vars in 800 bytes} [Tue Apr 15 17:18:12 2014] GET /index/userList => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 152 bytes (1 switches on core 0)
+[pid: 29957|app: 0|req: 5/19] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 17:18:12 2014] GET /index/userList/ => generated 3648 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 10/20] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:18:20 2014] GET /index/userList/ => generated 3648 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29957|app: 0|req: 6/21] 61.135.207.195 () {44 vars in 899 bytes} [Tue Apr 15 17:18:20 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29956|app: 0|req: 11/22] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:18:21 2014] GET /index/userList/ => generated 3648 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29957|app: 0|req: 7/23] 61.135.207.195 () {44 vars in 899 bytes} [Tue Apr 15 17:18:22 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29955|app: 0|req: 5/24] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:18:23 2014] GET /index/userList/ => generated 3648 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29956|app: 0|req: 12/25] 61.135.207.195 () {44 vars in 899 bytes} [Tue Apr 15 17:18:23 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 29958|app: 0|req: 2/26] 113.74.180.27 () {24 vars in 265 bytes} [Tue Apr 15 17:19:14 2014] GET / => generated 2123 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:26:30 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:26:31 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2615e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2615e40 pid: 30312 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 30312, cores: 1)
+spawned uWSGI worker 2 (pid: 30313, cores: 1)
+spawned uWSGI worker 3 (pid: 30314, cores: 1)
+spawned uWSGI worker 4 (pid: 30315, cores: 1)
+[pid: 30312|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:26:35 2014] GET /index/userList/ => generated 3648 bytes in 528 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 30312|app: 0|req: 2/2] 61.135.207.195 () {44 vars in 899 bytes} [Tue Apr 15 17:26:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30314|app: 0|req: 1/3] 61.135.207.195 () {44 vars in 861 bytes} [Tue Apr 15 17:26:35 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1462 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30313|app: 0|req: 1/4] 61.135.207.195 () {44 vars in 877 bytes} [Tue Apr 15 17:26:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1462 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30315|app: 0|req: 1/5] 61.135.207.195 () {44 vars in 847 bytes} [Tue Apr 15 17:26:35 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1467 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30314|app: 0|req: 2/6] 61.135.207.195 () {40 vars in 794 bytes} [Tue Apr 15 17:26:40 2014] GET /index/login/ => generated 2724 bytes in 52 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 30315|app: 0|req: 2/7] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:26:41 2014] GET /index/register => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 152 bytes (1 switches on core 0)
+[pid: 30313|app: 0|req: 2/8] 61.135.207.195 () {40 vars in 797 bytes} [Tue Apr 15 17:26:41 2014] GET /index/register/ => generated 2412 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 30314|app: 0|req: 3/9] 61.135.207.195 () {48 vars in 984 bytes} [Tue Apr 15 17:26:51 2014] POST /index/register/ => generated 0 bytes in 34 msecs (HTTP/1.1 302) 5 headers in 287 bytes (1 switches on core 0)
+[pid: 30315|app: 0|req: 3/10] 61.135.207.195 () {42 vars in 835 bytes} [Tue Apr 15 17:26:51 2014] GET /index/problemList => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 30312|app: 0|req: 3/11] 61.135.207.195 () {42 vars in 837 bytes} [Tue Apr 15 17:26:51 2014] GET /index/problemList/ => generated 2967 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 30314|app: 0|req: 4/12] 61.135.207.195 () {44 vars in 911 bytes} [Tue Apr 15 17:26:51 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30313|app: 0|req: 3/13] 61.135.207.195 () {40 vars in 809 bytes} [Tue Apr 15 17:26:53 2014] GET /index/problem/1000 => generated 1979 bytes in 31 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 30314|app: 0|req: 5/14] 61.135.207.195 () {40 vars in 761 bytes} [Tue Apr 15 17:26:53 2014] GET /index/problem/grid.css => generated 4353 bytes in 19 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 30315|app: 0|req: 4/15] 61.135.207.195 () {40 vars in 823 bytes} [Tue Apr 15 17:26:55 2014] GET /index/problem/1000/submit => generated 2411 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4641
+/home/cugbacm/Documents/work_dir/4642
+/home/cugbacm/Documents/work_dir/4643
+/home/cugbacm/Documents/work_dir/4644
+/home/cugbacm/Documents/work_dir/4645
+/home/cugbacm/Documents/work_dir/4646
+/home/cugbacm/Documents/work_dir/4647
+/home/cugbacm/Documents/work_dir/4648
+/home/cugbacm/Documents/work_dir/4649
+/home/cugbacm/Documents/work_dir/4650
+/home/cugbacm/Documents/work_dir/4651
+/home/cugbacm/Documents/work_dir/4652
+/home/cugbacm/Documents/work_dir/4653
+/home/cugbacm/Documents/work_dir/4654
+/home/cugbacm/Documents/work_dir/4655
+/home/cugbacm/Documents/work_dir/4656
+/home/cugbacm/Documents/work_dir/4657
+/home/cugbacm/Documents/work_dir/4658
+[pid: 30315|app: 0|req: 5/16] 61.135.207.195 () {38 vars in 751 bytes} [Tue Apr 15 17:27:30 2014] GET /index/submitList/ => generated 35343 bytes in 293 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4659
+/home/cugbacm/Documents/work_dir/4660
+/home/cugbacm/Documents/work_dir/4661
+/home/cugbacm/Documents/work_dir/4662
+[pid: 30315|app: 0|req: 6/17] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:34 2014] GET /index/submitList/ => generated 35391 bytes in 227 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4663
+/home/cugbacm/Documents/work_dir/4664
+[pid: 30315|app: 0|req: 7/18] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:35 2014] GET /index/submitList/ => generated 35415 bytes in 258 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4665
+/home/cugbacm/Documents/work_dir/4666
+[pid: 30315|app: 0|req: 8/19] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:36 2014] GET /index/submitList/ => generated 35439 bytes in 257 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4667
+/home/cugbacm/Documents/work_dir/4668
+[pid: 30315|app: 0|req: 9/20] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:38 2014] GET /index/submitList/ => generated 35451 bytes in 227 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4669
+[pid: 30315|app: 0|req: 10/21] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:39 2014] GET /index/submitList/ => generated 35475 bytes in 257 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4670
+/home/cugbacm/Documents/work_dir/4671
+[pid: 30315|app: 0|req: 11/22] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:40 2014] GET /index/submitList/ => generated 35499 bytes in 286 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4672
+[pid: 30315|app: 0|req: 12/23] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:42 2014] GET /index/submitList/ => generated 35511 bytes in 222 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4673
+/home/cugbacm/Documents/work_dir/4674
+[pid: 30315|app: 0|req: 13/24] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:43 2014] GET /index/submitList/ => generated 35535 bytes in 361 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4675
+/home/cugbacm/Documents/work_dir/4676
+[pid: 30315|app: 0|req: 14/25] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:44 2014] GET /index/submitList/ => generated 35559 bytes in 273 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4677
+[pid: 30315|app: 0|req: 15/26] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:46 2014] GET /index/submitList/ => generated 35571 bytes in 267 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4678
+/home/cugbacm/Documents/work_dir/4679
+/home/cugbacm/Documents/work_dir/4680
+/home/cugbacm/Documents/work_dir/4681
+/home/cugbacm/Documents/work_dir/4682
+/home/cugbacm/Documents/work_dir/4683
+[pid: 30315|app: 0|req: 16/27] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:50 2014] GET /index/submitList/ => generated 35642 bytes in 271 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4684
+/home/cugbacm/Documents/work_dir/4685
+[pid: 30315|app: 0|req: 17/28] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:52 2014] GET /index/submitList/ => generated 35667 bytes in 307 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4686
+/home/cugbacm/Documents/work_dir/4687
+[pid: 30315|app: 0|req: 18/29] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:27:54 2014] GET /index/submitList/ => generated 35691 bytes in 271 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4688
+/home/cugbacm/Documents/work_dir/4689
+/home/cugbacm/Documents/work_dir/4690
+/home/cugbacm/Documents/work_dir/4691
+/home/cugbacm/Documents/work_dir/4692
+/home/cugbacm/Documents/work_dir/4693
+/home/cugbacm/Documents/work_dir/4694
+/home/cugbacm/Documents/work_dir/4695
+/home/cugbacm/Documents/work_dir/4696
+/home/cugbacm/Documents/work_dir/4697
+[pid: 30315|app: 0|req: 19/30] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:28:01 2014] GET /index/submitList/ => generated 35738 bytes in 242 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4698
+/home/cugbacm/Documents/work_dir/4699
+/home/cugbacm/Documents/work_dir/4700
+/home/cugbacm/Documents/work_dir/4701
+/home/cugbacm/Documents/work_dir/4702
+/home/cugbacm/Documents/work_dir/4703
+/home/cugbacm/Documents/work_dir/4704
+/home/cugbacm/Documents/work_dir/4705
+/home/cugbacm/Documents/work_dir/4706
+/home/cugbacm/Documents/work_dir/4707
+[pid: 30315|app: 0|req: 20/31] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 17:28:09 2014] GET /index/userList/ => generated 3933 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4708
+/home/cugbacm/Documents/work_dir/4709
+/home/cugbacm/Documents/work_dir/4710
+/home/cugbacm/Documents/work_dir/4711
+[pid: 30315|app: 0|req: 21/32] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:28:11 2014] GET /index/userList/ => generated 3933 bytes in 31 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4712
+/home/cugbacm/Documents/work_dir/4713
+[pid: 30315|app: 0|req: 22/33] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:28:13 2014] GET /index/userList/ => generated 3933 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4714
+[pid: 30315|app: 0|req: 23/34] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:28:14 2014] GET /index/userList/ => generated 3933 bytes in 34 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4715
+/home/cugbacm/Documents/work_dir/4716
+[pid: 30315|app: 0|req: 24/35] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:28:15 2014] GET /index/userList/ => generated 3933 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4717
+[pid: 30315|app: 0|req: 25/36] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:28:16 2014] GET /index/userList/ => generated 3933 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4718
+/home/cugbacm/Documents/work_dir/4719
+/home/cugbacm/Documents/work_dir/4720
+/home/cugbacm/Documents/work_dir/4721
+/home/cugbacm/Documents/work_dir/4722
+/home/cugbacm/Documents/work_dir/4723
+/home/cugbacm/Documents/work_dir/4724
+/home/cugbacm/Documents/work_dir/4725
+[pid: 30315|app: 0|req: 26/37] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 17:28:22 2014] GET /index/problemList => generated 0 bytes in 10 msecs (HTTP/1.1 301) 3 headers in 155 bytes (1 switches on core 0)
+[pid: 30315|app: 0|req: 27/38] 61.135.207.195 () {40 vars in 806 bytes} [Tue Apr 15 17:28:22 2014] GET /index/problemList/ => generated 2967 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4726
+[pid: 30315|app: 0|req: 28/39] 61.135.207.195 () {40 vars in 803 bytes} [Tue Apr 15 17:28:23 2014] GET /index/userList/ => generated 3933 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4727
+/home/cugbacm/Documents/work_dir/4728
+/home/cugbacm/Documents/work_dir/4729
+/home/cugbacm/Documents/work_dir/4730
+[pid: 30315|app: 0|req: 29/40] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 17:28:25 2014] GET /index/submitList/ => generated 35738 bytes in 309 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4731
+/home/cugbacm/Documents/work_dir/4732
+/home/cugbacm/Documents/work_dir/4733
+[pid: 30315|app: 0|req: 30/41] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 17:28:27 2014] GET /index/userList/ => generated 3933 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4734
+[pid: 30315|app: 0|req: 31/42] 61.135.207.195 () {40 vars in 778 bytes} [Tue Apr 15 17:28:29 2014] GET /index/userList/ => generated 3933 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4735
+/home/cugbacm/Documents/work_dir/4736
+[pid: 30315|app: 0|req: 32/43] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 17:28:30 2014] GET /index/submitList/ => generated 35738 bytes in 211 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4737
+/home/cugbacm/Documents/work_dir/4738
+/home/cugbacm/Documents/work_dir/4739
+/home/cugbacm/Documents/work_dir/4740
+/home/cugbacm/Documents/work_dir/4741
+/home/cugbacm/Documents/work_dir/4742
+/home/cugbacm/Documents/work_dir/4743
+/home/cugbacm/Documents/work_dir/4744
+/home/cugbacm/Documents/work_dir/4745
+/home/cugbacm/Documents/work_dir/4746
+/home/cugbacm/Documents/work_dir/4747
+/home/cugbacm/Documents/work_dir/4748
+/home/cugbacm/Documents/work_dir/4749
+/home/cugbacm/Documents/work_dir/4750
+/home/cugbacm/Documents/work_dir/4751
+/home/cugbacm/Documents/work_dir/4752
+/home/cugbacm/Documents/work_dir/4753
+/home/cugbacm/Documents/work_dir/4754
+/home/cugbacm/Documents/work_dir/4755
+/home/cugbacm/Documents/work_dir/4756
+/home/cugbacm/Documents/work_dir/4757
+/home/cugbacm/Documents/work_dir/4758
+/home/cugbacm/Documents/work_dir/4759
+/home/cugbacm/Documents/work_dir/4760
+/home/cugbacm/Documents/work_dir/4761
+/home/cugbacm/Documents/work_dir/4762
+/home/cugbacm/Documents/work_dir/4763
+/home/cugbacm/Documents/work_dir/4764
+/home/cugbacm/Documents/work_dir/4765
+/home/cugbacm/Documents/work_dir/4766
+/home/cugbacm/Documents/work_dir/4767
+/home/cugbacm/Documents/work_dir/4768
+/home/cugbacm/Documents/work_dir/4769
+/home/cugbacm/Documents/work_dir/4770
+/home/cugbacm/Documents/work_dir/4771
+/home/cugbacm/Documents/work_dir/4772
+/home/cugbacm/Documents/work_dir/4773
+/home/cugbacm/Documents/work_dir/4774
+/home/cugbacm/Documents/work_dir/4775
+/home/cugbacm/Documents/work_dir/4776
+/home/cugbacm/Documents/work_dir/4777
+/home/cugbacm/Documents/work_dir/4778
+/home/cugbacm/Documents/work_dir/4779
+/home/cugbacm/Documents/work_dir/4780
+/home/cugbacm/Documents/work_dir/4781
+/home/cugbacm/Documents/work_dir/4782
+/home/cugbacm/Documents/work_dir/4783
+/home/cugbacm/Documents/work_dir/4784
+/home/cugbacm/Documents/work_dir/4785
+/home/cugbacm/Documents/work_dir/4786
+/home/cugbacm/Documents/work_dir/4787
+/home/cugbacm/Documents/work_dir/4788
+/home/cugbacm/Documents/work_dir/4789
+/home/cugbacm/Documents/work_dir/4790
+/home/cugbacm/Documents/work_dir/4791
+/home/cugbacm/Documents/work_dir/4792
+/home/cugbacm/Documents/work_dir/4793
+/home/cugbacm/Documents/work_dir/4794
+/home/cugbacm/Documents/work_dir/4795
+/home/cugbacm/Documents/work_dir/4796
+/home/cugbacm/Documents/work_dir/4797
+/home/cugbacm/Documents/work_dir/4798
+/home/cugbacm/Documents/work_dir/4799
+/home/cugbacm/Documents/work_dir/4800
+/home/cugbacm/Documents/work_dir/4801
+/home/cugbacm/Documents/work_dir/4802
+/home/cugbacm/Documents/work_dir/4803
+/home/cugbacm/Documents/work_dir/4804
+/home/cugbacm/Documents/work_dir/4805
+/home/cugbacm/Documents/work_dir/4806
+/home/cugbacm/Documents/work_dir/4807
+/home/cugbacm/Documents/work_dir/4808
+/home/cugbacm/Documents/work_dir/4809
+/home/cugbacm/Documents/work_dir/4810
+/home/cugbacm/Documents/work_dir/4811
+/home/cugbacm/Documents/work_dir/4812
+/home/cugbacm/Documents/work_dir/4813
+/home/cugbacm/Documents/work_dir/4814
+/home/cugbacm/Documents/work_dir/4815
+/home/cugbacm/Documents/work_dir/4816
+/home/cugbacm/Documents/work_dir/4817
+/home/cugbacm/Documents/work_dir/4818
+/home/cugbacm/Documents/work_dir/4819
+/home/cugbacm/Documents/work_dir/4820
+/home/cugbacm/Documents/work_dir/4821
+/home/cugbacm/Documents/work_dir/4822
+/home/cugbacm/Documents/work_dir/4823
+/home/cugbacm/Documents/work_dir/4824
+/home/cugbacm/Documents/work_dir/4825
+/home/cugbacm/Documents/work_dir/4826
+/home/cugbacm/Documents/work_dir/4827
+/home/cugbacm/Documents/work_dir/4828
+/home/cugbacm/Documents/work_dir/4829
+/home/cugbacm/Documents/work_dir/4830
+/home/cugbacm/Documents/work_dir/4831
+/home/cugbacm/Documents/work_dir/4832
+/home/cugbacm/Documents/work_dir/4833
+/home/cugbacm/Documents/work_dir/4834
+/home/cugbacm/Documents/work_dir/4835
+/home/cugbacm/Documents/work_dir/4836
+/home/cugbacm/Documents/work_dir/4837
+/home/cugbacm/Documents/work_dir/4838
+/home/cugbacm/Documents/work_dir/4839
+/home/cugbacm/Documents/work_dir/4840
+/home/cugbacm/Documents/work_dir/4841
+/home/cugbacm/Documents/work_dir/4842
+/home/cugbacm/Documents/work_dir/4843
+/home/cugbacm/Documents/work_dir/4844
+/home/cugbacm/Documents/work_dir/4845
+/home/cugbacm/Documents/work_dir/4846
+/home/cugbacm/Documents/work_dir/4847
+/home/cugbacm/Documents/work_dir/4848
+/home/cugbacm/Documents/work_dir/4849
+/home/cugbacm/Documents/work_dir/4850
+/home/cugbacm/Documents/work_dir/4851
+/home/cugbacm/Documents/work_dir/4852
+/home/cugbacm/Documents/work_dir/4853
+[pid: 30315|app: 0|req: 33/44] 61.135.207.195 () {40 vars in 798 bytes} [Tue Apr 15 17:29:58 2014] GET /index/problem/1000/submit => generated 2411 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4854
+/home/cugbacm/Documents/work_dir/4855
+/home/cugbacm/Documents/work_dir/4856
+[pid: 30315|app: 0|req: 34/45] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:01 2014] GET /index/submitList/ => generated 35767 bytes in 239 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4857
+/home/cugbacm/Documents/work_dir/4858
+/home/cugbacm/Documents/work_dir/4859
+/home/cugbacm/Documents/work_dir/4860
+/home/cugbacm/Documents/work_dir/4861
+[pid: 30315|app: 0|req: 35/46] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:05 2014] GET /index/submitList/ => generated 35767 bytes in 307 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4862
+/home/cugbacm/Documents/work_dir/4863
+/home/cugbacm/Documents/work_dir/4864
+/home/cugbacm/Documents/work_dir/4865
+[pid: 30315|app: 0|req: 36/47] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:30:08 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 257 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 30313|app: 0|req: 4/48] 61.135.207.195 () {44 vars in 856 bytes} [Tue Apr 15 17:30:08 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30315|app: 0|req: 37/49] 61.135.207.195 () {44 vars in 870 bytes} [Tue Apr 15 17:30:08 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30313|app: 0|req: 5/50] 61.135.207.195 () {44 vars in 886 bytes} [Tue Apr 15 17:30:08 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 30315|app: 0|req: 38/51] 61.135.207.195 () {44 vars in 908 bytes} [Tue Apr 15 17:30:08 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+/home/cugbacm/Documents/work_dir/4866
+/home/cugbacm/Documents/work_dir/4867
+/home/cugbacm/Documents/work_dir/4868
+/home/cugbacm/Documents/work_dir/4869
+/home/cugbacm/Documents/work_dir/4870
+/home/cugbacm/Documents/work_dir/4871
+/home/cugbacm/Documents/work_dir/4872
+/home/cugbacm/Documents/work_dir/4873
+/home/cugbacm/Documents/work_dir/4874
+[pid: 30315|app: 0|req: 39/52] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:30:15 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 284 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4875
+/home/cugbacm/Documents/work_dir/4876
+[pid: 30315|app: 0|req: 40/53] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:30:17 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 275 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/cugbacm/Documents/work_dir/4877
+/home/cugbacm/Documents/work_dir/4878
+/home/cugbacm/Documents/work_dir/4879
+/home/cugbacm/Documents/work_dir/4880
+/home/cugbacm/Documents/work_dir/4881
+/home/cugbacm/Documents/work_dir/4882
+/home/cugbacm/Documents/work_dir/4883
+/home/cugbacm/Documents/work_dir/4884
+/home/cugbacm/Documents/work_dir/4885
+/home/cugbacm/Documents/work_dir/4886
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:30:25 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:30:26 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xc25e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xc25e40 pid: 2316 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 2316, cores: 1)
+spawned uWSGI worker 2 (pid: 2317, cores: 1)
+spawned uWSGI worker 3 (pid: 2318, cores: 1)
+spawned uWSGI worker 4 (pid: 2319, cores: 1)
+[pid: 2316|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:30:28 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 673 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 1/2] 61.135.207.195 () {40 vars in 809 bytes} [Tue Apr 15 17:30:30 2014] GET /index/userList/ => generated 3933 bytes in 555 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 17:30:32 2014] GET /index/submitList/ => generated 35767 bytes in 608 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 2/4] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 17:30:34 2014] GET /index/problemList/ => generated 2967 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 2/5] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 17:30:35 2014] GET /index/submitList/ => generated 35767 bytes in 114 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 3/6] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:39 2014] GET /index/submitList/ => generated 35767 bytes in 135 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 3/7] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:40 2014] GET /index/submitList/ => generated 35767 bytes in 115 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 4/8] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:41 2014] GET /index/submitList/ => generated 35767 bytes in 135 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 4/9] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:42 2014] GET /index/submitList/ => generated 35767 bytes in 121 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 5/10] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:43 2014] GET /index/submitList/ => generated 35767 bytes in 116 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 5/11] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:44 2014] GET /index/submitList/ => generated 35767 bytes in 123 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 6/12] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:45 2014] GET /index/submitList/ => generated 35767 bytes in 133 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 6/13] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:46 2014] GET /index/submitList/ => generated 35767 bytes in 111 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 7/14] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:46 2014] GET /index/submitList/ => generated 35767 bytes in 125 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 7/15] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:47 2014] GET /index/submitList/ => generated 35767 bytes in 143 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 8/16] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:30:48 2014] GET /index/submitList/ => generated 35767 bytes in 112 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 8/17] 61.135.207.195 () {40 vars in 819 bytes} [Tue Apr 15 17:30:53 2014] GET /index/submitList/?page=4 => generated 36084 bytes in 107 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 9/18] 61.135.207.195 () {40 vars in 828 bytes} [Tue Apr 15 17:30:55 2014] GET /index/submitList/?page=97 => generated 35137 bytes in 149 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 9/19] 61.135.207.195 () {40 vars in 827 bytes} [Tue Apr 15 17:30:57 2014] GET /index/submitList/?page=4 => generated 36084 bytes in 133 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 10/20] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:31:00 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 149 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 10/21] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:31:02 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 144 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 11/22] 61.135.207.195 () {40 vars in 795 bytes} [Tue Apr 15 17:31:03 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 122 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2318|app: 0|req: 11/23] 61.135.207.195 () {40 vars in 809 bytes} [Tue Apr 15 17:31:04 2014] GET /index/userList/ => generated 3933 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2317|app: 0|req: 12/24] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 17:31:06 2014] GET /index/submitList/ => generated 35767 bytes in 177 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:31:10 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8077).
+bind(): Address already in use [core/socket.c line 759]
+*** Starting uWSGI 2.0.3 (64bit) on [Tue Apr 15 17:31:17 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1613e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1613e40 pid: 2380 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 2380, cores: 1)
+spawned uWSGI worker 2 (pid: 2381, cores: 1)
+spawned uWSGI worker 3 (pid: 2382, cores: 1)
+spawned uWSGI worker 4 (pid: 2383, cores: 1)
+[pid: 2380|app: 0|req: 1/1] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:31:19 2014] GET /index/submitList/ => generated 35767 bytes in 632 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 1/2] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:32:18 2014] GET /index/submitList/ => generated 35738 bytes in 695 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 1/3] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:32:23 2014] GET /index/submitList/ => generated 35738 bytes in 691 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 2/4] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:32:25 2014] GET /index/submitList/ => generated 35738 bytes in 140 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 2/5] 61.135.207.195 () {40 vars in 808 bytes} [Tue Apr 15 17:32:27 2014] GET /index/problemList/ => generated 2967 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 3/6] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 17:32:28 2014] GET /index/submitList/ => generated 35738 bytes in 149 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 3/7] 123.125.71.82 () {32 vars in 447 bytes} [Tue Apr 15 17:35:16 2014] GET / => generated 2128 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 4/8] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:35:35 2014] GET /index/submitList/ => generated 35767 bytes in 111 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 4/9] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:36:03 2014] GET /index/submitList/ => generated 35767 bytes in 117 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 5/10] 61.135.207.195 () {40 vars in 782 bytes} [Tue Apr 15 17:36:37 2014] GET /index/submitList/ => generated 35767 bytes in 114 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 5/11] 61.135.207.195 () {40 vars in 802 bytes} [Tue Apr 15 17:36:40 2014] GET /index/userList/ => generated 3933 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 6/12] 61.135.207.195 () {40 vars in 804 bytes} [Tue Apr 15 17:36:41 2014] GET /index/submitList/ => generated 35767 bytes in 93 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 6/13] 61.135.207.195 () {40 vars in 819 bytes} [Tue Apr 15 17:36:48 2014] GET /index/submitList/?page=2 => generated 35880 bytes in 108 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 7/14] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:36:55 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 145 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 7/15] 61.135.207.195 () {40 vars in 826 bytes} [Tue Apr 15 17:37:03 2014] GET /index/submitList/?page=2 => generated 35880 bytes in 143 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 8/16] 61.135.207.195 () {40 vars in 815 bytes} [Tue Apr 15 17:37:10 2014] GET /index/problemList/ => generated 2967 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 8/17] 61.135.207.195 () {40 vars in 807 bytes} [Tue Apr 15 17:37:11 2014] GET /index/submitList/ => generated 35767 bytes in 105 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 9/18] 61.135.207.195 () {40 vars in 821 bytes} [Tue Apr 15 17:37:28 2014] GET /index/submitList/?page=98 => generated 26488 bytes in 106 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 9/19] 61.135.207.195 () {40 vars in 827 bytes} [Tue Apr 15 17:37:33 2014] GET /index/submitList/?page=1 => generated 35767 bytes in 108 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2383|app: 0|req: 10/20] 220.181.108.172 () {32 vars in 449 bytes} [Tue Apr 15 17:39:04 2014] GET / => generated 2128 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2382|app: 0|req: 10/21] 171.211.116.55 () {24 vars in 266 bytes} [Tue Apr 15 17:39:40 2014] GET / => generated 2123 bytes in 5 msecs (HTTP/1.0 404) 2 headers in 80 bytes (1 switches on core 0)

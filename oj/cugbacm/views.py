@@ -21,9 +21,13 @@ def Judge(submit):
 	submit.status = main(user_submit)
 	submit.save()
         problem = Problem.objects.get(problemID = submit.problemID)
+        user = User.objects.get(userID = submit.userID)
         if submit.status == "Accepted":
+            if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 0:
+                user.accepted = user.accepted + 1
             problem.acceptedSubmission = problem.acceptedSubmission + 1
         problem.totalSubmission = problem.totalSubmission + 1
+        user.total = user.total + 1
         problem.save()
 	#return submit.status
 
@@ -43,7 +47,7 @@ def submit(request, problem_id):
     		#timestamp = form.cleaned_data['timestamp']
     		code = request.POST['code']
     		language = request.POST['language']
-		for i in range(4000):
+		for i in range(1000):
     			submit = Submit(
     				runID = 111, 
     				userID = request.session["userID"],
@@ -55,7 +59,7 @@ def submit(request, problem_id):
 		    		language = language,
 	    			code = code)
 			submit.save()
-    			#Judge(submit)
+    			Judge(submit)
     		return HttpResponseRedirect("/index/submitList")
     	else:
     		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
