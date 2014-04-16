@@ -23,8 +23,8 @@ def Judge(submit):
         problem = Problem.objects.get(problemID = submit.problemID)
         user = User.objects.get(userID = submit.userID)
         if submit.status == "Accepted":
-            #if(Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 0):
-            user.accepted = user.accepted + 1
+            if(Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 0):
+				user.accepted = user.accepted + 1
             problem.acceptedSubmission = problem.acceptedSubmission + 1
         problem.totalSubmission = problem.totalSubmission + 1
         user.total = user.total + 1

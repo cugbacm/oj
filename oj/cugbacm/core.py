@@ -258,18 +258,21 @@ def run(problem_id, solution_id, language, data_count, user_id):
 		7:'Compile Error',
 		8:'Presenttation Error',
 		11:'System Error',
-		12:'Judging'	
+		12:'Judging'
 	}
 	if check_dangerous_code(solution_id, language) == False:
 		program_info['result'] = result_code["Runtime Error"]
-		return "RE"
+		clean_work_dir(solution_id)
+        	return "RE"
 	compile_result = compile(solution_id, language)
 	if compile_result is False:
 		program_info['result'] = result_code['Compile Error']
-		return "CE"
+		clean_work_dir(solution_id)
+        	return "CE"
 	if data_count == 0:
-		program_info['result'] = result_code['System Error'] 
-		return "SE"
+		program_info['result'] = result_code['System Error']
+        	clean_work_dir(solution_id)
+        	return "SE"
 	result = judge(
 		solution_id,
 		problem_id,
