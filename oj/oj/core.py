@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 from django.core import management
-import oj.settings
+import settings
 
 management.setup_environ(settings)
 

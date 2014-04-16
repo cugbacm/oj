@@ -1,13 +1,22 @@
 #!/usr/bin/env python
 # coding=utf-8
-from django.core import management
-import oj.settings
 
-management.setup_environ(settings)
+import sys,os
+from datetime import *
+sys.path.append('/home/cugbacm/oj/oj')
+os.environ['DJANGO_SETTINGS_MODULE'] ='settings'
 
+from django.core.management import setup_environ
+from oj import settings
+
+from oj.cugbacm.models import Entry
+
+setup_environ(settings)
+
+from models import User, Submit, Problem
 
 import shlex, subprocess, os, config, logging, shutil, lorun , shutil
-'''class UserSubmit(object):
+class UserSubmit(object):
 	"""docstring for UserSubmit"""
 	solution_id = ""
 	problem_id = ""
@@ -19,7 +28,7 @@ import shlex, subprocess, os, config, logging, shutil, lorun , shutil
 		self.problem_id = problem_id
 		self.language = language
 		self.user_id = user_id
-		self.program = program'''
+		self.program = program
 
 def low_level():
     try:

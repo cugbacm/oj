@@ -10,26 +10,28 @@ from celery.decorators import task
 from CompileCpp import main
 from django.views.decorators.csrf import csrf_exempt
 import json
-from core import main
-from core import UserSubmit
+from core_hq import main
+
 import os
 # Create your views here.
 
 @task
 def Judge(submit):
-        user_submit = UserSubmit(submit.id, submit.problemID, submit.language, submit.userID, submit.code)
-	submit.status = main(user_submit)
-	submit.save()
-        problem = Problem.objects.get(problemID = submit.problemID)
-        user = User.objects.get(userID = submit.userID)
-        if submit.status == "Accepted":
-            if(Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 0):
-				user.accepted = user.accepted + 1
-            problem.acceptedSubmission = problem.acceptedSubmission + 1
-        problem.totalSubmission = problem.totalSubmission + 1
-        user.total = user.total + 1
-        user.save()
-        problem.save()
+	main(submit)
+
+	problem = Problem.objects.get(problemID = submit.problemID)
+	user = User.objects.get(userID = submit.userID)
+	if submit.status == "Accepted":
+		print user.userID
+		print submit.problemID
+		print Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count()
+		if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
+			user.accepted = user.accepted + 1
+		problem.acceptedSubmission = problem.acceptedSubmission + 1
+	problem.totalSubmission = problem.totalSubmission + 1
+	user.total = user.total + 1
+	user.save()
+	problem.save()
 	#return submit.status
 
 def submit(request, problem_id):
@@ -172,7 +174,7 @@ def addProblem(request):
 		return HttpResponseRedirect("/index/login")
 	if request.method == 'POST':
 		#problemID = request.POST['problemID']
-                problemID = Problem.objects.count()+1000
+		problemID = Problem.objects.count()+1000
 		title = request.POST['title']
 		timeLimit = request.POST['timeLimit']
 		memoryLimit = request.POST['memoryLimit']
