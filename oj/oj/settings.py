@@ -94,13 +94,15 @@ USE_L10N = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
 STATIC_URL = '/static/'
 
 import djcelery
 import sys
 djcelery.setup_loader()
 
+CELERY_IMPORTS = (
+    'cugbacm.views',
+)
 BROKER_HOST = "127.0.0.1"
 BROKER_PORT = 5672
 BROKER_USER = "guest"

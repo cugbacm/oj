@@ -32,14 +32,12 @@
       <form class="form-signin" role="form" action="/index/addProblem/" method="post" enctype="multipart/form-data" accept-charset="utf-8">{% csrf_token %} 
         <input type="text" class="form-control" placeholder="title" name="title" required>
         <input type="text" class="form-control" placeholder="timeLimit" name="timeLimit" required>
-        <input type="text" class="form-control" placeholder="memoryLimit" name="memoryLimit" required>
-        <input type="textarea" rows="5" class="form-control" placeholder="description" name="description" required>
-        <input type="textarea" rows="5" class="form-control" placeholder="input" name="input" required>
-        <input type="textarea" rows="5" class="form-control" placeholder="output" name="output" required>
-			<input type="textarea" rows="5" class="form-control" placeholder="sampleInput" name="sampleInput" required>
-		<input type="textarea" rows="5" class="form-control" placeholder="sampleOutput" name="sampleOutput" required>
-        <input type="file" class="form-control" placeholder="data.in" name="dataIn" required>
-        <input type="file" class="form-control" placeholder="data.out" name="dataOut" required>
+        <input type="text" class="form-control" placeholder="memoryLimit" name="memoryLimit" required></textarea>
+        <textarea  rows="10" class="form-control" placeholder="description" name="description" required></textarea>
+        <textarea  rows="10" class="form-control" placeholder="input" name="input" required></textarea>
+        <textarea  rows="10" class="form-control" placeholder="output" name="output" required></textarea>
+        <textarea  rows="10" class="form-control" placeholder="sampleInput" name="sampleInput" required></textarea>
+		    <textarea  rows="10" class="form-control" placeholder="sampleOutput" name="sampleOutput" required></textarea>
         <button class="btn btn-lg btn-primary" type="submit">Add Problem</button>
       </form>
 

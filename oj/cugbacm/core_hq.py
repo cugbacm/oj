@@ -10,68 +10,68 @@ class UserSubmit(object):
 	language = ""
 	user_id = ""
 	program = ""
-        mem_limit = 0
-        time_limit = 0
+	mem_limit = 0
+	time_limit = 0
 	def __init__(self, solution_id, problem_id, language, user_id, program, mem_limit, time_limit):
 		self.solution_id = solution_id
 		self.problem_id = problem_id
 		self.language = language
 		self.user_id = user_id
 		self.program = program
-                self.mem_limit = mem_limit
-                self.time_limit = time_limit
+		self.mem_limit = mem_limit
+		self.time_limit = time_limit
 
 def low_level():
-    try:
-        os.setuid(int(os.popen("id -u %s" % "nobody").read()))
-    except:
-        pass
+	try:
+		os.setuid(int(os.popen("id -u %s" % "nobody").read()))
+	except:
+		pass
 
 # dangerous code
 def check_dangerous_code(solution_id, language):
-    if language in ['python2', 'python3']:
-        code = file('/work/%s/main.py' % solution_id).readlines()
-        support_modules = [
-            're',  # 正则表达式
-            'sys',  # sys.stdin
-            'string',  # 字符串处理
-            'scanf',  # 格式化输入
-            'math',  # 数学库
-            'cmath',  # 复数数学库
-            'decimal',  # 数学库，浮点数
-            'numbers',  # 抽象基类
-            'fractions',  # 有理数
-            'random',  # 随机数
-            'itertools',  # 迭代函数
-            'functools',
-            #Higher order functions and operations on callable objects
-            'operator',  # 函数操作
-            'readline',  # 读文件
-            'json',  # 解析json
-            'array',  # 数组
-            'sets',  # 集合
-            'queue',  # 队列
-            'types',  # 判断类型
-        ]
-        for line in code:
-            if line.find('import') >= 0:
-                words = line.split()
-                tag = 0
-                for w in words:
-                    if w in support_modules:
-                        tag = 1
-                        break
-                if tag == 0:
-                    return False
-        return True
-    if language in ['gcc', 'g++']:
-        try:
-            code = file('hone/work/%s/main.c' % solution_id).read()
-        except:
-            code = file('/home/cugbacm/Documents/work_dir/%s/main.cpp' % solution_id).read()
-        if code.find('system') >= 0:
-            return False
-        return True
+	if language in ['python2', 'python3']:
+		code = file('/work/%s/main.py' % solution_id).readlines()
+		support_modules = [
+			're',  # 正则表达式
+			'sys',  # sys.stdin
+			'string',  # 字符串处理
+			'scanf',  # 格式化输入
+			'math',  # 数学库
+			'cmath',  # 复数数学库
+			'decimal',  # 数学库，浮点数
+			'numbers',  # 抽象基类
+			'fractions',  # 有理数
+			'random',  # 随机数
+			'itertools',  # 迭代函数
+			'functools',
+			#Higher order functions and operations on callable objects
+			'operator',  # 函数操作
+			'readline',  # 读文件
+			'json',  # 解析json
+			'array',  # 数组
+			'sets',  # 集合
+			'queue',  # 队列
+			'types',  # 判断类型
+		]
+		for line in code:
+			if line.find('import') >= 0:
+				words = line.split()
+				tag = 0
+				for w in words:
+					if w in support_modules:
+						tag = 1
+						break
+				if tag == 0:
+					return False
+		return True
+	if language in ['gcc', 'g++']:
+		try:
+			code = file('hone/work/%s/main.c' % solution_id).read()
+		except:
+			code = file('/home/cugbacm/Documents/work_dir/%s/main.cpp' % solution_id).read()
+		if code.find('system') >= 0:
+			return False
+	return True
 #  bian yi wen jian
 def  compile(solution_id, language):
 	low_level()#why?
@@ -80,19 +80,19 @@ def  compile(solution_id, language):
 	dir_work = os.path.join(config.work_dir, str(solution_id))
 	build_cmd = {
 		"gcc":"gcc %s/main.c -o %s/main -Wall -lm -O2 -std=c99 --static -DONLINE_JUDGE" % (dir_work, dir_work),
-        "g++": "g++ %s/main.cpp -O2 -Wall -lm --static -DONLINE_JUDGE -o %s/main" % (dir_work, dir_work),
-        "java": "javac %s/Main.java" % dir_work,
-        "python2": 'python2 -m py_compile %s/main.py' % dir_work,
-        "python3": 'python3 -m py_compile %s/main.py' % dir_work,
+		"g++": "g++ %s/main.cpp -O2 -Wall -lm --static -DONLINE_JUDGE -o %s/main" % (dir_work, dir_work),
+		"java": "javac %s/Main.java" % dir_work,
+		"python2": 'python2 -m py_compile %s/main.py' % dir_work,
+		"python3": 'python3 -m py_compile %s/main.py' % dir_work,
 	}
 	if language not in build_cmd.keys():
 		return False
 	p = subprocess.Popen(
 		build_cmd[language],
-        shell=True,
-        cwd=dir_work,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE)
+		shell=True,
+		cwd=dir_work,
+		stdout=subprocess.PIPE,
+		stderr=subprocess.PIPE)
 	out, err = p.communicate()# bian yi err xin xi
 	err_txt_path = os.path.join(config.work_dir, str(solution_id),'err.txt')
 	f = file (err_txt_path, 'w')
@@ -106,8 +106,7 @@ def  compile(solution_id, language):
 	#dblock.release()
 	return False
 #pang ti
-def  judge(solution_id, problem_id, data_count, time_limit,
-		mem_limit, program_info, result_code, language):
+def  judge(solution_id, problem_id, data_count, time_limit, mem_limit, program_info, result_code, language):
 	low_level()
 	'''ping ce bian yi lei xing yu yan'''
 	max_men = 0
@@ -153,7 +152,7 @@ def  judge(solution_id, problem_id, data_count, time_limit,
 			elif result == 'Presenttation Error':
 				program_info['result'] = result_code[result]
 			elif result == 'Accepted':
-				if program_info['result'] != 'Presenttation Error':
+				if program_info['result'] != 'Presentation Error':
 					program_info['result'] = result_code[result]
 			#else:#why!!!!!!!!!!!!!!!!
 				#logging.error('judge did not get result')
@@ -229,8 +228,6 @@ def run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_
 	#time_limit = 10000
 	#mem_limit = 2175678
 	program_info = {
-
-
 		'solution_id': solution_id,
 		'problem_id': problem_id,
 		'take_time': 0,
@@ -254,16 +251,17 @@ def run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_
 	if check_dangerous_code(solution_id, language) == False:
 		program_info['result'] = result_code["Runtime Error"]
 		#clean_work_dir(solution_id)
-        return program_info
+		return program_info
 	compile_result = compile(solution_id, language)
 	if compile_result is False:
 		program_info['result'] = result_code['Compile Error']
 		#clean_work_dir(solution_id)
-        return program_info
+		return program_info
+	print "fuck"
 	if data_count == 0:
 		program_info['result'] = result_code['System Error']
 		#clean_work_dir(solution_id)
-        return program_info
+		return program_info
 	result = judge(
 		solution_id,
 		problem_id,
@@ -296,7 +294,7 @@ def get_data_count(problem_id):
 	return count
 
 def main(user_submit):
-        re_code = {
+	re_code = {
 		0:'In Queuing',
 		1:'Accepted',
 		2:'Time Limit Exceeded',
@@ -324,7 +322,8 @@ def main(user_submit):
 	main_path = path + '/main.cpp'
 	open(main_path, 'w').write(program)
 	result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
-
+	result['result'] = re_code[result['result']]
+	result['codeLength'] = os.path.getsize(main_path)
 #	user_submit.status = re_code[result['result']]
 #	user_submit.codeLength = os.path.getsize(main_path)
 #	user_submit.runTime =  result['take_time']
@@ -332,9 +331,9 @@ def main(user_submit):
 #	user_submit.save()
 
 	clean_work_dir(solution_id)
-        return result
-        
+	return result
+	
 '''if __name__ == '__main__':
 	program = "#include<iostream>\n using namespace std; int main(){int  a, b; cin >> a >> b; cout<< a + b <<endl; return 0; }"
-	user_submit = UserSubmit(1, 1000, 'g++', '1004101117', program)
-	main(user_submit)'''
+	user_submit = UserSubmit(1, 1000, 'g++', '1004101117', program,1000,10000)
+	print main(user_submit)'''

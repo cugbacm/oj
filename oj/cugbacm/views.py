@@ -17,19 +17,24 @@ import os
 
 @task
 def Judge(submit):
-        problem = Problem.objects.get(problemID = submit.problemID)
-        user = User.objects.get(userID = submit.userID)
-        user_submit = UserSubmit(
-                solution_id = submit.id,
-                problem_id = submit.problemID,
-                language = submit.language,
-                user_id = submit.userID,
-                program = submit.code,
-                mem_limit = problem.memoryLimit,
-                time_limit = problem.timeLimit
-        )
-        result = main(user_submit)
-        submit.status = result['result']
+	problem = Problem.objects.get(problemID = submit.problemID)
+	user = User.objects.get(userID = submit.userID)
+	user_submit = UserSubmit(
+		solution_id = submit.id,
+		problem_id = submit.problemID,
+		language = submit.language,
+		user_id = submit.userID,
+		program = submit.code,
+		mem_limit = problem.memoryLimit,
+		time_limit = problem.timeLimit
+	)
+	result = main(user_submit)
+	submit.status = result['result']
+	submit.codeLength = result['codeLength']
+	submit.runTime = result['take_time']
+	submit.memory = result['take_memory']
+	submit.save()
+	print submit.status
 	if submit.status == "Accepted":
 		print user.userID
 		print submit.problemID
@@ -47,33 +52,26 @@ def submit(request, problem_id):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
 	except:
-                return HttpResponseRedirect("/index/login")
-        if request.method == 'POST':
-		#runID = form.cleaned_data['runID']
-		#userID = form.cleaned_data['userID']
-		#status = form.cleaned_data['status']
-		#memory = form.cleaned_data['memory']
-    		#runTime = form.cleaned_data['runTime']
-                #codeLength = form.cleaned_data['codeLength']
-	    	#date = form.cleaned_data['date']
-    		#timestamp = form.cleaned_data['timestamp']
-    		code = request.POST['code']
-    		language = request.POST['language']
-                submit = Submit(
-    		    	runID = 111, 
-    		    	userID = request.session["userID"],
-    		    	problemID = problem_id,
-    		    	status = "queueing",
-    		    	memory = 10000,
-    		    	runTime = 1000,
-              	 	codeLength = 100,
-		    	language = language,
-	    		code = code)
-		submit.save()
-    		Judge(submit)
-    		return HttpResponseRedirect("/index/submitList")
-    	else:
-    		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
+		return HttpResponseRedirect("/index/login")
+	if request.method == 'POST':
+		code = request.POST['code']
+		language = request.POST['language']
+		for i in range(2000):
+			submit = Submit(
+				runID = 111, 
+				userID = request.session["userID"],
+				problemID = problem_id,
+				status = "queueing",
+				memory = 10000,
+				runTime = 1000,
+				codeLength = 100,
+				language = language,
+				code = code)
+			submit.save()
+			Judge(submit)
+		return HttpResponseRedirect("/index/submitList")
+	else:
+		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
 
 def submitList(request):
 	try:
@@ -84,12 +82,12 @@ def submitList(request):
 		return HttpResponseRedirect("/index/login")
 
 def userList(request):
-    try:
-        user = User.objects.get(userID = request.session['userID'])
-    except:
-        return HttpResponseRedirect("/index/login")
-    users = User.objects.all()
-    return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+	except:
+		return HttpResponseRedirect("/index/login")
+	users = User.objects.all()
+	return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
 
 
 def userInfo(request):
@@ -214,13 +212,13 @@ def addProblem(request):
 		return render(request, 'cugbacm/addProblem.html', {})
 
 def handle_uploaded_file(dataIn, dataOut, problemID):
-    os.makedirs('/home/cugbacm/Documents/data_dir/%s'% problemID)
-    with open('/home/cugbacm/Documents/data_dir/%s/data.in' % problemID, 'wb+') as info:
-        for chunk in dataIn.chunks():
-            info.write(chunk)
-    with open('/home/cugbacm/Documents/data_dir/%s/data.out' % problemID, 'wb+') as info:
-        for chunk in dataOut.chunks():
-            info.write(chunk)
+	os.makedirs('/home/cugbacm/Documents/data_dir/%s'% problemID)
+	with open('/home/cugbacm/Documents/data_dir/%s/data.in' % problemID, 'wb+') as info:
+		for chunk in dataIn.chunks():
+			info.write(chunk)
+	with open('/home/cugbacm/Documents/data_dir/%s/data.out' % problemID, 'wb+') as info:
+		for chunk in dataOut.chunks():
+			info.write(chunk)
 
 def problem(request, problem_id):
 	try:
