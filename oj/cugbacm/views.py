@@ -11,16 +11,25 @@ from CompileCpp import main
 from django.views.decorators.csrf import csrf_exempt
 import json
 from core_hq import main
-
+from core_hq import UserSubmit
 import os
 # Create your views here.
 
 @task
 def Judge(submit):
-	main(submit)
-
-	problem = Problem.objects.get(problemID = submit.problemID)
-	user = User.objects.get(userID = submit.userID)
+        problem = Problem.objects.get(problemID = submit.problemID)
+        user = User.objects.get(userID = submit.userID)
+        user_submit = UserSubmit(
+                solution_id = submit.id,
+                problem_id = submit.problemID,
+                language = submit.language,
+                user_id = submit.userID,
+                program = submit.code,
+                mem_limit = problem.memoryLimit,
+                time_limit = problem.timeLimit
+        )
+        result = main(user_submit)
+        submit.status = result['result']
 	if submit.status == "Accepted":
 		print user.userID
 		print submit.problemID

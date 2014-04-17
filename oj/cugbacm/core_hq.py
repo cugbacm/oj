@@ -1,19 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-import sys,os
-from datetime import *
-sys.path.append('/home/cugbacm/oj/oj')
-os.environ['DJANGO_SETTINGS_MODULE'] ='settings'
-
-from django.core.management import setup_environ
-from oj import settings
-
-from oj.cugbacm.models import Entry
-
-setup_environ(settings)
-
-from models import User, Submit, Problem
 
 import shlex, subprocess, os, config, logging, shutil, lorun , shutil
 class UserSubmit(object):
@@ -23,12 +10,16 @@ class UserSubmit(object):
 	language = ""
 	user_id = ""
 	program = ""
-	def __init__(self, solution_id, problem_id, language, user_id, program):
+        mem_limit = 0
+        time_limit = 0
+	def __init__(self, solution_id, problem_id, language, user_id, program, mem_limit, time_limit):
 		self.solution_id = solution_id
 		self.problem_id = problem_id
 		self.language = language
 		self.user_id = user_id
 		self.program = program
+                self.mem_limit = mem_limit
+                self.time_limit = time_limit
 
 def low_level():
     try:
@@ -305,7 +296,7 @@ def get_data_count(problem_id):
 	return count
 
 def main(user_submit):
-	re_code = {
+        re_code = {
 		0:'In Queuing',
 		1:'Accepted',
 		2:'Time Limit Exceeded',
@@ -319,14 +310,13 @@ def main(user_submit):
 		12:'Judging'
 	}
 
-	solution_id = user_submit.id
-	problem_id = user_submit.problemID
+	solution_id = user_submit.solution_id
+	problem_id = user_submit.problem_id
 	language = user_submit.language
-	user_id = user_submit.userID
-	program = user_submit.code
-	problem = Problem.objects.get(problemID = user_submit.problemID)
-	time_limit = problem.timeLimit
-	mem_limit = problem.memoryLimit
+	user_id = user_submit.user_id
+	program = user_submit.program
+	time_limit = user_submit.time_limit
+	mem_limit = user_submit.mem_limit
 	data_count = get_data_count(problem_id)
 	path = os.path.join(config.work_dir,'%s' % solution_id)
 	print path
@@ -335,14 +325,15 @@ def main(user_submit):
 	open(main_path, 'w').write(program)
 	result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
 
-	user_submit.status = re_code[result['result']]
-	user_submit.codeLength = os.path.getsize(main_path)
-	user_submit.runTime =  result['take_time']
-	user_submit.memory = result['take_memory']
-	user_submit.save()
+#	user_submit.status = re_code[result['result']]
+#	user_submit.codeLength = os.path.getsize(main_path)
+#	user_submit.runTime =  result['take_time']
+#	user_submit.memory = result['take_memory']
+#	user_submit.save()
 
 	clean_work_dir(solution_id)
-
+        return result
+        
 '''if __name__ == '__main__':
 	program = "#include<iostream>\n using namespace std; int main(){int  a, b; cin >> a >> b; cout<< a + b <<endl; return 0; }"
 	user_submit = UserSubmit(1, 1000, 'g++', '1004101117', program)
