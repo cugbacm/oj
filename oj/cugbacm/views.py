@@ -222,10 +222,11 @@ def handle_uploaded_file(dataIn, dataOut, problemID):
 def problem(request, problem_id):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
-		problem = Problem.objects.get(problemID=problem_id)
-		return render(request, 'cugbacm/problem.html', {'problem': problem})
 	except:
-		HttpResponseRedirect("/index/login")
+		return HttpResponseRedirect("/index/login")
+	problem = Problem.objects.get(problemID=problem_id)
+	return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID})
+	
 def problemList(request):
 	try:
 		user = User.objects.get(userID = request.session['userID'])

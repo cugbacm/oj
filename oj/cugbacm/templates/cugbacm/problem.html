@@ -10,6 +10,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="grid.css" rel="stylesheet">
@@ -23,13 +25,38 @@
       <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body style="padding-top:50px">
+     <div class="container">   
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="/index/problemList">Problem List</a></li>
+        <li><a href="/index/submitList">Submit List</a></li>
+            <li><a href="/index/userList">User List</a></li>
+            <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/index/userInfo">User Info</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="/index/login">Login out</a></li>
+        </ul>
+      </li>
+    </ul>
+    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" height="20" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+      <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+    </marquee>
+     </nav> 
     <div class="container">
 
       <div class="page-header">
         <h1>{{problem.title}}</h1>
       </div>
-
+      <div>
+        <p>Time Limit: {{problem.timeLimit}}ms</p>
+        <p>Memory Limit: {{problem.memoryLimit}}KB</p>
+        <p>(Accepted/Total Submit) {{problem.acceptedSubmission}}/{{problem.totalSubmission}}</p>
+      </div>
       <h3>Description</h3>
       <div class="row">
         <div class="col-md-4"><p>{% autoescape off %}{{problem.description}}{% endautoescape %}</p></div>
@@ -58,7 +85,7 @@
       <a href="/index/problem/{{problem.problemID}}/submit" class="btn btn-primary btn-lg active" role="button">Submit</a>
     </div> <!-- /container -->
 
-
+</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
