@@ -205,7 +205,6 @@ def addProblem(request):
 			sampleInput = sampleInput,
 			sampleOutput = sampleOutput,
 			author = author).save()
-		handle_uploaded_file(request.FILES['dataIn'], request.FILES['dataOut'], problemID)
 		return HttpResponse("addProblem success!")
 	else:
 		return render(request, 'cugbacm/addProblem.html', {})

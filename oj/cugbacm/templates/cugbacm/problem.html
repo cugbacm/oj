@@ -13,8 +13,13 @@
     <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
     <script src="/site_media/run_prettify.js"></script>
 
+    <script charset="utf-8" src="/site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js"></script>
+    <script charset="utf-8" src="/site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js"></script>
+
     <link href="grid.css" rel="stylesheet">
   </head>
+
+  </script>
 
   <body style="padding-top:70px">
     <div class="container">
@@ -68,23 +73,23 @@
               <h2>
                 description
               </h2>
-              <pre>{% autoescape off %}{{problem.description}}{% endautoescape%}</pre>
+              <p>{% autoescape off %}{{problem.description}}{% endautoescape%}</p>
               <h2>
                 input
               </h2>
-              <pre>{% autoescape off %}{{problem.input}}{% endautoescape%}</pre>
+              <p>{% autoescape off %}{{problem.input}}{% endautoescape%}</p>
               <h2>
                 output
               </h2>
-              <pre>{% autoescape off %}{{problem.output}}{% endautoescape%}</pre>
+              <p>{% autoescape off %}{{problem.output}}{% endautoescape%}</p>
               <h2>
                 sample input
               </h2>
-              <pre>{% autoescape off %}{{problem.sampleInput}}{% endautoescape%}</pre>
+              <p>{% autoescape off %}{{problem.sampleInput}}{% endautoescape%}</p>
               <h2>
                 sample output
               </h2>
-              <pre>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</pre>
+              <p>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</p>
               <h2>
                 author
               </h2>
@@ -97,26 +102,27 @@
             <div class="col-md-6">
               <div  class="affix-top" role="complementary">
                 <form class="form-signin" role="form" action="/index/problem/{{problem.problemID}}/submit" method="post">{% csrf_token %} 
-                    <div class="row-fluid">
-                      <div class="col-md-3">
-                        <select class="form-control" name="language">
-                          <option>g++</option>
-                          <option>gcc</option>
-                          <option>java</option>
-                          <option>python2</option>
-                          <option>python3</option>
-                        </select>
-                      </div>
-                      <div class="col-md-3">
-                        <button class="btn btn-primary " type="submit">Submit</button>
-                      </div>
+                  <div class="row-fluid">
+                    <div class="col-md-3">
+                      <select class="form-control" name="language">
+                        <option>g++</option>
+                        <option>gcc</option>
+                        <option>java</option>
+                        <option>python2</option>
+                        <option>python3</option>
+                      </select>
                     </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-primary " type="submit">Submit</button>
+                    </div>
+                  </div>
 
-                    <div class="row-fluid">
-                      <div class="col-md-12">
-                        <textarea class="form-control" rows="15" name="code" required>{{submit.code}}</textarea>
-                      </div>
+                  <div class="row-fluid">
+                    <div class="col-md-12">
+                      <textarea class="form-control" rows="15" name="code" width=100%>{{submit.code}}</textarea>
                     </div>
+                  </div>
+                 
                 </form>
               </div>
             </div>
