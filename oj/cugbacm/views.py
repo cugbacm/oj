@@ -92,21 +92,24 @@ def userList(request):
 def userInfo(request):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
-		if request.method == 'POST':
-			userID = request.POST['userID']
-			oldPassword = request.POST['oldPassword']
-			password = request.POST['password']
-			confirmPassword = request.POST['confirmPassword']
-			session = request.POST['session']
-			specialty = request.POST['specialty']
-			tel = request.POST['tel']
-			email = request.POST['email']
-			nickname = request.POST['nickname']
-			if oldPassword != user.password:
-				HttpResponse("error")
-			else:
-				if password.strip() != '' and password == confirmPassword:
-					user.password = password
+	except:
+		return HttpResponseRedirect("/index/login")
+
+	if request.method == 'POST':
+		userID = request.POST['userID']
+		oldPassword = request.POST['oldPassword']
+		password = request.POST['password']
+		confirmPassword = request.POST['confirmPassword']
+		session = request.POST['session']
+		specialty = request.POST['specialty']
+		tel = request.POST['tel']
+		email = request.POST['email']
+		nickname = request.POST['nickname']
+		if oldPassword != user.password:
+			return HttpResponse("password error")
+		else:
+			if password.strip() != '' and password == confirmPassword:
+				user.password = password
 				user.session = session
 				user.specialty = specialty
 				user.tel = tel
@@ -114,10 +117,11 @@ def userInfo(request):
 				user.nickname = nickname
 				user.save()
 				return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
-		else:
-			return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
-	except:
-		return HttpResponseRedirect("/index/login")
+			else:
+				return HttpResponse("password and confirmPassword is not the same!")
+	else:
+		return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
+
 		
 def register(request):
 	if request.method == 'POST':
@@ -191,7 +195,7 @@ def addProblem(request):
 		output = request.POST['output']
 		sampleInput = request.POST['sampleInput']
 		sampleOutput = request.POST['sampleOutput']
-		author = user.userID
+		author = request.POST['source']
 		Problem(
 			problemID = problemID,
 			title = title,
@@ -205,7 +209,7 @@ def addProblem(request):
 			sampleInput = sampleInput,
 			sampleOutput = sampleOutput,
 			author = author).save()
-		return HttpResponse("addProblem success!")
+		return HttpResponseRedirect("/index/problemList")
 	else:
 		return render(request, 'cugbacm/addProblem.html', {})
 
