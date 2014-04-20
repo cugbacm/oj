@@ -84,7 +84,7 @@
 					<td>{{submit.runTime}}</td>
 					<td>{{submit.codeLength}}</td>
 					{% ifequal submit.userID userID %} 
-						<td><a href="/index/showCode/{{submit.id}}">{{submit.language}}</a></td>
+						<td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
 					{% else %}
 						<td>{{submit.language}}</td>
 					{% endifequal %}	

@@ -225,7 +225,11 @@ def problem(request, problem_id):
 	except:
 		return HttpResponseRedirect("/index/login")
 	problem = Problem.objects.get(problemID=problem_id)
-	return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID})
+	try:
+		submit = Submit.objects.get(id = request.GET.get('submit'))
+		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit})
+	except:
+		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID})
 	
 def problemList(request):
 	try:
