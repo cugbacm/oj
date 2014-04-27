@@ -9,7 +9,7 @@ class User(models.Model):
 	tel = models.CharField(max_length = 100)
 	email = models.EmailField(max_length = 100)
 	nickname = models.CharField(max_length = 100)
-        accepted = models.IntegerField(default = 0)
+	accepted = models.IntegerField(default = 0)
 	total = models.IntegerField(default = 0)
 	def __unicode__(self):
 		return self.userID
@@ -34,14 +34,22 @@ class Problem(models.Model):
 	title = models.CharField(max_length = 100)
 	timeLimit = models.IntegerField()
 	memoryLimit = models.IntegerField();
-	acceptedSubmission = models.IntegerField();
-	totalSubmission = models.IntegerField();
+	ac = models.IntegerField(default = 0);
+	wa = models.IntegerField(default = 0);
+	tle = models.IntegerField(default = 0);
+	mle = models.IntegerField(default = 0);
+	pe = models.IntegerField(default = 0);
+	ce = models.IntegerField(default = 0);
+	se = models.IntegerField(default = 0);
+	totalSubmission = models.IntegerField(default = 0);
 	description = models.TextField();
 	input = models.TextField();
 	output = models.TextField();
 	sampleInput = models.TextField();
 	sampleOutput = models.TextField();
+	hint = models.TextField();
 	author = models.CharField(max_length = 100)
+
 	def __unicode__(self):
 		return self.title
 

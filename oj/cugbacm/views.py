@@ -188,8 +188,6 @@ def addProblem(request):
 		title = request.POST['title']
 		timeLimit = request.POST['timeLimit']
 		memoryLimit = request.POST['memoryLimit']
-		acceptedSubmission = 0
-		totalSubmission = 0
 		description = request.POST['description']
 		input = request.POST['input']
 		output = request.POST['output']
@@ -201,8 +199,6 @@ def addProblem(request):
 			title = title,
 			timeLimit = timeLimit,
 			memoryLimit = memoryLimit,
-			acceptedSubmission = acceptedSubmission,
-			totalSubmission = totalSubmission,
 			description = description,
 			input = input,
 			output = output,
@@ -228,11 +224,31 @@ def problem(request, problem_id):
 	except:
 		return HttpResponseRedirect("/index/login")
 	problem = Problem.objects.get(problemID=problem_id)
-	try:
-		submit = Submit.objects.get(id = request.GET.get('submit'))
-		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit})
-	except:
-		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID})
+	user = User.objects.get(userID = request.session['userID'])
+	submits = Submit.objects.filter(problemID = problem_id, userID = user.userID).order_by('-id')
+	if request.method == 'POST':
+		code = request.POST['code']
+		language = request.POST['language']
+		#for i in range(2000):
+		submit = Submit(
+			runID = 111, 
+			userID = request.session["userID"],
+			problemID = problem_id,
+			status = "queueing",
+			memory = 10000,
+			runTime = 1000,
+			codeLength = 100,
+			language = language,
+			code = code)
+		submit.save()
+		Judge(submit)
+		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits})
+	else:
+		try:
+			submit = Submit.objects.get(id = request.GET.get('submit'))
+			return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits})
+		except:
+			return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits})
 	
 def problemList(request):
 	try:
