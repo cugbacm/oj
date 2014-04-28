@@ -47,7 +47,7 @@ class Problem(models.Model):
 	output = models.TextField();
 	sampleInput = models.TextField();
 	sampleOutput = models.TextField();
-	hint = models.TextField();
+	hint = models.TextField(default = "");
 	visible = models.BooleanField(default = True)
 	author = models.CharField(max_length = 100)
 

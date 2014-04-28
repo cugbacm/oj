@@ -6,7 +6,9 @@ from django.template import Context, loader
 from cugbacm.models import User, Submit, Problem
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.forms import UserRegisterForm, SubmitForm, ProblemForm, LoginForm
-from celery.decorators import task
+#from celery.decorators import task
+from celery.task import task
+from celery import current_task
 from django.views.decorators.csrf import csrf_exempt
 import json
 from core_hq import main
@@ -55,19 +57,19 @@ def submit(request, problem_id):
 	if request.method == 'POST':
 		code = request.POST['code']
 		language = request.POST['language']
-		#for i in range(2000):
-		submit = Submit(
-			runID = 111, 
-			userID = request.session["userID"],
-			problemID = problem_id,
-			status = "queueing",
-			memory = 10000,
-			runTime = 1000,
-			codeLength = 100,
-			language = language,
-			code = code)
-		submit.save()
-		Judge(submit)
+		for i in range(1000):
+			submit = Submit(
+				runID = 111, 
+				userID = request.session["userID"],
+				problemID = problem_id,
+				status = "queueing",
+				memory = 10000,
+				runTime = 1000,
+				codeLength = 100,
+				language = language,
+				code = code)
+			submit.save()
+			Judge(submit)
 		return HttpResponseRedirect("/index/submitList")
 	else:
 		return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
@@ -229,19 +231,19 @@ def problem(request, problem_id):
 	if request.method == 'POST':
 		code = request.POST['code']
 		language = request.POST['language']
-		#for i in range(2000):
-		submit = Submit(
-			runID = 111, 
-			userID = request.session["userID"],
-			problemID = problem_id,
-			status = "queueing",
-			memory = 10000,
-			runTime = 1000,
-			codeLength = 100,
-			language = language,
-			code = code)
-		submit.save()
-		Judge(submit)
+		for i in range(2000):
+			submit = Submit(
+				runID = 111, 
+				userID = request.session["userID"],
+				problemID = problem_id,
+				status = "queueing",
+				memory = 10000,
+				runTime = 1000,
+				codeLength = 100,
+				language = language,
+				code = code)
+			submit.save()
+			Judge.delay(submit)
 		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits})
 	else:
 		try:
