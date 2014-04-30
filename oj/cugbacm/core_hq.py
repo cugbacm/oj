@@ -303,7 +303,7 @@ def main(user_submit):
 		5:'Runtime Error',
 		6:'Output Limit',
 		7:'Compile Error',
-		8:'Presenttation Error',
+		8:'Presentation Error',
 		11:'System Error',
 		12:'Judging'
 	}
