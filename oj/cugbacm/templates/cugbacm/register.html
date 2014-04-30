@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
-    
+    <link href="/site_media/dist/css/signin.css" rel="stylesheet">
     
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -29,17 +29,36 @@
 	<div class="container" >
 
       <form class="form-signin" role="form" action="/index/register/" method="post">{% csrf_token %} 
-        <h2 class="form-signin-heading">If you have no account please register</h2>
-	<input type="text" class="form-control" placeholder="UserID" name="userID" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" name="password" required>
-        <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
-        <input type="text" class="form-control" placeholder="Session" name="session" required>
-        <input type="text" class="form-control" placeholder="Specialty" name="specialty" required>
-        <input type="text" class="form-control" placeholder="Tel" name="tel" required>
-        <input type="text" class="form-control" placeholder="Email" name="email" required>
-        <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
-        
-        <button class="btn btn-lg btn-primary" type="submit">Register</button>
+        <div class="form-group">
+          <h2 class="form-signin-heading">Register</h2>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="UserID" name="userID" required autofocus>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" name="password" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Session" name="session" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Specialty" name="specialty" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Tel" name="tel" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        </div>
       </form>
 
     </div> <!-- /container -->

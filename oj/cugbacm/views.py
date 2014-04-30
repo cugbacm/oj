@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import pika
 import sys
 from django.shortcuts import render
 from django.template import Context, loader
@@ -14,7 +13,16 @@ import json
 from core_hq import main
 from core_hq import UserSubmit
 import os
+import re
 # Create your views here.
+
+def ProcessMail(inputMail):  
+	if len(inputMail) > 7:
+		if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", inputMail) != None:
+			return True
+		else:
+			return False
+	return False 
 
 @task
 def Judge(submit):
@@ -150,6 +158,10 @@ def register(request):
 		nickname = request.POST['nickname']
 		if password != confirmPassword:
 			return HttpResponse("Password and confirm password must be identical.")
+		if not ProcessMail(email):
+			return HttpResponse("Email is not valid.")
+		if len(password) < 10:
+			return HttpResponse("The length of password should not less than 10.")
 		User(
 			userID = userID,
 			password = password,
