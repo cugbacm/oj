@@ -81,36 +81,36 @@
               <h2>
                 description
               </h2>
-              <p>{% autoescape off %}{{problem.description}}{% endautoescape%}</p>
+              <pre>{% autoescape off %}{{problem.description}}{% endautoescape%}</pre>
               <h2>
                 input
               </h2>
-              <p>{% autoescape off %}{{problem.input}}{% endautoescape%}</p>
+              <pre>{% autoescape off %}{{problem.input}}{% endautoescape%}</pre>
               <h2>
                 output
               </h2>
-              <p>{% autoescape off %}{{problem.output}}{% endautoescape%}</p>
+              <pre>{% autoescape off %}{{problem.output}}{% endautoescape%}</pre>
               <h2>
                 sample input
               </h2>
-              <p>{% autoescape off %}{{problem.sampleInput}}{% endautoescape%}</p>
+              <pre>{% autoescape off %}{{problem.sampleInput}}{% endautoescape%}</pre>
               <h2>
                 sample output
               </h2>
-              <p>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</p>
+              <pre>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</pre>
               <h2>
                 author
               </h2>
-              <p>
+              <pre>
                 {% autoescape off %}
                   {{problem.author}}
                 {% endautoescape%}
-              </p>
+              </pre>
             </div>
             <div class="col-md-4" style="padding-top:20px;padding-right:20px">
               <div data-spy="affix">
               <div>
-                <form class="form-horizontal" role="form" action="#" method="post">{% csrf_token %} 
+                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" >{% csrf_token %} 
                   <div class="form-group">
                     <label for="language" class="col-md-2 control-label">Language</label>
                       <div class="col-md-5 col-md-offset-1">

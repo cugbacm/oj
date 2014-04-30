@@ -22,3 +22,68 @@ You must only enable the serializers that you will actually use.
 [2014-04-15 20:29:57,410: INFO/MainProcess] mingle: searching for neighbors
 [2014-04-15 20:29:58,479: INFO/MainProcess] mingle: all alone
 [2014-04-15 20:29:58,504: WARNING/MainProcess] celery@AY14040915414956495eZ ready.
+[2014-04-30 18:10:30,906: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-04-30 18:10:30,934: INFO/MainProcess] Connected to amqp://guest@127.0.0.1:5672//
+[2014-04-30 18:10:30,943: INFO/MainProcess] mingle: searching for neighbors
+[2014-04-30 18:10:31,957: INFO/MainProcess] mingle: all alone
+[2014-04-30 18:10:31,975: WARNING/MainProcess] celery@cugbacm-Lenovo-Product ready.
+[2014-04-30 18:10:31,977: INFO/MainProcess] Received task: cugbacm.views.Judge[14bb1460-4e28-457f-a9d5-0d5bf8a16027]
+
+Restarting celery worker (manage.py celeryd -l info)
+[2014-04-30 18:10:33,975: ERROR/MainProcess] Process 'Worker-4' pid:3061 exited with exitcode 70
+[2014-04-30 18:10:33,986: ERROR/MainProcess] Process 'Worker-3' pid:3060 exited with exitcode 70
+[2014-04-30 18:10:33,996: ERROR/MainProcess] Process 'Worker-2' pid:3059 exited with exitcode 70
+[2014-04-30 18:10:34,006: ERROR/MainProcess] Process 'Worker-1' pid:3058 exited with exitcode 70
+[2014-04-30 18:10:34,398: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-04-30 18:10:34,414: INFO/MainProcess] Connected to amqp://guest@127.0.0.1:5672//
+[2014-04-30 18:10:34,423: INFO/MainProcess] mingle: searching for neighbors
+[2014-04-30 18:10:35,438: INFO/MainProcess] mingle: all alone
+[2014-04-30 18:10:35,454: WARNING/MainProcess] celery@cugbacm-Lenovo-Product ready.
+[2014-04-30 18:10:35,456: INFO/MainProcess] Received task: cugbacm.views.Judge[14bb1460-4e28-457f-a9d5-0d5bf8a16027]
+[2014-04-30 18:10:35,472: WARNING/Worker-3] /home/cugbacm/Documents/work_dir/13927
+[2014-04-30 18:10:35,902: INFO/MainProcess] Received task: cugbacm.views.Judge[f1144781-c418-4873-a906-559d2c95e5ea]
+[2014-04-30 18:10:35,914: WARNING/Worker-2] /home/cugbacm/Documents/work_dir/13928
+[2014-04-30 18:10:37,238: WARNING/Worker-3] fuck
+[2014-04-30 18:10:37,239: WARNING/Worker-2] fuck
+[2014-04-30 18:10:37,335: WARNING/Worker-2] System Error
+[2014-04-30 18:10:37,385: WARNING/Worker-3] System Error
+[2014-04-30 18:10:37,536: INFO/MainProcess] Task cugbacm.views.Judge[f1144781-c418-4873-a906-559d2c95e5ea] succeeded in 1.632366879s: None
+[2014-04-30 18:10:37,586: INFO/MainProcess] Task cugbacm.views.Judge[14bb1460-4e28-457f-a9d5-0d5bf8a16027] succeeded in 2.128008484s: None

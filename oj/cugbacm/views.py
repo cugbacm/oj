@@ -231,20 +231,19 @@ def problem(request, problem_id):
 	if request.method == 'POST':
 		code = request.POST['code']
 		language = request.POST['language']
-		for i in range(2000):
-			submit = Submit(
-				runID = 111, 
-				userID = request.session["userID"],
-				problemID = problem_id,
-				status = "queueing",
-				memory = 10000,
-				runTime = 1000,
-				codeLength = 100,
-				language = language,
-				code = code)
-			submit.save()
-			Judge.delay(submit)
-		return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits})
+		submit = Submit(
+			runID = 111, 
+			userID = request.session["userID"],
+			problemID = problem_id,
+			status = "queueing",
+			memory = 10000,
+			runTime = 1000,
+			codeLength = 100,
+			language = language,
+			code = code)
+		submit.save()
+		Judge.delay(submit)
+		return HttpResponseRedirect("/index/problem/" + str(problem_id))
 	else:
 		try:
 			submit = Submit.objects.get(id = request.GET.get('submit'))
