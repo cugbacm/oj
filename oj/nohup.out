@@ -87,3 +87,19 @@ You must only enable the serializers that you will actually use.
 [2014-04-30 18:10:37,385: WARNING/Worker-3] System Error
 [2014-04-30 18:10:37,536: INFO/MainProcess] Task cugbacm.views.Judge[f1144781-c418-4873-a906-559d2c95e5ea] succeeded in 1.632366879s: None
 [2014-04-30 18:10:37,586: INFO/MainProcess] Task cugbacm.views.Judge[14bb1460-4e28-457f-a9d5-0d5bf8a16027] succeeded in 2.128008484s: None
+[2014-05-04 20:13:01,769: INFO/MainProcess] Received task: cugbacm.views.Judge[57f95eb8-310a-401b-a991-253d0ba96c8c]
+[2014-05-04 20:13:02,042: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/13929
+[2014-05-04 20:13:02,662: WARNING/Worker-1] Compile Error
+[2014-05-04 20:13:02,763: INFO/MainProcess] Task cugbacm.views.Judge[57f95eb8-310a-401b-a991-253d0ba96c8c] succeeded in 0.850343709986s: None
+[2014-05-10 09:01:38,303: INFO/MainProcess] Received task: cugbacm.views.Judge[460d14f6-fe0e-4f68-9d3d-f6427f0e5a9f]
+[2014-05-10 09:01:38,321: WARNING/Worker-2] /home/cugbacm/Documents/work_dir/13930
+[2014-05-10 09:01:38,903: WARNING/Worker-2] Compile Error
+[2014-05-10 09:01:39,045: INFO/MainProcess] Task cugbacm.views.Judge[460d14f6-fe0e-4f68-9d3d-f6427f0e5a9f] succeeded in 0.74019435409s: None
+[2014-05-10 09:01:41,326: INFO/MainProcess] Received task: cugbacm.views.Judge[577fa5c2-bcef-4d9b-91bd-f4368428b8cb]
+[2014-05-10 09:01:41,331: WARNING/Worker-3] /home/cugbacm/Documents/work_dir/13931
+[2014-05-10 09:01:41,476: WARNING/Worker-3] Compile Error
+[2014-05-10 09:01:41,619: INFO/MainProcess] Task cugbacm.views.Judge[577fa5c2-bcef-4d9b-91bd-f4368428b8cb] succeeded in 0.292263324023s: None
+[2014-05-10 09:01:57,835: INFO/MainProcess] Received task: cugbacm.views.Judge[4c5bfeef-13af-4529-8a0b-b83dfc978fc2]
+[2014-05-10 09:01:57,839: WARNING/Worker-2] /home/cugbacm/Documents/work_dir/13932
+[2014-05-10 09:01:58,017: WARNING/Worker-2] Compile Error
+[2014-05-10 09:01:58,119: INFO/MainProcess] Task cugbacm.views.Judge[4c5bfeef-13af-4529-8a0b-b83dfc978fc2] succeeded in 0.283126943978s: None

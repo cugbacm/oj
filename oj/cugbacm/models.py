@@ -53,5 +53,22 @@ class Problem(models.Model):
 
 	def __unicode__(self):
 		return self.title
+class ContestSubmit(Submit):
+	"""docstring for ContestSubmit"""
+	contestID = models.IntegerField()
+	def __init__(self):
+		super(ContestSubmit, self).__init__()
+		
+class Contest(models.Model):
+	"""docstring for Contest"""
+	title = models.CharField(max_length = 100)
+	startTime = models.DateField()
+	startTimestamp = models.TimeField()
+	endTime = models.DateField()
+	endTimestamp = models.TimeField()
+	author = models.CharField(max_length = 100)
+	problemList = models.CommaSeparatedIntegerField(max_length = 10000)
+	userList = models.CommaSeparatedIntegerField(max_length = 10000)
 
-
+	def __unicode__(self):
+		return self.title		
