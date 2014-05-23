@@ -59,6 +59,45 @@
     </nav>
     {% autopaginate submits 50 %}
     <div class="table-responsive pagination-centered">
+
+      <form class="form-inline" role="form" action="/index/submitList/" method="post">{% csrf_token %} 
+        <div class="form-group">
+          <label class="sr-only" for="userIDSearch">User ID</label>
+          <input type="text" class="form-control" id="userIDSearch" name="userIDSearch" placeholder="User ID" value={{userIDSearch}}>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="problemIDSearch">Problem ID</label>
+          <input type="text" class="form-control" id="problemIDSearch" name="problemIDSearch" placeholder="Problem ID" value={{problemIDSearch}}>
+        </div>
+
+        <div class="form-group">
+          <label for="resultSearch" class="sr-only">Result</label>
+            <select id="resultSearch" class="form-control" name="resultSearch" value={{resultSearch}}>
+              <option>Result</option>
+              <option>Accepted</option>
+              <option>Time Limit Exceeded</option>
+              <option>Memory Limit Exceeded</option>
+              <option>Wrong Answer</option>
+              <option>Runtime Error</option>
+              <option>Compile Error</option>
+              <option>Presentation Error</option>
+              <option>System Error</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label for="languageSearch" class="sr-only">Language</label>
+            <select id="languageSearch" class="form-control" name="languageSearch" value={{languageSearch}}>
+              <option>Language</option>
+              <option>g++</option>
+              <option>gcc</option>
+              <option>java</option>
+              <option>python2</option>
+              <option>python3</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
 		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
 			<thead>  
 				<tr>  

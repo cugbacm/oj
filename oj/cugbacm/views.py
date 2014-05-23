@@ -99,7 +99,37 @@ def submitList(request):
 	try:
 		user = User.objects.get(userID = request.session['userID'])
 		submits = Submit.objects.all().order_by('-id')
-		return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
+		if request.method == 'POST':
+			userIDSearch = request.POST['userIDSearch']
+			problemIDSearch = request.POST['problemIDSearch']
+			resultSearch = request.POST['resultSearch']
+			languageSearch = request.POST['languageSearch']
+			try:
+				if userIDSearch.strip():
+					submits = submits.filter(userID = userIDSearch)
+				if problemIDSearch.strip():
+					submits = submits.filter(problemID = problemIDSearch)
+				if resultSearch != "Result":
+					submits = submits.filter(status = resultSearch)
+				if languageSearch != "Language":
+					submits = submits.filter(language = languageSearch)
+
+				return render(
+					request, 
+					'cugbacm/submitList.html',
+					{
+						'submits': submits, 
+						'userID':request.session['userID'],
+						'userIDSearch': request.POST['userIDSearch'],
+						'problemIDSearch': request.POST['problemIDSearch'],
+						'resultSearch': request.POST['resultSearch'],
+						'languageSearch': request.POST['languageSearch']
+					}
+				)
+			except:
+				return render(request, 'cugbacm/submitList.html', {'submits': {}, 'userID':request.session['userID'] })
+		else:
+			return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
 	except:
 		return HttpResponseRedirect("/index/login")
 
