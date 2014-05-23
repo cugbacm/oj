@@ -115,22 +115,41 @@
 		    </thead>  
 			<tbody>
 			{% for submit in submits %}
-				<tr class="odd gradeX">
-					<td>{{submit.id}}</td>
-					<td><a href="#" target="_blank">{{submit.userID}}</a></td>
-					<td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-					<td>{{submit.status}}</td> 
-					<td>{{submit.memory}}</td>
-					<td>{{submit.runTime}}</td>
-					<td>{{submit.codeLength}}</td>
-					{% ifequal submit.userID userID %} 
-						<td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
-					{% else %}
-						<td>{{submit.language}}</td>
-					{% endifequal %}	
-					<td>{{submit.date}} {{submit.timestamp}}</td> 
-					<!--<td>{{submit.code}}</td> -->
-				</tr>
+        {% if submit.status == "Accepted" %}
+          <tr class="odd gradeA">
+            <td>{{submit.id}}</td>
+            <td><a href="#" target="_blank">{{submit.userID}}</a></td>
+            <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
+            <td>{{submit.status}}</td> 
+            <td>{{submit.memory}}</td>
+            <td>{{submit.runTime}}</td>
+            <td>{{submit.codeLength}}</td>
+            {% ifequal submit.userID userID %} 
+              <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+            {% else %}
+              <td>{{submit.language}}</td>
+            {% endifequal %}  
+            <td>{{submit.date}} {{submit.timestamp}}</td> 
+            <!--<td>{{submit.code}}</td> -->
+          </tr>
+        {% else %}
+          <tr class="odd gradeX">
+          <td>{{submit.id}}</td>
+          <td><a href="#" target="_blank">{{submit.userID}}</a></td>
+          <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
+          <td>{{submit.status}}</td> 
+          <td>{{submit.memory}}</td>
+          <td>{{submit.runTime}}</td>
+          <td>{{submit.codeLength}}</td>
+          {% ifequal submit.userID userID %} 
+            <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+          {% else %}
+            <td>{{submit.language}}</td>
+          {% endifequal %}  
+          <td>{{submit.date}} {{submit.timestamp}}</td> 
+          <!--<td>{{submit.code}}</td> -->
+        </tr>
+        {% endif %}
 			{% endfor %}  
 			</tbody>  
 		</table>
