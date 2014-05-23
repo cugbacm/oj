@@ -5564,3 +5564,131 @@ spawned uWSGI worker 4 (pid: 8904, cores: 1)
 [pid: 8901|app: 0|req: 5/20] 127.0.0.1 () {44 vars in 896 bytes} [Fri May 23 14:35:55 2014] POST /index/submitList/ => generated 5527 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 8903|app: 0|req: 10/21] 127.0.0.1 () {44 vars in 896 bytes} [Fri May 23 14:35:57 2014] POST /index/submitList/ => generated 7146 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 8904|app: 0|req: 3/22] 127.0.0.1 () {44 vars in 896 bytes} [Fri May 23 14:36:03 2014] POST /index/submitList/ => generated 6733 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 21:22:19 2014] ***
+compiled with version: 4.6.3 on 11 April 2014 21:03:50
+os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
+nodename: cugbacm-Lenovo-Product
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31140
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x152f1a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x152f1a0 pid: 13333 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 13333, cores: 1)
+spawned uWSGI worker 2 (pid: 13337, cores: 1)
+spawned uWSGI worker 3 (pid: 13338, cores: 1)
+spawned uWSGI worker 4 (pid: 13339, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 21:22:20 2014] ***
+compiled with version: 4.6.3 on 11 April 2014 21:03:50
+os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
+nodename: cugbacm-Lenovo-Product
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31140
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xcfd1a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xcfd1a0 pid: 13350 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 13350, cores: 1)
+spawned uWSGI worker 2 (pid: 13351, cores: 1)
+spawned uWSGI worker 3 (pid: 13352, cores: 1)
+spawned uWSGI worker 4 (pid: 13353, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 21:22:20 2014] ***
+compiled with version: 4.6.3 on 11 April 2014 21:03:50
+os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
+nodename: cugbacm-Lenovo-Product
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31140
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26d71a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x26d71a0 pid: 13364 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 13364, cores: 1)
+spawned uWSGI worker 2 (pid: 13372, cores: 1)
+spawned uWSGI worker 3 (pid: 13373, cores: 1)
+spawned uWSGI worker 4 (pid: 13374, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 21:22:20 2014] ***
+compiled with version: 4.6.3 on 11 April 2014 21:03:50
+os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
+nodename: cugbacm-Lenovo-Product
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31140
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xac01a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xac01a0 pid: 13388 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 13388, cores: 1)
+spawned uWSGI worker 2 (pid: 13389, cores: 1)
+spawned uWSGI worker 3 (pid: 13390, cores: 1)
+spawned uWSGI worker 4 (pid: 13391, cores: 1)

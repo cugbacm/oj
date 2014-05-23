@@ -138,7 +138,7 @@ def userList(request):
 		user = User.objects.get(userID = request.session['userID'])
 	except:
 		return HttpResponseRedirect("/index/login")
-	users = User.objects.all()
+	users = User.objects.all().order_by('-accepted')
 	return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
 
 
