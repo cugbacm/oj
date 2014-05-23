@@ -1,24 +1,4 @@
-*** Starting uWSGI 2.0.3 (64bit) on [Wed Apr 30 20:49:58 2014] ***
-compiled with version: 4.6.3 on 11 April 2014 21:03:50
-os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
-nodename: cugbacm-Lenovo-Product
-machine: x86_64
-clock source: unix
-detected number of CPU cores: 4
-current working directory: /home/cugbacm/oj/oj
-detected binary path: /usr/local/bin/uwsgi
-!!! no internal routing support, rebuild with pcre support !!!
-uWSGI running as root, you can use --uid/--gid/--chroot options
-*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
-*** WARNING: you are running uWSGI without its master process manager ***
-your processes number limit is 31140
-your memory page size is 4096 bytes
-detected max file descriptor number: 1024
-lock engine: pthread robust mutexes
-thunder lock: disabled (you can enable it with --thunder-lock)
-probably another instance of uWSGI is running on the same address (:8077).
-bind(): Address already in use [core/socket.c line 759]
-*** Starting uWSGI 2.0.3 (64bit) on [Wed Apr 30 20:49:59 2014] ***
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:03:20 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -39,18 +19,18 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x1410fb0
+Python main interpreter initialized at 0x12471a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1410fb0 pid: 9241 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x12471a0 pid: 3911 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 9241, cores: 1)
-spawned uWSGI worker 2 (pid: 9242, cores: 1)
-spawned uWSGI worker 3 (pid: 9243, cores: 1)
-spawned uWSGI worker 4 (pid: 9244, cores: 1)
-*** Starting uWSGI 2.0.3 (64bit) on [Wed Apr 30 20:49:59 2014] ***
+spawned uWSGI worker 1 (pid: 3911, cores: 1)
+spawned uWSGI worker 2 (pid: 3912, cores: 1)
+spawned uWSGI worker 3 (pid: 3913, cores: 1)
+spawned uWSGI worker 4 (pid: 3914, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:03:21 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -71,29 +51,18 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x2582fb0
+Python main interpreter initialized at 0x16d41a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2582fb0 pid: 9255 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x16d41a0 pid: 3925 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 9255, cores: 1)
-spawned uWSGI worker 2 (pid: 9256, cores: 1)
-spawned uWSGI worker 3 (pid: 9257, cores: 1)
-spawned uWSGI worker 4 (pid: 9258, cores: 1)
-[pid: 9256|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 914 bytes} [Wed Apr 30 20:50:02 2014] GET /index/login/ => generated 2808 bytes in 193 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 9257|app: 0|req: 1/2] 127.0.0.1 () {44 vars in 951 bytes} [Wed Apr 30 20:50:02 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 172 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
-[pid: 9258|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 950 bytes} [Wed Apr 30 20:50:02 2014] GET /site_media/dist/css/signin.css => generated 792 bytes in 169 msecs (HTTP/1.1 200) 4 headers in 139 bytes (40 switches on core 0)
-[pid: 9255|app: 0|req: 1/4] 127.0.0.1 () {44 vars in 956 bytes} [Wed Apr 30 20:50:02 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 201 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
-[pid: 9256|app: 0|req: 2/5] 127.0.0.1 () {50 vars in 1083 bytes} [Wed Apr 30 20:50:05 2014] POST /index/login/ => generated 15 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
-[pid: 9256|app: 0|req: 3/6] 127.0.0.1 () {40 vars in 912 bytes} [Wed Apr 30 20:50:06 2014] GET /index/register/ => generated 2952 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 9258|app: 0|req: 2/7] 127.0.0.1 () {44 vars in 1032 bytes} [Wed Apr 30 20:50:29 2014] POST /index/register/ => generated 0 bytes in 258 msecs (HTTP/1.1 302) 5 headers in 282 bytes (1 switches on core 0)
-[pid: 9257|app: 0|req: 2/8] 127.0.0.1 () {40 vars in 919 bytes} [Wed Apr 30 20:50:29 2014] GET /index/problemList => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
-[pid: 9258|app: 0|req: 3/9] 127.0.0.1 () {40 vars in 921 bytes} [Wed Apr 30 20:50:29 2014] GET /index/problemList/ => generated 3444 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 9256|app: 0|req: 4/10] 127.0.0.1 () {40 vars in 922 bytes} [Wed Apr 30 20:50:31 2014] GET /index/submitList/ => generated 22779 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 9255|app: 0|req: 2/11] 127.0.0.1 () {40 vars in 917 bytes} [Wed Apr 30 20:50:32 2014] GET /index/userList/ => generated 5236 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-*** Starting uWSGI 2.0.3 (64bit) on [Fri May  2 21:08:29 2014] ***
+spawned uWSGI worker 1 (pid: 3925, cores: 1)
+spawned uWSGI worker 2 (pid: 3926, cores: 1)
+spawned uWSGI worker 3 (pid: 3927, cores: 1)
+spawned uWSGI worker 4 (pid: 3928, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:03:21 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -114,18 +83,18 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x16d7fb0
+Python main interpreter initialized at 0x10c21a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x16d7fb0 pid: 13227 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x10c21a0 pid: 3939 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 13227, cores: 1)
-spawned uWSGI worker 2 (pid: 13228, cores: 1)
-spawned uWSGI worker 3 (pid: 13229, cores: 1)
-spawned uWSGI worker 4 (pid: 13230, cores: 1)
-*** Starting uWSGI 2.0.3 (64bit) on [Fri May  2 21:08:30 2014] ***
+spawned uWSGI worker 1 (pid: 3939, cores: 1)
+spawned uWSGI worker 2 (pid: 3940, cores: 1)
+spawned uWSGI worker 3 (pid: 3941, cores: 1)
+spawned uWSGI worker 4 (pid: 3942, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:03:22 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -146,18 +115,88 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x11a6fb0
+Python main interpreter initialized at 0x16821a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x11a6fb0 pid: 13241 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x16821a0 pid: 3953 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 13241, cores: 1)
-spawned uWSGI worker 2 (pid: 13242, cores: 1)
-spawned uWSGI worker 3 (pid: 13243, cores: 1)
-spawned uWSGI worker 4 (pid: 13244, cores: 1)
-*** Starting uWSGI 2.0.3 (64bit) on [Fri May  2 21:08:31 2014] ***
+spawned uWSGI worker 1 (pid: 3953, cores: 1)
+spawned uWSGI worker 2 (pid: 3954, cores: 1)
+spawned uWSGI worker 3 (pid: 3955, cores: 1)
+spawned uWSGI worker 4 (pid: 3956, cores: 1)
+[pid: 3953|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 787 bytes} [Fri May 23 13:03:25 2014] GET /index/problem/1000?submit=13935 => generated 0 bytes in 191 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 1/2] 127.0.0.1 () {40 vars in 762 bytes} [Fri May 23 13:03:25 2014] GET /index/problem/1000 => generated 7797 bytes in 193 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 2/3] 127.0.0.1 () {44 vars in 848 bytes} [Fri May 23 13:03:25 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 2/4] 127.0.0.1 () {44 vars in 824 bytes} [Fri May 23 13:03:25 2014] GET /site_media/run_prettify.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3956|app: 0|req: 3/5] 127.0.0.1 () {44 vars in 830 bytes} [Fri May 23 13:03:25 2014] GET /site_media/bootstrap-affix.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 3/6] 127.0.0.1 () {44 vars in 884 bytes} [Fri May 23 13:03:25 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 4/8] 127.0.0.1 () {44 vars in 864 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3956|app: 0|req: 4/8] 127.0.0.1 () {44 vars in 884 bytes} [Fri May 23 13:03:25 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 5/9] 127.0.0.1 () {44 vars in 886 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3956|app: 0|req: 5/10] 127.0.0.1 () {42 vars in 776 bytes} [Fri May 23 13:03:25 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 1/12] 127.0.0.1 () {44 vars in 834 bytes} [Fri May 23 13:03:25 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 165 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3955|app: 0|req: 1/12] 127.0.0.1 () {44 vars in 853 bytes} [Fri May 23 13:03:25 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 167 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3956|app: 0|req: 6/15] 127.0.0.1 () {44 vars in 889 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3955|app: 0|req: 2/15] 127.0.0.1 () {44 vars in 899 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 6/15] 127.0.0.1 () {44 vars in 891 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3956|app: 0|req: 7/16] 127.0.0.1 () {42 vars in 776 bytes} [Fri May 23 13:03:25 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 3/18] 127.0.0.1 () {44 vars in 948 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 7/18] 127.0.0.1 () {44 vars in 948 bytes} [Fri May 23 13:03:25 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3953|app: 0|req: 8/19] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:03:29 2014] GET /index/problem/1000?submit=13931 => generated 0 bytes in 10 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 2/20] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:29 2014] GET /index/problem/1000 => generated 7797 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 4/21] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:29 2014] GET /index/problem/grid.css => generated 4536 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 8/22] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:29 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 9/23] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:03:31 2014] GET /index/problem/1000?submit=13930 => generated 0 bytes in 13 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 5/24] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:31 2014] GET /index/problem/1000 => generated 7797 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 9/25] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:31 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 3/26] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:31 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 10/27] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:03:32 2014] GET /index/problem/1000?submit=13930 => generated 0 bytes in 7 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 4/28] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:32 2014] GET /index/problem/1000 => generated 7797 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 6/29] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:32 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 10/30] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:32 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 5/31] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:03:33 2014] GET /index/problem/1000?submit=13929 => generated 0 bytes in 7 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 11/32] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:33 2014] GET /index/problem/1000 => generated 7797 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 12/33] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:33 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 7/34] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:33 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 6/35] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:03:34 2014] GET /index/problem/1000?submit=13930 => generated 0 bytes in 10 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 11/36] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:34 2014] GET /index/problem/1000 => generated 7797 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 8/37] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:34 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 7/38] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:34 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 12/39] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:36 2014] GET /index/problemList/ => generated 3507 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 13/40] 127.0.0.1 () {40 vars in 780 bytes} [Fri May 23 13:03:37 2014] GET /index/submitList/ => generated 24151 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 8/41] 127.0.0.1 () {40 vars in 781 bytes} [Fri May 23 13:03:37 2014] GET /index/problemList/ => generated 3507 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 13/42] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:39 2014] GET /index/problem/1000 => generated 7797 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 9/43] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:39 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 14/44] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:39 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 15/45] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:03:40 2014] GET /index/problem/1000?submit=13930 => generated 0 bytes in 10 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 16/46] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:03:40 2014] GET /index/problem/1000 => generated 7797 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 17/47] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:40 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 10/48] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:03:41 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 14/49] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:04:10 2014] GET /index/problem/1000?submit=13930 => generated 0 bytes in 6 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 15/50] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:04:10 2014] GET /index/problem/1000 => generated 7797 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 18/51] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:10 2014] GET /index/problem/grid.css => generated 4536 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 9/52] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:10 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 10/53] 127.0.0.1 () {40 vars in 770 bytes} [Fri May 23 13:04:12 2014] GET /index/login/ => generated 2808 bytes in 58 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 16/54] 127.0.0.1 () {50 vars in 941 bytes} [Fri May 23 13:04:16 2014] POST /index/login/ => generated 15 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 17/55] 127.0.0.1 () {50 vars in 941 bytes} [Fri May 23 13:04:20 2014] POST /index/login/ => generated 15 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 18/56] 127.0.0.1 () {50 vars in 941 bytes} [Fri May 23 13:04:26 2014] POST /index/login/ => generated 15 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 19/57] 127.0.0.1 () {50 vars in 941 bytes} [Fri May 23 13:04:31 2014] POST /index/login/ => generated 7 bytes in 54 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 20/58] 127.0.0.1 () {40 vars in 776 bytes} [Fri May 23 13:04:31 2014] GET /index/problemList/ => generated 3507 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 19/59] 127.0.0.1 () {40 vars in 780 bytes} [Fri May 23 13:04:33 2014] GET /index/submitList/ => generated 24151 bytes in 47 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 11/60] 127.0.0.1 () {40 vars in 781 bytes} [Fri May 23 13:04:34 2014] GET /index/problem/1000 => generated 7797 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 21/61] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:35 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 11/62] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:35 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3954|app: 0|req: 12/63] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:04:36 2014] GET /index/problem/1000?submit=13931 => generated 0 bytes in 12 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 20/64] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:04:36 2014] GET /index/problem/1000 => generated 7797 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 12/65] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:36 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3953|app: 0|req: 22/66] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:36 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 13/67] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:04:37 2014] GET /index/problem/1000?submit=13931 => generated 0 bytes in 12 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 21/68] 127.0.0.1 () {40 vars in 782 bytes} [Fri May 23 13:04:37 2014] GET /index/problem/1000 => generated 7797 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3956|app: 0|req: 22/69] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:37 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3955|app: 0|req: 14/70] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:04:37 2014] GET /index/problem/grid.css => generated 4536 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:05:32 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -178,18 +217,18 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0xc9cfb0
+Python main interpreter initialized at 0x1b4d1a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xc9cfb0 pid: 13255 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1b4d1a0 pid: 4043 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 13255, cores: 1)
-spawned uWSGI worker 2 (pid: 13256, cores: 1)
-spawned uWSGI worker 3 (pid: 13257, cores: 1)
-spawned uWSGI worker 4 (pid: 13258, cores: 1)
-*** Starting uWSGI 2.0.3 (64bit) on [Fri May  2 21:08:31 2014] ***
+spawned uWSGI worker 1 (pid: 4043, cores: 1)
+spawned uWSGI worker 2 (pid: 4044, cores: 1)
+spawned uWSGI worker 3 (pid: 4045, cores: 1)
+spawned uWSGI worker 4 (pid: 4046, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:05:33 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -210,197 +249,18 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0xec4fb0
+Python main interpreter initialized at 0x8651a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xec4fb0 pid: 13269 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8651a0 pid: 4059 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 13269, cores: 1)
-spawned uWSGI worker 2 (pid: 13270, cores: 1)
-spawned uWSGI worker 3 (pid: 13271, cores: 1)
-spawned uWSGI worker 4 (pid: 13272, cores: 1)
-[pid: 13270|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 907 bytes} [Fri May  2 21:08:32 2014] GET /index/submitList/ => generated 22779 bytes in 211 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 944 bytes} [Fri May  2 21:08:33 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 974 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 4/4] 127.0.0.1 () {42 vars in 996 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13269|app: 0|req: 1/7] 127.0.0.1 () {42 vars in 971 bytes} [Fri May  2 21:08:33 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 175 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 1/7] 127.0.0.1 () {42 vars in 958 bytes} [Fri May  2 21:08:33 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 175 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 1/7] 127.0.0.1 () {42 vars in 963 bytes} [Fri May  2 21:08:33 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 175 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 5/8] 127.0.0.1 () {42 vars in 1001 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 2/9] 127.0.0.1 () {42 vars in 999 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 6/10] 127.0.0.1 () {42 vars in 1009 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 3/11] 127.0.0.1 () {42 vars in 1059 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 2/12] 127.0.0.1 () {42 vars in 1059 bytes} [Fri May  2 21:08:33 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 3/13] 127.0.0.1 () {42 vars in 953 bytes} [Fri May  2 21:08:35 2014] GET /index/userList/ => generated 5236 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 4/14] 127.0.0.1 () {40 vars in 921 bytes} [Fri May  2 21:08:36 2014] GET /index/problemList/ => generated 3444 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 5/15] 127.0.0.1 () {42 vars in 1057 bytes} [Fri May  2 21:08:36 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 6/16] 127.0.0.1 () {40 vars in 922 bytes} [Fri May  2 21:08:36 2014] GET /index/submitList/ => generated 22779 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 2/17] 127.0.0.1 () {40 vars in 917 bytes} [Fri May  2 21:08:37 2014] GET /index/userList/ => generated 5236 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 7/18] 127.0.0.1 () {40 vars in 921 bytes} [Fri May  2 21:08:38 2014] GET /index/problemList/ => generated 3444 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 3/19] 127.0.0.1 () {40 vars in 922 bytes} [Fri May  2 21:09:06 2014] GET /index/submitList/ => generated 22779 bytes in 41 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 4/20] 127.0.0.1 () {40 vars in 923 bytes} [Fri May  2 21:09:07 2014] GET /index/problemList/ => generated 3444 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 7/21] 127.0.0.1 () {40 vars in 918 bytes} [Fri May  2 21:09:08 2014] GET /index/userList/ => generated 5236 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 4/22] 127.0.0.1 () {40 vars in 919 bytes} [Fri May  2 21:09:09 2014] GET /index/submitList/ => generated 22779 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 5/23] 127.0.0.1 () {40 vars in 923 bytes} [Fri May  2 21:09:09 2014] GET /index/problemList/ => generated 3444 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 6/24] 127.0.0.1 () {38 vars in 871 bytes} [Sun May  4 20:12:50 2014] GET /index/submitList/ => generated 22779 bytes in 638 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 8/25] 127.0.0.1 () {40 vars in 903 bytes} [Sun May  4 20:12:51 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 110 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
-[pid: 13272|app: 0|req: 8/26] 127.0.0.1 () {40 vars in 916 bytes} [Sun May  4 20:12:51 2014] GET /site_media/dist/css/bootstrap.min.css => generated 99548 bytes in 121 msecs (HTTP/1.1 200) 4 headers in 141 bytes (7 switches on core 0)
-[pid: 13271|app: 0|req: 7/27] 127.0.0.1 () {40 vars in 889 bytes} [Sun May  4 20:12:51 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 130 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
-[pid: 13269|app: 0|req: 5/28] 127.0.0.1 () {40 vars in 908 bytes} [Sun May  4 20:12:51 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 138 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
-[pid: 13270|app: 0|req: 9/29] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
-[pid: 13272|app: 0|req: 9/30] 127.0.0.1 () {40 vars in 941 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 56 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
-[pid: 13271|app: 0|req: 8/31] 127.0.0.1 () {40 vars in 944 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
-[pid: 13270|app: 0|req: 10/32] 127.0.0.1 () {40 vars in 946 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
-[pid: 13269|app: 0|req: 6/33] 127.0.0.1 () {40 vars in 954 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
-[pid: 13272|app: 0|req: 10/34] 127.0.0.1 () {40 vars in 1004 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
-[pid: 13270|app: 0|req: 11/35] 127.0.0.1 () {40 vars in 1004 bytes} [Sun May  4 20:12:51 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
-[pid: 13270|app: 0|req: 12/36] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 20:12:54 2014] GET /index/submitList => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 9/37] 127.0.0.1 () {40 vars in 921 bytes} [Sun May  4 20:12:54 2014] GET /index/submitList/ => generated 22779 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 13/38] 127.0.0.1 () {40 vars in 921 bytes} [Sun May  4 20:12:55 2014] GET /index/problemList => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 10/39] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 20:12:55 2014] GET /index/problemList/ => generated 3444 bytes in 80 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 14/40] 127.0.0.1 () {40 vars in 1002 bytes} [Sun May  4 20:12:56 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 1118 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
-[pid: 13269|app: 0|req: 7/41] 127.0.0.1 () {40 vars in 924 bytes} [Sun May  4 20:12:57 2014] GET /index/problem/1000 => generated 6534 bytes in 89 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 11/42] 127.0.0.1 () {40 vars in 880 bytes} [Sun May  4 20:12:57 2014] GET /site_media/run_prettify.js => generated 16706 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 155 bytes (35 switches on core 0)
-[pid: 13272|app: 0|req: 11/43] 127.0.0.1 () {40 vars in 886 bytes} [Sun May  4 20:12:57 2014] GET /site_media/bootstrap-affix.js => generated 3484 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 154 bytes (117 switches on core 0)
-[pid: 13271|app: 0|req: 12/44] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:12:57 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 15/45] 127.0.0.1 () {40 vars in 940 bytes} [Sun May  4 20:12:57 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js => generated 166436 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 156 bytes (5960 switches on core 0)
-[pid: 13269|app: 0|req: 8/46] 127.0.0.1 () {40 vars in 940 bytes} [Sun May  4 20:12:57 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js => generated 8488 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 154 bytes (236 switches on core 0)
-[pid: 13269|app: 0|req: 9/47] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:12:57 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 13/48] 127.0.0.1 () {44 vars in 1039 bytes} [Sun May  4 20:13:01 2014] POST /index/problem/1000 => generated 0 bytes in 320 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 12/49] 127.0.0.1 () {40 vars in 924 bytes} [Sun May  4 20:13:01 2014] GET /index/problem/1000 => generated 6912 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 13/50] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:13:01 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 10/51] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:13:01 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 16/52] 127.0.0.1 () {40 vars in 949 bytes} [Sun May  4 20:13:02 2014] GET /index/problem/1000?submit=13929 => generated 6921 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 11/53] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 20:13:03 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 12/54] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 20:13:03 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 13/55] 127.0.0.1 () {40 vars in 962 bytes} [Sun May  4 20:13:04 2014] GET /index/problem/1000?submit=13929 => generated 6921 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 14/56] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 20:13:04 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 15/57] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 20:13:04 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 14/58] 127.0.0.1 () {40 vars in 962 bytes} [Sun May  4 20:13:05 2014] GET /index/problem/1000?submit=13929 => generated 6921 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 17/59] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 20:13:05 2014] GET /index/problem/grid.css => generated 4348 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 15/60] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 20:13:05 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 14/61] 127.0.0.1 () {40 vars in 935 bytes} [Sun May  4 20:13:06 2014] GET /index/submitList/ => generated 22827 bytes in 49 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 15/62] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 20:13:07 2014] GET /index/userList => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 147 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 16/63] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 20:13:07 2014] GET /index/userList/ => generated 5236 bytes in 105 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 16/64] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 20:13:08 2014] GET /index/submitList/ => generated 22827 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 18/65] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 20:13:10 2014] GET /index/problem/1000 => generated 6917 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 16/66] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:13:10 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 19/67] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:13:10 2014] GET /index/problem/grid.css => generated 4348 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 17/68] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 20:13:13 2014] GET /index/submitList/ => generated 22827 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 20/69] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 20:13:14 2014] GET /index/userList/ => generated 5236 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 17/70] 127.0.0.1 () {40 vars in 913 bytes} [Sun May  4 20:13:15 2014] GET /index/userInfo => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 147 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 21/71] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 20:13:15 2014] GET /index/userInfo/ => generated 5925 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 18/72] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 20:13:49 2014] GET /index/userList/ => generated 5236 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 17/73] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 20:13:50 2014] GET /index/submitList/ => generated 22827 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 18/74] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 20:13:54 2014] GET /index/problemList/ => generated 3444 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 18/75] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 20:13:56 2014] GET /index/submitList/ => generated 22827 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 19/76] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 20:13:58 2014] GET /index/userList/ => generated 5236 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 19/77] 127.0.0.1 () {38 vars in 871 bytes} [Sun May  4 20:40:55 2014] GET /index/submitList/ => generated 22827 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 19/78] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 20:40:57 2014] GET /index/problemList/ => generated 3444 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 22/79] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 20:41:00 2014] GET /index/submitList/ => generated 22827 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 20/80] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 20:41:01 2014] GET /index/userList/ => generated 5236 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 20/81] 127.0.0.1 () {40 vars in 921 bytes} [Sun May  4 20:41:09 2014] GET /index/problemList/ => generated 3444 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 23/82] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 20:41:10 2014] GET /index/submitList/ => generated 22827 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 21/83] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 20:41:10 2014] GET /index/problemList/ => generated 3444 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 22/84] 127.0.0.1 () {40 vars in 924 bytes} [Sun May  4 20:41:57 2014] GET /index/problem/1000 => generated 6917 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 24/85] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:41:58 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 21/86] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 20:41:58 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 22/87] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 20:42:55 2014] GET /index/submitList/ => generated 22827 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 20/88] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 20:43:07 2014] GET /index/problemList/ => generated 3444 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 25/89] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 21:04:33 2014] GET /index/submitList/ => generated 22827 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 23/90] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 21:04:34 2014] GET /index/userList/ => generated 5236 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 23/91] 127.0.0.1 () {40 vars in 921 bytes} [Sun May  4 21:04:36 2014] GET /index/problemList/ => generated 3444 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 26/92] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 21:04:36 2014] GET /index/submitList/ => generated 22827 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 21/93] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 21:04:37 2014] GET /index/userList/ => generated 5236 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 22/94] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 21:04:39 2014] GET /index/userInfo/ => generated 5925 bytes in 65 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 24/95] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 21:04:49 2014] GET /index/userInfo/ => generated 5925 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 24/96] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 21:04:54 2014] GET /index/userList/ => generated 5236 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 27/97] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 21:04:55 2014] GET /index/submitList/ => generated 22827 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 23/98] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 21:04:57 2014] GET /index/problemList/ => generated 3444 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 25/99] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 21:04:59 2014] GET /index/submitList/ => generated 22827 bytes in 53 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 24/100] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 21:04:59 2014] GET /index/userList/ => generated 5236 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 25/101] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 21:05:03 2014] GET /index/userInfo/ => generated 5925 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 25/102] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 21:05:39 2014] GET /index/submitList/ => generated 22827 bytes in 43 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 26/103] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 21:05:41 2014] GET /index/problemList/ => generated 3444 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 28/104] 127.0.0.1 () {40 vars in 922 bytes} [Sun May  4 21:05:42 2014] GET /index/submitList/ => generated 22827 bytes in 44 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 27/105] 127.0.0.1 () {40 vars in 917 bytes} [Sun May  4 21:05:43 2014] GET /index/userList/ => generated 5236 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 26/106] 127.0.0.1 () {40 vars in 915 bytes} [Sun May  4 21:05:45 2014] GET /index/userList/ => generated 5236 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 26/107] 127.0.0.1 () {40 vars in 919 bytes} [Sun May  4 21:05:46 2014] GET /index/submitList/ => generated 22827 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 27/108] 127.0.0.1 () {40 vars in 923 bytes} [Sun May  4 21:05:47 2014] GET /index/problemList/ => generated 3444 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 28/109] 127.0.0.1 () {40 vars in 918 bytes} [Sun May  4 21:06:14 2014] GET /index/userInfo/ => generated 5925 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 27/110] 127.0.0.1 () {40 vars in 921 bytes} [Sun May  4 21:10:51 2014] GET /index/problemList/ => generated 3444 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 29/111] 127.0.0.1 () {40 vars in 924 bytes} [Sun May  4 21:10:53 2014] GET /index/problem/1000 => generated 6917 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 29/112] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 21:10:53 2014] GET /index/problem/grid.css => generated 4348 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 28/113] 127.0.0.1 () {40 vars in 887 bytes} [Sun May  4 21:10:53 2014] GET /index/problem/grid.css => generated 4348 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 29/114] 127.0.0.1 () {40 vars in 949 bytes} [Sun May  4 21:10:55 2014] GET /index/problem/1000?submit=13929 => generated 6921 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 30/115] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 21:10:55 2014] GET /index/problem/grid.css => generated 4348 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 31/116] 127.0.0.1 () {40 vars in 900 bytes} [Sun May  4 21:10:55 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 32/117] 127.0.0.1 () {40 vars in 935 bytes} [Sat May 10 09:00:42 2014] GET /index/submitList/ => generated 22827 bytes in 116 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 30/119] 127.0.0.1 () {42 vars in 963 bytes} [Sat May 10 09:00:42 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 30/119] 127.0.0.1 () {42 vars in 971 bytes} [Sat May 10 09:00:42 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13269|app: 0|req: 31/121] 127.0.0.1 () {42 vars in 944 bytes} [Sat May 10 09:00:42 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 28/121] 127.0.0.1 () {42 vars in 958 bytes} [Sat May 10 09:00:42 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 31/122] 127.0.0.1 () {42 vars in 974 bytes} [Sat May 10 09:00:42 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13269|app: 0|req: 32/123] 127.0.0.1 () {42 vars in 996 bytes} [Sat May 10 09:00:42 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13270|app: 0|req: 32/126] 127.0.0.1 () {42 vars in 1009 bytes} [Sat May 10 09:00:42 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 33/126] 127.0.0.1 () {42 vars in 999 bytes} [Sat May 10 09:00:42 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 29/126] 127.0.0.1 () {42 vars in 1001 bytes} [Sat May 10 09:00:42 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 34/127] 127.0.0.1 () {42 vars in 1059 bytes} [Sat May 10 09:00:43 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13269|app: 0|req: 33/128] 127.0.0.1 () {42 vars in 1059 bytes} [Sat May 10 09:00:43 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 35/129] 127.0.0.1 () {38 vars in 871 bytes} [Sat May 10 09:01:28 2014] GET /index/submitList/ => generated 22827 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 30/130] 127.0.0.1 () {40 vars in 923 bytes} [Sat May 10 09:01:30 2014] GET /index/problemList/ => generated 3444 bytes in 41 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 36/131] 127.0.0.1 () {42 vars in 1057 bytes} [Sat May 10 09:01:31 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 37/132] 127.0.0.1 () {40 vars in 924 bytes} [Sat May 10 09:01:32 2014] GET /index/problem/1000 => generated 6917 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 33/133] 127.0.0.1 () {42 vars in 941 bytes} [Sat May 10 09:01:32 2014] GET /site_media/bootstrap-affix.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 38/134] 127.0.0.1 () {42 vars in 935 bytes} [Sat May 10 09:01:32 2014] GET /site_media/run_prettify.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13269|app: 0|req: 34/135] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:32 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 34/136] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:32 2014] GET /index/problem/grid.css => generated 4348 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 35/137] 127.0.0.1 () {44 vars in 1039 bytes} [Sat May 10 09:01:37 2014] POST /index/problem/1000 => generated 0 bytes in 513 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 31/138] 127.0.0.1 () {40 vars in 924 bytes} [Sat May 10 09:01:38 2014] GET /index/problem/1000 => generated 7300 bytes in 89 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 39/139] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:38 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 40/140] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:38 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 41/141] 127.0.0.1 () {44 vars in 1039 bytes} [Sat May 10 09:01:41 2014] POST /index/problem/1000 => generated 0 bytes in 171 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 42/142] 127.0.0.1 () {40 vars in 924 bytes} [Sat May 10 09:01:41 2014] GET /index/problem/1000 => generated 7685 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 43/143] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:41 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 44/144] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:41 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 35/145] 127.0.0.1 () {42 vars in 955 bytes} [Sat May 10 09:01:43 2014] GET /index/problem/1000 => generated 7690 bytes in 53 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 45/147] 127.0.0.1 () {44 vars in 995 bytes} [Sat May 10 09:01:43 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 32/147] 127.0.0.1 () {44 vars in 990 bytes} [Sat May 10 09:01:43 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 33/148] 127.0.0.1 () {44 vars in 966 bytes} [Sat May 10 09:01:43 2014] GET /site_media/run_prettify.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 46/149] 127.0.0.1 () {44 vars in 976 bytes} [Sat May 10 09:01:43 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 47/151] 127.0.0.1 () {44 vars in 1026 bytes} [Sat May 10 09:01:43 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 34/151] 127.0.0.1 () {44 vars in 972 bytes} [Sat May 10 09:01:43 2014] GET /site_media/bootstrap-affix.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 48/152] 127.0.0.1 () {44 vars in 1026 bytes} [Sat May 10 09:01:43 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 35/153] 127.0.0.1 () {44 vars in 1006 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 49/154] 127.0.0.1 () {44 vars in 1028 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 36/155] 127.0.0.1 () {42 vars in 918 bytes} [Sat May 10 09:01:43 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 50/157] 127.0.0.1 () {44 vars in 1031 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 37/157] 127.0.0.1 () {44 vars in 1033 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13269|app: 0|req: 36/158] 127.0.0.1 () {44 vars in 1041 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13271|app: 0|req: 38/159] 127.0.0.1 () {42 vars in 918 bytes} [Sat May 10 09:01:43 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 37/161] 127.0.0.1 () {44 vars in 1090 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 51/161] 127.0.0.1 () {44 vars in 1090 bytes} [Sat May 10 09:01:43 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
-[pid: 13272|app: 0|req: 52/162] 127.0.0.1 () {40 vars in 912 bytes} [Sat May 10 09:01:45 2014] GET /index/login/ => generated 2808 bytes in 104 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 39/163] 127.0.0.1 () {40 vars in 897 bytes} [Sat May 10 09:01:45 2014] GET /site_media/dist/css/signin.css => generated 792 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 139 bytes (40 switches on core 0)
-[pid: 13269|app: 0|req: 38/164] 127.0.0.1 () {50 vars in 1083 bytes} [Sat May 10 09:01:48 2014] POST /index/login/ => generated 15 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 36/165] 127.0.0.1 () {50 vars in 1083 bytes} [Sat May 10 09:01:52 2014] POST /index/login/ => generated 7 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 53/166] 127.0.0.1 () {40 vars in 918 bytes} [Sat May 10 09:01:52 2014] GET /index/problemList/ => generated 3442 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 54/167] 127.0.0.1 () {40 vars in 924 bytes} [Sat May 10 09:01:53 2014] GET /index/problem/1000 => generated 11749 bytes in 69 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 40/168] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:54 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13270|app: 0|req: 37/169] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:54 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 55/170] 127.0.0.1 () {44 vars in 1039 bytes} [Sat May 10 09:01:57 2014] POST /index/problem/1000 => generated 0 bytes in 63 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 56/171] 127.0.0.1 () {40 vars in 924 bytes} [Sat May 10 09:01:57 2014] GET /index/problem/1000 => generated 11745 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 57/172] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:58 2014] GET /index/problem/grid.css => generated 4348 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 58/173] 127.0.0.1 () {40 vars in 887 bytes} [Sat May 10 09:01:58 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 39/174] 127.0.0.1 () {40 vars in 943 bytes} [Sat May 10 09:02:00 2014] GET /index/problem/1000?page=1390 => generated 12068 bytes in 68 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 41/175] 127.0.0.1 () {40 vars in 897 bytes} [Sat May 10 09:02:00 2014] GET /index/problem/grid.css => generated 4348 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 59/176] 127.0.0.1 () {40 vars in 897 bytes} [Sat May 10 09:02:00 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13269|app: 0|req: 40/177] 127.0.0.1 () {40 vars in 947 bytes} [Sat May 10 09:02:01 2014] GET /index/problem/1000?page=1 => generated 11745 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 13271|app: 0|req: 42/178] 127.0.0.1 () {40 vars in 894 bytes} [Sat May 10 09:02:01 2014] GET /index/problem/grid.css => generated 4348 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 13272|app: 0|req: 60/179] 127.0.0.1 () {40 vars in 894 bytes} [Sat May 10 09:02:01 2014] GET /index/problem/grid.css => generated 4348 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
-*** Starting uWSGI 2.0.3 (64bit) on [Sat May 10 09:09:22 2014] ***
+spawned uWSGI worker 1 (pid: 4059, cores: 1)
+spawned uWSGI worker 2 (pid: 4060, cores: 1)
+spawned uWSGI worker 3 (pid: 4061, cores: 1)
+spawned uWSGI worker 4 (pid: 4062, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:05:33 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -421,44 +281,58 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x25ba1a0
+Python main interpreter initialized at 0x17e11a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-*** Starting uWSGI 2.0.3 (64bit) on [Sat May 10 09:09:23 2014] ***
-compiled with version: 4.6.3 on 11 April 2014 21:03:50
-os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
-nodename: cugbacm-Lenovo-Product
-machine: x86_64
-clock source: unix
-detected number of CPU cores: 4
-current working directory: /home/cugbacm/oj/oj
-detected binary path: /usr/local/bin/uwsgi
-!!! no internal routing support, rebuild with pcre support !!!
-uWSGI running as root, you can use --uid/--gid/--chroot options
-*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
-*** WARNING: you are running uWSGI without its master process manager ***
-your processes number limit is 31140
-your memory page size is 4096 bytes
-detected max file descriptor number: 1024
-lock engine: pthread robust mutexes
-thunder lock: disabled (you can enable it with --thunder-lock)
-uwsgi socket 0 bound to TCP address :8077 fd 3
-Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
-*** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x7241a0
-your server socket listen backlog is limited to 100 connections
-your mercy for graceful operations on workers is 60 seconds
-mapped 291040 bytes (284 KB) for 4 cores
-*** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7241a0 pid: 1838 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x17e11a0 pid: 4073 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 1838, cores: 1)
-spawned uWSGI worker 2 (pid: 1839, cores: 1)
-spawned uWSGI worker 3 (pid: 1840, cores: 1)
-spawned uWSGI worker 4 (pid: 1841, cores: 1)
-*** Starting uWSGI 2.0.3 (64bit) on [Sat May 10 09:09:24 2014] ***
+spawned uWSGI worker 1 (pid: 4073, cores: 1)
+spawned uWSGI worker 2 (pid: 4074, cores: 1)
+spawned uWSGI worker 3 (pid: 4075, cores: 1)
+spawned uWSGI worker 4 (pid: 4076, cores: 1)
+[pid: 4074|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 835 bytes} [Fri May 23 13:05:37 2014] GET /index/problem/1000 => generated 7797 bytes in 204 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4074|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 815 bytes} [Fri May 23 13:05:37 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 4074|app: 0|req: 3/3] 127.0.0.1 () {44 vars in 797 bytes} [Fri May 23 13:05:37 2014] GET /site_media/bootstrap-affix.js => generated 3484 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 154 bytes (117 switches on core 0)
+[pid: 4074|app: 0|req: 4/4] 127.0.0.1 () {44 vars in 851 bytes} [Fri May 23 13:05:37 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js => generated 166436 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 156 bytes (5960 switches on core 0)
+[pid: 4074|app: 0|req: 5/5] 127.0.0.1 () {44 vars in 851 bytes} [Fri May 23 13:05:37 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js => generated 8488 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 154 bytes (236 switches on core 0)
+[pid: 4074|app: 0|req: 6/6] 127.0.0.1 () {44 vars in 831 bytes} [Fri May 23 13:05:37 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 0 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 4074|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 853 bytes} [Fri May 23 13:05:37 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 4074|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 798 bytes} [Fri May 23 13:05:37 2014] GET /index/problem/grid.css => generated 4536 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4075|app: 0|req: 1/9] 127.0.0.1 () {44 vars in 801 bytes} [Fri May 23 13:05:37 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 181 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 4076|app: 0|req: 1/10] 127.0.0.1 () {44 vars in 820 bytes} [Fri May 23 13:05:37 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 205 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
+[pid: 4073|app: 0|req: 1/11] 127.0.0.1 () {44 vars in 791 bytes} [Fri May 23 13:05:37 2014] GET /site_media/run_prettify.js => generated 16706 bytes in 205 msecs (HTTP/1.1 200) 4 headers in 155 bytes (35 switches on core 0)
+[pid: 4076|app: 0|req: 2/12] 127.0.0.1 () {42 vars in 813 bytes} [Fri May 23 13:05:37 2014] GET /index/problem/1000 => generated 7797 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 3/14] 127.0.0.1 () {44 vars in 853 bytes} [Fri May 23 13:05:37 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4075|app: 0|req: 2/14] 127.0.0.1 () {44 vars in 848 bytes} [Fri May 23 13:05:37 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4074|app: 0|req: 9/15] 127.0.0.1 () {44 vars in 834 bytes} [Fri May 23 13:05:37 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4076|app: 0|req: 4/17] 127.0.0.1 () {44 vars in 824 bytes} [Fri May 23 13:05:37 2014] GET /site_media/run_prettify.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4075|app: 0|req: 3/17] 127.0.0.1 () {44 vars in 830 bytes} [Fri May 23 13:05:37 2014] GET /site_media/bootstrap-affix.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4076|app: 0|req: 5/18] 127.0.0.1 () {44 vars in 884 bytes} [Fri May 23 13:05:37 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4075|app: 0|req: 4/19] 127.0.0.1 () {44 vars in 884 bytes} [Fri May 23 13:05:37 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4074|app: 0|req: 10/20] 127.0.0.1 () {44 vars in 864 bytes} [Fri May 23 13:05:37 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4076|app: 0|req: 6/21] 127.0.0.1 () {44 vars in 886 bytes} [Fri May 23 13:05:37 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4075|app: 0|req: 5/22] 127.0.0.1 () {42 vars in 776 bytes} [Fri May 23 13:05:37 2014] GET /index/problem/grid.css => generated 4536 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 7/23] 127.0.0.1 () {42 vars in 834 bytes} [Fri May 23 13:05:38 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 4074|app: 0|req: 11/24] 127.0.0.1 () {42 vars in 836 bytes} [Fri May 23 13:05:38 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 4076|app: 0|req: 8/25] 127.0.0.1 () {42 vars in 844 bytes} [Fri May 23 13:05:38 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 4074|app: 0|req: 12/26] 127.0.0.1 () {42 vars in 776 bytes} [Fri May 23 13:05:38 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4075|app: 0|req: 6/27] 127.0.0.1 () {44 vars in 948 bytes} [Fri May 23 13:05:38 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4073|app: 0|req: 2/28] 127.0.0.1 () {44 vars in 948 bytes} [Fri May 23 13:05:38 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 4073|app: 0|req: 3/29] 127.0.0.1 () {40 vars in 807 bytes} [Fri May 23 13:05:39 2014] GET /index/problem/1000?submit=13931 => generated 7802 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 9/30] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:39 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4073|app: 0|req: 4/31] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:39 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 10/32] 127.0.0.1 () {40 vars in 820 bytes} [Fri May 23 13:05:40 2014] GET /index/problem/1000?submit=13930 => generated 7805 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4075|app: 0|req: 7/33] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:40 2014] GET /index/problem/grid.css => generated 4536 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 11/34] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:40 2014] GET /index/problem/grid.css => generated 4536 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4074|app: 0|req: 13/35] 127.0.0.1 () {40 vars in 820 bytes} [Fri May 23 13:05:41 2014] GET /index/problem/1000?submit=13929 => generated 7801 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 12/36] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:41 2014] GET /index/problem/grid.css => generated 4536 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4075|app: 0|req: 8/37] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:41 2014] GET /index/problem/grid.css => generated 4536 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4073|app: 0|req: 5/38] 127.0.0.1 () {40 vars in 820 bytes} [Fri May 23 13:05:42 2014] GET /index/problem/1000?submit=13931 => generated 7802 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4076|app: 0|req: 13/39] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:42 2014] GET /index/problem/grid.css => generated 4536 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4074|app: 0|req: 14/40] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:05:43 2014] GET /index/problem/grid.css => generated 4536 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:08:17 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -479,18 +353,18 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x1d401a0
+Python main interpreter initialized at 0x27041a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1d401a0 pid: 1852 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x27041a0 pid: 4213 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 1852, cores: 1)
-spawned uWSGI worker 2 (pid: 1853, cores: 1)
-spawned uWSGI worker 3 (pid: 1854, cores: 1)
-spawned uWSGI worker 4 (pid: 1855, cores: 1)
-*** Starting uWSGI 2.0.3 (64bit) on [Sat May 10 09:09:24 2014] ***
+spawned uWSGI worker 1 (pid: 4213, cores: 1)
+spawned uWSGI worker 2 (pid: 4214, cores: 1)
+spawned uWSGI worker 3 (pid: 4215, cores: 1)
+spawned uWSGI worker 4 (pid: 4216, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:08:17 2014] ***
 compiled with version: 4.6.3 on 11 April 2014 21:03:50
 os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
 nodename: cugbacm-Lenovo-Product
@@ -511,14 +385,80 @@ thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address :8077 fd 3
 Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0xb651a0
+Python main interpreter initialized at 0x19781a0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 291040 bytes (284 KB) for 4 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xb651a0 pid: 1867 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19781a0 pid: 4227 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 1867, cores: 1)
-spawned uWSGI worker 2 (pid: 1870, cores: 1)
-spawned uWSGI worker 3 (pid: 1871, cores: 1)
-spawned uWSGI worker 4 (pid: 1872, cores: 1)
+spawned uWSGI worker 1 (pid: 4227, cores: 1)
+spawned uWSGI worker 2 (pid: 4228, cores: 1)
+spawned uWSGI worker 3 (pid: 4229, cores: 1)
+spawned uWSGI worker 4 (pid: 4230, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Fri May 23 13:08:17 2014] ***
+compiled with version: 4.6.3 on 11 April 2014 21:03:50
+os: Linux-3.11.0-19-generic #33~precise1-Ubuntu SMP Wed Mar 12 21:16:27 UTC 2014
+nodename: cugbacm-Lenovo-Product
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/cugbacm/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31140
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x105e1a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291040 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x105e1a0 pid: 4241 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 4241, cores: 1)
+spawned uWSGI worker 2 (pid: 4242, cores: 1)
+spawned uWSGI worker 3 (pid: 4243, cores: 1)
+spawned uWSGI worker 4 (pid: 4244, cores: 1)
+[pid: 4242|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 873 bytes} [Fri May 23 13:08:21 2014] GET /index/problem/1000?submit=13931 => generated 7802 bytes in 202 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4242|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 804 bytes} [Fri May 23 13:08:21 2014] GET /site_media/run_prettify.js => generated 16706 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 155 bytes (35 switches on core 0)
+[pid: 4242|app: 0|req: 3/3] 127.0.0.1 () {44 vars in 810 bytes} [Fri May 23 13:08:21 2014] GET /site_media/bootstrap-affix.js => generated 3484 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 154 bytes (117 switches on core 0)
+[pid: 4242|app: 0|req: 4/4] 127.0.0.1 () {44 vars in 864 bytes} [Fri May 23 13:08:21 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js => generated 166436 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 156 bytes (5960 switches on core 0)
+[pid: 4242|app: 0|req: 5/5] 127.0.0.1 () {44 vars in 864 bytes} [Fri May 23 13:08:21 2014] GET /site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js => generated 8488 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 154 bytes (236 switches on core 0)
+[pid: 4242|app: 0|req: 6/6] 127.0.0.1 () {44 vars in 844 bytes} [Fri May 23 13:08:21 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 0 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 4242|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 866 bytes} [Fri May 23 13:08:21 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 4242|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 811 bytes} [Fri May 23 13:08:21 2014] GET /index/problem/grid.css => generated 4536 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4243|app: 0|req: 1/9] 127.0.0.1 () {44 vars in 828 bytes} [Fri May 23 13:08:21 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 181 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 4244|app: 0|req: 1/10] 127.0.0.1 () {44 vars in 833 bytes} [Fri May 23 13:08:21 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 208 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
+[pid: 4241|app: 0|req: 1/11] 127.0.0.1 () {44 vars in 814 bytes} [Fri May 23 13:08:21 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 223 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 4244|app: 0|req: 2/12] 127.0.0.1 () {44 vars in 869 bytes} [Fri May 23 13:08:22 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 4243|app: 0|req: 2/13] 127.0.0.1 () {44 vars in 871 bytes} [Fri May 23 13:08:22 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 4241|app: 0|req: 2/14] 127.0.0.1 () {44 vars in 879 bytes} [Fri May 23 13:08:22 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 4241|app: 0|req: 3/15] 127.0.0.1 () {44 vars in 811 bytes} [Fri May 23 13:08:22 2014] GET /index/problem/grid.css => generated 4536 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 3/17] 127.0.0.1 () {44 vars in 915 bytes} [Fri May 23 13:08:23 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
+[pid: 4242|app: 0|req: 9/17] 127.0.0.1 () {44 vars in 915 bytes} [Fri May 23 13:08:23 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 4241|app: 0|req: 4/18] 127.0.0.1 () {40 vars in 820 bytes} [Fri May 23 13:08:25 2014] GET /index/problem/1000?submit=13930 => generated 7805 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 4/19] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:08:25 2014] GET /index/problem/grid.css => generated 4536 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 5/20] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:08:25 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4241|app: 0|req: 5/21] 127.0.0.1 () {40 vars in 820 bytes} [Fri May 23 13:08:26 2014] GET /index/problem/1000?submit=13931 => generated 7802 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4243|app: 0|req: 3/22] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:08:26 2014] GET /index/problem/grid.css => generated 4536 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4243|app: 0|req: 4/23] 127.0.0.1 () {40 vars in 758 bytes} [Fri May 23 13:08:26 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4242|app: 0|req: 10/24] 127.0.0.1 () {38 vars in 756 bytes} [Fri May 23 13:08:28 2014] GET /index/problem/1000?submit=13932 => generated 0 bytes in 11 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 6/25] 127.0.0.1 () {38 vars in 731 bytes} [Fri May 23 13:08:28 2014] GET /index/problem/1000 => generated 7797 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 7/26] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:08:29 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4243|app: 0|req: 5/27] 127.0.0.1 () {40 vars in 745 bytes} [Fri May 23 13:08:29 2014] GET /index/problem/grid.css => generated 4536 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4241|app: 0|req: 6/28] 127.0.0.1 () {40 vars in 780 bytes} [Fri May 23 13:08:30 2014] GET /index/submitList/ => generated 24151 bytes in 44 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4242|app: 0|req: 11/29] 127.0.0.1 () {40 vars in 781 bytes} [Fri May 23 13:08:31 2014] GET /index/contestList/ => generated 3565 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4241|app: 0|req: 7/30] 127.0.0.1 () {40 vars in 776 bytes} [Fri May 23 13:08:32 2014] GET /index/userList/ => generated 5297 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4243|app: 0|req: 6/31] 127.0.0.1 () {40 vars in 771 bytes} [Fri May 23 13:08:33 2014] GET /index/userInfo => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 147 bytes (1 switches on core 0)
+[pid: 4241|app: 0|req: 8/32] 127.0.0.1 () {40 vars in 773 bytes} [Fri May 23 13:08:33 2014] GET /index/userInfo/ => generated 5925 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4242|app: 0|req: 12/33] 127.0.0.1 () {40 vars in 779 bytes} [Fri May 23 13:08:34 2014] GET /index/problemList/ => generated 3507 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 8/34] 127.0.0.1 () {40 vars in 780 bytes} [Fri May 23 13:08:36 2014] GET /index/submitList/ => generated 24151 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
