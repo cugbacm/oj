@@ -46,6 +46,25 @@
      </nav> 
      {% autopaginate problems 50 %}
     <div class="table-responsive">
+
+
+<form class="form-inline" role="form" action="/index/problemList/" method="post">{% csrf_token %} 
+  <div class="form-group">
+    <label class="sr-only" for="problemID">Problem ID</label>
+    <input type="text" class="form-control" id="problemID" name="problemID" placeholder="Problem ID" value={{problemID}}>
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="problemTitle">Problem Title</label>
+    <input type="text" class="form-control" id="problemTitle" name="problemTitle" placeholder="Problem Title" value={{problemTitle}}>
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="problemAuthor">Problem Author</label>
+    <input type="text" class="form-control" id="problemAuthor" name="problemAuthor" placeholder="Problem Author" value={{problemAuthor}}>
+  </div>
+  <button type="submit" class="btn btn-default">Search</button>
+</form>
+
+
 	 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 	    <thead>  
           <tr>  
