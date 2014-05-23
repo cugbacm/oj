@@ -2,7 +2,7 @@
 import sys
 from django.shortcuts import render
 from django.template import Context, loader
-from cugbacm.models import User, Submit, Problem
+from cugbacm.models import User, Submit, Problem, Contest
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.forms import UserRegisterForm, SubmitForm, ProblemForm, LoginForm
 #from celery.decorators import task
@@ -68,7 +68,7 @@ def Judge(submit):
 	user.total = user.total + 1
 	user.save()
 	problem.save()
-	#return submit.status
+	return submit.status
 
 def submit(request, problem_id):
 	try:
@@ -291,4 +291,12 @@ def showCode(request, submit_id):
 		return HttpResponseRedirect("/index/login")
 	
 	return render(request, 'cugbacm/showCode.html', {'submit_code': Submit.objects.get(id = submit_id).code}) 
+
+def contestList(request):
+	try:
+		user = User.objects.get(userID = request.session['userID'])
+	except:
+		return HttpResponseRedirect("/index/login")
+	contests = Contest.objects.all()
+	return render(request, 'cugbacm/contestList.html', {'contests': contests, 'user': user})
 		

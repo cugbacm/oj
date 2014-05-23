@@ -43,7 +43,7 @@
 		<li class="active"><a href="/index/contestList">Contest List</a></li>
 		<li><a href="/index/userList">User List</a></li>
 		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
+			<a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{user.userID}} <span class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<li><a href="/index/userInfo">User Info</a></li>
 				<li><a href="#">Another action</a></li>
@@ -71,21 +71,14 @@
 				</tr>  
 		    </thead>  
 			<tbody>
-			{% for submit in submits %}
+			{% for contest in contests %}
 				<tr class="odd gradeX">
-					<td>{{submit.id}}</td>
-					<td><a href="#" target="_blank">{{submit.userID}}</a></td>
-					<td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-					<td>{{submit.status}}</td> 
-					<td>{{submit.memory}}</td>
-					<td>{{submit.runTime}}</td>
-					<td>{{submit.codeLength}}</td>
-					{% ifequal submit.userID userID %} 
-						<td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
-					{% else %}
-						<td>{{submit.language}}</td>
-					{% endifequal %}	
-					<td>{{submit.date}} {{submit.timestamp}}</td> 
+					<td>{{contest.id}}</td>
+					<td>{{contest.title}}</td> 
+					<td>{{contest.startTime}} {{contest.startTimestamp}}</td>
+					<td>{{contest.endTime}} {{contest.endTimestamp}}</td>
+					<td>{{contest.status}}</td>
+					<td>{{contest.author}}</td> 
 					<!--<td>{{submit.code}}</td> -->
 				</tr>
 			{% endfor %}  
