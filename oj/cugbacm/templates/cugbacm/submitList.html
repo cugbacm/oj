@@ -116,7 +116,7 @@
 			<tbody>
 			{% for submit in submits %}
         {% if submit.status == "Accepted" %}
-          <tr class="odd gradeA">
+          <tr class="gradeA">
             <td>{{submit.id}}</td>
             <td><a href="#" target="_blank">{{submit.userID}}</a></td>
             <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
@@ -133,7 +133,7 @@
             <!--<td>{{submit.code}}</td> -->
           </tr>
         {% else %}
-          <tr class="odd gradeX">
+          <tr class="gradeX">
           <td>{{submit.id}}</td>
           <td><a href="#" target="_blank">{{submit.userID}}</a></td>
           <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
