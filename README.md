@@ -1,6 +1,7 @@
 #oj2.0
     oj2.0是由一群大神学长发起的、几个弱菜学长实现的Online Judge系统。（请允许我做一个悲伤的表情）
 ##预热
+
     oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的试验品，如果整个OJ搞懂的话，你会学到linux基础、nginx服务器搭建和使用、djangoweb开发、js、html、python、数据库应用、rabbitMQ+celery消息异步传递架构，足够拿一个好offer了。（简历上可以这么写，具有linux系统下开发经验、熟练使用python、shell等脚本语言、了解nginx服务器的使用、有django框架下的web开发经验balabala……秒杀90%的acmer没问题）。
     当然，上面都是尚未解锁的成就，如何解锁上述成就：
     1. 看看linux入门书籍，比如鸟哥私房菜，学会mkdir、chmod、cd、ll、vim等一些基础命令、了解linux文件系统、权限系统，会在命令行下使用linux系统就可以了。
