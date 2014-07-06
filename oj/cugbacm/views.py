@@ -284,18 +284,20 @@ def problem(request, problem_id):
 	if request.method == 'POST':
 		code = request.POST['code']
 		language = request.POST['language']
-		submit = Submit(
-			runID = 111, 
-			userID = request.session["userID"],
-			problemID = problem_id,
-			status = "queueing",
-			memory = 10000,
-			runTime = 1000,
-			codeLength = 100,
-			language = language,
-			code = code)
-		submit.save()
-		Judge.delay(submit)
+		for i in range(1):
+			submit = Submit(
+				runID = 111, 
+				userID = request.session["userID"],
+				problemID = problem_id,
+				status = "queueing",
+				memory = 10000,
+				runTime = 1000,
+				codeLength = 100,
+				language = language,
+				code = code)
+			submit.save()
+			Judge.delay(submit)
+		
 		return HttpResponseRedirect("/index/problem/" + str(problem_id))
 	else:
 		try:
@@ -355,4 +357,6 @@ def contestList(request):
 		return HttpResponseRedirect("/index/login")
 	contests = Contest.objects.all()
 	return render(request, 'cugbacm/contestList.html', {'contests': contests, 'user': user})
-		
+
+def hello(request):
+	return render(request, 'cugbacm/hello.html', {})

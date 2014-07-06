@@ -15,4 +15,5 @@ urlpatterns = patterns('',
 	url(r'^gettest/$', views.gettest, name = 'gettest'),
 	url(r'^problem/(?P<problem_id>\d+)$', views.problem, name = 'problem'),
 	url(r'^showCode/(?P<submit_id>\d+)$', views.showCode, name = 'showCode'),
+	url(r'^hello/$', views.hello, name = 'hello'),	
 )

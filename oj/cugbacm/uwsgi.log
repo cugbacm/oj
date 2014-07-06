@@ -1,0 +1,101 @@
+*** Starting uWSGI 2.0.3 (64bit) on [Thu May 22 21:25:42 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xb53e50
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xb53e50 pid: 32628 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 32628, cores: 1)
+[pid: 32628|app: 0|req: 1/1] 124.193.176.200 () {42 vars in 812 bytes} [Thu May 22 21:25:42 2014] GET /index/submitList => generated 128863 bytes in 714 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Thu May 22 21:25:43 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3783
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x10e5e50
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x10e5e50 pid: 32651 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 32651, cores: 1)
+[pid: 32651|app: 0|req: 1/1] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:25:44 2014] GET /favicon.ico => generated 126703 bytes in 619 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 2/2] 101.6.240.170 () {42 vars in 833 bytes} [Thu May 22 21:25:45 2014] GET /index/submitList/ => generated 117087 bytes in 202 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 3/3] 101.6.240.170 () {42 vars in 833 bytes} [Thu May 22 21:25:46 2014] GET /index/submitList/ => generated 117077 bytes in 246 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 4/4] 124.193.176.114 () {40 vars in 829 bytes} [Thu May 22 21:25:47 2014] GET /index/problem/1008?submit=6150 => generated 129168 bytes in 265 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 5/5] 124.193.176.114 () {40 vars in 830 bytes} [Thu May 22 21:25:48 2014] GET /index/problem/1008?submit=6150 => generated 129171 bytes in 289 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 6/6] 101.6.240.170 () {40 vars in 795 bytes} [Thu May 22 21:25:49 2014] GET /index/problemList/ => generated 116884 bytes in 225 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 7/7] 124.193.176.200 () {42 vars in 787 bytes} [Thu May 22 21:25:50 2014] GET /index/login => generated 128706 bytes in 255 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 8/8] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:25:52 2014] GET /favicon.ico => generated 126688 bytes in 229 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 9/9] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:25:53 2014] GET /favicon.ico => generated 126688 bytes in 266 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 10/10] 113.108.70.13 () {38 vars in 577 bytes} [Thu May 22 21:26:00 2014] GET /site_media/dist/js/bootstrap.js => generated 127324 bytes in 292 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 11/11] 58.54.140.253 () {26 vars in 292 bytes} [Thu May 22 21:26:24 2014] GET / => generated 114228 bytes in 255 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 12/12] 124.193.176.200 () {40 vars in 727 bytes} [Thu May 22 21:26:45 2014] GET / => generated 116586 bytes in 215 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 13/13] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:26:47 2014] GET /favicon.ico => generated 126688 bytes in 285 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 14/14] 183.45.207.233 () {26 vars in 293 bytes} [Thu May 22 21:27:25 2014] GET / => generated 114230 bytes in 236 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 15/15] 124.193.176.112 () {38 vars in 589 bytes} [Thu May 22 21:29:19 2014] GET /index/login => generated 127176 bytes in 262 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 16/16] 124.193.176.108 () {40 vars in 636 bytes} [Thu May 22 21:30:46 2014] GET /index/login => generated 127465 bytes in 782 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 17/17] 124.193.176.108 () {30 vars in 468 bytes} [Thu May 22 21:30:47 2014] GET /favicon.ico => generated 126236 bytes in 252 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 18/18] 124.193.176.108 () {30 vars in 468 bytes} [Thu May 22 21:30:49 2014] GET /favicon.ico => generated 126236 bytes in 252 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 19/19] 157.56.93.93 () {40 vars in 562 bytes} [Thu May 22 21:31:55 2014] GET /robots.txt => generated 127244 bytes in 247 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 20/20] 106.37.1.190 () {46 vars in 974 bytes} [Thu May 22 21:43:42 2014] GET /index/problem/1000?submit=6126 => generated 129422 bytes in 239 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 21/21] 49.72.243.205 () {26 vars in 292 bytes} [Thu May 22 21:44:56 2014] GET / => generated 114334 bytes in 221 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 22/22] 157.56.93.93 () {40 vars in 555 bytes} [Thu May 22 21:45:54 2014] GET / => generated 115732 bytes in 244 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 23/23] 124.193.176.200 () {42 vars in 787 bytes} [Thu May 22 21:46:00 2014] GET /index/login => generated 128802 bytes in 270 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 24/24] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:46:01 2014] GET /favicon.ico => generated 126784 bytes in 257 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 25/25] 124.193.176.200 () {46 vars in 840 bytes} [Thu May 22 21:46:03 2014] GET /index/login => generated 129257 bytes in 295 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 26/26] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:46:05 2014] GET /favicon.ico => generated 126784 bytes in 264 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 27/27] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:46:06 2014] GET /favicon.ico => generated 126784 bytes in 275 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 28/28] 124.193.176.200 () {34 vars in 557 bytes} [Thu May 22 21:46:06 2014] GET /favicon.ico => generated 126784 bytes in 270 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 29/29] 111.196.19.126 () {38 vars in 679 bytes} [Thu May 22 21:48:31 2014] GET /index/login => generated 127446 bytes in 258 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 30/30] 111.196.19.126 () {36 vars in 569 bytes} [Thu May 22 21:48:32 2014] GET /favicon.ico => generated 126968 bytes in 276 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 31/31] 111.196.19.126 () {36 vars in 677 bytes} [Thu May 22 21:49:02 2014] GET /index/problem/1000?submit=6144 => generated 127776 bytes in 272 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 32/32] 111.196.19.126 () {36 vars in 569 bytes} [Thu May 22 21:49:04 2014] GET /favicon.ico => generated 126968 bytes in 273 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 33/33] 60.166.216.91 () {26 vars in 292 bytes} [Thu May 22 21:51:56 2014] GET / => generated 114324 bytes in 247 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 34/34] 157.56.93.93 () {38 vars in 519 bytes} [Thu May 22 21:52:54 2014] GET / => generated 115534 bytes in 235 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 35/35] 124.193.176.114 () {40 vars in 790 bytes} [Thu May 22 21:56:15 2014] GET /index/login => generated 128663 bytes in 254 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 36/36] 101.6.240.170 () {40 vars in 767 bytes} [Thu May 22 21:57:40 2014] GET /index/login/ => generated 116870 bytes in 240 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 37/37] 113.12.25.53 () {26 vars in 291 bytes} [Thu May 22 22:06:54 2014] GET / => generated 114322 bytes in 227 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 38/38] 182.128.108.39 () {26 vars in 293 bytes} [Thu May 22 22:16:52 2014] GET / => generated 114326 bytes in 237 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 39/39] 180.153.114.197 () {36 vars in 507 bytes} [Thu May 22 22:20:57 2014] GET /index/problem/1000?submit=6144 => generated 127266 bytes in 248 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 40/40] 218.95.170.66 () {26 vars in 292 bytes} [Thu May 22 22:22:51 2014] GET / => generated 114324 bytes in 234 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 41/41] 117.57.132.156 () {26 vars in 293 bytes} [Thu May 22 22:22:53 2014] GET / => generated 114326 bytes in 174 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 32651|app: 0|req: 42/42] 171.92.7.245 () {26 vars in 291 bytes} [Thu May 22 22:36:33 2014] GET / => generated 114322 bytes in 566 msecs (HTTP/1.0 500) 2 headers in 92 bytes (1 switches on core 0)

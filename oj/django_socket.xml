@@ -2,6 +2,6 @@
     <socket>:8077</socket>
     <chdir>/home/cugbacm/oj/oj</chdir>
     <module>django_wsgi</module>
-    <processes>4</processes> <!-- 进程数 --> 
+    <processes>1</processes> <!-- 进程数 --> 
     <daemonize>uwsgi.log</daemonize>
 </uwsgi>
