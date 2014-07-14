@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux基础学习 | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="学习过程中装的是ubuntu 12.04 lts版，学习起来减少了很多不便。
+命令窗口和操作界面窗口的切换：
+
+Ctrl + Alt + F1 ~ F6 到命令窗口 
+Ctrl + Alt + F7 回到操作界面 
+Ctrl + Alt + T 打开终端窗口
+
+一些快捷键的使用：
+Ctrl + C：">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Linux基础学习"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Linux基础学习</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <p>学习过程中装的是<code>ubuntu 12.04 lts</code>版，学习起来减少了很多不便。</p>
+<h1 id="命令窗口和操作界面窗口的切换：">命令窗口和操作界面窗口的切换：</h1>
+<ul>
+<li><code>Ctrl + Alt + F1 ~ F6</code> 到命令窗口 </li>
+<li><code>Ctrl + Alt + F7</code> 回到操作界面 </li>
+<li><code>Ctrl + Alt + T</code> 打开终端窗口</li>
+</ul>
+<h1 id="一些快捷键的使用：">一些快捷键的使用：</h1>
+<p><code>Ctrl + C</code>：这个是用来终止当前命令的快捷键，当然你也可以输入一大串字符，不想让它运行直接Ctrl + C，光标就会跳入下一行。</p>
+<p><code>Tab</code>： 这个键是最有用的键了，也是笔者敲击概率最高的一个键。因为当你打一个命令打一半时，它会帮你补全的。不光是命令，当你打一个目录时，同样可以补全，不信你试试。</p>
+<p><code>Ctrl + D</code>： 退出当前终端，同样你也可以输入exit。</p>
+<p><code>Ctrl + Z</code>： 暂停当前进程，比如你正运行一个命令，突然觉得有点问题想暂停一下，就可以使用这个快捷键。暂停后，可以使用fg 恢复它。</p>
+<p><code>Ctrl + L</code>： 清屏，使光标移动到第一行。</p>
+<p><code>man + 命令</code> 可查询该命令相关文档~</p>
+<blockquote>
+<p>绝对路径：路径的写法一定由根目录”/”写起，例如/usr/local/mysql 这就是绝对路径。</p>
+<p>相对路径：路径的写法不是由根目录”/”写起，例如，首先用户进入到/ 然后再进入到home ，命令为 cd /home 然后 cd test 此时用户所在的路径为 /home/test 。第一个cd命令后跟 /home 第二个cd命令后跟test ，并没有斜杠，这个test是相对于/home 目录来讲的，所以叫做相对路径。</p>
+</blockquote>
+<p><code>pwd</code> 这个命令打印出当前所在目录<br><code>cd</code> 进入到某一个目录<br><code>./</code> 指的是当前目录<br><code>../</code> 指的是当前目录的上一级目录。</p>
+<p><code>mkdir</code> 创建一个目录，如果想创建嵌套的目录，需要加上 -p，否则会出错~<br><code>rm</code> 删除目录或者文件，<code>rmdir</code> 只能删除目录但不能删除文件，要想删除一个文件，则要用rm命令了。<br><code>-f</code> 强制的意思，如果不加这个选项，当删除一个不存在的文件时会报错。<br><code>-i</code> 这个选项的作用是，当用户删除一个文件时会提示用户是否真的删除。<br>[文件属性]<br><img src="https://raw.githubusercontent.com/cugbacm/oj/gh-pages/img/Linux/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" alt="文件属性"><br>上例中，用<code>ls –l</code> 查看当前目录下的文件时，共显示了9列内容（用空格划分列），都代表了什么含义呢？</p>
+<p>第1列，包含的东西有该文件类型和所属主、所属组以及其他用户对该文件的权限。第一列共10位。其中第一位用来描述该文件的类型。上例中，我们看到的类型有”d”, “-“ ，其实除了这两种外还有”l”, “b”, “c”,”s”等。</p>
+<p><code>d</code> 表示该文件为目录；</p>
+<p><code>-</code> 表示该文件为普通文件；</p>
+<p><code>l</code> 表示该文件为连接文件（linux file），上边提到的软连接即为该类型；<br><img src="https://raw.githubusercontent.com/cugbacm/oj/gh-pages/img/Linux/%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6.png" alt="连接文件"></p>
+<p><code>b</code> 表示该文件为块设备文件，比如磁盘分区<br><img src="https://raw.githubusercontent.com/cugbacm/oj/gh-pages/img/Linux/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA.png" alt="磁盘分区"></p>
+<p><code>c</code> 表示该文件为串行端口设备，例如键盘、鼠标。</p>
+<p><code>s</code> 表示该文件为套接字文件（socket），用于进程间通信。</p>
+<p>后边的9位，每三个为一组。均为rwx 三个参数的组合。其中r 代表可读，w代表可写，x代表可执行。前三位为所属主（user）的权限，中间三位为所属组（group）的权限，最后三位为其他非本群组（others）的权限。下面拿一个具体的例子来述说一下。</p>
+<p>一个文件的属性为<code>-rwxr-xr--</code> ，它代表的意思是，该文件为普通文件，文件拥有者可读可写可执行，文件所属组对其可读不可写可执行，其他用户对其只可读。</p>
+<p>对于一个目录来讲，打开这个目录即为执行这个目录，所以任何一个目录必须要有x权限才能打开并查看该目录。例如一个目录的属性为 <code>drwxr--r--</code> 其所属主为root，那么除了root外的其他用户是不能打开这个目录的。</p>
+<p>第2列，表示为连接占用的节点（inode），若为目录时，通常与该目录地下还有多少目录有关系，关于连接（link）在以后章节详细介绍。</p>
+<p>第3列，表示该文件的所属主。</p>
+<p>第4列，表示该文件的所属组。</p>
+<p>第5列，表示该文件的大小。</p>
+<p>第6列、第7列和第8列为该文件的创建日期或者最近的修改日期，分别为月份日期以及时间。</p>
+<p>第9列，文件名。如果前面有一个. 则表示该文件为隐藏文件。</p>
+<p>改变用户对文件的读写执行权限 <code>chmod</code></p>
+<p>在linux中为了方便更改这些权限，linux使用数字去代替<code>rwx</code> ，具体规则为<code>r: 4 w:2 x:1 -:0</code> 举个例子，<code>-rwxrwx---</code>用数字表示就是 770，具体是这样来的：</p>
+<p>rwx = 4+2+1=7; rwx= 4+2+1=7; —- = 0+0+0=0</p>
+<p>chmod 语法： chmod [-R] xyz 文件名 （这里的xyz，表示数字）</p>
+<p>-R 选项作用同chown，级联更改。</p>
+<p>值得提一下的是，在linux系统中，默认一个目录的权限为 755，而一个文件的默认权限为644.</p>
+<p>慢慢补充<del>~</del>~~~~</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/07/12/Linux-commad/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

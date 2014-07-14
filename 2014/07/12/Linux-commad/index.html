@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>了解学习Linux的基本命令 | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="搞了几次终于把系统搞定了，大概看了一些Linux的基本命令，一直在弄HTML，没怎么看，就今天有点时间看了下基本的。看到一些对颜色的解释，就顺便留了下来： 1234567蓝色—目录绿色—可执行文件红色—压缩文件浅蓝色—链接文件粉红色—图片文件黄色—设备文件灰色—其他文件
+其它的就是一些基本的命令，一">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="了解学习Linux的基本命令"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - 了解学习Linux的基本命令</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <p>搞了几次终于把系统搞定了，大概看了一些Linux的基本命令，一直在弄HTML，没怎么看，就今天有点时间看了下基本的。<br>看到一些对颜色的解释，就顺便留了下来：<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">蓝色—目录</div><div class="line">绿色—可执行文件</div><div class="line">红色—压缩文件</div><div class="line">浅蓝色—链接文件</div><div class="line">粉红色—图片文件</div><div class="line">黄色—设备文件</div><div class="line">灰色—其他文件</div></pre></td></tr></table></figure></p>
+<p>其它的就是一些基本的命令，一边看一些试着用了一下，用的最多的就是ll，ls的，现在只是尝试使用了下面的一些<br>命令：</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>: Linux的命令对大小写是敏感的。</div><div class="line"> </div><div class="line"><span class="number">2</span>: 图形界面和命令行界面的切换，Ctrl<span class="subst">+</span>Alt<span class="subst">+</span>F1<span class="subst">----</span>Ctrl<span class="subst">+</span>Alt<span class="subst">+</span>F7</div><div class="line"> </div><div class="line"><span class="number">3</span>: 使用pwd查看当前实在哪个目录中， cd <span class="subst">/</span>进入根目录下</div><div class="line"> </div><div class="line"><span class="number">4</span>: 使用ll和查看当前目录下有那些文件和文件夹，ll是详细列出</div><div class="line"> </div><div class="line"><span class="number">5</span>: 使用ls <span class="attribute">-al</span> 或者 ll <span class="attribute">-a</span>显示隐藏的文件和文件夹</div><div class="line"> </div><div class="line"><span class="number">6</span>: ls <span class="attribute">-R</span><span class="subst">|</span>more显示目录及下级子目录</div><div class="line"> </div><div class="line"><span class="number">7</span>: ls <span class="attribute">-t</span>按时间先后顺序显示 ls <span class="attribute">-m</span> 横排输出，用逗号隔开 ls <span class="attribute">-s</span> 大小排序（大到小）</div><div class="line"> </div><div class="line"><span class="number">8</span>: 使用cd <span class="subst">/</span>子文件 可进入下一级子目录；</div><div class="line">使用 cd <span class="subst">-</span>返回前一个工作目录；</div><div class="line">使用 cd ~返回到当前用户的家目录；</div><div class="line">使用cd<span class="built_in">..</span>返回上一级目录。（在这里纠结了好久，root和home 的区别）</div><div class="line"> </div><div class="line"><span class="number">9</span>: 创建单层目录直接使用 mkdir 目录名 创建嵌套目录要使用<span class="attribute">-p</span>参数即：mkdir <span class="attribute">-p</span> 嵌套目录</div><div class="line"> </div><div class="line"><span class="number">10</span>: 删除目录或者文件 rm <span class="attribute">-rf</span> 目标</div><div class="line"> </div><div class="line"><span class="number">11</span>: 创建空文本文件 touch 文件名 输入文本是使用echo 文本 追加文字继续使用 echo  文字<span class="built_in">.</span></div><div class="line"> </div><div class="line"><span class="number">12</span>: 把某一个文件复制到某一个文件夹：cp 文件 文件夹。</div><div class="line"> </div><div class="line"><span class="number">13</span>: 展示某一个文件夹的内容，如果有内置的文件夹，则需要使用<span class="attribute">-R</span>参数，格式：ls <span class="attribute">-R</span> dir1</div><div class="line"> </div><div class="line"><span class="number">14</span>: 拷贝多个目标到某一个地方时：cp <span class="attribute">-r</span> 源<span class="number">1</span> 源<span class="number">2</span> 源<span class="number">3.</span><span class="attribute">...</span>源n 目的文件</div><div class="line"> </div><div class="line"><span class="number">15</span>: 使用mv可以移动文件或者文件夹。</div><div class="line">比如：mv dir1 qing(其中dir1为源，qing为目的），注意的是qing当中不能存在dir1，否则移动不成功</div><div class="line">（今天看到的那个例子就是在dir2中已经存在dir1了，我试着按照它那个的要求步骤写了下，移动不了，把dir2里的删除掉之后，就可以移动了）。</div><div class="line">移动多个目标时，直接写就可以：mv 源<span class="number">1</span> 源<span class="number">2</span> <span class="attribute">...</span><span class="built_in">.</span>源n 目标</div></pre></td></tr></table></figure>
+
+<p> 其它的命令还在看</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/07/12/Linux-learn-diary/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/07/12/Linux-intro/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
