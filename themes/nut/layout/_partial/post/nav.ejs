@@ -1,0 +1,23 @@
+<% if (page.prev || page.next){ %>
+<div class="center">
+  <ul class="pagination">
+    <li>
+      <% if (page.prev){ %>
+        <a href="<%- config.root %><%- page.prev_link %>" class="nav-prev">Next</a>
+      <% } else { %>
+        <span class="nav-prev disabled">Prev</span>
+      <% } %>
+    </li>
+    <li>
+      <a href="<%- config.root %>" class="nav-home">Home</a>
+    </li>
+    <li>
+      <% if (page.next){ %>
+        <a href="<%- config.root %><%- page.next_link %>" class="nav-next">Next</a>
+      <% } else { %>
+        <span class="nav-next disabled">Next</span>
+      <% } %>
+    </li>
+  </ul>
+</div>
+<% } %>

@@ -1,0 +1,11 @@
+<% if (page.tags){ %>
+  <div class="widget-wrap">
+    <div class="post-widget">
+      <i class="fa fa-tags"></i>
+      <%- list_tags(page.tags, {
+        style: 'none',
+        separator: ''
+      }) %>
+    </div>
+  </div>
+<% } %>

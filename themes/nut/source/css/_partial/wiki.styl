@@ -1,0 +1,44 @@
+.panel-body
+  ul
+    list-style: disc
+
+.wiki-link-list
+  padding: 4px
+  margin-left: 1.6rem
+
+#wiki-sidebar
+  @media mq-tablet
+    column(sidebar-column)
+  @media mq-normal
+    column(sidebar-column)
+
+.affix
+.affix-bottom
+  @media mq-mobile
+    position: static
+    width: 100%
+  @media mq-tablet
+    position: fixed
+    top: 100px
+  @media mq-normal
+    position: fixed
+    top: 100px
+
+.affix-top
+  position: relative
+
+#wiki-toc-wrap
+  border: 1px solid color-border
+  border-radius: 6px
+  padding: 0
+  background-color: #f5f5f5
+  ol
+    list-style: disc
+
+.active
+  background-color: #fff
+
+.wiki-toc-item
+  line-height: 0.8rem
+  a
+    color: color-grey

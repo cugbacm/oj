@@ -1,0 +1,8 @@
+<% var archive; %>
+<% if (page.type === 'index'){ %>
+  <% archive = 1; %>
+<% } else { %>
+  <% archive = config.archive; %>
+<% } %>
+
+<%- partial('_partial/archive', {pagination: archive, index: true}) %>

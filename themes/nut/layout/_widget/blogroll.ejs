@@ -1,0 +1,19 @@
+<% if (theme.links){ %>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        <% theme.links.forEach(function(link){ %>
+         <li class="blogroll">
+           <% if (link.logo){ %>
+             <i class="fa fa-<%- link.logo %>"></i>
+           <% } else { %>
+             <i class="fa fa-anchor"></i>
+           <% } %>
+           <%- link_to(link.url, link.name) %>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+<% } %>

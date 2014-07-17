@@ -1,0 +1,8 @@
+<%
+  var t = toc(page.content, {list_number: false, class: 'nav wiki-toc'});
+  if (t.length > 0) {
+    var toc_widget;
+      toc_widget = '<aside id="wiki-sidebar"><div id="wiki-toc-wrap">' + t + '</div></aside>';
+  }
+%>
+<%- toc_widget %>

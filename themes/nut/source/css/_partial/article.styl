@@ -1,0 +1,421 @@
+#main
+  h1, h2, h3, h4, h5, h6
+    color: #A94442
+
+.hide
+  display: none
+
+.block
+  display: block
+
+.note-marker
+  color: #D14
+  font-weight: 700
+
+.note-outer
+  float: right
+  width: 0
+
+.note-inner
+  width: 270px
+  margin-left: 20px
+  padding-left: 14px
+  border-left: 5px solid #BCE72D;
+
+.note-banner
+  text-align: center
+  font-size: 13px
+
+.note
+  font-size: 13px
+  .note-marker
+    padding-right: 6px
+    font-size: font-size !important
+
+.article
+  margin: 20px 0 block-margin
+
+.thumbnail
+  float: right
+  max-width: 250px
+  border: 1px solid color-border
+  margin-left: 1rem
+  border-radius: 6px
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055)
+
+.article-inner
+  @extend $block
+  /*overflow: hidden*/
+
+.article-date
+  @extend $block-caption
+  float: right
+  padding: article-padding 0
+
+.article-category
+  float: left
+  text-shadow: 0 1px #fff
+  margin-left: 8px
+  &:before
+    content: "\f07b"
+    font-family: font-icon
+    color: color-grey
+  &:after
+    content: ""
+    color: color-default !important
+
+.article-category-link
+  color: color-link !important
+  margin: 0 4px
+  &:hover
+    text-decoration: underline !important
+
+.article-header
+  padding: article-padding article-padding
+  background: #F5F5F5
+  border-radius: 3px
+  h1
+    display: inline-block
+  i
+    color: color-default
+    font-size: 32px
+    margin-right: 12px
+
+.article-title
+  text-decoration: none
+  font-size: 1.6em
+  font-weight: bold
+  color: color-default
+  line-height: line-height-title
+  transition: color 0.2s
+  a&:hover
+    color: color-link
+
+#toc
+  border-radius: 10px
+  float: right
+  font-size: 10pt
+  width: 250px
+  padding: 10px 10px 10px 20px
+  background: #eee
+  border: 1px solid color-border
+  margin: 0px 0px 10px 15px
+
+.toc-header
+  font-size: subtitle-size
+  font-weight: 700
+  color: color-default
+
+.article-toc
+  list-style: disc !important
+  color: color-default
+
+.article-toc-child
+  list-style: disc !important
+  color: color-default
+  margin-left: 0.6rem !important
+
+.article-toc-item
+  line-height: line-height
+
+.alert > i
+  margin-right: 6px
+  font-size: 1rem
+
+.article-entry
+  @extend $base-style
+  clearfix()
+  clear: both
+  color: color-default
+  padding: 0 article-padding
+  p, table
+    line-height: line-height
+    margin: line-height 0
+  h1, h2, h3, h4, h5, h6
+    font-weight: bold
+  h1, h2, h3, h4, h5, h6
+    line-height: line-height-title
+    margin: line-height-title 0
+  a
+    color: color-link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  ul, ol, dl
+    /*margin-top: line-height
+    margin-bottom: line-height*/
+  img, video
+    max-width: 100%
+    height: auto
+    display: block
+    margin: auto
+  iframe
+    border: none
+  table
+    width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+  th
+    font-weight: bold
+    border-bottom: 3px solid color-border
+    padding-bottom: 0.5em
+  td
+    border-bottom: 1px solid color-border
+    padding: 10px 0
+  blockquote
+    font-family: font-serif
+    margin: line-height 20px
+    footer
+      font-size: font-size
+      margin: line-height 0
+      font-family: font-sans
+      cite
+        &:before
+          content: "—"
+          padding: 0 0.5em
+  .pullquote
+    text-align: left
+    width: 45%
+    margin: 0
+    &.left
+      margin-left: 0.5em
+      margin-right: 1em
+    &.right
+      margin-right: 0.5em
+      margin-left: 1em
+  .caption
+    color: color-grey
+    display: block
+    font-size: 0.9em
+    margin-top: 0.5em
+    position: relative
+    text-align: center
+  // http://webdesignerwall.com/tutorials/css-elastic-videos
+  .video-container
+    position: relative
+    padding-top: (9 / 16 * 100)% // 16:9 ratio
+    height: 0
+    overflow: hidden
+    iframe, object, embed
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      margin-top: 0
+
+.article-more-link a
+  display: inline-block
+  line-height: 1em
+  padding: 6px 15px
+  border-radius: 8px
+  border: 2px solid color-link
+  background: color-background
+  color: color-link
+  text-shadow: 0 1px #fff
+  text-decoration: none
+  float: right
+  &:hover
+    background: color-link
+    color: #fff
+    text-decoration: none
+    text-shadow: 0 1px darken(color-link, 20%)
+
+.post-image
+  padding: 8px
+
+.article-footer
+  clearfix()
+  font-size: font-size
+  line-height: line-height
+  border-top: 1px solid color-border
+  padding-top: line-height
+  margin-top: 4rem
+  a
+    color: color-grey
+    &:hover
+      color: color-default
+      text-decoration: none
+
+.article-tag-list
+  &:before
+    content: "\f02c"
+    font-family: font-icon
+    padding: 0 8px 0 20px
+    float: left
+    color: color-grey
+
+.article-tag-list-item
+  float: left
+  margin-right: 10px
+  display: inline-block
+
+.article-tag-list-link
+  color: #fff !important
+  display: inline-block
+  padding-top: 0.3rem
+
+.article-comment-link
+  float: right
+  &:before
+    content: "\f075"
+    font-family: font-icon
+    padding-right: 8px
+
+.article-share-link
+  cursor: pointer
+  float: right
+  margin-left: 20px
+  &:before
+    content: "\f064"
+    font-family: font-icon
+    padding-right: 6px
+
+.article-nav
+  clearfix()
+  text-align: center
+  font-weight: 700
+
+.disabled
+  color: color-grey !important
+  &:hover
+    background: #fff !important
+
+.nav-prev
+  &:before
+    content: "\f060"
+    font-family: font-icon
+    padding-right: 6px
+
+.nav-home
+  &:before
+    float: left
+    content: "\f015"
+    font-family: font-icon
+    padding-right: 6px
+
+.nav-archive
+  &:before
+    float: left
+    content: "\f187"
+    font-family: font-icon
+    padding-right: 6px
+
+.nav-next
+  &:after
+    content: "\f061"
+    font-family: font-icon
+    padding-left: 6px
+
+.article-share-box
+  position: absolute
+  display: none
+  background: #fff
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
+  border-radius: 3px
+  margin-left: -145px
+  overflow: hidden
+  z-index: 1
+  &.on
+    display: block
+
+.article-share-links
+  clearfix()
+  background: color-background
+  border-left: 1px solid color-border
+  border-right: 1px solid color-border
+  border-bottom: 1px solid color-border
+
+$article-share-link
+  width: 50px
+  height: 36px
+  display: block
+  float: left
+  position: relative
+  color: #999
+  text-shadow: 0 1px #fff
+  &:before
+    font-size: 20px
+    font-family: font-icon
+    absolute-center(@font-size)
+    text-align: center
+  &:hover
+    color: #fff
+
+.article-share-weibo
+  @extend $article-share-link
+  &:before
+    content: "\f18a"
+  &:hover
+    background: color-weibo
+    text-shadow: 0 1px darken(color-weibo, 20%)
+
+.article-share-renren
+  @extend $article-share-link
+  &:before
+    content: "\f18b"
+  &:hover
+    background: color-renren
+    text-shadow: 0 1px darken(color-renren, 20%)
+
+.article-share-google
+  @extend $article-share-link
+  &:before
+    content: "\f0d5"
+  &:hover
+    background: color-google
+    text-shadow: 0 1px darken(color-google, 20%)
+
+.article-gallery
+  background: #000
+  position: relative
+
+.article-gallery-photos
+  position: relative
+  overflow: hidden
+
+.article-gallery-img
+  display: none
+  max-width: 100%
+  &:first-child
+    display: block
+  &.loaded
+    position: absolute
+    display: block
+  img
+    display: block
+    max-width: 100%
+    margin: 0 auto
+/*
+$article-gallery-ctrl
+  position: absolute
+  top: 0
+  height: 100%
+  width: 60px
+  color: #fff
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3)
+  opacity: 0.3
+  transition: opacity 0.2s
+  cursor: pointer
+  &:hover
+    opacity: 0.8
+  &:before
+    font-size: 30px
+    font-family: font-icon
+    position: absolute
+    top: 50%
+    margin-top: @font-size * -0.5
+
+.article-gallery-prev
+  @extend $article-gallery-ctrl
+  left: 0
+  &:before
+    content: "\f053"
+    left: 15px
+
+.article-gallery-next
+  @extend $article-gallery-ctrl
+  right: 0
+  &:before
+    content: "\f054"
+    right: 15px*/

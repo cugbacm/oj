@@ -1,0 +1,17 @@
+<% if (!is_page()){ %>
+<aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
+  <% if (is_home()){ %>
+    <% theme.home_widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  <% } else if (is_archive() || is_category() || is_tag()) { %>
+    <% theme.act_widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  <% } else if (is_post()) { %>
+    <% theme.post_widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+    <% }) %>
+  <% } %>
+</aside>
+<% } %>

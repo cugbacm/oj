@@ -1,0 +1,29 @@
+<% if (pagination == 2){ %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true, comment: false}) %>
+  <% }) %>
+  <%- partial('post/nav') %>
+<% } else { %>
+  <% var last; %>
+  <div id="accordion" class="panel-group">
+  <% page.posts.populate('posts').sort('date', -1).each(function(post, i){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year){ %>
+      <% if (last != null){ %>
+        </div></div></section>
+      <% } %>
+      <% last = year; %>
+      <section class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#<%= year %>">
+          <i class="fa fa-calendar"></i><span class="text-danger"><%= year %></span>
+        </div>
+        <div id="<%= year %>" class="panel-collapse collapse in">
+        <div class="panel-body">
+    <% } %>
+    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+  <% }) %>
+  <% if (page.posts.length){ %>
+    </div></div></section>
+  <% } %>
+  </div>
+<% } %>

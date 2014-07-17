@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = 'Archives';
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    if (page.category){
+      title = 'Category: ' + page.category;
+    } else {
+      title = 'Categories';
+    }
+  } else if (is_tag()){
+    if (page.tag){
+      title = 'Tag: ' + page.tag;
+    } else {
+      title = 'Tags';
+    }
+  } else if (is_wiki()){
+    if (page.title !== 'Wiki'){
+      title = 'Wiki: ' + page.title;
+    } else {
+      title = 'Wiki';
+    }
+  }
+  %>
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus}) %>
+  <% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } %>
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <%- css('css/font-awesome.min') %>
+  <%- css('css/bootstrap.min') %>
+  <%- css('css/style') %>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <%- partial('google-analytics') %>
+</head>

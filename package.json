@@ -1,0 +1,11 @@
+{
+  "name": "hexo-site",
+  "version": "2.8.0",
+  "private": true,
+  "dependencies": {
+    "hexo-renderer-ejs": "*",
+    "hexo-renderer-marked": "*",
+    "hexo-renderer-stylus": "*",
+    "hexo-tag-bootstrap": "0.0.6"
+  }
+}

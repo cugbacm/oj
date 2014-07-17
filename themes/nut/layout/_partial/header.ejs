@@ -1,0 +1,29 @@
+<nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="<%= config.root %>"><%= config.title %><%if (hexo.debug) {%>[<span class='testIE IE9'>IE9</span><span class='testIE IE8'>IE8</span><span class='testIE IE7'>lte IE7</span>]<%}%></a>
+    <div class="collapse navbar-collapse nav-menu">
+      <ul class="nav navbar-nav">
+      <% theme.menu.forEach(function(m){ %>
+        <li>
+          <a href="<%- m.path %>">
+            <i class="fa fa-<%- m.logo %>"></i>
+            <%- m.name %>
+          </a>
+        </li>
+      <% }) %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if (theme.rss) { %>
+          <li><a id="rss-link" href="<%- theme.rss %>" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="clearfix"></div>

@@ -1,0 +1,49 @@
+<!-- we only support one level path, and we just set the page's partent directory name
+        as its category name.
+-->
+<% if (page.wikis.length){
+    var cat,
+      last,
+      wikis = page.wikis;
+    for(i = 0; i < wikis.length; i++){
+      wikis[i].category = wiki_category(wikis[i]);
+    }
+  %>
+  <div id="accordion" class="panel-group">
+  <section class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-target="#wiki-info">
+      <i class="fa fa-info-circle"></i>
+      <span class="text-danger">Info</span>
+    </div>
+    <div id="wiki-info" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <%- theme.wiki_info %>
+    </div></div>
+  </section>
+
+  <%
+    wikis.sort(function(a, b){return a.category > b.category;});
+    for(var i in wikis){
+      cat = wikis[i].category;
+  %>
+      <% if (last != cat){ %>
+        <% if (last != null){ %>
+          </div></div></section>
+        <% } %>
+        <% last = cat; %>
+
+        <section class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-target="#<%= ct_name_to_id(cat) %>">
+            <i class="fa fa-bookmark-o"></i><span class="text-danger"><%= cat %></span>
+          </div>
+          <div id="<%= ct_name_to_id(cat) %>" class="panel-collapse collapse">
+          <div class="panel-body">
+          <ul>
+      <% } %>
+      <li class="wiki-link-list"><a class="wiki-link" href="<%- wikis[i].permalink %>"><%- wikis[i].title %></a></li>
+    <% } %>
+  <% if (wikis.length){ %>
+    </ul></div></div></section>
+  <% } %>
+</div>
+<% } %>

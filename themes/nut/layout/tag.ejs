@@ -1,0 +1,5 @@
+<% if (page.type === 'index'){ %>
+  <%- partial('_partial/tag', {tags: page.tags}) %>
+<% } else { %>
+  <%- partial('_partial/archive', {pagination: config.tag, index: true}) %>
+<% } %>

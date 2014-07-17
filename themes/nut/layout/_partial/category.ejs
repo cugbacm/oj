@@ -1,0 +1,34 @@
+<% if (page.cats.length){ %>
+  <div class="categories-head">
+    <%- _list_categories(page.cats, {
+      class: 'category',
+      label: false,
+      anchor: true
+    }) %>
+  </div>
+  <div class="categories-list">
+    <% var last; %>
+    <div id="accordion" class="panel-group">
+    <% page.cats.sort('name', true).populate('posts').each(function(category){ %>
+      <% var name = category.name; %>
+      <% if (last != name){ %>
+        <% if (last != null){ %>
+          </div></div></section>
+        <% } %>
+        <% last = name; %>
+        <section id="<%- ct_name_to_id(category.name) %>"class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-target="#<%- 'collapse-' + ct_name_to_id(category.name) %>">
+            <i class="fa fa-folder"></i><span class="text-danger"><%= name %></span>
+          </div>
+          <div id="<%- 'collapse-' + ct_name_to_id(category.name) %>" class="panel-collapse collapse in">
+          <div class="panel-body">
+        <% } %>
+        <% category.posts.sort('name', 1).each(function(post){ %>
+          <%- partial('archive-post', {post: post, index: true}) %>
+        <% }); %>
+    <% }); %>
+    <% if (page.cats.length){ %>
+      </div></div></section>
+    <% } %>
+  </div></div>
+<% } %>

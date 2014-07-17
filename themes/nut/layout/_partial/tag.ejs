@@ -1,0 +1,34 @@
+<% if (page.tags.length){ %>
+  <div class="tags-head">
+    <%- _list_tags(page.tags, {
+      class: 'tag',
+      label: false,
+      anchor: true
+    }) %>
+  </div>
+  <div class="tags-list">
+    <% var last; %>
+    <div id="accordion" class="panel-group">
+    <% page.tags.sort('name', 1).populate('posts').each(function(tag){ %>
+      <% var name = tag.name; %>
+      <% if (last != name){ %>
+        <% if (last != null){ %>
+          </div></div></section>
+        <% } %>
+        <% last = name; %>
+        <section id="<%- ct_name_to_id(tag.name) %>"class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-target="#<%- 'collapse-' + ct_name_to_id(tag.name) %>">
+            <i class="fa fa-tag"></i><span class="text-danger"><%= name %></span>
+          </div>
+          <div id="<%- 'collapse-' + ct_name_to_id(tag.name) %>" class="panel-collapse collapse in">
+          <div class="panel-body">
+        <% } %>
+        <% tag.posts.sort('name', 1).each(function(post){ %>
+          <%- partial('archive-post', {post: post, index: true}) %>
+        <% }); %>
+    <% }); %>
+    <% if (page.tags.length){ %>
+      </div></div></section>
+    <% } %>
+  </div></div>
+<% } %>

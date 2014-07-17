@@ -1,0 +1,58 @@
+<%- partial('_partial/head') %>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <%- partial('_partial/header') %>
+      <div id='content' class="container">
+
+        <div class="page-header-wrapper">
+          <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><%-link_to('http://windows.microsoft.com/zh-cn/internet-explorer/download-ie','IE9')%></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+          <div class="page-header">
+            <h1 class="title">
+          <% if (is_home()){ %>
+            <%- config.title %> <small><%- config.subtitle %></small>
+          <% } else if (is_archive()){ %>
+            <% if (is_month()){ %>
+              <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, 'MMMM YYYY') %></time>
+            <% } else { %>
+              Archives
+            <% } %>
+          <% } else if (is_category()){ %>
+            <% if (page.category){ %>
+              <%- page.category %>
+            <% } else { %>
+              Categories
+            <% } %>
+          <% } else if (is_tag()){ %>
+            <% if (page.tag){ %>
+              <%- page.tag %>
+            <% } else { %>
+              Tags
+            <% } %>
+          <% } else { %>
+            <%- page.title %>
+          <% } %>
+            </h1>
+        </div>
+      </div>
+      <% if (is_wiki() && page.path !== theme.wiki_dir + '/'){ %>
+        <%- partial('_partial/wiki-toc') %>
+      <% } %>
+      <section id="main"
+        <% if (is_wiki() && page.path !== theme.wiki_dir + '/'){ %>
+          style="float: right;"
+        <% } else if (is_page()){ %>
+          style="float: none; display: inherit; width: 95% !important; margin: 0 auto;"
+        <% } %>
+      ><%- body %></section>
+        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+          <%- partial('_partial/sidebar') %>
+        <% } %>
+      </div>
+      <%- partial('_partial/footer') %>
+    </div>
+    <%- partial('_partial/mobile-nav') %>
+    <%- partial('_partial/after-footer') %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+# Header
+menu:
+- name: Archives
+  path: /oj/archives
+  logo: archive
+- name: Categories
+  path: /oj/categories
+  logo: folder
+- name: Tags
+  path: /oj/tags
+  logo: tags
+- name: Wiki
+  path: /oj/wiki
+  logo: book
+- name: About
+  path: /oj/about
+  logo: user
+rss: /oj/atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+pages:
+- about
+- wiki
+
+wiki_dir: wiki
+wiki_info:
+
+# Sidebar
+sidebar: right
+home_widgets:
+- search
+- category
+- tag
+- archive
+- blogroll
+act_widgets:
+- search
+- recent_posts
+- blogroll
+post_widgets:
+- nav
+- post_date
+- post_category
+- post_tag
+
+# Miscellaneous
+google_analytics:
+favicon: favicon.ico
+twitter:
+google_plus:
+
+links:
+- name: Github
+  url: https:/github.com/oj/
+  logo: github
+
+feed:
+  type: atom
+  path: /oj/atom.xml
+  limit: 20
+
+sitemap:
+  path: /oj/sitemap.xml

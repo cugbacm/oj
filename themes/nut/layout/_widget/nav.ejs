@@ -1,0 +1,24 @@
+<% if (page.prev || page.next){ %>
+<div class="widget-wrap center">
+  <ul class="pagination">
+    <li>
+      <% if (page.prev){ %>
+        <a href="<%- config.root %><%- page.prev.path %>" class="nav-prev">Prev</a>
+      <% } else { %>
+        <span class="nav-prev disabled">Prev</span>
+      <% } %>
+    </li>
+    <li>
+      <a data-url="<%- page.permalink %>" data-id="<%= page._id %>" data_title="<%- page.title %>"
+        data_summary="<%- post_summary(strip_html(page.content), 160) %>" class="article-share-link">Share</a>
+    </li>
+    <li>
+      <% if (page.next){ %>
+        <a href="<%- config.root %><%- page.next.path %>" class="nav-next">Next</a>
+      <% } else { %>
+        <span class="nav-next disabled">Next</span>
+      <% } %>
+    </li>
+  </ul>
+</div>
+<% } %>

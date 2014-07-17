@@ -1,0 +1,5 @@
+<% if (page.type === 'index'){ %>
+  <%- partial('_partial/category', {cats: page.cats}) %>
+<% } else { %>
+  <%- partial('_partial/archive', {pagination: config.category, index: true}) %>
+<% } %>
