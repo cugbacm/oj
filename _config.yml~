@@ -91,5 +91,5 @@ plugins:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
-  repo: git@github.com:cugbacm/oj.git
+  repo: https://github.com/cugbacm/oj.git
   branch: gh-pages
