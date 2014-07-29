@@ -106,9 +106,9 @@ def submitList(request):
 			languageSearch = request.POST['languageSearch']
 			try:
 				if userIDSearch.strip():
-					submits = submits.filter(userID = userIDSearch)
+					submits = submits.filter(userID__contains = userIDSearch)
 				if problemIDSearch.strip():
-					submits = submits.filter(problemID = problemIDSearch)
+					submits = submits.filter(problemID__contains = problemIDSearch)
 				if resultSearch != "Result":
 					submits = submits.filter(status = resultSearch)
 				if languageSearch != "Language":
@@ -319,11 +319,11 @@ def problemList(request):
 			problemAuthor = request.POST['problemAuthor']
 			try:
 				if problemID.strip():
-					problems = problems.filter(problemID = problemID)
+					problems = problems.filter(problemID__contains = problemID)
 				if problemTitle.strip():
-					problems = problems.filter(title = problemTitle)
+					problems = problems.filter(title__contains = problemTitle)
 				if problemAuthor.strip():
-					problems = problems.filter(author = problemAuthor)
+					problems = problems.filter(author__contains = problemAuthor)
 				return render(
 					request, 
 					'cugbacm/problemList.html', 
