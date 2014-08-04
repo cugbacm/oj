@@ -142,39 +142,45 @@ def userList(request):
 	return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
 
 
-def userInfo(request):
-	try:
-		user = User.objects.get(userID = request.session['userID'])
-	except:
-		return HttpResponseRedirect("/index/login")
-
-	if request.method == 'POST':
-		userID = request.POST['userID']
-		oldPassword = request.POST['oldPassword']
-		password = request.POST['password']
-		confirmPassword = request.POST['confirmPassword']
-		session = request.POST['session']
-		specialty = request.POST['specialty']
-		tel = request.POST['tel']
-		email = request.POST['email']
-		nickname = request.POST['nickname']
-		if oldPassword != user.password:
-			return HttpResponse("password error")
-		else:
-			if password.strip() != '' and password == confirmPassword:
-				user.password = password
-				user.session = session
-				user.specialty = specialty
-				user.tel = tel
-				user.email = email
-				user.nickname = nickname
-				user.save()
-				return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
-			else:
-				return HttpResponse("password and confirmPassword is not the same!")
-	else:
-		return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user})
-
+def userInfo(request, user_id):
+   try:
+     user = User.objects.get(userID = request.session['userID'])
+   except:
+     return HttpResponseRedirect("/index/login")
+   other = User.objects.get(userID = user_id)
+   if request.method == 'POST':
+     userID = request.POST['userID']
+     oldPassword = request.POST['oldPassword']
+     password = request.POST['password']
+     confirmPassword = request.POST['confirmPassword']
+     session = request.POST['session']
+     specialty = request.POST['specialty']
+     tel = request.POST['tel']
+     email = request.POST['email']
+     nickname = request.POST['nickname']
+     if oldPassword != user.password:
+       return HttpResponse("password error")
+     else:
+       user.password = oldPassword
+       user.session = session
+       user.specialty = specialty
+       user.tel = tel
+       user.email = email
+       user.nickname = nickname
+       if password.strip() != '' and password == confirmPassword:
+         user.password = password
+         user.save()
+         other = User.objects.get(userID = user_id)
+         return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other})
+       else:
+         if password != confirmPassword:
+           return HttpResponse("password and confirmPassword is not the same!")
+         else:
+           user.save()
+           other = User.objects.get(userID = user_id)
+           return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user':user, 'other':other})
+   else:
+     return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other})
 		
 def register(request):
 	if request.method == 'POST':

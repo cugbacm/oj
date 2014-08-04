@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="cugbacm" >
@@ -11,15 +12,17 @@
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
     <link href="/site_media/dist/css/signin.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <link href=/site_media/Flat-UI-master/css/demo.css" rel="stylesheet">
+   <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+      <script src="/site_media/dist/js/html5shiv.min.js"></script>
+      <script src="/site_media/dist/js/respond.min.js"></script>
     <![endif]-->
     <script>
     $(function(){
@@ -46,10 +49,36 @@
   </head>
 
   <body>
-
-    <div class="container" >
-      <form class="form-signin" role="form" action="/index/login/" method="post">{% csrf_token %} 
-        <h2 class="form-signin-heading">Please sign in</h2>
+   <div class="container" style="width:970px;"><!--导入的demo.css没起作用，所以强加宽度限制-->
+    <form  role="form" action="/index/login/" method="post">{% csrf_token %}
+    <div class="login">
+      <div class="login-screen">
+        <div class="login-icon">
+          <img src="/site_media/Flat-UI-master/images/icons/png/Toilet-Paper.png" alt="Welcome to OJ 2.0" />
+          <h4>Welcome to <small>OJ 2.0</small></h4>
+        </div>
+        <div class="login-form">
+           <div class="form-group">
+             <input type="text" id = "userid" class="form-control login-field" placeholder="UserID" name="userID" required autofocus />
+           </div>
+           <div class="form-group">
+             <input type="password" id = "password"  class="form-control login-field" placeholder="Password" name="password" required />
+           </div> 
+           <label class="checkbox">
+             <span class="icons">
+               <span class="first-icon fui-checkbox-unchecked"></span>
+               <span class="second-icon fui-checkbox-checked"></span>
+             </span>
+             <input type="checkbox" value="remember-me"><font style="color:gray;">Remember me</font>
+           </label>
+             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button>
+             <a href="/index/register"><button class="btn btn-lg btn-primary btn-block" id="register" type="button" style="">Register</button></a> 
+        </div>
+      </div>
+     </div>
+     </form>
+     <!-- <form class="form-signin" role="form" action="/index/login/" method="post">{% csrf_token %} 
+        <h3 class="form-signin-heading">Please sign in</h3>
         <input type="text" id = "userid" class="form-control" placeholder="UserID" name="userID" required autofocus />
         <input type="password" id = "password"  class="form-control" placeholder="Password" name="password" required />
         <label class="checkbox">
@@ -58,7 +87,9 @@
         <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button>
 		    <a href="/index/register"><button class="btn btn-lg btn-primary btn-block" id="register" type="button">Register</button></a>
       </form>
-    </div> <!-- /container -->
+      </div>-->
+   
+   </div><!--container-->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
