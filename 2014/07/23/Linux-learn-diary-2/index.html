@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux初步学习二 | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="1：cat /etc/passwd |head展示Linux用户信息
+比如：root:x:0:0:root:/root:/bin/bash有7个部分组成：
+
+用户名。
+该账号的口令
+用户标识号，也叫做uid。0是超级用户（root）的标识号，1~499由系统保留，作为管理账号，普通用户的标识号从50">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Linux初步学习二"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Linux初步学习二</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h2 id="1：cat_/etc/passwd_|head展示Linux用户信息">1：<code>cat /etc/passwd |head</code>展示Linux用户信息</h2>
+<p>比如：<code>root:x:0:0:root:/root:/bin/bash</code><br>有7个部分组成：</p>
+<ol>
+<li>用户名。</li>
+<li>该账号的口令</li>
+<li>用户标识号，也叫做uid。0是超级用户（root）的标识号，1~499由系统保留，作为管理账号，普通用户的标识号从500开始。</li>
+<li>表示组标识号。</li>
+<li>记录该用户的一些属性。</li>
+<li>用户的家目录</li>
+<li>shell（这个不太清楚，主要是设置这个账号的权限的）</li>
+</ol>
+<h2 id="2：/etc/shadow和上面的作用一样">2：<code>/etc/shadow</code>和上面的作用一样</h2>
+<p>分为9个区域：</p>
+<ol>
+<li>用户名</li>
+<li>用户密码（已经经过加密）</li>
+<li>上次更改密码的日期数值是离1970年1月1日到上次更改密码的日期之差</li>
+<li>要过多少天才可以更改密码，是0的话就没有限制，随时可以修改，像有的网站限制你不能频繁的修改密码，和这个机理相似</li>
+<li>密码多少天后到期</li>
+<li>密码到期警告</li>
+<li>账号失效期限</li>
+<li>账号的生命周期，即这个账号的存活期是多少。</li>
+<li>保留无意义。</li>
+</ol>
+<h2 id="3：新增/删除用户和用户组">3：新增/删除用户和用户组</h2>
+<ol>
+<li>新增一个组 <code>groupadd [-g GID] groupname</code>，在root下面。g可以自定义gid，即用户的等级。</li>
+<li>删除组 <code>gropudel groupname</code>。直接删除</li>
+<li>增加用户 <code>useradd [-u UID] [-g GID] [-d HOME] [-M] [-s]</code>，其中这些u,g,d,M,s的含义是：-u 自定义UID-g 使其属于已经存在的某个GID-d 自定义用户的家目录-M 不建立家目录-s 自定义shell</li>
+<li>删除用户<code>userdel -r</code> 用户名,-r的意思是删除用户对应的家目录。（我在删除的时候少写了-r,只把用户删掉了)</li>
+<li>：修改用户信息<br><code>chfn 用户名</code><br>全名[]: 房间号码[]:工作电话[]:家庭电话[]:其它[]:（这是乌班图显示的，翻译的汉语的），不怎么用。</li>
+<li>：修改用户密码<br><code>passwd 用户名</code> 初始化的是没有密码的，需要设置</li>
+<li>：用户身份切换<br>使用 <code>echo $LOGNAME</code>查看当前用户<br>普通用户转换到root需要密码：su -<br>root用户转换到普通用户不需要密码: su - 用户名</li>
+</ol>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/07/23/Linux-learn-diary-3/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/07/12/Linux-learn-diary/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

@@ -78,13 +78,17 @@ ssh-keygen -t rsa -C &amp;quot;your_email&amp;quot;一路按回车就行了。�
 <p><code>ssh-keygen -t rsa -C &quot;your_email&quot;</code><br>一路按回车就行了。<br>完成之后，在<code>~/.ssh</code>文件夹中有两个文件，<code>id_rsa</code>和<code>id_rsa.pub</code>,其中<code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥。<br>把<code>id_rsa.pub</code>里面的东西全部复制下来，然后贴到github的帐号里。<br>在<code>account settings/ssh keys/add ssh key</code>，就可以了。</p>
 <h1 id="5-_测试连接。">5. 测试连接。</h1>
 <p><code>ssh -T git@github.com</code><br>出现下面的话就证明连接上了。  </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Warning: Permanently added <span class="keyword">the</span> RSA host key <span class="keyword">for</span> IP address '<span class="number">192.30</span><span class="number">.252</span><span class="number">.131</span>' <span class="keyword">to</span> <span class="keyword">the</span> <span class="type">list</span> <span class="keyword">of</span> known hosts.  </div><div class="line">Hi kdqzzxxcc! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</div></pre></td></tr></table></figure><br># 6. 设置<code>username</code> , <code>email</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --<span class="keyword">global</span> user.name <span class="string">"your name"</span>  </div><div class="line">git config --<span class="keyword">global</span> user.email <span class="string">"your_email@youremail.com"</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Warning: Permanently added <span class="keyword">the</span> RSA host key <span class="keyword">for</span> IP address '<span class="number">192.30</span><span class="number">.252</span><span class="number">.131</span>' <span class="keyword">to</span> <span class="keyword">the</span> <span class="type">list</span> <span class="keyword">of</span> known hosts.  </div><div class="line">Hi kdqzzxxcc! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</div></pre></td></tr></table></figure>
+
+<h1 id="6-_设置username_,_email">6. 设置<code>username</code> , <code>email</code></h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global <span class="literal">user</span>.name <span class="string">"your name"</span>  </div><div class="line">git config --global <span class="literal">user</span>.email <span class="string">"your_email@youremail.com"</span></div></pre></td></tr></table></figure>
 
 <h1 id="7-_git_clone">7. <code>git clone</code></h1>
 <p>把代码从github上扒下来。<br>每个仓库都有个 <code>HTTP clone URL</code> .<br>直接 <code>get clone HTTP clone URL</code> 就可以了。<br>比如，<code>git clone https://github.com/kdqzzxxcc/antry.git</code></p>
 <h1 id="8-_git_push">8. <code>git push</code></h1>
 <p>把本地代码上传。<br>比如我们已经把<code>antry</code>这个库扒下来了，现在修改了<code>test.txt</code>里面的东西，然后要上传。</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd antry/  </div><div class="line">vim test<span class="preprocessor">.txt</span>   </div><div class="line">git <span class="keyword">add</span> .  </div><div class="line">git commit -m <span class="string">"another"</span>  </div><div class="line">git <span class="keyword">push</span>  </div><div class="line">(输入帐号密码就完成了。)</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cd</span> antry/  </div><div class="line"><span class="keyword">vim</span> test.txt   </div><div class="line">git <span class="built_in">add</span> .  </div><div class="line">git commit -<span class="keyword">m</span> <span class="string">"another"</span>  </div><div class="line">git push  </div><div class="line">(输入帐号密码就完成了。)</div></pre></td></tr></table></figure>
+
 <h1 id="9-_Git操作还有很多，请自行百度。">9. Git操作还有很多，请自行百度。</h1>
 	  
 
@@ -96,6 +100,38 @@ ssh-keygen -t rsa -C &amp;quot;your_email&amp;quot;一路按回车就行了。�
 	
 	
 	
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+	
+		
 	
 		
 			

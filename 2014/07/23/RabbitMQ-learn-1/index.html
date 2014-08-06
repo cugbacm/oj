@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RabbitMQ(1) | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="看了一下RabbitMQ的介绍，主要是一个message queue,即消息队列,一段往消息队列中不断写入信息，而另一端则可以读取信息。主要是用来处理消息的，目前主要是安装了Linux版的RabbitMQ：
+1:安装erlang
+apt-get install erlang-nox
+2:下载安装Ra">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="RabbitMQ(1)"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - RabbitMQ(1)</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>看了一下RabbitMQ的介绍，主要是一个message queue,即消息队列,一段往消息队列中不断写入信息，而另一端则可以读取信息。主要是用来处理消息的，目前主要是安装了Linux版的RabbitMQ：</p>
+<h1 id="1:安装erlang">1:安装erlang</h1>
+<p><code>apt-get install erlang-nox</code></p>
+<h1 id="2:下载安装RabbitMQ安装包">2:下载安装RabbitMQ安装包</h1>
+<p>我直接在它的官网上下载的最新版的安装包安装的rabbitmq-server_3.3.4-1_all.deb</p>
+<h1 id="3:启动">3:启动</h1>
+<p><code>/etc/init.d/rabbitmq-server start</code></p>
+<h1 id="4:创建一个创建一个vhost">4:创建一个创建一个vhost</h1>
+<p><code>rabbitmqctl add_vhost /pyhtest</code><br>第一次创建的时候不知道为什么总是创建不了，后来重新敲了一遍又好了</p>
+<h1 id="5:然后再给这个vhost创建一个用户">5:然后再给这个vhost创建一个用户</h1>
+<p><code>rabbitmqctl add_user pyh pyh1234</code><br>用户名pyh 密码pyh1234</p>
+<h1 id="6:创建权限">6:创建权限</h1>
+<p><code>rabbitmqctl set_permissions -p /pyhtest pyh “.*” “.*” “.*”</code><br>*代表全部权限</p>
+<p>后来写了一个send和receive，现在还没有弄好这个发送和消费的过程，再弄……</p>
+<p>官网上有详细的样例的介绍说明，比如Hello World！：<br><a href="http://www.rabbitmq.com/tutorials/tutorial-one-python.html" target="_blank" rel="external">http://www.rabbitmq.com/tutorials/tutorial-one-python.html</a></p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/08/07/RabbitMQ-learn-2/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

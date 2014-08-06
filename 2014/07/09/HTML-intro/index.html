@@ -94,10 +94,10 @@ HTML 使">
 <ul>
 <li>HTML 文档<strong>描述</strong>网页</li>
 <li>HTML 文档<strong>包含 HTML 标签</strong>和纯文本</li>
-<li>HTML 文档也被称为<strong>网页</strong><br>Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容：<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>My First Heading<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>My first paragraph.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
-
-</li>
+<li>HTML 文档也被称为<strong>网页</strong><br>Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容：</li>
 </ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>My First Heading<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>My first paragraph.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
 <p><strong>例子解释</strong></p>
 <ul>
 <li><code>&lt;html&gt;</code> 与 <code>&lt;/html&gt;</code> 之间的文本描述网页</li>
@@ -126,7 +126,7 @@ HTML 使">
 <h2 id="HTML_图像">HTML 图像</h2>
 <p>HTML 图像是通过 <code>&lt;img&gt;</code> 标签进行定义的。</p>
 <p><strong>实例</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"w3school.jpg"</span> <span class="attribute">width</span>=<span class="value">"104"</span> <span class="attribute">height</span>=<span class="value">"142"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img <span class="variable">src=</span><span class="string">"w3school.jpg"</span> <span class="variable">width=</span><span class="string">"104"</span> <span class="variable">height=</span><span class="string">"142"</span> /&gt;</div></pre></td></tr></table></figure>
 
 <p><strong>注释</strong><br>图像的名称和尺寸是以属性的形式提供的。</p>
 <hr>
@@ -176,7 +176,7 @@ HTML 使">
 
 <h3 id="内部样式表">内部样式表</h3>
 <p>当单个文件需要特别样式时，就可以使用内部样式表。你可以在 head 部分通过 <code>&lt;style&gt;</code> 标签定义内部样式表。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line"><span class="tag">body</span> <span class="rules">{<span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span></span>}</div><div class="line"><span class="tag">p</span> <span class="rules">{<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">20</span>px</span></span></span>}</div><div class="line"><span class="tag">&lt;/<span class="title">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line"><span class="tag">body</span> <span class="rules">{<span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span></span>}</div><div class="line"><span class="tag">p</span> <span class="rules">{<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">20px</span></span></span></span>}</div><div class="line"><span class="tag">&lt;/<span class="title">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <h3 id="内联样式">内联样式</h3>
 <p>当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。</p>
@@ -275,7 +275,7 @@ HTML 使">
 <p><strong>注意</strong>：表单本身并不可见。同时，在大多数浏览器中，文本域的缺省宽度是20个字符。</p>
 <h3 id="单选按钮（Radio_Buttons）">单选按钮（Radio Buttons）</h3>
 <p>当用户从若干给定的的选择中选取其一时，就会用到单选框。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form&gt;</div><div class="line">&lt;input <span class="class"><span class="keyword">type</span>=</span><span class="string">"radio"</span> name=<span class="string">"sex"</span> <span class="keyword">value</span>=<span class="string">"male"</span> /&gt; Male</div><div class="line">&lt;br /&gt;</div><div class="line">&lt;input <span class="class"><span class="keyword">type</span>=</span><span class="string">"radio"</span> name=<span class="string">"sex"</span> <span class="keyword">value</span>=<span class="string">"female"</span> /&gt; Female</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form&gt;</div><div class="line">&lt;input <span class="variable">type=</span><span class="string">"radio"</span> <span class="variable">name=</span><span class="string">"sex"</span> <span class="variable">value=</span><span class="string">"male"</span> /&gt; Male</div><div class="line">&lt;br /&gt;</div><div class="line">&lt;input <span class="variable">type=</span><span class="string">"radio"</span> <span class="variable">name=</span><span class="string">"sex"</span> <span class="variable">value=</span><span class="string">"female"</span> /&gt; Female</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 
 <p>浏览器显示如下：</p>
 <form><br><input type="radio" name="sex" value="male"> Male<br><br><br><input type="radio" name="sex" value="female"> Female<br></form>
@@ -283,14 +283,14 @@ HTML 使">
 <p><strong>注意</strong>：只能从中选取其一。</p>
 <h3 id="复选框（Checkboxes）">复选框（Checkboxes）</h3>
 <p>当用户需要从若干给定的选择中选取一个或若干选项时，就会用到复选框。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"bike"</span> /&gt;</span></div><div class="line">I have a bike</div><div class="line"><span class="tag">&lt;<span class="title">br</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"car"</span> /&gt;</span></div><div class="line">I have a car</div><div class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;form&gt;</div><div class="line">&lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span> name=<span class="string">"bike"</span> /&gt;</div><div class="line">I have <span class="keyword">a</span> bike</div><div class="line">&lt;<span class="keyword">br</span> /&gt;</div><div class="line">&lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"checkbox"</span> name=<span class="string">"car"</span> /&gt;</div><div class="line">I have <span class="keyword">a</span> car</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 
 <p>浏览器显示如下：</p>
 <form><br><input type="checkbox" name="bike"><br>I have a bike<br><br><br><input type="checkbox" name="car"><br>I have a car<br></form>
 
 <h3 id="表单的动作属性（Action）和确认按钮">表单的动作属性（Action）和确认按钮</h3>
 <p>当用户单击确认按钮时，表单的内容会被传送到另一个文件。表单的动作属性定义了目的文件的文件名。由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form name=<span class="string">"input"</span> action=<span class="string">"html_form_action.asp"</span> <span class="keyword">method</span>=<span class="string">"get"</span>&gt;</div><div class="line">Username: </div><div class="line">&lt;input <span class="class"><span class="keyword">type</span>=</span><span class="string">"text"</span> name=<span class="string">"user"</span> /&gt;</div><div class="line">&lt;input <span class="class"><span class="keyword">type</span>=</span><span class="string">"submit"</span> <span class="keyword">value</span>=<span class="string">"Submit"</span> /&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form name=<span class="string">"input"</span> action=<span class="string">"html_form_action.asp"</span> <span class="keyword">method</span>=<span class="string">"get"</span>&gt;</div><div class="line"><span class="type">Username</span>: </div><div class="line">&lt;input <span class="keyword">type</span>=<span class="string">"text"</span> name=<span class="string">"user"</span> /&gt;</div><div class="line">&lt;input <span class="keyword">type</span>=<span class="string">"submit"</span> value=<span class="string">"Submit"</span> /&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 
 <p>浏览器显示如下：</p>
 <p><form name="input" action="html_form_action.asp" method="get"><br>Username: </form></p>
@@ -355,6 +355,34 @@ HTML 使">
 	
 	
 	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
 	
 		
 	

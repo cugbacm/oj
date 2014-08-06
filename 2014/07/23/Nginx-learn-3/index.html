@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Nginx学习(3) | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="之前一直以为OJ上不了了，后来才发现是要在ip后面加/index/login才能上。感觉太麻烦了，就想直接ip登录。实现过程试了很多种方法。
+一、设置默认首页
+1234location / {   root /xxx/xxx   index index.html index.htm}
+
+当访问ip时">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Nginx学习(3)"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Nginx学习(3)</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>之前一直以为OJ上不了了，后来才发现是要在ip后面加/index/login才能上。<br>感觉太麻烦了，就想直接ip登录。<br>实现过程试了很多种方法。</p>
+<h1 id="一、设置默认首页">一、设置默认首页</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location / {</div><div class="line">   root /xxx/xxx</div><div class="line">   <span class="keyword">index</span> <span class="keyword">index</span>.html <span class="keyword">index</span>.htm</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>当访问ip时，会请求/xxx/xxx 里面的index.html或者index.htm，并产生响应。<br>root 后面是index.html index.htm的路径，匹配规则是当index.html没有的时候，继续匹配index.htm。<br>这样之后发现不行，问了朱老板才知道OJ的页面都是要经过django渲染之后才能显示的。</p>
+<h1 id="二、">二、</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="title">location</span> /{</div><div class="line"><span class="title">include</span> uwsgi_params;</div><div class="line"><span class="title">uwsgi_pass</span> <span class="number">127.0.0.1:8077</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>这是django的location，这样的配置可以是的所有的子网页都经过django的渲染。<br>然后我发现其实把这个放在/index 这一层就可以了，因为都是这种形式的/index/xxx。<br>那么我们直接做个重定向就可以了。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="title">location</span> / {</div><div class="line"><span class="title">rewrite</span><span class="regexp"> ^</span> ip/index/login ;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="title">location</span> /index{</div><div class="line"><span class="title">include</span> uwsgi_params;</div><div class="line"><span class="title">uwsgi_pass</span> <span class="number">127.0.0.1:8077</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>此时我们直接访问ip，即跳转到index/login页面，但是登录之后点其他页面却重新跳回了index/login页面。<br>比如点problemList ,他就跳回了index/login。<br>这是因为在server里面没有匹配到/index/problemList。所以根据匹配的规则他会匹配到location /{}上， 那么就跳回到index/login。</p>
+<h1 id="三、">三、</h1>
+<p>这个问题也很好解决，我们只要不让他在index/problemList的时候去匹配到location / {}就可以了。<br>实现办法就是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">location</span> = / {</div><div class="line"><span class="title">rewrite</span><span class="regexp"> ^</span> ip/index/login ;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>因为location / {}是匹配所有以/开头的查询。<br>而location = / {}则只匹配以/ 开头的查询，那么当查询index/problemList的时候，就去匹配location/index{}了。<br>这样就完美解决了以上问题。</p>
+<h1 id="四、">四、</h1>
+<p>突然发现其实不需要将django的配置放到/index<br>这样就可以了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="title">location</span> = / {</div><div class="line"><span class="title">rewrite</span><span class="regexp"> ^</span> ip/index/login ;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="title">location</span> /{</div><div class="line"><span class="title">include</span> uwsgi_params;</div><div class="line"><span class="title">uwsgi_pass</span> <span class="number">127.0.0.1:8077</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h1 id="五、">五、</h1>
+<p>location的一些匹配规则</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">location = / {</div><div class="line"> <span class="comment"># 只匹配 / 查询。</span></div><div class="line"> </div><div class="line">}location / {</div><div class="line"> <span class="comment"># 匹配任何查询，因为所有请求都已 / 开头。但是正则表达式规则和长的块规则将被优先和查询匹配。</span></div><div class="line"> </div><div class="line">}location ^~ /images/ {</div><div class="line"> <span class="comment"># 匹配任何已 /images/ 开头的任何查询并且停止搜索。任何正则表达式将不会被测试。</span></div><div class="line"> </div><div class="line">}location ~<span class="keyword">*</span> .(gif<span class="string">|jpg|jpeg)$</span> {</div><div class="line"> <span class="comment"># 匹配任何已 gif、jpg 或 jpeg 结尾的请求。</span></div><div class="line"> </div><div class="line">}location ~<span class="keyword">*</span> .(gif<span class="string">|jpg|swf)$</span> {</div><div class="line">  valid_referers none blocked start.igrow.cn sta.igrow.cn;</div><div class="line">  if ($invalid_referer) {</div><div class="line">  <span class="comment">#防盗链</span></div><div class="line">  rewrite ^/ http://$host/logo.png;</div><div class="line">  }</div><div class="line">}</div><div class="line">location ~<span class="keyword">*</span> .(js<span class="string">|css|jpg|jpeg|gif|png|swf)$</span> {</div><div class="line">if (-f $request_filename) {</div><div class="line">   <span class="comment">#根据文件类型设置过期时间</span></div><div class="line">   expires    1h;</div><div class="line">   break;</div><div class="line">}</div><div class="line">}</div><div class="line">location ~<span class="keyword">*</span> .(txt<span class="string">|doc)$</span>{ </div><div class="line"> <span class="comment">#禁止访问某个目录</span></div><div class="line">    root /data/www/wwwroot/linuxtone/test;</div><div class="line">    deny all;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/07/23/Nginx-learn-2/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

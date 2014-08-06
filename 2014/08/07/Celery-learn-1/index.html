@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Celery学习笔记 | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="ubuntu系统下安装指令：
+安装rabbitmq：
+1$ sudo apt-get install rabbitmq-server
+
+安装celery：
+1sudo easy_install celery
+
+注意：这里我开始采用官方文档的指令
+1$ pip install celery
+
+不过发现">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Celery学习笔记"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Celery学习笔记</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>ubuntu系统下安装指令：</p>
+<h2 id="安装rabbitmq：">安装rabbitmq：</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get <span class="operator"><span class="keyword">install</span> rabbitmq-<span class="keyword">server</span></span></div></pre></td></tr></table></figure>
+
+<h2 id="安装celery：">安装celery：</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> easy_install celery</div></pre></td></tr></table></figure>
+
+<p>注意：这里我开始采用官方文档的指令</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>pip install celery</div></pre></td></tr></table></figure>
+
+<p>不过发现用不了，执行后面的指令提示不能识别。</p>
+<p>可以安装rabbit-celery 或者 使用easy_install安装celery</p>
+<h2 id="创建tasks-py文件">创建tasks.py文件</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</div><div class="line"></div><div class="line">app = Celery(<span class="string">'tasks'</span>, broker=<span class="string">'amqp://localhost'</span>)</div><div class="line"></div><div class="line"><span class="decorator">@app.task</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></div><div class="line">    <span class="keyword">return</span> x + y</div></pre></td></tr></table></figure>
+
+<h2 id="使用worker启动服务器，如果不启动，会得不到结果，例如官网上出现false的情况。">使用worker启动服务器，如果不启动，会得不到结果，例如官网上出现false的情况。</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">$ celery -A tasks worker --loglevel</span>=<span class="string">info</span></div></pre></td></tr></table></figure>
+
+<p>使用以下指令可以显示命令列表</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  celery worker --<span class="keyword">help</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ celery <span class="built_in">help</span></div></pre></td></tr></table></figure>
+
+<h2 id="下面来做个测试：">下面来做个测试：</h2>
+<h3 id="启动celery_worker_服务器,启动之后，使用其他终端输入指令，这个终端显示结果。">启动celery worker 服务器,启动之后，使用其他终端输入指令，这个终端显示结果。</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">$ celery -A tasks worker --loglevel</span>=<span class="string">info</span></div></pre></td></tr></table></figure>
+
+<h3 id="输入python,进入python环境">输入python,进入python环境</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> from tasks import add</span></div><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> add.delay(<span class="number">4</span>, <span class="number">4</span>)</span></div></pre></td></tr></table></figure>
+
+<h3 id="取得结果：">取得结果：</h3>
+<p>这里还得设置一下tasks.py，使用rabbitmq的后台</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app = Celery('tasks', backend='amqp', broker='amqp:<span class="comment">//')</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="literal">result</span> = add.delay(<span class="number">4</span>, <span class="number">4</span>)</div><div class="line">&gt;&gt;&gt; <span class="literal">result</span>.ready()</div><div class="line"><span class="type">True</span></div><div class="line">&gt;&gt;&gt; <span class="literal">result</span>.get(timeout=<span class="number">1</span>)</div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
+
+<p>设置app，可以直接在tasks.py中设置，也可调用设置文件。</p>
+<p>1.多个设置一起执行 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.<span class="keyword">conf</span>.<span class="keyword">update</span>(</div><div class="line">    CELERY_TASK_SERIALIZER=<span class="string">'json'</span>,</div><div class="line">    CELERY_ACCEPT_CONTENT=[<span class="string">'json'</span>],  # Ignore other content</div><div class="line">    CELERY_RESULT_SERIALIZER=<span class="string">'json'</span>,</div><div class="line">    CELERY_TIMEZONE=<span class="string">'Europe/Oslo'</span>,</div><div class="line">    CELERY_ENABLE_UTC=True,</div><div class="line">)</div></pre></td></tr></table></figure>
+
+<ol>
+<li>调用外部文件</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.config_from_object(<span class="string">'celeryconfig'</span>)</div></pre></td></tr></table></figure>
+
+<p>3.celeryconfig.py</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="constant">BROKER_URL</span> = 'amqp:<span class="comment">//'</span></div><div class="line"><span class="constant">CELERY_RESULT_BACKEND</span> = 'amqp:<span class="comment">//'</span></div><div class="line"><span class="constant"></span></div><div class="line">CELERY_TASK_SERIALIZER = 'json'</div><div class="line"><span class="constant">CELERY_RESULT_SERIALIZER</span> = 'json'</div><div class="line"><span class="constant">CELERY_ACCEPT_CONTENT</span>=['json']</div><div class="line"><span class="constant">CELERY_TIMEZONE</span> = 'Europe/Oslo'</div><div class="line"><span class="constant">CELERY_ENABLE_UTC</span> = True</div></pre></td></tr></table></figure>
+
+<p>4.可以通过一下代码来测试是否出错 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">python</span> -<span class="keyword">m</span> celeryconfig</div></pre></td></tr></table></figure>
+
+<p>5.设置优先权和速率<br>celeryconfig.py:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CELERY_ANNOTATIONS = {</div><div class="line">    <span class="string">'tasks.add'</span>: {<span class="string">'rate_limit'</span>: <span class="string">'10/m'</span>}</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>也可以直接在外面设置:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ celery -A tasks control rate_limit tasks.<span class="built_in">add</span> <span class="number">10</span>/m</div><div class="line">worker@example.com: OK</div><div class="line">    <span class="built_in">new</span> rate limit <span class="built_in">set</span> successfully</div></pre></td></tr></table></figure>
+
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/08/07/RabbitMQ-learn-2/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

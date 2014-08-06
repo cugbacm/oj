@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python 学习笔记 | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="1.字符串
+1.1
+不同于 C 字符串，Python 字符串不可变。向字符串文本的某一个索引赋值会引发错误:
+12345678&amp;gt;&amp;gt;&amp;gt; word[0] = &#39;x&#39;Traceback (most recent call last):  File &quot;&amp;lt;stdin&amp;gt;&quot;, lin">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="python 学习笔记"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - python 学习笔记</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h1 id="1-字符串">1.字符串</h1>
+<h2 id="1-1">1.1</h2>
+<p>不同于 C 字符串，Python 字符串不可变。向字符串文本的某一个索引赋值会引发错误:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="built_in">word</span>[<span class="number">0</span>] = <span class="string">'x'</span></div><div class="line">Traceback (most recent call <span class="keyword">last</span>):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, <span class="built_in">line</span> <span class="number">1</span>, <span class="operator">in</span> ?</div><div class="line">TypeError: <span class="string">'str'</span> object does <span class="operator">not</span> support <span class="keyword">item</span> assignment</div><div class="line">&gt;&gt;&gt; <span class="built_in">word</span>[:<span class="number">1</span>] = <span class="string">'Splat'</span></div><div class="line">Traceback (most recent call <span class="keyword">last</span>):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, <span class="built_in">line</span> <span class="number">1</span>, <span class="operator">in</span> ?</div><div class="line">TypeError: <span class="string">'str'</span> object does <span class="operator">not</span> support slice assignment</div></pre></td></tr></table></figure>
+
+<h2 id="1-2">1.2</h2>
+<p>支持word[2,4], word[-4,-2]格式，负数是从右向左数的。而且，负索引切片越界会被截断，不要尝试将它用于单元素（非切片）检索:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="built_in">word</span>[-<span class="number">10</span>]    <span class="comment"># error</span></div><div class="line">Traceback (most recent call <span class="keyword">last</span>):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, <span class="built_in">line</span> <span class="number">1</span>, <span class="operator">in</span> ?</div><div class="line">IndexError: <span class="keyword">string</span> index out <span class="operator">of</span> range</div></pre></td></tr></table></figure>
+
+<h1 id="1-3">1.3</h1>
+<p>字符串可以使用encode()进行编码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> <span class="string">"Äpfel"</span>.encode(<span class="string">'utf-8'</span>)</span></div><div class="line">b<span class="string">'\xc3\x84pfel'</span></div></pre></td></tr></table></figure>
+
+<h1 id="2-符合数据类型">2.符合数据类型</h1>
+<h2 id="2-1">2.1</h2>
+<p>List可赋值和插入</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> a[<span class="number">1</span><span class="symbol">:</span><span class="number">1</span>] = [<span class="number">1</span>,<span class="number">2</span>]</span></div><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> a[<span class="number">1</span><span class="symbol">:</span><span class="number">1</span>]</span></div><div class="line"><span class="input"><span class="prompt">[]</span></span></div><div class="line">&gt;&gt;&gt; a[<span class="number">1</span><span class="symbol">:</span><span class="number">1</span>] = [<span class="number">2</span>]</div><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> a</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>]</div></pre></td></tr></table></figure>
+
+<h2 id="2-2">2.2</h2>
+<p>List可嵌套List</p>
+<h2 id="2-3">2.3</h2>
+<p>print输出时会自动换行，如果不想换行，可以加上 end =’’，并且导入print_function</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from __future__ import print_function</div><div class="line">&gt;&gt;&gt; <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line"><span class="keyword">...</span>   print (x, end=<span class="string">''</span>)</div><div class="line"><span class="keyword">...</span> </div><div class="line"><span class="number">0123456789</span>&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+
+<h2 id="2-4">2.4</h2>
+<p>同一个语句块中的语句块必须缩进同样数量的空白，而且至少要有一个空格，否则会报错。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line"><span class="keyword">...</span> print (x)</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span></div><div class="line">    print (x)</div><div class="line">        ^</div><div class="line">IndentationError: expected an indented block</div></pre></td></tr></table></figure>
+
+<h1 id="3-_python流程控制">3. python流程控制</h1>
+<h2 id="3-1">3.1</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</div><div class="line"><span class="keyword">...</span>     print(i)</div><div class="line"><span class="keyword">...</span></div><div class="line"><span class="number">0</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div></pre></td></tr></table></figure>
+
+<p>逆序的话，用reversed嵌套<br>在不同方面 range() 函数返回的对象表现为它是一个列表，但事实上它并不是。 当你迭代它时，它是一个能够像期望的序列返回连续项的对象；但为了节省空间，它并不真正构造列表。</p>
+<p>我们称此类对象是 可迭代的 ，即适合作为那些期望从某些东西中获得连续项直到结束的函数或结构的一个目标（参数）。 我们已经见过的 for 语句就是这样一个 迭代器 。 list() 函数是另外一个（ 迭代器），它从可迭代（对象）中创建列表:</p>
+<p>有一点奇怪的事：<br> 官方文档对于print (range(5))和实际操作不一致</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="input">&gt;&gt;&gt; print(range(<span class="number">10</span>))</span></div><div class="line"><span class="input"><span class="prompt">range(0, 10)</span></span></div><div class="line">&gt;&gt;&gt; range(<span class="number">5</span>)</div><div class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div></pre></td></tr></table></figure>
+
+<p>代码块缩进必须相同，看这个比较神奇的例子:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">10</span>):</div><div class="line"><span class="keyword">...</span>   <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">2</span>,n):</div><div class="line"><span class="keyword">...</span>     <span class="keyword">if</span> n%x == <span class="number">0</span>:</div><div class="line"><span class="keyword">...</span>        print(n, <span class="string">'equals'</span>, x, <span class="string">'*'</span>, n//x)</div><div class="line"><span class="keyword">...</span>        <span class="keyword">break</span></div><div class="line"><span class="keyword">...</span>   <span class="keyword">else</span> :</div><div class="line"><span class="keyword">...</span>     print(n,<span class="string">'is a prime number'</span>)</div><div class="line"><span class="keyword">...</span> </div><div class="line"><span class="number">2</span> is a prime number</div><div class="line"><span class="number">3</span> is a prime number</div><div class="line"><span class="number">4</span> equals <span class="number">2</span> * <span class="number">2</span></div><div class="line"><span class="number">5</span> is a prime number</div><div class="line"><span class="number">6</span> equals <span class="number">2</span> * <span class="number">3</span></div><div class="line"><span class="number">7</span> is a prime number</div><div class="line"><span class="number">8</span> equals <span class="number">2</span> * <span class="number">4</span></div><div class="line"><span class="number">9</span> equals <span class="number">3</span> * <span class="number">3</span></div></pre></td></tr></table></figure>
+
+<p>这里的else是和for缩进相同所以，一旦执行了else，就不会再执行for了。</p>
+<h2 id="3-2_pass什么都不做">3.2 pass什么都不做</h2>
+<h2 id="3-3_定义函数">3.3 定义函数</h2>
+<p>关键字 def 引入了一个函数定义 。在其后必须跟有函数名和包括形式参数的圆括号。函数体语句从下一行开始，必须是缩进的。<br>函数 调用 会为函数局部变量生成一个新的符号表。 确切的说，所有函数中的变量赋值都是将值存储在局部符号表。 变量引用首先在局部符号表中查找，然后是包含函数的局部符号表，然后是全局符号表，最后是内置名字表。 因此，全局变量不能在函数中直接赋值（除非用global 语句命名），尽管他们可以被引用。<br>函数引用的实际参数在函数调用时引入局部符号表，因此，实参总是 传值调用 （这里的 值 总是一个对象 引用 ，而不是该对象的值）。[1] 一个函数被另一个函数调用时，一个新的局部符号表在调用过程中被创建。</p>
+<p>一个函数定义会在当前符号表内引入函数名。 函数名指代的值（即函数体）有一个被 Python 解释器认定为 用户自定义函数 的类型。 这个值可以赋予其他的名字（即变量名），然后它也可以被当做函数使用。 这可以作为通用的重命名机制.</p>
+<h2 id="3-4_函数中的默认值">3.4 函数中的默认值</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">5</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(arg=i)</span>:</span></div><div class="line">    print(arg)</div><div class="line"></div><div class="line">i = <span class="number">6</span></div><div class="line">f()</div></pre></td></tr></table></figure>
+
+<p>输出5，默认值只被赋值一次。这使得当默认值是可变对象时会有所不同，比如列表、字典或者大多数类的实例。例如，下面的函数在后续调用过程中会累积（前面）传给它的参数:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a, L=[])</span>:</span></div><div class="line">    L.append(a)</div><div class="line">    <span class="keyword">return</span> L</div><div class="line"></div><div class="line">print(f(<span class="number">1</span>))</div><div class="line">print(f(<span class="number">2</span>))</div><div class="line">print(f(<span class="number">3</span>))</div></pre></td></tr></table></figure>
+
+<p>这将输出:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>]</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div></pre></td></tr></table></figure>
+
+<p>如果你不想让默认值在后续调用中累积，你可以像下面一样定义函数:  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a, L=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> L <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        L = []</div><div class="line">    L.append(a)</div><div class="line">    <span class="keyword">return</span> L</div></pre></td></tr></table></figure>
+
+<p>赋值的位置不一样，在函数体内部赋值，就不会累积了。<br>可变参数列表：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; def concat(*args, sep=<span class="string">"/"</span>):</div><div class="line"><span class="keyword">...</span>    <span class="keyword">return</span> sep.join(args)</div><div class="line"><span class="keyword">...</span></div><div class="line">&gt;&gt;&gt; concat(<span class="string">"earth"</span>, <span class="string">"mars"</span>, <span class="string">"venus"</span>)</div><div class="line"><span class="string">'earth/mars/venus'</span></div><div class="line">&gt;&gt;&gt; concat(<span class="string">"earth"</span>, <span class="string">"mars"</span>, <span class="string">"venus"</span>, sep=<span class="string">"."</span>)</div><div class="line"><span class="string">'earth.mars.venus'</span></div></pre></td></tr></table></figure>
+
+<p>最后我把sep放在函数体内部就可以搞定了，仔细想想，如果输入一个数组的话，sep可能就会被最后一个元素覆盖，再没有使用关键字的情况下。</p>
+<p><strong>参数的拆分：</strong></p>
+<p>用<code>*</code>能把列表拆分，用<code>**</code>能把字典拆分</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></span></div><div class="line"><span class="input"><span class="prompt">[3, 4, 5]</span></span></div><div class="line">&gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line"><span class="input"><span class="prompt">&gt;&gt;&gt;</span> list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; def parrot(voltage, state=<span class="string">'a stiff'</span>, action=<span class="string">'voom'</span>):</div><div class="line"><span class="keyword">...</span>     print(<span class="string">"-- This parrot wouldn't"</span>, action, end=<span class="string">' '</span>)</div><div class="line"><span class="keyword">...</span>     print(<span class="string">"if you put"</span>, voltage, <span class="string">"volts through it."</span>, end=<span class="string">' '</span>)</div><div class="line"><span class="keyword">...</span>     print(<span class="string">"E's"</span>, state, <span class="string">"!"</span>)</div><div class="line"><span class="keyword">...</span></div><div class="line">&gt;&gt;&gt; d = {<span class="string">"voltage"</span>: <span class="string">"four million"</span>, <span class="string">"state"</span>: <span class="string">"bleedin' demised"</span>, <span class="string">"action"</span>: <span class="string">"VOOM"</span>}</div><div class="line">&gt;&gt;&gt; parrot(**d)</div><div class="line">-- This parrot wouldn<span class="string">'t VOOM if you put four million volts through it. E'</span>s bleedin<span class="string">' demised !</span></div></pre></td></tr></table></figure>
+
+<p><strong>函数的嵌套，匿名函数Lambda</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; def make_incrementor(n):</div><div class="line"><span class="keyword">...</span>     <span class="keyword">return</span> lambda x: x + n</div><div class="line"><span class="keyword">...</span></div><div class="line">&gt;&gt;&gt; f = make_incrementor(<span class="number">42</span>)</div><div class="line">&gt;&gt;&gt; f(<span class="number">0</span>)</div><div class="line"><span class="number">42</span></div><div class="line">&gt;&gt;&gt; f(<span class="number">1</span>)</div><div class="line"><span class="number">43</span></div></pre></td></tr></table></figure>
+
+<h1 id="7-输入和输出">7.输入和输出</h1>
+<h2 id="7-1函数_open()_返回文件对象，通常的用法需要两个参数：_open(filename,_mode)。">7.1函数 open() 返回文件对象，通常的用法需要两个参数： <code>open(filename, mode)</code>。</h2>
+<p><code>&gt;&gt;&gt; f = open(&#39;/tmp/workfile&#39;, &#39;w&#39;)</code><br>第一个参数是一个标识文件名的字符串。第二个参数是由有限的字母组成的字符串，描述了文件将会被如何使用。可选的 模式 有：</p>
+<p><code>&#39;r&#39;</code> ，此选项使文件只读；</p>
+<p><code>&#39;w&#39;</code> ，此选项使文件只写（对于同名文件，该操作使原有文件被覆盖）；</p>
+<p><code>&#39;a&#39;</code> ，此选项以追加方式打开文件；</p>
+<p><code>&#39;r+&#39;</code> ，此选项以读写方式打开文件；<br>模式 参数是可选的。如果没有指定，默认为 ‘r’ 模式。</p>
+<p>在 Windows 平台上， ‘b’ 模式以二进制方式打开文件，所以可能会有类似于 ‘rb’ ， ‘wb’ ， ‘r+b’ 等等模式组合。Windows 平台上文本文件与二进制文件是有区别的，读写文本文件时，行尾会自动添加行结束符。这种后台操作方式对 ASCII 文本文件没有什么问题，但是操作 JPEG 或 EXE 这样的二进制文件时就会产生破坏。在操作这些文件时一定要记得以二进制模式打开。在 Unix 上，加一个 ‘b’ 模式也一样是无害的，所以你可以一切二进制文件处理中平台无关的使用它。</p>
+<h2 id="7-2在文本文件中（那些没有使用_b_模式选项打开的文件），只允许从文件头开始计算相对位置（使用_seek(0,_2)_从文件尾计算时就会引发异常）。">7.2在文本文件中（那些没有使用 b 模式选项打开的文件），只允许从文件头开始计算相对位置（使用 seek(0, 2) 从文件尾计算时就会引发异常）。</h2>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/08/07/Python-learn-and-use-simple-1/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

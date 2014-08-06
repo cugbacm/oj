@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RabbitMQ(2) | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="上一次安装了RabbitMQ并成功创建了vhost和user，但是生产和消费的过程还没有完成，这次主要调了一下这个过程。
+上次主要的问题是没有实现过程代码的编写保存，其实也就是Python程序，这两天看了一下Python的基本知识，完成了基本的Hello World的生产消费：
+编写
+1.生产sen">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="RabbitMQ(2)"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - RabbitMQ(2)</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p><strong>上一次安装了RabbitMQ并成功创建了vhost和user，但是生产和消费的过程还没有完成，这次主要调了一下这个过程。</strong></p>
+<p>上次主要的问题是没有实现过程代码的编写保存，其实也就是Python程序，这两天看了一下Python的基本知识，完成了基本的Hello World的生产消费：</p>
+<h1 id="编写">编写</h1>
+<h2 id="1-生产send-py：">1.生产send.py：</h2>
+<p>进入vim，编写生产进程</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">!/usr/bin/env <span class="keyword">python</span></div><div class="line">import pika</div><div class="line">connection = pika.BlockingConnection(pika.ConnectionParameters(host=<span class="string">'localhost'</span>))</div><div class="line">channel = connection.channel()</div><div class="line">channel.queue_declare(queue=<span class="string">'hello'</span>)</div><div class="line">channel.basic_publish(exchange=<span class="string">''</span>,routing_key=<span class="string">'hello'</span>,body=<span class="string">'Hello World!'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">" [x] Sent 'Hello World!'"</span></div><div class="line">connection.<span class="keyword">close</span>()</div></pre></td></tr></table></figure>
+
+<p><strong>过程</strong>：先和RabbitMQ server建立连接，localhost代表的是本机，如果要连接到其它主机，使用对应的主机地址就OK<br>；声明队列hello；由于消息不能直接传递到消息队列当中去，所以需要一次exchange，这里使用默认的交换<br>‘’,routing_key为队列的名字；然后在关闭连接。</p>
+<h2 id="2-消费receive-py">2.消费receive.py</h2>
+<p>进入vim,编写消费进程</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">!/usr/bin/env python</div><div class="line"><span class="keyword">import</span> pika</div><div class="line">connection = pika.BlockingConnection(pika.ConnectionParameters(host=<span class="string">'localhost'</span>))</div><div class="line">channel = connection.channel()</div><div class="line">channel.queue_declare(queue=<span class="string">'hello'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">' [*] Waiting for messages. To exit press CTRL+C'</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">callback</span><span class="params">(ch, method, properties, body)</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">" [x] Received %r"</span> % (body,)</div><div class="line">channel.basic_consume(callback,queue=<span class="string">'hello'</span>,no_ack=<span class="keyword">True</span>)</div><div class="line">channel.start_consuming()</div></pre></td></tr></table></figure>
+
+<p><strong>过程</strong>：建立连接；声明队列，这里声明的原因是我们不知道预先存在的队列是什么，所以我们就确定化我们的目标<br>消费队列就是我们前面缩写的send.py里面的队列hello；然后建立我们的消费方法callback；然后声明消费的<br>对象队列是hello队列；然后启动。</p>
+<h1 id="测试">测试</h1>
+<p>测试的时候，首先启动生产进程send.py：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">python</span> send.<span class="keyword">py</span></div><div class="line"> [<span class="keyword">x</span>] Sent <span class="string">'Hello World!'</span></div></pre></td></tr></table></figure>
+
+<p>然后我们会显示生产的标识消息：[x] Sent ‘Hello World!’<br>生产进程每执行一次生产就停止了。<br>然后再启动消费进程：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">python</span> receive.<span class="keyword">py</span></div><div class="line"> [*] Waiting <span class="keyword">for</span> <span class="keyword">messages</span>. To <span class="keyword">exit</span> press CTRL+C</div><div class="line"> [<span class="keyword">x</span>] Received <span class="string">'Hello World!'</span></div></pre></td></tr></table></figure>
+
+<p>这里我们就会发现在Received后面出现了我们生产进程中发出的信息’Hello World!’,这样便完成了一次生产消费过程。<br>也可以打开两个终端，在其中一个终端上一直执行生产进程，我们会发现在另一个终端上会一直显示我们的消费标识<br>信息，即边生产边消费。</p>
+<p>后面第二部分的就是多个消费worker()，还在看…..</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/08/07/Celery-learn-1/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/07/23/RabbitMQ-learn-1/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

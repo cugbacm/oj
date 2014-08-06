@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux初步学习三 | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="文本编辑工具vim：
+三种工作模式：一般模式，编辑模式，命令模式
+不同的操作：
+
+当你vim filename 编辑一个文件时，进入一般模式了。操作：上下移动光标；删除某个字符；删除某行；复制、粘贴一行或者多行。
+一般模式下，不可以修改某一个字符的，只能到编辑模式了。从一般模式进入编辑模式，只需按一">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Linux初步学习三"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Linux初步学习三</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>文本编辑工具vim：</p>
+<h1 id="三种工作模式：一般模式，编辑模式，命令模式">三种工作模式：一般模式，编辑模式，命令模式</h1>
+<p>不同的操作：</p>
+<ol>
+<li>当你vim filename 编辑一个文件时，进入一般模式了。操作：上下移动光标；删除某个字符；删除某行；复制、粘贴一行或者多行。</li>
+<li>一般模式下，不可以修改某一个字符的，只能到编辑模式了。从一般模式进入编辑模式，只需按一个键（i,I,a,A,o,O,r,R）。当进入编辑模式时，会在屏幕的最下一行出现“INSERT或REPLACE”的字样。从编辑模式回到一般模式只需要按一下键盘左上方的ESC键即可。</li>
+<li>在一般模式下，输入”:”或者”/”即可进入命令模式。在该模式下，可以搜索某个字符或者字符串，也可以保存、替换、退出、显示行号等等。</li>
+</ol>
+<p>其他的主要是一些快捷操作，直接导那边的过来的：</p>
+<h1 id="一般模式下移动光标">一般模式下移动光标</h1>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h</code>或向左方向键</td>
+<td>光标向左移动一个字符</td>
+</tr>
+<tr>
+<td><code>j</code>或者向下方向键</td>
+<td>光标向下移动一个字符</td>
+</tr>
+<tr>
+<td><code>K</code>或者向上方向键</td>
+<td>光标向上移动一个字符</td>
+</tr>
+<tr>
+<td><code>l</code>或者向右方向键</td>
+<td>光标向右移动一个字符</td>
+</tr>
+<tr>
+<td><code>Ctrl + f</code> 或者pageUP键</td>
+<td>屏幕向前移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl + b</code> 或者pageDOWN键</td>
+<td>屏幕向后移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl + d</code></td>
+<td>屏幕向前移动半页</td>
+</tr>
+<tr>
+<td><code>Ctrl + u</code></td>
+<td>屏幕向后移动半页</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>光标移动到非空格符的下一列</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>光标移动到非空格符的上一列</td>
+</tr>
+<tr>
+<td><code>n空格</code>（n是数字）</td>
+<td>按下数字n然后按空格，则光标向右移动n个字符，如果该行字符数小于n，则光标继续从下行开始向右移动，一直到n</td>
+</tr>
+<tr>
+<td>0（数字0）或者Shift+6</td>
+<td>移动到本行行首</td>
+</tr>
+<tr>
+<td><code>Shift+4</code></td>
+<td>即’$’移动到本行行尾</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>光标移动到当前屏幕的最顶行</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>光标移动到当前屏幕的中央那一行</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>光标移动到当前屏幕的最底行</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>光标移动到文本的最末行</td>
+</tr>
+<tr>
+<td><code>nG</code>（n是数字）</td>
+<td>移动到该文本的第n行</td>
+</tr>
+<tr>
+<td><code>gg</code></td>
+<td>移动带该文本的首行</td>
+</tr>
+<tr>
+<td><code>n回车</code>（n是数字）</td>
+<td>光标向下移动n行</td>
+</tr>
+</tbody>
+</table>
+<h1 id="一般模式下查找与替换">一般模式下查找与替换</h1>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/word</code></td>
+<td>向光标之后寻找一个字符串名为word的字符串，当找到第一个word后，按”n”继续搜后一个</td>
+</tr>
+<tr>
+<td><code>?word</code></td>
+<td>想光标之前寻找一个字符串名为word的字符串，当找到第一个word后，按”n”继续搜前一个</td>
+</tr>
+<tr>
+<td><code>:n1,n2s/word1/word2/g</code></td>
+<td>在n1和n2行间查找word1这个字符串并替换为word2，你也可以把”/”换成”#”</td>
+</tr>
+<tr>
+<td><code>:1,$s/word1/word2/g</code></td>
+<td>从第一行到最末行，查找word1并替换成word2</td>
+</tr>
+<tr>
+<td><code>:1,$s/word1/word2/gc</code></td>
+<td>加上c的作用是，在替换前需要用户确认</td>
+</tr>
+</tbody>
+</table>
+<h1 id="一般模式下删除、复制粘贴">一般模式下删除、复制粘贴</h1>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code>,<code>X</code></td>
+<td>x为向后删除一个字符，X为向前删除一个字符</td>
+</tr>
+<tr>
+<td><code>nx</code>（n为数字）}向后删除n个字符</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除光标所在的那一行</td>
+</tr>
+<tr>
+<td><code>ndd</code>（n为数字）</td>
+<td>删除光标所在的向下n行</td>
+</tr>
+<tr>
+<td><code>d1G</code></td>
+<td>删除光标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td><code>dG</code></td>
+<td>删除光标所在行到末行的所有数据</td>
+</tr>
+<tr>
+<td><code>yy</code></td>
+<td>复制光标所在的那行</td>
+</tr>
+<tr>
+<td><code>nyy</code></td>
+<td>复制从光标所在行起向下n行</td>
+</tr>
+<tr>
+<td><code>p</code>,<code>P</code></td>
+<td>p复制的数据从光标下一行粘贴，P则从光标上一行粘贴</td>
+</tr>
+<tr>
+<td><code>y1G</code></td>
+<td>复制光标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td><code>yG</code></td>
+<td>复制光标所在行到末行的所有数据</td>
+</tr>
+<tr>
+<td><code>J</code></td>
+<td>讲光标所在行与下一行的数据结合成同一行</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>还原过去的操作</td>
+</tr>
+</tbody>
+</table>
+<h1 id="进入编辑模式">进入编辑模式</h1>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td>在当前字符前插入字符</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>在当前行行首插入字符</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>在当前字符后插入字符</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>在当前行行末插入字符</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>在当前行下插入新的一行</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>在当前行上插入新的一行</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>替换光标所在的字符，只替换一次</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>一直替换光标所在的字符，一直到按下ESC</td>
+</tr>
+</tbody>
+</table>
+<h1 id="命令模式">命令模式</h1>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:w</code></td>
+<td>将编辑过的文本保存</td>
+</tr>
+<tr>
+<td><code>:w!</code></td>
+<td>若文本属性为只读时，强制保存</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td>退出vim</td>
+</tr>
+<tr>
+<td><code>:q!</code></td>
+<td>不管编辑或未编辑都不保存退出</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td>保存，退出</td>
+</tr>
+<tr>
+<td><code>:e!</code></td>
+<td>将文档还原成最原始状态</td>
+</tr>
+<tr>
+<td><code>ZZ</code></td>
+<td>若文档没有改动，则不储存离开，若文档改动过，则储存后离开，等同于:wq</td>
+</tr>
+<tr>
+<td><code>:w [filename]</code></td>
+<td>编辑后的文档另存为filename</td>
+</tr>
+<tr>
+<td><code>:r [filename]</code></td>
+<td>在当前光标所在行的下面读入filename文档的内容</td>
+</tr>
+<tr>
+<td><code>:set nu</code></td>
+<td>在每行的行首显示行号</td>
+</tr>
+<tr>
+<td><code>:set nonu</code></td>
+<td>取消行号</td>
+</tr>
+<tr>
+<td><code>n1,n2 w [filename]</code></td>
+<td>将n1到n2的内容另存为filename这个文档</td>
+</tr>
+<tr>
+<td><code>:! command</code></td>
+<td>暂时离开vim运行某个linux命令，例如 :! ls /home 暂时列出/home目录下的文件，然后会提示按回车回到vim</td>
+</tr>
+</tbody>
+</table>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/07/23/Linux-learn-diary-2/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

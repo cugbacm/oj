@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Nginx学习(2) | OJ 2.0</title>
+  <meta name="author" content="CUGB">
+  
+  <meta name="description" content="首先是一些配置。
+1234567891011121314user www-data;worker_processes 1;#进程数，一般为CPU总核心数#pid /var/run/nginx.pid;#进程文件pid /home/kdq/nginx/logs/nginx.pid ;events {	">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Nginx学习(2)"/>
+  <meta property="og:site_name" content="OJ 2.0"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/oj/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/oj/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/oj/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/oj/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/oj/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".toc">
+  <div class="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Nginx学习(2)</h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-12 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>首先是一些配置。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="title">user</span> www-data;</div><div class="line"><span class="title">worker_processes</span> <span class="number">1</span>;</div><div class="line"><span class="comment">#进程数，一般为CPU总核心数</span></div><div class="line"><span class="comment">#pid /var/run/nginx.pid;</span></div><div class="line"></div><div class="line"><span class="comment">#进程文件</span></div><div class="line"><span class="title">pid</span> /home/kdq/nginx/logs/nginx.pid ;</div><div class="line"></div><div class="line"><span class="title">events</span> {</div><div class="line">	<span class="title">use</span> <span class="built_in">epoll</span>;</div><div class="line">	<span class="comment">#epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能    </span></div><div class="line">	<span class="title">worker_connections</span> <span class="number">1024</span>;</div><div class="line">	<span class="comment"># multi_accept on;</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>以上一般都不用自己配了。了解一下一些优化就可以了。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="title">http</span> {</div><div class="line">	<span class="title">include</span> /etc/nginx/mime.types;</div><div class="line"></div><div class="line">	<span class="title">default_type</span> application/octet-stream;</div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="comment"># Basic Settings</span></div><div class="line">	<span class="comment">##</span></div><div class="line">        <span class="comment">#aotoindex on; #</span></div><div class="line">	<span class="title">sendfile</span> <span class="built_in">on</span>;</div><div class="line">	<span class="title">tcp_nopush</span> <span class="built_in">on</span>;</div><div class="line"> 	<span class="comment">#防止网络阻塞</span></div><div class="line">	<span class="title">tcp_nodelay</span> <span class="built_in">on</span>;</div><div class="line">	<span class="comment">#防止网络阻塞</span></div><div class="line">	<span class="title">keepalive_timeout</span> <span class="number">65</span>;</div><div class="line">	<span class="comment">#长连接超时，单位秒</span></div><div class="line">	<span class="title">types_hash_max_size</span> <span class="number">2048</span>;</div><div class="line">	<span class="comment"># server_tokens off;</span></div><div class="line"></div><div class="line">	 <span class="title">server_names_hash_bucket_size</span> <span class="number">64</span>;</div><div class="line">	<span class="comment"># server_name_in_redirect off ;</span></div><div class="line"></div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="comment"># Logging Settings</span></div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="title">access_log</span> /var/log/nginx/access.log;</div><div class="line">	<span class="title">error_log</span> /var/log/nginx/error.log;</div><div class="line">	</div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="comment"># Gzip Settings</span></div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="title">gzip</span> <span class="built_in">on</span>;</div><div class="line">	<span class="title">gzip_disable</span> <span class="string">"msie6"</span>;</div><div class="line">	<span class="comment">## Basic reverse proxy server ##</span></div><div class="line">	<span class="title">server</span> {</div><div class="line">		<span class="comment">#监听端口8080</span></div><div class="line">		<span class="title">listen</span>	<span class="number">8080</span>;</div><div class="line">		<span class="title">server_name</span> localhost;</div><div class="line">		<span class="title">location</span> /{</div><div class="line">			<span class="title">proxy_pass</span> <span class="url">http://202.204.102.161</span>;</div><div class="line">                        <span class="comment">#现在OJ的内网地址</span></div><div class="line">			<span class="title">proxy_redirect</span> default;</div><div class="line">		}</div><div class="line">		<span class="title">location</span> /status {</div><div class="line">			<span class="title">stub_status</span> <span class="built_in">on</span>;</div><div class="line">			<span class="title">access_log</span> <span class="built_in">on</span>;</div><div class="line">			<span class="title">auth_basic</span> <span class="string">"NginxStatus"</span>;</div><div class="line">			<span class="comment">#allow 192.168.0.113 ;</span></div><div class="line">			<span class="title">auth_basic_user_file</span> /etc/nginx/htpasswd ;<span class="comment">#密码文件的路径</span></div><div class="line">		<span class="comment">#	设置密码</span></div><div class="line">			<span class="comment">#htpasswd文件的内容可以用apache提供的htpasswd工具来产生。</span></div><div class="line">		}</div><div class="line">	}</div><div class="line">        <span class="comment">#server {</span></div><div class="line">        <span class="comment">#    listen 8087 ;</span></div><div class="line">        <span class="comment">#    server_name localhost;</span></div><div class="line">        <span class="comment">#    location / {</span></div><div class="line">        <span class="comment">#        root /home/kdq/mytask;</span></div><div class="line">        <span class="comment">#       </span></div><div class="line">        <span class="comment">#    }</span></div><div class="line"></div><div class="line">	<span class="title">include</span> /etc/nginx/conf.d/<span class="regexp">*.conf</span>;</div><div class="line">	<span class="title">include</span> /etc/nginx/sites-enabled/*;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>上面的service主要实现了一个反向代理，通过访问本机的8080端口，可以访问内网的OJ。算是个小试验。。<br>主要说一下/status。<br>通过/status，我们可以查看nginx的状态。<br>主要说一下配置，allow ip，这是限制ip登录。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">auth_basic_user_file <span class="regexp">/etc/</span>nginx<span class="regexp">/htpasswd</span></div></pre></td></tr></table></figure>
+
+<p>这是通过用户名密码登录。<br>用户名密码就存在htpasswd这个文件里。<br>格式是user:passwd ,密码用crypt加密。<br>直接用命令mkpasswd+密码,得到的密码就是加密后的。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">kdq<span class="variable">@ubuntu</span><span class="symbol">:/etc/nginx</span><span class="variable">$ </span>sudo mkpasswd </div><div class="line">密码： </div><div class="line"><span class="constant">OEThvZTvhXfvE</span></div></pre></td></tr></table></figure>
+
+<p>然后把这个密码复制到那个文件里，按照上述格式就可以了。<br>status:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Active connection<span class="variable">s:</span> <span class="number">1</span> </div><div class="line">server accepts handled requests</div><div class="line"> <span class="number">2</span> <span class="number">2</span> <span class="number">4</span> </div><div class="line">Readin<span class="variable">g:</span> <span class="number">0</span> Writin<span class="variable">g:</span> <span class="number">1</span> Waitin<span class="variable">g:</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>更多资料请参考：<a href="http://wiki.nginx.org/Main" target="_blank" rel="external">http://wiki.nginx.org/Main</a><br>这个博客很好：<a href="http://blog.sina.com.cn/openresty" target="_blank" rel="external">http://blog.sina.com.cn/openresty</a></p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/07/23/Nginx-learn-3/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/oj/2014/07/23/Nginx-learn-1/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2014 CUGB
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/oj/js/jquery.imagesloaded.min.js"></script>
+<script src="/oj/js/gallery.js"></script>
+<script src="/oj/js/bootstrap.min.js"></script>
+<script src="/oj/js/jquery.tableofcontents.min.js"></script>
+<script src="/oj/js/tocgenerator.min.js"></script>
+<script src="/oj/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/oj/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/oj/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
