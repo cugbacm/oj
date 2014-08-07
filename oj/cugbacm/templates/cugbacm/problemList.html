@@ -12,7 +12,8 @@
     <title>Problem List</title>
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css" title="currentStyle">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+   <style type="text/css" title="currentStyle">
         @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
@@ -31,7 +32,7 @@
 		    	<li><a href="/index/userList">User List</a></li>
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/index/userInfo">User Info</a></li>
+              <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
@@ -39,10 +40,11 @@
             </ul>
           </li>
         </ul>
-    <div style="padding-top:96px padding-left:128px">
-    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" height="20" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
         <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
       </marquee>
+     <div class="row">
+      <div class="col-md-offset-1">
     <form class="form-inline" role="form" action="/index/problemList/" method="post">{% csrf_token %}
       <div class="form-group">
         <label class="sr-only" for="problemID">Problem ID</label>
@@ -59,9 +61,10 @@
       <button type="submit" class="btn btn-primary">Search</button>
     </form>
     </div>
+    </div>
       </nav>
     {% autopaginate problems 50 %}
-    <div class="table-responsive" style="padding-top:48px">
+    <div class="table-responsive" style="padding-top:58px">
  <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 	    <thead>  
           <tr>  
