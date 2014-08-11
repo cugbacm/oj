@@ -1,101 +1,121 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    {% load pagination_tags %}  
-    <head>
+{% load pagination_tags %} 
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="cugbacm" >
-
+    <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
     <title>Contest List</title>
-
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
-   <script type="text/javascript" src="/site_media/dist/js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
-    <style type="text/css" title="currentStyle">
+   <style type="text/css" title="currentStyle">
         @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
 	</style>
 	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
 	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
-    <!-- Custom styles for this template -->
-    <!--<link href="signin.css" rel="stylesheet">-->
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-	</head>
-	<body style="padding-top:70px">
-	<div class="container">
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <ul class="nav nav-tabs">
-		<li><a href="/index/problemList">Problem List</a></li>
-		<li><a href="/index/submitList">Submit List</a></li>
-		<li class="active"><a href="/index/contestList">Contest List</a></li>
-		<li><a href="/index/userList">User List</a></li>
-		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{user.userID}} <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="/index/userInfo/{{user.userID}}">User Info</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li><a href="/index/login">Login out</a></li>
-			</ul>
-		</li>
-    </ul>
+  <script src="/site_media/dist/js/stickUp-master/stickUp.min.js"></script>
+  </head>
+  <body style="padding-top:70px">
+    <div class="container">      
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		    <ul class="nav nav-tabs">
+          <li><a href="/index/problemList">Problem List</a></li>
+			    <li><a href="/index/submitList">Submit List</a></li>
+          <li class="active"><a href="/index/contestList">Contest List</a></li>
+		    	<li><a href="/index/userList">User List</a></li>
+		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="/index/login">Login out</a></li>
+            </ul>
+          </li>
+        </ul>
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
-      <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
-    </marquee>
-    </nav>
+        <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+      </marquee>
+     <div class="row">
+      <div class="col-md-offset-1">
+    <form class="form-inline" role="form" action="/index/contestList/" method="post">{% csrf_token %}
+      <div class="form-group">
+        <label class="sr-only" for="contestID">Contest ID</label>
+        <input type="text" class="form-control" id="contestID" name="contestID" placeholder="Contest ID" value={{contestID}}>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="contestTitle">Contest Title</label>
+        <input type="text" class="form-control" id="contestTitle" name="contestTitle" placeholder="Contest Title" value={{contestTitle}}>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="contestAuthor">Contest Author</label>
+        <input type="text" class="form-control" id="contestAuthor" name="contestAuthor" placeholder="Contest Author" value={{contestAuthor}}>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    </div>
+    </div>
+      </nav>
     {% autopaginate contests 50 %}
-    <div class="table-responsive pagination-centered">
-		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
-			<thead>  
-				<tr>  
-					<th>ContestID</th>
-					<th>Title</th>  
-					<th>Start Time</th>
-					<th>End Time</th> 
-					<th>Status</th>
-					<th>Author</th>
-				</tr>  
-		    </thead>  
-			<tbody>
-			{% for contest in contests %}
-				<tr class="odd gradeX">
-					<td>{{contest.id}}</td>
-					<td>{{contest.title}}</td> 
-					<td>{{contest.startTime}} {{contest.startTimestamp}}</td>
-					<td>{{contest.endTime}} {{contest.endTimestamp}}</td>
-					<td>{{contest.status}}</td>
-					<td>{{contest.author}}</td> 
-					<!--<td>{{submit.code}}</td> -->
-				</tr>
-			{% endfor %}  
-			</tbody>  
-		</table>
+    <div class="table-responsive" style="padding-top:58px">
+ <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	    <thead>  
+          <tr>  
+            <th>ContestID</th>
+            <th>Title</th>  
+            <th>Start Time(GMT+8)</th>
+            <th>End Time(GMT+8)</th>
+            <th>Status</th>
+            <th>Author</th>  
+          </tr>  
+        </thead>  
+        <tbody>
+          {% for contest in contests %}
+            <tr class="odd gradeX">
+              <td>
+                <a href="/index/contest/{{contest.contestID}}">
+                  {{contest.contestID}}
+                </a>
+              </td>
+              <td>
+                <a href="/index/contest/{{contest.contestID}}">
+                  {{contest.title}}
+                </a>
+              </td>
+              <td>{{contest.startTime}} {{contest.startTimestamp}}</td>
+              <td>{{contest.endTime}} {{contest.endTimestamp}}</td>
+              <td>{{contest.status}}</td>
+              <td>{{contest.author}}</td>
+            </tr>
+          {% endfor %}  
+        </tbody>  
+      </table>
     </div>
     {% paginate %}
-    <script>
-	$(document).ready(function() {
-		$('#example').dataTable({
-			"bPaginate": false,
-			"aaSorting":[[0,'desc']],
-			"bFilter": false,
-		});
-	} );
-    </script>
+      <script>
+	      $(document).ready(function() {
+	      	$('#example').dataTable({
+	      	"bPaginate": false,
+          "bFilter": false, 
+	      	});
+		} );
+	</script>
+  <script type="text/javascript">
+  //initiating jQuery
+  jQuery(function($) {
+  $(document).ready( function() {
+  //enabling stickUp on the '.navbar-wrapper' class
+  $('.navbar-wrapper').stickUp();
+  });
+  });
+  </script>
 	</div>
   </body>
 </html>

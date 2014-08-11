@@ -27,7 +27,7 @@
   <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
 
-    <link href="grid.css" rel="stylesheet">
+   <!-- <link href="grid.css" rel="stylesheet">--><!--media中找不到-->
 
   </script>
   <body style="padding-top:70px">
@@ -112,7 +112,7 @@
               </pre>
            </div>
             <div class="col-md-5" style="padding-top:20px;">
-              <div data-spy="affix">
+             <div data-spy="affix">
               <div>
                 <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" >{% csrf_token %} 
                   <div class="form-group">
@@ -167,6 +167,7 @@
               </div>
               {% paginate %}
               <script>
+             <!-- $('#navbar').scrollspy()-->
             $(document).ready(function() {
               $('#example').dataTable({
                 "bPaginate": false,

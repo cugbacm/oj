@@ -15,7 +15,7 @@
     <link href="/site_media/Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
     <link href="/site_media/dist/css/signin.css" rel="stylesheet">
-    <link href=/site_media/Flat-UI-master/css/demo.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/demo.css" rel="stylesheet">
    <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -49,8 +49,8 @@
   </head>
 
   <body>
-   <div class="container" style="width:970px;"><!--导入的demo.css没起作用，所以强加宽度限制-->
-    <form  role="form" action="/index/login/" method="post">{% csrf_token %}
+   <div class="container">
+    <form class="" role="form" action="/index/login/" method="post">{% csrf_token %}
     <div class="login">
       <div class="login-screen">
         <div class="login-icon">
@@ -71,7 +71,8 @@
              </span>
              <input type="checkbox" value="remember-me"><font style="color:gray;">Remember me</font>
            </label>
-             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button>
+             <div class="form-group">
+             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
              <a href="/index/register"><button class="btn btn-lg btn-primary btn-block" id="register" type="button" style="">Register</button></a> 
         </div>
       </div>
