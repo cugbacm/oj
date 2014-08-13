@@ -139,7 +139,24 @@ def userList(request):
   except:
     return HttpResponseRedirect("/index/login")
   users = User.objects.all().order_by('-accepted')
-  return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
+  if request.method == 'POST':
+    userIDForSearch = request.POST['UserIdForSearchInput']
+    nickNameForSearch = request.POST['NickNameForSearchInput']
+    try:
+      if userIDForSearch.strip():
+        users = users.filter(userID__contains = userIDForSearch)
+      if nickNameForSearch.strip():
+        users = users.filter(nickname__contains = nickNameForSearch)
+      return render(request, 'cugbacm/userList.html',{
+        'users':users,
+        'userID':request.session['userID'],
+        'UserIdForSearch':userIDForSearch,
+        'NickNameForSearch':nickNameForSearch
+      })
+    except:
+      return render(request,'cugbacm/userList.html', {'users':{},'userID':request.session['userID']})
+  else:    
+    return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
 
 
 def userInfo(request, user_id):
@@ -183,10 +200,10 @@ def userInfo(request, user_id):
     else:
       users = User.objects.all()
       userid = request.POST['idname']
+      Nickname = request.POST['idname']
       try:
         if userid.strip():
           users = users.filter(userID__contains = userid)
-        
         #return HttpResponse(users)
         return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user': user,  'other':other, 'users':users, 'idname':userid })
       except :

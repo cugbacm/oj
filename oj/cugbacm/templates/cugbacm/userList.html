@@ -59,9 +59,23 @@
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
     </marquee>
+    <div class="row" style = "padding-left:130px">
+          <div class="col-md-offset-1">
+              <form class="form-inline" role="form" action="/index/userList/" method="post">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='37kHQyj7KDjfDjflDvIcj8kV5Ittniwu' />
+                     <div class="form-group">
+                            <input type="text" class="form-control" id="UserIdSearchInput" name="UserIdForSearchInput" placeholder="User Id" value={{UserIdForSearch}}>
+                     </div>
+                     <div class="form-group">
+                            <input type="text" class="form-control" id="NickNameSearchInput" name="NickNameForSearchInput" placeholder="Nick Name" value={{NickNameForSearch}}>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Search</button>
+               </form>
+           </div>
+    </div>
   </nav>
     {% autopaginate users 50 %}
-    <div class="table-responsive">
+    <div class="table-responsive" style="padding-top:58px" >
       <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example"> 
         <thead>  
           <tr>  
