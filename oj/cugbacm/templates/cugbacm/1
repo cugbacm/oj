@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!--{% load pagination_tags %}-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+    <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+
+    <title>User Info</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+     <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <!--<link href="signin.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="padding-top:70px">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul class="nav nav-tabs">
+      <li><a href="/index/problemList">Problem List</a></li>
+      <li><a href="/index/submitList">Submit List</a></li>
+      <li><a href="/index/contestList">Contest List</a></li>
+      <li><a href="/index/userList">User List</a></li>
+      <li class="active" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          {{userID}} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/index/userInfo/{{user.userID}}">User Info</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="/index/login">Login out</a></li>
+        </ul>
+      </li>
+    </ul>
+    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right"  width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+      <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+    </marquee>
+  </nav>
+ <div class="container" style="padding-top:20px;" >
+  <div class="container-fluid">
+   <div class="row-fluid">
+   {% if id == userID %}
+    <div class="col-md-4 col-md-offset-3">
+      <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %} 
+        <div class="form-group">
+            <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-5 col-sm-7">
+          <button type="submit" class="btn btn-info" name = "Modify" id = "Modefy" value = "Modify"> Modify your information</button>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="userID" class="col-sm-5 control-label">UserID</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="userID" type="text" readonly= "true"  value="{{user.userID}}" name="userID" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nickname" class="col-sm-5 control-label">Nickname</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="nickname" type="text" value="{{user.nickname}}" name="nickname" required/>
+            </div>
+        </div>
+        <div class="form-group">   
+             <label  for="session" class="col-sm-5 control-label">Session</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="session" type="text" value="{{user.session}}" name="session" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  for="specialty" class="col-sm-5 control-label">Specialty</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="specialty" type="text" value="{{user.specialty}}" name="specialty" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  for="tel" class="col-sm-5 control-label">Tel</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="tel" type="text" value="{{user.tel}}" name="tel" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-5 control-label">Email</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="email" type="text" value="{{user.email}}" name="email" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  for="oldPassword" class="col-sm-5 control-label">Old Password</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="oldPassword" type="password" value="{{user.password}}" name="oldPassword" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  for="password" class="col-sm-5 control-label">Password</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="password" type="password" name="password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword" class="col-sm-5 control-label">Confirm Password</label>
+            <div class="col-sm-7">
+              <input class="form-control" id="confirmPassword" type="password" name="confirmPassword"/>
+            </div>
+        </div>
+        
+      </form>
+    </div>
+   
+   {% else %}
+    <div class="col-md-4,col-md-offset-3">
+     <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">
+      <div class="form-group">
+        <label for="" class="col-sm-5 control-label">&nbsp;</label>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-sm-5 control-label">&nbsp;</label>
+      </div>
+      <div class="form-group"> 
+       <label for="" class="col-sm-3 control-label"></label>
+       <div class="col-sm-7">
+           <input class="form-control" id="otherUserID" type="text" readonly= "true"  value="{{other.userID}}" name="otherUserID" required>
+       </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-sm-3 control-label"></label>
+        <div class="col-sm-7">
+          <input class="form-control" id="otherNickname" type="text" value="{{other.nickname}}" name="otherNickname" required/>
+        </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-3 control-label"></label>
+         <div class="col-sm-7">
+           <input class="form-control" id="otherSession" type="text" value="{{other.session}}" name="otherSession" required/>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-3 control-label"></label>
+         <div class="col-sm-7">
+            <input class="form-control" id="otherSpecialty" type="text" value="{{other.specialty}}" name="otherSpecialty" required/>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-3 control-label"></label>
+         <div class="col-sm-7">
+            <input class="form-control" id="otherTel" type="text" value="{{other.tel}}" name="otherTel" required/>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-3 control-label"></label>
+         <div class="col-sm-7">
+            <input class="form-control" id="otherEmail" type="text" value="{{other.email}}" name="otherEmail" required/>
+         </div>
+      </div>
+    
+     </div>
+    </form>
+    </div>
+   </div>
+ </div> <!-- /container -->
+ </body>
+</html>

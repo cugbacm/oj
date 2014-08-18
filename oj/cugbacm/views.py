@@ -38,10 +38,14 @@ def Judge(submit):
     time_limit = problem.timeLimit
   )
   result = main(user_submit)
-  submit.status = result['result']
-  submit.codeLength = result['codeLength']
-  submit.runTime = result['take_time']
-  submit.memory = result['take_memory']
+  if "result" in result:
+    submit.status = result['result']
+  if "codeLength" in result:
+    submit.codeLength = result['codeLength']
+  if "take_time" in result:
+    submit.runTime = result['take_time']
+  if "take_memeory" in result:
+    submit.memory = result['take_memory']
   submit.save()
   print submit.status
 
@@ -90,7 +94,7 @@ def submit(request, problem_id):
         language = language,
         code = code)
       submit.save()
-      Judge(submit)
+      Judgedelay(submit)
     return HttpResponseRedirect("/index/submitList")
   else:
     return render(request, 'cugbacm/submit.html', {'problem_id':problem_id})
@@ -166,7 +170,6 @@ def userInfo(request, user_id):
     return HttpResponseRedirect("/index/login")
   other = User.objects.get(userID = user_id)
   if request.method == 'POST':
-    if request.POST.has_key("Modify"):
       userID = request.session['userID']
       oldPassword = request.POST['oldPassword']
       password = request.POST['password']
@@ -189,28 +192,16 @@ def userInfo(request, user_id):
           user.password = password
           user.save()
           other = User.objects.get(userID = user_id)
-          return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other})
+          return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id})
         else:
           if password != confirmPassword:
             return HttpResponse("password and confirmPassword is not the same!")
           else:
             user.save()
             other = User.objects.get(userID = user_id)
-            return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user':user, 'other':other})
-    else:
-      users = User.objects.all()
-      userid = request.POST['idname']
-      Nickname = request.POST['idname']
-      try:
-        if userid.strip():
-          users = users.filter(userID__contains = userid)
-        #return HttpResponse(users)
-        return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user': user,  'other':other, 'users':users, 'idname':userid })
-      except :
-        #return HttpResponse("fuck")
-        return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'users':{} })
+            return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user':user, 'other':other, 'id':user_id})
   else:
-    return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'users':{} })
+    return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id })
     
 def register(request):
   if request.method == 'POST':

@@ -50,11 +50,12 @@
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right"  width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
     </marquee>
-  </nav>
+    </nav>
  <div class="container" style="padding-top:20px;" >
   <div class="container-fluid">
    <div class="row-fluid">
-    <div class="col-md-4 col-md-offset-1">
+   {% if id == userID %}
+    <div class="col-md-4 col-md-offset-3">
       <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %} 
         <div class="form-group">
             <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
@@ -118,84 +119,59 @@
               <input class="form-control" id="confirmPassword" type="password" name="confirmPassword"/>
             </div>
         </div>
-        
       </form>
     </div>
-    <div class="col-md-4">
-     <!-- <form class="navbar-form navbar-left" role="search">-->
-      <form class="form-horizontal" role="search" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %}
-       <div class="form-group">
-          <div class="col-sm-7 col-sm-offset-3">
-           <input type="text" class="form-control" placeholder="Search" name = "idname" required>
-          </div>
-       </div>
-       <div class="form-group">
-          <div class="col-sm-7 col-sm-offset-3">
-           <button type="submit" class="btn btn-info" name = "Search" id = "Search" value = "Search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          </div>
-       </div>
-     </form>
-      <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %} 
+   {% endif %}
+   {% if id != userID %}
+    <div class="col-md-4  col-md-offset-3">
+     <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">
+      <div class="form-group">
+        <label for="" class="col-sm-5 control-label">&nbsp;</label>
+      </div>
+      <div class="form-group">
+        <label for="" class = "col-sm-5 control-label">&nbsp;</label>
+      </div>
       <div class="form-group"> 
-        <label for="" class="col-sm-3 control-label"></label>
-        <div class="col-sm-7">
+       <label for="" class="col-sm-5 control-label">UserID</label>
+       <div class="col-sm-7">
            <input class="form-control" id="otherUserID" type="text" readonly= "true"  value="{{other.userID}}" name="otherUserID" required>
+       </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-sm-5 control-label">NickName</label>
+        <div class="col-sm-7">
+          <input class="form-control" id="otherNickname" type="text" readonly= "true" value="{{other.nickname}}" name="otherNickname" required/>
+        </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-5 control-label">Session</label>
+         <div class="col-sm-7">
+           <input class="form-control" id="otherSession" type="text" readonly= "true" value="{{other.session}}" name="otherSession" required/>
          </div>
-        </div>
-        <div class="form-group">
-          <label for="" class="col-sm-3 control-label"></label>
-          <div class="col-sm-7">
-              <input class="form-control" id="otherNickname" type="text" value="{{other.nickname}}" name="otherNickname" required/>
-            </div>
-        </div>
-        <div class="form-group">
-           <label for="" class="col-sm-3 control-label"></label>
-           <div class="col-sm-7">
-              <input class="form-control" id="otherSession" type="text" value="{{other.session}}" name="otherSession" required/>
-            </div>
-        </div>
-        <div class="form-group">
-           <label for="" class="col-sm-3 control-label"></label>
-           <div class="col-sm-7">
-              <input class="form-control" id="otherSpecialty" type="text" value="{{other.specialty}}" name="otherSpecialty" required/>
-            </div>
-        </div>
-        <div class="form-group">
-           <label for="" class="col-sm-3 control-label"></label>
-           <div class="col-sm-7">
-              <input class="form-control" id="otherTel" type="text" value="{{other.tel}}" name="otherTel" required/>
-            </div>
-        </div>
-        <div class="form-group">
-           <label for="" class="col-sm-3 control-label"></label>
-           <div class="col-sm-7">
-              <input class="form-control" id="otherEmail" type="text" value="{{other.email}}" name="otherEmail" required/>
-           </div>
-        </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-5 control-label">Specialty</label>
+         <div class="col-sm-7">
+            <input class="form-control" id="otherSpecialty" type="text" readonly= "true" value="{{other.specialty}}" name="otherSpecialty" required/>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-5 control-label">Tel</label>
+         <div class="col-sm-7">
+            <input class="form-control" id="otherTel" type="text" readonly= "true" value="{{other.tel}}" name="otherTel" required/>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="" class="col-sm-5 control-label">Email</label>
+         <div class="col-sm-7">
+            <input class="form-control" id="otherEmail" type="text" readonly= "true" value="{{other.email}}" name="otherEmail" required/>
+         </div>
+      </div>
      </form>
     </div>
-    <!-- {% autopaginate problems 10 % -->
-    <div class = "table-responsive" style = "padding-top:58px">
-      <table cellpadding = "10" cellspacing = "0" class = "display" id = "example">
-        <thead>
-          <tr>
-           <th>UserId</th>
-           <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%for u in users %}
-            <tr class="odd gradeX">
-              <td> <a href = "/index/userInfo/{{u.userID}}">{{u.userID}} </a> </td>
-              <td>{{u.nickname}} </td>
-           </tr>
-         {% endfor %}
-        </tbody>
-      </table>
-    </div>
-   <!-- {% paginate %}>-->
-    </div>
+    {% endif %}
    </div>
+  </div>
  </div> <!-- /container -->
  </body>
 </html>

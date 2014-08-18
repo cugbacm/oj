@@ -5287,3 +5287,506 @@ You must only enable the serializers that you will actually use.
 [2014-07-06 16:44:57,604: WARNING/Worker-1] fuck
 [2014-07-06 16:44:57,672: WARNING/Worker-1] Accepted
 [2014-07-06 16:44:57,694: INFO/MainProcess] Task cugbacm.views.Judge[128fb091-2329-44e0-b551-dfe151294a4a] succeeded in 0.688449703157s: 'Accepted'
+[2014-08-14 19:20:14,578: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-08-14 19:20:14,609: INFO/MainProcess] Connected to amqp://guest@127.0.0.1:5672//
+[2014-08-14 19:20:14,627: INFO/MainProcess] mingle: searching for neighbors
+[2014-08-14 19:20:15,666: INFO/MainProcess] mingle: all alone
+[2014-08-14 19:20:15,692: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/kombu/pidbox.py:75: UserWarning: A node named celery@AY14040915414956495eZ is already using this process mailbox!
+
+Maybe you forgot to shutdown the other node or did not do so properly?
+Or if you meant to start multiple nodes on the same host please make sure
+you give each node a unique node name!
+
+  warnings.warn(W_PIDBOX_IN_USE.format(node=self))
+
+[2014-08-14 19:20:15,694: WARNING/MainProcess] celery@AY14040915414956495eZ ready.
+[2014-08-14 19:21:20,454: INFO/MainProcess] Received task: cugbacm.views.Judge[97c35c5f-ff2f-4799-a798-461deed27e96]
+[2014-08-14 19:21:20,487: ERROR/MainProcess] Task cugbacm.views.Judge[97c35c5f-ff2f-4799-a798-461deed27e96] raised unexpected: TypeError("__init__() got an unexpected keyword argument 'time_limit'",)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 38, in Judge
+    time_limit = problem.timeLimit
+TypeError: __init__() got an unexpected keyword argument 'time_limit'
+[2014-08-14 23:01:32,867: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-08-14 23:01:32,889: INFO/MainProcess] Connected to amqp://guest@127.0.0.1:5672//
+[2014-08-14 23:01:32,901: INFO/MainProcess] mingle: searching for neighbors
+[2014-08-14 23:01:33,920: INFO/MainProcess] mingle: all alone
+[2014-08-14 23:01:33,937: WARNING/MainProcess] celery@AY14040915414956495eZ ready.
+[2014-08-14 23:01:33,939: INFO/MainProcess] Received task: cugbacm.views.Judge[1e18da4f-be43-445a-b0d1-e52a6565c248]
+[2014-08-14 23:01:33,940: INFO/MainProcess] Received task: cugbacm.views.Judge[916e5ac2-0739-4d7f-a4ff-7f66a6bb6cfc]
+[2014-08-14 23:01:33,941: INFO/MainProcess] Received task: cugbacm.views.Judge[92f265c0-b54a-4728-b9f2-da333de4da9a]
+[2014-08-14 23:01:36,002: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7351
+[2014-08-14 23:01:40,344: WARNING/Worker-1] fuck
+[2014-08-14 23:01:40,666: WARNING/Worker-1] Accepted
+[2014-08-14 23:01:40,687: INFO/MainProcess] Task cugbacm.views.Judge[1e18da4f-be43-445a-b0d1-e52a6565c248] succeeded in 4.75638082344s: 'Accepted'
+[2014-08-14 23:01:40,695: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7352
+[2014-08-14 23:01:41,196: WARNING/Worker-1] fuck
+[2014-08-14 23:01:41,247: WARNING/Worker-1] Accepted
+[2014-08-14 23:01:41,271: INFO/MainProcess] Task cugbacm.views.Judge[916e5ac2-0739-4d7f-a4ff-7f66a6bb6cfc] succeeded in 0.582982051186s: 'Accepted'
+[2014-08-14 23:01:41,277: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7353
+[2014-08-14 23:01:41,690: WARNING/Worker-1] fuck
+[2014-08-14 23:01:41,741: WARNING/Worker-1] Accepted
+[2014-08-14 23:01:41,757: INFO/MainProcess] Task cugbacm.views.Judge[92f265c0-b54a-4728-b9f2-da333de4da9a] succeeded in 0.485302471556s: 'Accepted'
+[2014-08-14 23:03:16,348: INFO/MainProcess] Received task: cugbacm.views.Judge[4bb5fcdd-296b-401d-8161-cfdff8f3f90c]
+[2014-08-14 23:03:16,356: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7354
+[2014-08-14 23:03:16,384: ERROR/MainProcess] Task cugbacm.views.Judge[4bb5fcdd-296b-401d-8161-cfdff8f3f90c] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    if check_dangerous_code(solution_id, language) == False:
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    code = file('/work/%s/main.py' % solution_id).readlines()
+IOError: [Errno 2] No such file or directory: '/work/7354/main.py'
+[2014-08-14 23:04:25,194: INFO/MainProcess] Received task: cugbacm.views.Judge[7fbe96a3-233c-4805-9563-72cb034b1cf5]
+[2014-08-14 23:04:25,203: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7355
+[2014-08-14 23:04:25,665: WARNING/Worker-1] fuck
+[2014-08-14 23:04:25,723: WARNING/Worker-1] Accepted
+[2014-08-14 23:04:25,742: INFO/MainProcess] Task cugbacm.views.Judge[7fbe96a3-233c-4805-9563-72cb034b1cf5] succeeded in 0.545652517118s: 'Accepted'
+[2014-08-14 23:10:22,986: INFO/MainProcess] Received task: cugbacm.views.Judge[4e7e38b6-8fab-4319-aae5-144d697c2b35]
+[2014-08-14 23:10:22,993: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7356
+[2014-08-14 23:10:23,003: ERROR/MainProcess] Task cugbacm.views.Judge[4e7e38b6-8fab-4319-aae5-144d697c2b35] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    if check_dangerous_code(solution_id, language) == False:
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    code = file('/home/cugbacm/Documents/work_dir/%s/main.py' % solution_id).readlines()
+IOError: [Errno 2] No such file or directory: '/work/7356/main.py'
+[2014-08-14 23:13:52,892: INFO/MainProcess] Received task: cugbacm.views.Judge[df5bbee0-65b0-434e-add3-125eee5da593]
+[2014-08-14 23:13:52,907: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7357
+[2014-08-14 23:13:53,381: WARNING/Worker-1] fuck
+[2014-08-14 23:13:53,432: WARNING/Worker-1] Accepted
+[2014-08-14 23:13:53,454: INFO/MainProcess] Task cugbacm.views.Judge[df5bbee0-65b0-434e-add3-125eee5da593] succeeded in 0.560898181051s: 'Accepted'
+[2014-08-14 23:14:29,068: INFO/MainProcess] Received task: cugbacm.views.Judge[320b9cfb-896e-422f-a67f-9313c40b415f]
+[2014-08-14 23:14:29,078: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7358
+[2014-08-14 23:14:29,085: ERROR/MainProcess] Task cugbacm.views.Judge[320b9cfb-896e-422f-a67f-9313c40b415f] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    if check_dangerous_code(solution_id, language) == False:
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    code = open('/home/cugbacm/Documents/work_dir/%s/main.py' % solution_id, 'r')
+IOError: [Errno 2] No such file or directory: '/work/7358/main.py'
+[2014-08-14 23:15:35,229: INFO/MainProcess] Received task: cugbacm.views.Judge[cee29903-9c77-4f7b-8039-b9e17496c30e]
+[2014-08-14 23:15:35,237: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7359
+[2014-08-14 23:15:35,244: ERROR/MainProcess] Task cugbacm.views.Judge[cee29903-9c77-4f7b-8039-b9e17496c30e] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    if check_dangerous_code(solution_id, language) == False:
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    code = open('/home/cugbacm/Documents/work_dir/%s/main.py' % solution_id, 'r')
+IOError: [Errno 2] No such file or directory: '/work/7359/main.py'
+[2014-08-15 09:44:04,418: INFO/MainProcess] Received task: cugbacm.views.Judge[2965c5b1-c931-4e2c-9414-4d8928c64b90]
+[2014-08-15 09:44:04,427: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7360
+[2014-08-15 09:44:04,874: WARNING/Worker-1] fuck
+[2014-08-15 09:44:04,932: WARNING/Worker-1] Accepted
+[2014-08-15 09:44:04,948: INFO/MainProcess] Task cugbacm.views.Judge[2965c5b1-c931-4e2c-9414-4d8928c64b90] succeeded in 0.528789889067s: 'Accepted'
+[2014-08-15 09:44:31,370: INFO/MainProcess] Received task: cugbacm.views.Judge[7f6f07f5-896c-4590-b231-9380c58dea63]
+[2014-08-15 09:44:31,380: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7361
+[2014-08-15 09:44:31,816: WARNING/Worker-1] fuck
+[2014-08-15 09:44:31,867: WARNING/Worker-1] Accepted
+[2014-08-15 09:44:31,886: INFO/MainProcess] Task cugbacm.views.Judge[7f6f07f5-896c-4590-b231-9380c58dea63] succeeded in 0.513051803224s: 'Accepted'
+[2014-08-15 09:44:39,803: INFO/MainProcess] Received task: cugbacm.views.Judge[095579e1-5ffe-47cc-baed-ef51179674d7]
+[2014-08-15 09:44:39,812: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7362
+[2014-08-15 09:44:39,818: ERROR/MainProcess] Task cugbacm.views.Judge[095579e1-5ffe-47cc-baed-ef51179674d7] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    result =  run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    if check_dangerous_code(solution_id, language) == False:
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    code = open('/home/cugbacm/Documents/work_dir/%s/main.py' % solution_id, 'r')
+IOError: [Errno 2] No such file or directory: '/work/7362/main.py'
+[2014-08-15 10:14:09,304: INFO/MainProcess] Received task: cugbacm.views.Judge[9e958961-02a5-4446-b860-1bf4be8b6dea]
+[2014-08-15 10:14:09,322: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7363
+[2014-08-15 10:14:09,939: WARNING/Worker-1] Compile Error
+[2014-08-15 10:14:09,957: INFO/MainProcess] Task cugbacm.views.Judge[9e958961-02a5-4446-b860-1bf4be8b6dea] succeeded in 0.640464290977s: 'Compile Error'
+[2014-08-15 10:14:17,674: INFO/MainProcess] Received task: cugbacm.views.Judge[4a0a337c-b8e1-4421-90b3-a07579449250]
+[2014-08-15 10:14:17,681: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7364
+[2014-08-15 10:14:17,689: ERROR/MainProcess] Task cugbacm.views.Judge[4a0a337c-b8e1-4421-90b3-a07579449250] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    if os.path.exists(path):
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7364/main.py'
+[2014-08-15 10:15:09,507: INFO/MainProcess] Received task: cugbacm.views.Judge[8841c4ce-65a7-4553-a42b-9c557110f899]
+[2014-08-15 10:15:09,514: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7365
+[2014-08-15 10:15:09,521: ERROR/MainProcess] Task cugbacm.views.Judge[8841c4ce-65a7-4553-a42b-9c557110f899] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    if os.path.exists(path):
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7365/main.py'
+[2014-08-15 10:20:50,540: INFO/MainProcess] Received task: cugbacm.views.Judge[02b92f63-0c82-4e34-ab8a-dd5460ddde2a]
+[2014-08-15 10:20:50,548: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7366
+[2014-08-15 10:20:50,588: WARNING/Worker-1] Compile Error
+[2014-08-15 10:20:50,620: INFO/MainProcess] Task cugbacm.views.Judge[02b92f63-0c82-4e34-ab8a-dd5460ddde2a] succeeded in 0.0786344949156s: 'Compile Error'
+[2014-08-15 10:29:51,486: INFO/MainProcess] Received task: cugbacm.views.Judge[ca403d68-d12e-4eca-84f4-fe93e782a211]
+[2014-08-15 10:29:51,494: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7367
+[2014-08-15 10:29:51,501: ERROR/MainProcess] Task cugbacm.views.Judge[ca403d68-d12e-4eca-84f4-fe93e782a211] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    print language,"fuck fuck fuck fuck"
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7367/main.py'
+[2014-08-15 10:40:48,073: INFO/MainProcess] Received task: cugbacm.views.Judge[3aeed0d3-3fc9-44f5-9532-fa2a25891473]
+[2014-08-15 10:40:48,082: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7368
+[2014-08-15 10:40:48,124: ERROR/MainProcess] Task cugbacm.views.Judge[3aeed0d3-3fc9-44f5-9532-fa2a25891473] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7368/main.py'
+[2014-08-15 10:41:24,688: INFO/MainProcess] Received task: cugbacm.views.Judge[724edaf6-67c8-4557-af0f-bab01a0a9491]
+[2014-08-15 10:41:24,695: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7369
+[2014-08-15 10:41:24,728: WARNING/Worker-1] Compile Error
+[2014-08-15 10:41:24,745: INFO/MainProcess] Task cugbacm.views.Judge[724edaf6-67c8-4557-af0f-bab01a0a9491] succeeded in 0.0561008276418s: 'Compile Error'
+[2014-08-15 10:43:27,074: INFO/MainProcess] Received task: cugbacm.views.Judge[94844382-cca1-419e-b6b6-c8bbe1bab715]
+[2014-08-15 10:43:27,080: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7370
+[2014-08-15 10:43:27,089: ERROR/MainProcess] Task cugbacm.views.Judge[94844382-cca1-419e-b6b6-c8bbe1bab715] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7370/main.py'
+[2014-08-15 10:54:44,901: INFO/MainProcess] Received task: cugbacm.views.Judge[861bc362-bb66-4578-a8ae-cc568951c8f4]
+[2014-08-15 10:54:44,910: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7371
+[2014-08-15 10:54:44,917: ERROR/MainProcess] Task cugbacm.views.Judge[861bc362-bb66-4578-a8ae-cc568951c8f4] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7371/main.py'
+[2014-08-15 11:01:43,024: INFO/MainProcess] Received task: cugbacm.views.Judge[e570ff70-ebca-49fe-8626-8ebe1abd2b94]
+[2014-08-15 11:01:43,032: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7372
+[2014-08-15 11:01:43,070: ERROR/MainProcess] Task cugbacm.views.Judge[e570ff70-ebca-49fe-8626-8ebe1abd2b94] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    data_count = get_data_count(user_submit.problem_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Output Limit': 6,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7372/main.py'
+[2014-08-15 11:05:49,487: INFO/MainProcess] Received task: cugbacm.views.Judge[9f55962c-0ae8-4ffd-8486-ef5a03a223da]
+[2014-08-15 11:05:49,495: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7373
+[2014-08-15 11:05:49,503: ERROR/MainProcess] Task cugbacm.views.Judge[9f55962c-0ae8-4ffd-8486-ef5a03a223da] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    data_count = get_data_count(user_submit.problem_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Output Limit': 6,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7373/main.py'
+[2014-08-15 11:14:01,546: INFO/MainProcess] Received task: cugbacm.views.Judge[f97687f5-7d47-47b2-a504-e9b655f38d47]
+[2014-08-15 11:14:01,557: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7374
+[2014-08-15 11:14:01,565: ERROR/MainProcess] Task cugbacm.views.Judge[f97687f5-7d47-47b2-a504-e9b655f38d47] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7374/main.py'
+[2014-08-15 11:14:13,195: INFO/MainProcess] Received task: cugbacm.views.Judge[073c4245-7e05-4162-a492-4ca15eab6f6f]
+[2014-08-15 11:14:13,202: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7375
+[2014-08-15 11:14:13,226: WARNING/Worker-1] Compile Error
+[2014-08-15 11:14:13,244: INFO/MainProcess] Task cugbacm.views.Judge[073c4245-7e05-4162-a492-4ca15eab6f6f] succeeded in 0.0483401967213s: 'Compile Error'
+[2014-08-15 11:14:25,847: INFO/MainProcess] Received task: cugbacm.views.Judge[b90fe365-bc1a-4d27-8897-120e4d87721c]
+[2014-08-15 11:14:25,853: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7376
+[2014-08-15 11:14:25,934: WARNING/Worker-1] Compile Error
+[2014-08-15 11:14:25,950: INFO/MainProcess] Task cugbacm.views.Judge[b90fe365-bc1a-4d27-8897-120e4d87721c] succeeded in 0.102444016375s: 'Compile Error'
+[2014-08-15 11:14:33,713: INFO/MainProcess] Received task: cugbacm.views.Judge[c1d1ba37-156a-432d-b72f-cb5a91d64c4b]
+[2014-08-15 11:14:33,721: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7377
+[2014-08-15 11:14:33,727: ERROR/MainProcess] Task cugbacm.views.Judge[c1d1ba37-156a-432d-b72f-cb5a91d64c4b] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7377/main.py'
+[2014-08-15 11:39:25,979: INFO/MainProcess] Received task: cugbacm.views.Judge[2663e558-52d7-40a7-9325-02f915629743]
+[2014-08-15 11:39:25,990: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7378
+[2014-08-15 11:39:26,001: ERROR/MainProcess] Task cugbacm.views.Judge[2663e558-52d7-40a7-9325-02f915629743] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7378/main.py'
+[2014-08-16 01:54:36,268: INFO/MainProcess] Received task: cugbacm.views.Judge[8cb3fc72-0b86-41c0-a1e1-7cf0ba7cc282]
+[2014-08-16 01:54:36,277: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7383
+[2014-08-16 01:54:36,361: WARNING/Worker-1] Compile Error
+[2014-08-16 01:54:36,379: INFO/MainProcess] Task cugbacm.views.Judge[8cb3fc72-0b86-41c0-a1e1-7cf0ba7cc282] succeeded in 0.110015413724s: 'Compile Error'
+[2014-08-16 01:54:43,924: INFO/MainProcess] Received task: cugbacm.views.Judge[f4675b8f-ad2c-47ff-acbb-8705c7fdbce4]
+[2014-08-16 01:54:43,930: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7384
+[2014-08-16 01:54:43,963: WARNING/Worker-1] Compile Error
+[2014-08-16 01:54:43,978: INFO/MainProcess] Task cugbacm.views.Judge[f4675b8f-ad2c-47ff-acbb-8705c7fdbce4] succeeded in 0.0520562073216s: 'Compile Error'
+[2014-08-16 01:54:55,422: INFO/MainProcess] Received task: cugbacm.views.Judge[f9545bcd-c78f-44ef-9c59-adc25e32750b]
+[2014-08-16 01:54:55,429: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7385
+[2014-08-16 01:54:55,436: ERROR/MainProcess] Task cugbacm.views.Judge[f9545bcd-c78f-44ef-9c59-adc25e32750b] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7385/main.py'
+[2014-08-16 01:57:52,975: INFO/MainProcess] Received task: cugbacm.views.Judge[35ebbd7e-873e-4472-9624-b7e79efd02b1]
+[2014-08-16 01:57:52,984: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7386
+[2014-08-16 01:57:52,991: ERROR/MainProcess] Task cugbacm.views.Judge[35ebbd7e-873e-4472-9624-b7e79efd02b1] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    print submit.language
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7386/main.py'
+[2014-08-16 01:58:06,602: INFO/MainProcess] Received task: cugbacm.views.Judge[442f8dd6-f8c7-48e3-8d2d-c83c8ae98ef8]
+[2014-08-16 01:58:06,612: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7387
+[2014-08-16 01:58:06,619: ERROR/MainProcess] Task cugbacm.views.Judge[442f8dd6-f8c7-48e3-8d2d-c83c8ae98ef8] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    print submit.language
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7387/main.py'
+[2014-08-16 02:04:15,024: INFO/MainProcess] Received task: cugbacm.views.Judge[15361756-6c1c-4a8c-88d6-437b89432e72]
+[2014-08-16 02:04:15,033: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7390
+[2014-08-16 02:04:15,040: ERROR/MainProcess] Task cugbacm.views.Judge[15361756-6c1c-4a8c-88d6-437b89432e72] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7390/main.py'
+[2014-08-16 02:04:29,777: INFO/MainProcess] Received task: cugbacm.views.Judge[fa18212d-667b-4f35-bb18-1664d02c6f1c]
+[2014-08-16 02:04:29,785: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7391
+[2014-08-16 02:04:29,792: ERROR/MainProcess] Task cugbacm.views.Judge[fa18212d-667b-4f35-bb18-1664d02c6f1c] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7391/main.py'
+[2014-08-16 02:07:47,167: INFO/MainProcess] Received task: cugbacm.views.Judge[ccc5873c-13fe-425e-9dfc-b7beac2ad8ba]
+[2014-08-16 02:07:47,175: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7392
+[2014-08-16 02:07:47,188: ERROR/MainProcess] Task cugbacm.views.Judge[ccc5873c-13fe-425e-9dfc-b7beac2ad8ba] raised unexpected: IOError(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 421, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/cugbacm/oj/oj/cugbacm/views.py", line 40, in Judge
+    result = main(user_submit)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 325, in main
+    path = os.path.join(config.work_dir,'%s' % solution_id)
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 252, in run
+    'Compile Error': 7,
+  File "/home/cugbacm/oj/oj/cugbacm/core_hq.py", line 34, in check_dangerous_code
+    if language in ['python2', 'python3']:
+IOError: [Errno 2] No such file or directory: '/work/7392/main.py'
