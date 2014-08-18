@@ -201,7 +201,7 @@ def judge_one_mem_time(solution_id, problem_id, item, time_limit, mem_limit, lan
   #low_level()
 
   rst = lorun.run(runcfg)
-inputstr = input_line.split()
+  inputstr = input_line.split()
   input_data.close()
   temp_out_data.close()
   return rst
