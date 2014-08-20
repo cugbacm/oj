@@ -67,4 +67,10 @@ class Contest(models.Model):
   userList = models.CommaSeparatedIntegerField(max_length = 10000)
   status = models.CharField(max_length = 50)
   def __unicode__(self):
-    return self.title   
+    return self.title  
+
+class ContestSubmit(Submit):
+  contestID = models.IntegerField()
+  def __unicode__(self):
+    return str(self.contestID) + "/" + str(self.runID)
+

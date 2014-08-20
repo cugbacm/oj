@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    {% load pagination_tags %}  
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+
+    <title>Contest Submit List</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+   <script type="text/javascript" src="/site_media/dist/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+    <style type="text/css" title="currentStyle">
+        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
+	</style>
+	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+    <!-- Custom styles for this template -->
+    <!--<link href="signin.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+	</head>
+	<body style="padding-top:70px">
+	<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul class="nav nav-tabs">
+		<li><a href="/index/problemList">Home Page</a></li>
+		<li><a href="/index/contestList">Contest List</a></li>
+		<li><a href="/index/contest/{{contest.contestID}}">Problem List</a></li>
+    <li class="active"><a href="/index/contest/{{contest.contestID}}/submitList">Submit List</a></li>
+    <li><a href="/index/contest/{{contest.contestID}}/rankList">Rank List</a></li>
+		<li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
+      <span class="dropdown-arrow"></span>		
+      <ul class="dropdown-menu">
+				<li><a href="/index/userInfo/{{userID}}">User Info</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li><a href="/index/login">Login out</a></li>
+			</ul>
+		</li>
+    </ul>
+    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+      <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+    </marquee>
+    <div class="row">
+     <div class="col-md-offset-1">
+      <form class="form-inline" role="form" action="/index/submitList/" method="post">{% csrf_token %} 
+        <div class="form-group">
+          <label class="sr-only" for="userIDSearch">User ID</label>
+          <input type="text" class="form-control" id="userIDSearch" name="userIDSearch" placeholder="User ID" value={{userIDSearch}}>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="problemIDSearch">Problem ID</label>
+          <input type="text" class="form-control" id="problemIDSearch" name="problemIDSearch" placeholder="Problem ID" value={{problemIDSearch}}>
+        </div>
+        <div class="form-group">
+          <label for="resultSearch" class="sr-only">Result</label>
+            <select id="resultSearch" class="form-control" name="resultSearch" value={{resultSearch}}>
+              <option>Result</option>
+              <option>Accepted</option>
+              <option>Time Limit Exceeded</option>
+              <option>Memory Limit Exceeded</option>
+              <option>Wrong Answer</option>
+              <option>Runtime Error</option>
+              <option>Compile Error</option>
+              <option>Presentation Error</option>
+              <option>System Error</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label for="languageSearch" class="sr-only">Language</label>
+            <select id="languageSearch" class="form-control" name="languageSearch" value={{languageSearch}}>
+              <option>Language</option>
+              <option>g++</option>
+              <option>gcc</option>
+              <option>java</option>
+              <option>python2</option>
+              <option>python3</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+     </div>
+    </div>
+  </nav>
+    {% autopaginate submits 50 %}
+    <div class="table-responsive pagination-centered" style="padding-top:58px"> 
+
+		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
+			<thead>  
+				<tr>  
+					<th>RunID</th>
+					<th>UserID</th>  
+					<th>ProblemID</th>
+					<th>Status</th> 
+					<th>Memory</th>
+					<th>RunTime</th>
+					<th>CodeLength</th>  
+					<th>Language</th>
+					<th>Time Submit</th> 
+					<!--<th>Code</th>--> 
+				</tr>  
+		    </thead>  
+			<tbody>
+			{% for submit in submits %}
+        {% if submit.status == "Accepted" %}
+          <tr class="gradeA">
+            <td>{{submit.id}}</td>
+            <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
+            <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
+            <td>{{submit.status}}</td> 
+            <td>{{submit.memory}}</td>
+            <td>{{submit.runTime}}</td>
+            <td>{{submit.codeLength}}</td>
+            {% ifequal submit.userID userID %} 
+              <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+            {% else %}
+              <td>{{submit.language}}</td>
+            {% endifequal %}  
+            <td>{{submit.date}} {{submit.timestamp}}</td> 
+            <!--<td>{{submit.code}}</td> -->
+          </tr>
+        {% else %}
+          <tr class="gradeX">
+          <td>{{submit.id}}</td>
+          <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
+          <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
+          <td>{{submit.status}}</td> 
+          <td>{{submit.memory}}</td>
+          <td>{{submit.runTime}}</td>
+          <td>{{submit.codeLength}}</td>
+          {% ifequal submit.userID userID %} 
+            <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+          {% else %}
+            <td>{{submit.language}}</td>
+          {% endifequal %}  
+          <td>{{submit.date}} {{submit.timestamp}}</td> 
+          <!--<td>{{submit.code}}</td> -->
+        </tr>
+        {% endif %}
+			{% endfor %}  
+			</tbody>  
+		</table>
+    </div>
+    {% paginate %}
+    <script>
+	$(document).ready(function() {
+		$('#example').dataTable({
+			"bPaginate": false,
+			"aaSorting":[[0,'desc']],
+			"bFilter": false,
+		});
+	} );
+    </script>
+	</div>
+  </body>
+</html>

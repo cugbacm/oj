@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 import sys
+from datetime import *
+import time
 from django.shortcuts import render
 from django.template import Context, loader
-from cugbacm.models import User, Submit, Problem, Contest
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.forms import UserRegisterForm, SubmitForm, ProblemForm, LoginForm
 #from celery.decorators import task
@@ -15,14 +17,6 @@ from core_hq import UserSubmit
 import os
 import re
 # Create your views here.
-
-def ProcessMail(inputMail):  
-  if len(inputMail) > 7:
-    if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", inputMail) != None:
-      return True
-    else:
-      return False
-  return False 
 
 @task
 def Judge(submit):
@@ -135,6 +129,79 @@ def submitList(request):
     else:
       return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
   except:
+    return HttpResponseRedirect("/index/login")
+
+def contestSubmitList(request, contest_id):
+  try:
+    user = User.objects.get(userID = request.session['userID'])
+    try:
+      contest_submits = ContestSubmit.objects.filter(contestID = contest_id).order_by('-runID')
+    except:
+      contest_submits = ContestSubmit.objects.all()
+    #return HttpResponse("fuck")
+    if request.method == 'POST':
+      userIDSearch = request.POST['userIDSearch']
+      problemIDSearch = request.POST['problemIDSearch']
+      resultSearch = request.POST['resultSearch']
+      languageSearch = request.POST['languageSearch']
+      try:
+        if userIDSearch.strip():
+          contest_submits = contest_submits.filter(userID__contains = userIDSearch)
+        if problemIDSearch.strip():
+          contest_submits = contest_submits.filter(problemID__contains = problemIDSearch)
+        if resultSearch != "Result":
+          contest_submits = contest_submits.filter(status = resultSearch)
+        if languageSearch != "Language":
+          contest_submits = contest_submits.filter(language = languageSearch)
+
+        return render(request, 
+                      'cugbacm/contestSubmitList.html',
+                      {
+                        'submits': contest_submits,
+                        'contest': Contest.objects.get(contestID = contest_id),
+                        'userID':request.session['userID'],
+                        'userIDSearch': request.POST['userIDSearch'],
+                        'problemIDSearch': request.POST['problemIDSearch'],
+                        'resultSearch': request.POST['resultSearch'],
+                        'languageSearch': request.POST['languageSearch']
+                      })
+      except:
+        return render(request,
+                      'cugbacm/contestSubmitList.html',
+                      {
+                        'submits': {},
+                        'userID':request.session['userID'],
+                        'contest': Contest.objects.get(contestID = contest_id)
+                      })
+    else:
+      return render(request,
+                    'cugbacm/contestSubmitList.html',
+                    {
+                      'submits': contest_submits,
+                      'userID':request.session['userID'],
+                      'contest': Contest.objects.get(contestID = contest_id)
+                    })
+  except:
+    return HttpResponseRedirect("/index/login")
+
+def contestRankList(request, contest_id):
+  try:
+    user = User.objects.get(userID = request.session['userID'])
+    # todo: get rank_list
+    return render(request,
+                 'cugbacm/contestRankList.html',
+                 {
+                    'userID':request.session['userID'],
+                    'contest': Contest.objects.get(contestID = contest_id)
+                 })
+  except:
+    
+    return render(request,
+                 'cugbacm/contestRankList.html',
+                 {
+                    'userID':request.session['userID'],
+                    #'contest': Contest.objects.get(contestID = contest_id)
+                 })
     return HttpResponseRedirect("/index/login")
 
 def userList(request):
@@ -390,6 +457,7 @@ def contest(request, contest_id):
           request, 
           'cugbacm/contest.html', 
           {
+            'contest': contest,
             'problems': problems, 
             'userID': request.session["userID"],
             'problemID': problemID,
@@ -398,15 +466,55 @@ def contest(request, contest_id):
           }
         )
       except:
-        return render(request, 'cugbacm/contest.html', {'problems': {}, 'userID':request.session["userID"]})
+        return render(request,
+                      'cugbacm/contest.html',
+                      {
+                        'problems': {},
+                        'userID':request.session["userID"],
+                        'contest': contest
+                      })
     else:
-      return render(request, 'cugbacm/contest.html', {'problems': problems, 'userID':request.session["userID"]})
+      return render(request,
+                    'cugbacm/contest.html',
+                    {
+                      'problems': problems,
+                      'userID':request.session["userID"],
+                      'contest': contest
+                    })
   except:
     return HttpResponseRedirect("/index/login")
 def contestList(request):
   try:
     user = User.objects.get(userID = request.session['userID'])
     contests = Contest.objects.all()
+    for contest in contests:
+      start_date = contest.startTime
+      start_time = contest.startTimestamp
+      end_date = contest.endTime
+      end_time = contest.endTimestamp
+      today = date.today()
+      start = datetime(start_date.year,
+                       start_date.month,
+                       start_date.day,
+                       start_time.hour,
+                       start_time.minute,
+                       start_time.second)
+      
+      end = datetime(end_date.year,
+                      end_date.month,
+                      end_date.day,
+                      end_time.hour,
+                      end_time.minute,
+                      end_time.second)
+      now = datetime.now()
+      if start > now:
+        contest.status = "pending"
+      elif start <= now and end >= now:
+        contest.status = "running"
+      else:
+        contest.status = "passed"
+      contest.save()
+
     if request.method == 'POST':
       contestID = request.POST['contestID']
       contestTitle = request.POST['contestTitle']

@@ -26,10 +26,11 @@
     <div class="container">      
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		    <ul class="nav nav-tabs">
-          <li><a href="/index/problemList">Problem List</a></li>
-			    <li><a href="/index/submitList">Submit List</a></li>
-          <li class="active"><a href="/index/contestList">Contest List</a></li>
-		    	<li><a href="/index/userList">User List</a></li>
+          <li><a href="/index/problemList">Home Page</a></li>
+			    <li><a href="/index/contestList">Contest List</a></li>
+          <li class="active"><a href="#">Problem List</a></li>
+		    	<li><a href="/index/contest/{{contest.contestID}}/submitList">Submit List</a></li>
+		    	<li><a href="/index/contest/{{contest.contestID}}/rankList">Rank List</a></li>
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
