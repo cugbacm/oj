@@ -18,4 +18,5 @@ urlpatterns = patterns('',
   url(r'^problem/(?P<problem_id>\d+)$', views.problem, name = 'problem'),
   url(r'^showCode/(?P<submit_id>\d+)$', views.showCode, name = 'showCode'),
   url(r'^userInfo/(?P<user_id>\w+)$', views.userInfo, name = 'userInfo'),
+  url(r'^contest/(?P<contest_id>\d+)/problem/(?P<problem_id>\d+)$',views.contestProblem, name = 'contestProblem'),
   )
