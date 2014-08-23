@@ -68,16 +68,16 @@
 	
 
 	  <!-- content -->
-	  <h1 id="创建Github账号">创建Github账号</h1>
-<h1 id="创建托管于Github的仓库">创建托管于Github的仓库</h1>
-<h1 id="创建SSH密钥">创建SSH密钥</h1>
+	  <h2 id="创建Github账号">创建Github账号</h2>
+<h2 id="创建托管于Github的仓库">创建托管于Github的仓库</h2>
+<h2 id="创建SSH密钥">创建SSH密钥</h2>
 <p>在Git命令行窗口中输入：<br><code>ssh-keygen -t rsa -C &quot;your_email&quot;</code><br>完成之后，在<code>~/.ssh</code>文件夹中有两个文件，<code>id_rsa</code>和<code>id_rsa.pub</code>,其中<code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥。<br>把<code>id_rsa.pub</code>里面的东西全部复制下来，然后贴到github的帐号里。<br>在<code>account settings -&gt; ssh keys -&gt; add ssh key</code>，就可以了。<br>测试：<br><code>ssh -T git@github.com</code><br>出现下面的话就证明连接上了。  </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Warning: Permanently added <span class="keyword">the</span> RSA host key <span class="keyword">for</span> IP address '<span class="number">192.30</span><span class="number">.252</span><span class="number">.131</span>' <span class="keyword">to</span> <span class="keyword">the</span> <span class="type">list</span> <span class="keyword">of</span> known hosts.  </div><div class="line">Hi yourname! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</div></pre></td></tr></table></figure>
 
-<h1 id="设置username_,_email">设置<code>username</code> , <code>email</code></h1>
+<h2 id="设置username_,_email">设置<code>username</code> , <code>email</code></h2>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global <span class="literal">user</span>.name <span class="string">"your name"</span>  </div><div class="line">git config --global <span class="literal">user</span>.email <span class="string">"your_email@youremail.com"</span></div></pre></td></tr></table></figure>
 
-<h1 id="更新日志">更新日志</h1>
+<h2 id="更新日志">更新日志</h2>
 <ul>
 <li>2014年08月23日 重新整理，等待详细补充。</li>
 </ul>
@@ -118,13 +118,11 @@
 	
 		
 			
-			
 		
 	
 		
 			
 			
-			
 		
 	
 		
@@ -137,12 +135,14 @@
 	
 		
 	
+		
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+	
+		<li class="prev"><a href="/oj/2014/07/12/Git-intro/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
 	
 	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/oj/2014/07/12/Git-intro/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
