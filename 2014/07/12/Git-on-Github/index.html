@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Git 学习日志 | OJ 2.0</title>
+  <title>基于Github的Git应用 | OJ 2.0</title>
   <meta name="author" content="CUGB">
   
-  <meta name="description" content="基于linux开始了解git的作用
-git 的一些操作
-git clone 本地克隆远程git版本库git init和git remote 手动的版本库更新（两者都是对git的初始化）git pull 从其他版本库更新代码git add 将当前操作加入版本库git rm 删除git commit 提">
+  <meta name="description" content="创建Github账号
+创建托管于Github的仓库
+创建SSH密钥
+在Git命令行窗口中输入：ssh-keygen -t rsa -C &amp;quot;your_email&amp;quot;完成之后，在~/.ssh文件夹中有两个文件，id_rsa和id_rsa.pub,其中id_rsa是私钥，id_rsa.p">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Git 学习日志"/>
+  <meta property="og:title" content="基于Github的Git应用"/>
   <meta property="og:site_name" content="OJ 2.0"/>
 
   
@@ -45,7 +46,7 @@ git clone 本地克隆远程git版本库git init和git remote 手动的版本库
   <div class="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Git 学习日志</h1>
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - 基于Github的Git应用</h1>
 </div>		
 
 <div class="row page">
@@ -67,9 +68,19 @@ git clone 本地克隆远程git版本库git init和git remote 手动的版本库
 	
 
 	  <!-- content -->
-	  <p>基于linux开始了解git的作用</p>
-<h1 id="git_的一些操作">git 的一些操作</h1>
-<p><code>git clone</code> 本地克隆远程git版本库<br><code>git init</code>和<code>git remote</code> 手动的版本库更新（两者都是对git的初始化）<br><code>git pull</code> 从其他版本库更新代码<br><code>git add</code> 将当前操作加入版本库<br><code>git rm</code> 删除<br><code>git commit</code> 提交<br><code>git push</code> 将本地的代码更新上远程版本库<br><code>git log</code> 查看历史日志 （总感觉啥都没有。。）<br><code>git revert</code> 还原版本</p>
+	  <h1 id="创建Github账号">创建Github账号</h1>
+<h1 id="创建托管于Github的仓库">创建托管于Github的仓库</h1>
+<h1 id="创建SSH密钥">创建SSH密钥</h1>
+<p>在Git命令行窗口中输入：<br><code>ssh-keygen -t rsa -C &quot;your_email&quot;</code><br>完成之后，在<code>~/.ssh</code>文件夹中有两个文件，<code>id_rsa</code>和<code>id_rsa.pub</code>,其中<code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥。<br>把<code>id_rsa.pub</code>里面的东西全部复制下来，然后贴到github的帐号里。<br>在<code>account settings -&gt; ssh keys -&gt; add ssh key</code>，就可以了。<br>测试：<br><code>ssh -T git@github.com</code><br>出现下面的话就证明连接上了。  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Warning: Permanently added <span class="keyword">the</span> RSA host key <span class="keyword">for</span> IP address '<span class="number">192.30</span><span class="number">.252</span><span class="number">.131</span>' <span class="keyword">to</span> <span class="keyword">the</span> <span class="type">list</span> <span class="keyword">of</span> known hosts.  </div><div class="line">Hi yourname! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</div></pre></td></tr></table></figure>
+
+<h1 id="设置username_,_email">设置<code>username</code> , <code>email</code></h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global <span class="literal">user</span>.name <span class="string">"your name"</span>  </div><div class="line">git config --global <span class="literal">user</span>.email <span class="string">"your_email@youremail.com"</span></div></pre></td></tr></table></figure>
+
+<h1 id="更新日志">更新日志</h1>
+<ul>
+<li>2014年08月23日 重新整理，等待详细补充。</li>
+</ul>
 	  
 
 	  <div>
@@ -86,36 +97,11 @@ git clone 本地克隆远程git版本库git init和git remote 手动的版本库
 		
 	
 		
-			
-		
 	
 		
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-		
-	
-		
-	
-		
-	
-		
-			
-			
 		
 	
 		
@@ -133,13 +119,30 @@ git clone 本地克隆远程git版本库git init和git remote 手动的版本库
 		
 			
 			
-			
+		
 	
-		<li class="prev"><a href="/oj/2014/07/23/Git-learn-easy/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
 	
 	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/oj/2014/07/07/git-install-operation/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next"><a href="/oj/2014/07/12/Git-intro/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>

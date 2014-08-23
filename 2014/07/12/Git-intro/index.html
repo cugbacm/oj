@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git的安装及简单应用 | OJ 2.0</title>
+  <title>Git介绍 | OJ 2.0</title>
   <meta name="author" content="CUGB">
   
-  <meta name="description" content="1、第一次在root下输入  apt-get install git 后提示有错误：ubuntu-E:Encountered a section with no Package: header在网上搜了一下，是因为在软件库中找不到软件包，所以要更新软件库。方法如下：终端中输入以下两条命令：
-12su">
+  <meta name="description" content="安装
+Linux下
+打开命令行，输入：apt-get install git如果报错：ubuntu-E:Encountered a section with no Package: header，则需要更新软件库，输入以下代码：
+12sudo rm /var/lib/apt/lists/* -vfs">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="git的安装及简单应用"/>
+  <meta property="og:title" content="Git介绍"/>
   <meta property="og:site_name" content="OJ 2.0"/>
 
   
@@ -44,7 +46,7 @@
   <div class="container">
 	<div class="content">
 	  <div class="page-header">		
-  <h1><a class="brand" href="/oj/">OJ 2.0</a> - git的安装及简单应用</h1>
+  <h1><a class="brand" href="/oj/">OJ 2.0</a> - Git介绍</h1>
 </div>		
 
 <div class="row page">
@@ -66,12 +68,22 @@
 	
 
 	  <!-- content -->
-	  <p>1、第一次在root下输入  <code>apt-get install git</code> 后提示有错误：<code>ubuntu-E:Encountered a section with no Package: header</code><br>在网上搜了一下，是因为在软件库中找不到软件包，所以要更新软件库。方法如下：<br>终端中输入以下两条命令：</p>
+	  <h1 id="安装">安装</h1>
+<h2 id="Linux下">Linux下</h2>
+<p>打开命令行，输入：<code>apt-get install git</code><br>如果报错：<code>ubuntu-E:Encountered a section with no Package: header</code>，则需要更新软件库，输入以下代码：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> rm /var/lib/apt/lists/* -vf</div><div class="line"><span class="built_in">sudo</span> apt-get update</div></pre></td></tr></table></figure>
 
-<p>大约几分钟，执行完了命令之后，软件更新器应该会自动要求更新的，更新便是。</p>
-<p>2、然后按照以下网址中的内容进行操作即可<br><a href="http://cugbacm.github.io/oj/2014/07/07/git-install-operation/" target="_blank" rel="external">http://cugbacm.github.io/oj/2014/07/07/git-install-operation/</a></p>
-<p>git的其他命令还在学习中</p>
+<h2 id="Windows下">Windows下</h2>
+<h3 id="命令行界面">命令行界面</h3>
+<p>可以下载msysGit,  像在Linux上一样使用命令行控制。</p>
+<h3 id="图形化界面">图形化界面</h3>
+<p>下载TortoiseGit对msysGit进行配置。这时，鼠标右键菜单会有相应的命令，且显示图形界面。<br>或者，使用Github提供的客户端——<code>Github Windows</code></p>
+<h1 id="基本操作">基本操作</h1>
+<p><code>git clone</code> 本地克隆远程git版本库<br><code>git init</code>和<code>git remote</code> 手动的版本库更新（两者都是对git的初始化）<br><code>git pull</code> 从其他版本库更新代码<br><code>git add</code> 将当前操作加入版本库<br><code>git rm</code> 删除<br><code>git commit</code> 提交<br><code>git push</code> 将本地的代码更新上远程版本库<br><code>git log</code> 查看历史日志<br><code>git revert</code> 还原版本</p>
+<h1 id="更新日志">更新日志</h1>
+<ul>
+<li>2014年08月23日 重新整理，细节部分有待完善。</li>
+</ul>
 	  
 
 	  <div>
@@ -88,36 +100,11 @@
 		
 	
 		
-			
-			
-		
 	
 		
 	
 		
 	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			
-			
-			
-		
-	
-		
-	
-		
-			
 		
 	
 		
@@ -136,12 +123,29 @@
 			
 		
 	
+		
+			
+			
+		
 	
-		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		<li class="prev"><a href="/oj/2014/07/12/Git-on-Github/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
 	
 	<li><a href="/oj/"><i class="fa fa-archive"></i>Home</a></li>
 	
-		<li class="next"><a href="/oj/2014/07/23/Git-learn-easy/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		<li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
 	
 </ul>
 </div>
