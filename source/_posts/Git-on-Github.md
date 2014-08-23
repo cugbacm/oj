@@ -4,9 +4,9 @@ tags: [Git]
 categories: Git
 toc: true
 ---
-# 创建Github账号
-# 创建托管于Github的仓库
-# 创建SSH密钥
+## 创建Github账号
+## 创建托管于Github的仓库
+## 创建SSH密钥
 在Git命令行窗口中输入：
 `ssh-keygen -t rsa -C "your_email"`
 完成之后，在`~/.ssh`文件夹中有两个文件，`id_rsa`和`id_rsa.pub`,其中`id_rsa`是私钥，`id_rsa.pub`是公钥。
@@ -19,11 +19,11 @@ toc: true
 Warning: Permanently added the RSA host key for IP address '192.30.252.131' to the list of known hosts.  
 Hi yourname! You've successfully authenticated, but GitHub does not provide shell access.  
 ```
-# 设置`username` , `email`
+## 设置`username` , `email`
 ```
 git config --global user.name "your name"  
 git config --global user.email "your_email@youremail.com"  
 ```
 
-# 更新日志
+## 更新日志
 - 2014年08月23日 重新整理，等待详细补充。
