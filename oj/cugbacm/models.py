@@ -11,6 +11,7 @@ class User(models.Model):
   nickname = models.CharField(max_length = 100)
   accepted = models.IntegerField(default = 0)
   total = models.IntegerField(default = 0)
+  acList = models.CommaSeparatedIntegerField(max_length = 10000)
   def __unicode__(self):
     return self.userID
 

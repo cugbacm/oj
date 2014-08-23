@@ -46,6 +46,7 @@ def Judge(submit):
   if submit.status == "Accepted":
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
       user.accepted = user.accepted + 1
+      user.acList.add(problemID)
     problem.ac = problem.ac + 1
   elif submit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
@@ -237,6 +238,7 @@ def userInfo(request, user_id):
     return HttpResponseRedirect("/index/login")
   other = User.objects.get(userID = user_id)
   if request.method == 'POST':
+   if request.POST.has_key("Modify"):
       userID = request.session['userID']
       oldPassword = request.POST['oldPassword']
       password = request.POST['password']
@@ -267,9 +269,40 @@ def userInfo(request, user_id):
             user.save()
             other = User.objects.get(userID = user_id)
             return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user':user, 'other':other, 'id':user_id})
+   else:
+	curproblemList = user.acList.split(',')
+	otherproblemList = other.acList.split(',')
+	curproblemList.sort()
+	otherproblemList.sort()
+	bothAccepted = search_same(curproblemList, otherproblemList)
+	onlyAAccepted = curproblemList
+	onlyBAccepted = otherproblemList
+        return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })	
   else:
     return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id })
     
+
+def search_same(A,B):
+    AB = []
+    start = 0
+    len_B = len(B)
+    for x in A:
+        for i in range(start,len_B):
+            y = B[i]
+            if x == y:
+                AB.append(x)
+		len_b = len(B)
+            elif x < y:
+                start = i
+                break;
+            else:
+                pass
+    for x in AB:
+	A.remove(x)
+    for y in AB:
+	B.remove(y)
+    return AB
+
 def register(request):
   if request.method == 'POST':
     userID = request.POST['userID']
