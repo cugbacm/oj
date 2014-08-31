@@ -67,12 +67,12 @@ def contestProblem(request, contest_id, problem_id):
   except:
     return HttpResponseRedirect('/index/login')
   problem = Problem.objects.get(problemID = problem_id)
-  submits  = Submit.objects.filter(problemID = problem_id, userID = user.userID).order_by("-id")
+  submits  = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem_id, userID = user.userID).order_by("-id")
   if request.method == 'POST':
     code = request.POST['code']
     language = request.POST['language']
     for i in range(1):
-      submit = Submit(
+      the_contest_submit = ContestSubmit(
         runID = 111, 
         userID = request.session["userID"],
         problemID = problem_id,
@@ -81,15 +81,16 @@ def contestProblem(request, contest_id, problem_id):
         runTime = 1000,
         codeLength = 100,
         language = language,
+	contestID = contest_id,
         code = code)
-      submit.save()
-      Judge.delay(submit)
+      the_contest_submit.save()
+      Judge.delay(the_contest_submit)
     
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:
       submit = ContestSubmit.objects.get(id = request.GET.get('submit'))
-      if submit.userID == user.userID and str(submit.problemID) == str(problem_id):
+      if submit.userID == user.userID and str(submit.problemID) == str(problem_id) and submit.contestID == (contest_id):
         return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'contestID':contest_id})
       else:
         return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
