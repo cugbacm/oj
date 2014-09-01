@@ -74,4 +74,9 @@ class ContestSubmit(Submit):
   contestID = models.IntegerField()
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.runID)
+class Contestant(User):
+  contestID = models.IntegerField()
+  penalty = models.TimeField()
+  def __unicode__(self):
+    return str(self.contestID) + "/" + str(self.userID)
 

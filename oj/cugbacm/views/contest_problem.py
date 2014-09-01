@@ -2,12 +2,12 @@
 from datetime import *
 import time
 from django.shortcuts import render
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit,Contestant
 from django.http import HttpResponse, HttpResponseRedirect
 from celery.task import task
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
-
+#import contest_rank_update
 @task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)
@@ -59,6 +59,7 @@ def Judge(submit):
   user.total = user.total + 1
   user.save()
   problem.save()
+  contestRankUpte(submit)
   return submit.status
 
 def contestProblem(request, contest_id, problem_id):
@@ -84,7 +85,7 @@ def contestProblem(request, contest_id, problem_id):
         code = code)
       submit.save()
       Judge.delay(submit)
-    
+      contest_rank_update(submit)
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:
@@ -95,4 +96,44 @@ def contestProblem(request, contest_id, problem_id):
         return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
     except:
       return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits,'contestID':contest_id})
-  return render(request, 'cugbacm/contestProblem.html',{'problem':problem, 'userID':user.userID, 'submits':submits,'contestID':contest_id})
+  return render(request, 'cugbacm/contestProblem.html',{'problem':probilem, 'userID':user.userID, 'submits':submits,'contestID':contest_id})
+
+
+def contestRankUpdate(ContestSubmit):
+    user_id = ContestSubmit.userID
+    contestant = Contestant.objects.get(userID = user_id)
+    problem_id = ContestSubmit.problemID
+    contest_problem = Problem.objects.get(problemID = problem_id)
+    if ContestSubmit.status == "Accepted":
+        contestant.ac = contest_user.ac + 1
+        if contestant.acList == None:
+          contestant.acList = ""
+        contestant.acList += str(ContestSubmit.problemID)+","
+        contest_problem.ac = contest_problem.ac + 1
+        contestant.penalty = contestant.penalty + "00:00:20"
+    elif ContestSubmit.status == "Time Limit Exceeded":
+        contest_problem.tle = contest_problem.tle + 1
+        contestant.time = contestant.penalty + 20
+    elif ContestSubmit.status == "Memory Limit Exceeded":
+        contest_problem.mle = contest_problem.mle + 1
+        contestant.time = contestant.penalty + 20
+    elif ContestSubmit.status == "Wrong Answer":
+        contest_problem.wa = contest_problem.wa + 1
+        contestant.time = contestant.penalty + 20
+    elif ContestSubmit.status == "Runtime Error":
+        contesr_problem.re = contest_problem.re + 1
+        contestant.time = contestant.penalty + 20
+    elif ContestSubmit.status == "Compile Error":
+        contest_problem.ce = contest_problem.pe + 1
+        contestant.time = contestant.penalty + 20
+    elif ContestSubmit.status == "Presentation Error":
+        contest_problem.pe = contest_problem.pe + 1
+        contestant.time = contestant.penalty + 20
+    elif ContestSubmit.status == "System Error":
+        contest_problem.se = contest_problem.se + 1
+        contestant.time = contestant.penalty + 20
+    contest_problem.totalSubmission = contest_problem.totalSubmission + 1
+    contestant.total = contest_user.total + 1
+    contestant.save()
+    contest_problem.save()
+
