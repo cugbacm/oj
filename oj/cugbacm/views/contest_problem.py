@@ -84,15 +84,10 @@ def contestProblem(request, contest_id, problem_id):
         language = language,
 	contestID = contest_id,
         code = code)
-<<<<<<< HEAD
       submit.save()
       Judge.delay(submit)
       contest_rank_update(submit)
-=======
-      the_contest_submit.save()
-      Judge.delay(the_contest_submit)
     
->>>>>>> f37ac45a3abdcd52e5499405248eb4797a641505
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:
