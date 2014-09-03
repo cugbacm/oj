@@ -129,9 +129,9 @@
         <label for="" class="col-sm-5 control-label">&nbsp;</label>
       </div> 
       <div class = "form-group">
-     	 <div class="col-sm-offset-5 col-sm-7">
-         	 <button type="submit" class="btn btn-info" name = "Compare" id = "Compare" value = "Compare"> Compare with me</button>
-     	 </div>
+       <div class="col-sm-offset-5 col-sm-7">
+           <button type="submit" class="btn btn-info" name = "Compare" id = "Compare" value = "Compare"> Compare with me</button>
+       </div>
       </div>
       <div class="form-group"> 
        <label for="" class="col-sm-5 control-label">UserID</label>
@@ -175,38 +175,38 @@
     {% endif %}
     {% if compare == 1 %}
     <div class="col-md-7 col-md-offset-0">
-	<div class="form-group">
-       	        <label for="" class="col-sm-5 control-label">&nbsp;</label>
+  <div class="form-group">
+                <label for="" class="col-sm-5 control-label">&nbsp;</label>
         </div>
-	<div class="form-group">
-              	<label for="" class="col-sm-5 control-label">&nbsp;</label>
+  <div class="form-group">
+                <label for="" class="col-sm-5 control-label">&nbsp;</label>
         </div>
-	<table border = "1" height="410px" width = "600px">
-		<tr>
-			<td width = "280px">{{userID}} and {{other.userID}} both Accepted:</td>
-			<td>
-				{%for problem in bothAccepted %}
-				<a href = "/index/problem/{{problem}}">{{problem}}</a>,
-				{% endfor %}	
-			</td>
-		</tr>
-		<tr>
-			<td>Only {{userID}} Accepted:</td>
-			<td>
-				{% for A in onlyAAccepted %}
-				<a href = "/index/problem/{{A}}">{{A}}</a>,
-				{% endfor %}
-			</td>
-		</tr>
-		<tr>
-                        <td>Only {{other.userID}} Accepted:</td>
-                        <td>
-                                {% for B in onlyBAccepted %}
-                                <a href = "/index/problem/{{B}}">{{B}}</a>,
-                                {% endfor %}
-                        </td>
-		</tr>
-	</table>
+  <table border = "1" height="410px" width = "600px">
+    <tr>
+      <td width = "280px">{{userID}} and {{other.userID}} both Accepted:</td>
+      <td>
+        {%for problem in bothAccepted %}
+        <a href = "/index/problem/{{problem}}">{{problem}}</a>,
+        {% endfor %}  
+      </td>
+    </tr>
+    <tr>
+      <td>Only {{userID}} Accepted:</td>
+      <td>
+        {% for A in onlyAAccepted %}
+        <a href = "/index/problem/{{A}}">{{A}}</a>,
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+          <td>Only {{other.userID}} Accepted:</td>
+          <td>
+           {% for B in onlyBAccepted %}
+          <a href = "/index/problem/{{B}}">{{B}}</a>,
+          {% endfor %}
+          <td>
+    </tr>
+  </table>
     </div>
     {% endif %}
    </div>

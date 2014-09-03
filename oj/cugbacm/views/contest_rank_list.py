@@ -7,7 +7,7 @@ from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, Contes
 from django.http import HttpResponse, HttpResponseRedirect
 
 def contestRankList(request, contest_id):
-   try:
+  try:
     user = User.objects.get(userID = request.session['userID'])
     # todo: get rank_list
     contest_rank_list = Contestant.objects.filter(contestID = contest_id).order_by('-penalty')
@@ -16,8 +16,8 @@ def contestRankList(request, contest_id):
                  {
                     'userID':request.session['userID'],
                     'contest': Contest.objects.get(contestID = contest_id),
-		    'contest_rank_list':contest_rank_list, 
-		})
+        'contest_rank_list':contest_rank_list, 
+    })
    except: 
     return render(request,
                  'cugbacm/contestRankList.html',

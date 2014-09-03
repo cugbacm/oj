@@ -73,7 +73,7 @@ def contestProblem(request, contest_id, problem_id):
     code = request.POST['code']
     language = request.POST['language']
     for i in range(1):
-      the_contest_submit = ContestSubmit(
+      submit = ContestSubmit(
         runID = 111, 
         userID = request.session["userID"],
         problemID = problem_id,
@@ -82,19 +82,16 @@ def contestProblem(request, contest_id, problem_id):
         runTime = 1000,
         codeLength = 100,
         language = language,
-	contestID = contest_id,
-        code = code()
-	)
-        submit.save()
-        Judge.delay(submit)
-        contest_rank_update(submit)
-        the_contest_submit.save()
-    
+  contestID = contest_id,
+        code = code)
+      submit.save()
+      Judge.delay(submit)
+      contest_rank_update(submit)
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:
       submit = ContestSubmit.objects.get(id = request.GET.get('submit'))
-      if submit.userID == user.userID and str(submit.problemID) == str(problem_id) and submit.contestID == (contest_id):
+      if str(submit.userID) == str(user.userID) and str(submit.problemID) == str(problem_id) and str(submit.contestID) == str(contest_id):
         return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'contestID':contest_id})
       else:
         return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+!/usr/bin/env python
 from django.shortcuts import render
 from django.template import Context, loader
 from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
@@ -54,7 +54,7 @@ def userInfo(request, user_id):
       bothAccepted = search_same(curproblemList, otherproblemList)
       onlyAAccepted = curproblemList
       onlyBAccepted = otherproblemList
-      return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })	
+      return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })  
   else:
     return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id })
     
@@ -68,15 +68,15 @@ def search_same(A,B):
             y = B[i]
             if x == y:
                 AB.append(x)
-		len_b = len(B)
+    len_b = len(B)
             elif x < y:
                 start = i
                 break;
             else:
                 pass
     for x in AB:
-	A.remove(x)
+  A.remove(x)
     for y in AB:
-	B.remove(y)
+  B.remove(y)
     return AB
 
