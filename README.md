@@ -41,7 +41,43 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
 #各个模块详细文档（有待各位完善）
 ##nginx
 ###nginx部署
+  1.安装
+  sudo apt-get install nginx
+  2. 查看nginx 状态
+  ps -ef | grep nginx
+  其中 master是主进程号
+  3.查看nginx.conf是否配置正确
+  nginx -t -c /etc/nginx/nginx.conf
+  4.启动
+  nginx -c /etc/nginx/nginx.conf//就是主进程的路径
+  还有好几种启动方法。
+  5.关闭
+  kill -QUIT 主进程号
+  或者pkill -9 nginx
+  主进程号可以通过步骤2查到。
+  6.重启
+  /usr/sbin/nginx -s reload
+  7.查看版本
+  nginx -v
+  注意：以上如果出错，就加sudo即可。
+
 ###nginx配置
+  默认路径 /etc/nginx/nginx.conf
+  oj路径  /usr/local/openresty/nginx/conf/nginx.conf
+  #运行用户 
+  user www-data;   
+  #启动进程,通常设置成和cpu的数量相等
+  worker_processes  1;
+  #全局错误日志及PID文件
+  error_log  /var/log/nginx/error.log;
+  pid        /var/run/nginx.pid;
+  #工作模式及连接数上限
+  events {
+    use   epoll;             
+    #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能
+    worker_connections  1024;#单个后台worker process进程的最大并发链接数
+    # multi_accept on;
+}
 ###nginx调优
 ##django
 ###django部署
