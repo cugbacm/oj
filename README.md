@@ -78,7 +78,17 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
     worker_connections  1024;#单个后台worker process进程的最大并发链接数
     # multi_accept on;
 }
+  这里是django的配置，使用django渲染
+  location /{
+  include uwsgi_params;
+  uwsgi_pass 127.0.0.1:8077;
+}
+  匹配/index/login最后一个/后面的内容，如果是problemList则跳转到/index/problemList。
+  location = / {
+  rewrite ^ ip/index/login ;
+}
 ###nginx调优
+  
 ##django
 ###django部署
 ###oj2.0中的模型和模板
