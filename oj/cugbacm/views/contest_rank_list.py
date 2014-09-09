@@ -18,7 +18,7 @@ def contestRankList(request, contest_id):
                     'contest': Contest.objects.get(contestID = contest_id),
         'contest_rank_list':contest_rank_list, 
     })
-   except: 
+  except: 
     return render(request,
                  'cugbacm/contestRankList.html',
                  {

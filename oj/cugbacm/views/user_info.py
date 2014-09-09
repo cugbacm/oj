@@ -1,4 +1,4 @@
-!/usr/bin/env python
+#!/usr/bin/env python
 from django.shortcuts import render
 from django.template import Context, loader
 from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
@@ -60,23 +60,21 @@ def userInfo(request, user_id):
     
 
 def search_same(A,B):
-    AB = []
-    start = 0
-    len_B = len(B)
-    for x in A:
-        for i in range(start,len_B):
-            y = B[i]
-            if x == y:
-                AB.append(x)
-    len_b = len(B)
-            elif x < y:
-                start = i
-                break;
-            else:
-                pass
-    for x in AB:
-  A.remove(x)
-    for y in AB:
-  B.remove(y)
-    return AB
+  AB = []
+  start = 0
+  len_B = len(B)
+  for x in A:
+    for i in range(start,len_B):
+      y = B[i]
+      if x == y:
+        AB.append(x)
+        len_b = len(B)
+      elif x < y:
+        start = i
+  
+  for x in AB:
+    A.remove(x)
+  for y in AB:
+    B.remove(y)
+  return AB
 
