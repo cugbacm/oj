@@ -95,7 +95,7 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
 pip install Django==1.6.5  
 测试是否安装成功
 :~$python 
->>> import django  
+>>>import django  
 >>> django.VERSION  
 (1, 6, 5, 'final', 0) 
 2.
