@@ -91,6 +91,15 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
   
 ##django
 ###django部署
+1.下载安装django  
+pip install Django==1.6.5  
+测试是否安装成功
+:~$python 
+>>> import django  
+>>> django.VERSION  
+(1, 6, 5, 'final', 0) 
+2.
+
 ###oj2.0中的模型和模板
 ###django+uwsgi+nginx部署
 ##mysql
