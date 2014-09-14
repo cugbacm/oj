@@ -123,11 +123,16 @@ pip install Django==1.6.5
   其他的参考：http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html   或者百度  
 
 ###django中的mysql接口
+  在创建的项目中的settings.py进行修改就行了。
   
+##rabbitMQ  
+###rabbitMQ部署  
+  sudo apt-get install rabbitmq-server  
+  测试：    
+  参考：http://www.rabbitmq.com/tutorials/tutorial-one-python.html  
   
-##rabbitMQ
-###rabbitMQ部署
-###rabbitMQ配置
+###rabbitMQ配置  
+
 ##celery
 ###celery部署
 ###celery+django+rabbitMQ配置
