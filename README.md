@@ -109,7 +109,10 @@ pip install Django==1.6.5
 ###oj2.0中的模型和模板
 ###django+uwsgi+nginx部署
 ##mysql
-  ###mysql部署
+  ###mysql部署  
+  安装mysql-server    
+  sudo apt-get install mysql-server  
+  好像下面的都不用装，直接跳过。。。。。。
   1.先到网站上下载最新的python-mysql
   链接：http://www.djangoproject.com/r/python-mysql/   
   安装过程中需要先安装python  这里就不多说了，自己百度吧，超简单
