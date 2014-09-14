@@ -92,19 +92,55 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
 ##django
 ###django部署
 1.下载安装django  
+方法1： 
 pip install Django==1.6.5  
 测试是否安装成功
 :~$python 
 >>>import django  
 >>> django.VERSION  
 (1, 6, 5, 'final', 0) 
-2.
+2.方法二： 
+    大多数人会考虑从 http://www.djangoproject.com/download/ 下载安装最新的官方发布版。Django 使用了 Python 标准的 distutils 安装法，在 Linux 平台可能包括如下步骤：   
+    下载 tar 安装包，其文件名可能会是 Django-0.96.tar.gz 。   
+    tar xzvf Django-*.tar.gz 。
+    cd Django-* 。  
+    sudo python setup.py install 。  
 
 ###oj2.0中的模型和模板
 ###django+uwsgi+nginx部署
 ##mysql
-###mysql部署
+  ###mysql部署
+  1.先到网站上下载最新的python-mysql
+  链接：http://www.djangoproject.com/r/python-mysql/   
+  安装过程中需要先安装python  这里就不多说了，自己百度吧，超简单
+  2.下载解压包之后  
+    1. 首先确认python的版本为2.3.4以上，如果不是需要升级python的版本  
+     python -V   检查python版本   
+    2. 安装mysql, 比如安装在/usr/local/mysql目录下  
+    3. 下载 MySQL-python-1.2.2.tar.gz  
+    地址 https://sourceforge.net/projects/mysql-python/  （这个版本好像是不是最新的，用上面那个链接最好）
+    4. 安装 MySQl-python  
+    tar xvzf MySQL-python-1.2.2.tar.gz  
+    cd MySQL-python-1.2.2  
+    vi site.cfg  
+    把 mysql_config = /usr/local/mysql/bin/mysql_config 这一行前的#去掉，并且把mysql_config的路径设置正确  
+    注意：这里的myqsl_config 可以使用 find / -name mysql_config 找到路径  
+    python setup.py build  
+    sudo python setup.py install  
+    安装结束  
+    5. 测试  
+    运行： python  
+    import MySQLdb   
+    如果没有报错，说明安装好了。   
+    
+    常见错误：  
+    1.mysql_config 没找到  
+    sudo apt-get install libmysqld-dev  
+    2.Python.h没有这个文件 
+    sudo apt-get install python-dev 
+
 ###django中的mysql接口
+  
 ##rabbitMQ
 ###rabbitMQ部署
 ###rabbitMQ配置
