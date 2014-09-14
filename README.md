@@ -120,7 +120,7 @@ pip install Django==1.6.5
   4.  改变数据库：use oj;  
   5.  显示数据库：show databases ; 
   6.  显示表： show tables;  
-  其他的参考：http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html或或者百度
+  其他的参考：http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html   或者百度  
 
 ###django中的mysql接口
   
