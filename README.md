@@ -136,6 +136,13 @@ pip install Django==1.6.5
 ##celery
 ###celery部署
 ###celery+django+rabbitMQ配置
+
+测试+部署：  
+  参考：http://blog.csdn.net/dipolar/article/details/22162863  
+  
+配额：直接从服务器上看吧
+  
+  
 ##core
 ###判题流程
 ###判题内核对外接口
@@ -143,5 +150,19 @@ pip install Django==1.6.5
 ###js
 ###html
 ###bootstrap
+
+设置vim，实现每次tab自动空4格
+参考：http://www.2cto.com/os/201306/217523.html
+cd /root
+vim .vimrc
+复制下面文本
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4 
+set noexpandtab 
+set nu 
+set autoindent 
+set cindent 
+
 
 #本来是想将整个架构每个模块都详细写一写，后来考虑到可以交给学弟学妹们找感兴趣的模块边学边记录文档到这里，既能完善我们的文档、又能让学弟学妹们学到对应的知识，所以每个模块的文档有待学弟学妹们来完善了。（其实就是懒，找那么多借口-_-!，期间遇到任何问题联系763687347,一起讨论）
