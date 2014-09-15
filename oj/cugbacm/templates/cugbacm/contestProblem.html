@@ -112,12 +112,15 @@
                     <label for="language" class="col-md-2 control-label">Language</label>
                       <div class="col-md-5 col-md-offset-1">
                         <select id="language" class="form-control" name="language">
-                          <option>g++</option>
-                          <option>gcc</option>
-                          <option>java</option>
-                          <option>python2</option>
-                          <option>python3</option>
-                        </select>
+                       {% for var in languages %}
+                          {% ifequal var submit.language %}
+                            <option selected>{{var}}</option>
+                          {% else %}
+                            <option>{{var}}</option>
+                          {% endifequal %}
+                        {% endfor %}
+
+			 </select>
                       </div>
                   </div>
                   <div class="form-group">
