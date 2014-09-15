@@ -38,67 +38,101 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
   2. 将代码git下来。
   3. 搞吧。
 
-#各个模块详细文档（有待各位完善）
-##nginx
-###nginx部署
-  1.安装
-  sudo apt-get install nginx
-  2. 查看nginx 状态
-  ps -ef | grep nginx
-  其中 master是主进程号
-  3.查看nginx.conf是否配置正确
-  nginx -t -c /etc/nginx/nginx.conf
-  4.启动
-  nginx -c /etc/nginx/nginx.conf//就是主进程的路径
-  还有好几种启动方法。
-  5.关闭
-  kill -QUIT 主进程号
-  或者pkill -9 nginx
-  主进程号可以通过步骤2查到。
-  6.重启
-  /usr/sbin/nginx -s reload
-  7.查看版本
-  nginx -v
-  注意：以上如果出错，就加sudo即可。
+#各个模块详细文档（有待各位完善） 
+##nginx 
+###nginx部署 
+  1.安装 
+  sudo apt-get install nginx  
+  2. 查看nginx 状态  
+  ps -ef | grep nginx  
+  其中 master是主进程号  
+  3.查看nginx.conf是否配置正确  
+  nginx -t -c /etc/nginx/nginx.conf  
+  4.启动  
+  nginx -c /etc/nginx/nginx.conf//就是主进程的路径  
+  还有好几种启动方法。  
+  5.关闭  
+  kill -QUIT 主进程号  
+  或者pkill -9 nginx  
+  主进程号可以通过步骤2查到。  
+  6.重启  
+  /usr/sbin/nginx -s reload  
+  7.查看版本  
+  nginx -v  
+  注意：以上如果出错，就加sudo即可。  
 
-###nginx配置
-  默认路径 /etc/nginx/nginx.conf
-  oj路径  /usr/local/openresty/nginx/conf/nginx.conf
-  #运行用户 
-  user www-data;   
-  #启动进程,通常设置成和cpu的数量相等
-  worker_processes  1;
-  #全局错误日志及PID文件
-  error_log  /var/log/nginx/error.log;
-  pid        /var/run/nginx.pid;
-  #工作模式及连接数上限
-  events {
-    use   epoll;             
-    #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能
-    worker_connections  1024;#单个后台worker process进程的最大并发链接数
-    # multi_accept on;
-}
-  这里是django的配置，使用django渲染
-  location /{
-  include uwsgi_params;
-  uwsgi_pass 127.0.0.1:8077;
-}
-  匹配/index/login最后一个/后面的内容，如果是problemList则跳转到/index/problemList。
-  location = / {
-  rewrite ^ ip/index/login ;
-}
-###nginx调优
+###nginx配置  
+  默认路径 /etc/nginx/nginx.conf  
+  oj路径  /usr/local/openresty/nginx/conf/nginx.conf  
+  #运行用户    
+  user www-data;    
+  #启动进程,通常设置成和cpu的数量相等  
+  worker_processes  1;  
+  #全局错误日志及PID文件  
+  error_log  /var/log/nginx/error.log;  
+  pid        /var/run/nginx.pid;  
+  #工作模式及连接数上限  
+  events {  
+    use   epoll;               
+    #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能  
+    worker_connections  1024;#单个后台worker process进程的最大并发链接数  
+    # multi_accept on;  
+}  
+  这里是django的配置，使用django渲染  
+  location /{  
+  include uwsgi_params; 
+  uwsgi_pass 127.0.0.1:8077;  
+}  
+  匹配/index/login最后一个/后面的内容，如果是problemList则跳转到/index/problemList。  
+  location = / {  
+  rewrite ^ ip/index/login ;  
+}  
+###nginx调优  
   
 ##django
 ###django部署
+1.下载安装django  
+方法1： 
+pip install Django==1.6.5  
+测试是否安装成功
+:~$python 
+>>>import django  
+>>> django.VERSION  
+(1, 6, 5, 'final', 0) 
+2.方法二： 
+    大多数人会考虑从 http://www.djangoproject.com/download/ 下载安装最新的官方发布版。Django 使用了 Python 标准的 distutils 安装法，在 Linux 平台可能包括如下步骤：   
+    下载 tar 安装包，其文件名可能会是 Django-0.96.tar.gz 。   
+    tar xzvf Django-*.tar.gz 。
+    cd Django-* 。  
+    sudo python setup.py install 。  
+
 ###oj2.0中的模型和模板
 ###django+uwsgi+nginx部署
 ##mysql
-###mysql部署
+  ###mysql部署  
+  安装mysql-server    
+  sudo apt-get install mysql-server  
+  常用的指令：  
+  1. 修改mysql最大连接数  
+    vim my.cnf，增加或修改max_connections=1024     my.cnf默认路径:/usr/bin  
+  2.  本机登陆mysql：mysql -u root -p  
+  3.  建库：create database oj;  
+  4.  改变数据库：use oj;  
+  5.  显示数据库：show databases ; 
+  6.  显示表： show tables;  
+  其他的参考：http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html   或者百度  
+
 ###django中的mysql接口
-##rabbitMQ
-###rabbitMQ部署
-###rabbitMQ配置
+  在创建的项目中的settings.py进行修改就行了。
+  
+##rabbitMQ  
+###rabbitMQ部署  
+  sudo apt-get install rabbitmq-server  
+  测试：    
+  参考：http://www.rabbitmq.com/tutorials/tutorial-one-python.html  
+  
+###rabbitMQ配置  
+
 ##celery
 ###celery部署
 ###celery+django+rabbitMQ配置
