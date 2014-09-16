@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from celery.task import task
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
-#import contest_rank_update
+from contest_rank_update import contestRankUpdate
 @task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)
@@ -87,7 +87,7 @@ def contestProblem(request, contest_id, problem_id):
         code = code)
       submit.save()
       Judge.delay(submit)
-      contest_rank_update(submit)
+      contestRankUpdate(submit)
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:

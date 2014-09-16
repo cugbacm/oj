@@ -1,4 +1,4 @@
-!/usr/bin/env python
+#!/usr/bin/env python
 from datetime import *
 import time
 from django.shortcuts import render
