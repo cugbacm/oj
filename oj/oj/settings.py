@@ -101,7 +101,7 @@ import sys
 djcelery.setup_loader()
 
 CELERY_IMPORTS = (
-    'cugbacm.views',
+    'cugbacm.views.problem',
 )
 BROKER_HOST = "127.0.0.1"
 BROKER_PORT = 5672

@@ -59,6 +59,7 @@ def Judge(submit):
   return submit.status
 
 def problem(request, problem_id):
+  languages = ("g++","gcc","java","python2","python3")
   try:
     user = User.objects.get(userID = request.session['userID'])
   except:
@@ -88,9 +89,9 @@ def problem(request, problem_id):
     try:
       submit = Submit.objects.get(id = request.GET.get('submit'))
       if submit.userID == user.userID and str(submit.problemID) == str(problem_id):
-        return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits})
+        return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'languages':languages})
       else:
         return HttpResponseRedirect("/index/problem/" + str(problem_id))
     except:
-      return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits})
+      return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits, 'languages':languages})
   

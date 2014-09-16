@@ -612,3 +612,131 @@ spawned uWSGI worker 1 (and the only) (pid: 29996, cores: 1)
 [pid: 29996|app: 0|req: 2/2] 124.193.176.203 () {44 vars in 891 bytes} [Tue Sep  9 20:51:43 2014] POST /index/problem/1000 => generated 0 bytes in 57 msecs (HTTP/1.1 302) 4 headers in 157 bytes (1 switches on core 0)
 [pid: 29996|app: 0|req: 3/3] 124.193.176.203 () {40 vars in 774 bytes} [Tue Sep  9 20:51:43 2014] GET /index/problem/1000 => generated 12040 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 29996|app: 0|req: 4/4] 124.193.176.203 () {38 vars in 706 bytes} [Tue Sep  9 20:51:44 2014] GET /index/problem/1000 => generated 12040 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sat Sep 13 12:10:32 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj/cugbacm/views
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8f89360
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8f89360 pid: 4423 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4423, cores: 1)
+[pid: 4423|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 725 bytes} [Sat Sep 13 12:10:38 2014] GET /index/problemList/ => generated 4957 bytes in 335 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4423|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 770 bytes} [Sat Sep 13 12:10:42 2014] GET /index/problem/1 => generated 9362 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4423|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 786 bytes} [Sat Sep 13 12:10:44 2014] GET /index/problem/1?submit=17 => generated 9368 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4423|app: 0|req: 4/4] 127.0.0.1 () {44 vars in 892 bytes} [Sat Sep 13 12:10:50 2014] POST /index/problem/1 => generated 0 bytes in 193 msecs (HTTP/1.1 302) 4 headers in 149 bytes (1 switches on core 0)
+[pid: 4423|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 777 bytes} [Sat Sep 13 12:10:51 2014] GET /index/problem/1 => generated 9737 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4423|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 786 bytes} [Sat Sep 13 12:10:53 2014] GET /index/problem/1?submit=18 => generated 9743 bytes in 130 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4423|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 12:10:56 2014] GET /index/problem/1?submit=18 => generated 9743 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sat Sep 13 14:17:39 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj/cugbacm/views
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8ebe360
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8ebe360 pid: 2677 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2677, cores: 1)
+[pid: 2677|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 711 bytes} [Sat Sep 13 14:19:05 2014] GET /index/login => generated 0 bytes in 2542 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:08 2014] GET /index/problem/1?submit=18 => generated 9743 bytes in 123 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 768 bytes} [Sat Sep 13 14:19:08 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 184 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
+[pid: 2677|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 784 bytes} [Sat Sep 13 14:19:08 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 105151 bytes in 98 msecs (HTTP/1.1 200) 4 headers in 142 bytes (4712 switches on core 0)
+[pid: 2677|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 763 bytes} [Sat Sep 13 14:19:08 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 2677|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 749 bytes} [Sat Sep 13 14:19:08 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 80 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 2677|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 779 bytes} [Sat Sep 13 14:19:08 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 2677|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 801 bytes} [Sat Sep 13 14:19:08 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 409 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 2677|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 804 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 2677|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 806 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 2677|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 814 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 2677|app: 0|req: 12/12] 127.0.0.1 () {40 vars in 865 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-bold.woff => generated 36664 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 157 bytes (150 switches on core 0)
+[pid: 2677|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 871 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-regular.woff => generated 35464 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 157 bytes (110 switches on core 0)
+[pid: 2677|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 856 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
+[pid: 2677|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 856 bytes} [Sat Sep 13 14:19:09 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 2677|app: 0|req: 16/16] 127.0.0.1 () {38 vars in 681 bytes} [Sat Sep 13 14:19:10 2014] GET /favicon.ico => generated 2156 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 17/17] 127.0.0.1 () {38 vars in 711 bytes} [Sat Sep 13 14:19:10 2014] GET /favicon.ico => generated 2156 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:14 2014] GET /index/problem/1?submit=18 => generated 9743 bytes in 60 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:17 2014] GET /index/problem/1?submit=17 => generated 9743 bytes in 72 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:19 2014] GET /index/problem/1?submit=17 => generated 9743 bytes in 56 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:21 2014] GET /index/problem/1?submit=17 => generated 9743 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:24 2014] GET /index/problem/1?submit=18 => generated 9743 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:27 2014] GET /index/problem/1?submit=17 => generated 9743 bytes in 54 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 24/24] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:29 2014] GET /index/problem/1?submit=16 => generated 9743 bytes in 73 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 25/25] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:31 2014] GET /index/problem/1?submit=15 => generated 9745 bytes in 57 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2677|app: 0|req: 26/26] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:19:32 2014] GET /index/problem/1?submit=14 => generated 9743 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sat Sep 13 14:22:41 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj/cugbacm/views
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x84b6360
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x84b6360 pid: 3235 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3235, cores: 1)
+[pid: 3235|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 738 bytes} [Sat Sep 13 14:22:45 2014] GET /index/problem/1?submit=14 => generated 9742 bytes in 416 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:22:49 2014] GET /index/problem/1?submit=18 => generated 9746 bytes in 100 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:22:51 2014] GET /index/problem/1?submit=17 => generated 9742 bytes in 49 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:22:55 2014] GET /index/problem/1?submit=18 => generated 9746 bytes in 66 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:22:56 2014] GET /index/problem/1?submit=18 => generated 9746 bytes in 60 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:22:57 2014] GET /index/problem/1?submit=18 => generated 9746 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:37:45 2014] GET /index/problem/1?submit=18 => generated 9746 bytes in 528 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3235|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 796 bytes} [Sat Sep 13 14:38:22 2014] GET /index/problem/1?submit=17 => generated 9742 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)

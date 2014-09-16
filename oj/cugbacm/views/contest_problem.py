@@ -63,6 +63,7 @@ def Judge(submit):
   return submit.status
 
 def contestProblem(request, contest_id, problem_id):
+  languages = ("g++", "gcc", "java", "python2", "python3")
   try:
     user = User.objects.get(userID = request.session['userID'])
   except:
@@ -92,12 +93,12 @@ def contestProblem(request, contest_id, problem_id):
     try:
       submit = ContestSubmit.objects.get(id = request.GET.get('submit'))
       if str(submit.userID) == str(user.userID) and str(submit.problemID) == str(problem_id) and str(submit.contestID) == str(contest_id):
-        return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'contestID':contest_id})
+        return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'contestID':contest_id, 'languages':languages})
       else:
         return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
     except:
-      return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits,'contestID':contest_id})
-  return render(request, 'cugbacm/contestProblem.html',{'problem':probilem, 'userID':user.userID, 'submits':submits,'contestID':contest_id})
+      return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits,'contestID':contest_id,'languages':languages})
+  return render(request, 'cugbacm/contestProblem.html',{'problem':probilem, 'userID':user.userID, 'submits':submits,'contestID':contest_id,'languages':languages})
 
 
 def contestRankUpdate(ContestSubmit):
