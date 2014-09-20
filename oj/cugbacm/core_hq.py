@@ -32,7 +32,7 @@ def low_level():
 # dangerous code
 def check_dangerous_code(solution_id, language):
   if language in ['python2', 'python3']:
-    code = ('/home/zhaolong/Documents/work_dir/%s/main.py' % solution_id,'r')
+    code = ('/home/cugbacm/Documents/work_dir/%s/main.py' % solution_id,'r')
     support_modules = [
       're',  # 正则表达式
       'sys',  # sys.stdin
@@ -69,9 +69,9 @@ def check_dangerous_code(solution_id, language):
     return True
   if language in ['gcc', 'g++']:
     try:
-      code = file('/home/zhaolong/Documents/work_dir/%s/main.c' % solution_id).read()
+      code = file('/home/cugbacm/Documents/work_dir/%s/main.c' % solution_id).read()
     except:
-      code = file('/home/zhaolong/Documents/work_dir/%s/main.cpp' % solution_id).read()
+      code = file('/home/cugbacm/Documents/work_dir/%s/main.cpp' % solution_id).read()
     if code.find('system') >= 0:
       print "Runtime Error; location:check_dangerous_code;\n"
       return False
@@ -124,7 +124,7 @@ def  judge(solution_id, problem_id, data_count, time_limit,
   for item in files:
     if item.endswith('.in'):
       print item
-      input_path = "/home/zhaolong/Documents/data_dir/%s/%s"%(str(problem_id), item)
+      input_path = "/home/cugbacm/Documents/data_dir/%s/%s"%(str(problem_id), item)
       print file(input_path).read(),"input"
       ret = judge_one_mem_time(solution_id,
         problem_id,

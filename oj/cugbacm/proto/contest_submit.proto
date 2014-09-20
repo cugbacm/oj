@@ -1,0 +1,5 @@
+package contest_submit;
+message ContestSubmit {
+  required int32 id = 1;
+  required int64 timestamp = 2;
+}
