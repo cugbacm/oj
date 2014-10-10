@@ -8,7 +8,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 @csrf_exempt
 def login(request):
   if request.method == 'POST':
-
     '''userID = request.POST['userID']
     password = request.POST['password']'''
     userID = request.POST['userID']
