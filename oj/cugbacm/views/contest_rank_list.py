@@ -3,7 +3,7 @@ from datetime import *
 import time
 from django.shortcuts import render
 from django.template import Context, loader
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, Contestant
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 
 def contestRankList(request, contest_id):
