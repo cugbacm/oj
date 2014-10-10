@@ -77,6 +77,7 @@ class ContestSubmit(Submit):
 class Contestant(User):
   contestID = models.IntegerField()
   penalty = models.TimeField()
+  ac = models.CharField(max_length = 10000)
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.userID)
 

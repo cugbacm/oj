@@ -16,7 +16,7 @@ def contestRankList(request, contest_id):
                  {
                     'userID':request.session['userID'],
                     'contest': Contest.objects.get(contestID = contest_id),
-        'contest_rank_list':contest_rank_list, 
+                    'contest_rank_list':contest_rank_list, 
     })
   except: 
     return render(request,

@@ -8,6 +8,7 @@ from celery.task import task
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
 from contest_rank_update import contestRankUpdate
+from cugbacm.proto import contestant_ac_pb2
 @task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)
@@ -59,7 +60,7 @@ def Judge(submit):
   user.total = user.total + 1
   user.save()
   problem.save()
-  contestRankUpte(submit)
+  contestRankUpdate(submit)
   return submit.status
 
 def contestProblem(request, contest_id, problem_id):
@@ -102,40 +103,34 @@ def contestProblem(request, contest_id, problem_id):
 
 
 def contestRankUpdate(ContestSubmit):
-    user_id = ContestSubmit.userID
-    contestant = Contestant.objects.get(userID = user_id)
-    problem_id = ContestSubmit.problemID
-    contest_problem = Problem.objects.get(problemID = problem_id)
-    if ContestSubmit.status == "Accepted":
-        contestant.ac = contest_user.ac + 1
-        if contestant.acList == None:
-          contestant.acList = ""
-        contestant.acList += str(ContestSubmit.problemID)+","
-        contest_problem.ac = contest_problem.ac + 1
-        contestant.penalty = contestant.penalty + "00:00:20"
-    elif ContestSubmit.status == "Time Limit Exceeded":
-        contest_problem.tle = contest_problem.tle + 1
-        contestant.time = contestant.penalty + 20
-    elif ContestSubmit.status == "Memory Limit Exceeded":
-        contest_problem.mle = contest_problem.mle + 1
-        contestant.time = contestant.penalty + 20
-    elif ContestSubmit.status == "Wrong Answer":
-        contest_problem.wa = contest_problem.wa + 1
-        contestant.time = contestant.penalty + 20
-    elif ContestSubmit.status == "Runtime Error":
-        contesr_problem.re = contest_problem.re + 1
-        contestant.time = contestant.penalty + 20
-    elif ContestSubmit.status == "Compile Error":
-        contest_problem.ce = contest_problem.pe + 1
-        contestant.time = contestant.penalty + 20
-    elif ContestSubmit.status == "Presentation Error":
-        contest_problem.pe = contest_problem.pe + 1
-        contestant.time = contestant.penalty + 20
-    elif ContestSubmit.status == "System Error":
-        contest_problem.se = contest_problem.se + 1
-        contestant.time = contestant.penalty + 20
-    contest_problem.totalSubmission = contest_problem.totalSubmission + 1
-    contestant.total = contest_user.total + 1
-    contestant.save()
-    contest_problem.save()
+  user_id = ContestSubmit.userID
+  contestant = Contestant.objects.get(userID = user_id)
+  problem_id = ContestSubmit.problemID
+  contest_problem = Problem.objects.get(problemID = problem_id)
+  if ContestSubmit.status == "Accepted":
+    if contestant.acList == None:
+      contestant.acList = ""
+    contestant.penalty = contestant.penalty +"00:00:20"
+    acstatus = contestant_ac_pb2.Contestantac()
+    acstatus.id = problem_id
+    acstatus.ac = true;
+    acstatus.submit = acstatus.submit + 1
+    acstatus.time = 100
+    acstatus.penalty = acstatus.submit * 20
+  elif ContestSubmit.status == "Time Limit Exceeded":
+    contestant.time = contestant.penalty + 20
+  elif ContestSubmit.status == "Memory Limit Exceeded":
+    contestant.time = contestant.penalty + 20
+  elif ContestSubmit.status == "Wrong Answer":    
+    contestant.time = contestant.penalty + 20
+  elif ContestSubmit.status == "Runtime Error":
+    contestant.time = contestant.penalty + 20
+  elif ContestSubmit.status == "Compile Error":
+    contestant.time = contestant.penalty + 20
+  elif ContestSubmit.status == "Presentation Error":
+    contestant.time = contestant.penalty + 20
+  elif ContestSubmit.status == "System Error":
+    contestant.time = contestant.penalty + 20
+  contestant.save()
+  contest_problem.save()
 

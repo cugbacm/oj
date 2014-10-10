@@ -33,7 +33,7 @@
     <li><a href="/index/contest/{{contest.contestID}}/submitList">Submit List</a></li>
     <li class="active"><a href="/index/contest/{{contest.contestID}}/rankList">Rank List</a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}}{{contest.contestID}} <span class="caret"></span></a>
       <span class="dropdown-arrow"></span>    
       <ul class="dropdown-menu">
         <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
@@ -58,7 +58,7 @@
             <th>Rank</th>
             <th>AC</th>
             <th>userID</th>
-      <th>ACList</th>
+            <th>ACList</th>
             <th>Penalty</th>>
             <th>Ratio(AC/submit)</th>
           </tr>
@@ -67,12 +67,12 @@
           {% for user in contest_rank_list %}
             <tr class="odd gradeX">
               <td>{{ forloop.counter }}</td>
-        <td>{{user.total}}</td>
+              <td>{{user.total}}</td>
               <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{user.userID}}</a></td>
               <td>{{user.acList}}</td>
-        <td>{{user.penalty|date:"H:i:s"}}</td>
+              <td>{{user.penalty|date:"H:i:s"}}</td>
               <td>Ratio({{user.accepted}}/{{user.total}})</td>
-              </tr>
+            </tr>
           {% endfor %}
         </tbody>
       </table>
