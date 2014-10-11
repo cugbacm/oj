@@ -2,12 +2,12 @@
 from datetime import *
 import time
 from django.shortcuts import render
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit,Contestant
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 from celery.task import task
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
-from contest_rank_update import contestRankUpdate
+from contest_rank_update import update_rank_list
 from cugbacm.proto import contestant_ac_pb2
 @task
 def Judge(submit):
