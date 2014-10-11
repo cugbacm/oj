@@ -33,7 +33,7 @@
     <li><a href="/index/contest/{{contest.contestID}}/submitList">Submit List</a></li>
     <li class="active"><a href="/index/contest/{{contest.contestID}}/rankList">Rank List</a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}}{{contest.contestID}} <span class="caret"></span></a>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
       <span class="dropdown-arrow"></span>    
       <ul class="dropdown-menu">
         <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
@@ -46,13 +46,15 @@
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
     </marquee>
+    <!--
     <div class="row">
      <div class="col-md-offset-1">
      </div>
     </div>
+    --!>
   </nav>
-    <div class="table-responsive pagination-centered" style="padding-top:58px"> 
-  <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example">
+ <div class="table-responsive pagination-centered" style="padding-top:58px"> 
+     <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example">
         <thead>
           <tr>
             <th>Rank</th>
@@ -66,7 +68,7 @@
         <tbody>
           {% for user in contest_rank_list %}
             <tr class="odd gradeX">
-              <td>{{ forloop.counter }}</td>
+              <td>{{forloop.counter}}</td>
               <td>{{user.total}}</td>
               <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{user.userID}}</a></td>
               <td>{{user.acList}}</td>
@@ -75,8 +77,8 @@
             </tr>
           {% endfor %}
         </tbody>
-      </table>
-    </div>
+     </table>
+ </div>
     <script>
   $(document).ready(function() {
     $('#example').dataTable({

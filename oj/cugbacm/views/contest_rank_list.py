@@ -23,7 +23,7 @@ def contestRankList(request, contest_id):
                  'cugbacm/contestRankList.html',
                  {
                     'userID':request.session['userID'],
-                   #'contest': Contest.objects.get(contestID = contest_id)
+                    'contest': Contest.objects.get(contestID = contest_id)
                  })
     return HttpResponseRedirect("/index/login")
 
