@@ -25,7 +25,8 @@ class Rank(object):
     self.penalty = 0
 
 def sort_rank(rank_list):
-  for rank in rank_list:
+  for userID in rank_list:
+    rank = rank_list[userID]
     for problem in rank.problem_list:
       flag = 0
       for submit in rank.problem_list[problem].commit_list:
