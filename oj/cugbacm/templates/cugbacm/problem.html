@@ -154,18 +154,8 @@
                 {% for submit in submits %}
                   <tr class="odd gradeX">
                     <td>{{submit.id}}</td>
-                    {% if submit.status == "Accepted" %}
-                       <td><font color="#3498DB">{{submit.status}}</font></td>
-                    {% else if submit.status == "Compile Error" %}
-                       <td><font color="#2ECC71">{{submit.status}}</font></td>
-                    {% else %}
-                       <td><font color="#E74C3C">{{submit.status}}</font></td>
-                    {% endif %}
-                    {% ifequal submit.userID userID %} 
+                      <td>{{submit.status}}</td>
                       <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
-                    {% else %}
-                      <td>{{submit.language}}</td>
-                    {% endifequal %}  
                     <td>{{submit.date}} {{submit.timestamp}}</td> 
                     <!--<td>{{submit.code}}</td> -->
                   </tr>
