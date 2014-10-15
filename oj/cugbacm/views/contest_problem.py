@@ -60,7 +60,6 @@ def Judge(submit):
   user.total = user.total + 1
   user.save()
   problem.save()
-  contestRankUpdate(submit)
   return submit.status
 
 def contestProblem(request, contest_id, problem_id):
@@ -88,7 +87,6 @@ def contestProblem(request, contest_id, problem_id):
         code = code)
       submit.save()
       Judge.delay(submit)
-      contestRankUpdate(submit)
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:
@@ -102,35 +100,4 @@ def contestProblem(request, contest_id, problem_id):
   return render(request, 'cugbacm/contestProblem.html',{'problem':probilem, 'userID':user.userID, 'submits':submits,'contestID':contest_id,'languages':languages})
 
 
-def contestRankUpdate(ContestSubmit):
-  user_id = ContestSubmit.userID
-  contestant = Contestant.objects.get(userID = user_id)
-  problem_id = ContestSubmit.problemID
-  contest_problem = Problem.objects.get(problemID = problem_id)
-  if ContestSubmit.status == "Accepted":
-    if contestant.acList == None:
-      contestant.acList = ""
-    contestant.penalty = contestant.penalty +"00:00:20"
-    acstatus = contestant_ac_pb2.Contestantac()
-    acstatus.id = problem_id
-    acstatus.ac = true;
-    acstatus.submit = acstatus.submit + 1
-    acstatus.time = 100
-    acstatus.penalty = acstatus.submit * 20
-  elif ContestSubmit.status == "Time Limit Exceeded":
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Memory Limit Exceeded":
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Wrong Answer":    
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Runtime Error":
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Compile Error":
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Presentation Error":
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "System Error":
-    contestant.time = contestant.penalty + 20
-  contestant.save()
-  contest_problem.save()
 

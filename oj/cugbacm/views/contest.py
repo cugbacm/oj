@@ -9,49 +9,63 @@ from django.http import HttpResponse, HttpResponseRedirect
 def contest(request, contest_id):
   try:
     user = User.objects.get(userID = request.session['userID'])
-    contest = Contest.objects.get(contestID = contest_id)
-    problemList = contest.problemList.split(',')
-    problems = Problem.objects.filter(problemID__in = problemList)
-    if request.method == 'POST':
-      problemID = request.POST['problemID']
-      problemTitle = request.POST['problemTitle']
-      problemAuthor = request.POST['problemAuthor']
-      try:
-        if problemID.strip():
-          problems = problems.filter(problemID__contains = problemID)
-        if problemTitle.strip():
-          problems = problems.filter(title__contains = problemTitle)
-        if problemAuthor.strip():
-          problems = problems.filter(author__contains = problemAuthor)
-        return render(
-          request, 
-          'cugbacm/contest.html', 
-          {
-            'contest': contest,
-            'problems': problems, 
-            'userID': request.session["userID"],
-            'problemID': problemID,
-            'problemTitle': problemTitle,
-            'problemAuthor': problemAuthor
-          }
-        )
-      except:
-        return render(request,
-                      'cugbacm/contest.html',
-                      {
-                        'problems': {},
-                        'userID':request.session["userID"],
-                        'contest': contest
-                      })
-    else:
-      #contestants = contest.userList.split(',')
-      #if userID in contestants:
+  except:
+    return HttpResponseRedirect("/index/login")
+  contest = Contest.objects.get(contestID = contest_id)
+  problemList = contest.problemList.split(',')
+  problems = Problem.objects.filter(problemID__in = problemList)
+  problem_ac_count = {}
+  problem_all_count = {}
+  for problem in problems:
+
+    contest_submits = ContestSubmit.objects.filter(contestID = str(contest_id), problemID = str(problem.problemID))
+    problem_all_count[problem.problemID] = len(contest_submits)
+    problem.totalSubmission = len(contest_submits) 
+    problem_ac_count[problem.problemID] = len(contest_submits.filter(status = "Accepted"))
+    problem.ac = len(contest_submits.filter(status = "Accepted"))
+  if request.method == 'POST':
+    problemID = request.POST['problemID']
+    problemTitle = request.POST['problemTitle']
+    problemAuthor = request.POST['problemAuthor']
+    try:
+      if problemID.strip():
+        problems = problems.filter(problemID__contains = problemID)
+      if problemTitle.strip():
+        problems = problems.filter(title__contains = problemTitle)
+      if problemAuthor.strip():
+        problems = problems.filter(author__contains = problemAuthor)
+      return render(
+        request, 
+        'cugbacm/contest.html', 
+        {
+          'contest': contest,
+          'problems': problems, 
+          'problem_ac_count': problem_ac_count,
+          'problem_all_count': problem_all_count,
+          'userID': request.session["userID"],
+          'problemID': problemID,
+          'problemTitle': problemTitle,
+          'problemAuthor': problemAuthor
+        }
+      )
+    except:
       return render(request,
                     'cugbacm/contest.html',
                     {
-                      'problems': problems,
+                      'problems': {},
                       'userID':request.session["userID"],
                       'contest': contest
                     })
-  except:
-    return HttpResponseRedirect("/index/login")
+  else:
+    #contestants = contest.userList.split(',')
+    #if userID in contestants:
+    #return HttpResponse("fuck") 
+    return render(request,
+                  'cugbacm/contest.html',
+                  {
+                    'problems': problems,
+                    'problem_ac_count': problem_ac_count,
+                    'problem_all_count': problem_all_count,
+                    'userID':request.session["userID"],
+                    'contest': contest
+                  })
