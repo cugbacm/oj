@@ -44,16 +44,14 @@ def contest(request, contest_id):
                         'contest': contest
                       })
     else:
-      contestants = contest.userList.split(',')
-      if userID in contestants:
-        return render(request,
-                      'cugbacm/contest.html',
-                      {
-                        'problems': problems,
-                        'userID':request.session["userID"],
-                        'contest': contest
-                      })
-      else:
-        return HttpResponse("Not in contest")
+      #contestants = contest.userList.split(',')
+      #if userID in contestants:
+      return render(request,
+                    'cugbacm/contest.html',
+                    {
+                      'problems': problems,
+                      'userID':request.session["userID"],
+                      'contest': contest
+                    })
   except:
     return HttpResponseRedirect("/index/login")

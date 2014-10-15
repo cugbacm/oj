@@ -1,7 +1,6 @@
 from ssdb import SSDB
 import sys
-sys.path.append("..")
-import proto.rank_pb2
+import cugbacm.proto.rank_pb2
 
 ssdb_ip = "127.0.0.1"
 ssdb_port = "6666"
