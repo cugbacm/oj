@@ -120,12 +120,12 @@
                       <div class="col-md-5 col-md-offset-1">
                         <select id="language" class="form-control" name="language" >
                         {% for var in languages %} 
-			  {% ifequal var submit.language %}
-			    <option selected>{{var}}</option>
-			  {% else %}
-			    <option>{{var}}</option>	
-			  {% endifequal %}	
-			{% endfor %}
+			                     {% ifequal var submit.language %}
+			                       <option selected>{{var}}</option>
+			                     {% else %}
+			                       <option>{{var}}</option>	
+			                     {% endifequal %}	
+		                  	{% endfor %}
                         </select>
                       </div>
                   </div>
@@ -154,7 +154,13 @@
                 {% for submit in submits %}
                   <tr class="odd gradeX">
                     <td>{{submit.id}}</td>
-                    <td>{{submit.status}}</td> 
+                    {% if submit.status == "Accepted" %}
+                       <td><font color="#3498DB">{{submit.status}}</font></td>
+                    {% else if submit.status == "Compile Error" %}
+                       <td><font color="#2ECC71">{{submit.status}}</font></td>
+                    {% else %}
+                       <td><font color="#E74C3C">{{submit.status}}</font></td>
+                    {% endif %}
                     {% ifequal submit.userID userID %} 
                       <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
                     {% else %}
