@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-  userID = models.CharField(max_length = 200, unique = True)
+  userID = models.CharField(max_length = 200)
   password = models.CharField(max_length = 20)
   session = models.CharField(max_length = 20)
   specialty = models.CharField(max_length = 100)
@@ -77,6 +77,8 @@ class ContestSubmit(Submit):
 class Contestant(User):
   contestID = models.IntegerField()
   penalty = models.TimeField()
+  ac = models.CharField(max_length = 10000)
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.userID)
+
 

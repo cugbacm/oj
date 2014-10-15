@@ -10,7 +10,7 @@ def contestSubmitList(request, contest_id):
   try:
     user = User.objects.get(userID = request.session['userID'])
     try:
-      contest_submits = ContestSubmit.objects.filter(contestID = contest_id).order_by('-runID')
+      contest_submits = ContestSubmit.objects.filter(contestID = str(contest_id)).order_by('-runID')
     except:
       contest_submits = ContestSubmit.objects.all()
     #return HttpResponse("fuck")

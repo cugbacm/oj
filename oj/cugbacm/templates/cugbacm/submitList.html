@@ -124,7 +124,7 @@
             <td>{{submit.id}}</td>
             <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
             <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-            <td>{{submit.status}}</td> 
+            <td><font color="#3498DB">{{submit.status}}</font></td> 
             <td>{{submit.memory}}</td>
             <td>{{submit.runTime}}</td>
             <td>{{submit.codeLength}}</td>
@@ -141,7 +141,11 @@
           <td>{{submit.id}}</td>
           <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
           <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-          <td>{{submit.status}}</td> 
+          {% if submit.status == "Compile Error"%}
+             <td><font color="#2ECC71">{{submit.status}}</font></td>
+          {% else %}
+             <td><font color="#E74C3C">{{submit.status}}</font></td>
+          {% endif %}
           <td>{{submit.memory}}</td>
           <td>{{submit.runTime}}</td>
           <td>{{submit.codeLength}}</td>

@@ -897,3 +897,1010 @@ spawned uWSGI worker 1 (and the only) (pid: 19997, cores: 1)
 [pid: 19997|app: 0|req: 379/379] 124.193.176.203 () {44 vars in 890 bytes} [Tue Sep  9 20:47:39 2014] POST /index/problem/1000 => generated 0 bytes in 27 msecs (HTTP/1.1 302) 4 headers in 157 bytes (1 switches on core 0)
 [pid: 19997|app: 0|req: 380/380] 124.193.176.203 () {40 vars in 773 bytes} [Tue Sep  9 20:47:39 2014] GET /index/problem/1000 => generated 11899 bytes in 73 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 19997|app: 0|req: 381/381] 124.193.176.203 () {38 vars in 705 bytes} [Tue Sep  9 20:47:41 2014] GET /index/problem/1000 => generated 11899 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct  8 22:40:40 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8ea5288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8ea5288 pid: 3892 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3892, cores: 1)
+[pid: 3892|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 761 bytes} [Wed Oct  8 22:40:43 2014] GET /index/problemList/ => generated 4977 bytes in 369 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3892|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 704 bytes} [Wed Oct  8 22:40:45 2014] GET /index/problemList/ => generated 4977 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3892|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 704 bytes} [Wed Oct  8 22:40:46 2014] GET /index/problemList/ => generated 4977 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3892|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 704 bytes} [Wed Oct  8 22:40:48 2014] GET /index/problemList/ => generated 4977 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3892|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 755 bytes} [Wed Oct  8 22:40:50 2014] GET /index/contestList/ => generated 4998 bytes in 147 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3892|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct  8 22:40:52 2014] GET /index/contest/1 => generated 5059 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3892|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 764 bytes} [Wed Oct  8 22:40:54 2014] GET /index/contest/1/rankList => generated 3342 bytes in 42 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct  8 22:41:40 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8e4e288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8e4e288 pid: 3985 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3985, cores: 1)
+[pid: 3985|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 761 bytes} [Wed Oct  8 22:41:43 2014] GET /index/problemList/ => generated 4977 bytes in 302 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct  8 22:41:45 2014] GET /index/userList/ => generated 6324 bytes in 79 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 752 bytes} [Wed Oct  8 22:41:47 2014] GET /index/contestList/ => generated 4998 bytes in 229 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct  8 22:41:49 2014] GET /index/contest/1 => generated 5059 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 764 bytes} [Wed Oct  8 22:41:50 2014] GET /index/contest/1/rankList => generated 3342 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 774 bytes} [Wed Oct  8 22:41:53 2014] GET /index/contest//submitList => generated 4498 bytes in 14 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 761 bytes} [Wed Oct  8 22:42:06 2014] GET /index/contestList/ => generated 4998 bytes in 169 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct  8 22:42:12 2014] GET /index/contest/1 => generated 5059 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3985|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 764 bytes} [Wed Oct  8 22:42:15 2014] GET /index/contest/1/rankList => generated 3342 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct  8 22:43:34 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9dca288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9dca288 pid: 4211 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4211, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct  8 22:43:36 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9fa2288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9fa2288 pid: 4222 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4222, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct  8 22:43:37 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x881a288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x881a288 pid: 4233 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4233, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct  8 22:43:37 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8d43288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8d43288 pid: 4244 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4244, cores: 1)
+[pid: 4244|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 761 bytes} [Wed Oct  8 22:43:39 2014] GET /index/problemList/ => generated 4977 bytes in 321 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 751 bytes} [Wed Oct  8 22:43:41 2014] GET /index/submitList => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 753 bytes} [Wed Oct  8 22:43:41 2014] GET /index/submitList/ => generated 36684 bytes in 241 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 754 bytes} [Wed Oct  8 22:43:42 2014] GET /index/contestList/ => generated 4998 bytes in 790 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct  8 22:43:44 2014] GET /index/contest/1 => generated 5059 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4244|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 764 bytes} [Wed Oct  8 22:43:45 2014] GET /index/contest/1/rankList => generated 3342 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:49:14 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8af7288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8af7288 pid: 3360 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3360, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:49:15 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x837f288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x837f288 pid: 3371 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3371, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:49:15 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9b7d288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9b7d288 pid: 3382 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3382, cores: 1)
+[pid: 3382|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 761 bytes} [Fri Oct 10 21:49:18 2014] GET /index/problemList/ => generated 4977 bytes in 299 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3382|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 755 bytes} [Fri Oct 10 21:49:20 2014] GET /index/contestList/ => generated 4998 bytes in 236 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3382|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 749 bytes} [Fri Oct 10 21:49:21 2014] GET /index/contest/1 => generated 5059 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3382|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 764 bytes} [Fri Oct 10 21:49:22 2014] GET /index/contest/1/rankList => generated 3338 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:50:23 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9249288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9249288 pid: 3424 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3424, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:50:24 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8a5c288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8a5c288 pid: 3435 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3435, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:50:25 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x94c5288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x94c5288 pid: 3446 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3446, cores: 1)
+[pid: 3446|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 21:50:27 2014] GET /index/contest/1/rankList => generated 3343 bytes in 320 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:51:12 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9ecd288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9ecd288 pid: 3481 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3481, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:51:12 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x854c288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x854c288 pid: 3492 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3492, cores: 1)
+[pid: 3492|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 21:51:16 2014] GET /index/contest/1/rankList => generated 3346 bytes in 319 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 21:51:20 2014] GET /index/contest/1/rankList => generated 3346 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 777 bytes} [Fri Oct 10 21:51:21 2014] GET /index/contest/1/submitList => generated 17695 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 775 bytes} [Fri Oct 10 21:51:23 2014] GET /index/contest/1/rankList => generated 3346 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 761 bytes} [Fri Oct 10 21:51:26 2014] GET /index/contestList/ => generated 4998 bytes in 197 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 749 bytes} [Fri Oct 10 21:51:28 2014] GET /index/contest/1 => generated 5059 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 768 bytes} [Fri Oct 10 21:51:29 2014] GET /index/contest/1/submitList => generated 17695 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3492|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 775 bytes} [Fri Oct 10 21:51:30 2014] GET /index/contest/1/rankList => generated 3346 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:51:49 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa11c288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa11c288 pid: 3532 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3532, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 21:51:50 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8b22288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8b22288 pid: 3543 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3543, cores: 1)
+[pid: 3543|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 806 bytes} [Fri Oct 10 21:51:51 2014] GET /index/contest/1/rankList => generated 3345 bytes in 324 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 832 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 3/3] 127.0.0.1 () {44 vars in 840 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 4/4] 127.0.0.1 () {44 vars in 848 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 5/5] 127.0.0.1 () {44 vars in 827 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 6/6] 127.0.0.1 () {44 vars in 813 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 843 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 865 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 9/9] 127.0.0.1 () {44 vars in 868 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 10/10] 127.0.0.1 () {44 vars in 870 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 11/11] 127.0.0.1 () {44 vars in 878 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 12/12] 127.0.0.1 () {44 vars in 921 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 13/13] 127.0.0.1 () {44 vars in 921 bytes} [Fri Oct 10 21:51:52 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 3543|app: 0|req: 14/14] 127.0.0.1 () {38 vars in 680 bytes} [Fri Oct 10 21:53:05 2014] GET /admin/ => generated 1865 bytes in 87 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 15/15] 127.0.0.1 () {44 vars in 836 bytes} [Fri Oct 10 21:53:10 2014] POST /admin/ => generated 0 bytes in 936 msecs (HTTP/1.1 302) 9 headers in 505 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 719 bytes} [Fri Oct 10 21:53:11 2014] GET /admin/ => generated 10741 bytes in 79 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 17/17] 127.0.0.1 () {40 vars in 757 bytes} [Fri Oct 10 21:53:15 2014] GET /admin/cugbacm/contestant/ => generated 143978 bytes in 483 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 751 bytes} [Fri Oct 10 21:53:26 2014] GET /admin/cugbacm/contest/ => generated 4010 bytes in 357 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 689 bytes} [Fri Oct 10 21:53:27 2014] GET /admin/jsi18n/ => generated 2372 bytes in 128 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 771 bytes} [Fri Oct 10 21:53:28 2014] GET /admin/cugbacm/contest/1/ => generated 8148 bytes in 60 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 691 bytes} [Fri Oct 10 21:53:28 2014] GET /admin/jsi18n/ => generated 2372 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 757 bytes} [Fri Oct 10 21:53:37 2014] GET /admin/cugbacm/contestant/ => generated 143978 bytes in 194 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 3543|app: 0|req: 23/23] 127.0.0.1 () {38 vars in 718 bytes} [Fri Oct 10 21:55:13 2014] GET /admin/cugbacm/contestant/ => generated 143289 bytes in 206 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:01:26 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa03a288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa03a288 pid: 3786 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3786, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:01:26 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8654288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8654288 pid: 3797 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3797, cores: 1)
+[pid: 3797|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:01:30 2014] GET /index/contest/1/rankList => generated 3363 bytes in 313 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3797|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:01:34 2014] GET /index/contest/1/rankList => generated 3363 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:01:37 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8ed1288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8ed1288 pid: 3819 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3819, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:01:37 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9eba288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9eba288 pid: 3830 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3830, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:01:38 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x83fe288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x83fe288 pid: 3841 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3841, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:01:39 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9642288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9642288 pid: 3852 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3852, cores: 1)
+[pid: 3852|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 761 bytes} [Fri Oct 10 22:01:40 2014] GET /index/problemList/ => generated 4977 bytes in 299 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3852|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 755 bytes} [Fri Oct 10 22:01:42 2014] GET /index/contestList/ => generated 4998 bytes in 172 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3852|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 749 bytes} [Fri Oct 10 22:01:43 2014] GET /index/contest/1 => generated 5059 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3852|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 764 bytes} [Fri Oct 10 22:01:45 2014] GET /index/contest/1/rankList => generated 3363 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:03:16 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9a1e288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9a1e288 pid: 3905 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3905, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:03:16 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9311288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9311288 pid: 3916 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3916, cores: 1)
+[pid: 3916|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:03:20 2014] GET /index/contest/1/rankList => generated 3358 bytes in 308 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3916|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:03:24 2014] GET /index/contest/1/rankList => generated 3358 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:03:57 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8900288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8900288 pid: 3949 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3949, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:03:58 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x817d288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x817d288 pid: 3960 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3960, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:03:58 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x89d9288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x89d9288 pid: 3971 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3971, cores: 1)
+[pid: 3971|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:04:01 2014] GET /index/contest/1/rankList => generated 3357 bytes in 304 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3971|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:04:04 2014] GET /index/contest/1/rankList => generated 3357 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3971|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:04:06 2014] GET /index/contest/1/rankList => generated 3357 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:04:40 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9e5e288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9e5e288 pid: 4005 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4005, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:04:40 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x862e288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x862e288 pid: 4016 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4016, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:04:41 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x97f4288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x97f4288 pid: 4027 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4027, cores: 1)
+[pid: 4027|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:04:43 2014] GET /index/contest/1/rankList => generated 3359 bytes in 317 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:04:45 2014] GET /index/contest/1/rankList => generated 3359 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:04:47 2014] GET /index/contest/1/rankList => generated 3359 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 735 bytes} [Fri Oct 10 22:08:59 2014] GET /admin/ => generated 10741 bytes in 140 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 735 bytes} [Fri Oct 10 22:09:01 2014] GET /admin/ => generated 10741 bytes in 67 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 757 bytes} [Fri Oct 10 22:09:02 2014] GET /admin/cugbacm/contestant/ => generated 143978 bytes in 191 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 7/7] 127.0.0.1 () {38 vars in 718 bytes} [Fri Oct 10 22:13:54 2014] GET /admin/cugbacm/contestant/ => generated 4631 bytes in 60 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 692 bytes} [Fri Oct 10 22:13:55 2014] GET /admin/jsi18n/ => generated 2372 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 4027|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 773 bytes} [Fri Oct 10 22:14:09 2014] GET /index/contest/1/rankList => generated 4565 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:17:32 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9c74288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9c74288 pid: 4740 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4740, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Fri Oct 10 22:17:33 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x94dc288
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x94dc288 pid: 4751 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4751, cores: 1)
+[pid: 4751|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 716 bytes} [Fri Oct 10 22:17:37 2014] GET /index/contest/1/rankList => generated 4565 bytes in 323 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

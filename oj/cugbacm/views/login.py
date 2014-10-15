@@ -2,13 +2,12 @@
 from django.shortcuts import render
 from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit,Contestant
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 
 @csrf_exempt
 def login(request):
   if request.method == 'POST':
-
     '''userID = request.POST['userID']
     password = request.POST['password']'''
     userID = request.POST['userID']
