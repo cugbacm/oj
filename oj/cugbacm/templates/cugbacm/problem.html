@@ -105,11 +105,7 @@
               <h3>
                 author
               </h3>
-              <pre>
-                {% autoescape off %}
-                  {{problem.author}}
-                {% endautoescape%}
-              </pre>
+              <pre>{% autoescape off %}{{problem.author}}{% endautoescape%}</pre>
            </div>
             <div class="col-md-5" style="padding-top:20px;">
              <div data-spy="affix">
@@ -154,7 +150,15 @@
                 {% for submit in submits %}
                   <tr class="odd gradeX">
                     <td>{{submit.id}}</td>
-                      <td>{{submit.status}}</td>
+                    {% if submit.status == "Accepted" %}
+                      <td><font color="#3498DB"><strong>{{submit.status}}</strong></font></td>
+                    {% else %}
+                      {% if submit.status == "Compile Error" %}
+                        <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
+                      {% else %}
+                        <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
+                      {% endif %}
+                    {% endif %}
                       <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
                     <td>{{submit.date}} {{submit.timestamp}}</td> 
                     <!--<td>{{submit.code}}</td> -->

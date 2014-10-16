@@ -94,4 +94,6 @@ def problem(request, problem_id):
         return HttpResponseRedirect("/index/problem/" + str(problem_id))
     except:
       return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits, 'languages':languages})
+      #return render(request, 'cugbacm/problem.html', {})
+
   
