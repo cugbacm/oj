@@ -126,8 +126,12 @@
                       </div>
                   </div>
                   <div class="form-group">
-                    <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
+                     
+                    <pre id="editor" style="height:240px"><textarea name="code" class="form-control">{{submit.code}}</textarea></pre>
                   </div>
+                 <!-- <div class="form-group">
+                    <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
+                  </div>-->
                   <div class="form-group">
                     <button class="btn btn-primary " type="submit">Submit</button>
                   </div>
@@ -178,6 +182,12 @@
               });
             } );
               </script>
+              <script src="/site_media/dist/src/ace.js" type="text/javascript" charset="utf-8"></script>
+              <script>
+                  var editor = ace.edit("editor");
+                  editor.setTheme("ace/theme/monokai");
+                  editor.getSession().setMode("ace/mode/c_cpp");
+               </script>
               </div>
             </div>
           </div>
