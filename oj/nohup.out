@@ -3163,3 +3163,291 @@ You must only enable the serializers that you will actually use.
 [2014-10-17 16:58:10,010: WARNING/Worker-1] {'user_id': u'zldevil2011', 'codeLength': 121, 'result': 'Accepted', 'take_memory': 476L, 'solution_id': 7787L, 'problem_id': u'1000', 'take_time': 0}
 [2014-10-17 16:58:10,022: WARNING/Worker-1] Accepted
 [2014-10-17 16:58:10,039: INFO/MainProcess] Task cugbacm.views.contest_problem.Judge[006398c1-a533-4000-8f32-d399ceff2c96] succeeded in 0.574141736142s: 'Accepted'
+[2014-10-18 16:40:15,884: INFO/MainProcess] Received task: cugbacm.views.problem.Judge[a7021389-e51f-4bd6-bd93-3f73cba463f4]
+[2014-10-18 16:40:15,889: WARNING/Worker-1] g++
+[2014-10-18 16:40:15,890: WARNING/Worker-1] fuck fuck fuck fuck
+[2014-10-18 16:40:15,895: WARNING/Worker-1] 5
+[2014-10-18 16:40:15,895: WARNING/Worker-1] data_count
+[2014-10-18 16:40:16,685: WARNING/Worker-1] data4.in
+[2014-10-18 16:40:16,686: WARNING/Worker-1] 1000000000 100000000
+[2014-10-18 16:40:16,686: WARNING/Worker-1] input
+[2014-10-18 16:40:16,705: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data4.out
+[2014-10-18 16:40:16,706: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7788/data4.txt
+[2014-10-18 16:40:16,706: WARNING/Worker-1] currect_result:
+[2014-10-18 16:40:16,706: WARNING/Worker-1] 1100000000
+[2014-10-18 16:40:16,706: WARNING/Worker-1] user_result:
+[2014-10-18 16:40:16,706: WARNING/Worker-1] 1100000000
+[2014-10-18 16:40:16,707: WARNING/Worker-1] data1.in
+[2014-10-18 16:40:16,707: WARNING/Worker-1] 1 2
+[2014-10-18 16:40:16,707: WARNING/Worker-1] input
+[2014-10-18 16:40:16,732: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data1.out
+[2014-10-18 16:40:16,732: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7788/data1.txt
+[2014-10-18 16:40:16,734: WARNING/Worker-1] currect_result:
+[2014-10-18 16:40:16,735: WARNING/Worker-1] 3
+[2014-10-18 16:40:16,735: WARNING/Worker-1] user_result:
+[2014-10-18 16:40:16,735: WARNING/Worker-1] 3
+[2014-10-18 16:40:16,736: WARNING/Worker-1] data3.in
+[2014-10-18 16:40:16,736: WARNING/Worker-1] 3 3
+[2014-10-18 16:40:16,737: WARNING/Worker-1] input
+[2014-10-18 16:40:16,762: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data3.out
+[2014-10-18 16:40:16,762: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7788/data3.txt
+[2014-10-18 16:40:16,762: WARNING/Worker-1] currect_result:
+[2014-10-18 16:40:16,763: WARNING/Worker-1] 6
+[2014-10-18 16:40:16,763: WARNING/Worker-1] user_result:
+[2014-10-18 16:40:16,763: WARNING/Worker-1] 6
+[2014-10-18 16:40:16,763: WARNING/Worker-1] data2.in
+[2014-10-18 16:40:16,763: WARNING/Worker-1] 1 3
+[2014-10-18 16:40:16,763: WARNING/Worker-1] input
+[2014-10-18 16:40:16,790: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data2.out
+[2014-10-18 16:40:16,790: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7788/data2.txt
+[2014-10-18 16:40:16,790: WARNING/Worker-1] currect_result:
+[2014-10-18 16:40:16,791: WARNING/Worker-1] 4
+[2014-10-18 16:40:16,791: WARNING/Worker-1] user_result:
+[2014-10-18 16:40:16,791: WARNING/Worker-1] 4
+[2014-10-18 16:40:16,791: WARNING/Worker-1] data0.in
+[2014-10-18 16:40:16,792: WARNING/Worker-1] 1 2
+[2014-10-18 16:40:16,792: WARNING/Worker-1] input
+[2014-10-18 16:40:16,820: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data0.out
+[2014-10-18 16:40:16,821: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7788/data0.txt
+[2014-10-18 16:40:16,821: WARNING/Worker-1] currect_result:
+[2014-10-18 16:40:16,821: WARNING/Worker-1] 3
+[2014-10-18 16:40:16,821: WARNING/Worker-1] user_result:
+[2014-10-18 16:40:16,821: WARNING/Worker-1] 3
+[2014-10-18 16:40:16,822: WARNING/Worker-1] {'user_id': u'zldevil2011', 'codeLength': 121, 'result': 'Accepted', 'take_memory': 472L, 'solution_id': 7788L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-18 16:40:16,844: WARNING/Worker-1] Accepted
+[2014-10-18 16:40:16,862: INFO/MainProcess] Task cugbacm.views.problem.Judge[a7021389-e51f-4bd6-bd93-3f73cba463f4] succeeded in 0.97767433431s: 'Accepted'
+[2014-10-18 16:42:12,263: INFO/MainProcess] Received task: cugbacm.views.problem.Judge[cb7b5f74-2749-44ac-ab41-8e51cc215ad9]
+[2014-10-18 16:42:12,271: WARNING/Worker-1] g++
+[2014-10-18 16:42:12,273: WARNING/Worker-1] fuck fuck fuck fuck
+[2014-10-18 16:42:12,278: WARNING/Worker-1] 5
+[2014-10-18 16:42:12,278: WARNING/Worker-1] data_count
+[2014-10-18 16:42:13,074: WARNING/Worker-1] data4.in
+[2014-10-18 16:42:13,074: WARNING/Worker-1] 1000000000 100000000
+[2014-10-18 16:42:13,075: WARNING/Worker-1] input
+[2014-10-18 16:42:13,095: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data4.out
+[2014-10-18 16:42:13,096: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7789/data4.txt
+[2014-10-18 16:42:13,096: WARNING/Worker-1] currect_result:
+[2014-10-18 16:42:13,096: WARNING/Worker-1] 1100000000
+[2014-10-18 16:42:13,096: WARNING/Worker-1] user_result:
+[2014-10-18 16:42:13,096: WARNING/Worker-1] 1100000000
+[2014-10-18 16:42:13,096: WARNING/Worker-1] data1.in
+[2014-10-18 16:42:13,097: WARNING/Worker-1] 1 2
+[2014-10-18 16:42:13,097: WARNING/Worker-1] input
+[2014-10-18 16:42:13,120: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data1.out
+[2014-10-18 16:42:13,121: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7789/data1.txt
+[2014-10-18 16:42:13,121: WARNING/Worker-1] currect_result:
+[2014-10-18 16:42:13,121: WARNING/Worker-1] 3
+[2014-10-18 16:42:13,121: WARNING/Worker-1] user_result:
+[2014-10-18 16:42:13,121: WARNING/Worker-1] 3
+[2014-10-18 16:42:13,121: WARNING/Worker-1] data3.in
+[2014-10-18 16:42:13,122: WARNING/Worker-1] 3 3
+[2014-10-18 16:42:13,122: WARNING/Worker-1] input
+[2014-10-18 16:42:13,147: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data3.out
+[2014-10-18 16:42:13,147: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7789/data3.txt
+[2014-10-18 16:42:13,147: WARNING/Worker-1] currect_result:
+[2014-10-18 16:42:13,148: WARNING/Worker-1] 6
+[2014-10-18 16:42:13,148: WARNING/Worker-1] user_result:
+[2014-10-18 16:42:13,148: WARNING/Worker-1] 6
+[2014-10-18 16:42:13,148: WARNING/Worker-1] data2.in
+[2014-10-18 16:42:13,148: WARNING/Worker-1] 1 3
+[2014-10-18 16:42:13,148: WARNING/Worker-1] input
+[2014-10-18 16:42:13,173: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data2.out
+[2014-10-18 16:42:13,175: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7789/data2.txt
+[2014-10-18 16:42:13,175: WARNING/Worker-1] currect_result:
+[2014-10-18 16:42:13,175: WARNING/Worker-1] 4
+[2014-10-18 16:42:13,175: WARNING/Worker-1] user_result:
+[2014-10-18 16:42:13,175: WARNING/Worker-1] 4
+[2014-10-18 16:42:13,176: WARNING/Worker-1] data0.in
+[2014-10-18 16:42:13,176: WARNING/Worker-1] 1 2
+[2014-10-18 16:42:13,176: WARNING/Worker-1] input
+[2014-10-18 16:42:13,199: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data0.out
+[2014-10-18 16:42:13,200: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7789/data0.txt
+[2014-10-18 16:42:13,200: WARNING/Worker-1] currect_result:
+[2014-10-18 16:42:13,200: WARNING/Worker-1] 3
+[2014-10-18 16:42:13,200: WARNING/Worker-1] user_result:
+[2014-10-18 16:42:13,200: WARNING/Worker-1] 3
+[2014-10-18 16:42:13,201: WARNING/Worker-1] {'user_id': u'zldevil2011', 'codeLength': 121, 'result': 'Accepted', 'take_memory': 476L, 'solution_id': 7789L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-18 16:42:13,220: WARNING/Worker-1] Accepted
+[2014-10-18 16:42:13,241: INFO/MainProcess] Task cugbacm.views.problem.Judge[cb7b5f74-2749-44ac-ab41-8e51cc215ad9] succeeded in 0.977422781289s: 'Accepted'
+[2014-10-18 16:45:34,968: INFO/MainProcess] Received task: cugbacm.views.problem.Judge[55f04881-1d9e-460f-a8c4-002f7024a41e]
+[2014-10-18 16:45:34,976: WARNING/Worker-1] g++
+[2014-10-18 16:45:34,979: WARNING/Worker-1] fuck fuck fuck fuck
+[2014-10-18 16:45:34,983: WARNING/Worker-1] 5
+[2014-10-18 16:45:34,983: WARNING/Worker-1] data_count
+[2014-10-18 16:45:36,084: WARNING/Worker-1] data4.in
+[2014-10-18 16:45:36,084: WARNING/Worker-1] 1000000000 100000000
+[2014-10-18 16:45:36,086: WARNING/Worker-1] input
+[2014-10-18 16:45:36,107: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data4.out
+[2014-10-18 16:45:36,107: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7790/data4.txt
+[2014-10-18 16:45:36,108: WARNING/Worker-1] currect_result:
+[2014-10-18 16:45:36,108: WARNING/Worker-1] 1100000000
+[2014-10-18 16:45:36,108: WARNING/Worker-1] user_result:
+[2014-10-18 16:45:36,108: WARNING/Worker-1] 1100000000
+[2014-10-18 16:45:36,108: WARNING/Worker-1] data1.in
+[2014-10-18 16:45:36,108: WARNING/Worker-1] 1 2
+[2014-10-18 16:45:36,109: WARNING/Worker-1] input
+[2014-10-18 16:45:36,132: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data1.out
+[2014-10-18 16:45:36,133: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7790/data1.txt
+[2014-10-18 16:45:36,133: WARNING/Worker-1] currect_result:
+[2014-10-18 16:45:36,133: WARNING/Worker-1] 3
+[2014-10-18 16:45:36,136: WARNING/Worker-1] user_result:
+[2014-10-18 16:45:36,136: WARNING/Worker-1] 3
+[2014-10-18 16:45:36,136: WARNING/Worker-1] data3.in
+[2014-10-18 16:45:36,136: WARNING/Worker-1] 3 3
+[2014-10-18 16:45:36,136: WARNING/Worker-1] input
+[2014-10-18 16:45:36,156: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data3.out
+[2014-10-18 16:45:36,156: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7790/data3.txt
+[2014-10-18 16:45:36,156: WARNING/Worker-1] currect_result:
+[2014-10-18 16:45:36,157: WARNING/Worker-1] 6
+[2014-10-18 16:45:36,157: WARNING/Worker-1] user_result:
+[2014-10-18 16:45:36,157: WARNING/Worker-1] 6
+[2014-10-18 16:45:36,157: WARNING/Worker-1] data2.in
+[2014-10-18 16:45:36,157: WARNING/Worker-1] 1 3
+[2014-10-18 16:45:36,157: WARNING/Worker-1] input
+[2014-10-18 16:45:36,164: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data2.out
+[2014-10-18 16:45:36,165: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7790/data2.txt
+[2014-10-18 16:45:36,165: WARNING/Worker-1] currect_result:
+[2014-10-18 16:45:36,165: WARNING/Worker-1] 4
+[2014-10-18 16:45:36,165: WARNING/Worker-1] user_result:
+[2014-10-18 16:45:36,166: WARNING/Worker-1] 4
+[2014-10-18 16:45:36,166: WARNING/Worker-1] data0.in
+[2014-10-18 16:45:36,166: WARNING/Worker-1] 1 2
+[2014-10-18 16:45:36,166: WARNING/Worker-1] input
+[2014-10-18 16:45:36,173: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data0.out
+[2014-10-18 16:45:36,174: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7790/data0.txt
+[2014-10-18 16:45:36,174: WARNING/Worker-1] currect_result:
+[2014-10-18 16:45:36,174: WARNING/Worker-1] 3
+[2014-10-18 16:45:36,174: WARNING/Worker-1] user_result:
+[2014-10-18 16:45:36,174: WARNING/Worker-1] 3
+[2014-10-18 16:45:36,175: WARNING/Worker-1] {'user_id': u'zldevil2011', 'codeLength': 121, 'result': 'Accepted', 'take_memory': 476L, 'solution_id': 7790L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-18 16:45:36,194: WARNING/Worker-1] Accepted
+[2014-10-18 16:45:36,214: INFO/MainProcess] Task cugbacm.views.problem.Judge[55f04881-1d9e-460f-a8c4-002f7024a41e] succeeded in 1.24435517937s: 'Accepted'
+[2014-10-18 16:47:55,299: INFO/MainProcess] Received task: cugbacm.views.contest_problem.Judge[281648b1-4bc8-426a-bdc3-20b6ead4f34a]
+[2014-10-18 16:47:55,307: WARNING/Worker-1] g++
+[2014-10-18 16:47:55,307: WARNING/Worker-1] fuck fuck fuck fuck
+[2014-10-18 16:47:55,312: WARNING/Worker-1] 5
+[2014-10-18 16:47:55,312: WARNING/Worker-1] data_count
+[2014-10-18 16:47:55,800: WARNING/Worker-1] data4.in
+[2014-10-18 16:47:55,801: WARNING/Worker-1] 1000000000 100000000
+[2014-10-18 16:47:55,801: WARNING/Worker-1] input
+[2014-10-18 16:47:55,808: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data4.out
+[2014-10-18 16:47:55,808: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7791/data4.txt
+[2014-10-18 16:47:55,808: WARNING/Worker-1] currect_result:
+[2014-10-18 16:47:55,809: WARNING/Worker-1] 1100000000
+[2014-10-18 16:47:55,809: WARNING/Worker-1] user_result:
+[2014-10-18 16:47:55,809: WARNING/Worker-1] 1100000000
+[2014-10-18 16:47:55,809: WARNING/Worker-1] data1.in
+[2014-10-18 16:47:55,809: WARNING/Worker-1] 1 2
+[2014-10-18 16:47:55,809: WARNING/Worker-1] input
+[2014-10-18 16:47:55,816: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data1.out
+[2014-10-18 16:47:55,817: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7791/data1.txt
+[2014-10-18 16:47:55,817: WARNING/Worker-1] currect_result:
+[2014-10-18 16:47:55,817: WARNING/Worker-1] 3
+[2014-10-18 16:47:55,817: WARNING/Worker-1] user_result:
+[2014-10-18 16:47:55,818: WARNING/Worker-1] 3
+[2014-10-18 16:47:55,818: WARNING/Worker-1] data3.in
+[2014-10-18 16:47:55,818: WARNING/Worker-1] 3 3
+[2014-10-18 16:47:55,818: WARNING/Worker-1] input
+[2014-10-18 16:47:55,825: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data3.out
+[2014-10-18 16:47:55,825: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7791/data3.txt
+[2014-10-18 16:47:55,825: WARNING/Worker-1] currect_result:
+[2014-10-18 16:47:55,825: WARNING/Worker-1] 6
+[2014-10-18 16:47:55,826: WARNING/Worker-1] user_result:
+[2014-10-18 16:47:55,826: WARNING/Worker-1] 6
+[2014-10-18 16:47:55,826: WARNING/Worker-1] data2.in
+[2014-10-18 16:47:55,826: WARNING/Worker-1] 1 3
+[2014-10-18 16:47:55,826: WARNING/Worker-1] input
+[2014-10-18 16:47:55,833: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data2.out
+[2014-10-18 16:47:55,834: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7791/data2.txt
+[2014-10-18 16:47:55,834: WARNING/Worker-1] currect_result:
+[2014-10-18 16:47:55,834: WARNING/Worker-1] 4
+[2014-10-18 16:47:55,834: WARNING/Worker-1] user_result:
+[2014-10-18 16:47:55,834: WARNING/Worker-1] 4
+[2014-10-18 16:47:55,835: WARNING/Worker-1] data0.in
+[2014-10-18 16:47:55,835: WARNING/Worker-1] 1 2
+[2014-10-18 16:47:55,835: WARNING/Worker-1] input
+[2014-10-18 16:47:55,844: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data0.out
+[2014-10-18 16:47:55,845: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7791/data0.txt
+[2014-10-18 16:47:55,845: WARNING/Worker-1] currect_result:
+[2014-10-18 16:47:55,845: WARNING/Worker-1] 3
+[2014-10-18 16:47:55,845: WARNING/Worker-1] user_result:
+[2014-10-18 16:47:55,845: WARNING/Worker-1] 3
+[2014-10-18 16:47:55,846: WARNING/Worker-1] {'user_id': u'zldevil2011', 'codeLength': 121, 'result': 'Accepted', 'take_memory': 476L, 'solution_id': 7791L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-18 16:47:55,859: WARNING/Worker-1] Accepted
+[2014-10-18 16:47:55,877: INFO/MainProcess] Task cugbacm.views.contest_problem.Judge[281648b1-4bc8-426a-bdc3-20b6ead4f34a] succeeded in 0.576594082639s: 'Accepted'
+[2014-10-18 16:49:28,783: INFO/MainProcess] Received task: cugbacm.views.problem.Judge[ae67f1f2-65ec-4280-b63b-3f82a7cf6a42]
+[2014-10-18 16:49:28,791: WARNING/Worker-1] g++
+[2014-10-18 16:49:28,791: WARNING/Worker-1] fuck fuck fuck fuck
+[2014-10-18 16:49:28,796: WARNING/Worker-1] 5
+[2014-10-18 16:49:28,796: WARNING/Worker-1] data_count
+[2014-10-18 16:49:29,707: WARNING/Worker-1] data4.in
+[2014-10-18 16:49:29,708: WARNING/Worker-1] 1000000000 100000000
+[2014-10-18 16:49:29,708: WARNING/Worker-1] input
+[2014-10-18 16:49:29,723: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data4.out
+[2014-10-18 16:49:29,724: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7792/data4.txt
+[2014-10-18 16:49:29,724: WARNING/Worker-1] currect_result:
+[2014-10-18 16:49:29,724: WARNING/Worker-1] 1100000000
+[2014-10-18 16:49:29,724: WARNING/Worker-1] user_result:
+[2014-10-18 16:49:29,724: WARNING/Worker-1] 1100000000
+[2014-10-18 16:49:29,724: WARNING/Worker-1] data1.in
+[2014-10-18 16:49:29,725: WARNING/Worker-1] 1 2
+[2014-10-18 16:49:29,725: WARNING/Worker-1] input
+[2014-10-18 16:49:29,744: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data1.out
+[2014-10-18 16:49:29,745: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7792/data1.txt
+[2014-10-18 16:49:29,745: WARNING/Worker-1] currect_result:
+[2014-10-18 16:49:29,745: WARNING/Worker-1] 3
+[2014-10-18 16:49:29,745: WARNING/Worker-1] user_result:
+[2014-10-18 16:49:29,745: WARNING/Worker-1] 3
+[2014-10-18 16:49:29,745: WARNING/Worker-1] data3.in
+[2014-10-18 16:49:29,746: WARNING/Worker-1] 3 3
+[2014-10-18 16:49:29,746: WARNING/Worker-1] input
+[2014-10-18 16:49:29,762: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data3.out
+[2014-10-18 16:49:29,763: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7792/data3.txt
+[2014-10-18 16:49:29,763: WARNING/Worker-1] currect_result:
+[2014-10-18 16:49:29,763: WARNING/Worker-1] 6
+[2014-10-18 16:49:29,763: WARNING/Worker-1] user_result:
+[2014-10-18 16:49:29,764: WARNING/Worker-1] 6
+[2014-10-18 16:49:29,764: WARNING/Worker-1] data2.in
+[2014-10-18 16:49:29,764: WARNING/Worker-1] 1 3
+[2014-10-18 16:49:29,764: WARNING/Worker-1] input
+[2014-10-18 16:49:29,775: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data2.out
+[2014-10-18 16:49:29,775: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7792/data2.txt
+[2014-10-18 16:49:29,775: WARNING/Worker-1] currect_result:
+[2014-10-18 16:49:29,776: WARNING/Worker-1] 4
+[2014-10-18 16:49:29,776: WARNING/Worker-1] user_result:
+[2014-10-18 16:49:29,776: WARNING/Worker-1] 4
+[2014-10-18 16:49:29,776: WARNING/Worker-1] data0.in
+[2014-10-18 16:49:29,776: WARNING/Worker-1] 1 2
+[2014-10-18 16:49:29,776: WARNING/Worker-1] input
+[2014-10-18 16:49:29,784: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000/data0.out
+[2014-10-18 16:49:29,784: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7792/data0.txt
+[2014-10-18 16:49:29,788: WARNING/Worker-1] currect_result:
+[2014-10-18 16:49:29,788: WARNING/Worker-1] 3
+[2014-10-18 16:49:29,789: WARNING/Worker-1] user_result:
+[2014-10-18 16:49:29,789: WARNING/Worker-1] 3
+[2014-10-18 16:49:29,789: WARNING/Worker-1] {'user_id': u'zldevil2011', 'codeLength': 121, 'result': 'Accepted', 'take_memory': 472L, 'solution_id': 7792L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-18 16:49:29,814: WARNING/Worker-1] Accepted
+[2014-10-18 16:49:29,829: INFO/MainProcess] Task cugbacm.views.problem.Judge[ae67f1f2-65ec-4280-b63b-3f82a7cf6a42] succeeded in 1.04470014852s: 'Accepted'
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@AY14040915414956495eZ v3.1.10 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.2.0-29-generic-x86_64-with-Ubuntu-12.04-precise
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         oj:0x1b036d0
+- ** ---------- .> transport:   amqp://guest@127.0.0.1:5672//
+- ** ---------- .> results:     disabled
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . cugbacm.views.contest_problem.Judge
+  . cugbacm.views.problem.Judge
+  . cugbacm.views.problem.test
+  . oj.celery.debug_task
+

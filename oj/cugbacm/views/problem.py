@@ -8,8 +8,8 @@ from celery.task import task
 @task
 def test(problemID):
   submit = Submit(
-    runID = 111, 
-    userID = "QQ", 
+    runID = 111,
+    userID = "QQ",
     problemID = problemID,
     status = "queueing",
     memory = 10000,
@@ -19,7 +19,7 @@ def test(problemID):
     code = "fuck you")
   submit.save()
   Judge(submit)
-  
+
 
 @task
 def Judge(submit):
@@ -49,9 +49,10 @@ def Judge(submit):
   if submit.status == "Accepted":
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
       user.accepted = user.accepted + 1
-    if user.acList == None:
-      user.acList = ""
-    user.acList += str(submit.problemID) + ","
+      if user.acList == None:
+          user.acList = ""
+   # user.accepted = user.accepted + 1
+      user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
   elif submit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
@@ -67,7 +68,6 @@ def Judge(submit):
     problem.pe = problem.pe + 1
   elif submit.status == "System Error":
     problem.se = problem.se + 1
-
   problem.totalSubmission = problem.totalSubmission + 1
   user.total = user.total + 1
   user.save()
@@ -88,7 +88,7 @@ def problem(request, problem_id):
     language = request.POST['language']
     for i in range(1):
       submit = Submit(
-        runID = 111, 
+        runID = 111,
         userID = request.session["userID"],
         problemID = problem_id,
         status = "queueing",
@@ -99,7 +99,7 @@ def problem(request, problem_id):
         code = code)
       submit.save()
       Judge.delay(submit)
-    
+
     return HttpResponseRedirect("/index/problem/" + str(problem_id))
   else:
     try:
@@ -112,4 +112,4 @@ def problem(request, problem_id):
       return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits, 'languages':languages})
       #return render(request, 'cugbacm/problem.html', {})
 
-  
+

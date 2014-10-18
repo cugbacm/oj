@@ -41,6 +41,7 @@ def Judge(submit):
       user.acList = ""
     user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
+    user.accepted = user.accepted + 1
   elif submit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
   elif submit.status == "Memory Limit Exceeded":
