@@ -105,11 +105,7 @@
               <h3>
                 author
               </h3>
-              <pre>
-                {% autoescape off %}
-                  {{problem.author}}
-                {% endautoescape%}
-              </pre>
+              <pre>{% autoescape off %}{{problem.author}}{% endautoescape%}</pre>
            </div>
             <div class="col-md-5" style="padding-top:20px;">
              <div data-spy="affix">
@@ -120,18 +116,22 @@
                       <div class="col-md-5 col-md-offset-1">
                         <select id="language" class="form-control" name="language" >
                         {% for var in languages %} 
-			  {% ifequal var submit.language %}
-			    <option selected>{{var}}</option>
-			  {% else %}
-			    <option>{{var}}</option>	
-			  {% endifequal %}	
-			{% endfor %}
+			                     {% ifequal var submit.language %}
+			                       <option selected>{{var}}</option>
+			                     {% else %}
+			                       <option>{{var}}</option>	
+			                     {% endifequal %}	
+		                  	{% endfor %}
                         </select>
                       </div>
                   </div>
                   <div class="form-group">
-                    <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
+                     
+                    <pre id="editor" style="height:240px"><textarea name="code" class="form-control">{{submit.code}}</textarea></pre>
                   </div>
+                 <!-- <div class="form-group">
+                    <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
+                  </div>-->
                   <div class="form-group">
                     <button class="btn btn-primary " type="submit">Submit</button>
                   </div>
@@ -154,12 +154,16 @@
                 {% for submit in submits %}
                   <tr class="odd gradeX">
                     <td>{{submit.id}}</td>
-                    <td>{{submit.status}}</td> 
-                    {% ifequal submit.userID userID %} 
-                      <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+                    {% if submit.status == "Accepted" %}
+                      <td><font color="#3498DB"><strong>{{submit.status}}</strong></font></td>
                     {% else %}
-                      <td>{{submit.language}}</td>
-                    {% endifequal %}  
+                      {% if submit.status == "Compile Error" %}
+                        <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
+                      {% else %}
+                        <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
+                      {% endif %}
+                    {% endif %}
+                      <td><a href="/index/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
                     <td>{{submit.date}} {{submit.timestamp}}</td> 
                     <!--<td>{{submit.code}}</td> -->
                   </tr>
@@ -178,6 +182,12 @@
               });
             } );
               </script>
+              <script src="/site_media/dist/src/ace.js" type="text/javascript" charset="utf-8"></script>
+              <script>
+                  var editor = ace.edit("editor");
+                  editor.setTheme("ace/theme/monokai");
+                  editor.getSession().setMode("ace/mode/c_cpp");
+               </script>
               </div>
             </div>
           </div>
