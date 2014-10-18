@@ -35,7 +35,7 @@ def Judge(submit):
       user.accepted = user.accepted + 1
     if user.acList == None:
       user.acList = ""
-    user.accepted = user.accepted + 1
+   # user.accepted = user.accepted + 1
     user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
   elif submit.status == "Time Limit Exceeded":
@@ -53,8 +53,7 @@ def Judge(submit):
   elif submit.status == "System Error":
     problem.se = problem.se + 1
   problem.totalSubmission = problem.totalSubmission + 1
-  user.total = user.total + 20
-  user.accepted = user.accepted + 22
+  user.total = user.total + 1
   user.save()
   problem.save()
   return submit.status

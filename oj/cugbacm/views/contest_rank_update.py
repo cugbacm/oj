@@ -3,7 +3,7 @@ from datetime import *
 import time
 from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 import cugbacm.proto.rank_pb2
-import ssdb_api
+#import ssdb_api
 class Rank(object):
   class Problem(object):
     class Submit(object):
