@@ -6,6 +6,22 @@ from cugbacm.models import User, Submit, Problem
 from celery.task import task
 
 @task
+def test(problemID):
+  submit = Submit(
+    runID = 111, 
+    userID = "QQ", 
+    problemID = problemID,
+    status = "queueing",
+    memory = 10000,
+    runTime = 1000,
+    codeLength = 100,
+    language = 'g++',
+    code = "fuck you")
+  submit.save()
+  Judge(submit)
+  
+
+@task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)
   user = User.objects.get(userID = submit.userID)

@@ -24,14 +24,14 @@ class Rank(object):
     self.problem_list = {}
     self.ac = 0
     self.penalty = 0
-  
+
   def load_data_to_proto(self):
     rank = rank_pb2.Rank()
     rank.userID = self.userID
     rank.contestID = self.contestID
     rank.ac = self.ac
     rank.penalty = self.penalty
-        
+
     for problem in self.problem_list:
       p = rank.problem.add()
       p.problemID = problem.problemID
@@ -78,6 +78,5 @@ def update_rank_list(contestID):
     rank_proto = rank.load_data_to_proto()
   ssdb_api.SetContestRankListProto(contestID, contest_rank_list.SerializeToString())
 
-
-  
-  
+if __name__ == "__main__":
+  update_rank_list(1)

@@ -81,4 +81,6 @@ class Contestant(User):
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.userID)
 
-
+class ContestRankList(models.Model):
+  contestID  = models.IntegerField()
+  rank_list_proto_str = models.TextField()

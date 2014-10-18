@@ -125,15 +125,15 @@
                         </select>
                       </div>
                   </div>
-                  <div class="form-group">
-                     
-                    <pre id="editor" style="height:240px"><textarea name="code" class="form-control">{{submit.code}}</textarea></pre>
+                  <div class="form-group">             
+                    <pre id="editor" name="code" style="height:240px">{{submit.code}}</pre>
                   </div>
                  <!-- <div class="form-group">
                     <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
                   </div>-->
+                  <textarea style="display:none" name=""></textarea>
                   <div class="form-group">
-                    <button class="btn btn-primary " type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                   </div>
                  
                 </form>
@@ -187,6 +187,7 @@
                   var editor = ace.edit("editor");
                   editor.setTheme("ace/theme/monokai");
                   editor.getSession().setMode("ace/mode/c_cpp");
+                  console.log(editor.getValue());
                </script>
               </div>
             </div>
