@@ -8208,3 +8208,213 @@ spawned uWSGI worker 1 (and the only) (pid: 5469, cores: 1)
 [pid: 5469|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 787 bytes} [Sun Oct 12 00:10:20 2014] GET /index/contest/1/rankList => generated 3359 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 5469|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 777 bytes} [Sun Oct 12 00:10:22 2014] GET /index/contest/1/submitList => generated 18376 bytes in 76 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 5469|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 775 bytes} [Sun Oct 12 00:10:23 2014] GET /index/contest/1/rankList => generated 3359 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sun Oct 12 00:21:56 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9d89268
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9d89268 pid: 6347 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 6347, cores: 1)
+[pid: 6347|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 761 bytes} [Sun Oct 12 00:22:03 2014] GET /index/problemList/ => generated 4977 bytes in 314 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6347|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 755 bytes} [Sun Oct 12 00:22:05 2014] GET /index/contestList/ => generated 4998 bytes in 359 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Mon Oct 13 21:05:25 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9e38268
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9e38268 pid: 5288 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5288, cores: 1)
+[pid: 5288|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 692 bytes} [Mon Oct 13 21:05:50 2014] GET /index/login/ => generated 5960 bytes in 669 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 804 bytes} [Mon Oct 13 21:05:51 2014] GET /site_media/Flat-UI-master/dist/js/flat-ui.min.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 816 bytes} [Mon Oct 13 21:05:51 2014] GET /site_media/Flat-UI-master/dist/js/vendor/jquery.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 744 bytes} [Mon Oct 13 21:05:51 2014] GET /site_media/docs-assets/ico/favicon.png => generated 1694 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 5/5] 127.0.0.1 () {50 vars in 914 bytes} [Mon Oct 13 21:06:00 2014] POST /index/login/ => generated 7 bytes in 86 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 749 bytes} [Mon Oct 13 21:06:01 2014] GET /index/problemList/ => generated 4977 bytes in 407 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 7/7] 127.0.0.1 () {38 vars in 690 bytes} [Mon Oct 13 21:06:01 2014] GET /favicon.ico => generated 2156 bytes in 12 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 749 bytes} [Mon Oct 13 21:06:05 2014] GET /index/userList/ => generated 6324 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 735 bytes} [Mon Oct 13 21:06:15 2014] GET /admin/ => generated 10019 bytes in 131 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 745 bytes} [Mon Oct 13 21:06:17 2014] GET /admin/cugbacm/user/ => generated 4738 bytes in 66 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 686 bytes} [Mon Oct 13 21:06:18 2014] GET /admin/jsi18n/ => generated 2372 bytes in 108 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 12/12] 127.0.0.1 () {40 vars in 762 bytes} [Mon Oct 13 21:06:19 2014] GET /admin/cugbacm/user/1/ => generated 7885 bytes in 73 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 688 bytes} [Mon Oct 13 21:06:19 2014] GET /admin/jsi18n/ => generated 2372 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 14/14] 127.0.0.1 () {44 vars in 989 bytes} [Mon Oct 13 21:06:32 2014] POST /admin/cugbacm/user/1/ => generated 0 bytes in 133 msecs (HTTP/1.1 302) 8 headers in 426 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 900 bytes} [Mon Oct 13 21:06:32 2014] GET /admin/cugbacm/user/ => generated 4738 bytes in 63 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 826 bytes} [Mon Oct 13 21:06:32 2014] GET /admin/jsi18n/ => generated 2372 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 17/17] 127.0.0.1 () {42 vars in 920 bytes} [Mon Oct 13 21:06:35 2014] GET /index/userList/ => generated 6324 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 18/18] 127.0.0.1 () {44 vars in 963 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 16 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 19/19] 127.0.0.1 () {44 vars in 971 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 20/20] 127.0.0.1 () {44 vars in 979 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 21/21] 127.0.0.1 () {44 vars in 958 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 22/22] 127.0.0.1 () {44 vars in 944 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 23/23] 127.0.0.1 () {44 vars in 974 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 24/24] 127.0.0.1 () {44 vars in 996 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 25/25] 127.0.0.1 () {44 vars in 999 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 26/26] 127.0.0.1 () {44 vars in 1001 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 27/27] 127.0.0.1 () {44 vars in 1009 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 28/28] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 29/29] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 30/30] 127.0.0.1 () {42 vars in 920 bytes} [Mon Oct 13 21:06:35 2014] GET /index/userList/ => generated 6324 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 31/31] 127.0.0.1 () {44 vars in 963 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 32/32] 127.0.0.1 () {44 vars in 971 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 33/33] 127.0.0.1 () {44 vars in 979 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 34/34] 127.0.0.1 () {44 vars in 958 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 35/35] 127.0.0.1 () {44 vars in 944 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 36/36] 127.0.0.1 () {44 vars in 974 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 37/37] 127.0.0.1 () {44 vars in 996 bytes} [Mon Oct 13 21:06:35 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 38/38] 127.0.0.1 () {44 vars in 999 bytes} [Mon Oct 13 21:06:36 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 39/39] 127.0.0.1 () {44 vars in 1001 bytes} [Mon Oct 13 21:06:36 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 40/40] 127.0.0.1 () {44 vars in 1009 bytes} [Mon Oct 13 21:06:36 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 41/41] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:36 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 42/42] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:36 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 43/43] 127.0.0.1 () {40 vars in 890 bytes} [Mon Oct 13 21:06:37 2014] GET /index/submitList/ => generated 38341 bytes in 163 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 44/44] 127.0.0.1 () {40 vars in 894 bytes} [Mon Oct 13 21:06:40 2014] GET /index/problem/1000 => generated 13066 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 45/45] 127.0.0.1 () {40 vars in 914 bytes} [Mon Oct 13 21:06:41 2014] GET /index/problem/1000?submit=85 => generated 13340 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 46/46] 127.0.0.1 () {44 vars in 1022 bytes} [Mon Oct 13 21:06:42 2014] POST /index/problem/1000 => generated 0 bytes in 119 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 47/47] 127.0.0.1 () {40 vars in 905 bytes} [Mon Oct 13 21:06:42 2014] GET /index/problem/1000 => generated 13064 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 48/48] 127.0.0.1 () {42 vars in 936 bytes} [Mon Oct 13 21:06:44 2014] GET /index/problem/1000 => generated 13064 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 49/49] 127.0.0.1 () {44 vars in 966 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 50/50] 127.0.0.1 () {44 vars in 982 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 51/51] 127.0.0.1 () {44 vars in 961 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 52/52] 127.0.0.1 () {44 vars in 947 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 53/53] 127.0.0.1 () {44 vars in 977 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 54/54] 127.0.0.1 () {44 vars in 999 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 55/55] 127.0.0.1 () {44 vars in 1002 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 56/56] 127.0.0.1 () {44 vars in 1004 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 57/57] 127.0.0.1 () {44 vars in 1012 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 58/58] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 59/59] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:44 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 60/60] 127.0.0.1 () {42 vars in 936 bytes} [Mon Oct 13 21:06:46 2014] GET /index/problem/1000 => generated 13064 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 61/61] 127.0.0.1 () {44 vars in 966 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 62/62] 127.0.0.1 () {44 vars in 982 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 63/63] 127.0.0.1 () {44 vars in 961 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 64/64] 127.0.0.1 () {44 vars in 947 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 65/65] 127.0.0.1 () {44 vars in 977 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 66/66] 127.0.0.1 () {44 vars in 999 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 67/67] 127.0.0.1 () {44 vars in 1002 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 68/68] 127.0.0.1 () {44 vars in 1004 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 69/69] 127.0.0.1 () {44 vars in 1012 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 70/70] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 71/71] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:06:46 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 72/72] 127.0.0.1 () {40 vars in 889 bytes} [Mon Oct 13 21:06:48 2014] GET /index/userList/ => generated 6324 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 73/73] 127.0.0.1 () {42 vars in 920 bytes} [Mon Oct 13 21:12:29 2014] GET /index/userList/ => generated 6324 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 74/74] 127.0.0.1 () {44 vars in 963 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 75/75] 127.0.0.1 () {44 vars in 971 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 76/76] 127.0.0.1 () {44 vars in 979 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 77/77] 127.0.0.1 () {44 vars in 958 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 78/78] 127.0.0.1 () {44 vars in 944 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 79/79] 127.0.0.1 () {44 vars in 974 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 80/80] 127.0.0.1 () {44 vars in 996 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 81/81] 127.0.0.1 () {44 vars in 999 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 82/82] 127.0.0.1 () {44 vars in 1001 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 83/83] 127.0.0.1 () {44 vars in 1009 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 84/84] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 85/85] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:12:30 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 86/86] 127.0.0.1 () {42 vars in 920 bytes} [Mon Oct 13 21:12:31 2014] GET /index/userList/ => generated 6324 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5288|app: 0|req: 87/87] 127.0.0.1 () {44 vars in 963 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 88/88] 127.0.0.1 () {44 vars in 971 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 89/89] 127.0.0.1 () {44 vars in 979 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 90/90] 127.0.0.1 () {44 vars in 958 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 91/91] 127.0.0.1 () {44 vars in 944 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 92/92] 127.0.0.1 () {44 vars in 974 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 93/93] 127.0.0.1 () {44 vars in 996 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 94/94] 127.0.0.1 () {44 vars in 999 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 95/95] 127.0.0.1 () {44 vars in 1001 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 96/96] 127.0.0.1 () {44 vars in 1009 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 97/97] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 5288|app: 0|req: 98/98] 127.0.0.1 () {44 vars in 1061 bytes} [Mon Oct 13 21:12:31 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Mon Oct 13 22:43:22 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:06:11
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhaolong/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 31401
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9c12268
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9c12268 pid: 7941 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7941, cores: 1)
+[pid: 7941|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 753 bytes} [Mon Oct 13 22:43:27 2014] GET /index/submitList/ => generated 38508 bytes in 375 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 754 bytes} [Mon Oct 13 22:43:29 2014] GET /index/problemList/ => generated 4977 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 749 bytes} [Mon Oct 13 22:43:32 2014] GET /index/userList/ => generated 6326 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 752 bytes} [Mon Oct 13 22:43:33 2014] GET /index/problemList/ => generated 4977 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 755 bytes} [Mon Oct 13 22:43:34 2014] GET /index/problem/1000 => generated 13160 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 774 bytes} [Mon Oct 13 22:43:36 2014] GET /index/problem/1000?submit=94 => generated 13448 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 882 bytes} [Mon Oct 13 22:43:36 2014] POST /index/problem/1000 => generated 0 bytes in 104 msecs (HTTP/1.1 302) 4 headers in 152 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 765 bytes} [Mon Oct 13 22:43:37 2014] GET /index/problem/1000 => generated 13160 bytes in 53 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 9/9] 127.0.0.1 () {42 vars in 796 bytes} [Mon Oct 13 22:43:38 2014] GET /index/problem/1000 => generated 13160 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 10/10] 127.0.0.1 () {44 vars in 826 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 11/11] 127.0.0.1 () {44 vars in 842 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 12/12] 127.0.0.1 () {44 vars in 821 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 13/13] 127.0.0.1 () {44 vars in 807 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 14/14] 127.0.0.1 () {44 vars in 837 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 15/15] 127.0.0.1 () {44 vars in 859 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 16/16] 127.0.0.1 () {44 vars in 862 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 17/17] 127.0.0.1 () {44 vars in 864 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 18/18] 127.0.0.1 () {44 vars in 872 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 19/19] 127.0.0.1 () {44 vars in 921 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 20/20] 127.0.0.1 () {44 vars in 921 bytes} [Mon Oct 13 22:43:38 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 7941|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 753 bytes} [Mon Oct 13 22:43:39 2014] GET /index/submitList/ => generated 38526 bytes in 85 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 754 bytes} [Mon Oct 13 22:43:40 2014] GET /index/contestList/ => generated 4998 bytes in 166 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 7941|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 749 bytes} [Mon Oct 13 22:43:41 2014] GET /index/userList/ => generated 6326 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
