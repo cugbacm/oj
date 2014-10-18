@@ -110,7 +110,7 @@
             <div class="col-md-5" style="padding-top:20px;">
              <div data-spy="affix">
               <div>
-                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" >{% csrf_token %} 
+                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
                   <div class="form-group">
                     <label for="language" class="col-md-2 control-label">Language</label>
                       <div class="col-md-5 col-md-offset-1">
@@ -190,6 +190,17 @@
                   function Submit(){
                       console.log(editor.getValue());
                       document.getElementById("Code").value = editor.getValue();
+                  }
+                  function $(id){
+                     return document.getElementById(id);
+                  }
+                  function $F(id){
+                     return document.getElementById(id).value;
+                  }
+                  function checkForm(){
+                      var value = $F("Code");
+                      if(value.length < 20) return false;
+                      else return true;
                   }
                </script>
               </div>
