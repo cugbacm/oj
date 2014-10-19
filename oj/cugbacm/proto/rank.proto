@@ -1,11 +1,11 @@
 package contest_rank;
 message Submit {
   optional string status = 1;
-  optional string data_time = 2;
+  optional string date_time = 2;
 }
 
 message Problem {
-  optional string problemID = 1;
+  optional int32 problemID = 1;
   repeated Submit submit = 2;
 }
 

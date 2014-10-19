@@ -2,13 +2,13 @@
 from datetime import *
 import time
 import datetime
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
-import cugbacm.proto.rank_pb2
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, ContestRankList
+from cugbacm.proto import rank_pb2
 from celery.task import task
 #import ssdb_api
-class Rank(object):
-  class Problem(object):
-    class Submit(object):
+class Rank():
+  class Problem():
+    class Submit():
       def __init__(self, status="", date_time=datetime.datetime.now()):
         self.status = status
         self.date_time = date_time
@@ -34,13 +34,15 @@ class Rank(object):
     rank.ac = self.ac
     rank.penalty = self.penalty
 
-    for problem in self.problem_list:
+    for problemID in self.problem_list:
+      problem = self.problem_list[problemID]
       p = rank.problem.add()
       p.problemID = problem.problemID
       for submit in problem.submit_list:
         s = p.submit.add()
         s.status = submit.status
-        s.date_time = time.strftime(submit.date_time, '%Y %m %d %H %M %S')
+        s.date_time = "2014 10 10 10 10 10"
+        #s.date_time = time.strftime(submit.date_time, '%Y %m %d %H %M %S')
     return rank
 def sort_rank(rank_list):
   for userID in rank_list:
@@ -51,12 +53,11 @@ def sort_rank(rank_list):
         if submit.status == "Accepted" and flag == 0:
           rank.ac = rank.ac + 1
           flag = 1
-          #测试时间，先用104替代一下
           rank.penalty = rank.penalty + 104
         elif not submit.status == "Accepted":
           rank.penalty = rank.penalty + 20
 
-  rank_list = sorted(rank_list, cmp = lambda x,y:cmp(x.ac, y.ac) or cmp(x.penalty, y.penalty))
+  #rank_list = sorted(rank_list, cmp = lambda x,y:cmp(x.ac, y.ac)) or cmp(x.penalty, y.penalty))
 
 @task
 def update_rank_list(contestID):
@@ -77,12 +78,13 @@ def update_rank_list(contestID):
   sort_rank(rank_list)
   contest_rank_list = rank_pb2.ContestRankList()
   contest_rank_list.contestID = contestID
-  for rank in rank_list:
+  for userID in rank_list:
+    rank = rank_list[userID]
     rank_proto = contest_rank_list.rank.add()
     rank_proto = rank.load_data_to_proto()
   #ssdb_api.SetContestRankListProto(contestID, contest_rank_list.SerializeToString())
   try:
-    contest_rank = ContestRankList.objects.filter(contestID=contestID)
+    contest_rank = ContestRankList.objects.get(contestID=contestID)
   except:
     contest_rank = ContestRankList(contestID=contestID, rank_list_proto_str="")
   contest_rank.rank_list_proto_str = contest_rank_list.SerializeToString()

@@ -107,7 +107,7 @@
             <div class="col-md-5" style="padding-top:20px;">
              <div data-spy="affix">
               <div>
-                <form class="form-horizontal" role="form" action="/index/contest/{{contestID}}/problem/{{problem.problemID}}" method="post" >{% csrf_token %} 
+                <form class="form-horizontal" role="form" action="/index/contest/{{contestID}}/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
                   <div class="form-group">
                     <label for="language" class="col-md-2 control-label">Language</label>
                       <div class="col-md-5 col-md-offset-1">
@@ -124,12 +124,12 @@
                       </div>
                   </div>
                   <div class="form-group">
-                    <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
-                  </div>
-                  <div class="form-group">
-                    <button class="btn btn-primary " type="submit">Submit</button>
-                  </div>
-                 
+                     <pre id="editor" style="height:240px">{{submit.code}}</pre>
+                   </div>
+                   <textarea id="Code" name="code" style="display:none"></textarea>
+                   <div class="form-group">
+                     <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>
+                   </div>
                 </form>
               </div>
               {% autopaginate submits 10 %}
@@ -148,7 +148,15 @@
                 {% for submit in submits %}
                   <tr class="odd gradeX">
                     <td>{{submit.id}}</td>
-                    <td>{{submit.status}}</td> 
+                    {% if submit.status == "Accepted" %}
+                       <td><font color="#3498DB"><strong>{{submit.status}}</strong></font></td>
+                     {% else %}
+                       {% if submit.status == "Compile Error" %}
+                         <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
+                       {% else %}
+                         <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
+                       {% endif %}
+                     {% endif %}
                     {% ifequal submit.userID userID %} 
                       <td><a href="/index/contest/{{contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
                     {% else %}
@@ -172,6 +180,30 @@
               });
             } );
               </script>
+              <script src="/site_media/dist/src/ace.js" type="text/javascript" charset="utf-8"></script>
+               <script>
+                   var editor = ace.edit("editor");
+                   editor.setTheme("ace/theme/monokai");
+                   editor.getSession().setMode("ace/mode/c_cpp");
+                   function Submit(){
+                       console.log(editor.getValue());
+                       document.getElementById("Code").value = editor.getValue();
+                   }
+                   function $(id){
+                      return document.getElementById(id);
+                   }
+                   function $F(id){
+                      return document.getElementById(id).value;
+                   }
+                   function checkForm(){
+                       var value = $F("Code");
+                       if(value.length < 20) {
+                           alert("亲,代码有点短哦~");
+                           return false;
+                       }
+                       else return true;
+                   }
+                </script>
               </div>
             </div>
           </div>
