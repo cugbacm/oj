@@ -12,6 +12,7 @@ def contestRankList(request, contest_id):
   try:
     user = User.objects.get(userID = request.session['userID'])
     # todo: get rank_list
+    rank = Rank("1","zldevil2011")
     try:
       contest_rank_list = ContestRankList.objects.filter(contestID=contest_id)
     except:
