@@ -41,6 +41,7 @@ def Judge(submit):
       user.acList = ""
     user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
+    user.accepted = user.accepted + 1
   elif submit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
   elif submit.status == "Memory Limit Exceeded":
@@ -75,7 +76,7 @@ def contestProblem(request, contest_id, problem_id):
     language = request.POST['language']
     for i in range(1):
       submit = ContestSubmit(
-        runID = 111, 
+        runID = 111,
         userID = request.session["userID"],
         problemID = problem_id,
         status = "queueing",
@@ -83,7 +84,7 @@ def contestProblem(request, contest_id, problem_id):
         runTime = 1000,
         codeLength = 100,
         language = language,
-  contestID = contest_id,
+        contestID = contest_id,
         code = code)
       submit.save()
       Judge.delay(submit)
