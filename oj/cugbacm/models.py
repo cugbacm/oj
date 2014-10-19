@@ -54,7 +54,7 @@ class Problem(models.Model):
 
   def __unicode__(self):
     return self.title
-    
+
 class Contest(models.Model):
   """docstring for Contest"""
   contestID = models.IntegerField()
@@ -68,7 +68,7 @@ class Contest(models.Model):
   userList = models.CommaSeparatedIntegerField(max_length = 10000)
   status = models.CharField(max_length = 50)
   def __unicode__(self):
-    return self.title  
+    return self.title
 
 class ContestSubmit(Submit):
   contestID = models.IntegerField()
