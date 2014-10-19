@@ -14375,3 +14375,146 @@ spawned uWSGI worker 1 (and the only) (pid: 12128, cores: 1)
 [pid: 12128|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 778 bytes} [Sun Oct 19 18:42:00 2014] GET /index/contest/1 => generated 5039 bytes in 47 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 12128|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 789 bytes} [Sun Oct 19 18:42:01 2014] GET /index/contest/1/submitList => generated 9914 bytes in 56 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 12128|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 919 bytes} [Sun Oct 19 18:42:05 2014] POST /index/contest/1/submitList/ => generated 4508 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sun Oct 19 19:34:10 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9cd63c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9cd63c0 pid: 15653 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 15653, cores: 1)
+[pid: 15653|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 741 bytes} [Sun Oct 19 19:34:14 2014] GET /index/contest/1/submitList => generated 9913 bytes in 336 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 784 bytes} [Sun Oct 19 19:34:18 2014] GET /index/contestList/ => generated 4996 bytes in 401 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 774 bytes} [Sun Oct 19 19:34:20 2014] GET /index/submitList/ => generated 17157 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 4/4] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:27 2014] POST /index/submitList/ => generated 6546 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 5/5] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:30 2014] POST /index/submitList/ => generated 6541 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 6/6] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:34 2014] POST /index/submitList/ => generated 6541 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:36 2014] POST /index/submitList/ => generated 6541 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:39 2014] POST /index/submitList/ => generated 8450 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 9/9] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:45 2014] POST /index/submitList/ => generated 9626 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 10/10] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:47 2014] POST /index/submitList/ => generated 13321 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 11/11] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:34:54 2014] POST /index/submitList/ => generated 6550 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 12/12] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:35:02 2014] POST /index/submitList/ => generated 6550 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 13/13] 127.0.0.1 () {44 vars in 890 bytes} [Sun Oct 19 19:35:06 2014] POST /index/submitList/ => generated 17189 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 775 bytes} [Sun Oct 19 19:35:10 2014] GET /index/contestList/ => generated 4996 bytes in 364 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 770 bytes} [Sun Oct 19 19:35:13 2014] GET /index/contest/1 => generated 5039 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 787 bytes} [Sun Oct 19 19:35:15 2014] GET /index/contest/1/problem/1 => generated 10171 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 17/17] 127.0.0.1 () {40 vars in 799 bytes} [Sun Oct 19 19:35:17 2014] GET /index/contest/1/submitList => generated 9913 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 778 bytes} [Sun Oct 19 19:35:20 2014] GET /index/problem/1 => generated 14042 bytes in 61 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 19/19] 127.0.0.1 () {42 vars in 784 bytes} [Sun Oct 19 19:35:20 2014] GET /site_media/dist/src/ace.js => generated 624555 bytes in 207 msecs (HTTP/1.1 200) 4 headers in 156 bytes (18162 switches on core 0)
+[pid: 15653|app: 0|req: 20/20] 127.0.0.1 () {42 vars in 804 bytes} [Sun Oct 19 19:35:20 2014] GET /site_media/dist/src/theme-monokai.js => generated 2666 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 154 bytes (106 switches on core 0)
+[pid: 15653|app: 0|req: 21/21] 127.0.0.1 () {42 vars in 798 bytes} [Sun Oct 19 19:35:20 2014] GET /site_media/dist/src/mode-c_cpp.js => generated 31388 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 155 bytes (799 switches on core 0)
+[pid: 15653|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 796 bytes} [Sun Oct 19 19:35:30 2014] GET /index/contest/1/rankList => generated 62684 bytes in 156 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 800 bytes} [Sun Oct 19 19:35:34 2014] GET /index/contest/1/submitList => generated 9913 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 24/24] 127.0.0.1 () {40 vars in 778 bytes} [Sun Oct 19 19:35:37 2014] GET /index/contest/1 => generated 5039 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 25/25] 127.0.0.1 () {40 vars in 785 bytes} [Sun Oct 19 19:35:38 2014] GET /index/contest/1/rankList => generated 62651 bytes in 87 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 26/26] 127.0.0.1 () {40 vars in 789 bytes} [Sun Oct 19 19:35:42 2014] GET /index/contest/1/submitList => generated 9913 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 27/27] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:35:46 2014] POST /index/contest/1/submitList => generated 5964 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 28/28] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:35:50 2014] POST /index/contest/1/submitList => generated 6457 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 29/29] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:35:54 2014] POST /index/contest/1/submitList => generated 5964 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 15653|app: 0|req: 30/30] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:36:04 2014] POST /index/contest/1/submitList => generated 9927 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sun Oct 19 19:46:56 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x82643c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x82643c0 pid: 16599 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 16599, cores: 1)
+[pid: 16599|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 778 bytes} [Sun Oct 19 19:47:05 2014] GET /index/contest/1 => generated 99514 bytes in 434 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 16599|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 778 bytes} [Sun Oct 19 19:47:14 2014] GET /index/contest/1 => generated 99514 bytes in 91 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 16599|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 784 bytes} [Sun Oct 19 19:47:17 2014] GET /index/contestList/ => generated 87690 bytes in 109 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 16599|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 725 bytes} [Sun Oct 19 19:48:45 2014] GET /index/contestList/ => generated 87444 bytes in 87 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 16599|app: 0|req: 5/5] 127.0.0.1 () {38 vars in 713 bytes} [Sun Oct 19 19:48:50 2014] GET /index/login/ => generated 87366 bytes in 80 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sun Oct 19 19:49:35 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x97a13c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x97a13c0 pid: 16718 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 16718, cores: 1)
+[pid: 16718|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 713 bytes} [Sun Oct 19 19:49:38 2014] GET /index/login/ => generated 6028 bytes in 450 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 2/2] 127.0.0.1 () {50 vars in 935 bytes} [Sun Oct 19 19:49:45 2014] POST /index/login/ => generated 7 bytes in 171 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 770 bytes} [Sun Oct 19 19:49:45 2014] GET /index/problemList/ => generated 4958 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 776 bytes} [Sun Oct 19 19:49:47 2014] GET /index/contestList/ => generated 4996 bytes in 373 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 770 bytes} [Sun Oct 19 19:49:50 2014] GET /index/contest/1 => generated 5039 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 789 bytes} [Sun Oct 19 19:49:51 2014] GET /index/contest/1/submitList => generated 10757 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:49:55 2014] POST /index/contest/1/submitList => generated 6826 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:49:58 2014] POST /index/contest/1/submitList => generated 6821 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 9/9] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:50:00 2014] POST /index/contest/1/submitList => generated 7313 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 10/10] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:50:06 2014] POST /index/contest/1/submitList => generated 9802 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 11/11] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:50:09 2014] POST /index/contest/1/submitList => generated 10789 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 12/12] 127.0.0.1 () {44 vars in 917 bytes} [Sun Oct 19 19:50:13 2014] POST /index/contest/1/submitList => generated 7321 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 784 bytes} [Sun Oct 19 19:50:18 2014] GET /index/problemList/ => generated 4958 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 770 bytes} [Sun Oct 19 19:50:25 2014] GET /index/problem/1 => generated 14042 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 15/15] 127.0.0.1 () {42 vars in 784 bytes} [Sun Oct 19 19:50:25 2014] GET /site_media/dist/src/ace.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 16718|app: 0|req: 16/16] 127.0.0.1 () {42 vars in 804 bytes} [Sun Oct 19 19:50:25 2014] GET /site_media/dist/src/theme-monokai.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 16718|app: 0|req: 17/17] 127.0.0.1 () {42 vars in 798 bytes} [Sun Oct 19 19:50:25 2014] GET /site_media/dist/src/mode-c_cpp.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 16718|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 786 bytes} [Sun Oct 19 19:50:29 2014] GET /index/problem/1?submit=20 => generated 14090 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 796 bytes} [Sun Oct 19 19:50:31 2014] GET /index/problem/1?submit=18 => generated 14396 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 796 bytes} [Sun Oct 19 19:50:35 2014] GET /index/problem/1?submit=16 => generated 14324 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 16718|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 796 bytes} [Sun Oct 19 19:50:38 2014] GET /index/problem/1?submit=15 => generated 14078 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
