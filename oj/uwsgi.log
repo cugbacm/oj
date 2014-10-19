@@ -14058,3 +14058,34 @@ spawned uWSGI worker 1 (and the only) (pid: 26994, cores: 1)
 [pid: 26994|app: 0|req: 767/767] 182.48.99.151 () {44 vars in 861 bytes} [Sat Oct 18 20:30:22 2014] GET /site_media/dist/src/theme-monokai.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
 [pid: 26994|app: 0|req: 768/768] 182.48.99.151 () {40 vars in 808 bytes} [Sat Oct 18 20:30:23 2014] GET /index/submitList/ => generated 39275 bytes in 88 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 >>>>>>> origin/master
+*** Starting uWSGI 2.0.6 (32bit) on [Sun Oct 19 16:56:38 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9d093c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9d093c0 pid: 5721 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5721, cores: 1)
+[pid: 5721|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 741 bytes} [Sun Oct 19 16:56:42 2014] GET /index/contest/1/submitList => generated 146314 bytes in 1250 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5721|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 713 bytes} [Sun Oct 19 16:56:50 2014] GET /index/login/ => generated 134240 bytes in 153 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
