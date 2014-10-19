@@ -61,7 +61,7 @@
     </marquee>
     <div class="row">
      <div class="col-md-offset-1">
-      <form class="form-inline" role="form" action="/index/submitList/" method="post">{% csrf_token %} 
+      <form class="form-inline" role="form" action="/index/contest/{{contest.contestID}}/submitList" method="post">{% csrf_token %} 
         <div class="form-group">
           <label class="sr-only" for="userIDSearch">User ID</label>
           <input type="text" class="form-control" id="userIDSearch" name="userIDSearch" placeholder="User ID" value={{userIDSearch}}>
@@ -133,6 +133,7 @@
               <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
             {% else %}
               <td>{{submit.language}}</td>
+	
             {% endifequal %}  
             <td>{{submit.date}} {{submit.timestamp}}</td> 
             <!--<td>{{submit.code}}</td> -->
