@@ -3,3 +3,5 @@
 !tags
 django_socket.xml
 restart.sh
+restartNginx.sh
+.gitignore
