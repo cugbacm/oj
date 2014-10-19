@@ -51,7 +51,6 @@ def sort_rank(rank_list):
         if submit.status == "Accepted" and flag == 0:
           rank.ac = rank.ac + 1
           flag = 1
-          #测试时间，先用104替代一下
           rank.penalty = rank.penalty + 104
         elif not submit.status == "Accepted":
           rank.penalty = rank.penalty + 20
