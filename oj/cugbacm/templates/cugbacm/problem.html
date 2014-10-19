@@ -199,7 +199,10 @@
                   }
                   function checkForm(){
                       var value = $F("Code");
-                      if(value.length < 20) return false;
+                      if(value.length < 20) {
+                          alert("亲，代码有点短哦~");
+                          return false;
+                      }
                       else return true;
                   }
                </script>

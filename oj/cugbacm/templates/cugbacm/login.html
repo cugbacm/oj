@@ -46,8 +46,11 @@
                 alert(data);  
              }
         });
-    });   
+      });   
     });
+    function goReg() {
+        window.location.href='/index/register/';
+    }
     </script>
   </head>
 
@@ -80,7 +83,7 @@
            </label>
              <div class="form-group">
              <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
-             <a href="/index/register"><button class="btn btn-lg btn-primary btn-block" id="register" type="button" style="">Register</button></a> 
+             <input class="btn btn-lg btn-primary btn-block" id="register" type="button" value="Register" style="" onclick="goReg()"/> 
         </div>
       </div>
      </div>
