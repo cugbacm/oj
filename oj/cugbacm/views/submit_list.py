@@ -7,6 +7,8 @@ from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 
 def submitList(request):
+  results = ("Result","Accepted", "Time Limit Exceeded","Memory Limit Exceeded","Wrong Answer","Runtime Error","Compile Error","Presentation Error","System Error")
+  languages = ("Language","g++","gcc","java","python2","python3")
   try:
     user = User.objects.get(userID = request.session['userID'])
     submits = Submit.objects.all().order_by('-id')
@@ -34,13 +36,15 @@ def submitList(request):
             'userIDSearch': request.POST['userIDSearch'],
             'problemIDSearch': request.POST['problemIDSearch'],
             'resultSearch': request.POST['resultSearch'],
-            'languageSearch': request.POST['languageSearch']
+            'languageSearch': request.POST['languageSearch'],
+	    'languages':languages,
+            'results':results
           }
         )
       except:
-        return render(request, 'cugbacm/submitList.html', {'submits': {}, 'userID':request.session['userID'] })
+        return render(request, 'cugbacm/submitList.html', {'submits': {}, 'userID':request.session['userID'],'results':results, 'languages':languages})
     else:
-      return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] })
+      return render(request, 'cugbacm/submitList.html', {'submits': submits, 'userID':request.session['userID'] , 'results':results, 'languages':languages})
   except:
     return HttpResponseRedirect("/index/login")
 

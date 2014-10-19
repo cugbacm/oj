@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-  userID = models.CharField(max_length = 200, unique = True)
+  userID = models.CharField(max_length = 200)
   password = models.CharField(max_length = 20)
   session = models.CharField(max_length = 20)
   specialty = models.CharField(max_length = 100)
@@ -54,7 +54,7 @@ class Problem(models.Model):
 
   def __unicode__(self):
     return self.title
-    
+
 class Contest(models.Model):
   """docstring for Contest"""
   contestID = models.IntegerField()
@@ -68,7 +68,7 @@ class Contest(models.Model):
   userList = models.CommaSeparatedIntegerField(max_length = 10000)
   status = models.CharField(max_length = 50)
   def __unicode__(self):
-    return self.title  
+    return self.title
 
 class ContestSubmit(Submit):
   contestID = models.IntegerField()
@@ -77,6 +77,10 @@ class ContestSubmit(Submit):
 class Contestant(User):
   contestID = models.IntegerField()
   penalty = models.TimeField()
+  ac = models.CharField(max_length = 10000)
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.userID)
 
+class ContestRankList(models.Model):
+  contestID  = models.IntegerField()
+  rank_list_proto_str = models.TextField()

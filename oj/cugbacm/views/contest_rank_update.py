@@ -1,69 +1,94 @@
-!/usr/bin/env python
+#!/usr/bin/env python
 from datetime import *
 import time
-from django.shortcuts import render
-from django.template import Context, loader
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
-from django.http import HttpResponse, HttpResponseRedirect
+import datetime
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, ContestRankList
+from cugbacm.proto import rank_pb2
+from celery.task import task
+#import ssdb_api
+class Rank():
+  class Problem():
+    class Submit():
+      def __init__(self, status="", date_time=datetime.datetime.now()):
+        self.status = status
+        self.date_time = date_time
 
-def contestRankUpdate(ContestSubmit):
- # try:
- # user = User.objects.get(userID = request.session['userID'])
- # todo: get rank_list
- # contest_submit = ContestSubmit.objects.get(contestID = contest_id)
-  user_id = ContestSubmit.userID
-  contestant = Contestant.objects.get(userID = user_id)
-  problem_id = ContestSubmit.problemID
-  contest_problem = Problem.objects.get(problemID = problem_id)
-  if ContestSubmit.status == "Accepted":
-    contestant.ac = contest_user.ac + 1
-    if contestant.acList == None:
-      contestant.acList = ""
-    contestant.acList += str(ContestSubmit.problemID)+","
-    contest_problem.ac = contest_problem.ac + 1
-    contestant.penalty = contestant.penalty + "00:00:20"
-  elif ContestSubmit.status == "Time Limit Exceeded":
-    contest_problem.tle = contest_problem.tle + 1
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Memory Limit Exceeded":
-    contest_problem.mle = contest_problem.mle + 1
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Wrong Answer":
-    contest_problem.wa = contest_problem.wa + 1
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Runtime Error":
-    contesr_problem.re = contest_problem.re + 1
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Compile Error":
-    contest_problem.ce = contest_problem.pe + 1
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "Presentation Error":
-    contest_problem.pe = contest_problem.pe + 1
-    contestant.time = contestant.penalty + 20
-  elif ContestSubmit.status == "System Error":
-    contest_problem.se = contest_problem.se + 1
-    contestant.time = contestant.penalty + 20
-  contest_problem.totalSubmission = contest_problem.totalSubmission + 1
-  contestant.total = contest_user.total + 1
-  contestant.save()
-  contest_problem.save()
-    
-  contest_rank_list = Contestant.objects.get(contestID = contest_id).order_by('-penalty')
-    
-   # return render(request,
-    #             'cugbacm/contestRankList.html',
-     #            {
-      #              'userID':request.session['userID'],
-       #             'contest': Contest.objects.get(contestID = contest_id)
-  #      'contest_rank_list':contest_rank_list
-         #        })
-  #except:
-    
-   # return render(request,
-    #             'cugbacm/contestRankList.html',
-     #            {
-      #              'userID':request.session['userID'],
-       #             #'contest': Contest.objects.get(contestID = contest_id)
-        #         })
-   # return HttpResponseRedirect("/index/login")
+    def __init__(self, problemID):
+      self.problemID = problemID
+      self.submit_list = []
 
+    def add_submit(self, submit):
+      self.submit_list.append(submit)
+
+  def __init__(self, userID, contestID):
+    self.userID = userID
+    self.contestID = contestID
+    self.problem_list = {}
+    self.ac = 0
+    self.penalty = 0
+
+  def load_data_to_proto(self):
+    rank = rank_pb2.Rank()
+    rank.userID = self.userID
+    rank.contestID = self.contestID
+    rank.ac = self.ac
+    rank.penalty = self.penalty
+
+    for problemID in self.problem_list:
+      problem = self.problem_list[problemID]
+      p = rank.problem.add()
+      p.problemID = problem.problemID
+      for submit in problem.submit_list:
+        s = p.submit.add()
+        s.status = submit.status
+        s.date_time = "2014 10 10 10 10 10"
+        #s.date_time = time.strftime(submit.date_time, '%Y %m %d %H %M %S')
+    return rank
+def sort_rank(rank_list):
+  for userID in rank_list:
+    rank = rank_list[userID]
+    for problem in rank.problem_list:
+      flag = 0
+      for submit in rank.problem_list[problem].submit_list:
+        if submit.status == "Accepted" and flag == 0:
+          rank.ac = rank.ac + 1
+          flag = 1
+          rank.penalty = rank.penalty + 104
+        elif not submit.status == "Accepted":
+          rank.penalty = rank.penalty + 20
+
+  #rank_list = sorted(rank_list, cmp = lambda x,y:cmp(x.ac, y.ac)) or cmp(x.penalty, y.penalty))
+
+@task
+def update_rank_list(contestID):
+  contest_submit_list = ContestSubmit.objects.filter(contestID=contestID)
+  rank_list = {}
+
+  for contest_submit in contest_submit_list:
+    userID = contest_submit.userID
+    status = contest_submit.status
+    problemID = contest_submit.problemID
+    date_time = contest_submit.timestamp
+    if not userID in rank_list:
+      rank_list[userID] = Rank(userID, contestID)
+    if not problemID in rank_list[userID].problem_list:
+      rank_list[userID].problem_list[problemID] = Rank.Problem(problemID)
+    rank_list[userID].problem_list[problemID].add_submit(Rank.Problem.Submit(status=status, date_time=date_time))
+
+  sort_rank(rank_list)
+  contest_rank_list = rank_pb2.ContestRankList()
+  contest_rank_list.contestID = contestID
+  for userID in rank_list:
+    rank = rank_list[userID]
+    rank_proto = contest_rank_list.rank.add()
+    rank_proto = rank.load_data_to_proto()
+  #ssdb_api.SetContestRankListProto(contestID, contest_rank_list.SerializeToString())
+  try:
+    contest_rank = ContestRankList.objects.get(contestID=contestID)
+  except:
+    contest_rank = ContestRankList(contestID=contestID, rank_list_proto_str="")
+  contest_rank.rank_list_proto_str = contest_rank_list.SerializeToString()
+  contest_rank.save()
+
+if __name__ == "__main__":
+  update_rank_list(1)

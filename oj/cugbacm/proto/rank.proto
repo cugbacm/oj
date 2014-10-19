@@ -1,0 +1,23 @@
+package contest_rank;
+message Submit {
+  optional string status = 1;
+  optional string date_time = 2;
+}
+
+message Problem {
+  optional int32 problemID = 1;
+  repeated Submit submit = 2;
+}
+
+message Rank {
+  optional string userID = 1;
+  optional string contestID = 2;
+  repeated Problem problem = 3;
+  optional int32 penalty = 4; 
+  optional int32 ac = 5;
+}
+
+message ContestRankList {
+  optional string contestID = 1;
+  repeated Rank rank = 2;
+}

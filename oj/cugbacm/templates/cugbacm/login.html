@@ -12,10 +12,13 @@
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
+   <!-- <link rel="stylesheet/less" type="text/css" href="/site_media/Flat-UI-master/less/modules/share.less">
+    <link rel="stylesheet/less" type="text/css" href="/site_media/Flat-UI-master/less/modules/switch.less">-->
     <link href="/site_media/Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
     <link href="/site_media/dist/css/signin.css" rel="stylesheet">
     <link href="/site_media/Flat-UI-master/css/demo.css" rel="stylesheet">
+   <!-- <script language="javascript" type="text/javascript" src="/site_media/dist/js/less-1.7.5.min.js"></script>-->
    <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -43,8 +46,11 @@
                 alert(data);  
              }
         });
-    });   
+      });   
     });
+    function goReg() {
+        window.location.href='/index/register/';
+    }
     </script>
   </head>
 
@@ -63,8 +69,12 @@
            </div>
            <div class="form-group">
              <input type="password" id = "password"  class="form-control login-field" placeholder="Password" name="password" required />
-           </div> 
-           <label class="checkbox">
+           </div>
+                          <!-- <div class="bootstrap-switch-square">
+                                             <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-id-custom-switch-03 bootstrap-switch-animate bootstrap-switch-on"><div class="bootstrap-switch-container" style=""><span class="bootstrap-switch-handle-on bootstrap-switch-primary"><span class="fui-check"></span></span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default"><span class="fui-cross"></span></span><input type="checkbox" checked="" data-toggle="switch" id="custom-switch-03" data-on-text="&lt;span class='fui-check'&gt;&lt;/span&gt;" data-off-text="&lt;span class='fui-cross'&gt;&lt;/span&gt;"></div></div>
+                                                             </div>
+                              -->                                
+          <label class="checkbox">
              <span class="icons">
                <span class="first-icon fui-checkbox-unchecked"></span>
                <span class="second-icon fui-checkbox-checked"></span>
@@ -73,7 +83,7 @@
            </label>
              <div class="form-group">
              <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
-             <a href="/index/register"><button class="btn btn-lg btn-primary btn-block" id="register" type="button" style="">Register</button></a> 
+             <input class="btn btn-lg btn-primary btn-block" id="register" type="button" value="Register" style="" onclick="goReg()"/> 
         </div>
       </div>
      </div>
@@ -94,6 +104,8 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
+   <script src="/site_media/Flat-UI-master/dist/js/flat-ui.min.js"></script>
+   <script src="/site_media/Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>
