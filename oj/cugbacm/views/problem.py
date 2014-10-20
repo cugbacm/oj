@@ -33,10 +33,10 @@ def Judge(submit):
   if submit.status == "Accepted":
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
       user.accepted = user.accepted + 1
-    if user.acList == None:
-      user.acList = ""
+      if user.acList == None:
+        user.acList = ""
    # user.accepted = user.accepted + 1
-    user.acList += str(submit.problemID) + ","
+      user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
   elif submit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
