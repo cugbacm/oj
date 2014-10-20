@@ -215,7 +215,19 @@ def judge_result(problem_id, solution_id, item):
   print currect_result , user
   try:
     curr = file(currect_result).read().replace('\r','')
+    currLen=len(curr)
+    if curr[currLen-1]=='\n':
+  	    open(current_result,'w').write(curr[:-1])
+            curr=file(current_result).read().replace('\r','')
+
     user_result = file(user).read().replace('\r','')
+    userLen=len(user_result)
+    if user_result[userLen-1]=='\n':
+            open(user,'w').write(user_result[:-1])
+            user_result=file(user).read().replace('\r','')
+
+    #curr = file(currect_result).read().replace('\r','')
+    #user_result = file(user).read().replace('\r','')
   except:
     return False
 
@@ -250,6 +262,7 @@ def run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_
     'take_memory': 0,
     'user_id': user_id,
     'result': 0,
+    'err_explain':0,
   }
   result_code = {
     'In Queuing': 0,
@@ -349,9 +362,15 @@ def main(user_submit):
   result = run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_limit)
   result['result'] = re_code[result['result']]
   result['codeLength'] = os.path.getsize(main_path[language])
-  err_path = path + 'err.txt'
+  err_path = path + '/err.txt'
   if os.path.exists(err_path):
-    result['compileEorror'] = file(path).read()
+      if(result['result']=='Compile Error'):
+          result['err_explain'] = 'Compile Error:'+file(err_path).read()
+  elif(result['result']=='System Error'):
+          result['err_explain'] = 'System Error: There is no data for the '+result['problem_id']+' problem'
+  elif(result['result']=='Runtime Error'):
+          result['err_explain'] = 'Runtime Error: '
+
 # user_submit.status = re_code[result['result']]
 # user_submit.codeLength = os.path.getsize(main_path)
 # user_submit.runTime =  result['take_time']
@@ -361,7 +380,7 @@ def main(user_submit):
   #clean_work_dir(solution_id)
   return result
 if __name__ == '__main__':
-  program = "#include<iostream>\n using namespace std; int main(){int  a, b; cin >> a >> b; cout<< a + b <<endl; return 0; }"
+  program = "#include<iostream>\n using namespace std; int main(){int  a, b; cin >> a >> b; cout<< a+b <<' '    ; return 0; }"
   #program = "line=raw_input()\na=line.split()\nprint int(a[0])+int(a[1])"
   user_submit = UserSubmit(1, 1000, 'g++', '1004101117', program, 1000, 32562)
   print main(user_submit)
