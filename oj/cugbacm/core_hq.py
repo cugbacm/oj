@@ -361,7 +361,7 @@ def main(user_submit):
   #clean_work_dir(solution_id)
   return result
 if __name__ == '__main__':
-  #program = "#include<iostream>\n using namespace std; int main(){int  a, b; cin >> a >> b; cout<< a + b <<endl; return 0; }"
+  #program = "#include<iostream>\n using namespace std; int main(){int a, b; cin >> a >> b; cout << a + b << endl;return 0; }"
   #program = "line=raw_input()\na=line.split()\nprint int(a[0])+int(a[1])"
-  user_submit = UserSubmit(1, 1000, 'java', '1004101117', program, 1000, 32562)
+  user_submit = UserSubmit(1, 1000, 'g++', '1004101117',program, 1000, 32562)
   print main(user_submit)

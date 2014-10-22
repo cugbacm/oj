@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from celery.task import task
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
-from contest_rank_update import update_rank_list
+from cugbacm.views.contest_rank_update import update_rank_list
 from cugbacm.proto import contestant_ac_pb2
 @task
 def Judge(submit):
@@ -35,13 +35,12 @@ def Judge(submit):
   print submit.status
 
   if submit.status == "Accepted":
-    if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
+    if ContestSubmit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
-    if user.acList == None:
-      user.acList = ""
-    user.acList += str(submit.problemID) + ","
+      if user.acList == None:
+        user.acList = ""
+      user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
-    user.accepted = user.accepted + 1
   elif submit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
   elif submit.status == "Memory Limit Exceeded":
@@ -76,7 +75,7 @@ def contestProblem(request, contest_id, problem_id):
     language = request.POST['language']
     for i in range(1):
       submit = ContestSubmit(
-        runID = 111, 
+        runID = 111,
         userID = request.session["userID"],
         problemID = problem_id,
         status = "queueing",

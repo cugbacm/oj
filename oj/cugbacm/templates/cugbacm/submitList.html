@@ -72,27 +72,27 @@
         <div class="form-group">
           <label for="resultSearch" class="sr-only">Result</label>
             <select id="resultSearch" class="form-control" name="resultSearch" value={{resultSearch}}>
-              <option>Result</option>
-              <option>Accepted</option>
-              <option>Time Limit Exceeded</option>
-              <option>Memory Limit Exceeded</option>
-              <option>Wrong Answer</option>
-              <option>Runtime Error</option>
-              <option>Compile Error</option>
-              <option>Presentation Error</option>
-              <option>System Error</option>
-            </select>
-        </div>
+              {% for var in results %}
+               {% ifequal var resultSearch%}
+                         <option selected>{{var}}</option>
+               {% else %}
+                         <option>{{var}}</option>
+               {% endifequal %}
+	      {% endfor %}
+           </select>
+	</div>
         <div class="form-group">
           <label for="languageSearch" class="sr-only">Language</label>
             <select id="languageSearch" class="form-control" name="languageSearch" value={{languageSearch}}>
-              <option>Language</option>
-              <option>g++</option>
-              <option>gcc</option>
-              <option>java</option>
-              <option>python2</option>
-              <option>python3</option>
-            </select>
+         {% for var in languages %}
+               {% ifequal var languageSearch%}
+                         <option selected>{{var}}</option>
+               {% else %}
+                         <option>{{var}}</option>
+               {% endifequal %}
+         {% endfor %}
+   
+	 </select>
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
       </form>
@@ -118,13 +118,13 @@
 				</tr>  
 		    </thead>  
 			<tbody>
-			{% for submit in submits %}
+        {% for submit in submits %}
         {% if submit.status == "Accepted" %}
           <tr class="gradeA">
             <td>{{submit.id}}</td>
             <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
             <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-            <td><font color="#3498DB"><STRONG>{{submit.status}}</STRONG></font></td> 
+            <td>{{submit.status}}</td> 
             <td>{{submit.memory}}</td>
             <td>{{submit.runTime}}</td>
             <td>{{submit.codeLength}}</td>
@@ -141,11 +141,7 @@
           <td>{{submit.id}}</td>
           <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
           <td><a href="/index/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-          {% if submit.status == "Compile Error"%}
-             <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
-          {% else %}
-             <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
-          {% endif %}
+          <td>{{submit.status}}</td> 
           <td>{{submit.memory}}</td>
           <td>{{submit.runTime}}</td>
           <td>{{submit.codeLength}}</td>
@@ -158,9 +154,9 @@
           <!--<td>{{submit.code}}</td> -->
         </tr>
         {% endif %}
-			{% endfor %}  
-			</tbody>  
-		</table>
+	{% endfor %}  
+	  </tbody>  
+	</table>
     </div>
     {% paginate %}
     <script>

@@ -6,6 +6,22 @@ from cugbacm.models import User, Submit, Problem
 from celery.task import task
 
 @task
+def test(problemID):
+  submit = Submit(
+    runID = 111,
+    userID = "QQ",
+    problemID = problemID,
+    status = "queueing",
+    memory = 10000,
+    runTime = 1000,
+    codeLength = 100,
+    language = 'g++',
+    code = "fuck you")
+  submit.save()
+  Judge(submit)
+
+
+@task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)
   user = User.objects.get(userID = submit.userID)
@@ -31,11 +47,10 @@ def Judge(submit):
   print submit.status
 
   if submit.status == "Accepted":
-    if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
+    if Submit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
       if user.acList == None:
         user.acList = ""
-   # user.accepted = user.accepted + 1
       user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
   elif submit.status == "Time Limit Exceeded":
@@ -72,7 +87,7 @@ def problem(request, problem_id):
     language = request.POST['language']
     for i in range(1):
       submit = Submit(
-        runID = 111, 
+        runID = 111,
         userID = request.session["userID"],
         problemID = problem_id,
         status = "queueing",
@@ -83,7 +98,7 @@ def problem(request, problem_id):
         code = code)
       submit.save()
       Judge.delay(submit)
-    
+
     return HttpResponseRedirect("/index/problem/" + str(problem_id))
   else:
     try:
@@ -96,4 +111,4 @@ def problem(request, problem_id):
       return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits, 'languages':languages})
       #return render(request, 'cugbacm/problem.html', {})
 
-  
+

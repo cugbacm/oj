@@ -104,6 +104,19 @@ CELERY_IMPORTS = (
     'cugbacm.views.problem',
     'cugbacm.views.contest_problem',
 )
+CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+from cugbacm.models import Submit
+from datetime import timedelta
+from cugbacm.views.problem import Judge, test
+ 
+CELERYBEAT_SCHEDULE = {
+  'add-every-10-seconds': {
+    'task': 'cugbacm.views.problem.test',
+    'schedule': timedelta(seconds=5),
+    'args': (['1000']),
+  }
+}
+CELERY_TIMEZONE = 'Asia/Shanghai'
 BROKER_HOST = "127.0.0.1"
 BROKER_PORT = 5672
 BROKER_USER = "guest"

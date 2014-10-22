@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rank.proto',
   package='contest_rank',
-  serialized_pb='\n\nrank.proto\x12\x0c\x63ontest_rank\"+\n\x06Submit\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tdata_time\x18\x02 \x01(\t\"B\n\x07Problem\x12\x11\n\tproblemID\x18\x01 \x01(\t\x12$\n\x06submit\x18\x02 \x03(\x0b\x32\x14.contest_rank.Submit\"n\n\x04Rank\x12\x0e\n\x06userID\x18\x01 \x01(\t\x12\x11\n\tcontestID\x18\x02 \x01(\t\x12&\n\x07problem\x18\x03 \x03(\x0b\x32\x15.contest_rank.Problem\x12\x0f\n\x07penalty\x18\x04 \x01(\x05\x12\n\n\x02\x61\x63\x18\x05 \x01(\x05\"F\n\x0f\x43ontestRankList\x12\x11\n\tcontestID\x18\x01 \x01(\t\x12 \n\x04rank\x18\x02 \x03(\x0b\x32\x12.contest_rank.Rank')
+  serialized_pb='\n\nrank.proto\x12\x0c\x63ontest_rank\"+\n\x06Submit\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x11\n\tdate_time\x18\x02 \x01(\t\"B\n\x07Problem\x12\x11\n\tproblemID\x18\x01 \x01(\x05\x12$\n\x06submit\x18\x02 \x03(\x0b\x32\x14.contest_rank.Submit\"n\n\x04Rank\x12\x0e\n\x06userID\x18\x01 \x01(\t\x12\x11\n\tcontestID\x18\x02 \x01(\t\x12&\n\x07problem\x18\x03 \x03(\x0b\x32\x15.contest_rank.Problem\x12\x0f\n\x07penalty\x18\x04 \x01(\x05\x12\n\n\x02\x61\x63\x18\x05 \x01(\x05\"F\n\x0f\x43ontestRankList\x12\x11\n\tcontestID\x18\x01 \x01(\t\x12 \n\x04rank\x18\x02 \x03(\x0b\x32\x12.contest_rank.Rank')
 
 
 
@@ -33,7 +33,7 @@ _SUBMIT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='data_time', full_name='contest_rank.Submit.data_time', index=1,
+      name='date_time', full_name='contest_rank.Submit.date_time', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,8 +62,8 @@ _PROBLEM = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='problemID', full_name='contest_rank.Problem.problemID', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
