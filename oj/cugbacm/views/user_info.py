@@ -51,7 +51,12 @@ def userInfo(request, user_id):
         otherproblemList = other.acList.split(',')
       curproblemList.sort()
       otherproblemList.sort()
-      bothAccepted = search_same(curproblemList, otherproblemList)
+      lena = len(curproblemList)
+      lenb = len(otherproblemList)
+      if lena > lenb:
+        bothAccepted = search_same(curproblemList, otherproblemList)
+      else: 
+        bothAccepted = search_same(otherproblemList, curproblemList)
       onlyAAccepted = curproblemList
       onlyBAccepted = otherproblemList
       return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })  
@@ -70,8 +75,8 @@ def search_same(A,B):
         if x == y:
           AB.append(x)
           len_B = len(B)
-        elif x < y:
-          start = i
+     #   elif x < y:
+      #    start = i
 
   if len(AB) > 0: 
     for x in AB:
@@ -80,7 +85,7 @@ def search_same(A,B):
           A.remove(x)
     for y in AB:
       for z in B:
-        if z == x:
+        if z == y:
           B.remove(y)
   return AB
 
