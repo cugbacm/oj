@@ -8,7 +8,6 @@ from cugbacm.proto import rank_pb2
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.views.contest_rank_update import update_rank_list, Rank
 def contestRankList(request, contest_id):
-  update_rank_list(contest_id)
   try:
     user = User.objects.get(userID = request.session['userID'])
   except:
@@ -19,9 +18,11 @@ def contestRankList(request, contest_id):
     contest_rank_list = ContestRankList.objects.get(contestID=contest_id)
   except:
     contest_rank_list = ContestRankList(contestID=contest_id, rank_list_proto_str="")
+  update_rank_list(contest_id)
   rank_list = rank_pb2.ContestRankList()
-  rank_list.ParseFromString(contest_rank_list.rank_list_proto_str.encode('utf-8'))
+  rank_list.ParseFromString(contest_rank_list.rank_list_proto_str.encode("utf-8"))
 
+  return HttpResponse(rank_list)
   return render(request,
                'cugbacm/contestRankList.html',
                {

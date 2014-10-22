@@ -64,6 +64,7 @@ def update_rank_list(contestID):
   contest_submit_list = ContestSubmit.objects.filter(contestID=contestID)
   rank_list = {}
 
+  print len(contest_submit_list)
   for contest_submit in contest_submit_list:
     userID = contest_submit.userID
     status = contest_submit.status
