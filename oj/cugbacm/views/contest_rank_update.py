@@ -5,11 +5,12 @@ import datetime
 from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, ContestRankList
 from cugbacm.proto import rank_pb2
 from celery.task import task
+import ssdb_api
 #import ssdb_api
 class Rank():
   class Problem():
     class Submit():
-      def __init__(self, status="", date_time=datetime.datetime.now()):
+      def __init__(self, status="", date_time=""):
         self.status = status
         self.date_time = date_time
 
@@ -27,8 +28,7 @@ class Rank():
     self.ac = 0
     self.penalty = 0
 
-  def load_data_to_proto(self):
-    rank = rank_pb2.Rank()
+  def load_data_to_proto(self, rank):
     rank.userID = self.userID
     rank.contestID = self.contestID
     rank.ac = self.ac
@@ -41,8 +41,7 @@ class Rank():
       for submit in problem.submit_list:
         s = p.submit.add()
         s.status = submit.status
-        s.date_time = "2014 10 10 10 10 10"
-        #s.date_time = time.strftime(submit.date_time, '%Y %m %d %H %M %S')
+        s.date_time = submit.date_time
     return rank
 def sort_rank(rank_list):
   for userID in rank_list:
@@ -64,17 +63,17 @@ def update_rank_list(contestID):
   contest_submit_list = ContestSubmit.objects.filter(contestID=contestID)
   rank_list = {}
 
-  print len(contest_submit_list)
   for contest_submit in contest_submit_list:
     userID = contest_submit.userID
     status = contest_submit.status
     problemID = contest_submit.problemID
-    date_time = contest_submit.timestamp
+    date = contest_submit.date
+    time = contest_submit.timestamp
     if not userID in rank_list:
       rank_list[userID] = Rank(userID, contestID)
     if not problemID in rank_list[userID].problem_list:
       rank_list[userID].problem_list[problemID] = Rank.Problem(problemID)
-    rank_list[userID].problem_list[problemID].add_submit(Rank.Problem.Submit(status=status, date_time=date_time))
+    rank_list[userID].problem_list[problemID].add_submit(Rank.Problem.Submit(status=status, date_time=str(date) + " " + str(time)))
 
   sort_rank(rank_list)
   contest_rank_list = rank_pb2.ContestRankList()
@@ -82,14 +81,15 @@ def update_rank_list(contestID):
   for userID in rank_list:
     rank = rank_list[userID]
     rank_proto = contest_rank_list.rank.add()
-    rank_proto = rank.load_data_to_proto()
-  #ssdb_api.SetContestRankListProto(contestID, contest_rank_list.SerializeToString())
-  try:
+    rank.load_data_to_proto(rank_proto)
+  ssdb_api.SetContestRankListProto(contestID, contest_rank_list.SerializeToString())
+  '''try:
     contest_rank = ContestRankList.objects.get(contestID=contestID)
   except:
     contest_rank = ContestRankList(contestID=contestID, rank_list_proto_str="")
   contest_rank.rank_list_proto_str = contest_rank_list.SerializeToString()
-  contest_rank.save()
+  print "proto_buffer" + contest_rank.rank_list_proto_str
+  contest_rank.save()'''
 
 if __name__ == "__main__":
   update_rank_list(1)
