@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'djcelery',
     'cugbacm',
     'pagination',
+    'djangotoolbox',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
@@ -108,7 +109,7 @@ CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
 from cugbacm.models import Submit
 from datetime import timedelta
 from cugbacm.views.problem import Judge, test
- 
+
 CELERYBEAT_SCHEDULE = {
   'add-every-10-seconds': {
     'task': 'cugbacm.views.problem.test',

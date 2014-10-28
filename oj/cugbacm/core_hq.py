@@ -240,7 +240,7 @@ def run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_
   #time_limit, mem_limit = get_problem_limit(problem_id)
   #dblock.release()
   #time_limit = 10000
-  #mem_limit =  32562 
+  #mem_limit =  32562
   program_info = {
 
 
@@ -275,7 +275,7 @@ def run(problem_id, solution_id, language, data_count, user_id, time_limit, mem_
     return program_info
   if data_count == 0:
     print "System Error; location:get_data_count; reason:there is no dataItem for the problem %s" % problem_id
-    program_info['result'] = result_code['System Error'] 
+    program_info['result'] = result_code['System Error']
 
     #clean_work_dir(solution_id)
     return program_info
@@ -363,5 +363,5 @@ def main(user_submit):
 if __name__ == '__main__':
   #program = "#include<iostream>\n using namespace std; int main(){int a, b; cin >> a >> b; cout << a + b << endl;return 0; }"
   #program = "line=raw_input()\na=line.split()\nprint int(a[0])+int(a[1])"
-  user_submit = UserSubmit(1, 1000, 'g++', '1004101117',program, 1000, 32562)
+  user_submit = UserSubmit(1, 1000, 'g++', '1004101117', program, 1000, 32562)
   print main(user_submit)

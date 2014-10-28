@@ -107,7 +107,7 @@
               </h3>
               <pre>{% autoescape off %}{{problem.author}}{% endautoescape%}</pre>
            </div>
-            <div class="col-md-5" style="padding-top:20px;">
+           <div class="col-md-5" style="padding-top:20px;">
              <div data-spy="affix">
               <div>
                 <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
@@ -130,7 +130,7 @@
                   </div>
                  <!-- <div class="form-group">
                     <textarea name="code" class="form-control" rows=10>{{submit.code}}</textarea>
-                 </div>-->
+                  </div>-->
                  <textarea id="Code" name="code" style="display:none"></textarea>
                   <div class="form-group">
                     <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>

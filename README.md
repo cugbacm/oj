@@ -120,7 +120,11 @@ pip install Django==1.6.5
   4.  改变数据库：use oj;  
   5.  显示数据库：show databases ; 
   6.  显示表： show tables;  
-  其他的参考：http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html   或者百度  
+  其他的参考：http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html   或者百度 
+启动不起来的错误解决:
+$/usr/bin/mysql_install_db     //重建授权表
+$/usr/bin/mysqld_safe &      
+$/usr/bin/mysql                //测试
 
 ###django中的mysql接口
   在创建的项目中的settings.py进行修改就行了。
