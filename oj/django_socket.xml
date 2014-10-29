@@ -1,6 +1,6 @@
 <uwsgi>
     <socket>:8077</socket>
-    <chdir>/home/cugbacm/oj/oj</chdir>
+    <chdir>/home/zhaolong/oj/oj</chdir>
     <module>django_wsgi</module>
     <processes>1</processes> <!-- ½ø --> 
     <daemonize>uwsgi.log</daemonize>

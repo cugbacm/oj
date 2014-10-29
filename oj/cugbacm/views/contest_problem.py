@@ -35,7 +35,7 @@ def Judge(submit):
   print submit.status
 
   if submit.status == "Accepted":
-    if ContestSubmit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
+    if ContestSubmit.objects.filter(contestID = submit.contestID, userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
       if user.acList == None:
         user.acList = ""
