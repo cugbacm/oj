@@ -46,11 +46,11 @@
       </marquee>
       </nav>
       <div class = "row" style="padding-top:20px">
-        <div class = "col-md-12"><p class = "text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Name</p></div>
+        <div class = "col-md-12"><p class = "text-center" style="font-size:30px; color:inherit; font-weight: 700;">{{contest.title}}</p></div>
       </div>
       <div class = "row">
         <div class = "col-md-12">
-          <p class = "text-center" style="font-size:24px; color:#16A085;"> Start Time:xxxx-xx-xx xx:xx:xx &nbsp; &nbsp; End Time:xxxx-xx-xx xx:xx:xx  &nbsp; &nbsp; Status: xxxxx </p>
+          <p class = "text-center" style="font-size:24px; color:#16A085;"> Start Time:{{contest.startTime}} {{contest.startTimestamp}} &nbsp; &nbsp; End Time:{{contest.endTime}} {{contest.endTimestamp}}  &nbsp; &nbsp; Status: {{contest.status}} </p>
         </div>
       </div>
      {% autopaginate problems 50 %}

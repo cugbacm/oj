@@ -70,10 +70,22 @@ class Contest(models.Model):
   def __unicode__(self):
     return self.title
 
-class ContestSubmit(Submit):
+class ContestSubmit(models.Model):
+  runID = models.IntegerField()
+  userID = models.CharField(max_length = 100)
+  problemID = models.IntegerField()
+  status = models.CharField(max_length = 100)
+  memory = models.IntegerField()
+  runTime = models.IntegerField()
+  language = models.CharField(max_length = 100)
+  codeLength = models.IntegerField()
+  date = models.DateField(auto_now = True)
+  timestamp = models.TimeField(auto_now = True)
+  code = models.TextField()
   contestID = models.IntegerField()
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.runID)
+
 class Contestant(User):
   contestID = models.IntegerField()
   penalty = models.TimeField()

@@ -105,6 +105,12 @@
            </div>
            <div class="col-md-5" style="padding-top:20px;">
              <div data-spy="affix">
+             <nav class="navbar navbar-default" role = "navigation">
+              <ul class = "nav nav-tabs">
+                <li class="active"><a href="">Edit Code</a></li>
+                <li><a>Your Submits</a></li>
+              </ul>
+             </nav>
               <div>
                 <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
                   <div class="form-group">

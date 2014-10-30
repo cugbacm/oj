@@ -46,6 +46,35 @@
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
     </marquee>
+    <!--
+    <div class="row">
+     <div class="col-md-offset-1">
+     </div>
+    </div>
+    --!>
+  </nav>
+  <!--
+ {% for key, value in rank_list_dic.items %}
+      {{key}}
+      <br/>
+      {{value}}
+      <br/>
+        {%  for k, v in value.items %}
+           <br/> <br/>
+           {{k}}
+           <br/>
+           {{v}}
+           <br/>
+            {% for i, j  in v.items %}
+                {% for p, q in j.items %}
+                  {{k}}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+      <br/>
+  {% endfor %}
+  -->
+ <div class="table-responsive pagination-centered" style="padding-top:58px"> 
     </nav>
   <div class = "row" style="padding-top:20px">
     <div class = "col-md-12"><p class="text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Ranklist</p></div>
@@ -55,22 +84,30 @@
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Team</th>
-            <th style="">Solved</th>
+            <th>AC</th>
+            <th>userID</th>
+            {% for ID in problem_arr %}
+             <th> {{ID}}</th>
+            {% endfor %}
             <th>Penalty</th>
-            <th>xxxx</th>
             <th>Ratio(AC/submit)</th>
           </tr>
         </thead>
         <tbody>
-          {% for user in rank_list %}
+          {% for key, value in rank_list_dic.items %}
             <tr class="odd gradeX">
               <td>{{forloop.counter}}</td>
-              <td><a href="/index/userInfo/{{user.fuck}}" target="_blank">{{user.fuck}}</a></td>
-              <td>{{user.ac}}</td>
-              <td>{{user.fuck}}</td>
-              <td></td>
-              <td></td>
+              <td>
+                 {{value.ac}}
+              </td>
+              <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{key}}</a></td>
+             {% for ID in problem_arr %}
+              <td>
+                  {{value.ID}}               
+              </td>
+              {% endfor %}
+              <td>{{value.penalty}}</td>
+              <td>Ratio({{value.ac}}/{{value.total}})</td>
             </tr>
           {% endfor %}
         </tbody>

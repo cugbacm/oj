@@ -3517,3 +3517,102 @@ you give each node a unique node name!
   warnings.warn(W_PIDBOX_IN_USE.format(node=self))
 
 [2014-10-30 01:26:48,951: WARNING/MainProcess] celery@AY14040915414956495eZ ready.
+[2014-10-30 21:01:26,185: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-10-30 21:01:26,209: INFO/MainProcess] Connected to amqp://guest@127.0.0.1:5672//
+[2014-10-30 21:01:26,221: INFO/MainProcess] mingle: searching for neighbors
+[2014-10-30 21:01:27,240: INFO/MainProcess] mingle: all alone
+[2014-10-30 21:01:27,256: WARNING/MainProcess] celery@AY14040915414956495eZ ready.
+[2014-10-30 21:05:09,271: INFO/MainProcess] Received task: cugbacm.views.problem.Judge[be577495-b36c-48ba-a8a6-3b57c0e4a6fc]
+[2014-10-30 21:05:09,292: WARNING/Worker-1] main excute
+[2014-10-30 21:05:09,297: WARNING/Worker-1] full_path:%s
+[2014-10-30 21:05:09,298: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000
+[2014-10-30 21:05:09,298: WARNING/Worker-1] ['data4.in', 'data1.in', 'data3.in', 'data4.out', 'data3.out', 'data2.in', 'data0.in', 'data2.out', 'data1.out', 'data0.out']
+[2014-10-30 21:05:09,298: WARNING/Worker-1] get_data_count excute
+[2014-10-30 21:05:09,298: WARNING/Worker-1] data_count:%s
+[2014-10-30 21:05:09,298: WARNING/Worker-1] 5
+[2014-10-30 21:05:09,298: WARNING/Worker-1] solution_id path:%s
+[2014-10-30 21:05:09,299: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7868
+[2014-10-30 21:05:09,299: WARNING/Worker-1] solution_id path:%s
+[2014-10-30 21:05:09,299: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7868
+[2014-10-30 21:05:09,304: WARNING/Worker-1] run:check_dangerous_code%s
+[2014-10-30 21:05:09,305: WARNING/Worker-1] True
+[2014-10-30 21:05:09,321: WARNING/Worker-1] dir_work:
+[2014-10-30 21:05:09,322: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7868
+[2014-10-30 21:05:09,322: WARNING/Worker-1] compile hehe1
+[2014-10-30 21:05:09,807: WARNING/Worker-1] compile hehe2
+[2014-10-30 21:05:09,808: WARNING/Worker-1] p.returncode:
+[2014-10-30 21:05:09,808: WARNING/Worker-1] 0
+[2014-10-30 21:05:09,808: WARNING/Worker-1] run:compile%s
+[2014-10-30 21:05:09,808: WARNING/Worker-1] True
+[2014-10-30 21:05:09,850: WARNING/Worker-1] {'user_id': u'QQ', 'err_explain': 0, 'codeLength': 110, 'result': 'Accepted', 'take_memory': 476L, 'solution_id': 7868L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-30 21:05:09,861: WARNING/Worker-1] Accepted
+[2014-10-30 21:05:09,884: INFO/MainProcess] Task cugbacm.views.problem.Judge[be577495-b36c-48ba-a8a6-3b57c0e4a6fc] succeeded in 0.610322838649s: 'Accepted'
+[2014-10-30 21:56:26,084: INFO/MainProcess] Received task: cugbacm.views.contest_problem.Judge[d7bf6f3f-3bec-4fdf-85d3-d416dbe9ea39]
+[2014-10-30 21:56:26,094: WARNING/Worker-1] main excute
+[2014-10-30 21:56:26,094: WARNING/Worker-1] full_path:%s
+[2014-10-30 21:56:26,094: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000
+[2014-10-30 21:56:26,095: WARNING/Worker-1] ['data4.in', 'data1.in', 'data3.in', 'data4.out', 'data3.out', 'data2.in', 'data0.in', 'data2.out', 'data1.out', 'data0.out']
+[2014-10-30 21:56:26,095: WARNING/Worker-1] get_data_count excute
+[2014-10-30 21:56:26,095: WARNING/Worker-1] data_count:%s
+[2014-10-30 21:56:26,095: WARNING/Worker-1] 5
+[2014-10-30 21:56:26,095: WARNING/Worker-1] solution_id path:%s
+[2014-10-30 21:56:26,095: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7869
+[2014-10-30 21:56:26,096: WARNING/Worker-1] solution_id path:%s
+[2014-10-30 21:56:26,096: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7869
+[2014-10-30 21:56:26,100: WARNING/Worker-1] run:check_dangerous_code%s
+[2014-10-30 21:56:26,100: WARNING/Worker-1] True
+[2014-10-30 21:56:26,104: WARNING/Worker-1] dir_work:
+[2014-10-30 21:56:26,120: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7869
+[2014-10-30 21:56:26,120: WARNING/Worker-1] compile hehe1
+[2014-10-30 21:56:26,581: WARNING/Worker-1] compile hehe2
+[2014-10-30 21:56:26,582: WARNING/Worker-1] p.returncode:
+[2014-10-30 21:56:26,582: WARNING/Worker-1] 0
+[2014-10-30 21:56:26,582: WARNING/Worker-1] run:compile%s
+[2014-10-30 21:56:26,582: WARNING/Worker-1] True
+[2014-10-30 21:56:26,620: WARNING/Worker-1] {'user_id': u'QQ', 'err_explain': 0, 'codeLength': 110, 'result': 'Accepted', 'take_memory': 476L, 'solution_id': 7869L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-30 21:56:26,636: WARNING/Worker-1] Accepted
+[2014-10-30 21:56:26,655: INFO/MainProcess] Task cugbacm.views.contest_problem.Judge[d7bf6f3f-3bec-4fdf-85d3-d416dbe9ea39] succeeded in 0.565617970191s: 'Accepted'
+[2014-10-30 21:56:35,678: INFO/MainProcess] Received task: cugbacm.views.contest_problem.Judge[91e04ce7-08bc-46ac-abcd-f5f0fa56cb01]
+[2014-10-30 21:56:35,684: WARNING/Worker-1] main excute
+[2014-10-30 21:56:35,684: WARNING/Worker-1] full_path:%s
+[2014-10-30 21:56:35,684: WARNING/Worker-1] /home/cugbacm/Documents/data_dir/1000
+[2014-10-30 21:56:35,684: WARNING/Worker-1] ['data4.in', 'data1.in', 'data3.in', 'data4.out', 'data3.out', 'data2.in', 'data0.in', 'data2.out', 'data1.out', 'data0.out']
+[2014-10-30 21:56:35,685: WARNING/Worker-1] get_data_count excute
+[2014-10-30 21:56:35,685: WARNING/Worker-1] data_count:%s
+[2014-10-30 21:56:35,685: WARNING/Worker-1] 5
+[2014-10-30 21:56:35,685: WARNING/Worker-1] solution_id path:%s
+[2014-10-30 21:56:35,686: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7870
+[2014-10-30 21:56:35,686: WARNING/Worker-1] solution_id path:%s
+[2014-10-30 21:56:35,686: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7870
+[2014-10-30 21:56:35,690: WARNING/Worker-1] run:check_dangerous_code%s
+[2014-10-30 21:56:35,690: WARNING/Worker-1] None
+[2014-10-30 21:56:35,694: WARNING/Worker-1] dir_work:
+[2014-10-30 21:56:35,694: WARNING/Worker-1] /home/cugbacm/Documents/work_dir/7870
+[2014-10-30 21:56:35,694: WARNING/Worker-1] compile hehe1
+[2014-10-30 21:56:38,776: WARNING/Worker-1] compile hehe2
+[2014-10-30 21:56:38,777: WARNING/Worker-1] p.returncode:
+[2014-10-30 21:56:38,777: WARNING/Worker-1] 1
+[2014-10-30 21:56:38,777: WARNING/Worker-1] run:compile%s
+[2014-10-30 21:56:38,777: WARNING/Worker-1] False
+[2014-10-30 21:56:38,777: WARNING/Worker-1] {'user_id': u'QQ', 'err_explain': 'Compile Error:/home/cugbacm/Documents/work_dir/7870/Main.java:1: error: illegal character: \\35\n#include <iostream>\n^\n/home/cugbacm/Documents/work_dir/7870/Main.java:1: error: class, interface, or enum expected\n#include <iostream>\n         ^\n/home/cugbacm/Documents/work_dir/7870/Main.java:3: error: class, interface, or enum expected\nint main() {\n^\n/home/cugbacm/Documents/work_dir/7870/Main.java:5: error: class, interface, or enum expected\ncin>>a>>b;\n^\n/home/cugbacm/Documents/work_dir/7870/Main.java:6: error: class, interface, or enum expected\ncout<<a+b<<endl;;\n^\n/home/cugbacm/Documents/work_dir/7870/Main.java:7: error: class, interface, or enum expected\nreturn 0;\n^\n/home/cugbacm/Documents/work_dir/7870/Main.java:8: error: class, interface, or enum expected\n}\n^\n7 errors\n', 'codeLength': 110, 'result': 'Compile Error', 'take_memory': 0, 'solution_id': 7870L, 'problem_id': u'1000', 'take_time': 0}
+[2014-10-30 21:56:38,796: WARNING/Worker-1] Compile Error
+[2014-10-30 21:56:38,817: INFO/MainProcess] Task cugbacm.views.contest_problem.Judge[91e04ce7-08bc-46ac-abcd-f5f0fa56cb01] succeeded in 3.13759946357s: 'Compile Error'
