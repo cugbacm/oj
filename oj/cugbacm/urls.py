@@ -11,12 +11,8 @@ import views.user_list
 import views.problem
 import views.user_info
 import views.contest_problem
-<<<<<<< HEAD
 import views.rejudge
-=======
-import views.test
 
->>>>>>> FETCH_HEAD
 urlpatterns = patterns('',
   url(r'^register/$', views.register.register, name = 'register'),
   url(r'^contest/(?P<contest_id>\d+)$', views.contest.contest, name = 'contest'),
