@@ -37,7 +37,7 @@ def contestRankList(request, contest_id):
         rank_list_dic[rank.userID][problem_.problemID][submit_.runID]['status'] = submit_.status
         rank_list_dic[rank.userID][problem_.problemID][submit_.runID]['date_time'] = submit_.date_time
        # rank_list_dic[rank.userID][problem_.problemID]['date_time'] = submit_.date_time
-  
+
 #to get the problemid from contest
   contest = Contest.objects.get(contestID = contest_id)
   problem_arr = []

@@ -3,7 +3,7 @@ import sys
 import cugbacm.proto.rank_pb2
 
 ssdb_ip = "127.0.0.1"
-ssdb_port = 8888
+ssdb_port = 6666
 ssdb = SSDB(host=ssdb_ip, port=ssdb_port)
 
 def GetContestRankListProto(contestID):

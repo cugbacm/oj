@@ -103,7 +103,7 @@
               <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{key}}</a></td>
              {% for ID in problem_arr %}
               <td>
-                  {{value.ID}}               
+                {{value['ID']}}
               </td>
               {% endfor %}
               <td>{{value.penalty}}</td>
