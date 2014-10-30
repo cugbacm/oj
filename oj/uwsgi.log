@@ -14600,3 +14600,1527 @@ WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8d4b3c0 pid: 3668
 spawned uWSGI worker 1 (and the only) (pid: 3668, cores: 1)
 [pid: 3668|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 747 bytes} [Wed Oct 29 18:37:11 2014] GET /index/login => generated 0 bytes in 310 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 0)
 [pid: 3668|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 713 bytes} [Wed Oct 29 18:37:11 2014] GET /index/login/ => generated 6028 bytes in 425 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct 29 20:55:50 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa0f83c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa0f83c0 pid: 3859 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3859, cores: 1)
+[pid: 3859|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 816 bytes} [Wed Oct 29 20:55:53 2014] GET /index/contest/1/submitList => generated 11401 bytes in 779 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 822 bytes} [Wed Oct 29 20:55:57 2014] GET /index/problem/1 => generated 14289 bytes in 131 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 747 bytes} [Wed Oct 29 20:58:40 2014] GET /index/login => generated 0 bytes in 6 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct 29 20:58:41 2014] GET /index/login/ => generated 6028 bytes in 146 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 750 bytes} [Wed Oct 29 20:58:41 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 231 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 3859|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 795 bytes} [Wed Oct 29 20:58:41 2014] GET /site_media/Flat-UI-master/bootstrap/css/bootstrap.css => generated 122998 bytes in 414 msecs (HTTP/1.1 200) 4 headers in 142 bytes (5831 switches on core 0)
+[pid: 3859|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 771 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 105151 bytes in 127 msecs (HTTP/1.1 200) 4 headers in 142 bytes (4712 switches on core 0)
+[pid: 3859|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 749 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/dist/css/signin.css => generated 792 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 139 bytes (40 switches on core 0)
+[pid: 3859|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 765 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/css/demo.css => generated 5790 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 140 bytes (275 switches on core 0)
+[pid: 3859|app: 0|req: 10/10] 127.0.0.1 () {38 vars in 765 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/docs-assets/ico/favicon.png => generated 1694 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 770 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/dist/js/flat-ui.min.js => generated 264058 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 156 bytes (122 switches on core 0)
+[pid: 3859|app: 0|req: 12/12] 127.0.0.1 () {40 vars in 782 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/dist/js/vendor/jquery.min.js => generated 95821 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 155 bytes (5 switches on core 0)
+[pid: 3859|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 822 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/images/icons/png/Toilet-Paper.png => generated 4125 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 141 bytes (14 switches on core 0)
+[pid: 3859|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 827 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/images/login/imac.png => generated 7843 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 141 bytes (105 switches on core 0)
+[pid: 3859|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 871 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-regular.woff => generated 35464 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 157 bytes (110 switches on core 0)
+[pid: 3859|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 879 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/fonts/flat-ui-icons-regular.woff => generated 7008 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 156 bytes (17 switches on core 0)
+[pid: 3859|app: 0|req: 17/17] 127.0.0.1 () {40 vars in 867 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-light.woff => generated 34608 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 157 bytes (137 switches on core 0)
+[pid: 3859|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 865 bytes} [Wed Oct 29 20:58:42 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-bold.woff => generated 36664 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 157 bytes (150 switches on core 0)
+[pid: 3859|app: 0|req: 19/19] 127.0.0.1 () {50 vars in 935 bytes} [Wed Oct 29 20:58:47 2014] POST /index/login/ => generated 7 bytes in 170 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 768 bytes} [Wed Oct 29 20:58:47 2014] GET /index/problemList => generated 0 bytes in 8 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 770 bytes} [Wed Oct 29 20:58:47 2014] GET /index/problemList/ => generated 4958 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 742 bytes} [Wed Oct 29 20:58:47 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 435 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 3859|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 761 bytes} [Wed Oct 29 20:58:48 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 382 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
+[pid: 3859|app: 0|req: 24/24] 127.0.0.1 () {40 vars in 772 bytes} [Wed Oct 29 20:58:48 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 3859|app: 0|req: 25/25] 127.0.0.1 () {40 vars in 794 bytes} [Wed Oct 29 20:58:48 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 489 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 3859|app: 0|req: 26/26] 127.0.0.1 () {40 vars in 776 bytes} [Wed Oct 29 20:58:49 2014] GET /site_media/dist/js/stickUp-master/stickUp.min.js => generated 2685 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 154 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 27/27] 127.0.0.1 () {40 vars in 797 bytes} [Wed Oct 29 20:58:49 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 3859|app: 0|req: 28/28] 127.0.0.1 () {40 vars in 799 bytes} [Wed Oct 29 20:58:49 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 3859|app: 0|req: 29/29] 127.0.0.1 () {40 vars in 807 bytes} [Wed Oct 29 20:58:49 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 3859|app: 0|req: 30/30] 127.0.0.1 () {40 vars in 854 bytes} [Wed Oct 29 20:58:49 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 1118 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 3859|app: 0|req: 31/31] 127.0.0.1 () {40 vars in 856 bytes} [Wed Oct 29 20:58:49 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 3859|app: 0|req: 32/32] 127.0.0.1 () {40 vars in 774 bytes} [Wed Oct 29 20:58:51 2014] GET /index/contestList => generated 0 bytes in 7 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 33/33] 127.0.0.1 () {40 vars in 776 bytes} [Wed Oct 29 20:58:51 2014] GET /index/contestList/ => generated 4996 bytes in 435 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 34/34] 127.0.0.1 () {40 vars in 770 bytes} [Wed Oct 29 20:58:58 2014] GET /index/contest/1 => generated 5039 bytes in 200 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 35/35] 127.0.0.1 () {40 vars in 789 bytes} [Wed Oct 29 20:59:00 2014] GET /index/contest/1/submitList => generated 11401 bytes in 198 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 36/36] 127.0.0.1 () {40 vars in 777 bytes} [Wed Oct 29 20:59:01 2014] GET /site_media/dist/css/bootstrap.min.css => generated 99548 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (7 switches on core 0)
+[pid: 3859|app: 0|req: 37/37] 127.0.0.1 () {40 vars in 856 bytes} [Wed Oct 29 20:59:01 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
+[pid: 3859|app: 0|req: 38/38] 127.0.0.1 () {38 vars in 741 bytes} [Wed Oct 29 21:01:03 2014] GET /index/contest/1/submitList => generated 11401 bytes in 106 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 39/39] 127.0.0.1 () {40 vars in 778 bytes} [Wed Oct 29 21:01:10 2014] GET /index/contest/1 => generated 5039 bytes in 65 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 40/40] 127.0.0.1 () {40 vars in 787 bytes} [Wed Oct 29 21:01:13 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 84 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3859|app: 0|req: 41/41] 127.0.0.1 () {40 vars in 739 bytes} [Wed Oct 29 21:01:13 2014] GET /site_media/dist/src/ace.js => generated 624555 bytes in 739 msecs (HTTP/1.1 200) 4 headers in 156 bytes (18162 switches on core 0)
+[pid: 3859|app: 0|req: 42/42] 127.0.0.1 () {40 vars in 759 bytes} [Wed Oct 29 21:01:14 2014] GET /site_media/dist/src/theme-monokai.js => generated 2666 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 154 bytes (106 switches on core 0)
+[pid: 3859|app: 0|req: 43/43] 127.0.0.1 () {40 vars in 753 bytes} [Wed Oct 29 21:01:14 2014] GET /site_media/dist/src/mode-c_cpp.js => generated 31388 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 155 bytes (799 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct 29 21:03:06 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x94033c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x94033c0 pid: 4583 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4583, cores: 1)
+[pid: 4583|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 739 bytes} [Wed Oct 29 21:03:11 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 1670 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 783 bytes} [Wed Oct 29 21:03:17 2014] GET /index/contestList/ => generated 4996 bytes in 438 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 770 bytes} [Wed Oct 29 21:03:20 2014] GET /index/contest/1 => generated 5039 bytes in 61 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 787 bytes} [Wed Oct 29 21:03:25 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 79 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 783 bytes} [Wed Oct 29 21:03:28 2014] GET /index/contestList/ => generated 4996 bytes in 540 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 770 bytes} [Wed Oct 29 21:03:32 2014] GET /index/contest/1 => generated 5039 bytes in 71 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 773 bytes} [Wed Oct 29 21:03:37 2014] GET /index/contestList/ => generated 4996 bytes in 389 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 770 bytes} [Wed Oct 29 21:03:41 2014] GET /index/contest/1 => generated 5039 bytes in 80 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 789 bytes} [Wed Oct 29 21:03:48 2014] GET /index/contest/1/submitList => generated 11491 bytes in 102 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4583|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 798 bytes} [Wed Oct 29 21:03:53 2014] GET /index/1/contest/problem/1 => generated 4501 bytes in 41 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct 29 21:04:35 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x88f83c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x88f83c0 pid: 4714 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4714, cores: 1)
+[pid: 4714|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 741 bytes} [Wed Oct 29 21:04:37 2014] GET /index/contest/1/submitList => generated 11491 bytes in 1278 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4714|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 798 bytes} [Wed Oct 29 21:04:42 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 194 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4714|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 798 bytes} [Wed Oct 29 21:04:52 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 307 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Wed Oct 29 21:06:13 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x82f23c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x82f23c0 pid: 4852 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4852, cores: 1)
+[pid: 4852|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 741 bytes} [Wed Oct 29 21:06:18 2014] GET /index/contest/1/submitList => generated 11581 bytes in 1344 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4852|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 782 bytes} [Wed Oct 29 21:06:23 2014] GET /index/userInfo/ak => generated 6206 bytes in 60 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4852|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 817 bytes} [Wed Oct 29 21:06:32 2014] GET /index/contest/1/problem/1?submit=21 => generated 13316 bytes in 266 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4852|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 798 bytes} [Wed Oct 29 21:06:48 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 189 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 19:37:35 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8c783c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8c783c0 pid: 2503 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2503, cores: 1)
+[pid: 2503|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 711 bytes} [Thu Oct 30 19:37:54 2014] GET /index/login => generated 0 bytes in 1623 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 713 bytes} [Thu Oct 30 19:37:55 2014] GET /index/login/ => generated 6028 bytes in 970 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 750 bytes} [Thu Oct 30 19:37:56 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 83615 bytes in 201 msecs (HTTP/1.1 200) 4 headers in 155 bytes (4 switches on core 0)
+[pid: 2503|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 795 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/bootstrap/css/bootstrap.css => generated 122998 bytes in 71 msecs (HTTP/1.1 200) 4 headers in 142 bytes (5831 switches on core 0)
+[pid: 2503|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 771 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 105151 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 142 bytes (4712 switches on core 0)
+[pid: 2503|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 749 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/dist/css/signin.css => generated 792 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 139 bytes (40 switches on core 0)
+[pid: 2503|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 765 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/css/demo.css => generated 5790 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 140 bytes (275 switches on core 0)
+[pid: 2503|app: 0|req: 8/8] 127.0.0.1 () {38 vars in 765 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/docs-assets/ico/favicon.png => generated 1694 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/dist/js/flat-ui.min.js => generated 264058 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 156 bytes (122 switches on core 0)
+[pid: 2503|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 782 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/dist/js/vendor/jquery.min.js => generated 95821 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 155 bytes (5 switches on core 0)
+[pid: 2503|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 822 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/images/icons/png/Toilet-Paper.png => generated 4125 bytes in 65 msecs (HTTP/1.1 200) 4 headers in 141 bytes (14 switches on core 0)
+[pid: 2503|app: 0|req: 12/12] 127.0.0.1 () {40 vars in 827 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/images/login/imac.png => generated 7843 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 141 bytes (105 switches on core 0)
+[pid: 2503|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 871 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-regular.woff => generated 35464 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 157 bytes (110 switches on core 0)
+[pid: 2503|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 879 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/fonts/flat-ui-icons-regular.woff => generated 7008 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 156 bytes (17 switches on core 0)
+[pid: 2503|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 867 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-light.woff => generated 34608 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 157 bytes (137 switches on core 0)
+[pid: 2503|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 865 bytes} [Thu Oct 30 19:37:57 2014] GET /site_media/Flat-UI-master/fonts/lato/lato-bold.woff => generated 36664 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 157 bytes (150 switches on core 0)
+[pid: 2503|app: 0|req: 17/17] 127.0.0.1 () {50 vars in 935 bytes} [Thu Oct 30 19:38:04 2014] POST /index/login/ => generated 7 bytes in 165 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 768 bytes} [Thu Oct 30 19:38:04 2014] GET /index/problemList => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 19:38:04 2014] GET /index/problemList/ => generated 4958 bytes in 535 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 742 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/dist/js/bootstrap.js => generated 58533 bytes in 192 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2006 switches on core 0)
+[pid: 2503|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 761 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/dist/css/bootstrap.css => generated 122848 bytes in 101 msecs (HTTP/1.1 200) 4 headers in 142 bytes (7118 switches on core 0)
+[pid: 2503|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 772 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 93434 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 155 bytes (2 switches on core 0)
+[pid: 2503|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 794 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 377508 bytes in 161 msecs (HTTP/1.1 200) 4 headers in 156 bytes (12099 switches on core 0)
+[pid: 2503|app: 0|req: 24/24] 127.0.0.1 () {40 vars in 776 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/dist/js/stickUp-master/stickUp.min.js => generated 2685 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 154 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 25/25] 127.0.0.1 () {40 vars in 797 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 1765 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 140 bytes (122 switches on core 0)
+[pid: 2503|app: 0|req: 26/26] 127.0.0.1 () {40 vars in 799 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 10772 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 141 bytes (577 switches on core 0)
+[pid: 2503|app: 0|req: 27/27] 127.0.0.1 () {40 vars in 807 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 8463 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 140 bytes (501 switches on core 0)
+[pid: 2503|app: 0|req: 28/28] 127.0.0.1 () {40 vars in 854 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 1118 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 2503|app: 0|req: 29/29] 127.0.0.1 () {40 vars in 856 bytes} [Thu Oct 30 19:38:05 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 1136 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 141 bytes (4 switches on core 0)
+[pid: 2503|app: 0|req: 30/30] 127.0.0.1 () {38 vars in 681 bytes} [Thu Oct 30 19:38:05 2014] GET /favicon.ico => generated 2156 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 31/31] 127.0.0.1 () {38 vars in 711 bytes} [Thu Oct 30 19:38:05 2014] GET /favicon.ico => generated 2156 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 32/32] 127.0.0.1 () {40 vars in 772 bytes} [Thu Oct 30 19:38:08 2014] GET /index/submitList => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 33/33] 127.0.0.1 () {40 vars in 774 bytes} [Thu Oct 30 19:38:08 2014] GET /index/submitList/ => generated 17796 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 34/34] 127.0.0.1 () {40 vars in 768 bytes} [Thu Oct 30 19:38:08 2014] GET /site_media/dist/css/bootstrap.min.css => generated 99548 bytes in 230 msecs (HTTP/1.1 200) 4 headers in 141 bytes (7 switches on core 0)
+[pid: 2503|app: 0|req: 35/35] 127.0.0.1 () {40 vars in 856 bytes} [Thu Oct 30 19:38:08 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 1127 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 141 bytes (3 switches on core 0)
+[pid: 2503|app: 0|req: 36/36] 127.0.0.1 () {40 vars in 773 bytes} [Thu Oct 30 19:38:09 2014] GET /index/contestList => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 37/37] 127.0.0.1 () {40 vars in 775 bytes} [Thu Oct 30 19:38:09 2014] GET /index/contestList/ => generated 4996 bytes in 434 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 38/38] 127.0.0.1 () {40 vars in 768 bytes} [Thu Oct 30 19:38:12 2014] GET /index/userList => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 147 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 39/39] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 19:38:12 2014] GET /index/userList/ => generated 5032 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 40/40] 127.0.0.1 () {40 vars in 773 bytes} [Thu Oct 30 19:38:12 2014] GET /index/contestList/ => generated 4996 bytes in 426 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 41/41] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 19:38:14 2014] GET /index/contest/1 => generated 5039 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 42/42] 127.0.0.1 () {40 vars in 787 bytes} [Thu Oct 30 19:38:16 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 43/43] 127.0.0.1 () {40 vars in 739 bytes} [Thu Oct 30 19:38:16 2014] GET /site_media/dist/src/ace.js => generated 624555 bytes in 386 msecs (HTTP/1.1 200) 4 headers in 156 bytes (18162 switches on core 0)
+[pid: 2503|app: 0|req: 44/44] 127.0.0.1 () {40 vars in 759 bytes} [Thu Oct 30 19:38:16 2014] GET /site_media/dist/src/theme-monokai.js => generated 2666 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 154 bytes (106 switches on core 0)
+[pid: 2503|app: 0|req: 45/45] 127.0.0.1 () {40 vars in 753 bytes} [Thu Oct 30 19:38:16 2014] GET /site_media/dist/src/mode-c_cpp.js => generated 31388 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 155 bytes (799 switches on core 0)
+[pid: 2503|app: 0|req: 46/46] 127.0.0.1 () {40 vars in 789 bytes} [Thu Oct 30 19:38:21 2014] GET /index/contest/1/submitList => generated 11581 bytes in 51 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 2503|app: 0|req: 47/47] 127.0.0.1 () {40 vars in 798 bytes} [Thu Oct 30 19:38:25 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 19:58:33 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x91a0348
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x91a0348 pid: 3384 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3384, cores: 1)
+[pid: 3384|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 741 bytes} [Thu Oct 30 19:58:40 2014] GET /index/contest/1/submitList => generated 99878 bytes in 366 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:05:58 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x894c3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x894c3c0 pid: 3975 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 3975, cores: 1)
+[pid: 3975|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 707 bytes} [Thu Oct 30 20:06:04 2014] GET /rejudge/1 => generated 2150 bytes in 220 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3975|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 707 bytes} [Thu Oct 30 20:06:09 2014] GET /rejudge/1 => generated 2150 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:08:06 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8a643c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8a643c0 pid: 4173 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4173, cores: 1)
+[pid: 4173|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 707 bytes} [Thu Oct 30 20:08:10 2014] GET /rejudge/1 => generated 2150 bytes in 228 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 707 bytes} [Thu Oct 30 20:08:14 2014] GET /rejudge/1 => generated 2150 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 727 bytes} [Thu Oct 30 20:09:12 2014] GET /contest/1/problem/1 => generated 2180 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 713 bytes} [Thu Oct 30 20:09:19 2014] GET /index/login/ => generated 6028 bytes in 387 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 5/5] 127.0.0.1 () {50 vars in 935 bytes} [Thu Oct 30 20:09:28 2014] POST /index/login/ => generated 15 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 6/6] 127.0.0.1 () {50 vars in 935 bytes} [Thu Oct 30 20:09:38 2014] POST /index/login/ => generated 15 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 7/7] 127.0.0.1 () {50 vars in 935 bytes} [Thu Oct 30 20:09:51 2014] POST /index/login/ => generated 7 bytes in 311 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 20:09:51 2014] GET /index/problemList/ => generated 4958 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 776 bytes} [Thu Oct 30 20:09:57 2014] GET /index/contestList/ => generated 4996 bytes in 305 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 20:10:02 2014] GET /index/contest/1 => generated 5039 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 787 bytes} [Thu Oct 30 20:10:09 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4173|app: 0|req: 12/12] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:10:18 2014] GET /index/rejudge/1 => generated 81007 bytes in 115 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:12:04 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa0a33c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa0a33c0 pid: 4244 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4244, cores: 1)
+[pid: 4244|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:12:06 2014] GET /index/rejudge/1 => generated 81010 bytes in 299 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:12:50 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9c333c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9c333c0 pid: 4271 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4271, cores: 1)
+[pid: 4271|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:12:54 2014] GET /index/rejudge/1 => generated 81010 bytes in 303 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:17:00 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9f173c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9f173c0 pid: 4345 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4345, cores: 1)
+[pid: 4345|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:17:06 2014] GET /index/rejudge/1 => generated 81010 bytes in 297 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 4345|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:17:10 2014] GET /index/rejudge/1 => generated 81010 bytes in 88 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:17:47 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x99a03c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x99a03c0 pid: 4375 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4375, cores: 1)
+[pid: 4375|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:17:51 2014] GET /index/rejudge/1 => generated 81014 bytes in 297 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 4375|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 707 bytes} [Thu Oct 30 20:18:06 2014] GET /rejudge/1 => generated 2150 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4375|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:18:13 2014] GET /index/rejudge/1 => generated 81011 bytes in 85 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:19:15 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x91ef3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x91ef3c0 pid: 4408 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4408, cores: 1)
+[pid: 4408|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:19:19 2014] GET /index/rejudge/1 => generated 81012 bytes in 300 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:20:39 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9c263c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9c263c0 pid: 4446 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4446, cores: 1)
+[pid: 4446|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:20:45 2014] GET /index/rejudge/1 => generated 4651 bytes in 227 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4446|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 715 bytes} [Thu Oct 30 20:20:53 2014] GET /index/rejudge => generated 80917 bytes in 89 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 4446|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:22:45 2014] GET /index/rejudge/ => generated 69115 bytes in 96 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 4446|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:24:41 2014] GET /index/rejudge/ => generated 69117 bytes in 66 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:25:27 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8d723c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8d723c0 pid: 4546 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4546, cores: 1)
+[pid: 4546|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:25:30 2014] GET /index/rejudge/ => generated 87921 bytes in 347 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:28:40 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8d103c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8d103c0 pid: 4665 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4665, cores: 1)
+[pid: 4665|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:28:43 2014] GET /index/rejudge/ => generated 87921 bytes in 375 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:29:01 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8e7d3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8e7d3c0 pid: 4686 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4686, cores: 1)
+[pid: 4686|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:29:03 2014] GET /index/rejudge/ => generated 87921 bytes in 310 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 4686|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:29:39 2014] GET /index/rejudge/ => generated 87919 bytes in 94 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:29:59 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8b513c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8b513c0 pid: 4715 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4715, cores: 1)
+[pid: 4715|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:30:01 2014] GET /index/rejudge/ => generated 69119 bytes in 411 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:30:37 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8fc93c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8fc93c0 pid: 4741 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4741, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:30:44 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8ed93c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8ed93c0 pid: 4752 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4752, cores: 1)
+[pid: 4752|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:30:46 2014] GET /index/rejudge/ => generated 69119 bytes in 324 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:31:14 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x88083c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x88083c0 pid: 4775 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4775, cores: 1)
+[pid: 4775|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:31:18 2014] GET /index/rejudge/ => generated 87955 bytes in 302 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:35:38 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x83643c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x83643c0 pid: 4980 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4980, cores: 1)
+[pid: 4980|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:35:41 2014] GET /index/rejudge/ => generated 87955 bytes in 479 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:48:10 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8eb53c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8eb53c0 pid: 5164 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5164, cores: 1)
+[pid: 5164|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:48:13 2014] GET /index/rejudge/ => generated 87955 bytes in 322 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5164|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:49:03 2014] GET /index/rejudge/ => generated 87953 bytes in 91 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:49:15 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8e6c3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8e6c3c0 pid: 5193 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5193, cores: 1)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:49:33 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9a153c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9a153c0 pid: 5208 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5208, cores: 1)
+[pid: 5208|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:49:35 2014] GET /index/rejudge/ => generated 11 bytes in 240 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:52:02 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x86033c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x86033c0 pid: 5258 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5258, cores: 1)
+[pid: 5258|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 717 bytes} [Thu Oct 30 20:52:05 2014] GET /index/rejudge/ => generated 4669 bytes in 234 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 5258|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:52:09 2014] GET /index/rejudge/1 => generated 45971 bytes in 50 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5258|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 750 bytes} [Thu Oct 30 20:52:39 2014] GET /index/rejudge/1 => generated 46159 bytes in 64 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5258|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:52:55 2014] GET /index/rejudge/1 => generated 45971 bytes in 127 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5258|app: 0|req: 5/5] 127.0.0.1 () {38 vars in 739 bytes} [Thu Oct 30 20:53:00 2014] GET /index/contest/1/problem/1 => generated 13158 bytes in 66 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5258|app: 0|req: 6/6] 127.0.0.1 () {40 vars in 799 bytes} [Thu Oct 30 20:53:07 2014] GET /index/contest/1/submitList => generated 11581 bytes in 195 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5258|app: 0|req: 7/7] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 20:53:17 2014] GET /index/rejudge/21 => generated 45984 bytes in 89 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:54:14 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x87703c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x87703c0 pid: 5355 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5355, cores: 1)
+[pid: 5355|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 20:54:16 2014] GET /index/rejudge/21 => generated 45986 bytes in 530 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 20:55:34 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8b113c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8b113c0 pid: 5432 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5432, cores: 1)
+[pid: 5432|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 20:55:37 2014] GET /index/rejudge/21 => generated 57987 bytes in 546 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 5432|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 784 bytes} [Thu Oct 30 20:56:08 2014] GET /index/problemList/ => generated 4958 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5432|app: 0|req: 3/3] 127.0.0.1 () {40 vars in 774 bytes} [Thu Oct 30 20:56:11 2014] GET /index/submitList/ => generated 17796 bytes in 210 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 5432|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 20:56:21 2014] GET /index/rejudge/1 => generated 57965 bytes in 113 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:00:46 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9a773c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9a773c0 pid: 5656 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5656, cores: 1)
+[pid: 5656|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:00:48 2014] GET /index/rejudge/1 => generated 22 bytes in 466 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:03:28 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x91313c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x91313c0 pid: 5849 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5849, cores: 1)
+[pid: 5849|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:03:31 2014] GET /index/rejudge/1 => generated 22 bytes in 477 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5849|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:03:36 2014] GET /index/rejudge/1 => generated 22 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5849|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 21:03:38 2014] GET /index/rejudge/21 => generated 22 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5849|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 21:03:45 2014] GET /index/rejudge/21 => generated 22 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:04:00 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x86c73c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x86c73c0 pid: 5894 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5894, cores: 1)
+[pid: 5894|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 21:04:03 2014] GET /index/rejudge/21 => generated 22 bytes in 369 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5894|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 21:04:06 2014] GET /index/rejudge/21 => generated 22 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5894|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 721 bytes} [Thu Oct 30 21:04:07 2014] GET /index/rejudge/21 => generated 22 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5894|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:04:10 2014] GET /index/rejudge/1 => generated 22 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5894|app: 0|req: 5/5] 127.0.0.1 () {38 vars in 723 bytes} [Thu Oct 30 21:04:18 2014] GET /index/submitList/ => generated 17796 bytes in 117 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:05:26 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x919e3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x919e3c0 pid: 5974 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 5974, cores: 1)
+[pid: 5974|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:05:30 2014] GET /index/rejudge/1 => generated 8 bytes in 572 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 5974|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:07:27 2014] GET /index/rejudge/1 => generated 8 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:07:32 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9ca63c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9ca63c0 pid: 6122 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 6122, cores: 1)
+[pid: 6122|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:07:34 2014] GET /index/rejudge/1 => generated 22 bytes in 464 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:08:14 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8b693c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8b693c0 pid: 6169 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 6169, cores: 1)
+[pid: 6169|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:08:16 2014] GET /index/rejudge/1 => generated 50897 bytes in 730 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:19:07 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x90aa3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x90aa3c0 pid: 6685 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 6685, cores: 1)
+[pid: 6685|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 719 bytes} [Thu Oct 30 21:19:09 2014] GET /index/rejudge/1 => generated 8 bytes in 380 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 6685|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 713 bytes} [Thu Oct 30 21:20:54 2014] GET /index/login/ => generated 6028 bytes in 195 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+[pid: 6685|app: 0|req: 3/3] 127.0.0.1 () {50 vars in 935 bytes} [Thu Oct 30 21:20:59 2014] POST /index/login/ => generated 7 bytes in 165 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 6685|app: 0|req: 4/4] 127.0.0.1 () {40 vars in 770 bytes} [Thu Oct 30 21:21:00 2014] GET /index/problemList/ => generated 4958 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6685|app: 0|req: 5/5] 127.0.0.1 () {38 vars in 713 bytes} [Thu Oct 30 21:21:08 2014] GET /index/login/ => generated 6028 bytes in 181 msecs (HTTP/1.1 200) 5 headers in 355 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:26:08 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9d733c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9d733c0 pid: 7049 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7049, cores: 1)
+[pid: 7049|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 725 bytes} [Thu Oct 30 21:26:12 2014] GET /index/rejudge/1to2 => generated 86916 bytes in 392 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 7049|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:27:20 2014] GET /index/rejudge/1/to/2 => generated 86956 bytes in 96 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:27:24 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x90d73c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x90d73c0 pid: 7119 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7119, cores: 1)
+[pid: 7119|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:27:26 2014] GET /index/rejudge/1/to/2 => generated 86956 bytes in 454 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:28:25 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x86613c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x86613c0 pid: 7176 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7176, cores: 1)
+[pid: 7176|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:28:26 2014] GET /index/rejudge/1/to/2 => generated 46160 bytes in 371 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:29:05 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8dcb3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8dcb3c0 pid: 7215 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7215, cores: 1)
+[pid: 7215|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:29:07 2014] GET /index/rejudge/1/to/2 => generated 50679 bytes in 351 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:29:41 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9a0d3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9a0d3c0 pid: 7261 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7261, cores: 1)
+[pid: 7261|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:29:44 2014] GET /index/rejudge/1/to/2 => generated 50688 bytes in 366 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:31:02 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9e483c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x9e483c0 pid: 7335 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7335, cores: 1)
+[pid: 7335|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:31:04 2014] GET /index/rejudge/1/to/2 => generated 50692 bytes in 371 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:35:32 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8fcd3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x8fcd3c0 pid: 7547 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7547, cores: 1)
+[pid: 7547|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:35:35 2014] GET /index/rejudge/1/to/2 => generated 46128 bytes in 349 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:36:23 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x85dc3c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x85dc3c0 pid: 7616 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7616, cores: 1)
+[pid: 7616|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:36:25 2014] GET /index/rejudge/1/to/2 => generated 46128 bytes in 361 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:37:16 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8d983c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8d983c0 pid: 7703 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7703, cores: 1)
+[pid: 7703|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:37:18 2014] GET /index/rejudge/1/to/2 => generated 86956 bytes in 326 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:37:49 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x94c13c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x94c13c0 pid: 7740 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7740, cores: 1)
+[pid: 7740|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 729 bytes} [Thu Oct 30 21:37:51 2014] GET /index/rejudge/1/to/2 => generated 13 bytes in 375 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Thu Oct 30 21:38:43 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x93e13c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x93e13c0 pid: 7794 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 7794, cores: 1)
+[pid: 7794|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 725 bytes} [Thu Oct 30 21:38:48 2014] GET /index/rejudge/1to2 => generated 13 bytes in 255 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 7794|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 725 bytes} [Thu Oct 30 21:38:51 2014] GET /index/rejudge/1to2 => generated 13 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 7794|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 727 bytes} [Thu Oct 30 21:38:55 2014] GET /index/rejudge/1to20 => generated 13 bytes in 57 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
