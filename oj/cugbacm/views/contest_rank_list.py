@@ -18,7 +18,6 @@ def contestRankList(request, contest_id):
   contest_rank_list = ssdb_api.GetContestRankListProto(contest_id)
   rank_list = rank_pb2.ContestRankList()
   rank_list.ParseFromString(contest_rank_list)
-<<<<<<< HEAD
  #return HttpResponse(rank_list)
  #rank_list.ParseFromString(contest_rank_list.rank_list_proto_str.encode("utf-8"))
   rank_list_dic = {}
