@@ -51,12 +51,12 @@
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
     </marquee>
     </nav>
- <div class="container" style="padding-top:20px;" >
+ <div class="container" style="" >
   <div class="container-fluid">
-   <div class="row-fluid">
+   <div class="row">
    {% if id == userID %}
    <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %}
-    <div class="col-md-4 col-md-offset-1">
+    <div class="col-md-4">
         <div class="form-group">
             <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
         </div>
@@ -83,6 +83,14 @@
               <input class="form-control" id="session" type="text" value="{{user.session}}" name="session" required/>
             </div>
         </div>
+       </div>
+     <div class="col-md-4">  
+        <div class="form-group">
+            <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-5 col-sm-7">&nbsp; </div>
+        </div>
         <div class="form-group">
             <label  for="specialty" class="col-sm-5 control-label">Specialty</label>
             <div class="col-sm-7">
@@ -101,7 +109,7 @@
               <input class="form-control" id="email" type="text" value="{{user.email}}" name="email" required/>
             </div>
         </div>
-      </div>
+     </div>
        <div class="col-md-4">
         <div class="form-group">
             <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
@@ -112,11 +120,11 @@
         <div class="form-group">
             <label  for="oldPassword" class="col-sm-5 control-label">Old Password</label>
             <div class="col-sm-7">
-              <input class="form-control" id="oldPassword" type="password" value="{{user.password}}" name="oldPassword" required/>
+              <input class="form-control" id="oldPassword" type="password" value="{{user.password}}" name="oldPassword" readonly="true" required/>
             </div>
         </div>
         <div class="form-group">
-            <label  for="password" class="col-sm-5 control-label">Password</label>
+            <label  for="password" class="col-sm-5 control-label">New Password</label>
             <div class="col-sm-7">
               <input class="form-control" id="password" type="password" name="password" />
             </div>
@@ -129,12 +137,26 @@
         </div>
       </div>
     </form>
+   </div>
+    <div class="col-md-12" style="padding-left:70px;"> 
+      <div class="form-group"  style="background-color: #BDC3C7">
+        <label><font style="font-size:18px; color:inherit; font-weight: 700;">Problems Solved</font></label>
+      </div>
+      <div class="form-group">
+        <label>
+        {% for A in onlyAAccepted %}
+        <a href = "/index/problem/{{A}}">{{A}}</a>&nbsp;
+        {% endfor %}   
+        </label>
+      </div>
+    </div>
    {% endif %}
+  <div class="row">
    {% if id != userID %}
     <div class="col-md-4  col-md-offset-1">
      <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %}
       <div class="form-group">
-        <label for="" class="col-sm-5 control-label">&nbsp;</label>
+        <label class="col-sm-5 control-label">&nbsp;</label>
       </div> 
       <div class = "form-group">
        <div class="col-sm-offset-5 col-sm-7">
@@ -178,19 +200,15 @@
          </div>
       </div>
      </form>
-    </div>
-    
+    </div> 
     {% endif %}
     {% if compare == 1 %}
     <div class="col-md-7 col-md-offset-0" >
       <div class="form-group">
         <label>&nbsp;</label>
-      </div>
-      <div class="form-group">
-        <label>&nbsp;</label>
-      </div>
+      </div> 
       <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font>{{userID}} and {{other.userID}} both Accepted:</font></label>
+        <label><font style="font-size:18px; color:inherit; font-weight: 700;">{{userID}} and {{other.userID}} both Accepted:</font></label>
       </div>
       <div class="form-group">
         <label>
@@ -201,7 +219,7 @@
       </div>
 
       <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font>Only {{userID}} Accepted:</font></label>
+        <label><font style="font-size:18px; color:inherit; font-weight: 700;" >Only {{userID}} Accepted:</font></label>
       </div>
       <div class="form-group">
         <label>
@@ -212,7 +230,7 @@
       </div>
       
       <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font>Only {{other.userID}} Accepted:</font></label>
+        <label><font style="font-size:18px; color:inherit; font-weight: 700;">Only {{other.userID}} Accepted:</font></label>
       </div>
       <div class="form-group">
         <label>
@@ -222,32 +240,6 @@
         </label>
       </div>
 
- <!-- <table border = "1" height="410px" width = "600px">
-    <tr>
-      <td width = "280px">{{userID}} and {{other.userID}} both Accepted:</td>
-      <td>
-        {%for problem in bothAccepted %}
-        <a href = "/index/problem/{{problem}}">{{problem}}</a>,
-        {% endfor %}  
-      </td>
-    </tr>
-    <tr>
-      <td>Only {{userID}} Accepted:</td>
-      <td>
-        {% for A in onlyAAccepted %}
-        <a href = "/index/problem/{{A}}">{{A}}</a>,
-        {% endfor %}
-      </td>
-    </tr>
-    <tr>
-          <td>Only {{other.userID}} Accepted:</td>
-          <td>
-           {% for B in onlyBAccepted %}
-          <a href = "/index/problem/{{B}}">{{B}}</a>,
-          {% endfor %}
-          <td>
-    </tr>
-  </table>-->
     </div>
     {% endif %}
    </div>
