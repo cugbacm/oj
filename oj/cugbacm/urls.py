@@ -29,4 +29,3 @@ urlpatterns = patterns('',
   url(r'^rejudge/(?P<run_id>\d+)$', views.rejudge.rejudge, name = 'rejudge'),
   url(r'^rejudge/(?P<start_run_id>\d+)to(?P<end_run_id>\d+)$', views.rejudge.rejudgeRange, name = 'rejudge')
   )
-)
