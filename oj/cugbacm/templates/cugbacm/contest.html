@@ -44,28 +44,17 @@
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
         <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
       </marquee>
-     <div class="row">
-      <div class="col-md-offset-1">
-    <form class="form-inline" role="form" action="/index/problemList/" method="post">{% csrf_token %}
-      <div class="form-group">
-        <label class="sr-only" for="problemID">Problem ID</label>
-        <input type="text" class="form-control" id="problemID" name="problemID" placeholder="Problem ID" value={{problemID}}>
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="problemTitle">Problem Title</label>
-        <input type="text" class="form-control" id="problemTitle" name="problemTitle" placeholder="Problem Title" value={{problemTitle}}>
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="problemAuthor">Problem Author</label>
-        <input type="text" class="form-control" id="problemAuthor" name="problemAuthor" placeholder="Problem Author" value={{problemAuthor}}>
-      </div>
-      <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-    </div>
-    </div>
       </nav>
-    {% autopaginate problems 50 %}
-    <div class="table-responsive" style="padding-top:58px">
+      <div class = "row" style="padding-top:20px">
+        <div class = "col-md-12"><p class = "text-center" style="font-size:30px; color:#2980B9;">比赛名字</p></div>
+      </div>
+      <div class = "row">
+        <div class = "col-md-12">
+          <p class = "text-center" style="font-size:24px; color:#16A085;"> Start Time:xxxx-xx-xx xx:xx:xx &nbsp; &nbsp; End Time:xxxx-xx-xx xx:xx:xx  &nbsp; &nbsp; Status: xxxxx </p>
+        </div>
+      </div>
+     {% autopaginate problems 50 %}
+    <div class="table-responsive">
  <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 	    <thead>  
           <tr>  

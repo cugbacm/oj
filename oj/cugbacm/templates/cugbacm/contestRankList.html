@@ -52,28 +52,33 @@
      </div>
     </div>
     --!>
-  </nav>
+    </nav>
+  <div class = "row">
+    <div class = "col-md-4 col-md-offset-4">
+      <h2>Contest Ranklist</h2>
+    </div>
+  </div>
+  <div class="row"></div>
  <div class="table-responsive pagination-centered" style="padding-top:58px"> 
      <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example">
         <thead>
           <tr>
             <th>Rank</th>
-            <th>AC</th>
-            <th>userID</th>
-            <th>ACList</th>
+            <th>Team</th>
+            <th>Solved</th>
             <th>Penalty</th>
+            <th>
+            </th>
             <th>Ratio(AC/submit)</th>
           </tr>
         </thead>
         <tbody>
-          {% for user in contest_rank_list %}
+          {% for user in rank_list %}
             <tr class="odd gradeX">
               <td>{{forloop.counter}}</td>
-              <td>{{user.total}}</td>
-              <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{user.userID}}</a></td>
-              <td>{{user.acList}}</td>
-              <td>{{user.penalty|date:"H:i:s"}}</td>
-              <td>Ratio({{user.accepted}}/{{user.total}})</td>
+              <td><a href="/index/userInfo/{{user.fuck}}" target="_blank">{{user.fuck}}</a></td>
+              <td>{{user.ac}}</td>
+              <td>{{user.fuck}}</td>
             </tr>
           {% endfor %}
         </tbody>

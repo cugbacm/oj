@@ -52,7 +52,7 @@ def sort_rank(rank_list):
         if submit.status == "Accepted" and flag == 0:
           rank.ac = rank.ac + 1
           flag = 1
-          rank.penalty = rank.penalty + 104
+          rank.penalty = rank.penalty + 100
         elif not submit.status == "Accepted":
           rank.penalty = rank.penalty + 20
 

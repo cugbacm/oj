@@ -21,10 +21,19 @@ def contestRankList(request, contest_id):
   contest_rank_list = ssdb_api.GetContestRankListProto(contest_id)
   rank_list = rank_pb2.ContestRankList()
   rank_list.ParseFromString(contest_rank_list)
-  return HttpResponse(rank_list)
-  rank_list.ParseFromString(contest_rank_list.rank_list_proto_str.encode("utf-8"))
+ # return HttpResponse(rank_list)
 
-  return HttpResponse(rank_list)
+  #return HttpResponse(rank_list)
+  rank_list = {
+    'QQ': {
+      'ac':1,
+      'fuck':'fuck',
+    },
+    'ZHAOLONG': {
+      'ac':2,
+      'fuck':'fuck',
+    },
+  }
   return render(request,
                'cugbacm/contestRankList.html',
                {
