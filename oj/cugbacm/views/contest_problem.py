@@ -10,57 +10,57 @@ from cugbacm.core_hq import UserSubmit
 from cugbacm.views.contest_rank_update import update_rank_list
 from cugbacm.proto import contestant_ac_pb2
 @task
-def Judge(submit):
-  problem = Problem.objects.get(problemID = submit.problemID)
-  user = User.objects.get(userID = submit.userID)
+def Judge(contestsubmit):
+  problem = Problem.objects.get(problemID = contestsubmit.problemID)
+  user = User.objects.get(userID = contestsubmit.userID)
   user_submit = UserSubmit(
-    solution_id = submit.id,
-    problem_id = submit.problemID,
-    language = submit.language,
-    user_id = submit.userID,
-    program = submit.code,
+    solution_id = contestsubmit.id,
+    problem_id = contestsubmit.problemID,
+    language = contestsubmit.language,
+    user_id = contestsubmit.userID,
+    program = contestsubmit.code,
     mem_limit = problem.memoryLimit,
     time_limit = problem.timeLimit
   )
   result = main(user_submit)
   if "result" in result:
-    submit.status = result['result']
+    contestsubmit.status = result['result']
   if "codeLength" in result:
-    submit.codeLength = result['codeLength']
+    contestsubmit.codeLength = result['codeLength']
   if "take_time" in result:
-    submit.runTime = result['take_time']
+    contestsubmit.runTime = result['take_time']
   if "take_memeory" in result:
-    submit.memory = result['take_memory']
-  submit.save()
-  print submit.status
+    contestsubmit.memory = result['take_memory']
+  contestsubmit.save()
+  print contestsubmit.status
 
-  if submit.status == "Accepted":
-    if ContestSubmit.objects.filter(contestID = submit.contestID, userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
+  if contestsubmit.status == "Accepted":
+    if ContestSubmit.objects.filter(contestID = contestsubmit.contestID, userID = user.userID, problemID = contestsubmit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
       if user.acList == None:
         user.acList = ""
-      user.acList += str(submit.problemID) + ","
+      user.acList += str(contestsubmit.problemID) + ","
     problem.ac = problem.ac + 1
-  elif submit.status == "Time Limit Exceeded":
+  elif contestsubmit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1
-  elif submit.status == "Memory Limit Exceeded":
+  elif contestsubmit.status == "Memory Limit Exceeded":
     problem.mle = problem.mle + 1
-  elif submit.status == "Wrong Answer":
+  elif contestsubmit.status == "Wrong Answer":
     problem.wa = problem.wa + 1
-  elif submit.status == "Runtime Error":
+  elif contestsubmit.status == "Runtime Error":
     problem.re = problem.re + 1
-  elif submit.status == "Compile Error":
+  elif contestsubmit.status == "Compile Error":
     problem.ce = problem.ce + 1
-  elif submit.status == "Presentation Error":
+  elif contestsubmit.status == "Presentation Error":
     problem.pe = problem.pe + 1
-  elif submit.status == "System Error":
+  elif contestsubmit.status == "System Error":
     problem.se = problem.se + 1
 
   problem.totalSubmission = problem.totalSubmission + 1
   user.total = user.total + 1
   user.save()
   problem.save()
-  return submit.status
+  return contestsubmit.status
 
 def contestProblem(request, contest_id, problem_id):
   languages = ("g++", "gcc", "java", "python2", "python3")
@@ -74,7 +74,7 @@ def contestProblem(request, contest_id, problem_id):
     code = request.POST['code']
     language = request.POST['language']
     for i in range(1):
-      submit = ContestSubmit(
+      contestsubmit = ContestSubmit(
         runID = 111,
         userID = request.session["userID"],
         problemID = problem_id,
@@ -85,8 +85,8 @@ def contestProblem(request, contest_id, problem_id):
         language = language,
         contestID = contest_id,
         code = code)
-      submit.save()
-      Judge.delay(submit)
+      contestsubmit.save()
+      Judge.delay(contestsubmit)
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
     try:

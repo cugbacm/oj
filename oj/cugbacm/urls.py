@@ -11,6 +11,7 @@ import views.user_list
 import views.problem
 import views.user_info
 import views.contest_problem
+import views.test
 
 urlpatterns = patterns('',
   url(r'^register/$', views.register.register, name = 'register'),
@@ -25,4 +26,6 @@ urlpatterns = patterns('',
   url(r'^problem/(?P<problem_id>\d+)$', views.problem.problem, name = 'problem'),
   url(r'^userInfo/(?P<user_id>\w+)$', views.user_info.userInfo, name = 'userInfo'),
   url(r'^contest/(?P<contest_id>\d+)/problem/(?P<problem_id>\d+)$', views.contest_problem.contestProblem, name = 'contestProblem'),
-  )
+  url(r'^test/$', views.test.test, name = 'test'),
+
+)

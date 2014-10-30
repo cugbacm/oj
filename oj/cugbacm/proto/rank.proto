@@ -2,11 +2,15 @@ package contest_rank;
 message Submit {
   optional string status = 1;
   optional string date_time = 2;
+  optional string runID = 3;
 }
 
 message Problem {
   optional int32 problemID = 1;
   repeated Submit submit = 2;
+  optional int32 acindex = 3;
+  optional int32 totalindex = 4;
+  optional int32 time = 5;
 }
 
 message Rank {
@@ -15,6 +19,7 @@ message Rank {
   repeated Problem problem = 3;
   optional int32 penalty = 4; 
   optional int32 ac = 5;
+  optional int32 total = 6;
 }
 
 message ContestRankList {

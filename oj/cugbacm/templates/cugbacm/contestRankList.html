@@ -53,6 +53,27 @@
     </div>
     --!>
   </nav>
+  <!--
+ {% for key, value in rank_list_dic.items %}
+      {{key}}
+      <br/>
+      {{value}}
+      <br/>
+        {%  for k, v in value.items %}
+           <br/> <br/>
+           {{k}}
+           <br/>
+           {{v}}
+           <br/>
+            {% for i, j  in v.items %}
+                {% for p, q in j.items %}
+                  {{k}}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+      <br/>
+  {% endfor %}
+  -->
  <div class="table-responsive pagination-centered" style="padding-top:58px"> 
      <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example">
         <thead>
@@ -60,20 +81,28 @@
             <th>Rank</th>
             <th>AC</th>
             <th>userID</th>
-            <th>ACList</th>
+            {% for ID in problem_arr %}
+             <th> {{ID}}</th>
+            {% endfor %}
             <th>Penalty</th>
             <th>Ratio(AC/submit)</th>
           </tr>
         </thead>
         <tbody>
-          {% for user in contest_rank_list %}
+          {% for key, value in rank_list_dic.items %}
             <tr class="odd gradeX">
               <td>{{forloop.counter}}</td>
-              <td>{{user.total}}</td>
-              <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{user.userID}}</a></td>
-              <td>{{user.acList}}</td>
-              <td>{{user.penalty|date:"H:i:s"}}</td>
-              <td>Ratio({{user.accepted}}/{{user.total}})</td>
+              <td>
+                 {{value.ac}}
+              </td>
+              <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{key}}</a></td>
+             {% for ID in problem_arr %}
+              <td>
+                  {{value.ID}}               
+              </td>
+              {% endfor %}
+              <td>{{value.penalty}}</td>
+              <td>Ratio({{value.ac}}/{{value.total}})</td>
             </tr>
           {% endfor %}
         </tbody>

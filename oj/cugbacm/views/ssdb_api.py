@@ -3,7 +3,7 @@ import sys
 import cugbacm.proto.rank_pb2
 
 ssdb_ip = "127.0.0.1"
-ssdb_port = 6666
+ssdb_port = 8888
 ssdb = SSDB(host=ssdb_ip, port=ssdb_port)
 
 def GetContestRankListProto(contestID):
@@ -19,7 +19,7 @@ def SetContestRankListProto(contestID, rank_list_proto_str):
     pass
 
 if __name__ == '__main__':
-  ssdb = SSDB(host='127.0.0.1', port=6666)
+  ssdb = SSDB(host='127.0.0.1', port=8888)
   print ssdb.get("1")
 
 
