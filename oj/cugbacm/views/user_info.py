@@ -55,14 +55,17 @@ def userInfo(request, user_id):
       lenb = len(otherproblemList)
       if lena > lenb:
         bothAccepted = search_same(curproblemList, otherproblemList)
-      else: 
+      else:
         bothAccepted = search_same(otherproblemList, curproblemList)
       onlyAAccepted = curproblemList
       onlyBAccepted = otherproblemList
-      return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })  
+      return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })
   else:
-    return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id })
-    
+      curproblemList = []
+      if user.acList != None:
+        curproblemList = user.acList.split(',')
+      return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'onlyAAccepted':curproblemList,'id':user_id })
+
 
 def search_same(A,B):
   AB = []
@@ -78,7 +81,7 @@ def search_same(A,B):
      #   elif x < y:
       #    start = i
 
-  if len(AB) > 0: 
+  if len(AB) > 0:
     for x in AB:
       for y in A:
         if y == x:
