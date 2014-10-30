@@ -75,6 +75,11 @@
   {% endfor %}
   -->
  <div class="table-responsive pagination-centered" style="padding-top:58px"> 
+    </nav>
+  <div class = "row" style="padding-top:20px">
+    <div class = "col-md-12"><p class="text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Ranklist</p></div>
+  </div>
+ <div class="table-responsive pagination-centered"> 
      <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example">
         <thead>
           <tr>
@@ -112,7 +117,6 @@
   $(document).ready(function() {
     $('#example').dataTable({
       "bPaginate": false,
-      "aaSorting":[[0,'desc']],
       "bFilter": false,
     });
   } );

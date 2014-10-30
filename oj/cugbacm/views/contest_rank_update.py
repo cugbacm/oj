@@ -77,7 +77,6 @@ def sort_rank(rank_list, contest_id):
           d = (d1 - d2).seconds
           rank.penalty = rank.penalty + 104
           rank.problem_list[problem].time = rank.problem_list[problem].time + 104
-
         elif not submit.status == "Accepted":
           rank.penalty = rank.penalty + 20
           rank.problem_list[problem].totalindex = rank.problem_list[problem].totalindex + 1
