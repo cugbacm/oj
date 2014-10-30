@@ -60,15 +60,18 @@ def Judge(submit):
   return submit.status
 
 def rejudge(request,run_id):
-  #try:
-  submit = Submit.objects.get(id = run_id)
-  Judge.delay(submit)
-  return HttpResponse("rejudged");
-  #except:
-  return HttpResponse("hehe - no submit found")
+  try:
+    submit = Submit.objects.get(id = run_id)
+    Judge.delay(submit)
+    return HttpResponse("rejudged");
+  except:
+    return HttpResponse("hehe - no submit found")
 
 def rejudgeRange(request, start_run_id, end_run_id):
-  for i in range(int(start_run_id), int(end_run_id)):
-    submit = Submit.objects.get(id = i)
-    Judge.delay(submit)
-  return HttpResponse("rejudgedRange");
+  try:
+    for i in range(int(start_run_id), int(end_run_id)):
+      submit = Submit.objects.get(id = i)
+      Judge.delay(submit)
+      return HttpResponse("rejudgedRange")
+  except:
+    return HttpResponse("hehehe")
