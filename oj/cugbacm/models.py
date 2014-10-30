@@ -83,4 +83,4 @@ class Contestant(User):
 
 class ContestRankList(models.Model):
   contestID  = models.IntegerField()
-  rank_list_proto_str = models.TextField()
+  rank_list_proto_str = models.CharField(max_length=1000000)

@@ -47,11 +47,10 @@ def Judge(submit):
   print submit.status
 
   if submit.status == "Accepted":
-    if Submit.objects.filter(userID = user.userID, problemID = submit.problemID).count() == 1:
+    if Submit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
       if user.acList == None:
-          user.acList = ""
-   # user.accepted = user.accepted + 1
+        user.acList = ""
       user.acList += str(submit.problemID) + ","
     problem.ac = problem.ac + 1
   elif submit.status == "Time Limit Exceeded":

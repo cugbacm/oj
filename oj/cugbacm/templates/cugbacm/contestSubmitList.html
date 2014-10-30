@@ -126,10 +126,10 @@
             <td>{{submit.id}}</td>
             <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
             <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-            <td>{{submit.status}}</td> 
-            <td>{{submit.memory}}</td>
-            <td>{{submit.runTime}}</td>
-            <td>{{submit.codeLength}}</td>
+            <td><font color="#3498DB"><STRONG>{{submit.status}}</STRONG></font></td>
+            <td>{{submit.memory}}&nbsp;K</td>
+            <td>{{submit.runTime}}&nbsp;MS</td>
+            <td>{{submit.codeLength}}&nbsp;B</td>            
             {% ifequal submit.userID userID %} 
               <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
             {% else %}
@@ -148,6 +148,14 @@
           <td>{{submit.memory}}</td>
           <td>{{submit.runTime}}</td>
           <td>{{submit.codeLength}}</td>
+          {% if submit.status == "Compile Error"%}
+              <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
+           {% else %}
+              <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
+           {% endif %}
+             <td>{{submit.memory}}&nbsp;K</td>
+             <td>{{submit.runTime}}&nbsp;MS</td>
+             <td>{{submit.codeLength}}&nbsp;B</td>
           {% ifequal submit.userID userID %} 
             <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
           {% else %}
