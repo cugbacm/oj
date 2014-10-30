@@ -3802,3 +3802,74 @@ spawned uWSGI worker 1 (and the only) (pid: 5039, cores: 1)
 [pid: 5039|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 1072 bytes} [Wed Oct 22 16:30:26 2014] GET /admin/jsi18n/ => generated 2372 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
 [pid: 5039|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 1142 bytes} [Wed Oct 22 16:30:31 2014] GET /index/userInfo/zl2011 => generated 5148 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 5039|app: 0|req: 20/20] 127.0.0.1 () {44 vars in 1265 bytes} [Wed Oct 22 16:30:34 2014] POST /index/userInfo/zl2011 => generated 62017 bytes in 84 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.3 (64bit) on [Thu Oct 30 23:26:32 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7815
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x114fe70
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x114fe70 pid: 12009 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 12009, cores: 1)
+*** Starting uWSGI 2.0.3 (64bit) on [Thu Oct 30 23:26:33 2014] ***
+compiled with version: 4.6.3 on 12 April 2014 21:45:32
+os: Linux-3.2.0-29-generic #46-Ubuntu SMP Fri Jul 27 17:03:23 UTC 2012
+nodename: AY14040915414956495eZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/cugbacm/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7815
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:09:21)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x257ae70
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x257ae70 pid: 12020 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 12020, cores: 1)
+[pid: 12020|app: 0|req: 1/1] 123.120.46.83 () {38 vars in 912 bytes} [Thu Oct 30 23:26:39 2014] GET /index/contest/1/rankList => generated 7843 bytes in 372 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12020|app: 0|req: 2/2] 123.120.46.83 () {44 vars in 1026 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 3/3] 123.120.46.83 () {44 vars in 1062 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 4/4] 123.120.46.83 () {44 vars in 1007 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 5/5] 123.120.46.83 () {44 vars in 1021 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/dist/js/jquery-2.1.0.min.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 6/6] 123.120.46.83 () {44 vars in 1034 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/dist/css/bootstrap.min.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 7/7] 123.120.46.83 () {44 vars in 1042 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/Flat-UI-master/css/flat-ui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 8/8] 123.120.46.83 () {44 vars in 1064 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 9/9] 123.120.46.83 () {44 vars in 1037 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 10/10] 123.120.46.83 () {44 vars in 1072 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 11/11] 123.120.46.83 () {44 vars in 1059 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 12/12] 123.120.46.83 () {44 vars in 1053 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 12020|app: 0|req: 13/13] 123.120.46.83 () {44 vars in 1052 bytes} [Thu Oct 30 23:26:40 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)

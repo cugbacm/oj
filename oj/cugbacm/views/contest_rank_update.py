@@ -94,7 +94,7 @@ def update_rank_list(contestID):
     problemID = contest_submit.problemID
     date = contest_submit.date
     time = contest_submit.timestamp
-    runID = contest_submit.runID
+    runID = contest_submit.id
     if not userID in rank_list:
       rank_list[userID] = Rank(userID, contestID)
     if not problemID in rank_list[userID].problem_list:
