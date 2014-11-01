@@ -3,7 +3,7 @@ from datetime import *
 import time
 from django.shortcuts import render
 from django.template import Context, loader
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, ContestRankList
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from cugbacm.proto import rank_pb2
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.views.contest_rank_update import update_rank_list, Rank

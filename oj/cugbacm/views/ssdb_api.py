@@ -19,7 +19,7 @@ def SetContestRankListProto(contestID, rank_list_proto_str):
     pass
 
 if __name__ == '__main__':
-  ssdb = SSDB(host='127.0.0.1', port=8888)
+  ssdb = SSDB(host='127.0.0.1', port=6666)
   print ssdb.get("1")
 
 

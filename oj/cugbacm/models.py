@@ -93,6 +93,8 @@ class Contestant(User):
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.userID)
 
-class ContestRankList(models.Model):
-  contestID  = models.IntegerField()
-  rank_list_proto_str = models.CharField(max_length=1000000)
+class UserContestMap(models.Model):
+  userID = models.CharField(max_length = 200 )
+  contestID = models.IntegerField()
+  def __unicode__(self):
+    return str(self.userID) + "\t" + str(self.contestID)
