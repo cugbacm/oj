@@ -78,7 +78,7 @@
         </thead>  
         <tbody>
           {% for problem in problems %}
-            <tr class="odd gradeX">
+            <tr class="odd gradeB">
               <td>
                 <a href="/index/problem/{{problem.problemID}}">
                   {{problem.problemID}}
@@ -103,7 +103,7 @@
 	      $(document).ready(function() {
 	      	$('#example').dataTable({
 	      	"bPaginate": false,
-          "bFilter": false, 
+          "bFilter": false,
 	      	});
 		} );
 	</script>

@@ -107,36 +107,16 @@
              <div data-spy="affix">
              <nav class="navbar navbar-default" role = "navigation">
               <ul class = "nav nav-tabs">
-                <li class="active"><a href="/index/problem/{{problem.problemID}}">Edit Code</a></li>
-                <li><a href="/index/problem/{{problem.problemID}}">Your Submits</a></li>
+                {% ifequal show_submit 'true' %}
+                  <li><a href="/index/problem/{{problem.problemID}}">Edit Code</a></li>
+                  <li class="active"><a href="/index/problem/{{problem.problemID}}?show_submit=true">Your Submits</a></li>
+                {% else %}
+                  <li class="active"><a href="/index/problem/{{problem.problemID}}">Edit Code</a></li>
+                  <li><a href="/index/problem/{{problem.problemID}}?show_submit=true">Your Submits</a></li>
+                {% endifequal %}
               </ul>
              </nav>
-              <div>
-                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
-                  <div class="form-group">
-                    <label for="language" class="col-md-2 control-label">Language</label>
-                      <div class="col-md-5 col-md-offset-1">
-                        <select id="language" class="form-control" name="language" >
-                        {% for var in languages %} 
-			                     {% ifequal var submit.language %}
-			                       <option selected>{{var}}</option>
-			                     {% else %}
-			                       <option>{{var}}</option>	
-			                     {% endifequal %}	
-		                  	{% endfor %}
-                        </select>
-                      </div>
-                  </div>
-                  <div class="form-group">   
-                    <pre id="editor" style="height:240px">{{submit.code}}</pre>
-                  </div>
-                 <textarea id="Code" name="code" style="display:none"></textarea>
-                  <div class="form-group">
-                    <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>
-                  </div>
-                 
-                </form>
-              </div>
+             {% ifequal show_submit 'true'%}
               {% autopaginate submits 10 %}
               <div class="table-responsive pagination-centered">
               <table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
@@ -171,6 +151,34 @@
               </table>
               </div>
               {% paginate %}
+             {% else %}
+              <div>
+                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
+                  <div class="form-group">
+                    <label for="language" class="col-md-2 control-label">Language</label>
+                      <div class="col-md-5 col-md-offset-1">
+                        <select id="language" class="form-control" name="language" >
+                        {% for var in languages %} 
+			                     {% ifequal var submit.language %}
+			                       <option selected>{{var}}</option>
+			                     {% else %}
+			                       <option>{{var}}</option>	
+			                     {% endifequal %}	
+		                  	{% endfor %}
+                        </select>
+                      </div>
+                  </div>
+                  <div class="form-group">   
+                    <pre id="editor" style="height:240px">{{submit.code}}</pre>
+                  </div>
+                 <textarea id="Code" name="code" style="display:none"></textarea>
+                  <div class="form-group">
+                    <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>
+                  </div>
+                 
+                </form>
+              </div>
+             {% endifequal %}
               <script>
              <!-- $('#navbar').scrollspy()-->
             $(document).ready(function() {

@@ -74,9 +74,8 @@
       <br/>
   {% endfor %}
   -->
- <div class="table-responsive pagination-centered" style="padding-top:58px"> 
     </nav>
-  <div class = "row" style="padding-top:20px">
+  <div class = "row" style="padding-top:30px;">
     <div class = "col-md-12"><p class="text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Ranklist</p></div>
   </div>
  <div class="table-responsive pagination-centered"> 
@@ -95,11 +94,9 @@
         </thead>
         <tbody>
           {% for key, value in rank_list_dic.items %}
-            <tr class="odd gradeX">
+            <tr class="odd gradeB">
               <td>{{forloop.counter}}</td>
-              <td>
-                 {{value.ac}}
-              </td>
+              <td> {{value.ac}}</td>
               <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{key}}</a></td>
              {% for ID in problem_arr %}
               <td>

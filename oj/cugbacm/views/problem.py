@@ -101,14 +101,34 @@ def problem(request, problem_id):
 
     return HttpResponseRedirect("/index/problem/" + str(problem_id))
   else:
+    show_submit = request.GET.get('show_submit')
     try:
       submit = Submit.objects.get(id = request.GET.get('submit'))
       if submit.userID == user.userID and str(submit.problemID) == str(problem_id):
-        return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'languages':languages})
+        return render(request,
+                      'cugbacm/problem.html',
+                      {
+                        'problem': problem,
+                        'userID': user.userID,
+                        'submit': submit,
+                        'submits': submits,
+                        'languages': languages,
+                        'show_submit': show_submit,
+                      }
+                      )
       else:
         return HttpResponseRedirect("/index/problem/" + str(problem_id))
     except:
-      return render(request, 'cugbacm/problem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits, 'languages':languages})
+      return render(request,
+                    'cugbacm/problem.html',
+                    {
+                      'problem': problem,
+                      'userID': user.userID,
+                      'submits': submits,
+                      'languages': languages,
+                      'show_submit': show_submit,
+                    }
+                    )
       #return render(request, 'cugbacm/problem.html', {})
 
 

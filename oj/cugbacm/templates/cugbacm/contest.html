@@ -50,7 +50,13 @@
       </div>
       <div class = "row">
         <div class = "col-md-12">
-          <p class = "text-center" style="font-size:18px; color:#16A085;"> Start Time:{{contest.startTime}} {{contest.startTimestamp}} &nbsp; &nbsp; End Time:{{contest.endTime}} {{contest.endTimestamp}}  &nbsp; &nbsp; Status: {{contest.status}} </p>
+          <p class = "text-center" style="font-size:18px; color:#16A085;"> Start Time:&nbsp;{{contest.startTime}} {{contest.startTimestamp}} &nbsp; &nbsp; End Time:&nbsp;{{contest.endTime}} {{contest.endTimestamp}}  &nbsp; &nbsp; Status:&nbsp;    
+        {% if contest.status == "passed" %}
+           <font color="#BDC3C7">{{contest.status}}</font>
+        {% else %} 
+           <font color="#E74C3C">{{contest.status}}</font>
+        {% endif %}
+          </p>
         </div>
       </div>
      {% autopaginate problems 50 %}
@@ -68,7 +74,7 @@
         </thead>  
         <tbody>
           {% for problem in problems %}
-            <tr class="odd gradeX">
+            <tr class="odd gradeB">
               <td>
                 <a href="/index/contest/{{contest.contestID}}/problem/{{problem.problemID}}">
                   {{problem.problemID}}
