@@ -29,7 +29,7 @@ def Judge(contestsubmit):
     contestsubmit.codeLength = result['codeLength']
   if "take_time" in result:
     contestsubmit.runTime = result['take_time']
-  if "take_memeory" in result:
+  if "take_memory" in result:
     contestsubmit.memory = result['take_memory']
   contestsubmit.save()
   print contestsubmit.status
