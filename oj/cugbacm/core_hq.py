@@ -59,7 +59,7 @@ def check_dangerous_code(solution_id, language):
     ]
     for line in code:
       if line.find('import') >= 0:
-        words = line.split() #以空格隔开单词
+        words = line.split() # 以空格隔开单词
         tag = 0
         for w in words:
           if w in support_modules:
@@ -85,7 +85,7 @@ def check_dangerous_code(solution_id, language):
 # 编译文件
 def compile(solution_id, language):
 	low_level()
-	language = language.lower()   #将语言变成小写字母
+	language = language.lower()   # 将语言变成小写字母
 	dir_work = os.path.join(config.work_dir, str(solution_id))
 	print "dir_work:",dir_work
 
@@ -114,19 +114,17 @@ def compile(solution_id, language):
 	f.write(out)
 	f.close()
 
-	print "compile hehe2"
-	print "p.returncode:", p.returncode
-	if p.returncode == 0: #return 0, 编译成功
+	if p.returncode == 0: # return 0, 编译成功
 		return True
 	return False
 
-#判题
+# 判题
 def judge(solution_id, problem_id, data_count, time_limit,
 		mem_limit, program_info, result_code, language):
 	low_level()
 	max_men = 0
 	max_time = 0
-	#判断编译语言
+	# 判断编译语言
 	if language in ['java', 'python2', 'python3']:
 		time_limit = time_limit * 2
 		mem_limit = mem_limit * 2
@@ -265,7 +263,7 @@ def judge_result(problem_id, solution_id, item):
 
 def run(problem_id, solution_id, language, data_count, user_id,time_limit,mem_limit):
 	low_level()
-	#获取内存和时间
+	# 获取内存和时间
 	# time_limit = 10000
 	# mem_limit = 300000
 	program_info = {
@@ -290,16 +288,16 @@ def run(problem_id, solution_id, language, data_count, user_id,time_limit,mem_li
       'System Error': 9,
       'Judging': 10
 	}
-	print "run:check_dangerous_code%s",check_dangerous_code(solution_id, language)
+	print "run:check_dangerous_code%s" % check_dangerous_code(solution_id, language)
 
 	if check_dangerous_code(solution_id, language) == False:
 		program_info['result'] = result_code["Runtime Error"]
 		return program_info
 	compile_result = compile(solution_id, language)
-	print "run:compile%s",compile_result
+	print "run:compile %s" % compile_result
 	if compile_result is False:
 		program_info['result'] = result_code['Compile Error']
-		#clean_work_dir(solution_id)
+		# clean_work_dir(solution_id)
 		return program_info
 
 	if data_count == 0:
@@ -317,19 +315,19 @@ def run(problem_id, solution_id, language, data_count, user_id,time_limit,mem_li
       result_code,
       language,
 	)
-	#clean_work_dir(solution_id)
+	# clean_work_dir(solution_id)
 	return result
 
 
-#清空工作目录
-def  clean_work_dir(solution_id):
+# 清空工作目录
+def clean_work_dir(solution_id):
 	dir_name = os.path.join(config.work_dir, str(solution_id))
 	shutil.rmtree(dir_name)
 
-#得到某道题目的数据总量
+# 得到某道题目的数据总量
 def get_data_count(problem_id):
 	full_path = os.path.join(config.data_dir, str(problem_id))
-	print "full_path:%s",full_path
+	print "full_path:%s" % full_path
 	try:
 		# listdir获取当前目录中的内容
 		files = os.listdir(full_path)
@@ -370,13 +368,13 @@ def main(user_submit):
   data_count = get_data_count(user_submit.problem_id)
   print "data_count:%s", data_count
   path = os.path.join(config.work_dir,'%s' % solution_id)
-  print "solution_id path:%s",path
+  print "solution_id path: %s" % path
   if os.path.exists(path):
     # shutil.rmtree删除一个目录
     shutil.rmtree(path)
     # os.makedirs  创建递归的目录树，可以是绝对路径也可以是相对路径
   os.makedirs(path)
-  print "solution_id path:%s",path
+  print "solution_id path: %s" % path
   main_path = {
       'gcc': path + '/main.c',
       'g++': path + '/main.cpp',

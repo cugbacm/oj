@@ -41,7 +41,7 @@ def Judge(submit):
     submit.codeLength = result['codeLength']
   if "take_time" in result:
     submit.runTime = result['take_time']
-  if "take_memeory" in result:
+  if "take_memory" in result:
     submit.memory = result['take_memory']
   submit.save()
   print submit.status, submit.runTime, submit.memory
