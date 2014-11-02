@@ -2,7 +2,7 @@
 from datetime import *
 import time
 import datetime
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, ContestRankList
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from cugbacm.proto import rank_pb2
 from celery.task import task
 import ssdb_api
