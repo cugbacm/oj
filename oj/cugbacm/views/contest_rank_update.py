@@ -57,37 +57,45 @@ class Rank():
 
 def sort_rank(rank_list, contest_id):
   contest = Contest.objects.get(contestID = contest_id)
-  st_time = contest.startTimestamp
-  st_date = contest.startTime
+  st_time = str(contest.startTime) + " " + str(contest.startTimestamp)
+  ST_time =  datetime.datetime.strptime(st_time, "%Y-%m-%d %H:%M:%S")
   for userID in rank_list:
     rank = rank_list[userID]
     for problem in rank.problem_list:
-      flag = 0
       for submit in rank.problem_list[problem].submit_list:
         rank.total = rank.total + 1
-        if submit.status == "Accepted" and flag == 0:
-          rank.ac = rank.ac + 1
-          rank.problem_list[problem].acflag = 1
-          flag = 1
+        if submit.status == "Accepted":
+          if rank.problem_list[problem].acindex == 0:
+            rank.ac = rank.ac + 1
+            rank.problem_list[problem].totalindex = rank.problem_list[problem].totalindex + 1
+            rank.problem_list[problem].acindex = 1
+            P_time = datetime.datetime.strptime(submit.date_time, "%Y-%m-%d %H:%M:%S")
+            d = (P_time - ST_time).seconds + (P_time - ST_time).days*24*60*60
+            rank.penalty = rank.penalty + d
+            rank.problem_list[problem].time = rank.problem_list[problem].time + d
+        elif (rank.problem_list[problem].acindex != 1):
           rank.problem_list[problem].totalindex = rank.problem_list[problem].totalindex + 1
-
-        # now_time = submit.date_time.time()
-          d1 = datetime.datetime(2014, 10, 29, 22, 32, 00)
-          d2 = datetime.datetime(2014, 8, 29, 22,32, 00)
-          d = (d1 - d2).seconds
-          rank.penalty = rank.penalty + 104
-          rank.problem_list[problem].time = rank.problem_list[problem].time + 104
-        elif not submit.status == "Accepted":
-          rank.penalty = rank.penalty + 20
-          rank.problem_list[problem].totalindex = rank.problem_list[problem].totalindex + 1
-          rank.problem_list[problem].time = rank.problem_list[problem].time + 20
- # rank_list = sorted(rank_list, cmp = lambda x,y:cmp(x.ac, y.ac)) or cmp(x.penalty, y.penalty))
+          rank.problem_list[problem].time = rank.problem_list[problem].time + 1200
+  #rank_list = sorted(rank_list, cmp = lambda x,y:cmp(x.ac, y.ac)) or cmp(x.penalty, y.penalty))
+  #rank_list.sorted(lambda x, y: cmp(x.ac, y.ac, reverse = True))
+  #sorted(rank_list, key = lambda x:x.ac, reverse = True)
+@task
+def update_running_contest_rank():
+  try:
+    contests = Contest.objects.filter(status="running")
+  except:
+    return
+  if not contests:
+    return
+  for contest in contests:
+    update_rank_list(str(contest.contestID))
 
 @task
 def update_rank_list(contestID):
-  contest_submit_list = ContestSubmit.objects.filter(contestID=contestID)
+  contest_submit_list = ContestSubmit.objects.filter(contestID=contestID).order_by('id')
   rank_list = {}
-
+  contest = Contest.objects.get(contestID = contestID)
+  problem_list = contest.problemList.split(',')
   for contest_submit in contest_submit_list:
     userID = contest_submit.userID
     status = contest_submit.status
@@ -97,9 +105,11 @@ def update_rank_list(contestID):
     runID = contest_submit.id
     if not userID in rank_list:
       rank_list[userID] = Rank(userID, contestID)
-    if not problemID in rank_list[userID].problem_list:
-      rank_list[userID].problem_list[problemID] = Rank.Problem(problemID)
-    rank_list[userID].problem_list[problemID].add_submit(Rank.Problem.Submit(runID = str(runID), status=status, date_time=str(date) + " " + str(time)))
+      for p in problem_list:
+        rank_list[userID].problem_list[int(p)] = Rank.Problem(int(p))
+    rank_list[userID].problem_list[problemID].add_submit(Rank.Problem.Submit(runID = str(runID),
+                                                                             status=status,
+                                                                             date_time=str(date) + " " + str(time)))
 
   sort_rank(rank_list, contestID)
   contest_rank_list = rank_pb2.ContestRankList()

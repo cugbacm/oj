@@ -44,7 +44,7 @@ def Judge(submit):
   if "take_memeory" in result:
     submit.memory = result['take_memory']
   submit.save()
-  print submit.status
+  print submit.status, submit.runTime, submit.memory
 
   if submit.status == "Accepted":
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:

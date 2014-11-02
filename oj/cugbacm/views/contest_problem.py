@@ -89,15 +89,36 @@ def contestProblem(request, contest_id, problem_id):
       Judge.delay(contestsubmit)
     return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
   else:
+    show_submit = request.GET.get('show_submit')
     try:
       submit = ContestSubmit.objects.get(id = request.GET.get('submit'))
       if str(submit.userID) == str(user.userID) and str(submit.problemID) == str(problem_id) and str(submit.contestID) == str(contest_id):
-        return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submit':submit, 'submits':submits, 'contestID':contest_id, 'languages':languages})
+        return render(request,
+                      'cugbacm/contestProblem.html',
+                      {
+                        'problem': problem,
+                        'userID': user.userID,
+                        'submit': submit,
+                        'submits': submits,
+                        'contestID':contest_id,
+                        'languages':languages,
+                        'show_submit': show_submit,
+                      }
+                      )
       else:
         return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
     except:
-      return render(request, 'cugbacm/contestProblem.html', {'problem': problem, 'userID' :user.userID, 'submits':submits,'contestID':contest_id,'languages':languages})
-  return render(request, 'cugbacm/contestProblem.html',{'problem':probilem, 'userID':user.userID, 'submits':submits,'contestID':contest_id,'languages':languages})
+      return render(request,
+                    'cugbacm/contestProblem.html',
+                    {
+                      'problem': problem,
+                      'userID': user.userID,
+                      'submits':submits,
+                      'contestID':contest_id,
+                      'languages':languages,
+                      'show_submit': show_submit,
+                    }
+                    )
 
 
 

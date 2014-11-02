@@ -72,11 +72,10 @@
             </nav> 
           <div class="row-fluid" >
             <div class="col-md-7" role="main">
-              <h2>[{{problem.problemID}}] {{problem.title}}</h2>
+             <center> <h2>{{problem.title}}</h2></center>
               <div>
-                <p>Time Limit: {{problem.timeLimit}}ms</p>
-                <p>Memory Limit: {{problem.memoryLimit}}KB</p>
-                <p>(Accepted/Total Submit) {{problem.ac}}/{{problem.totalSubmission}}</p>
+                <p><center>Time Limit: {{problem.timeLimit}} MS &nbsp; &nbsp; Memory Limit: {{problem.memoryLimit}} KB</center></p>
+                <p><center>(Accepted/Total Submit): {{problem.ac}} / {{problem.totalSubmission}}</center></p>
               </div>
               <h3>
                 description
@@ -118,7 +117,7 @@
              </nav>
              {% ifequal show_submit 'true'%}
               {% autopaginate submits 10 %}
-              <div class="table-responsive pagination-centered">
+              <div class="table-responsive pagination-centered" style="width:487px;">
               <table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
                 <thead>  
                   <tr>  
@@ -152,11 +151,12 @@
               </div>
               {% paginate %}
              {% else %}
-              <div>
+              <div style="width: 487px;">
                 <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
                   <div class="form-group">
+                  
                     <label for="language" class="col-md-2 control-label">Language</label>
-                      <div class="col-md-5 col-md-offset-1">
+                      <div class="col-md-5">
                         <select id="language" class="form-control" name="language" >
                         {% for var in languages %} 
 			                     {% ifequal var submit.language %}
@@ -167,15 +167,16 @@
 		                  	{% endfor %}
                         </select>
                       </div>
+
+                       <div class="col-md-2">
+                       <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>
+                       </div>   
+
                   </div>
                   <div class="form-group">   
                     <pre id="editor" style="height:240px">{{submit.code}}</pre>
                   </div>
                  <textarea id="Code" name="code" style="display:none"></textarea>
-                  <div class="form-group">
-                    <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>
-                  </div>
-                 
                 </form>
               </div>
              {% endifequal %}

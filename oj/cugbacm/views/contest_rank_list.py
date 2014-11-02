@@ -25,13 +25,14 @@ def contestRankList(request, contest_id):
     rank_list_dic[rank.userID] = {}
     rank_list_dic[rank.userID]['ac'] = rank.ac
     rank_list_dic[rank.userID]['penalty'] = rank.penalty
+    rank_list_dic[rank.userID]['penalty_hms'] = str(rank.penalty/3600) + ":" + str((rank.penalty%3600)/60) + ":" + str((rank.penalty%3600) % 60)
     rank_list_dic[rank.userID]['total'] = rank.total
     for problem_ in rank.problem:
       rank_list_dic[rank.userID][str(problem_.problemID)] = {}
       rank_list_dic[rank.userID][str(problem_.problemID)]['acindex'] = problem_.acindex
       rank_list_dic[rank.userID][str(problem_.problemID)]['totalindex'] = problem_.totalindex
       rank_list_dic[rank.userID][str(problem_.problemID)]['time'] = problem_.time
-
+      rank_list_dic[rank.userID][str(problem_.problemID)]['time_hms'] = str(problem_.time/3600) + ":" + str((problem_.time%3600)/60) +":" + str((problem_.time%3600)%60)
       for submit_ in problem_.submit:
         rank_list_dic[rank.userID][str(problem_.problemID)][submit_.runID] = {}
         rank_list_dic[rank.userID][str(problem_.problemID)][submit_.runID]['status'] = submit_.status

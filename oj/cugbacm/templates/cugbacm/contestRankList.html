@@ -19,7 +19,16 @@
         @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
-  </style>
+    </style>
+    <style type="text/css">
+      .fix_height td{
+        height:50px;
+        border:solid thin #ffffff;
+      }
+      .fix_height th{
+        border:solid thin #ffffff;
+      }
+    </style>
   <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
   </head>
@@ -45,70 +54,52 @@
     </ul>
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
-    </marquee>
-    <!--
-    <div class="row">
-     <div class="col-md-offset-1">
-     </div>
-    </div>
-    --!>
-  </nav>
-  <!--
- {% for key, value in rank_list_dic.items %}
-      {{key}}
-      <br/>
-      {{value}}
-      <br/>
-        {%  for k, v in value.items %}
-           <br/> <br/>
-           {{k}}
-           <br/>
-           {{v}}
-           <br/>
-            {% for i, j  in v.items %}
-                {% for p, q in j.items %}
-                  {{k}}
-                {% endfor %}
-            {% endfor %}
-        {% endfor %}
-      <br/>
-  {% endfor %}
-  -->
-    </nav>
+     </marquee>
+   </nav>
   <div class = "row" style="padding-top:30px;">
     <div class = "col-md-12"><p class="text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Ranklist</p></div>
   </div>
  <div class="table-responsive pagination-centered"> 
-     <table cellpadding="0" cellspacing="0" border="0" class="display"  id="example">
+     <table cellpadding="0" cellspacing="0" border="1" class="display fix_height"  id="example">
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>AC</th>
-            <th>userID</th>
+            <th><center>Rank</center></th>
+            <th><center>Team</center></th>
+            <th><center>Solved</center></th>
+            <th><center>Penalty</center></th>
             {% for ID in problem_arr %}
-             <th> {{ID}}</th>
+            <th> <center>{{ID}}</center></th>
             {% endfor %}
-            <th>Penalty</th>
-            <th>Ratio(AC/submit)</th>
+            <th><center>Ratio</center></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody align="center">
           {% for key, value in rank_list_dic.items %}
             <tr class="odd gradeB">
               <td>{{forloop.counter}}</td>
-              <td> {{value.ac}}</td>
               <td><a href="/index/userInfo/{{user.userID}}" target="_blank">{{key}}</a></td>
-             {% for ID in problem_arr %}
-              <td>
+              <td width="10"> <font style="color:#3498DB;">{{value.ac}}</font></td>
+              <td>{{value.penalty_hms}}</td>
+                {% for ID in problem_arr %}                
                   {% for k,v in value.items %}
                     {% ifequal k ID %} 
-                      {{v}}
+                      {% ifequal v.acindex 1 %}
+                      <td style="background-color:#27AE60;" width="140px;"> <font style="color:#ffffff;">{{v.time_hms}}
+                         {% ifequal v.totalindex 1 %}
+                         {% else %}
+                         <br/>(-{{v.totalindex|add:-1}})</font> </td> 
+                         {% endifequal %}
+                      {% else %}
+                        {% ifequal v.totalindex 0 %}
+                         <td></td> 
+                        {% else %}
+                        <td style="background-color:#E74C3C;"> <font style="color:#ffffff;">(-{{v.totalindex}})</font></td> 
+                        {% endifequal %}
+                      {% endifequal %} 
                     {% endifequal %}
-                  {% endfor %}
-              </td>
-              {% endfor %}
-              <td>{{value.penalty}}</td>
-              <td>Ratio({{value.ac}}/{{value.total}})</td>
+                 {% endfor %}
+               {% endfor %}
+               <td width="1"><font style="color:#3498DB;">({{value.ac}}/{{value.total}})</font></td>
             </tr>
           {% endfor %}
         </tbody>
@@ -119,6 +110,8 @@
     $('#example').dataTable({
       "bPaginate": false,
       "bFilter": false,
+      "aaSorting": [[2,"desc"],[3,"asc"]],
+      "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] }] ,
     });
   } );
     </script>

@@ -28,10 +28,10 @@ def submitList(request):
           submits = submits.filter(language = languageSearch)
 
         return render(
-          request, 
+          request,
           'cugbacm/submitList.html',
           {
-            'submits': submits, 
+            'submits': submits,
             'userID':request.session['userID'],
             'userIDSearch': request.POST['userIDSearch'],
             'problemIDSearch': request.POST['problemIDSearch'],
