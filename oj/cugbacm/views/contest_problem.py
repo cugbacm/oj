@@ -68,9 +68,13 @@ def contestProblem(request, contest_id, problem_id):
     user = User.objects.get(userID = request.session['userID'])
   except:
     return HttpResponseRedirect('/index/login')
+ 
   problem = Problem.objects.get(problemID = problem_id)
   submits  = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem_id, userID = user.userID).order_by("-id")
   if request.method == 'POST':
+    contest = Contest.objects.get(contestID = int(contest_id))
+    if contest.status == "passed":
+      return HttpResponse("Sorry, the contest is passed!")
     code = request.POST['code']
     language = request.POST['language']
     for i in range(1):
