@@ -72,34 +72,37 @@
             <th>Total Submission</th>  
           </tr>  
         </thead>  
+        <center>{% paginate %}</center>
         <tbody>
-          {% for problem in problems %}
+          {% for problem in problem_list %}
             <tr class="odd gradeB">
-              <td>
-                <a href="/index/contest/{{contest.contestID}}/problem/{{problem.problemID}}">
-                  {{problem.problemID}}
+              <td align="center"><img src="/site_media/dist/images/Accept.png">
+                <a href="/index/contest/{{contest.contestID}}/problem/{{problem.1.problemID}}">
+                  {{problem.0}}
                 </a>
               </td>
               <td>
-                <a href="/index/contest/{{contest.contestID}}/problem/{{problem.problemID}}">
-                  {{problem.title}}
+                <a href="/index/contest/{{contest.contestID}}/problem/{{problem.1.problemID}}">
+                  {{problem.1.title}}
                 </a>
               </td>
-              <td>{{problem.timeLimit}}</td>
-              <td>{{problem.memoryLimit}}</td>
-              <td>{{problem.ac}}</td>
-              <td>{{problem.totalSubmission}}</td>
+              <td>{{problem.1.timeLimit}}</td>
+              <td>{{problem.1.memoryLimit}}</td>
+              <td>{{problem.1.ac}}</td>
+              <td>{{problem.1.totalSubmission}}</td>
             </tr>
           {% endfor %}  
         </tbody>  
       </table>
     </div>
-    {% paginate %}
+    <center>{% paginate %}</center>
       <script>
 	      $(document).ready(function() {
 	      	$('#example').dataTable({
 	      	"bPaginate": false,
-          "bFilter": false, 
+          "bFilter": false,
+          "bInfo":false,
+          "bSort":false,
 	      	});
 		} );
 	</script>

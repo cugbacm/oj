@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys 
+import sys
 from datetime import *
 import time
 from django.shortcuts import render
@@ -16,7 +16,7 @@ def contest(request, contest_id):
   if str(contest.status) == 'pending':
     return HttpResponse("Sorry, The contest is not start!")
 
-  try: 
+  try:
     userID_contestID = UserContestMap.objects.get(userID=str(user.userID), contestID=int(contest_id))
   except:
     return HttpResponse("Sorry, " + str(user.userID) + " is not in this contest!")
@@ -25,13 +25,20 @@ def contest(request, contest_id):
   problems = Problem.objects.filter(problemID__in = problemList)
   problem_ac_count = {}
   problem_all_count = {}
+  problemName = {1:'A', 2:'B', 3:'C', 4:'D', 5:'E', 6:'F', 7:'G', 8:'H', 9:'I', 10:'J'}
+  #problemName = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
   for problem in problems:
 
     contest_submits = ContestSubmit.objects.filter(contestID = str(contest_id), problemID = str(problem.problemID))
     problem_all_count[problem.problemID] = len(contest_submits)
-    problem.totalSubmission = len(contest_submits) 
+    problem.totalSubmission = len(contest_submits)
     problem_ac_count[problem.problemID] = len(contest_submits.filter(status = "Accepted"))
     problem.ac = len(contest_submits.filter(status = "Accepted"))
+  problem_list = []
+  count = 0
+  for problem in problems:
+    problem_list.append([chr(ord('A') + count), problem])
+    count += 1
   if request.method == 'POST':
     problemID = request.POST['problemID']
     problemTitle = request.POST['problemTitle']
@@ -44,17 +51,19 @@ def contest(request, contest_id):
       if problemAuthor.strip():
         problems = problems.filter(author__contains = problemAuthor)
       return render(
-        request, 
-        'cugbacm/contest.html', 
+        request,
+        'cugbacm/contest.html',
         {
           'contest': contest,
-          'problems': problems, 
+          'problems': problems,
           'problem_ac_count': problem_ac_count,
           'problem_all_count': problem_all_count,
           'userID': request.session["userID"],
           'problemID': problemID,
           'problemTitle': problemTitle,
-          'problemAuthor': problemAuthor
+          'problemAuthor': problemAuthor,
+          'problemName': problemName,
+          'problem_list': problem_list
         }
       )
     except:
@@ -63,12 +72,14 @@ def contest(request, contest_id):
                     {
                       'problems': {},
                       'userID':request.session["userID"],
-                      'contest': contest
+                      'contest': contest,
+                      'problemName': problemName,
+                      'problem_list': problem_list
                     })
   else:
     #contestants = contest.userList.split(',')
     #if userID in contestants:
-    #return HttpResponse("fuck") 
+    #return HttpResponse("fuck")
     return render(request,
                   'cugbacm/contest.html',
                   {
@@ -76,5 +87,7 @@ def contest(request, contest_id):
                     'problem_ac_count': problem_ac_count,
                     'problem_all_count': problem_all_count,
                     'userID':request.session["userID"],
-                    'contest': contest
+                    'contest': contest,
+                    'problemName': problemName,
+                    'problem_list': problem_list
                   })
