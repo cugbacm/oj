@@ -48,8 +48,6 @@
       <span class="dropdown-arrow"></span>		
       <ul class="dropdown-menu">
 				<li><a href="/index/userInfo/{{userID}}">User Info</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
 				<li class="divider"></li>
 				<li><a href="/index/login">Login out</a></li>
 			</ul>
@@ -59,7 +57,7 @@
       <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
     </marquee>
     <div class="row">
-     <div class="col-md-offset-1">
+     <div class="text-center">
       <form class="form-inline" role="form" action="/index/submitList/" method="post">{% csrf_token %} 
         <div class="form-group">
           <label class="sr-only" for="userIDSearch">User ID</label>
@@ -117,6 +115,7 @@
 					<!--<th>Code</th>--> 
 				</tr>  
 		    </thead>  
+       <center> {% paginate %}</center>
 			<tbody>
         {% for submit in submits %}
         {% if submit.status == "Accepted" %}
@@ -162,13 +161,15 @@
 	  </tbody>  
 	</table>
     </div>
-    {% paginate %}
+    <center> {% paginate %}</center>
     <script>
 	$(document).ready(function() {
 		$('#example').dataTable({
 			"bPaginate": false,
 			"aaSorting":[[0,'desc']],
-			"bFilter": false,
+      "bFilter": false,
+      "bInfo": false,
+      "bSort":false,
 		});
 	} );
     </script>

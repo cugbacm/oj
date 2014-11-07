@@ -40,8 +40,6 @@
         </a>
         <ul class="dropdown-menu">
           <li><a href="/index/userInfo/{{user.userID}}">User Info</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
           <li class="divider"></li>
           <li><a href="/index/login">Login out</a></li>
         </ul>
@@ -53,94 +51,80 @@
     </nav>
  <div class="container" style="" >
   <div class="container-fluid">
-   <div class="row">
    {% if id == userID %}
+   <div class="row">
    <form class="form-horizontal" role="form" action="/index/userInfo/{{other.userID}}" method="post">{% csrf_token %}
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-offset-1">
         <div class="form-group">
             <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-5 col-sm-7">
-          <button type="submit" class="btn btn-info" name = "Modify" id = "Modefy" value = "Modify"> Modify your information</button>
+            <button type="submit" class="btn btn-info" name = "Modify" id = "Modefy" value = "Modify"> <font style="font-size:15px; font-weight: 700;"> Modify your information</font></button>
           </div>
         </div>
         <div class="form-group">
             <label for="userID" class="col-sm-5 control-label">UserID</label>
             <div class="col-sm-7">
-              <input class="form-control" id="userID" type="text" readonly= "true"  value="{{user.userID}}" name="userID" required>
+              <input class="form-control input-sm" id="userID" type="text" readonly= "true"  value="{{user.userID}}" name="userID" required>
             </div>
         </div>
         <div class="form-group">
             <label for="nickname" class="col-sm-5 control-label">Nickname</label>
             <div class="col-sm-7">
-              <input class="form-control" id="nickname" type="text" value="{{user.nickname}}" name="nickname" required/>
+              <input class="form-control input-sm" id="nickname" type="text" value="{{user.nickname}}" name="nickname" required/>
             </div>
         </div>
         <div class="form-group">   
              <label  for="session" class="col-sm-5 control-label">Session</label>
             <div class="col-sm-7">
-              <input class="form-control" id="session" type="text" value="{{user.session}}" name="session" required/>
+              <input class="form-control input-sm" id="session" type="text" value="{{user.session}}" name="session" required/>
             </div>
-        </div>
-       </div>
-     <div class="col-md-4">  
-        <div class="form-group">
-            <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-5 col-sm-7">&nbsp; </div>
         </div>
         <div class="form-group">
             <label  for="specialty" class="col-sm-5 control-label">Specialty</label>
             <div class="col-sm-7">
-              <input class="form-control" id="specialty" type="text" value="{{user.specialty}}" name="specialty" required/>
+              <input class="form-control input-sm" id="specialty" type="text" value="{{user.specialty}}" name="specialty" required/>
             </div>
         </div>
         <div class="form-group">
             <label  for="tel" class="col-sm-5 control-label">Tel</label>
             <div class="col-sm-7">
-              <input class="form-control" id="tel" type="text" value="{{user.tel}}" name="tel" required/>
+              <input class="form-control input-sm" id="tel" type="text" value="{{user.tel}}" name="tel" required/>
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-5 control-label">Email</label>
             <div class="col-sm-7">
-              <input class="form-control" id="email" type="text" value="{{user.email}}" name="email" required/>
+              <input class="form-control input-sm" id="email" type="text" value="{{user.email}}" name="email" required/>
             </div>
-        </div>
-     </div>
-       <div class="col-md-4">
-        <div class="form-group">
-            <label for="UserID" class="col-sm-5 control-label">&nbsp;</label>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-5 col-sm-7">&nbsp; </div>
         </div>
         <div class="form-group">
             <label  for="oldPassword" class="col-sm-5 control-label">Old Password</label>
             <div class="col-sm-7">
-              <input class="form-control" id="oldPassword" type="password" value="{{user.password}}" name="oldPassword" readonly="true" required/>
+              <input class="form-control input-sm" id="oldPassword" type="password" value="{{user.password}}" name="oldPassword" readonly="true" required/>
             </div>
         </div>
         <div class="form-group">
             <label  for="password" class="col-sm-5 control-label">New Password</label>
             <div class="col-sm-7">
-              <input class="form-control" id="password" type="password" name="password" />
+              <input class="form-control input-sm" id="password" type="password" name="password" />
             </div>
         </div>
         <div class="form-group">
             <label for="confirmPassword" class="col-sm-5 control-label">Confirm Password</label>
             <div class="col-sm-7">
-              <input class="form-control" id="confirmPassword" type="password" name="confirmPassword"/>
+              <input class="form-control input-sm" id="confirmPassword" type="password" name="confirmPassword"/>
             </div>
         </div>
       </div>
     </form>
-   </div>
-    <div class="col-md-12" style="padding-left:70px;"> 
-      <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font style="font-size:18px; color:inherit; font-weight: 700;">Problems Solved</font></label>
+    <div class="col-md-7" style="padding-top:12px;"> 
+      <div class="form-group">
+        <lable>&nbsp;</lable>
+      </div>
+      <div class="form-group">
+        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;">Problems Solved</font></p>
       </div>
       <div class="form-group">
         <label>
@@ -160,55 +144,55 @@
       </div> 
       <div class = "form-group">
        <div class="col-sm-offset-5 col-sm-7">
-           <button type="submit" class="btn btn-info" name = "Compare" id = "Compare" value = "Compare">&nbsp;&nbsp;&nbsp;&nbsp; Compare with me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+         <button type="submit" class="btn btn-info" name = "Compare" id = "Compare" value = "Compare">&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:18px; color:inherit; font-weight: 700;"> Compare with me</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
        </div>
       </div>
       <div class="form-group"> 
        <label for="" class="col-sm-5 control-label">UserID</label>
        <div class="col-sm-7">
-           <input class="form-control" id="otherUserID" type="text" readonly= "true"  value="{{other.userID}}" name="otherUserID" required>
+           <input class="form-control input-sm" id="otherUserID" type="text" readonly= "true"  value="{{other.userID}}" name="otherUserID" required>
        </div>
       </div>
       <div class="form-group">
         <label for="" class="col-sm-5 control-label">NickName</label>
         <div class="col-sm-7">
-          <input class="form-control" id="otherNickname" type="text" readonly= "true" value="{{other.nickname}}" name="otherNickname" required/>
+          <input class="form-control input-sm" id="otherNickname" type="text" readonly= "true" value="{{other.nickname}}" name="otherNickname" required/>
         </div>
       </div>
       <div class="form-group">
          <label for="" class="col-sm-5 control-label">Session</label>
          <div class="col-sm-7">
-           <input class="form-control" id="otherSession" type="text" readonly= "true" value="{{other.session}}" name="otherSession" required/>
+           <input class="form-control input-sm" id="otherSession" type="text" readonly= "true" value="{{other.session}}" name="otherSession" required/>
          </div>
       </div>
       <div class="form-group">
          <label for="" class="col-sm-5 control-label">Specialty</label>
          <div class="col-sm-7">
-            <input class="form-control" id="otherSpecialty" type="text" readonly= "true" value="{{other.specialty}}" name="otherSpecialty" required/>
+            <input class="form-control input-sm" id="otherSpecialty" type="text" readonly= "true" value="{{other.specialty}}" name="otherSpecialty" required/>
          </div>
       </div>
       <div class="form-group">
          <label for="" class="col-sm-5 control-label">Tel</label>
          <div class="col-sm-7">
-            <input class="form-control" id="otherTel" type="text" readonly= "true" value="{{other.tel}}" name="otherTel" required/>
+            <input class="form-control input-sm" id="otherTel" type="text" readonly= "true" value="{{other.tel}}" name="otherTel" required/>
          </div>
       </div>
       <div class="form-group">
          <label for="" class="col-sm-5 control-label">Email</label>
          <div class="col-sm-7">
-            <input class="form-control" id="otherEmail" type="text" readonly= "true" value="{{other.email}}" name="otherEmail" required/>
+            <input class="form-control input-sm" id="otherEmail" type="text" readonly= "true" value="{{other.email}}" name="otherEmail" required/>
          </div>
       </div>
      </form>
     </div> 
     {% endif %}
     {% if compare == 1 %}
-    <div class="col-md-7 col-md-offset-0" >
+    <div class="col-md-7">
       <div class="form-group">
         <label>&nbsp;</label>
       </div> 
-      <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font style="font-size:18px; color:inherit; font-weight: 700;">{{userID}} and {{other.userID}} both Accepted:</font></label>
+      <div class="form-group">
+        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;">{{userID}} and {{other.userID}} both Accepted:</font></p>
       </div>
       <div class="form-group">
         <label>
@@ -218,8 +202,8 @@
         </label>
       </div>
 
-      <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font style="font-size:18px; color:inherit; font-weight: 700;" >Only {{userID}} Accepted:</font></label>
+      <div class="form-group">
+        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;" >Only {{userID}} Accepted:</font></p>
       </div>
       <div class="form-group">
         <label>
@@ -229,8 +213,8 @@
         </label>
       </div>
       
-      <div class="form-group"  style="background-color: #BDC3C7">
-        <label><font style="font-size:18px; color:inherit; font-weight: 700;">Only {{other.userID}} Accepted:</font></label>
+      <div class="form-group">
+        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;" >Only {{other.userID}} Accepted:</font></p>
       </div>
       <div class="form-group">
         <label>

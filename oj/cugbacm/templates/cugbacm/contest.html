@@ -74,6 +74,9 @@
         </thead>  
         <center>{% paginate %}</center>
         <tbody>
+          {% if contest.status == "pending" %}
+
+          {% else %}
           {% for problem in problem_list %}
             <tr class="odd gradeB">
               <td align="center"><img src="/site_media/dist/images/Accept.png">
@@ -91,7 +94,8 @@
               <td>{{problem.1.ac}}</td>
               <td>{{problem.1.totalSubmission}}</td>
             </tr>
-          {% endfor %}  
+            {% endfor %}
+          {% endif %}
         </tbody>  
       </table>
     </div>

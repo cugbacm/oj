@@ -11,6 +11,7 @@ message Problem {
   optional int32 acindex = 3;
   optional int32 totalindex = 4;
   optional int32 time = 5;
+  optional int32 FB = 6;
 }
 
 message Rank {

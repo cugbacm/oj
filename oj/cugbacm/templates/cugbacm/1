@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  {% load pagination_tags %} 
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+
+    <title>Contest Rank List</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+   <script type="text/javascript" src="/site_media/dist/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+    <style type="text/css" title="currentStyle">
+        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
+    </style>
+    <style type="text/css">
+      .fix_height td,th{
+        height:50px;
+        border:solid thin #ffffff;
+      }
+    </style>
+  <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
+  <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+  </head>
+  <body style="padding-top:70px">
+  <div class="container">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul class="nav nav-tabs">
+    <li><a href="/index/problemList">Home Page</a></li>
+    <li><a href="/index/contestList">Contest List</a></li>
+    <li><a href="/index/contest/{{contest.contestID}}">Problem List</a></li>
+    <li><a href="/index/contest/{{contest.contestID}}/submitList">Submit List</a></li>
+    <li class="active"><a href="/index/contest/{{contest.contestID}}/rankList">Rank List</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
+      <span class="dropdown-arrow"></span>    
+      <ul class="dropdown-menu">
+        <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
+        <li class="divider"></li>
+        <li><a href="/index/login">Login out</a></li>
+      </ul>
+    </li>
+    </ul>
+    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+      <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+     </marquee>
+     </nav>
+    {% autopaginate ranklist 50 %}
+    <!-- {% for k, v in rank_list_dic.items %}
+        {{k}}
+        </br>
+        {{v}}
+        <br/>
+        {% endfor %}-->
+  <div class = "row" style="padding-top:30px;">
+    <div class = "col-md-12"><p class="text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Ranklist</p></div>
+  </div>
+  <div class="table-responsive pagination-centered">
+     <table cellpadding="0" cellspacing="0" border="1" class="display fix_height"  id="example">
+        <thead>
+          <tr>
+            <th><center>Rank</center></th>
+            <th><center>Team</center></th>
+            <th><center>Solved</center></th>
+            <th><center>Penalty</center></th>
+            {% for ID in problem_ID %}
+            <th> <center><a href="/index/contest/{{contest.contestID}}/problem/{{ID}}" target="_blank" >{{ID}}</a></center></th>
+            {% endfor %}
+            <th><center>Ratio</center></th>
+          </tr>
+        </thead>
+        <center>{% paginate %}</center>
+        <tbody align="center">
+          {% for  value in ranklist%}
+           <tr class="odd gradeB">
+              <td>{{forloop.counter}}</td>
+              <td><a href="/index/userInfo/{{value.user_id}}" target="_blank">{{value.user_id}}</a></td>
+              <td width="10"> <font style="color:#3498DB;">{{value.ac}}</font></td>
+              <td>{{value.penalty_hms}}</td>
+                {% for ID in problem_arr %}                
+                  {% for k,v in value.items %}
+                    {% ifequal k ID %} 
+                      {% ifequal v.acindex 1 %}
+                         {% ifequal v.FB 1 %}
+                         <td style="background-color:#2ECC71;" width=""> <font style="color:#ffffff;">{{v.time_hms}}
+                         {% else %}
+                         <td style="background-color:#27AE60;" width=""> <font style="color:#ffffff;">{{v.time_hms}}
+                         {% endifequal %}
+                         {% ifequal v.totalindex 1 %}
+                         {% else %}
+                         <br/>(-{{v.totalindex|add:-1}})</font> </td> 
+                         {% endifequal %}
+                      {% else %}
+                        {% ifequal v.totalindex 0 %}
+                         <td></td> 
+                        {% else %}
+                        <td style="background-color:#E74C3C;"> <font style="color:#ffffff;">(-{{v.totalindex}})</font></td> 
+                        {% endifequal %}
+                      {% endifequal %} 
+                    {% endifequal %}
+                 {% endfor %}
+               {% endfor %}
+               <td width="1"><font style="color:#3498DB;">({{value.ac}}/{{value.total}})</font></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+ </div>
+        <center>{% paginate %}</center>
+    <script>
+  $(document).ready(function() {
+    $('#example').dataTable({
+      "bPaginate": false,
+      "bFilter": false,
+      "bSort": false,
+      "bInfo":false,
+    });
+  } );
+    </script>
+  </div>
+  </body>
+</html>

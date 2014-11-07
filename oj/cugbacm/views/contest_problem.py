@@ -68,7 +68,7 @@ def contestProblem(request, contest_id, problem_id):
     user = User.objects.get(userID = request.session['userID'])
   except:
     return HttpResponseRedirect('/index/login')
- 
+  contest_status = Contest.objects.get(contestID = int(contest_id))
   problem = Problem.objects.get(problemID = problem_id)
   submits  = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem_id, userID = user.userID).order_by("-id")
   if request.method == 'POST':
@@ -91,7 +91,7 @@ def contestProblem(request, contest_id, problem_id):
         code = code)
       contestsubmit.save()
       Judge.delay(contestsubmit)
-    return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id))
+    return HttpResponseRedirect("/index/contest/" + str(contest_id) + "/problem/" + str(problem_id) + "?show_submit=true")
   else:
     show_submit = request.GET.get('show_submit')
     try:
@@ -107,6 +107,7 @@ def contestProblem(request, contest_id, problem_id):
                         'contestID':contest_id,
                         'languages':languages,
                         'show_submit': show_submit,
+                        'contest_status':contest_status.status,
                       }
                       )
       else:
@@ -121,6 +122,7 @@ def contestProblem(request, contest_id, problem_id):
                       'contestID':contest_id,
                       'languages':languages,
                       'show_submit': show_submit,
+                      'contest_status':contest_status.status,
                     }
                     )
 

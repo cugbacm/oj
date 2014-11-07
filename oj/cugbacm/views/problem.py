@@ -99,7 +99,7 @@ def problem(request, problem_id):
       submit.save()
       Judge.delay(submit)
 
-    return HttpResponseRedirect("/index/problem/" + str(problem_id))
+    return HttpResponseRedirect("/index/problem/" + str(problem_id) + "?show_submit=true")
   else:
     show_submit = request.GET.get('show_submit')
     try:
