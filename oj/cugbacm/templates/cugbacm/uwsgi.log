@@ -8111,3 +8111,110 @@ spawned uWSGI worker 1 (and the only) (pid: 20728, cores: 1)
 [pid: 20728|app: 0|req: 1998/1998] 114.248.166.9 () {40 vars in 828 bytes} [Sun Nov  2 13:25:20 2014] GET /index/contestList/ => generated 5950 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 20728|app: 0|req: 1999/1999] 114.248.166.9 () {40 vars in 829 bytes} [Sun Nov  2 13:25:24 2014] GET /index/submitList/ => generated 44480 bytes in 83 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
 [pid: 20728|app: 0|req: 2000/2000] 114.248.166.9 () {40 vars in 830 bytes} [Sun Nov  2 13:25:24 2014] GET /index/contestList/ => generated 5950 bytes in 47 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sat Nov  8 18:49:46 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x88c43e8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x88c43e8 pid: 24395 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 24395, cores: 1)
+[pid: 24395|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 1315 bytes} [Sat Nov  8 18:49:49 2014] GET /index/contest/1/rankList => generated 6268 bytes in 874 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24395|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 1389 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/dist/css/bootstrap.css => generated 0 bytes in 8 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24395|app: 0|req: 3/3] 127.0.0.1 () {44 vars in 1370 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/dist/js/bootstrap.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24395|app: 0|req: 4/4] 127.0.0.1 () {44 vars in 1425 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/DataTables-1.9.4/media/css/demo_page.css => generated 0 bytes in 6 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24395|app: 0|req: 5/5] 127.0.0.1 () {44 vars in 1427 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table.css => generated 0 bytes in 6 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24395|app: 0|req: 6/6] 127.0.0.1 () {44 vars in 1435 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/DataTables-1.9.4/media/css/demo_table_jui.css => generated 0 bytes in 7 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24395|app: 0|req: 7/7] 127.0.0.1 () {44 vars in 1400 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24395|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 1422 bytes} [Sat Nov  8 18:49:50 2014] GET /site_media/DataTables-1.9.4/media/js/jquery.dataTables.js => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.6 (32bit) on [Sat Nov  8 18:50:08 2014] ***
+compiled with version: 4.6.3 on 18 August 2014 20:12:47
+os: Linux-3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012
+nodename: ubuntu
+machine: i686
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/ak/oj/oj/cugbacm/templates/cugbacm
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 63726
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8077 fd 3
+Python version: 2.7.3 (default, Feb 27 2014, 20:11:37)  [GCC 4.6.3]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x82953e8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 63988 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x82953e8 pid: 24420 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 24420, cores: 1)
+[pid: 24420|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 1315 bytes} [Sat Nov  8 18:50:10 2014] GET /index/contest/1/rankList => generated 6269 bytes in 1087 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 1345 bytes} [Sat Nov  8 18:50:19 2014] GET /index/contest/1/submitList => generated 8047 bytes in 114 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 1404 bytes} [Sat Nov  8 18:50:20 2014] GET /site_media/DataTables-1.9.4/media/images/sort_both.png => generated 0 bytes in 11 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 4/4] 127.0.0.1 () {42 vars in 1404 bytes} [Sat Nov  8 18:50:20 2014] GET /site_media/DataTables-1.9.4/media/images/sort_desc.png => generated 0 bytes in 6 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 5/5] 127.0.0.1 () {40 vars in 1325 bytes} [Sat Nov  8 18:50:24 2014] GET /index/contest/1 => generated 4684 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 6/6] 127.0.0.1 () {42 vars in 1364 bytes} [Sat Nov  8 18:50:24 2014] GET /site_media/dist/js/stickUp-master/stickUp.min.js => generated 0 bytes in 9 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 7/7] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:50:24 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 25 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 8/8] 127.0.0.1 () {40 vars in 1336 bytes} [Sat Nov  8 18:50:25 2014] GET /index/contest/1/submitList => generated 8047 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 9/9] 127.0.0.1 () {40 vars in 1325 bytes} [Sat Nov  8 18:50:30 2014] GET /index/contest/1 => generated 4684 bytes in 58 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 10/10] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:50:30 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 15 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 11/11] 127.0.0.1 () {40 vars in 1320 bytes} [Sat Nov  8 18:50:30 2014] GET /index/contestList/ => generated 4997 bytes in 265 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 12/12] 127.0.0.1 () {42 vars in 1394 bytes} [Sat Nov  8 18:50:31 2014] GET /site_media/DataTables-1.9.4/media/images/sort_asc.png => generated 0 bytes in 5 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 13/13] 127.0.0.1 () {40 vars in 1317 bytes} [Sat Nov  8 18:50:35 2014] GET /index/contest/1 => generated 4684 bytes in 45 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 14/14] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:50:35 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 14 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 15/15] 127.0.0.1 () {40 vars in 1336 bytes} [Sat Nov  8 18:50:36 2014] GET /index/contest/1/submitList => generated 8047 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 16/16] 127.0.0.1 () {40 vars in 1343 bytes} [Sat Nov  8 18:50:42 2014] GET /index/contest/1/rankList => generated 6269 bytes in 67 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 17/17] 127.0.0.1 () {40 vars in 1329 bytes} [Sat Nov  8 18:50:49 2014] GET /index/contestList/ => generated 4997 bytes in 772 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 18/18] 127.0.0.1 () {40 vars in 1317 bytes} [Sat Nov  8 18:50:51 2014] GET /index/contest/1 => generated 4684 bytes in 61 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 19/19] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:50:51 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 14 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 20/20] 127.0.0.1 () {40 vars in 1332 bytes} [Sat Nov  8 18:50:53 2014] GET /index/contest/1/rankList => generated 6269 bytes in 56 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 21/21] 127.0.0.1 () {40 vars in 1329 bytes} [Sat Nov  8 18:51:03 2014] GET /index/contestList/ => generated 4997 bytes in 211 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 22/22] 127.0.0.1 () {40 vars in 1317 bytes} [Sat Nov  8 18:51:06 2014] GET /index/contest/1 => generated 4684 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 23/23] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:51:07 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 27 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 24/24] 127.0.0.1 () {40 vars in 1336 bytes} [Sat Nov  8 18:51:08 2014] GET /index/contest/1/submitList => generated 8047 bytes in 111 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 25/25] 127.0.0.1 () {40 vars in 1343 bytes} [Sat Nov  8 18:51:13 2014] GET /index/contest/1/rankList => generated 6269 bytes in 47 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 26/26] 127.0.0.1 () {40 vars in 1327 bytes} [Sat Nov  8 18:51:33 2014] GET /index/problemList => generated 0 bytes in 7 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 27/27] 127.0.0.1 () {40 vars in 1329 bytes} [Sat Nov  8 18:51:33 2014] GET /index/problemList/ => generated 4957 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 28/28] 127.0.0.1 () {40 vars in 1323 bytes} [Sat Nov  8 18:51:38 2014] GET /index/contestList/ => generated 4997 bytes in 663 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 29/29] 127.0.0.1 () {40 vars in 1317 bytes} [Sat Nov  8 18:51:48 2014] GET /index/contest/1 => generated 4684 bytes in 66 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 30/30] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:51:48 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 15 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 31/31] 127.0.0.1 () {40 vars in 1332 bytes} [Sat Nov  8 18:51:57 2014] GET /index/contest/1/rankList => generated 6269 bytes in 104 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 32/32] 127.0.0.1 () {40 vars in 1329 bytes} [Sat Nov  8 18:52:07 2014] GET /index/problemList/ => generated 4957 bytes in 71 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 33/33] 127.0.0.1 () {40 vars in 1323 bytes} [Sat Nov  8 18:52:12 2014] GET /index/contestList/ => generated 4997 bytes in 581 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 34/34] 127.0.0.1 () {40 vars in 1317 bytes} [Sat Nov  8 18:52:14 2014] GET /index/contest/1 => generated 4684 bytes in 54 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 35/35] 127.0.0.1 () {40 vars in 1296 bytes} [Sat Nov  8 18:52:15 2014] GET /site_media/dist/images/Accept.png => generated 1679 bytes in 17 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 36/36] 127.0.0.1 () {40 vars in 1334 bytes} [Sat Nov  8 18:52:19 2014] GET /index/contest/1/problem/1 => generated 7608 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 37/37] 127.0.0.1 () {42 vars in 1330 bytes} [Sat Nov  8 18:52:19 2014] GET /site_media/dist/src/ace.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 38/38] 127.0.0.1 () {42 vars in 1350 bytes} [Sat Nov  8 18:52:19 2014] GET /site_media/dist/src/theme-monokai.js => generated 0 bytes in 2 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 39/39] 127.0.0.1 () {42 vars in 1344 bytes} [Sat Nov  8 18:52:19 2014] GET /site_media/dist/src/mode-c_cpp.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 24420|app: 0|req: 40/40] 127.0.0.1 () {40 vars in 1332 bytes} [Sat Nov  8 18:52:22 2014] GET /index/contest/1/rankList => generated 6269 bytes in 115 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 24420|app: 0|req: 41/41] 127.0.0.1 () {40 vars in 1327 bytes} [Sat Nov  8 18:52:31 2014] GET /index/userInfo/ak => generated 6897 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
