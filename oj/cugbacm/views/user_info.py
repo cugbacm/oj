@@ -42,29 +42,28 @@ def userInfo(request, user_id):
             user.save()
             other = User.objects.get(userID = user_id)
             return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'], 'user':user, 'other':other, 'id':user_id})
-    else:
-      curproblemList = []
-      if user.acList != None:
-        curproblemList = user.acList.split(',')
-      otherproblemList = []
-      if other.acList != None:
-        otherproblemList = other.acList.split(',')
-      curproblemList.sort()
-      otherproblemList.sort()
-      lena = len(curproblemList)
-      lenb = len(otherproblemList)
-      if lena > lenb:
-        bothAccepted = search_same(curproblemList, otherproblemList)
-      else:
-        bothAccepted = search_same(otherproblemList, curproblemList)
-      onlyAAccepted = curproblemList
-      onlyBAccepted = otherproblemList
-      return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })
   else:
-      curproblemList = []
-      if user.acList != None:
-        curproblemList = user.acList.split(',')
-      return render(request, 'cugbacm/userInfo.html', {'userID':request.session['userID'],'user': user, 'other':other, 'onlyAAccepted':curproblemList,'id':user_id })
+    curproblemList = []
+    if user.acList != None:
+      curproblemList = user.acList.split(',')
+    otherproblemList = []
+    if other.acList != None:
+      otherproblemList = other.acList.split(',')
+    curproblemList.sort()
+    otherproblemList.sort()
+    onlyAAccepted = []
+    onlyBAccepted = []
+    onlyAAccepted = curproblemList
+    onlyBAccepted = otherproblemList
+    if user.userID == other.userID:
+      return render(request, 'cugbacm/userInfo.html', {'onlyAAccepted':onlyAAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id})
+    lena = len(curproblemList)
+    lenb = len(otherproblemList)
+    if lena > lenb:
+      bothAccepted = search_same(curproblemList, otherproblemList)
+    else:
+      bothAccepted = search_same(otherproblemList, curproblemList)
+    return render(request, 'cugbacm/userInfo.html', {'bothAccepted':bothAccepted,'onlyAAccepted':onlyAAccepted,'onlyBAccepted':onlyBAccepted,'userID':request.session['userID'],'user': user, 'other':other, 'id':user_id,'compare':1 })
 
 
 def search_same(A,B):
