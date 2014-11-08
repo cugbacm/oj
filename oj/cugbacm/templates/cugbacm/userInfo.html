@@ -142,11 +142,6 @@
       <div class="form-group">
         <label class="col-sm-5 control-label">&nbsp;</label>
       </div> 
-      <div class = "form-group">
-       <div class="col-sm-offset-5 col-sm-7">
-         <button type="submit" class="btn btn-info" name = "Compare" id = "Compare" value = "Compare">&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:18px; color:inherit; font-weight: 700;"> Compare with me</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-       </div>
-      </div>
       <div class="form-group"> 
        <label for="" class="col-sm-5 control-label">UserID</label>
        <div class="col-sm-7">
@@ -187,6 +182,7 @@
     </div> 
     {% endif %}
     {% if compare == 1 %}
+    {% if id != userID %}
     <div class="col-md-7">
       <div class="form-group">
         <label>&nbsp;</label>
@@ -225,6 +221,7 @@
       </div>
 
     </div>
+    {% endif %}
     {% endif %}
    </div>
   </div>
