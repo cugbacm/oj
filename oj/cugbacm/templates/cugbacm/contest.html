@@ -79,7 +79,10 @@
           {% else %}
           {% for problem in problem_list %}
             <tr class="odd gradeB">
-              <td align="center"><img src="/site_media/dist/images/Accept.png">
+              <td align="center">
+                {% ifequal problem.2 'ac' %} 
+                <img src="/site_media/dist/images/Accept.png">
+                {% endifequal %}
                 <a href="/index/contest/{{contest.contestID}}/problem/{{problem.1.problemID}}">
                   {{problem.0}}
                 </a>

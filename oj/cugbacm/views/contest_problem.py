@@ -70,6 +70,8 @@ def contestProblem(request, contest_id, problem_id):
     return HttpResponseRedirect('/index/login')
   contest_status = Contest.objects.get(contestID = int(contest_id))
   problem = Problem.objects.get(problemID = problem_id)
+  if contest_status.status == "pending":
+    return HttpResponseRedirect('/index/contest/'+str(contest_id))
   submits  = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem_id, userID = user.userID).order_by("-id")
   if request.method == 'POST':
     contest = Contest.objects.get(contestID = int(contest_id))

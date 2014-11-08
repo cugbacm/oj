@@ -30,7 +30,28 @@ def contest(request, contest_id):
   problem_list = []
   count = 0
   for problem in problems:
-    problem_list.append([chr(ord('A') + count), problem])
+    ac = False
+    no_pass = False
+    other = True
+
+    # ac
+    try:
+      submit = ContestSubmit.objects.get(problemID=problem.problemID, status="Accepted", userID=user.userID)
+      ac = True
+    except:
+      try:
+        submit = ContestSubmit.objects.get(problemID=problem.problemID, userID=user.userID)
+        no_pass = True
+      except:
+        pass
+
+    status = "other"
+    if ac:
+      status = "ac"
+    elif no_pass:
+      status = "no_pass"
+
+    problem_list.append([chr(ord('A') + count), problem, status])
     count += 1
   if request.method == 'POST':
     problemID = request.POST['problemID']
