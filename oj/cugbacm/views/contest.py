@@ -36,19 +36,20 @@ def contest(request, contest_id):
 
     # ac
     try:
-      submit = ContestSubmit.objects.get(problemID=problem.problemID, status="Accepted", userID=user.userID)
-      ac = True
+      submit = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem.problemID, userID = user.userID)
+      for _submit in submit:
+        if _submit.status == "Accepted":
+          ac = True
+      if not ac:
+        if len(submit) > 0:
+          no_pass = True
     except:
-      try:
-        submit = ContestSubmit.objects.get(problemID=problem.problemID, userID=user.userID)
-        no_pass = True
-      except:
-        pass
+      pass
 
     status = "other"
     if ac:
       status = "ac"
-    elif no_pass:
+    if no_pass:
       status = "no_pass"
 
     problem_list.append([chr(ord('A') + count), problem, status])

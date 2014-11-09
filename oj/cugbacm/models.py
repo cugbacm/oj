@@ -51,7 +51,6 @@ class Problem(models.Model):
   hint = models.TextField(default = "");
   visible = models.BooleanField(default = True)
   author = models.CharField(max_length = 100)
-
   def __unicode__(self):
     return self.title
 

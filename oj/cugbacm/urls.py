@@ -13,6 +13,7 @@ import views.user_info
 import views.contest_problem
 import views.rejudge
 import views.permit_judge
+import views.test
 
 urlpatterns = patterns('',
   url(r'^register/$', views.register.register, name = 'register'),
@@ -26,6 +27,7 @@ urlpatterns = patterns('',
   url(r'^userList/$', views.user_list.userList, name = 'userList'),
   url(r'^problem/(?P<problem_id>\d+)$', views.problem.problem, name = 'problem'),
   url(r'^userInfo/(?P<user_id>\w+)$', views.user_info.userInfo, name = 'userInfo'),
+  url(r'^test/$', views.test.test, name = 'test'),
   url(r'^contest/(?P<contest_id>\d+)/problem/(?P<problem_id>\d+)$', views.contest_problem.contestProblem, name = 'contestProblem'),
   url(r'^rejudge/(?P<run_id>\d+)$', views.rejudge.rejudge, name = 'rejudge'),
   url(r'^rejudge/(?P<start_run_id>\d+)to(?P<end_run_id>\d+)$', views.rejudge.rejudgeRange, name = 'rejudge'),

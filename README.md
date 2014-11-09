@@ -59,7 +59,8 @@ oj2.0虽然很渣，不过对于本科阶段的大家应该算是一个不错的
   /usr/sbin/nginx -s reload  
   7.查看版本  
   nginx -v  
-  注意：以上如果出错，就加sudo即可。  
+  注意：以上如果出错，就加sudo即可。   
+另外：nignx 1.1.9的版本太低(ubuntu 12.04 apt-get 源安装的版本)，需要升级     参考：http://www.cnblogs.com/terrysun/archive/2012/11/22/2782472.html
 
 ###nginx配置  
   默认路径 /etc/nginx/nginx.conf  
@@ -108,6 +109,17 @@ pip install Django==1.6.5
 
 ###oj2.0中的模型和模板
 ###django+uwsgi+nginx部署
+配置过程可以参考：http://my.oschina.net/u/240562/blog/127298   
+
+note：可能涉及下面几个坑，同时如果有问题可以看下uwsgi.log文件，也许可以更快的找到解决办法   
+
+1.配置django的时候要安装django-celery模块，否则在运行 python manage.py syncdb（生成数据库）的时候会报错   
+apt-get install django-celery  
+如果报错，可以用pip安装   
+pip install django-celery 
+2.对于OJ2.0还需要安装django-pagination模块，否则出现进入登录页面，但是不能进入problemList界面，安装方法   
+pip install django-pagination
+
 ##mysql
   ###mysql部署  
   安装mysql-server    
@@ -127,7 +139,8 @@ $/usr/bin/mysqld_safe &
 $/usr/bin/mysql                //测试
 
 ###django中的mysql接口
-  在创建的项目中的settings.py进行修改就行了。
+  在创建的项目中的settings.py进行修改就行了。   
+  note:mysql root的密码最好设置为cugbacm，否则可能出现问题，不然需要修改moduels.py里面的相关内容
   
 ##rabbitMQ  
 ###rabbitMQ部署  
@@ -148,6 +161,11 @@ $/usr/bin/mysql                //测试
   
   
 ##core
+ 判题内核采用Lo_runenr   
+ 安装方法    
+ 1.git clone https://github.com/lodevil/Lo-runner.git    
+ 2.cd 到仓库 cd Lo_runner    
+ 3.python setup.py install
 ###判题流程
 ###判题内核对外接口
   
