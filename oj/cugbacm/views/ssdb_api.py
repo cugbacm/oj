@@ -17,9 +17,33 @@ def SetContestRankListProto(contestID, rank_list_proto_str):
     ssdb.set(contestID, rank_list_proto_str)
   except:
     pass
+def InsertUserProblemStatus(userID, problemID, status):
+  #AC == 1  No_pass = 2 other = 0
+  global ssdb
+  status = ssdb.get(userID + "\t" + str(problemID))
+  if not status:
+    #if there has no data, Insert The result
+    try:
+      ssdb.set(userID + "\t" + str(problemID), status);
+    except:
+      pass
+  else:
+    if status == 1:
+        pass#if the problem is AC,Do Nothing
+    else:
+      #if The problem has problem but the result is not AC
+      try:
+        ssdb.set(userID + "\t" + str(problemID), status);
+      except:
+        pass
+
+def GetUserProblem(userID, problemID):
+  global ssdb
+  status = ssdb.get(userID + "\t" + str(problemID))
+  return status
 
 if __name__ == '__main__':
   ssdb = SSDB(host='127.0.0.1', port=6666)
-  print ssdb.get("1")
+  print ssdb.get("QQ	1000")
 
 

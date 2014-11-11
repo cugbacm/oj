@@ -189,12 +189,18 @@
                      return document.getElementById(id).value;
                   }
                   function checkForm(){
-                      var value = $F("Code");
+                    var value = $F("Code");
+                    var status = '{{contest_status}}';
+                    if(status == "passed"){
+                        alert("Sorry,The contest is passed!!!");
+                        return false;
+                        }else{
                       if(value.length < 20) {
                           alert("亲，代码有点短哦~");
                           return false;
                       }
                       else return true;
+                    }
                   }
                </script>
               </div>

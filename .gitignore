@@ -1,5 +1,5 @@
 *.pyc
 *.log
-!tags
+tags
 django_socket.xml
 restart.sh

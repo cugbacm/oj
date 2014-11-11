@@ -52,12 +52,6 @@
                     <li>
                       <a href="/index/userInfo/{{userID}}">User Info</a>
                     </li>
-                    <li>
-                      <a href="#">设置栏目</a>
-                    </li>
-                    <li>
-                      <a href="#">更多设置</a>
-                    </li>
                     <li class="divider">
                     </li>
                     <li>
@@ -152,7 +146,7 @@
               {% paginate %}
              {% else %}
               <div style="width: 487px;">
-                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
+                <form class="form-horizontal" role="form" action="/index/problem/{{problem.problemID}}?show_submit=true" method="post" onsubmit="return checkForm();">{% csrf_token %} 
                   <div class="form-group">
                   
                     <label for="language" class="col-md-2 control-label">Language</label>
@@ -212,6 +206,7 @@
                           return false;
                       }
                       else return true;
+                    
                   }
                </script>
               </div>

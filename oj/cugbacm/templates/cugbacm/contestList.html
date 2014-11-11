@@ -21,6 +21,20 @@
 	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
 	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
   <script src="/site_media/dist/js/stickUp-master/stickUp.min.js"></script>
+
+      <script>
+         function judge1(s){
+           $.post("/index/permit_judge/"+s,
+           function(data, status){
+            if(data == 'success'){
+               window.location = "/index/contest/"+s
+             }else{
+               alert(data);
+             }
+           });
+         }
+      </script>
+
   </head>
   <body style="padding-top:70px">
     <div class="container">      
@@ -33,8 +47,6 @@
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
               <li><a href="/index/login">Login out</a></li>
             </ul>
@@ -44,7 +56,7 @@
         <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
       </marquee>
      <div class="row">
-      <div class="col-md-offset-1">
+      <div class="text-center">
     <form class="form-inline" role="form" action="/index/contestList/" method="post">{% csrf_token %}
       <div class="form-group">
         <label class="sr-only" for="contestID">Contest ID</label>
@@ -80,12 +92,12 @@
           {% for contest in contests %}
             <tr class="odd gradeB">
               <td>
-                <a href="/index/contest/{{contest.contestID}}">
+                <a href="javascript:judge1({{contest.contestID}});">
                   {{contest.contestID}}
                 </a>
               </td>
               <td>
-                <a href="/index/contest/{{contest.contestID}}">
+                <a href="javascript:judge1({{contest.contestID}});">
                   {{contest.title}}
                 </a>
               </td>
@@ -103,7 +115,9 @@
 	      $(document).ready(function() {
 	      	$('#example').dataTable({
 	      	"bPaginate": false,
-          "bFilter": false, 
+          "bFilter": false,
+          "bInfo":false,
+          "bSort":false,
 	      	});
 		} );
 	</script>

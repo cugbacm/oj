@@ -8,17 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="cugbacm" >
     <link rel="shortcut icon" href="/site_media/docs-assets/ico/favicon.png">
-    <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-   <!-- <link rel="stylesheet/less" type="text/css" href="/site_media/Flat-UI-master/less/modules/share.less">
-    <link rel="stylesheet/less" type="text/css" href="/site_media/Flat-UI-master/less/modules/switch.less">-->
-    <link href="/site_media/Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
     <link href="/site_media/dist/css/signin.css" rel="stylesheet">
     <link href="/site_media/Flat-UI-master/css/demo.css" rel="stylesheet">
-   <!-- <script language="javascript" type="text/javascript" src="/site_media/dist/js/less-1.7.5.min.js"></script>-->
+    <link href="/site_media/iCheck-master/skins/flat/green.css" rel="stylesheet">
    <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -27,6 +24,89 @@
       <script src="/site_media/dist/js/html5shiv.min.js"></script>
       <script src="/site_media/dist/js/respond.min.js"></script>
     <![endif]-->
+  </head>
+
+  <body>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Test For Register
+    </button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <center> <h4 class="modal-title">Register</h4></center>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+            <div class="col-md-4 col-md-offset-4"> 
+              <form class="form-horizontal" role="form" action="" method="post">{% csrf_token %} 
+               <div class="form-group">
+                 <input type="text" id="userID" class="form-control"  onBlur="checkID()" placeholder="userId (Your studentID)"   name="userID" required autofocus>
+               </div>
+               <div class="form-group">
+                 <input type="password" class="form-control" placeholder="Password (length > 10)" name="password" required>
+               </div>
+               <div class="form-group">
+                 <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Session" name="session" required>
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Specialty" name="specialty" required>
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Tel" name="tel" required>
+               </div>
+               <div class="form-group">
+                 <input type="email" class="form-control" placeholder="Email" name="email" required>
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
+               </div>
+            </form>
+           </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <div class="container">
+    <form class="" role="form" action="/index/login/" method="post">{% csrf_token %}
+    <div class="login">
+      <div class="login-screen">
+        <div class="login-icon">
+          <img src="/site_media/Flat-UI-master/images/icons/png/Toilet-Paper.png" alt="Welcome to OJ 2.0" />
+          <h4>Welcome to <small>OJ 2.0</small></h4>
+        </div>
+        <div class="login-form">
+           <div class="form-group">
+             <input type="text" id = "userid" class="form-control login-field" placeholder="UserID" name="userID" required autofocus />
+           </div>
+           <div class="form-group">
+             <input type="password" id = "password"  class="form-control login-field" placeholder="Password" name="password" required />
+           </div>
+           <div class="form-group">
+             <input type="checkbox"/><font style="color:#1abc9c; font-size:16px;"> &nbsp;&nbsp; Remember me </font>
+           </div>  
+           <div class="form-group">
+             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
+             <input class="btn btn-lg btn-primary btn-block" id="register" type="button" value="Register" style="" onclick="goReg()"/> 
+           </div>
+      </div>
+     </div>
+     </form>
+   </div><!--container-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="/site_media/dist/js/jquery-2.1.0.min.js"></script>
+    <script src="/site_media/iCheck-master/icheck.js"></script>
+    <script src="/site_media/dist/js/bootstrap.min.js"></script>
     <script>
     $(function(){
     $("#submit").click(function(){
@@ -51,61 +131,27 @@
     function goReg() {
         window.location.href='/index/register/';
     }
+   </script>
+   <script>
+     $(document).ready(function(){
+         $('input').iCheck({
+               checkboxClass: 'icheckbox_flat-green',
+             });
+      });
+    
     </script>
-  </head>
-
-  <body>
-   <div class="container">
-    <form class="" role="form" action="/index/login/" method="post">{% csrf_token %}
-    <div class="login">
-      <div class="login-screen">
-        <div class="login-icon">
-          <img src="/site_media/Flat-UI-master/images/icons/png/Toilet-Paper.png" alt="Welcome to OJ 2.0" />
-          <h4>Welcome to <small>OJ 2.0</small></h4>
-        </div>
-        <div class="login-form">
-           <div class="form-group">
-             <input type="text" id = "userid" class="form-control login-field" placeholder="UserID" name="userID" required autofocus />
-           </div>
-           <div class="form-group">
-             <input type="password" id = "password"  class="form-control login-field" placeholder="Password" name="password" required />
-           </div>
-                          <!-- <div class="bootstrap-switch-square">
-                                             <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-id-custom-switch-03 bootstrap-switch-animate bootstrap-switch-on"><div class="bootstrap-switch-container" style=""><span class="bootstrap-switch-handle-on bootstrap-switch-primary"><span class="fui-check"></span></span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default"><span class="fui-cross"></span></span><input type="checkbox" checked="" data-toggle="switch" id="custom-switch-03" data-on-text="&lt;span class='fui-check'&gt;&lt;/span&gt;" data-off-text="&lt;span class='fui-cross'&gt;&lt;/span&gt;"></div></div>
-                                                             </div>
-                              -->                                
-          <label class="checkbox">
-             <span class="icons">
-               <span class="first-icon fui-checkbox-unchecked"></span>
-               <span class="second-icon fui-checkbox-checked"></span>
-             </span>
-             <input type="checkbox" value="remember-me"><font style="color:gray;">Remember me</font>
-           </label>
-             <div class="form-group">
-             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
-             <input class="btn btn-lg btn-primary btn-block" id="register" type="button" value="Register" style="" onclick="goReg()"/> 
-        </div>
-      </div>
-     </div>
-     </form>
-     <!-- <form class="form-signin" role="form" action="/index/login/" method="post">{% csrf_token %} 
-        <h3 class="form-signin-heading">Please sign in</h3>
-        <input type="text" id = "userid" class="form-control" placeholder="UserID" name="userID" required autofocus />
-        <input type="password" id = "password"  class="form-control" placeholder="Password" name="password" required />
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button>
-		    <a href="/index/register"><button class="btn btn-lg btn-primary btn-block" id="register" type="button">Register</button></a>
-      </form>
-      </div>-->
-   
-   </div><!--container-->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-   <script src="/site_media/Flat-UI-master/dist/js/flat-ui.min.js"></script>
-   <script src="/site_media/Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
-    <!-- Placed at the end of the document so the pages load faster -->
+    <script language="javascript" type="text/javascript">
+		function checkID(){
+			var id = document.getElementById("userID").value;
+			var reg = new RegExp("^[0-9,a-z,A-Z]*$");
+			if( !reg.test(id)){
+				alert("userID只能为字母或数字");
+				document.getElementById("userID").value = "";
+			}else{
+				
+			}
+		}
+	</script>
+   <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>

@@ -34,8 +34,6 @@
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
               <li><a href="/index/login">Login out</a></li>
             </ul>
@@ -74,9 +72,21 @@
         </thead>  
         <center>{% paginate %}</center>
         <tbody>
+          {% if contest.status == "pending" %}
+
+          {% else %}
           {% for problem in problem_list %}
             <tr class="odd gradeB">
-              <td align="center"><img src="/site_media/dist/images/Accept.png">
+              <td align="right">
+                {% ifequal problem.2 'ac' %} 
+                    <img src="/site_media/dist/images/Accept.png">
+                    {% else %}
+                      {% ifequal problem.2 'no_pass' %}
+                          no_pass
+                          {% else %}
+                            No_try
+                      {% endifequal %}
+                {% endifequal %}
                 <a href="/index/contest/{{contest.contestID}}/problem/{{problem.1.problemID}}">
                   {{problem.0}}
                 </a>
@@ -91,7 +101,8 @@
               <td>{{problem.1.ac}}</td>
               <td>{{problem.1.totalSubmission}}</td>
             </tr>
-          {% endfor %}  
+            {% endfor %}
+          {% endif %}
         </tbody>  
       </table>
     </div>

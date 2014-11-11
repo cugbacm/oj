@@ -4,7 +4,7 @@ from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
 from cugbacm.models import User, Submit, Problem
 from celery.task import task
-
+import ssdb_api
 @task
 def test(problemID):
   submit = Submit(
@@ -46,7 +46,20 @@ def Judge(submit):
   submit.save()
   print submit.status, submit.runTime, submit.memory
 
+
+  #AC_NO = False
+  #return HttpResponse(submit.status)
+  #if AC_NO == True:
+  #  problem.totalSubmission = problem.totalSubmission + 1
+  #  ssdb = ssdb_api.ssdb
+  #  ssdb.set(user.userID+'\t'+submit.problemID, 1)
+  #  return HttpResponse(ssdb.get('QQ	1003'))
+  #else:
+  #  ssdb = ssdb_api.ssdb
+  #  ssdb.set(user.userID+'\t'+submit.problemID, 2)
+
   if submit.status == "Accepted":
+    return HttpResponse(submit.status)
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
       if user.acList == None:
@@ -98,8 +111,7 @@ def problem(request, problem_id):
         code = code)
       submit.save()
       Judge.delay(submit)
-
-    return HttpResponseRedirect("/index/problem/" + str(problem_id))
+    return HttpResponseRedirect("/index/problem/" + str(problem_id) + "?show_submit=true")
   else:
     show_submit = request.GET.get('show_submit')
     try:

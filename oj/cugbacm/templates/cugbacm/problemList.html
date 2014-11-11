@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 {% load pagination_tags %} 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,12 @@
         @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
         @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
-	</style>
+      </style>
+    <style type="text/css">
+      .center td,th{
+        text-align:center;
+      }
+    </style>
 	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
 	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
   <script src="/site_media/dist/js/stickUp-master/stickUp.min.js"></script>
@@ -33,8 +38,6 @@
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
               <li><a href="/index/login">Login out</a></li>
             </ul>
@@ -44,7 +47,7 @@
         <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
       </marquee>
      <div class="row">
-      <div class="col-md-offset-1">
+      <div style="text-align:center;">
     <form class="form-inline" role="form" action="/index/problemList/" method="post">{% csrf_token %}
       <div class="form-group">
         <label class="sr-only" for="problemID">Problem ID</label>
@@ -63,9 +66,9 @@
     </div>
     </div>
       </nav>
-    {% autopaginate problems 50 %}
+    {% autopaginate problem_list 50 %}
     <div class="table-responsive" style="padding-top:58px">
- <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+ <table cellpadding="0" cellspacing="0" border="0" class="display center" id="example">
 	    <thead>  
           <tr>  
             <th>ProblemID</th>
@@ -76,34 +79,46 @@
             <th>Total Submission</th>  
           </tr>  
         </thead>  
+        <center>{% paginate %}</center>
         <tbody>
-          {% for problem in problems %}
+          {% for problem in problem_list %}
             <tr class="odd gradeB">
-              <td>
-                <a href="/index/problem/{{problem.problemID}}">
-                  {{problem.problemID}}
+              <td style="text-align:right;">
+                {% ifequal problem.0 "1" %}
+                <img src="/site_media/dist/images/Accept.png">
+                {% else %}
+                 {%ifequal problem.0 "2" %}
+                    no_Pass
+                    {% else %}
+                      No_try
+                 {% endifequal %}
+                {% endifequal %}
+                <a href="/index/problem/{{problem.1.problemID}}">
+                  {{problem.1.problemID}}
                 </a>
               </td>
-              <td>
-                <a href="/index/problem/{{problem.problemID}}">
-                  {{problem.title}}
+              <td style="text-align:left;">
+                <a href="/index/problem/{{problem.1.problemID}}">
+                  {{problem.1.title}}
                 </a>
               </td>
-              <td>{{problem.timeLimit}}</td>
-              <td>{{problem.memoryLimit}}</td>
-              <td>{{problem.ac}}</td>
-              <td>{{problem.totalSubmission}}</td>
+              <td>{{problem.1.timeLimit}}</td>
+              <td>{{problem.1.memoryLimit}}</td>
+              <td>{{problem.1.ac}}</td>
+              <td>{{problem.1.totalSubmission}}</td>
             </tr>
           {% endfor %}  
         </tbody>  
       </table>
     </div>
-    {% paginate %}
+    <center>{% paginate %}</center>
       <script>
 	      $(document).ready(function() {
 	      	$('#example').dataTable({
 	      	"bPaginate": false,
           "bFilter": false,
+          "bInfo": false,
+          "bSort": false,
 	      	});
 		} );
 	</script>
@@ -115,7 +130,7 @@
   $('.navbar-wrapper').stickUp();
   });
   });
-  </script>
+</script>
 	</div>
   </body>
 </html>

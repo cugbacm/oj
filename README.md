@@ -161,7 +161,7 @@ $/usr/bin/mysql                //测试
   
   
 ##core
- 判题内核采用Lo_runenr   
+ 判题内核采用Lo_runner   
  安装方法    
  1.git clone https://github.com/lodevil/Lo-runner.git    
  2.cd 到仓库 cd Lo_runner    

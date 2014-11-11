@@ -25,7 +25,7 @@ class Submit(models.Model):
   language = models.CharField(max_length = 100)
   codeLength = models.IntegerField()
   date = models.DateField(auto_now = True)
-  timestamp = models.TimeField(auto_now = True)
+  timestamp = models.TimeField(auto_now_add = True)
   code = models.TextField()
   def __unicode__(self):
     return str(self.runID)
@@ -51,7 +51,6 @@ class Problem(models.Model):
   hint = models.TextField(default = "");
   visible = models.BooleanField(default = True)
   author = models.CharField(max_length = 100)
-
   def __unicode__(self):
     return self.title
 
