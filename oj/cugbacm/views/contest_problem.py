@@ -73,6 +73,7 @@ def contestProblem(request, contest_id, problem_id):
   if contest_status.status == "pending":
     return HttpResponseRedirect('/index/contest/'+str(contest_id))
   submits  = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem_id, userID = user.userID).order_by("-id")
+  contest = Contest.objects.get(contestID = contest_id);
   if request.method == 'POST':
     contest = Contest.objects.get(contestID = int(contest_id))
     if contest.status == "passed":
@@ -109,6 +110,7 @@ def contestProblem(request, contest_id, problem_id):
                         'contestID':contest_id,
                         'languages':languages,
                         'show_submit': show_submit,
+			'conetest' : contest
                         'contest_status':contest_status.status,
                       }
                       )
@@ -124,9 +126,7 @@ def contestProblem(request, contest_id, problem_id):
                       'contestID':contest_id,
                       'languages':languages,
                       'show_submit': show_submit,
+ 		      'contest' : contest
                       'contest_status':contest_status.status,
                     }
                     )
-
-
-
