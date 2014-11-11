@@ -27,10 +27,8 @@
   </head>
 
   <body>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Test For Register
-    </button>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <form class="form-horizontal" role="form" action="/index/register/" method="post">{% csrf_token %} 
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -40,7 +38,6 @@
           <div class="modal-body">
             <div class="row">
             <div class="col-md-4 col-md-offset-4"> 
-              <form class="form-horizontal" role="form" action="" method="post">{% csrf_token %} 
                <div class="form-group">
                  <input type="text" id="userID" class="form-control"  onBlur="checkID()" placeholder="userId (Your studentID)"   name="userID" required autofocus>
                </div>
@@ -49,6 +46,9 @@
                </div>
                <div class="form-group">
                  <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
                </div>
                <div class="form-group">
                  <input type="text" class="form-control" placeholder="Session" name="session" required>
@@ -62,19 +62,16 @@
                <div class="form-group">
                  <input type="email" class="form-control" placeholder="Email" name="email" required>
                </div>
-               <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
-               </div>
-            </form>
            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary">Register</button>
           </div>
         </div>
       </div>
       </div>
+     </form>
     </div>
   <div class="container">
     <form class="" role="form" action="/index/login/" method="post">{% csrf_token %}
@@ -96,7 +93,7 @@
            </div>  
            <div class="form-group">
              <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
-             <input class="btn btn-lg btn-primary btn-block" id="register" type="button" value="Register" style="" onclick="goReg()"/> 
+             <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Register </button>
            </div>
       </div>
      </div>

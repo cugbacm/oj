@@ -1,5 +1,6 @@
 from ssdb import SSDB
 import sys
+#import cugbacm.proto.rank_pb2
 
 ssdb_ip = "127.0.0.1"
 ssdb_port = 6666
@@ -17,19 +18,27 @@ def SetContestRankListProto(contestID, rank_list_proto_str):
   except:
     pass
 def InsertUserProblemStatus(userID, problemID, status):
+  #AC == 1  No_pass = 2 other = 0
   global ssdb
-  try:
-    ssdb.set(userID + "\t" + str(problemID), status);
-  except:
-    pass
+  value = "2"
+  if status == "Accepted":
+    value = "1"
+  st = str(ssdb.get(userID + '\t' + str(problemID)))
+  if st == "1":
+    return;
+  else:
+    ssdb.set(userID + '\t' + str(problemID), value)
+
 def GetUserProblem(userID, problemID):
   global ssdb
-  status = ""
-  status = ssdb.get(userID + "\t" + str(problemID))
-  return status
+  st = ssdb.get(userID + '\t' + str(problemID))
+  if str(st) != "1" and str(st) != "2":
+    return "0"
+  else:
+    return str(st)
 
 if __name__ == '__main__':
   ssdb = SSDB(host='127.0.0.1', port=6666)
-  print ssdb.get("zldevil2011	1003")
-
+  print GetUserProblem("QQ", 1000)
+  ssdb.delete("QQ	1000")
 

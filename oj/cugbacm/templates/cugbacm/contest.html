@@ -79,12 +79,11 @@
             <tr class="odd gradeB">
               <td align="right">
                 {% ifequal problem.2 'ac' %} 
-                    <img src="/site_media/dist/images/Accept.png">
+                    <img src="/site_media/dist/images/accept.png">
                     {% else %}
                       {% ifequal problem.2 'no_pass' %}
-                          no_pass
+                         <img src="/site_media/dist/images/wrong.png">
                           {% else %}
-                            No_try
                       {% endifequal %}
                 {% endifequal %}
                 <a href="/index/contest/{{contest.contestID}}/problem/{{problem.1.problemID}}">

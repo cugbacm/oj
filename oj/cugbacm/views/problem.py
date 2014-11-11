@@ -47,19 +47,13 @@ def Judge(submit):
   print submit.status, submit.runTime, submit.memory
 
 
-  #AC_NO = False
-  #return HttpResponse(submit.status)
-  #if AC_NO == True:
-  #  problem.totalSubmission = problem.totalSubmission + 1
-  #  ssdb = ssdb_api.ssdb
-  #  ssdb.set(user.userID+'\t'+submit.problemID, 1)
-  #  return HttpResponse(ssdb.get('QQ	1003'))
-  #else:
-  #  ssdb = ssdb_api.ssdb
-  #  ssdb.set(user.userID+'\t'+submit.problemID, 2)
+  ssdb_api.InsertUserProblemStatus(user.userID, submit.problemID, submit.status)
+  #ssdb = ssdb_api.ssdb
+  #has_ac = ssdb.get(user.userID + '\t' + str(submit.problemID))
+  #if has_ac == None:
+  #  ssdb.set(user.userID + '\t' + str(submit.problemID), 4)
 
   if submit.status == "Accepted":
-    return HttpResponse(submit.status)
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
       user.accepted = user.accepted + 1
       if user.acList == None:

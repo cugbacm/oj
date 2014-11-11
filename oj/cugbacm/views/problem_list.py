@@ -17,9 +17,9 @@ def problemList(request):
   for problem in problems:
     status = "0"
     status_ = ssdb_api.GetUserProblem(user.userID, problem.problemID)
-    if status_ == '1':
+    if status_ == "1":
       status = "1"
-    elif status_ == '2':
+    elif status_ == "2":
       status = "2"
     problem_list.append([status, problem])
   if request.method == 'POST':

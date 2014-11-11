@@ -85,12 +85,11 @@
             <tr class="odd gradeB">
               <td style="text-align:right;">
                 {% ifequal problem.0 "1" %}
-                <img src="/site_media/dist/images/Accept.png">
+                <img src="/site_media/dist/images/accept.png">
                 {% else %}
-                 {%ifequal problem.0 "2" %}
-                    no_Pass
+                 {%ifequal problem.0 "2" %} 
+                   <img src="/site_media/dist/images/wrong.png">
                     {% else %}
-                      No_try
                  {% endifequal %}
                 {% endifequal %}
                 <a href="/index/problem/{{problem.1.problemID}}">
@@ -112,7 +111,7 @@
       </table>
     </div>
     <center>{% paginate %}</center>
-      <script>
+    <script>
 	      $(document).ready(function() {
 	      	$('#example').dataTable({
 	      	"bPaginate": false,
