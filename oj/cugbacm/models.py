@@ -66,6 +66,7 @@ class Contest(models.Model):
   problemList = models.CommaSeparatedIntegerField(max_length = 10000)
   userList = models.CommaSeparatedIntegerField(max_length = 10000)
   status = models.CharField(max_length = 50)
+  public = models.BooleanField(default = True)
   def __unicode__(self):
     return self.title
 
