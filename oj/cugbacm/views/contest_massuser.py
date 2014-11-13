@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
-from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
+from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit, UserContestMap
 from django.http import HttpResponse, HttpResponseRedirect
 import sys
 import xlrd
@@ -11,7 +11,10 @@ import xlwt
 import string,random
 
 @csrf_exempt
+#直接在url里添加参数
 def production(request):
+  contest_id = str(request.GET.get('id'))
+  contest_name = str(request.GET.get('name'))
 #addr 这里需要输入路径，可以与contest_name对应
   data = xlrd.open_workbook('/home/cugbacm/oj/oj/cugbacm/views/demo.xls')
 
@@ -53,6 +56,10 @@ def production(request):
               tel = tel,
               email = email,
               nickname = nickname).save()
+
+        UserContestMap(
+              userID = userID,
+              contestID = contest_id).save()
 
       for colnum2 in range(add_ncols):
         if rownum == 0 and colnum2 == 0:
