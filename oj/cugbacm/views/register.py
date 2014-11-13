@@ -18,7 +18,7 @@ def register(request):
     nickname = request.POST['nickname']
     if password != confirmPassword:
       return HttpResponse("Password and confirm password must be identical.")
-    if len(password) < 10:
+    if len(password) < 6:
       return HttpResponse("The length of password should not less than 10.")
     User(
       userID = userID,
