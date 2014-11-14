@@ -84,6 +84,7 @@ def delete(request):
       if rownum > 0:
         userid = str(table.cell(rownum, 4).value)
         User.objects.get(userID = userid).delete()
+        UserContestMap.objects.get(userID = userid).delete()
     return HttpResponse('yes')
   except:
     return HttpResponse('no')
