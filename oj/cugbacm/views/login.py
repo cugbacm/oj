@@ -22,9 +22,10 @@ def login(request):
     except:
       return HttpResponse(userID+" does not exsits")
   else:
-    try: 
-      del request.session['userID'] 
+    try:
+      user = User.objects.get(userID = request.session['userID'])
+      return HttpResponseRedirect("/index/problemList")
     except:
-      pass
-    return render(request, 'cugbacm/login.html', {})
+      del request.session['userID']
+      return render(request, 'cugbacm/login.html', {})
 
