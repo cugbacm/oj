@@ -86,15 +86,16 @@ class ContestSubmit(models.Model):
   def __unicode__(self):
     return str(self.contestID) + "/" + str(self.runID)
 
-class Contestant(User):
-  contestID = models.IntegerField()
-  penalty = models.TimeField()
-  ac = models.CharField(max_length = 10000)
-  def __unicode__(self):
-    return str(self.contestID) + "/" + str(self.userID)
 
 class UserContestMap(models.Model):
   userID = models.CharField(max_length = 200 )
   contestID = models.IntegerField()
   def __unicode__(self):
     return str(self.userID) + "\t" + str(self.contestID)
+
+class ContestXls(models.Model):
+  contestID = models.IntegerField()
+  xlsAddr = models.FileField(upload_to = './upload/')
+  def __unicode__(self):
+    return str(self.contestID) + "\t" + str(self.xlsAddr)
+

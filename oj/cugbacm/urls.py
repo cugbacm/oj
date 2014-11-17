@@ -15,10 +15,12 @@ import views.rejudge
 import views.permit_judge
 import views.test
 import views.contest_massuser
+import views.uploadfile
 
 urlpatterns = patterns('',
   url(r'^register/$', views.register.register, name = 'register'),
   url(r'^massproduction/$', views.contest_massuser.production, name = 'massuser_production'),
+  url(r'^uploadfile/$', views.uploadfile.uploadfile, name = 'uploadfile'),
   url(r'^massdelete/$', views.contest_massuser.delete, name = 'massuser_delete'),
   url(r'^contest/(?P<contest_id>\d+)$', views.contest.contest, name = 'contest'),
   url(r'^contest/(?P<contest_id>\d+)/submitList$', views.contest_submit_list.contestSubmitList, name = 'contestSubmitList'),
