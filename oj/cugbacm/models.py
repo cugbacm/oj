@@ -95,7 +95,7 @@ class UserContestMap(models.Model):
 
 class ContestXls(models.Model):
   contestID = models.IntegerField()
-  xlsAddr = models.FileField(upload_to = './upload/')
+  xlsAddr = models.FileField(upload_to = 'cugbacm/upload/')
   def __unicode__(self):
     return str(self.contestID) + "\t" + str(self.xlsAddr)
 
