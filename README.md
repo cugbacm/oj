@@ -116,7 +116,7 @@ note：可能涉及下面几个坑，同时如果有问题可以看下uwsgi.log�
 1.配置django的时候要安装django-celery模块，否则在运行 python manage.py syncdb（生成数据库）的时候会报错   
 apt-get install django-celery  
 如果报错，可以用pip安装   
-pip install django-celery 
+pip install django-celery        
 2.对于OJ2.0还需要安装django-pagination模块，否则出现进入登录页面，但是不能进入problemList界面，安装方法   
 pip install django-pagination
 
@@ -140,8 +140,39 @@ $/usr/bin/mysql                //测试
 
 ###django中的mysql接口
   在创建的项目中的settings.py进行修改就行了。   
-  note:mysql root的密码最好设置为cugbacm，否则可能出现问题，不然需要修改moduels.py里面的相关内容
-  
+  note:mysql root的密码最好设置为cugbacm，否则可能出现问题，不然需要修改setting.py里面的相关内容
+##ssdb安装与管理   
+
+SSDB是一个开源的高性能数据库服务器, 使用Google LevelDB作为存储引擎, 支持T级别的数据，支持”双主”架构(SSDB分布式架构: https://github.com/ideawu/ssdb/wiki/Replication), 两个或者更多的主服务器. 当其中一部分出现故障时, 剩余的主服务器仍然能正常接受写请求, 从而保证服务正常可用, 再将DNS解析修改之后, 就能在机房故障后立即恢复100%可用.
+SSDB 的建议安装⽅方式是源码编译安装, 建议运⾏行环境是主流 Linux 发⾏行版，我的环境是ubuntu 12.04。步骤如下：
+
+$ sudo wget --no-check-certificate https://github.com/ideawu/ssdb/archive/master.zip
+
+$ sudo unzip master
+
+$ cd ssdb-master
+
+$ sudo make
+
+$ sudo make install
+
+
+ssdb 默认会安装在/usr/local/ssdb目录之下
+
+启动和停止ssdb的命令
+
+启动主库
+./ssdb-server ssdb.conf
+
+或者启动为后台进程
+./ssdb-server -d ssdb.conf
+
+启动 ssdb 命令行
+./tools/ssdb-cli -p 8888
+
+停止 ssdb-server
+kill `cat ./var/ssdb.pid`   
+
 ##rabbitMQ  
 ###rabbitMQ部署  
   sudo apt-get install rabbitmq-server  
