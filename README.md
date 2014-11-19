@@ -140,8 +140,9 @@ $/usr/bin/mysql                //测试
 
 ###django中的mysql接口
   在创建的项目中的settings.py进行修改就行了。   
-  note:mysql root的密码最好设置为cugbacm，否则可能出现问题，不然需要修改moduels.py里面的相关内容
-  
+  note:mysql root的密码最好设置为cugbacm，否则可能出现问题，不然需要修改setting.py里面的相关内容
+##ssdb安装   
+
 ##rabbitMQ  
 ###rabbitMQ部署  
   sudo apt-get install rabbitmq-server  
