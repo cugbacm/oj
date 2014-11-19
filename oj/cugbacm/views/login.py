@@ -22,10 +22,12 @@ def login(request):
     except:
       return HttpResponse(userID+" does not exsits")
   else:
+    login_out = request.GET.get('login_out')
+    if login_out == "true":
+        del request.session['userID']
     try:
       user = User.objects.get(userID = request.session['userID'])
       return HttpResponseRedirect("/index/problemList")
     except:
-      del request.session['userID']
       return render(request, 'cugbacm/login.html', {})
 

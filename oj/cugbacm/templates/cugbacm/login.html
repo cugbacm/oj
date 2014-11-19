@@ -26,8 +26,8 @@
     <![endif]-->
   </head>
 
-  <body>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <body >
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" onkeydown="keyreg();">
      <form class="form-horizontal" role="form" action="/index/register/" method="post">{% csrf_token %} 
       <div class="modal-dialog">
         <div class="modal-content">
@@ -66,14 +66,14 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" id = "reg" class="btn btn-primary">Register</button>
           </div>
         </div>
       </div>
       </div>
      </form>
     </div>
-  <div class="container">
+  <div class="container" onkeydown="keylogin();">
     <form class="" role="form" action="/index/login/" method="post">{% csrf_token %}
     <div class="login">
       <div class="login-screen">
@@ -92,7 +92,7 @@
              <input type="checkbox"/><font style="color:#1abc9c; font-size:16px;"> &nbsp;&nbsp; Remember me </font>
            </div>  
            <div class="form-group">
-             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button></div>
+             <button class="btn btn-lg btn-primary btn-block" id = "submit" type="button">Sign in</button>
              <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Register </button>
            </div>
       </div>
@@ -105,6 +105,16 @@
     <script src="/site_media/iCheck-master/icheck.js"></script>
     <script src="/site_media/dist/js/bootstrap.min.js"></script>
     <script>
+      function keylogin(){
+        if(window.event.keyCode == 13) {
+          document.all('submit').click();
+        }
+      }  
+      function keyreg(){
+        if(window.event.keyCode == 13) {
+          document.all('reg').click();
+        }
+      }  
     $(function(){
     $("#submit").click(function(){
        //alert($("#userid").val());

@@ -9,6 +9,7 @@
     <meta name="author" content="cugbacm" >
     <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
     <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" hrel="/site_media/images/favicon.ico" type="image/x-icon">
     <title>Problem List</title>
     <!-- Bootstrap core CSS -->
     <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
@@ -37,9 +38,9 @@
 		    	<li><a href="/index/userList">User List</a></li>
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li><a href="/index/manager">Admin</a></li>
               <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
-              <li class="divider"></li>
-              <li><a href="/index/login">Login out</a></li>
+              <li><a href="/index/login?login_out=true">Login out</a></li>
             </ul>
           </li>
         </ul>

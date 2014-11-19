@@ -32,8 +32,8 @@ def contestRankList(request, contest_id):
   for rank in rank_list.rank:
     rank_list_dic[rank.userID] = {}
     rank_list_dic[rank.userID]['user_id'] = rank.userID
-    rank_list_dic[rank.userID]['ac'] = rank.ac
-    rank_list_dic[rank.userID]['penalty'] = rank.penalty
+    rank_list_dic[rank.userID]['ac'] = -1*rank.ac
+    rank_list_dic[rank.userID]['penalty'] = (rank.penalty)
     rank_list_dic[rank.userID]['penalty_hms'] = str(rank.penalty/3600) + ":" + str((rank.penalty%3600)/60) + ":" + str((rank.penalty%3600) % 60)
     rank_list_dic[rank.userID]['total'] = rank.total
     for problem_ in rank.problem:
@@ -51,7 +51,9 @@ def contestRankList(request, contest_id):
     ranklist.append(rank_list_dic[rank.userID])
 
   ranklist = sorted(ranklist, key = lambda r1:r1['ac'] or r1['penalty'])
-  ranklist.reverse()
+  for rank in ranklist:
+    rank['ac'] = -rank['ac']
+  #ranklist.reverse()
   #ranklist = sorted(ranklist, cmp = lambda x,y:cmp(x['ac'], y['ac']), reverse = True or cmp(x['penalty'], y['penalty']))
 #to get the problemid from contest
   contest = Contest.objects.get(contestID = contest_id)

@@ -14,6 +14,9 @@ def permit_judge(request, contest_id):
   except:
     return HttpResponseRedirect("/index/login")
   if request.method == 'POST':
+    contest = Contest.objects.get(contestID = contest_id)
+    if contest.public == 1:
+      return HttpResponse("success")
     try:
       userID_contestID = UserContestMap.objects.get(userID=str(user.userID), contestID=int(contest_id))
       return HttpResponse("success")

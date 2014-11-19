@@ -110,8 +110,8 @@ def contestProblem(request, contest_id, problem_id):
                         'contestID':contest_id,
                         'languages':languages,
                         'show_submit': show_submit,
-			'conetest' : contest
-                        'contest_status':contest_status.status,
+                        'conetest' : contest,
+                        'contest_status':contest_status.status
                       }
                       )
       else:
@@ -126,7 +126,7 @@ def contestProblem(request, contest_id, problem_id):
                       'contestID':contest_id,
                       'languages':languages,
                       'show_submit': show_submit,
- 		      'contest' : contest
-                      'contest_status':contest_status.status,
+                      'contest' : contest,
+                      'contest_status':contest_status.status
                     }
                     )

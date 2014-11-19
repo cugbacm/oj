@@ -27,13 +27,11 @@ def problemList(request):
     problemTitle = request.POST['problemTitle']
     problemAuthor = request.POST['problemAuthor']
     try:
-      if problemID.strip():
-        problems = problems.filter(problemID__contains = problemID)
-      if problemTitle.strip():
-        problems = problems.filter(title__contains = problemTitle)
-      if problemAuthor.strip():
-        problems = problems.filter(author__contains = problemAuthor)
       problem_list =[]
+      problemID = problemID.strip()
+      problemTitle = problemTitle.strip()
+      problemAuthor = problemAuthor.strip()
+      problems = problems.filter(Q(problemID__contains = problemID)|Q(title__contains = problemTitle)|Q(author__contains = problemAuthor))
       for problem in problems:
         status = "0"
         status_ = ssdb_api.GetUserProblem(user.userID, problem.problemID)
