@@ -116,7 +116,7 @@ note：可能涉及下面几个坑，同时如果有问题可以看下uwsgi.log�
 1.配置django的时候要安装django-celery模块，否则在运行 python manage.py syncdb（生成数据库）的时候会报错   
 apt-get install django-celery  
 如果报错，可以用pip安装   
-pip install django-celery 
+pip install django-celery        
 2.对于OJ2.0还需要安装django-pagination模块，否则出现进入登录页面，但是不能进入problemList界面，安装方法   
 pip install django-pagination
 
