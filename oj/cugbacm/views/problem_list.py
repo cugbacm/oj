@@ -33,6 +33,15 @@ def problemList(request):
         problems = problems.filter(title__contains = problemTitle)
       if problemAuthor.strip():
         problems = problems.filter(author__contains = problemAuthor)
+      problem_list =[]
+      for problem in problems:
+        status = "0"
+        status_ = ssdb_api.GetUserProblem(user.userID, problem.problemID)
+        if status_ == "1":
+          status = "1"
+        elif status_ == "2":
+          status = "2"
+        problem_list.append([status, problem])
       return render(
         request,
         'cugbacm/problemList.html',
