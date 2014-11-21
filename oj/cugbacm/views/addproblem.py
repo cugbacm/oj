@@ -44,7 +44,7 @@ def addproblem(request):
       sampleOutput = problem_soutput,
       hint = problem_hint,
       visible = problem_visible,
-      author = problem_author
+      author = problem_author,
     )
     #return HttpResponse('upload ok!')
     problem.save()

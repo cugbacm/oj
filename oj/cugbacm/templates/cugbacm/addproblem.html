@@ -32,11 +32,12 @@
   </script>
 
   <script type="text/javascript" charset="utf-8">
-     window.UEDITOR_HOME_URL = "/home/zhaolong/oj/oj/static/ueditor/";
+     window.UEDITOR_HOME_URL = "/static/ueditor/";
   </script>
-  <script type="text/javascript" charset="utf-8" src="/home/zhaolong/oj/oj/static/ueditor/ueditor_config.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/home/zhaolong/oj/oj/static/ueditor/ueditor_all_min.js"></script>
-  <link rel="stylesheet" type="text/css" href="/home/zhaolong/oj/oj/static/ueditor/themes/default/ueditor.css"/>    
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.all.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.parse.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/ueditor/themes/default/ueditor.css"/>    
 
 
   <body style="padding-top:70px;">
@@ -74,7 +75,7 @@
                 <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
               </marquee>
             </nav>
- <form class="form-horizontal" role="form" action="/index/add_problem/" method="post">{% csrf_token %}
+ <form class="form-horizontal" role="form" action="/index/addproblem/" method="post">{% csrf_token %}
           <div class="row-fluid" >
             <div class="col-md-7" role="main">
               <h3>problemid:</h3>
@@ -88,9 +89,14 @@
               <h3>
                 description
               </h3>
-              <pre>
-                  <textarea id="problem_des" name="problem_des" style="width:575px;line-height:18px;"></textarea> 
-              </pre>
+                  <textarea id="problem_des" name="problem_des" style="width:700px;line-height:18px;min-height:200px"></textarea> 
+                 <!-- <script type="text/plain" id="problem_des" name="mycontent" style="width:719px; height:450px"> 
+                      填写内容
+                 </script>
+                 <script type="text/javascript">
+                     var ue = UE.getEditor('problem_des');
+                   </script>
+                   -->
               <h3>
                 input
               </h3>
@@ -129,11 +135,9 @@
      </div>
 
   </form>
-
-  <textarea id="con" name="con" style="width:575px;line-height:18px;"></textarea> 
   <script> 
     var ue=new UE.ui.Editor();
-    ue.render('con');
+    ue.render('problem_des');
   </script>
   </body>
 </html>

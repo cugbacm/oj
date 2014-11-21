@@ -34,8 +34,9 @@
   <script type="text/javascript" charset="utf-8">
      window.UEDITOR_HOME_URL = "/static/ueditor/";
   </script>
-  <script type="text/javascript" charset="utf-8" src="/static/ueditor/editor_config.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/static/ueditor/editor_all_min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.all.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.parse.js"></script>
   <link rel="stylesheet" type="text/css" href="/static/ueditor/themes/default/ueditor.css"/>    
 
 
@@ -88,9 +89,14 @@
               <h3>
                 description
               </h3>
-              <pre>
-                  <textarea id="problem_des" name="problem_des" style="width:575px;line-height:18px;"></textarea> 
-              </pre>
+                 <!-- <textarea id="problem_des" name="problem_des" style="width:575px;line-height:18px;"></textarea> 
+                 -->
+                 <script type="text/plain" id="editor" name="mycontent" style="width:719px; height:450px"> 
+                      填写内容
+                 </script>
+                 <script type="text/javascript">
+                     var ue = UE.getEditor('editor');
+                 </script>
               <h3>
                 input
               </h3>
@@ -128,9 +134,9 @@
     <input type="submit" value="上传文件"/> 
 
   </form>
-  <script> 
+ <!-- <script> 
     var ue=new UE.ui.Editor();
-    ue.render('problem_des');
-  </script>
+    ue.render('>problem_des');
+  </script> -->
   </body>
 </html>

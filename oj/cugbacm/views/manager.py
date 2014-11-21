@@ -4,8 +4,12 @@ from django.http import HttpResponse
 from cugbacm.models import ContestXls
 
 class UploadForm(forms.Form):
-  contestID = forms.IntegerField()
-  xlsAddr = forms.FileField()
+  contestID = forms.IntegerField(
+      widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Contest ID'})
+      )
+  xlsAddr = forms.FileField(
+      widget=forms.FileInput(attrs={'value':'Select File'})
+      )
 
 def manager(request):
   if request.method == "POST":
