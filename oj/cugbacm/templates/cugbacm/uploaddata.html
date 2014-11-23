@@ -1,0 +1,97 @@
+<html lang="zh-cn">
+  <head>
+    {% load pagination_tags  %} 
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta http-equiv="Content-type" content = "text/html; charset = UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+
+    <title>{{problem.title}}</title>
+
+    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+   <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+   <!-- <script src="/site_media/run_prettify.js"></script>
+   <script type="text/javascript" src="/site_media/bootstrap-affix.js"></script>-->
+
+   <!-- <script charset="utf-8" src="/site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js"></script>
+   <script charset="utf-8" src="/site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js"></script>-->
+
+    <style type="text/css" title="currentStyle">
+        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
+  </style>
+  <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
+  <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+
+
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+     window.UEDITOR_HOME_URL = "/static/ueditor/";
+  </script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/editor_config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/ueditor/editor_all_min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/ueditor/themes/default/ueditor.css"/>    
+
+
+  <body style="padding-top:70px;">
+    <!--<div class="container">-->
+      <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+              <ul class="nav nav-tabs">
+                <li>
+                  <a href="/index/problemList/">Problem List</a>
+                </li>
+                <li>
+                  <a href="/index/submitList/">Submit List</a>
+                </li>
+                <li>
+                  <a href="/index/contestList">Contest List</a>
+                </li>
+                <li>
+                  <a href="/index/userList">User List</a>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}}<span class="caret"></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/index/userInfo/{{userID}}">User Info</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                      <a href="/index/login/">Login Out</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right"  width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+                <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+              </marquee>
+            </nav>
+       <form enctype = "multipart/form-data" method="POST" action = "/index/adddata/">{% csrf_token %}
+          <div class="row-fluid" >
+            <div class="col-md-7" role="main">
+              <h3>problemid:</h3>
+              <pre> <input type = "text" id = 'p_Id' name = 'p_Id'></pre>
+           </div>
+          </div>
+        </div>
+      </div>
+    
+  
+    <input type="file" name="file" multiple = ""/>
+    <input type="submit" value="上传文件"/> 
+
+  </form>
+  <script> 
+    var ue=new UE.ui.Editor();
+    ue.render('problem_des');
+  </script>
+  </body>
+</html>

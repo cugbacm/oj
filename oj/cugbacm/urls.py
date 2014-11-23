@@ -19,7 +19,9 @@ import views.uploadfile
 import views.downloadfile
 import views.manager
 import views.addproblem
-import views.adddata
+import views.modifyproblem
+import views.uploaddata
+import views.uploadimage
 
 urlpatterns = patterns('',
   url(r'^register/$', views.register.register, name = 'register'),
@@ -44,5 +46,7 @@ urlpatterns = patterns('',
   url(r'^rejudge/(?P<start_run_id>\d+)to(?P<end_run_id>\d+)$', views.rejudge.rejudgeRange, name = 'rejudge'),
   url(r'^permit_judge/(?P<contest_id>\d+)$', views.permit_judge.permit_judge, name = 'permit_judge'),
   url(r'^addproblem/$', views.addproblem.addproblem, name = 'addproblem'),
-  url(r'^adddata/$', views.adddata.adddata, name = 'adddata'),
+  url(r'^modifyproblem/(?P<problem_id>\d+)/$', views.modifyproblem.modifyproblem, name = 'modifyproblem'),
+  url(r'^uploaddata/$', views.uploaddata.uploaddata, name = 'uploaddata'),
+  url(r'^uploadimage/$', views.uploadimage.uploadimage, name = 'uploadimage'),
 )
