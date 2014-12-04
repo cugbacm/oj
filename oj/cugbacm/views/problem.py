@@ -108,6 +108,8 @@ def problem(request, problem_id):
     return HttpResponseRedirect("/index/problem/" + str(problem_id) + "?show_submit=true")
   else:
     show_submit = request.GET.get('show_submit')
+    if problem.visible == False:
+      return HttpResponseRedirect("/index/problemList/")
     try:
       submit = Submit.objects.get(id = request.GET.get('submit'))
       if submit.userID == user.userID and str(submit.problemID) == str(problem_id):

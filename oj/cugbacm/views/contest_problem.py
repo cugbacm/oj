@@ -39,7 +39,7 @@ def Judge(contestsubmit):
       user.accepted = user.accepted + 1
       if user.acList == None:
         user.acList = ""
-      user.acList += str(contestsubmit.problemID) + ","
+      #user.acList += str(contestsubmit.problemID) + ","
     problem.ac = problem.ac + 1
   elif contestsubmit.status == "Time Limit Exceeded":
     problem.tle = problem.tle + 1

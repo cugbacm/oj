@@ -29,9 +29,9 @@ def uploadimage(request):
     except:
       pass
     #return HttpResponse("OK_The file is avalueable!!!")
-    return HttpResponseRedirect("/index/problemList")
+    return HttpResponseRedirect("/index/manager")
   else:
-    return render(request, 'cugbacm/uploadimage.html', {})
+    return render(request, 'cugbacm/manager.html', {})
 
 #upload image to media/problemID
 def handle_uploaded_image(i, name):

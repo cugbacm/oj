@@ -48,6 +48,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
       <span class="dropdown-arrow"></span>    
       <ul class="dropdown-menu">
+              <li><a href="/index/manager/">Admin</a></li>
         <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
         <li class="divider"></li>
         <li><a href="/index/login?login_out=true">Login out</a></li>
@@ -119,44 +120,44 @@
         </thead>  
         <center>{% paginate %}</center>
       <tbody>
-      {% for submit in submits %}
-        {% if submit.status == "Accepted" %}
+      {% for submit in contest_submit_list %}
+        {% if submit.1.status == "Accepted" %}
           <tr class="gradeA">
-            <td>{{submit.id}}</td>
-            <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
-            <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-            <td><font color="#3498DB"><STRONG>{{submit.status}}</STRONG></font></td>
-            <td>{{submit.memory}}&nbsp;K</td>
-            <td>{{submit.runTime}}&nbsp;MS</td>
-            <td>{{submit.codeLength}}&nbsp;B</td>            
-            {% ifequal submit.userID userID %} 
-              <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+            <td>{{submit.1.id}}</td>
+            <td><a href="/index/userInfo/{{submit.1.userID}}" target="_blank">{{submit.1.userID}}</a></td>
+            <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.1.problemID}}" target="_blank">{{submit.0}}</a></td>
+            <td><font color="#3498DB"><STRONG>{{submit.1.status}}</STRONG></font></td>
+            <td>{{submit.1.memory}}&nbsp;K</td>
+            <td>{{submit.1.runTime}}&nbsp;MS</td>
+            <td>{{submit.1.codeLength}}&nbsp;B</td>            
+            {% ifequal submit.1.userID userID %} 
+              <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.1.problemID}}?submit={{submit.1.id}}">{{submit.1.language}}</a></td>
             {% else %}
-              <td>{{submit.language}}</td>
+              <td>{{submit.1.language}}</td>
 	
             {% endifequal %}  
-            <td>{{submit.date}} {{submit.timestamp}}</td> 
+            <td>{{submit.1.date}} {{submit.1.timestamp}}</td> 
             <!--<td>{{submit.code}}</td> -->
           </tr>
         {% else %}
           <tr class="gradeX">
-          <td>{{submit.id}}</td>
-          <td><a href="/index/userInfo/{{submit.userID}}" target="_blank">{{submit.userID}}</a></td>
-            <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}" target="_blank">{{submit.problemID}}</a></td>
-          {% if submit.status == "Compile Error"%}
-              <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
+          <td>{{submit.1.id}}</td>
+          <td><a href="/index/userInfo/{{submit.1.userID}}" target="_blank">{{submit.1.userID}}</a></td>
+            <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.1.problemID}}" target="_blank">{{submit.0}}</a></td>
+          {% if submit.1.status == "Compile Error"%}
+              <td><font color="#2ECC71"><strong>{{submit.1.status}}</strong></font></td>
            {% else %}
-              <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
+              <td><font color="#E74C3C"><strong>{{submit.1.status}}</strong></font></td>
            {% endif %}
-             <td>{{submit.memory}}&nbsp;K</td>
-             <td>{{submit.runTime}}&nbsp;MS</td>
-             <td>{{submit.codeLength}}&nbsp;B</td>
-          {% ifequal submit.userID userID %} 
-              <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+             <td>{{submit.1.memory}}&nbsp;K</td>
+             <td>{{submit.1.runTime}}&nbsp;MS</td>
+             <td>{{submit.1.codeLength}}&nbsp;B</td>
+          {% ifequal submit.1.userID userID %} 
+              <td><a href="/index/contest/{{contest.contestID}}/problem/{{submit.1.problemID}}?submit={{submit.1.id}}">{{submit.1.language}}</a></td>
           {% else %}
-            <td>{{submit.language}}</td>
+            <td>{{submit.1.language}}</td>
           {% endifequal %}  
-          <td>{{submit.date}} {{submit.timestamp}}</td> 
+          <td>{{submit.1.date}} {{submit.1.timestamp}}</td> 
           <!--<td>{{submit.code}}</td> -->
         </tr>
         {% endif %}

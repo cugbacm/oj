@@ -49,6 +49,7 @@
                 <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}}<span class="caret"></a>
                   <ul class="dropdown-menu">
+              <li><a href="/index/manager/">Admin</a></li>
                     <li>
                       <a href="/index/userInfo/{{userID}}">User Info</a>
                     </li>
@@ -72,7 +73,7 @@
                 <p><center>(Accepted/Total Submit): {{problem.ac}} / {{problem.totalSubmission}}</center></p>
               </div>
               <h3>
-                description
+               description
               </h3>
               <pre>{% autoescape off %}{{problem.description}}{% endautoescape%}</pre>
               <h3>
@@ -91,6 +92,10 @@
                 sample output
               </h3>
               <pre>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</pre>
+              <h3>
+                hint
+              </h3>
+              <pre>{% autoescape off %}{{problem.hint}}{% endautoescape%}</pre>
               <h3>
                 author
               </h3>

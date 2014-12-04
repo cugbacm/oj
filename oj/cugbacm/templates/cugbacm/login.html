@@ -42,31 +42,31 @@
                  <input type="text" id="userID" class="form-control"  onBlur="checkID()" placeholder="userId (Your studentID)"   name="userID" required autofocus>
                </div>
                <div class="form-group">
-                 <input type="password" class="form-control" placeholder="Password (length > 10)" name="password" required>
+                 <input type="password" id="pwd" class="form-control" placeholder="Password (length >= 6)" name="password" required>
                </div>
                <div class="form-group">
-                 <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
+                 <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
                </div>
                <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
+                 <input type="text" id="nickname" class="form-control" placeholder="Nickname" name="nickname" required>
                </div>
                <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Session" name="session" required>
+                 <input type="text" id="session" class="form-control" placeholder="Session" name="session" required>
                </div>
                <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Specialty" name="specialty" required>
+                 <input type="text" id="specialty" class="form-control" placeholder="Specialty" name="specialty" required>
                </div>
                <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Tel" name="tel" required>
+                 <input type="text" id="tel" class="form-control" placeholder="Tel" name="tel" required>
                </div>
                <div class="form-group">
-                 <input type="email" class="form-control" placeholder="Email" name="email" required>
+                 <input type="email" id="email" class="form-control" placeholder="Email" name="email" required>
                </div>
            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" id = "reg" class="btn btn-primary">Register</button>
+            <button type="button" id = "reg" class="btn btn-primary">Register</button>
           </div>
         </div>
       </div>
@@ -135,9 +135,28 @@
         });
       });   
     });
-    function goReg() {
-        window.location.href='/index/register/';
-    }
+    $(function(){
+    $("#reg").click(function(){
+        $.post("/index/register/",
+        { 
+            userID:$("#userID").val(),
+            password:$("#pwd").val(),
+            confirmPassword:$("#confirmPassword").val(),
+            session:$("#session").val(),
+            specialty:$("#specialty").val(),
+            tel:$("#tel").val(),
+            email:$("#email").val(),
+            nickname:$("#nickname").val()
+        },
+        function(data, status){
+            if(data == 'success'){
+             window.location = '/index/problemList';
+            }else{
+                alert(data);  
+             }
+        });
+      });   
+    });
    </script>
    <script>
      $(document).ready(function(){

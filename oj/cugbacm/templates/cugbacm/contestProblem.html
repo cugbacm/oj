@@ -41,9 +41,8 @@
 		    	<li><a href="/index/contest/{{contestID}}/rankList">Rank List</a></li>
 		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li><a href="/index/manager/">Admin</a></li>
               <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
               <li><a href="/index/login?login_out=true">Login out</a></li>
             </ul>
@@ -80,6 +79,10 @@
                 sample output
               </h3>
               <pre>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</pre>
+              <h3>
+                hint
+              </h3>
+              <pre>{% autoescape off %}{{problem.hint}}{% endautoescape%}</pre>
               <h3>
                 author
               </h3>

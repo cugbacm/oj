@@ -4,7 +4,7 @@ from django.template import Context, loader
 from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 
-def modifyproblem(request, problem_id):
+def modifyproblem1(request):
   try:
     user = User.objects.get(userID = request.session['userID'])
   except:
@@ -16,7 +16,7 @@ def modifyproblem(request, problem_id):
         pid = request.POST['problem_id']
         problem = Problem.objects.get(problemID = pid)
       except:
-        return HttpResponseRedict("/index/manager/#manageProblem")
+        return HttpResponseRedict("/index/manager")
 
       return render(request, 'cugbacm/manager.html', {"modify":True, "problem":problem})
     else:
@@ -61,6 +61,6 @@ def modifyproblem(request, problem_id):
     try:
       problem = Problem.objects.get(problemID = problem_id)
     except:
-      return HttpResponseRedict("/index/manager/#manageProblem")
+      return HttpResponseRedict("/index/manager")
 
     return render(request, 'cugbacm/manager.html', {"modify":True, "problem":problem})

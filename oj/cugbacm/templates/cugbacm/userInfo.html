@@ -39,6 +39,7 @@
           {{userID}} <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
+              <li><a href="/index/manager/">Admin</a></li>
           <li><a href="/index/userInfo/{{user.userID}}">User Info</a></li>
           <li class="divider"></li>
           <li><a href="/index/login?login_out=true">Login out</a></li>
@@ -60,7 +61,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-5 col-sm-7">
-            <button type="submit" class="btn btn-info" name = "Modify" id = "Modefy" value = "Modify"> <font style="font-size:15px; font-weight: 700;"> Modify your information</font></button>
+            <button type="submit" class="btn btn-primary btn-block" name = "Modify" id = "Modify" value = "Modify">Modify your information</button>
           </div>
         </div>
         <div class="form-group">
@@ -124,7 +125,7 @@
         <lable>&nbsp;</lable>
       </div>
       <div class="form-group">
-        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;">Problems Solved</font></p>
+        <p style="background-color:#1abc9c;"><font style="color:white;">Problems Solved</font></p>
       </div>
       <div class="form-group">
         <label>
@@ -188,7 +189,7 @@
         <label>&nbsp;</label>
       </div> 
       <div class="form-group">
-        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;">{{userID}} and {{other.userID}} both Accepted:</font></p>
+        <p style="background-color:#1abc9c;"><font style="color:white;">{{userID}} and {{other.userID}} both Accepted:</font></p>
       </div>
       <div class="form-group">
         <label>
@@ -199,7 +200,7 @@
       </div>
 
       <div class="form-group">
-        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;" >Only {{userID}} Accepted:</font></p>
+        <p style="background-color:#1abc9c;"><font style="color:white;" >Only {{userID}} Accepted:</font></p>
       </div>
       <div class="form-group">
         <label>
@@ -210,7 +211,7 @@
       </div>
       
       <div class="form-group">
-        <p style="background-color: #3498DB;"><font style="font-size:16px; color:white; font-weight: 700;" >Only {{other.userID}} Accepted:</font></p>
+        <p style="background-color:#1abc9c;"><font style="color:white;" >Only {{other.userID}} Accepted:</font></p>
       </div>
       <div class="form-group">
         <label>

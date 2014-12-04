@@ -43,6 +43,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown" href="/index/userInfo">{{userID}} <span class="caret"></span></a>
       <span class="dropdown-arrow"></span>    
       <ul class="dropdown-menu">
+              <li><a href="/index/manager/">Admin</a></li>
         <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
         <li class="divider"></li>
         <li><a href="/index/login?login_out=true">Login out</a></li>
@@ -54,12 +55,12 @@
      </marquee>
      </nav>
     {% autopaginate ranklist 50 %}
-    <!-- {% for k, v in rank_list_dic.items %}
+   <!-- {% for k, v in ranklist %}
         {{k}}
         </br>
         {{v}}
         <br/>
-        {% endfor %}-->
+        {% endfor %} -->
   <div class = "row" style="padding-top:30px;">
     <div class = "col-md-12"><p class="text-center" style="font-size:30px; color:inherit; font-weight: 700;">Contest Ranklist</p></div>
   </div>

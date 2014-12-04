@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
-from cugbacm.models import User, Submit, Problem
+from cugbacm.models import User, Submit, Problem,ContestSubmit
 from celery.task import task
 
 
@@ -63,7 +63,7 @@ def rejudge(request,run_id):
   try:
     submit = Submit.objects.get(id = run_id)
     Judge.delay(submit)
-    return HttpResponse("rejudged");
+    return HttpResponse("rejudged")
   except:
     return HttpResponse("hehe - no submit found")
 
@@ -75,3 +75,27 @@ def rejudgeRange(request, start_run_id, end_run_id):
       return HttpResponse("rejudgedRange")
   except:
     return HttpResponse("hehehe")
+def rejudgeProblem(request, problem_id):
+  try:
+    submits = Submit.objects.filter(problemID = problem_id)
+    for s in submits:
+      Judge.delay(s)
+    return HttpResponse("problem rejudged")
+  except:
+    return HttpResponse("hehe")
+def rejudgeContestProblem(request,contest_id, problem_id):
+  try:
+    submits = ContestSubmit.objects.filter(contestID = contest_id,problemID = problem_id)
+    for s in submits:
+      Judge.delay(s)
+    return HttpResponse("rejudged")
+  except:
+    return HttpResponse("hehe")
+def rejudgeContest(request, contest_id):
+  try:
+    submits = ContestSubmit.objects.filter(contestID = contest_id)
+    for s in submits:
+      Judge.delay(s)
+    return HttpResponse("rejudged")
+  except:
+    return HttpResponse("hehe")

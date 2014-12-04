@@ -1,7 +1,7 @@
 from django.shortcuts import render,render_to_response
 from django import forms
-from django.http import HttpResponse
-from cugbacm.models import ContestXls
+from django.http import HttpResponse, HttpResponseRedirect
+from cugbacm.models import ContestXls, User
 
 class UploadForm(forms.Form):
   contestID = forms.IntegerField(
@@ -12,6 +12,10 @@ class UploadForm(forms.Form):
       )
 
 def manager(request):
+  try:
+    user = User.objects.get(userID = request.session['userID'])
+  except:
+    return HttpResponseRedirect("/index/login")
   if request.method == "POST":
     uf = UploadForm(request.POST,request.FILES)
     if uf.is_valid():
@@ -24,4 +28,7 @@ def manager(request):
       return HttpResponse('upload ok!')
   else:
     uf = UploadForm()
-  return render(request, 'cugbacm/manager.html',{'uf':uf})
+  if user.userID != "QQ":
+    return HttpResponse('you are not permited!')
+
+  return render(request, 'cugbacm/manager.html',{'uf':uf, 'userID':request.session['userID']})

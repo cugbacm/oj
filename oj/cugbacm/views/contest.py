@@ -53,6 +53,8 @@ def contest(request, contest_id):
       status = "no_pass"
 
     problem_list.append([chr(ord('A') + count), problem, status])
+#todo
+#ssdb key = contest_id + "\t" + problem_id   value = chr('A') + count
     count += 1
   if request.method == 'POST':
     problemID = request.POST['problemID']

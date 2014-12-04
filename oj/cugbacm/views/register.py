@@ -18,17 +18,33 @@ def register(request):
     nickname = request.POST['nickname']
     if password != confirmPassword:
       return HttpResponse("Password and confirm password must be identical.")
+    if len(userID) == 0:
+      return HttpResponse("The length of userID should not less than 6.")
     if len(password) < 6:
-      return HttpResponse("The length of password should not less than 10.")
-    User(
-      userID = userID,
-      password = password,
-      session = session,
-      specialty = specialty,
-      tel = tel,
-      email = email,
-      nickname = nickname).save()
-    request.session['userID'] = userID
-    return HttpResponseRedirect("/index/problemList")
+      return HttpResponse("The length of password should not less than 6.")
+    if len(session) == 0:
+      return HttpResponse("Please fill session bar.")
+    if len(specialty) == 0:
+      return HttpResponse("Please fill specialty bar.")
+    if len(tel) == 0:
+      return HttpResponse("Please fill tel bar.")
+    if len(email) == 0:
+      return HttpResponse("Please fill email bar.")
+    if len(nickname) == 0:
+      return HttpResponse("Please fill nickname bar.")
+    try:
+      user = User.objects.get(userID = userID)
+      return HttpResponse("User already existed")
+    except:
+      User(
+        userID = userID,
+        password = password,
+        session = session,
+        specialty = specialty,
+        tel = tel,
+        email = email,
+        nickname = nickname).save()
+      request.session['userID'] = userID
+      return HttpResponse("success")
   else:
     return render(request, 'cugbacm/register.html', {})

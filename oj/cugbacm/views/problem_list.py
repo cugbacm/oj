@@ -13,7 +13,7 @@ def problemList(request):
   except:
     return HttpResponseRedirect("/index/login")
   problems = Problem.objects.all()
-  '''problems = problems.filter(visible=True)'''
+  problems = problems.filter(visible=True)
   problem_list =[]
   for problem in problems:
     status = "0"

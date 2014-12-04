@@ -28,10 +28,9 @@ def uploaddata(request):
         handle_uploaded_file(f, p_Id)
     except:
       pass
-    #return HttpResponse("OK_The file is avalueable!!!")
-    return HttpResponseRedirect("/index/problemList")
+    return HttpResponseRedirect("/index/manager")
   else:
-    return render(request, 'cugbacm/uploaddata.html', {})
+    return render(request, 'cugbacm/manager.html', {})
 
 #upload data to data_dir/problemID
 def handle_uploaded_file(f, name):

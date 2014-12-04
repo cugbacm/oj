@@ -88,8 +88,9 @@
               <h3>memorylimit:</h3>
               <pre> <input type = "text" id = 'problem_mlimit' name = 'problem_mlimit' value = "{{problem.memoryLimit}}"></pre>
               <h3>
-                description
+                descriptioin<h5>
               </h3>
+              (如果需要添加图片，请先把图片上传至服务器<a href = "/index/uploadimage">(上传地址)</a>，然后点击多图上传-插入图片，然后在地址中输入/site_media/images/题目ID/图片名称.后缀（可以调整大小）)</h5>
               <textarea id="problem_des" name="problem_des" style="width:700px;line-height:18px;min-height:200px"> {{problem.description}}</textarea> 
                  <!-- <script type="text/plain" id="problem_des" name="mycontent" style="width:719px; height:450px"> 
                       填写内容
@@ -125,7 +126,9 @@
               <h3>
                 visible
               </h3>
+              请输入True或者False
               <pre> <input type = "boolean" id = "problem_visible" name = "problem_visible" value = "{{problem.visible}}"> </pre>
+              <h3> VISIBLE: <input checked = "checked" id = "problem_visible1" name = "problem_visible1" type = "checkbox"></h3>
            </div>
           </div>
         </div>

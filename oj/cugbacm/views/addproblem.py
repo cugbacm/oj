@@ -24,7 +24,8 @@ def addproblem(request):
     problem_hint = request.POST['problem_hint']
     problem_visible = request.POST['problem_visible']
     problem_author = request.POST['problem_author']
-
+    visible = request.POST['problem_visible']
+    #return HttpResponse(visible)
 
     try:
       problem = Problem.objects.get(problemID = p_Id)
@@ -73,6 +74,6 @@ def addproblem(request):
       )
     #return HttpResponse('upload ok!')
     problem.save()
-    return HttpResponseRedirect("/index/problemList")
+    return HttpResponseRedirect("/index/manager")
   else:
-    return render(request, 'cugbacm/addproblem.html', {"modify":False})
+    return render(request, 'cugbacm/manageproblem.html', {"modify":False})
