@@ -198,6 +198,7 @@ kill `cat ./var/ssdb.pid`
  2.cd 到仓库 cd Lo_runner    
  3.python setup.py install
 ###判题流程
+参考：http://blog.csdn.net/caoxiaoran1202/article/details/41719523
 ###判题内核对外接口
   
 ##前端
