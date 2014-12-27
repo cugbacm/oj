@@ -65,7 +65,7 @@ def rejudge(request,run_id):
     Judge.delay(submit)
     return HttpResponse("rejudged")
   except:
-    return HttpResponse("hehe - no submit found")
+    return HttpResponse("rejudge failed! - no submit found")
 
 def rejudgeRange(request, start_run_id, end_run_id):
   try:
@@ -74,28 +74,28 @@ def rejudgeRange(request, start_run_id, end_run_id):
       Judge.delay(submit)
       return HttpResponse("rejudgedRange")
   except:
-    return HttpResponse("hehehe")
+    return HttpResponse("rejudge failed! - no submit found")
 def rejudgeProblem(request, problem_id):
   try:
     submits = Submit.objects.filter(problemID = problem_id)
     for s in submits:
       Judge.delay(s)
-    return HttpResponse("problem rejudged")
+    return HttpResponse("rejudged")
   except:
-    return HttpResponse("hehe")
+    return HttpResponse("rejudge failed! - no submit found")
 def rejudgeContestProblem(request,contest_id, problem_id):
   try:
     submits = ContestSubmit.objects.filter(contestID = contest_id,problemID = problem_id)
     for s in submits:
       Judge.delay(s)
-    return HttpResponse("rejudged")
+    return HttpResponse("rejudged!")
   except:
-    return HttpResponse("hehe")
+    return HttpResponse("rejudge failed! - no submit found")
 def rejudgeContest(request, contest_id):
   try:
     submits = ContestSubmit.objects.filter(contestID = contest_id)
     for s in submits:
       Judge.delay(s)
-    return HttpResponse("rejudged")
+    return HttpResponse("rejudged!")
   except:
-    return HttpResponse("hehe")
+    return HttpResponse("rejudge failed! - no submit found")

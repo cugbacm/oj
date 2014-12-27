@@ -4,8 +4,14 @@ from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
 from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
+import hashlib
 
 @csrf_exempt
+def encrypt(password):
+  m = hashlib.md5()
+  m.update(password)
+  return m.hexdigest()
+
 def register(request):
   if request.method == 'POST':
     userID = request.POST['userID']
@@ -36,6 +42,7 @@ def register(request):
       user = User.objects.get(userID = userID)
       return HttpResponse("User already existed")
     except:
+      password = encrypt(password)
       User(
         userID = userID,
         password = password,

@@ -26,12 +26,12 @@
 
   
   <script type="text/javascript" charset="utf-8">
-     window.UEDITOR_HOME_URL = "/static/ueditor/";
+     window.UEDITOR_HOME_URL = "/site_media/ueditor/";
   </script>
-  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.config.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.all.min.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/static/ueditor/ueditor.parse.js"></script>
-  <link rel="stylesheet" type="text/css" href="/static/ueditor/themes/default/ueditor.css"/>    
+  <script type="text/javascript" charset="utf-8" src="/site_media/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/site_media/ueditor/ueditor.all.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/site_media/ueditor/ueditor.parse.js"></script>
+  <link rel="stylesheet" type="text/css" href="/site_media/ueditor/themes/default/ueditor.css"/>    
   </head>
   <body style="padding-top:70px" onload="display();">
     <div class="container">      
@@ -274,8 +274,45 @@
             </div>
           </div>
           <div class="bs-docs-section">
-           <h4 id="3" class="page-header">3</h4>
-            <p>dasdsdasdasdasd</br>dadas</br>dasdas</br>dasdasad</p>
+           <h4 id="rejudge" class="page-header">Rejudge</h4>
+            <div class="row">
+            <div class="col-md-4">  
+              <h5>比赛</h5>
+            <form class="form-horizontal" role="form">{% csrf_token %}
+              <div class="form-group col-sm-8">
+                <input type="number" class="form-control" id="reContest_id" name="reContest_id" placeholder="Contest ID">
+              </div>
+              <div class="form-group col-sm-8">
+                <a type="button" id="rejudgeOne" class="btn btn-primary btn-block" href="javascript:void(0)" onclick="rejudge_one();return false;">Rejudge it!</a>
+              </div>
+              </form>
+            </div>
+            <div class="col-md-4">  
+            <h5>题库</h5>
+              <form class="form-horizontal" role="form" method="post">{% csrf_token %}
+              <div class="form-group col-sm-8">
+                <input type="number" class="form-control" id="reProblem_id" name="reProblem_id" placeholder="Problem ID">
+              </div>
+              <div class="form-group col-sm-8">
+                <a type="button" class="btn btn-primary btn-block" href="javascript:void(0)" onclick="rejudge_two(); return false;">Rejudge it!</a>
+              </div>
+              </form>
+            </div>
+            <div class="col-md-4">  
+            <h5>比赛题目</h5>
+              <form class="form-horizontal" role="form" action="" method="post">{% csrf_token %}
+                <div class="form-group col-sm-8">
+                  <input type="number" class="form-control" id="reCon_id" name="reCon_id" placeholder="Contest ID">
+                </div>
+              <div class="form-group col-sm-8">
+                <input type="number" class="form-control" id="reConPro_id" name="reConPro_id" placeholder="Problem ID">
+              </div>
+              <div class="form-group col-sm-8">
+                <a type="button" class="btn btn-primary btn-block" href="javascript:void(0)" onclick="rejudge_three(); return false;">Rejudge it!</a>
+              </div>
+              </form>
+            </div>
+            </div>
           </div>
         </div><!--main-->
 
@@ -285,6 +322,7 @@
             <ul class="nav bs-docs-sidenav">
               <li><a href="#batchReg">批量注册</a></li>
               <li><a href="#manageProblem">题目管理</a></li>
+              <li><a href="#rejudge">Rejudge</a></li>
             </ul>
             <a class="back-to-top" href="#top">Top</a>
           </div>
@@ -308,6 +346,31 @@
                checkboxClass: 'icheckbox_flat-green',
              });
       });
+    function rejudge_one() {
+      var val = document.getElementById('reContest_id').value;
+      var url = "http://115.28.170.176/index/rejudgeContest";
+      if(val == "") url = url + "/0/";
+      else url = url + "/" + val + "/";
+      window.location.href = url;
+    }
+    function rejudge_two() {
+      var val = document.getElementById('reProblem_id').value;
+      var url = "http://115.28.170.176/index/rejudgeProblem";
+      if(val == "") url = url + "/0/";
+      else url = url + "/" + val + "/";
+      window.location.href = url;
+    }
+    function rejudge_three() {
+      var val = document.getElementById('reCon_id').value;
+      var valtwo = document.getElementById('reConPro_id').value;
+      var url = "http://115.28.170.176/index/rejudgeContestProblem/contest";
+      if(val == "") url = url + "/0/";
+      else url = url + "/" + val + "/";
+      if(valtwo == "") url = url + "problem/0/";
+      else url = url + "problem/" + val + "/";
+      
+      window.location.href = url;
+    }
   </script>
   </body>
 </html>

@@ -22,6 +22,8 @@ def Judge(contestsubmit):
     mem_limit = problem.memoryLimit,
     time_limit = problem.timeLimit
   )
+  if contestsubmit.language != 'g++':
+    user_submit.time_limit *= 3
   result = main(user_submit)
   if "result" in result:
     contestsubmit.status = result['result']
@@ -70,6 +72,9 @@ def contestProblem(request, contest_id, problem_id):
     return HttpResponseRedirect('/index/login')
   contest_status = Contest.objects.get(contestID = int(contest_id))
   problem = Problem.objects.get(problemID = problem_id)
+  contest_submits = ContestSubmit.objects.filter(contestID = str(contest_id), problemID = str(problem.problemID))
+  problem.totalSubmission = len(contest_submits)
+  problem.ac = len(contest_submits.filter(status = "Accepted"))
   if contest_status.status == "pending":
     return HttpResponseRedirect('/index/contest/'+str(contest_id))
   submits  = ContestSubmit.objects.filter(contestID = contest_id, problemID = problem_id, userID = user.userID).order_by("-id")
