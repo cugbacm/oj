@@ -7,10 +7,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 import hashlib
 
 @csrf_exempt
-def encrypt(password):
-  m = hashlib.md5()
-  m.update(password)
-  return m.hexdigest()
+def encrypt(userID, password):
+  first_md5 = hashlib.md5()
+  first_md5.update(str(password))
+  salt = first_md5.hexdigest()
+  second_md5 = hashlib.md5()
+  second_md5.update(str(userID) + salt)
+  return second_md5.hexdigest()
 
 def register(request):
   if request.method == 'POST':
@@ -42,7 +45,7 @@ def register(request):
       user = User.objects.get(userID = userID)
       return HttpResponse("User already existed")
     except:
-      password = encrypt(password)
+      password = encrypt(userID, password)
       User(
         userID = userID,
         password = password,

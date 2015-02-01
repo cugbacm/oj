@@ -1,33 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 {% load pagination_tags %} 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="cugbacm" >
-    <link rel="shortcut icon" hrel="/site_media/images/favicon.ico" type="image/x-icon">
-    <title>Problem List</title>
-    <!-- Bootstrap core CSS -->
-    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
-   <script type="text/javascript" src="/site_media/dist/js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
-    <style type="text/css" title="currentStyle">
-        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
-        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
-        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
-	</style>
-    <style type="text/css">
-      .center td,th{
-        text-align:center;
-      }
-    </style>
-	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
-	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
-  <script src="/site_media/dist/js/stickUp-master/stickUp.min.js"></script>
-  </head>
+{% include 'cugbacm/head.html' %}
   <body style="padding-top:70px">
     <div class="container">      
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">

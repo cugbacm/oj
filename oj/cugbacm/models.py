@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
   userID = models.CharField(max_length = 200)
-  password = models.CharField(max_length = 20)
+  password = models.CharField(max_length = 200)
   session = models.CharField(max_length = 20)
   specialty = models.CharField(max_length = 100)
   tel = models.CharField(max_length = 100)
@@ -24,8 +24,8 @@ class Submit(models.Model):
   runTime = models.IntegerField()
   language = models.CharField(max_length = 100)
   codeLength = models.IntegerField()
-  date = models.DateField(auto_now = True)
-  timestamp = models.TimeField(auto_now_add = True)
+  date = models.DateField(auto_now_add = True, auto_now=False)
+  timestamp = models.TimeField(auto_now_add = True, auto_now=False)
   code = models.TextField()
   def __unicode__(self):
     return str(self.runID)
@@ -42,6 +42,7 @@ class Problem(models.Model):
   pe = models.IntegerField(default = 0);
   ce = models.IntegerField(default = 0);
   se = models.IntegerField(default = 0);
+  re = models.IntegerField(default = 0);
   totalSubmission = models.IntegerField(default = 0);
   description = models.TextField();
   input = models.TextField();
@@ -52,7 +53,7 @@ class Problem(models.Model):
   visible = models.BooleanField(default = True)
   author = models.CharField(max_length = 100)
   def __unicode__(self):
-    return self.title
+    return str(self.problemID) + "\t" + self.title
 
 class Contest(models.Model):
   """docstring for Contest"""
@@ -79,8 +80,8 @@ class ContestSubmit(models.Model):
   runTime = models.IntegerField()
   language = models.CharField(max_length = 100)
   codeLength = models.IntegerField()
-  date = models.DateField(auto_now = True)
-  timestamp = models.TimeField(auto_now = True)
+  date = models.DateField(auto_now_add = True, auto_now=False)
+  timestamp = models.TimeField(auto_now_add = True, auto_now=False)
   code = models.TextField()
   contestID = models.IntegerField()
   def __unicode__(self):
@@ -99,3 +100,5 @@ class ContestXls(models.Model):
   def __unicode__(self):
     return str(self.contestID) + "\t" + str(self.xlsAddr)
 
+class OJAttribute(models.Model):
+  marquee = models.TextField()

@@ -22,7 +22,7 @@ import views.addproblem
 import views.modifyproblem
 import views.uploaddata
 import views.uploadimage
-
+import views.modifyproblem1
 urlpatterns = patterns('',
   url(r'^register/$', views.register.register, name = 'register'),
   url(r'^manager/$', views.manager.manager, name = 'manager'),
@@ -49,4 +49,8 @@ urlpatterns = patterns('',
   url(r'^modifyproblem/(?P<problem_id>\d+)/$', views.modifyproblem.modifyproblem, name = 'modifyproblem'),
   url(r'^uploaddata/$', views.uploaddata.uploaddata, name = 'uploaddata'),
   url(r'^uploadimage/$', views.uploadimage.uploadimage, name = 'uploadimage'),
+  url(r'^rejudgeProblem/(?P<problem_id>\d+)/$',views.rejudge.rejudgeProblem,name="rejudge"),
+  url(r'^rejudgeContestProblem/contest/(?P<contest_id>\d+)/problem/(?P<problem_id>\d+)/$',views.rejudge.rejudgeContestProblem,name="rejudge"),
+  url(r'^rejudgeContest/(?P<contest_id>\d+)/$',views.rejudge.rejudgeContest,name="rejudge"),
+  url(r'^modifyproblem/$', views.modifyproblem1.modifyproblem1, name = 'modifyproblem1'),
 )

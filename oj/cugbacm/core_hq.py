@@ -336,7 +336,7 @@ def get_data_count(problem_id):
 	print files
 	count = 0
 	for item in files:
-		if item.endswith('.in') and item.startswith('data'):
+		if item.endswith('.in'):
 			count += 1
 
 	print 'get_data_count excute\n'

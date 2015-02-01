@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 {% load pagination_tags %} 
+{% include 'cugbacm/head.html' %}
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,7 +56,7 @@
           </li>
         </ul>
     <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
-        <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+    <font color=red>{% autoescape off %}{{oj_attribute.marquee}}{% endautoescape%}
       </marquee>
      <div class="row">
       <div class="text-center">

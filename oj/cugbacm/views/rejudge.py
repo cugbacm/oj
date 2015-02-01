@@ -5,7 +5,6 @@ from cugbacm.core_hq import UserSubmit
 from cugbacm.models import User, Submit, Problem,ContestSubmit
 from celery.task import task
 
-
 @task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)

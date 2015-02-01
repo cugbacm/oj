@@ -6,10 +6,13 @@ from cugbacm.models import User, Submit, Problem, Contest, ContestSubmit
 from django.http import HttpResponse, HttpResponseRedirect
 import hashlib
 
-def encrypt(password):
-  m = hashlib.md5()
-  m.update(password)
-  return m.hexdigest()
+def encrypt(userID, password):
+  first_md5 = hashlib.md5()
+  first_md5.update(str(password))
+  salt = first_md5.hexdigest()
+  second_md5 = hashlib.md5()
+  second_md5.update(str(userID) + salt)
+  return second_md5.hexdigest()
 
 @csrf_exempt
 def login(request):
@@ -18,7 +21,7 @@ def login(request):
     password = request.POST['password']'''
     userID = request.POST['userID']
     password = request.POST['password']
-    password = encrypt(password)
+    password = encrypt(userID, password)
     try:
       user = User.objects.get(userID = userID)
       if user.password != password:

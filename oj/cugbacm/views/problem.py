@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from cugbacm.core_hq import main
 from cugbacm.core_hq import UserSubmit
-from cugbacm.models import User, Submit, Problem
+from cugbacm.models import User, Submit, Problem, OJAttribute
 from celery.task import task
 import ssdb_api
+from cugbacm.api.judge import Judge
 @task
 def test(problemID):
   submit = Submit(
@@ -21,7 +22,7 @@ def test(problemID):
   Judge(submit)
 
 
-@task
+'''@task
 def Judge(submit):
   problem = Problem.objects.get(problemID = submit.problemID)
   user = User.objects.get(userID = submit.userID)
@@ -48,10 +49,6 @@ def Judge(submit):
 
 
   ssdb_api.InsertUserProblemStatus(user.userID, submit.problemID, submit.status)
-  #ssdb = ssdb_api.ssdb
-  #has_ac = ssdb.get(user.userID + '\t' + str(submit.problemID))
-  #if has_ac == None:
-  #  ssdb.set(user.userID + '\t' + str(submit.problemID), 4)
 
   if submit.status == "Accepted":
     if Submit.objects.filter(userID = user.userID, problemID = submit.problemID, status = "Accepted").count() == 1:
@@ -79,13 +76,14 @@ def Judge(submit):
   user.save()
   problem.save()
   return submit.status
-
+'''
 def problem(request, problem_id):
   languages = ("g++","gcc","java","python2","python3")
   try:
     user = User.objects.get(userID = request.session['userID'])
   except:
     return HttpResponseRedirect("/index/login")
+  oj_attribute = OJAttribute.objects.all()[0]
   problem = Problem.objects.get(problemID=problem_id)
   user = User.objects.get(userID = request.session['userID'])
   submits = Submit.objects.filter(problemID = problem_id, userID = user.userID).order_by('-id')
@@ -122,6 +120,7 @@ def problem(request, problem_id):
                         'submits': submits,
                         'languages': languages,
                         'show_submit': show_submit,
+                        'oj_attribute': oj_attribute,
                       }
                       )
       else:
@@ -135,6 +134,7 @@ def problem(request, problem_id):
                       'submits': submits,
                       'languages': languages,
                       'show_submit': show_submit,
+                      'oj_attribute': oj_attribute,
                     }
                     )
       #return render(request, 'cugbacm/problem.html', {})
