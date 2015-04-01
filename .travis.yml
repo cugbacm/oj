@@ -6,7 +6,7 @@ node_js:
 - '0.10'
 before_install:
 - openssl aes-256-cbc -K $encrypted_26b4962af0e7_key -iv $encrypted_26b4962af0e7_iv
-  -in travis.enc -out ~/.ssh/id_rsa -d
+  -in doc/travis.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
