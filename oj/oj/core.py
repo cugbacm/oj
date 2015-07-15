@@ -74,7 +74,7 @@ def check_dangerous_code(solution_id, language):
         return True
 #  bian yi wen jian
 def  compile(solution_id, language):
-	low_level()#why?
+	low_level()
 	'''jiang program bian cheng ke zhi xing wen jian'''
 	language = language.lower()
 	dir_work = os.path.join(config.work_dir, str(solution_id))

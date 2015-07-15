@@ -9,5 +9,5 @@ urlpatterns = patterns('',
   	# url(r'^blog/', include('blog.urls')),
 	url(r'^index/', include('cugbacm.urls')),
 	url(r'^admin/', include(admin.site.urls)),
-	(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_PATH}),
+	#(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_PATH}),
 )
