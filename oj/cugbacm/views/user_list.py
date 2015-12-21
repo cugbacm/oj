@@ -26,6 +26,6 @@ def userList(request):
       })
     except:
       return render(request,'cugbacm/userList.html', {'users':{},'userID':request.session['userID']})
-  else:    
+  else:
     return render(request, 'cugbacm/userList.html', {'users': users, 'userID':request.session['userID']})
 

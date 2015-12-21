@@ -8,9 +8,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 import ssdb_api
 
 def problemList(request):
-  try:
+  if 'userID' in request.session:
     user = User.objects.get(userID = request.session['userID'])
-  except:
+  else:
     return HttpResponseRedirect("/index/login")
   problems = Problem.objects.all()
   problems = problems.filter(visible=True)
