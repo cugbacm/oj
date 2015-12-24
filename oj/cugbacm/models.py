@@ -1,12 +1,11 @@
 # coding=utf-8
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class User(models.Model):
-    # 用户id
-    user_id = models.CharField(max_length=200, primary_key=True)
-    # 密码
-    password = models.CharField(max_length=200)
+    # 用户，很trick的方法自定义了这个user
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     # 年级
     session = models.CharField(max_length=20)
     # 专业
@@ -17,18 +16,19 @@ class User(models.Model):
     email = models.EmailField(max_length=100)
     # 昵称
     nickname = models.CharField(max_length=100)
+
     def __unicode__(self):
-        return self.user_id
+        return str(self.user)
 
 class Problem(models.Model):
     # 题目id
-    problem_id = models.IntegerField(primary_key=True)
+    problem_id = models.AutoField(primary_key=True)
     # 标题
     title = models.CharField(max_length=100)
     # 时间限制ms
-    time_limit = models.IntegerField()
+    time_limit = models.IntegerField(default=1000)
     # 内存限制kb
-    memory_limit = models.IntegerField();
+    memory_limit = models.IntegerField(default=65536);
     # AC这道题的数量
     ac = models.IntegerField(default=0);
     # WA这道题的数量
@@ -56,17 +56,18 @@ class Problem(models.Model):
     # 输出样例
     sampleOutput = models.TextField();
     # 提示
-    hint = models.TextField(default = "");
+    hint = models.TextField(default = "", blank=True);
     # 是否可见
-    visible = models.BooleanField(default = True)
+    visible = models.BooleanField(default=True)
     # 作者
-    author = models.CharField(max_length = 100)
+    author = models.CharField(max_length=100, blank=True)
+
     def __unicode__(self):
         return str(self.problem_id) + "\t" + self.title
 
 class Submit(models.Model):
     # 提交id
-    submit_id = models.IntegerField(primary_key=True)
+    submit_id = models.AutoField(primary_key=True)
     # 用户
     user = models.ForeignKey(User, related_name= 'user_submit')
     # 题目
@@ -83,7 +84,7 @@ class Submit(models.Model):
         ("Accepted", "Accepted"),
         ("Presentation Error", "Presentation Error"),
     )
-    status = models.CharField(choices=status_option)
+    status = models.CharField(choices=status_option, max_length=100)
     # 所占内存kb为单位
     memory = models.IntegerField()
     # 运行时间ms为单位
@@ -96,61 +97,13 @@ class Submit(models.Model):
         ("python2", "python2"),
         ("python3", "python3"),
     )
-    language = models.CharField(choices=language_option)
+    language = models.CharField(choices=language_option, max_length=100)
     # 代码长度b为单位
     code_length = models.IntegerField()
     # 提交时间
     date = models.DateTimeField(auto_now_add = True, auto_now=False)
     # 源码
     code = models.TextField()
+
     def __unicode__(self):
-        return str(self.submit_id)
-
-
-class Contest(models.Model):
-    """docstring for Contest"""
-    contestID = models.IntegerField()
-    title = models.CharField(max_length = 100)
-    startTime = models.DateField()
-    startTimestamp = models.TimeField()
-    endTime = models.DateField()
-    endTimestamp = models.TimeField()
-    author = models.CharField(max_length = 100)
-    problemList = models.CommaSeparatedIntegerField(max_length = 10000)
-    userList = models.CommaSeparatedIntegerField(max_length = 10000)
-    status = models.CharField(max_length = 50)
-    public = models.BooleanField(default = True)
-    def __unicode__(self):
-        return self.title
-
-class ContestSubmit(models.Model):
-    runID = models.IntegerField()
-    userID = models.CharField(max_length = 100)
-    problemID = models.IntegerField()
-    status = models.CharField(max_length = 100)
-    memory = models.IntegerField()
-    runTime = models.IntegerField()
-    language = models.CharField(max_length = 100)
-    codeLength = models.IntegerField()
-    date = models.DateField(auto_now_add = True, auto_now=False)
-    timestamp = models.TimeField(auto_now_add = True, auto_now=False)
-    code = models.TextField()
-    contestID = models.IntegerField()
-    def __unicode__(self):
-        return str(self.contestID) + "/" + str(self.runID)
-
-
-class UserContestMap(models.Model):
-    userID = models.CharField(max_length = 200 )
-    contestID = models.IntegerField()
-    def __unicode__(self):
-        return str(self.userID) + "\t" + str(self.contestID)
-
-class ContestXls(models.Model):
-    contestID = models.IntegerField()
-    xlsAddr = models.FileField(upload_to = 'cugbacm/upload/')
-    def __unicode__(self):
-        return str(self.contestID) + "\t" + str(self.xlsAddr)
-
-class OJAttribute(models.Model):
-    marquee = models.TextField()
+        return str(self.submit_id) + "\t" + str(user) + "\t" + str(problem.title)

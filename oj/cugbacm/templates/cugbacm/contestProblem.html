@@ -1,0 +1,217 @@
+<html lang="zh-cn">
+  <head>
+    {% load pagination_tags  %} 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+
+    <title>{{contest.title}}-{{problem.title}}</title>
+
+    <!--<link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">-->
+    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+   <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+   <!-- <script src="/site_media/run_prettify.js"></script>
+   <script type="text/javascript" src="/site_media/bootstrap-affix.js"></script>-->
+
+   <!-- <script charset="utf-8" src="/site_media/kindeditor_a5/kindeditor-4.1.10/kindeditor.js"></script>
+   <script charset="utf-8" src="/site_media/kindeditor_a5/kindeditor-4.1.10/lang/zh_CN.js"></script>-->
+
+    <style type="text/css" title="currentStyle">
+        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
+  </style>
+  <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
+  <script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+
+
+  </script>
+  <body style="padding-top:70px;">
+    <!--<div class="container">-->
+      <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+		    <ul class="nav nav-tabs">
+          <li><a href="/index/problemList">Home Page</a></li>
+			    <li><a href="/index/contestList">Contest List</a></li>
+          <li class="active"><a href="/index/contest/{{contestID}}">Problem List</a></li>
+		    	<li><a href="/index/contest/{{contestID}}/submitList">Submit List</a></li>
+		    	<li><a href="/index/contest/{{contestID}}/rankList">Rank List</a></li>
+		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/index/manager/">Admin</a></li>
+              <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
+              <li class="divider"></li>
+              <li><a href="/index/login?login_out=true">Login out</a></li>
+            </ul>
+          </li>
+        </ul>
+      <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right"  width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+                <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com{{contestID}}
+              </marquee>
+            </nav> 
+          <div class="row-fluid" >
+            <div class="col-md-7" role="main">
+             <center> <h2>{{problem.title}}</h2></center>
+              <div>
+                <p><center>Time Limit: {{problem.timeLimit}} MS &nbsp; &nbsp; Memory Limit: {{problem.memoryLimit}} KB</center></p>
+                <p><center>(Accepted/Total Submit): {{problem.ac}} / {{problem.totalSubmission}}</center></p>
+              </div>
+              <h3>
+                description
+              </h3>
+              <pre>{% autoescape off %}{{problem.description}}{% endautoescape%}</pre>
+              <h3>
+                input
+              </h3>
+              <pre>{% autoescape off %}{{problem.input}}{% endautoescape%}</pre>
+              <h3>
+                output
+              </h3>
+              <pre>{% autoescape off %}{{problem.output}}{% endautoescape%}</pre>
+              <h3>
+                sample input
+              </h3>
+              <pre>{% autoescape off %}{{problem.sampleInput}}{% endautoescape%}</pre>
+              <h3>
+                sample output
+              </h3>
+              <pre>{% autoescape off %}{{problem.sampleOutput}}{% endautoescape%}</pre>
+              <h3>
+                hint
+              </h3>
+              <pre>{% autoescape off %}{{problem.hint}}{% endautoescape%}</pre>
+              <h3>
+                author
+              </h3>
+              <pre>{% autoescape off %}{{problem.author}}{% endautoescape%}</pre>
+           </div>
+           <div class="col-md-5" style="padding-top:20px;">
+             <div data-spy="affix">
+             <nav class="navbar navbar-default" role = "navigation">
+              <ul class = "nav nav-tabs">
+                {% ifequal show_submit 'true' %}
+                  <li><a href="/index/contest/{{contestID}}/problem/{{problem.problemID}}">Edit Code</a></li>
+                  <li class="active"><a href="/index/contest/{{contestID}}/problem/{{problem.problemID}}?show_submit=true">My Submits</a></li>
+                {% else %}
+                  <li class="active"><a href="/index/contest/{{contestID}}/problem/{{problem.problemID}}">Edit Code</a></li>
+                  <li><a href="/index/contest/{{contestID}}/problem/{{problem.problemID}}?show_submit=true">My Submits</a></li>
+                {% endifequal %}
+              </ul>
+             </nav>
+             {% ifequal show_submit 'true'%}
+              {% autopaginate submits 10 %}
+              <div class="table-responsive pagination-centered" style="width:487px;">
+              <table cellpadding="0" cellspacing="0" border="0" class="display" id="example"> 
+                <thead>  
+                  <tr>  
+                    <th>RunID</th>
+                    <th>Status</th> 
+                    <th>Language</th>
+                    <th>Time Submit</th> 
+                    <!--<th>Code</th>--> 
+                  </tr>  
+                  </thead>  
+                <tbody>
+                {% for submit in submits %}
+                  <tr class="odd gradeX">
+                    <td>{{submit.id}}</td>
+                    {% if submit.status == "Accepted" %}
+                      <td><font color="#3498DB"><strong>{{submit.status}}</strong></font></td>
+                    {% else %}
+                      {% if submit.status == "Compile Error" %}
+                        <td><font color="#2ECC71"><strong>{{submit.status}}</strong></font></td>
+                      {% else %}
+                        <td><font color="#E74C3C"><strong>{{submit.status}}</strong></font></td>
+                      {% endif %}
+                    {% endif %}
+                      <td><a href="/index/contest/{{contestID}}/problem/{{submit.problemID}}?submit={{submit.id}}">{{submit.language}}</a></td>
+                    <td>{{submit.date}} {{submit.timestamp}}</td> 
+                    <!--<td>{{submit.code}}</td> -->
+                  </tr>
+                {% endfor %}  
+                </tbody>  
+              </table>
+              </div>
+              {% paginate %}
+             {% else %}
+              <div style="width: 487px;">
+                <form class="form-horizontal" role="form" action="/index/contest/{{contestID}}/problem/{{problem.problemID}}" method="post" onsubmit="return checkForm();">{% csrf_token %} 
+                  <div class="form-group">
+                  
+                    <label for="language" class="col-md-2 control-label">Language</label>
+                      <div class="col-md-5">
+                        <select id="language" class="form-control" name="language" >
+                        {% for var in languages %} 
+			                     {% ifequal var submit.language %}
+			                       <option selected>{{var}}</option>
+			                     {% else %}
+			                       <option>{{var}}</option>	
+			                     {% endifequal %}	
+		                  	{% endfor %}
+                        </select>
+                      </div>
+
+                       <div class="col-md-2">
+                       <button class="btn btn-primary" type="submit" onclick = "Submit()">Submit</button>
+                       </div>   
+
+                  </div>
+                  <div class="form-group">   
+                    <pre id="editor" style="height:400px">{{submit.code}}</pre>
+                  </div>
+                 <textarea id="Code" name="code" style="display:none"></textarea>
+                </form>
+              </div>
+             {% endifequal %}
+              <script>
+             <!-- $('#navbar').scrollspy()-->
+            $(document).ready(function() {
+              $('#example').dataTable({
+                "bPaginate": false,
+                "aaSorting":[[0,'desc']],
+                "bFilter": false,
+              });
+            } );
+              </script>
+              <script src="/site_media/dist/src/ace.js" type="text/javascript" charset="utf-8"></script>
+              <script>
+                  var editor = ace.edit("editor");
+                  editor.setTheme("ace/theme/monokai");
+                  editor.getSession().setMode("ace/mode/c_cpp");
+                  function Submit(){
+                      console.log(editor.getValue());
+                      document.getElementById("Code").value = editor.getValue();
+                  }
+                  function $(id){
+                     return document.getElementById(id);
+                  }
+                  function $F(id){
+                     return document.getElementById(id).value;
+                  }
+                  function checkForm(){
+                    var value = $F("Code");
+                    var status = '{{contest_status}}';
+                    if(status == "passed"){
+                        alert("Sorry,The contest is passed!!!");
+                        return false;
+                        }else{
+                      if(value.length < 20) {
+                          alert("亲，代码有点短哦~");
+                          return false;
+                      }
+                      else return true;
+                    }
+                  }
+               </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--</div>-->
+  </body>
+</html>

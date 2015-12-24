@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+{% load pagination_tags %} 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+    <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.min.js"></script>
+    <title>{{contest.title}}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/site_media/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/bootstrap/css/docs.min.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+   <style type="text/css" title="currentStyle">
+        @import "/site_media/DataTables-1.9.4/media/css/demo_page.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table.css";
+        @import "/site_media/DataTables-1.9.4/media/css/demo_table_jui.css";
+	</style>
+	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="/site_media/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+  <script src="/site_media/dist/js/stickUp-master/stickUp.min.js"></script>
+  </head>
+  <body style="padding-top:70px">
+    <div class="container">      
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		    <ul class="nav nav-tabs">
+          <li><a href="/index/problemList">Home Page</a></li>
+		    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userID}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Admin</a></li>
+              <li><a href="/index/userInfo/{{userID}}">User Info</a></li>
+              <li><a href="/index/login?login_out=true">Login out</a></li>
+            </ul>
+          </li>
+        </ul>
+    <marquee id="affiche" align="left" behavior="alternate" bgcolor="#FFFFFF" direction="right" width=100%  loop="-1" scrollamount="1" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
+        <font color=red>新OJ还在建设当中，欢迎大家提出一些实用的需求，Orz.......763687347@qq.com
+      </marquee>
+      </nav>
+      <!--content-->
+      <div class="row">
+        <!--main-->
+        <div class="col-md-9" role="main">
+          <div class="bs-docs-section">
+            <h4 id="batchReg" class="page-header">批量注册</h4>
+            <div class="row">
+            <div class="col-md-8">  
+            <h5>注册</h5>
+      <input class="form-control" type="file"> 
+              <form class="form-inline" role="form" action="" method="post">{% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="form-control" id="problemID" name="problemID" placeholder="Contest ID">
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary">Upload</button>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Batch Register</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-4">
+            <h5>名单</h5>
+            <button type="button" class="btn btn-primary">Download List</button>
+            </div>
+            </div>
+          </div><!--批量注册-->
+
+          <div class="bs-docs-section">
+            <h4 id="2" class="page-header">2</h4>
+            <p>dasdsdasdasdasd</br>dadas</br>dasdas</br>dasdasad</p>
+          </div>
+          <div class="bs-docs-section">
+            <h4 id="3" class="page-header">3</h4>
+            <p>dasdsdasdasdasd</br>dadas</br>dasdas</br>dasdasad</p>
+          </div>
+        </div><!--main-->
+
+        <!--menu-->
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" role="complementary" style="padding-top:70px;">
+            <ul class="nav bs-docs-sidenav">
+              <li><a href="#batchReg">批量注册</a></li>
+              <li><a href="#2">operation2</a></li>
+            </ul>
+            <a class="back-to-top" href="#top">Top</a>
+          </div>
+        </div><!--menu-->
+      </div><!--content-->
+    </div>
+  </body>
+</html>

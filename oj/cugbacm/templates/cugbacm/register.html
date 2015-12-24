@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="cugbacm" >
+    <link rel="shortcut icon" href="/site_media/docs-assets/ico/favicon.png">
+    <title>Register</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/site_media/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/site_media/Flat-UI-master/css/flat-ui.css" rel="stylesheet"> 
+    <link href="/site_media/dist/css/signin.css" rel="stylesheet">
+    <script type = "text/javascript" src = "/site_media/dist/js/jquery-2.1.0.min.js"> </script>
+    <script type="text/javascript" src="/site_media/dist/js/bootstrap.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <script language="javascript" type="text/javascript">
+		function checkID(){
+			var id = document.getElementById("userID").value;
+			var reg = new RegExp("^[0-9,a-z,A-Z]*$");
+			if( !reg.test(id)){
+				alert("userID只能为字母或数字");
+				document.getElementById("userID").value = "";
+			}else{
+				
+			}
+		}
+	</script>
+    
+  </head>
+  <body>
+	<div class="container" >
+    <div class="col-md-4 col-md-offset-4">
+    <form class="form-horizontal" role="form" action="/index/register/" method="post">{% csrf_token %} 
+          
+       <div class="form-group">
+          <h2 class="form-signin-heading">Register</h2>
+        </div>
+        <div class="form-group">
+          <input type="text" id="userID" class="form-control"  onBlur="checkID()" placeholder="userId (Your studentID)"   name="userID" required autofocus>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password (length > 10)" name="password" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Session" name="session" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Specialty" name="specialty" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Tel" name="tel" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Nickname" name="nickname" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+    </div> <!-- /container -->
+   </body>
+</html> 
