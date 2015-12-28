@@ -38,6 +38,7 @@ class LoginView(View):
         return HttpResponseRedirect(next)
 
     def get(self, request):
+        return render_to_response(LoginView.template_name, {'full_path': request.get_full_path()})
         # 如果用户已经登录就跳转
         if request.user.is_authenticated():
             return self.go_to_next(request)

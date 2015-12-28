@@ -1,5 +1,32 @@
-<form action="{{ full_path}}" method="post">
-    <input type="text" name="username" />
-    <input type="password" name="password" />
-    <input type="submit" value="login" />
-</form>
+<!DOCTYPE html>
+<html lang="zh-CN">
+  {% include 'cugbacm/head.html' %}
+  {% load staticfiles %}
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <form method="post" action="{{full_path}}">
+            <div class="login-form">
+              <div class="form-group">
+                <label class="login-field-icon  fui-user" for="login-name"></label>
+                <input type="text" class="login-field form-control" name="username" value="" placeholder="Enter your name" id="login-name" />
+              </div>
+
+              <div class="form-group">
+                <label class="login-field-icon  fui-lock" for="login-pass"></label>
+                <input type="password" name="password" class="login-field form-control" value="" placeholder="Password" id="login-pass" />
+              </div>
+
+              <input class="btn btn-primary btn-block" type="submit" value="登陆"></input>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </body>
+  {% include 'cugbacm/tail.html' %}
+</html>
+
