@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="{{pre_url}}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% for url in pages_url%}
+      <li {% ifequal forloop.counter now_page %}class="active"{% endifequal %}><a href="{{url}}">{{ forloop.counter }}</a></li>
+    {% endfor %}
+    <li>
+      <a href="{{next_url}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

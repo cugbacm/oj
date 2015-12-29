@@ -69,9 +69,9 @@ class Submit(models.Model):
     # 提交id
     submit_id = models.AutoField(primary_key=True)
     # 用户
-    user = models.ForeignKey(User, related_name= 'user_submit')
+    user = models.ForeignKey(User, related_name='user_submit')
     # 题目
-    problem = models.OneToOneField(Problem)
+    problem = models.ForeignKey(Problem, related_name='problem_submit')
     # 状态
     status_option = (
         ("Queueing", "Queueing"),
@@ -106,4 +106,4 @@ class Submit(models.Model):
     code = models.TextField()
 
     def __unicode__(self):
-        return str(self.submit_id) + "\t" + str(user) + "\t" + str(problem.title)
+        return str(self.submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.title)
