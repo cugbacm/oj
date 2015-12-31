@@ -25,7 +25,17 @@ class ProblemView(View):
             return HttpResponse("problem does not exist " + str(problem_id))
 
     def post(self, request, problem_id):
-        return HttpResponse('problem view post' + str(problem_id))
+        user = User.objects.get(user=request.user)
+        problem = Problem.objects.get(problem_id=problem_id)
+        code = request.POST['code']
+        language = request.POST['language']
+        submit = Submit(user=user,
+                        problem=problem,
+                        language=language,
+                        status="queueing",
+                        code=code)
+        submit.judge()
+        return HttpResponse(submit)
 
 # 登陆界面
 class LoginView(View):
