@@ -1,6 +1,7 @@
 # coding=utf-8
 from django.db import models
 from django.conf import settings
+from judge import judge_submit
 
 # Create your models here.
 class User(models.Model):
@@ -86,9 +87,9 @@ class Submit(models.Model):
     )
     status = models.CharField(choices=status_option, max_length=100)
     # 所占内存kb为单位
-    memory = models.IntegerField()
+    memory = models.IntegerField(default=0, blank=True)
     # 运行时间ms为单位
-    run_time = models.IntegerField()
+    run_time = models.IntegerField(default=0, blank=True)
     # 语言
     language_option = (
         ("g++", "g++"),
@@ -99,11 +100,25 @@ class Submit(models.Model):
     )
     language = models.CharField(choices=language_option, max_length=100)
     # 代码长度b为单位
-    code_length = models.IntegerField()
+    code_length = models.IntegerField(default=0, blank=True)
     # 提交时间
     date = models.DateTimeField(auto_now_add = True, auto_now=False)
     # 源码
-    code = models.TextField()
+    code = models.TextField(blank=True)
 
     def __unicode__(self):
         return str(self.submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.title)
+
+    def judge(self):
+        result = judge_submit(self.submit_id,
+                              self.problem.problem_id,
+                              self.language,
+                              self.user.user.username,
+                              self.code,
+                              self.problem.time_limit,
+                              self.problem.memory_limit)
+        self.status = result['result']
+        self.code_length = result['codeLength']
+        self.memory = result['take_memory']
+        self.run_time = result['take_time']
+        self.save()
