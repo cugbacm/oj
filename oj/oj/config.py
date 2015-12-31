@@ -11,7 +11,7 @@ import ConfigParser
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
-CONF_PATH = os.path.join(BASE_PATH, "conf")
+CONF_PATH = os.path.join(BASE_PATH, "oj/conf")
 
 
 def setup_config(config_file=os.path.join(CONF_PATH, "config.ini")):
