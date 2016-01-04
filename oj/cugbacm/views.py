@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import User
 from .models import Problem
 from .models import Submit
+from oj.task import judge
 
 # Create your views here.
 # 题目详情
@@ -34,7 +35,9 @@ class ProblemView(View):
                         language=language,
                         status="Queueing",
                         code=code)
-        submit.judge()
+        print submit
+        submit.save()
+        judge.delay(submit)
         return HttpResponse(submit)
 
 # 登陆界面

@@ -1,3 +1,27 @@
+#from __future__ import absolute_import
+import os
+from oj.config import setup_config
+
+config = setup_config()
+# ^^^ The above is required if you want to import from the celery
+# library.  If you don't have this then `from celery.schedules import`
+# becomes `proj.celery.schedules` in Python 2.x since it allows
+# for relative imports by default.
+
+# Celery settings
+
+BROKER_URL = 'amqp://%s:%s@%s:%s/%s' % (config.get("rabbitmq", "rabbitmq_user"),
+                                        config.get("rabbitmq", "rabbitmq_password"),
+                                        config.get("rabbitmq", "rabbitmq_ip"),
+                                        config.get("rabbitmq", "rabbitmq_port"),
+                                        config.get("rabbitmq", "rabbitmq_vhost"),
+                                        )
+
+#: Only add pickle to this list if your broker is secured
+#: from unwanted access (see userguide/security.html)
+CELERY_ACCEPT_CONTENT = ['pickle']
+CELERY_TASK_SERIALIZER = 'pickle'
+CELERY_RESULT_SERIALIZER = 'pickle'
 """
 Django settings for oj project.
 
@@ -10,10 +34,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
-import os
-from oj.config import setup_config
-
-config = setup_config()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,7 +61,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cugbacm',
-    'pagination'
+    'pagination',
+    'djcelery',
 ]
 
 MIDDLEWARE_CLASSES = [
