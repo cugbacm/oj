@@ -344,7 +344,7 @@ def get_data_count(problem_id):
 
 def judge_submit(solution_id, problem_id, language, user_id, program, time_limit, mem_limit):
     re_code = {
-        0:'In Queuing',
+        0:'Queuing',
         1:'Accepted',
         2:'Time Limit Exceeded',
         3:'Memory Limit Exceeded',

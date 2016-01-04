@@ -32,7 +32,7 @@ class ProblemView(View):
         submit = Submit(user=user,
                         problem=problem,
                         language=language,
-                        status="queueing",
+                        status="Queueing",
                         code=code)
         submit.judge()
         return HttpResponse(submit)

@@ -87,6 +87,7 @@ class Submit(models.Model):
         ("Memory Limit Exceeded", "Memory Limit Exceeded"),
         ("Wrong Answer", "Wrong Answer"),
         ("Accepted", "Accepted"),
+        ("Judging", "Judging"),
         ("Presentation Error", "Presentation Error"),
     )
     status = models.CharField(choices=status_option, max_length=100)
