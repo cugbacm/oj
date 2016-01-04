@@ -113,7 +113,6 @@ class Submit(models.Model):
     def __unicode__(self):
         return str(self.submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.title)
 
-    '''
     def judge(self):
         result = judge_submit(self.submit_id,
                               self.problem.problem_id,
@@ -127,4 +126,3 @@ class Submit(models.Model):
         self.memory = result['take_memory']
         self.run_time = result['take_time']
         self.save()
-    '''
