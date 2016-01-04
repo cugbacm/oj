@@ -114,3 +114,12 @@ class SubmitListView(BaseListView):
         submit_list = Submit.objects.all().order_by('-submit_id')
         args.update(self.paginate(request, submit_list, '/submit_list', 'submits', num_per_page=5))
         return render_to_response(SubmitListView.template_name, args)
+
+# 用户列表
+class UserListView(BaseListView):
+    template_name = 'cugbacm/user_list.html'
+    def get(self, request):
+        args = {}
+        user_list = User.objects.all().order_by('ac')
+        args.update(self.paginate(request, user_list, '/user_list', 'users', num_per_page=5))
+        return render_to_response(UserListView.template_name, args)

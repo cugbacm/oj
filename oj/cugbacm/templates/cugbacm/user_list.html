@@ -1,0 +1,28 @@
+{% extends "cugbacm/base.html" %}
+{% block content %}
+  <div class="container">
+  <table class="table table-hover">
+    <thead>
+      <th width="33%" style="text-align:left;">用户名</th>
+      <th width="33%">AC数</th>
+      <th width="33%">总提交数</th>
+    </thead>
+    <tbody>
+      {% for user in users%}
+        <tr>
+          <td style="text-align:left;">
+            {{user.nickname}}
+          </td>
+          <td style="text-align:left;">
+            {{user.ac}}
+          </td>
+          <td style="text-align:left;">
+            {{user.total_submit}}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <center>{% include 'cugbacm/pagination.html' %}</center>
+  </div>
+{% endblock %}

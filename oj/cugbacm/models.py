@@ -17,6 +17,10 @@ class User(models.Model):
     email = models.EmailField(max_length=100)
     # 昵称
     nickname = models.CharField(max_length=100)
+    # AC题数
+    ac = models.IntegerField(default=0)
+    # 总提交数
+    total_submit = models.IntegerField(default=0)
 
     def __unicode__(self):
         return str(self.user)
@@ -109,6 +113,7 @@ class Submit(models.Model):
     def __unicode__(self):
         return str(self.submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.title)
 
+    '''
     def judge(self):
         result = judge_submit(self.submit_id,
                               self.problem.problem_id,
@@ -122,3 +127,4 @@ class Submit(models.Model):
         self.memory = result['take_memory']
         self.run_time = result['take_time']
         self.save()
+    '''
