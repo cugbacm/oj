@@ -2,7 +2,10 @@
 # coding=utf-8
 # Modified by qiang.he
 
-import shlex, subprocess, os, config, logging, shutil, lorun,shutil, time
+import shlex, subprocess, os, logging, shutil, lorun,shutil, time
+from oj.config import setup_config
+
+config = setup_config()
 
 class UserSubmit(object):
     """docstring for UserSubmit"""
@@ -86,7 +89,7 @@ def check_dangerous_code(solution_id, language):
 def compile(solution_id, language):
     low_level()
     language = language.lower()   # 将语言变成小写字母
-    dir_work = os.path.join(config.work_dir, str(solution_id))
+    dir_work = os.path.join(config.get('judge', 'work_dir'), str(solution_id))
     print "dir_work:",dir_work
 
     build_cmd = {
@@ -108,7 +111,7 @@ def compile(solution_id, language):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE)
     out, err = p.communicate()# 编译错误信息
-    err_txt_path = os.path.join(config.work_dir, str(solution_id),'err.txt')
+    err_txt_path = os.path.join(config.get('judge', 'work_dir'), str(solution_id),'err.txt')
     f = file (err_txt_path, 'w')
     f.write(err)
     f.write(out)
@@ -128,7 +131,7 @@ def judge(solution_id, problem_id, data_count, time_limit,
     if language in ['java', 'python2', 'python3']:
         time_limit = time_limit * 2
         mem_limit = mem_limit * 2
-    full_path = os.path.join(config.data_dir, str(problem_id))
+    full_path = os.path.join(config.get('judge', 'data_dir'), str(problem_id))
     files = os.listdir(full_path)
 
     for item in files:
@@ -191,29 +194,29 @@ def function():
 # 每组数据进行测试
 def judge_one_mem_time(solution_id, problem_id, item, time_limit, mem_limit, language):
     low_level()
-    input_path = os.path.join(config.data_dir,str(problem_id),"%s" %item)
+    input_path = os.path.join(config.get('judge', 'data_dir'),str(problem_id),"%s" %item)
     try:
         input_data = file(input_path)
     except:
         return False
 
-    out_path = os.path.join(config.work_dir,str(solution_id),'%s'%(item[:-2] + 'txt'))
+    out_path = os.path.join(config.get('judge', 'work_dir'),str(solution_id),'%s'%(item[:-2] + 'txt'))
     temp_out_data = open(out_path, 'w')
 
     if language == 'java':
-        cmd = 'java -cp %s Main' % (os.path.join(config.work_dir, str(solution_id)))
+        cmd = 'java -cp %s Main' % (os.path.join(config.get('judge', 'work_dir'), str(solution_id)))
         main_exe = shlex.split(cmd)
 
     elif language  == 'python2':
-        cmd = 'python2 %s' % (os.path.join(config.work_dir, str(solution_id), 'main.pyc'))
+        cmd = 'python2 %s' % (os.path.join(config.get('judge', 'work_dir'), str(solution_id), 'main.pyc'))
         main_exe = shlex.split(cmd)
 
     elif language == 'python3':
-        cmd = 'python3 %s' % (os.path.join(config.work_dir, str(solution_id), '__pycache__/main,cpython-33.pyc'))
+        cmd = 'python3 %s' % (os.path.join(config.get('judge', 'work_dir'), str(solution_id), '__pycache__/main,cpython-33.pyc'))
         main_exe = shlex.split(cmd)
 
     else:
-        main_exe = [os.path.join(config.work_dir,str(solution_id), 'main')]
+        main_exe = [os.path.join(config.get('judge', 'work_dir'),str(solution_id), 'main')]
 
     runcfg = {
       'args': main_exe,
@@ -232,8 +235,8 @@ def judge_one_mem_time(solution_id, problem_id, item, time_limit, mem_limit, lan
 def judge_result(problem_id, solution_id, item):
     low_level()
     # logging.debug('Judging result')
-    currect_result = os.path.join(config.data_dir, str(problem_id), '%s' % (item[:-2] + 'out'))
-    user = os.path.join(config.work_dir, str(solution_id), '%s' % (item[:-2] + 'txt'))
+    currect_result = os.path.join(config.get('judge', 'data_dir'), str(problem_id), '%s' % (item[:-2] + 'out'))
+    user = os.path.join(config.get('judge', 'work_dir'), str(solution_id), '%s' % (item[:-2] + 'txt'))
     try:
         curr = file(currect_result).read().replace('\r','')
         curr = curr.strip('\n')
@@ -321,12 +324,12 @@ def run(problem_id, solution_id, language, data_count, user_id,time_limit,mem_li
 
 # 清空工作目录
 def clean_work_dir(solution_id):
-    dir_name = os.path.join(config.work_dir, str(solution_id))
+    dir_name = os.path.join(config.get('judge', 'work_dir'), str(solution_id))
     shutil.rmtree(dir_name)
 
 # 得到某道题目的数据总量
 def get_data_count(problem_id):
-    full_path = os.path.join(config.data_dir, str(problem_id))
+    full_path = os.path.join(config.get('judge', 'data_dir'), str(problem_id))
     print "full_path:%s" % full_path
     try:
         # listdir获取当前目录中的内容
@@ -359,7 +362,7 @@ def judge_submit(solution_id, problem_id, language, user_id, program, time_limit
     print 'main excute\n'
     data_count = get_data_count(problem_id)
     print "data_count:%s", data_count
-    path = os.path.join(config.work_dir,'%s' % solution_id)
+    path = os.path.join(config.get('judge', 'work_dir'),'%s' % solution_id)
     print "solution_id path: %s" % path
     if os.path.exists(path):
         # shutil.rmtree删除一个目录
