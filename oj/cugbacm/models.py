@@ -20,7 +20,7 @@ class User(models.Model):
     # AC题数
     ac = models.IntegerField(default=0)
     # 总提交数
-    total_submit = models.IntegerField(default=0)
+    all_submit = models.IntegerField(default=0)
 
     def __unicode__(self):
         return str(self.user)
@@ -50,6 +50,8 @@ class Problem(models.Model):
     se = models.IntegerField(default=0);
     # RE这道题的数量
     re = models.IntegerField(default=0);
+    # 这道题的总提交数
+    all_submit = models.IntegerField(default=0)
     # 题目描述
     description = models.TextField();
     # 输入
@@ -115,6 +117,7 @@ class Submit(models.Model):
         return str(self.submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.title)
 
     def judge(self):
+        # 判题内核
         result = judge_submit(self.submit_id,
                               self.problem.problem_id,
                               self.language,
@@ -122,8 +125,32 @@ class Submit(models.Model):
                               self.code,
                               self.problem.time_limit,
                               self.problem.memory_limit)
+        # 更新相关字段
         self.status = result['result']
         self.code_length = result['codeLength']
         self.memory = result['take_memory']
         self.run_time = result['take_time']
+        # 更新相关用户和题目的各种计数
+        self.problem.all_submit += 1
+        self.user.all_submit += 1
+        if self.status == "System Error":
+            self.problem.se += 1
+        if self.status == "Runtime Error":
+            self.problem.re += 1
+        if self.status == "Compile Error":
+            self.problem.ce += 1
+        if self.status == "Time Limit Exceeded":
+            self.problem.tle += 1
+        if self.status == "Memory Limit Exceeded":
+            self.problem.mle += 1
+        if self.status == "Wrong Answer":
+            self.problem.wa += 1
+        if self.status == "Accepted":
+            self.problem.ac += 1
+            self.user.ac += 1
+        if self.status == "Presentation Error":
+            self.problem.pe += 1
+        # 入库
+        self.problem.save()
+        self.user.save()
         self.save()

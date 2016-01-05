@@ -35,8 +35,6 @@ class ProblemView(View):
                         language=language,
                         status="Queueing",
                         code=code)
-        print submit
-        submit.save()
         judge.delay(submit)
         return HttpResponse(submit)
 
