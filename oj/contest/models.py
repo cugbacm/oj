@@ -1,22 +1,53 @@
 # coding=utf-8
-from django.db import models
-from django.conf import settings
-from judge import judge_submit
+from __future__ import unicode_literals
 
+from django.db import models
+
+from cugbacm.models import User, Problem
+from cugbacm.judge import judge_submit
 # Create your models here.
-class User(models.Model):
-    # 用户，很trick的方法自定义了这个user
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)
-    # 年级
-    session = models.CharField(max_length=20)
-    # 专业
-    specialty = models.CharField(max_length=100)
-    # 手机
-    tel = models.CharField(max_length=100)
-    # 邮箱
-    email = models.EmailField(max_length=100)
-    # 昵称
-    nickname = models.CharField(max_length=100)
+
+class Contest(models.Model):
+    '''
+    比赛的一些基础字段
+    '''
+    # 比赛id
+    contest_id = models.AutoField(primary_key=True)
+    # 作者
+    author = models.ForeignKey(User, related_name='author_contest')
+    # 标题
+    title = models.CharField(max_length = 100)
+    # 开始时间
+    start_time = models.DateTimeField()
+    # 结束时间
+    endTime = models.DateTimeField()
+    # 当前状态
+    status_option = (
+        ("pending", "pending"),
+        ("running", "running"),
+        ("end", "end"),
+    )
+    status = models.CharField(choices=status_option, max_length=50)
+    # 是否是公开的
+    public = models.BooleanField(default=True)
+    # 加密方式
+    encryption_mode_option = (
+        # 密码验证
+        ("password", "password"),
+        # 手动添加哪些用户可以进行比赛
+        ("manual", "manual"),
+    )
+    encryption_mode = models.CharField(choices=encryption_mode_option, max_length=20)
+
+    def __unicode__(self):
+        return self.title + "\t" + self.author
+
+class ContestUser(models.Model):
+    '''
+    当一个比赛的加密方式是manual时，需要存比赛允许哪些用户参加
+    '''
+    raw_user = models.ForeignKey(User, related_name='user_contest')
+    contest = models.ForeignKey(Contest, related_name='contest_user')
     # AC的数量
     ac = models.IntegerField(default=0);
     # WA的数量
@@ -33,66 +64,45 @@ class User(models.Model):
     se = models.IntegerField(default=0);
     # RE的数量
     re = models.IntegerField(default=0);
-    # 总提交数
-    all_submit = models.IntegerField(default=0)
 
-    def __unicode__(self):
-        return str(self.user)
-
-class Problem(models.Model):
-    # 题目id
-    problem_id = models.AutoField(primary_key=True)
-    # 标题
-    title = models.CharField(max_length=100)
-    # 时间限制ms
-    time_limit = models.IntegerField(default=1000)
-    # 内存限制kb
-    memory_limit = models.IntegerField(default=65536);
-    # AC这道题的数量
+class ContestProblem(models.Model):
+    '''
+    比赛中题库中的题目
+    '''
+    contest = models.ForeignKey(Contest, related_name='contest_problem')
+    # 在题库中原始的那一题
+    raw_problem = models.ForeignKey(Problem, related_name='problem_contest')
+    # 显示在比赛中的id 比如ABCD
+    id_in_contest = models.CharField(max_length=10)
+    # AC的数量
     ac = models.IntegerField(default=0);
-    # WA这道题的数量
+    # WA的数量
     wa = models.IntegerField(default=0);
-    # TLE这道题的数量
+    # TLE的数量
     tle = models.IntegerField(default=0);
-    # MLE这道题的数量
+    # MLE的数量
     mle = models.IntegerField(default=0);
-    # PE这道题的数量
+    # PE的数量
     pe = models.IntegerField(default=0);
-    # CE这道题的数量
+    # CE的数量
     ce = models.IntegerField(default=0);
-    # SE这道题的数量
+    # SE的数量
     se = models.IntegerField(default=0);
-    # RE这道题的数量
+    # RE的数量
     re = models.IntegerField(default=0);
-    # 这道题的总提交数
-    all_submit = models.IntegerField(default=0)
-    # 题目描述
-    description = models.TextField();
-    # 输入
-    input = models.TextField();
-    # 输出
-    output = models.TextField();
-    # 输入样例
-    sampleInput = models.TextField();
-    # 输出样例
-    sampleOutput = models.TextField();
-    # 提示
-    hint = models.TextField(default = "", blank=True);
-    # 是否可见
-    visible = models.BooleanField(default=True)
-    # 作者
-    author = models.CharField(max_length=100, blank=True)
 
-    def __unicode__(self):
-        return str(self.problem_id) + "\t" + self.title
-
-class Submit(models.Model):
+class ContestSubmit(models.Model):
+    '''
+    比赛中的提交
+    '''
+    # 属于哪个比赛
+    contest = models.ForeignKey(Contest, related_name='contest_submit')
     # 提交id
-    submit_id = models.AutoField(primary_key=True)
+    contest_submit_id = models.AutoField(primary_key=True)
     # 用户
-    user = models.ForeignKey(User, related_name='user_submit')
+    user = models.ForeignKey(ContestUser, related_name='contest_user_submit')
     # 题目
-    problem = models.ForeignKey(Problem, related_name='problem_submit')
+    problem = models.ForeignKey(ContestProblem, related_name='contest_problem_submit')
     # 状态
     status_option = (
         ("Queueing", "Queueing"),
@@ -132,13 +142,13 @@ class Submit(models.Model):
 
     def judge(self):
         # 判题内核
-        result = judge_submit(self.submit_id,
-                              self.problem.problem_id,
+        result = judge_submit(self.contest_submit_id,
+                              self.problem.raw_problem.problem_id,
                               self.language,
-                              self.user.nickname,
+                              self.user.raw_user.nickname,
                               self.code,
-                              self.problem.time_limit,
-                              self.problem.memory_limit)
+                              self.problem.raw_problem.time_limit,
+                              self.problem.raw_problem.memory_limit)
         # 更新相关字段
         self.status = result['result']
         self.code_length = result['codeLength']

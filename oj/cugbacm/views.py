@@ -124,3 +124,12 @@ class UserListView(BaseListView):
         user_list = User.objects.all().order_by('ac')
         args.update(self.paginate(request, user_list, '/user_list', 'users', num_per_page=5))
         return render_to_response(UserListView.template_name, args)
+
+# 用户信息
+class UserInfoView(View):
+    template_name = 'cugbacm/user_info.html'
+    def get(self, request, user_id):
+        args = {}
+        user = User.objects.get(id=user_id)
+        args['user'] = user
+        return render_to_response(UserInfoView.template_name, args)

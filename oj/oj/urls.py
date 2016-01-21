@@ -21,6 +21,7 @@ from cugbacm.views import LoginView
 from cugbacm.views import ProblemListView
 from cugbacm.views import SubmitListView
 from cugbacm.views import UserListView
+from cugbacm.views import UserInfoView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -30,4 +31,5 @@ urlpatterns = [
     url(r'^problem_list/', login_required(ProblemListView.as_view()), name='problem_list'),
     url(r'^submit_list/', login_required(SubmitListView.as_view()), name='submit_list'),
     url(r'^user_list/', login_required(UserListView.as_view()), name='user_list'),
+    url(r'^user_info/(?P<user_id>\d+)$', login_required(UserInfoView.as_view()), name='user_info'),
 ]
