@@ -1,0 +1,36 @@
+{% extends "cugbacm/base.html" %}
+{% block content %}
+  <div class="container">
+  <table class="table table-hover">
+    <thead>
+      <th width="10%" style="text-align:left;">比赛id</th>
+      <th width="15%">标题</th>
+      <th width="25%">开始时间</th>
+      <th width="25%">结束时间</th>
+      <th width="10%">状态</th>
+      <th width="15%">作者</th>
+    </thead>
+    <tbody>
+      {% for contest in contests %}
+        <tr>
+          <td style="text-align:left;">
+            <a href="/contest/{{contest.contest_id}}/info">
+              {{contest.contest_id}}
+            </a>
+          </td>
+          <td style="text-align:left;">
+            <a href="/contest/{{contest.contest_id}}/info">
+              {{contest.title}}
+            </a>
+          </td>
+          <td>{{contest.start_time}}</td>
+          <td>{{contest.end_time}}</td>
+          <td>{{contest.status}}</td>
+          <td>{{contest.author.nickname}}</td>
+        </tr>
+      {% endfor %}  
+    </tbody>
+  </table>
+  <center>{% include 'cugbacm/pagination.html' %}</center>
+  </div>
+{% endblock %}

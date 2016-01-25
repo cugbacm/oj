@@ -20,7 +20,7 @@ class Contest(models.Model):
     # 开始时间
     start_time = models.DateTimeField()
     # 结束时间
-    endTime = models.DateTimeField()
+    end_time = models.DateTimeField()
     # 当前状态
     status_option = (
         ("pending", "pending"),
@@ -38,13 +38,17 @@ class Contest(models.Model):
         ("manual", "manual"),
     )
     encryption_mode = models.CharField(choices=encryption_mode_option, max_length=20)
+    # 密码
+    password = models.CharField(max_length=20, blank=True)
+    # contest信息，可以自主发挥
+    info = models.TextField(blank=True)
 
     def __unicode__(self):
-        return self.title + "\t" + self.author
+        return self.title + "\t" + str(self.author)
 
 class ContestUser(models.Model):
     '''
-    当一个比赛的加密方式是manual时，需要存比赛允许哪些用户参加
+    把每个用户在不同比赛中，看做一个新的用户，要计算在这个比赛中的AC数、WA数等，用来排序
     '''
     raw_user = models.ForeignKey(User, related_name='user_contest')
     contest = models.ForeignKey(Contest, related_name='contest_user')
