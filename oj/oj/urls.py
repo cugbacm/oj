@@ -25,6 +25,9 @@ from cugbacm.views import UserInfoView
 
 from contest.views import ContestListView
 from contest.views import ContestInfoView
+from contest.views import ContestProblemListView
+from contest.views import ContestProblemView
+from contest.views import ContestSubmitListView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -40,4 +43,7 @@ urlpatterns = [
     # contest
     url(r'^contest_list/', login_required(ContestListView.as_view()), name='contest_list'),
     url(r'^contest/(?P<contest_id>\d+)/info$', login_required(ContestInfoView.as_view()), name='contest_info'),
+    url(r'^contest/(?P<contest_id>\d+)/problem_list$', login_required(ContestProblemListView.as_view()), name='contest_problem_list'),
+    url(r'^contest/(?P<contest_id>\d+)/problem/(?P<id_in_contest>\w+)$', login_required(ContestProblemView.as_view()), name='contest_problem'),
+    url(r'^contest/(?P<contest_id>\d+)/submit_list$', login_required(ContestSubmitListView.as_view()), name='contest_submit_list'),
 ]

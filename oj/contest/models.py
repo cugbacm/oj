@@ -94,6 +94,8 @@ class ContestProblem(models.Model):
     se = models.IntegerField(default=0);
     # RE的数量
     re = models.IntegerField(default=0);
+    # 总提交数
+    all_submit = models.IntegerField(default=0)
 
 class ContestSubmit(models.Model):
     '''
@@ -142,7 +144,7 @@ class ContestSubmit(models.Model):
     code = models.TextField(blank=True)
 
     def __unicode__(self):
-        return str(self.submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.title)
+        return str(self.contest_submit_id) + "\t" + str(self.user) + "\t" + str(self.problem.raw_problem.title)
 
     def judge(self):
         # 判题内核
@@ -160,7 +162,6 @@ class ContestSubmit(models.Model):
         self.run_time = result['take_time']
         # 更新相关用户和题目的各种计数
         self.problem.all_submit += 1
-        self.user.all_submit += 1
         if self.status == "System Error":
             self.problem.se += 1
             self.user.se += 1
