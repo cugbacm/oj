@@ -5,6 +5,8 @@ from django.db import models
 
 from cugbacm.models import User, Problem
 from cugbacm.judge import judge_submit
+from datetime import datetime
+import pytz
 # Create your models here.
 
 class Contest(models.Model):
@@ -68,6 +70,8 @@ class ContestUser(models.Model):
     se = models.IntegerField(default=0);
     # RE的数量
     re = models.IntegerField(default=0);
+    # 罚时
+    penalty_time = models.IntegerField(default=0)
 
 class ContestProblem(models.Model):
     '''
@@ -186,6 +190,11 @@ class ContestSubmit(models.Model):
         if self.status == "Presentation Error":
             self.problem.pe += 1
             self.user.pe += 1
+        # 如果没AC就要加罚时
+        if self.status != "Accepted":
+            now_time = datetime.now(pytz.timezone('Asia/Shanghai'))
+            delta = now_time - self.contest.start_time
+            self.user.penalty_time += delta.total_seconds()
         # 入库
         self.problem.save()
         self.user.save()

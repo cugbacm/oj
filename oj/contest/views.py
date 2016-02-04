@@ -93,3 +93,12 @@ class ContestSubmitListView(BaseListView):
         submit_list = ContestSubmit.objects.all().order_by('-contest_submit_id')
         args.update(self.paginate(request, submit_list, '/submit_list', 'submits', num_per_page=5))
         return render_to_response(ContestSubmitListView.template_name, args)
+
+# 排名
+class ContestRankView(BaseListView):
+    template_name = 'contest/contest_rank.html'
+    def get(self, request, contest_id):
+        contest = Contest.objects.get(contest_id=contest_id)
+        args = {}
+        args["contest"] = contest
+        return HttpResponse("rank")
