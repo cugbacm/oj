@@ -3,28 +3,22 @@
   <div class="container">
   <table class="table table-hover">
     <thead>
-      <th width="20%" style="text-align:left;">题目id</th>
-      <th width="20%">标题</th>
-      <th width="20%">时间限制(ms)</th>
-      <th width="20%">内存限制(kb)</th>
+      <th width="20%" style="text-align:left;">用户</th>
       <th width="20%">AC数</th>
+      <th width="20%">罚时</th>
     </thead>
     <tbody>
-      {% for problem in contest_problems %}
+      {% for user in users %}
         <tr>
           <td style="text-align:left;">
-            <a href="/contest/{{contest.contest_id}}/problem/{{problem.id_in_contest}}">
-              {{problem.id_in_contest}}
-            </a>
+              {{user.raw_user}}
           </td>
           <td style="text-align:left;">
-            <a href="/contest/{{contest.contest_id}}/problem/{{problem.id_in_contest}}">
-              {{problem.raw_problem.title}}
-            </a>
+              {{user.ac}}
           </td>
-          <td>{{problem.raw_problem.time_limit}}</td>
-          <td>{{problem.raw_problem.memory_limit}}</td>
-          <td>{{problem.ac}}</td>
+          <td style="text-align:left;">
+              {{user.penalty_time}}
+          </td>
         </tr>
       {% endfor %}  
     </tbody>

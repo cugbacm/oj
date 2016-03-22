@@ -48,7 +48,7 @@ class ContestProblemListView(BaseListView):
         except:
             return HttpResponse("contest does not exist" + str(contest_id))
         problem_list = ContestProblem.objects.filter(contest=contest)
-        args.update(self.paginate(request, problem_list, '/contest_problem_list', 'contest_problems', num_per_page=5))
+        args.update(self.paginate(request, problem_list, '/contest/' + str(contest_id) + '/problem_list', 'contest_problems', num_per_page=5))
         return render_to_response(ContestProblemListView.template_name, args)
 
 # 比赛题目详情
@@ -91,7 +91,7 @@ class ContestSubmitListView(BaseListView):
         args = {}
         args["contest"] = contest
         submit_list = ContestSubmit.objects.all().order_by('-contest_submit_id')
-        args.update(self.paginate(request, submit_list, '/submit_list', 'submits', num_per_page=5))
+        args.update(self.paginate(request, submit_list, '/contest/' + str(contest_id) + '/submit_list', 'submits', num_per_page=5))
         return render_to_response(ContestSubmitListView.template_name, args)
 
 # 排名
@@ -101,4 +101,6 @@ class ContestRankView(BaseListView):
         contest = Contest.objects.get(contest_id=contest_id)
         args = {}
         args["contest"] = contest
-        return HttpResponse("rank")
+        user_list = ContestUser.objects.all().order_by('-ac', 'penalty_time')
+        args.update(self.paginate(request, user_list, '/contest/' + str(contest_id) + '/rank', 'users', num_per_page=5))
+        return render_to_response(ContestRankView.template_name, args)

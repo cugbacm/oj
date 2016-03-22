@@ -28,6 +28,7 @@ from contest.views import ContestInfoView
 from contest.views import ContestProblemListView
 from contest.views import ContestProblemView
 from contest.views import ContestSubmitListView
+from contest.views import ContestRankView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -46,4 +47,5 @@ urlpatterns = [
     url(r'^contest/(?P<contest_id>\d+)/problem_list$', login_required(ContestProblemListView.as_view()), name='contest_problem_list'),
     url(r'^contest/(?P<contest_id>\d+)/problem/(?P<id_in_contest>\w+)$', login_required(ContestProblemView.as_view()), name='contest_problem'),
     url(r'^contest/(?P<contest_id>\d+)/submit_list$', login_required(ContestSubmitListView.as_view()), name='contest_submit_list'),
+    url(r'^contest/(?P<contest_id>\d+)/rank$', login_required(ContestRankView.as_view()), name='contest_rank'),
 ]
